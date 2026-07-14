@@ -1,0 +1,706 @@
+{
+  "skipToContent": "Skip to main content",
+  "header": {
+    "homeAria": "Q Pick home",
+    "primaryNav": "Primary",
+    "mobileNav": "Mobile navigation",
+    "mobilePrimary": "Mobile primary",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "bookNow": "Book Now"
+  },
+  "nav": {
+    "home": "Home",
+    "ride": "Ride",
+    "airport": "Airport",
+    "tours": "Tours",
+    "safety": "Safety",
+    "drive": "Drive",
+    "partners": "Partners",
+    "support": "Support"
+  },
+  "language": {
+    "label": "Language",
+    "choose": "Choose language"
+  },
+  "footer": {
+    "blurb": "Premium movement across Sri Lanka — airport transfers, city rides, and island journeys under one trusted standard.",
+    "emergency": "Emergency",
+    "move": "Move",
+    "company": "Company",
+    "destinations": "Destinations",
+    "viewAll": "View all",
+    "rights": "All rights reserved.",
+    "products": {
+      "ride": "City & intercity rides",
+      "airport": "Airport transfers",
+      "tours": "Tours & day trips",
+      "destinations": "Destinations",
+      "safety": "Safety standard"
+    },
+    "companyLinks": {
+      "about": "About",
+      "partners": "Partners",
+      "drive": "Drive with Q Pick",
+      "support": "Support"
+    },
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick introduction",
+    "scroll": "Scroll",
+    "scrollAria": "Scroll to content",
+    "posterAlt": "Scenic drive through misty Sri Lankan forest roads",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "Sri Lanka, moved with certainty.",
+        "description": "Airport transfers, city rides and luxury travel — privately arranged.",
+        "primary": "Begin your journey",
+        "secondary": "Discover the island"
+      },
+      {
+        "title": "Airport Transfers",
+        "subtitle": "Arrive with confidence.",
+        "description": "Your driver waits before you land. No queues. No uncertainty.",
+        "primary": "Book Airport Pickup",
+        "secondary": "View Airport Service"
+      },
+      {
+        "title": "Private Tours",
+        "subtitle": "Explore beyond the ordinary.",
+        "description": "Chauffeur-driven journeys across Sri Lanka, in premium comfort.",
+        "primary": "Explore Tours",
+        "secondary": "Plan My Trip"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "Plan your journey",
+      "title": "Plan your journey",
+      "subtitle": "Tell us how you wish to move. We'll arrange the rest with quiet care.",
+      "journeyTypeAria": "Journey type",
+      "continue": "Continue",
+      "intents": {
+        "arrive": "Arrive",
+        "stay": "Stay",
+        "explore": "Explore"
+      },
+      "arrive": {
+        "fromLabel": "Arriving at",
+        "fromDefault": "Colombo Airport (CMB)",
+        "toLabel": "Staying at",
+        "toDefault": "Galle Face Hotel",
+        "recommendation": "Meet at arrivals · Hotel kept informed · Fare clear before you confirm"
+      },
+      "stay": {
+        "fromLabel": "From",
+        "fromDefault": "Your hotel",
+        "toLabel": "To",
+        "toDefault": "Galle Fort",
+        "recommendation": "Verified driver · Live updates you can share · Transparent pricing"
+      },
+      "explore": {
+        "fromLabel": "Starting from",
+        "fromDefault": "Colombo",
+        "toLabel": "Towards",
+        "toDefault": "Ella & the highlands",
+        "recommendation": "Day-ready vehicle · Driver who knows the roads · One calm itinerary"
+      }
+    },
+    "trust": {
+      "ariaLabel": "Why guests trust Q Pick",
+      "verifiedDrivers": "Verified Drivers",
+      "hotelCoordination": "Hotel Coordination",
+      "clearPricing": "Clear Pricing"
+    }
+  },
+  "experience": {
+    "headingLine1": "Experience",
+    "headingLine2": "Q Pick.",
+    "lines": [
+      "Your private chauffeur.",
+      "Your travel companion.",
+      "Your Sri Lanka."
+    ],
+    "screenLive": "Q Pick app screen: {stepLabel}",
+    "previewAria": "Q Pick app preview showing {stepLabel}"
+  },
+  "fleetList": {
+    "eyebrow": "Premium Fleet",
+    "heading": "Choose the perfect ride.",
+    "sub": "From tuk-tuks to premium vans, every vehicle is verified, comfortable and transparently priced.",
+    "phoneAria": "Q Pick vehicle list on the app"
+  },
+  "journeyStory": {
+    "eyebrow": "The Q Pick standard",
+    "heading": "One journey. One trusted standard.",
+    "intro": "Not a marketplace. Not a brochure and a WhatsApp thread. A private concierge for how Sri Lanka moves — from the first landing to the last coastal road.",
+    "closingTitle": "Across the entire journey — the same calm certainty.",
+    "closingBody": "Uber and PickMe move you across a city. Tour operators sell a day. Q Pick holds the whole story: airport, stay, and island — under one trusted standard.",
+    "cta": "Plan your journey",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "Arrive",
+        "moment": "The island begins at the gate.",
+        "scene": "Your flight lands. A verified Q Pick driver is already waiting — not a scramble on the curb, not a chain of messages. Your hotel knows you are on the way before the car leaves the airport road.",
+        "outcome": "One handoff. From arrivals to the front desk.",
+        "imageAlt": "Colombo coast and city lights at dusk — the journey after landing"
+      },
+      "stay": {
+        "n": "02",
+        "title": "Stay",
+        "moment": "Every move stays quiet and clear.",
+        "scene": "A coast run, a dinner reservation, a morning meeting. You see the fare before you confirm. While you ride, the people who matter can follow — family, host, or villa manager — without calling twice.",
+        "outcome": "Transparent pricing. Live status. No marketplace noise.",
+        "imageAlt": "Southern Sri Lankan coastline with clear Indian Ocean water"
+      },
+      "explore": {
+        "n": "03",
+        "title": "Explore",
+        "moment": "The island opens without friction.",
+        "scene": "Tea country mist. Fort towns. A day with more than one stop. The same trusted driver, the right vehicle for the roads ahead, and an itinerary held with care — so the place stays the point, not the logistics.",
+        "outcome": "Ride and tourism. One continuous standard.",
+        "imageAlt": "Sigiriya Rock Fortress rising from the Sri Lankan jungle"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "Choose how you move",
+    "intro": "One standard for daily rides, airport certainty, and island exploration.",
+    "tablistAria": "Trip intent",
+    "ride": {
+      "label": "Ride",
+      "title": "City and intercity, on your clock",
+      "body": "Request a verified driver for Colombo streets or the long coastal run. Transparent fares before you confirm.",
+      "cta": "How rides work",
+      "imageAlt": "Colombo coast at dusk — city journeys with certainty"
+    },
+    "airport": {
+      "label": "Airport",
+      "title": "CMB arrivals without the scramble",
+      "body": "Meet-and-greet transfers timed to your flight. Hotels and villas stay in the loop from gate to door.",
+      "cta": "Book a transfer",
+      "imageAlt": "Coastal road toward southern Sri Lanka after landing"
+    },
+    "tour": {
+      "label": "Tour",
+      "title": "Island days, curated with care",
+      "body": "Day trips and multi-stop journeys with drivers who know tea country roads, fort towns, and temple timing.",
+      "cta": "Explore tours",
+      "imageAlt": "Sigiriya and cultural triangle landscapes for day journeys"
+    }
+  },
+  "stepTimeline": {
+    "heading": "How certainty works",
+    "intro": "Three quiet steps between where you are and where you need to be.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "Request",
+        "body": "Set pickup, destination, and timing. See the fare before you commit."
+      },
+      "match": {
+        "n": "02",
+        "title": "Match",
+        "body": "A verified Q Pick driver is assigned — rated, insured, and trip-ready."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "Arrive",
+        "body": "Live ETA, trip sharing, and a calm handoff at the door or gate."
+      }
+    }
+  },
+  "destinationStrip": {
+    "heading": "The island, not just the city",
+    "intro": "From harbour roads to highland mist — destinations framed for how you actually travel.",
+    "allDestinations": "All destinations"
+  },
+  "destinations": {
+    "colombo": {
+      "name": "Colombo",
+      "region": "Western Province",
+      "summary": "Harbour lights, Galle Face breeze, and the pulse of the capital — moved with quiet precision.",
+      "imageAlt": "Colombo coastal waterfront at dusk"
+    },
+    "galle": {
+      "name": "Galle",
+      "region": "Southern Province",
+      "summary": "Fort walls, ocean wind, and the southern coast — airport to ramparts without uncertainty.",
+      "imageAlt": "Southern Sri Lankan coastline and clear ocean water"
+    },
+    "ella": {
+      "name": "Ella",
+      "region": "Uva Province",
+      "summary": "Mist, tea, and highland air — day charters timed to the mountain light.",
+      "imageAlt": "Lush Sri Lankan highland and tropical hillside landscape"
+    },
+    "sigiriya": {
+      "name": "Sigiriya",
+      "region": "Central Province",
+      "summary": "Rock fortress and cultural triangle roads — guided by drivers who know the routes.",
+      "imageAlt": "Aerial view of Sigiriya Rock Fortress in Sri Lanka"
+    }
+  },
+  "safety": {
+    "heading": "A safety standard you can feel",
+    "intro": "Trust is not a badge on the hero. It is the quiet baseline of every ride, transfer, and tour.",
+    "cta": "Read the safety standard",
+    "proofs": [
+      "Verified drivers with identity and vehicle checks",
+      "Transparent pricing before you confirm",
+      "Live trip sharing for family and hosts",
+      "In-trip support and a published emergency line",
+      "Insurance coverage on every Q Pick journey"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "PARTNERS",
+      "heading": "Hotels, villas, and corporates",
+      "body": "Guest transfers under a shared standard — white-glove handoffs your front desk can trust.",
+      "cta": "Partner with Q Pick"
+    },
+    "drivers": {
+      "eyebrow": "DRIVERS",
+      "heading": "Drive with dignity",
+      "body": "Clear earnings, fair dispatch, and tools built for the roads you know best.",
+      "cta": "Become a driver"
+    }
+  },
+  "finalCta": {
+    "brand": "Q Pick",
+    "heading": "Open Q Pick",
+    "body": "Airport, city, and island journeys — under one trusted standard.",
+    "primary": "Begin your journey",
+    "secondary": "Discover the island"
+  },
+  "farePreview": {
+    "from": "From",
+    "to": "To",
+    "note": "Estimate · confirm in app"
+  },
+  "driverTrust": {
+    "verified": "Verified Q Pick driver",
+    "trips": "{count} trips"
+  },
+  "storeBadges": {
+    "comingSoon": "Coming soon",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "iosAria": "Download on the App Store — coming soon",
+    "androidAria": "Get it on Google Play — coming soon",
+    "downloadOnAppStore": "Download on the App Store",
+    "getItOnGooglePlay": "Get it on Google Play"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "Splash",
+      "login": "Login / Welcome",
+      "dashboard": "Dashboard",
+      "account": "Account",
+      "pickup": "Confirm pickup",
+      "destination": "Select destination",
+      "vehicles": "Choose vehicle",
+      "booking": "Booking confirmation",
+      "searching": "Searching nearby drivers",
+      "accepted": "Driver accepted",
+      "arriving": "Driver arriving",
+      "pickedup": "Passenger picked up",
+      "riding": "Ride in progress",
+      "completed": "Trip completed",
+      "rate": "Rate driver",
+      "submitted": "Rating submitted",
+      "home": "Dashboard"
+    },
+    "shotAlt": "Q Pick Customer App — {label}",
+    "shotLabels": {
+      "login": "Login",
+      "home": "Home",
+      "account": "Account"
+    },
+    "splash": {
+      "tagline": "Ride · Tour · Explore Sri Lanka"
+    },
+    "login": {
+      "welcome": "Welcome",
+      "subtitle": "Sign in to book your ride",
+      "emailOrPhone": "Email or phone",
+      "password": "Password",
+      "continue": "Continue"
+    },
+    "dashboard": {
+      "greeting": "Good afternoon",
+      "whereTo": "Where to?",
+      "searchPlaceholder": "Galle Fort, Sri Lanka",
+      "chips": {
+        "airport": "Airport",
+        "home": "Home",
+        "saved": "Saved"
+      }
+    },
+    "pickup": {
+      "kicker": "Confirm pickup",
+      "title": "Is this your location?",
+      "label": "Pickup",
+      "value": "Colombo Fort",
+      "confirm": "Confirm pickup"
+    },
+    "destination": {
+      "kicker": "Select destination",
+      "title": "Where are you going?",
+      "pickupLabel": "Pickup",
+      "pickupValue": "Colombo Fort",
+      "destinationLabel": "Destination",
+      "destinationValue": "Galle Fort",
+      "continue": "Continue"
+    },
+    "vehicles": {
+      "route": "Colombo Fort → Galle Fort",
+      "title": "Choose a vehicle",
+      "seats": "{count} seats",
+      "ac": "A/C",
+      "eta": "ETA {time}",
+      "categories": {
+        "tuk": "Tuk",
+        "mini": "Mini",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "van": "Van"
+      },
+      "models": {
+        "tuk": "Bajaj RE",
+        "mini": "Suzuki Alto",
+        "sedan": "Toyota Premio",
+        "suv": "Toyota Prado",
+        "van": "Toyota Hiace"
+      },
+      "etas": {
+        "tuk": "3 min",
+        "mini": "4 min",
+        "sedan": "4 min",
+        "suv": "6 min",
+        "van": "8 min"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "Booking confirmation",
+      "title": "Confirm your ride",
+      "vehicleMeta": "Toyota Premio · 4 seats · A/C",
+      "route": "Route",
+      "routeValue": "Colombo Fort → Galle Fort",
+      "fare": "Fare",
+      "fareValue": "LKR 18,500",
+      "eta": "ETA",
+      "etaValue": "4 min",
+      "payment": "Payment",
+      "paymentValue": "Visa ···· 4242",
+      "bookRide": "Book Ride"
+    },
+    "searching": {
+      "title": "Searching nearby drivers...",
+      "matching": "Matching a Sedan near Colombo Fort",
+      "driverFound": "Driver found",
+      "sedanSelected": "Sedan selected",
+      "selectedMeta": "Toyota Premio · ETA 3 min"
+    },
+    "accepted": {
+      "badge": "Driver accepted",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "ETA 3 min",
+      "track": "Track driver"
+    },
+    "live": {
+      "statusArriving": "Driver arriving • 3 min",
+      "statusRiding": "Heading to Galle",
+      "driverVehicle": "Kasun · Toyota Premio",
+      "enRoute": "En route to pickup · Colombo Fort",
+      "route": "Colombo Fort → Galle Fort",
+      "minutesUnit": "min",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9"
+    },
+    "pickedUp": {
+      "title": "You're on board",
+      "subtitle": "Heading to Galle Fort with Kasun"
+    },
+    "completed": {
+      "title": "Trip completed",
+      "route": "Colombo Fort → Galle Fort",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "Rate Your Driver",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "prompt": "How was your ride today?",
+      "reviewPlaceholder": "Write a short review...",
+      "submit": "Submit Rating"
+    },
+    "submitted": {
+      "title": "Thanks for rating",
+      "subtitle": "Your feedback helps drivers improve",
+      "backHome": "Back to home"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "Ride",
+        "description": "Premium city and intercity rides across Sri Lanka with verified drivers and transparent fares."
+      },
+      "title": "City and intercity rides",
+      "description": "Request a verified Q Pick driver for Colombo streets or the long coastal run. See the fare before you confirm — then track every minute to the door.",
+      "primaryCta": "Get started",
+      "secondaryCta": "Safety standard",
+      "features": {
+        "onDemand": {
+          "title": "On-demand",
+          "body": "Pickup when you need it — airports, hotels, offices, and home."
+        },
+        "scheduled": {
+          "title": "Scheduled",
+          "body": "Pre-book for early flights, meetings, and family airport runs."
+        },
+        "intercity": {
+          "title": "Intercity",
+          "body": "Colombo to Galle, Kandy, and beyond with drivers who know the roads."
+        }
+      },
+      "farePreview": {
+        "fromLabel": "From",
+        "toLabel": "To",
+        "from": "Colombo Fort",
+        "to": "Galle Face",
+        "currency": "LKR",
+        "amount": "1,450",
+        "note": "Estimate · confirm in app"
+      },
+      "driverTrust": {
+        "name": "Nuwan P.",
+        "trips": "2.1k",
+        "rating": "4.97",
+        "verifiedLabel": "Verified Q Pick driver",
+        "tripsLabel": "{count} trips"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "Airport",
+        "description": "Bandaranaike (CMB) airport transfers with meet-and-greet timing for hotels, villas, and guests."
+      },
+      "title": "Airport transfers with certainty",
+      "description": "Land at CMB and move straight to your hotel or villa. Flight-aware timing, meet-and-greet options, and hosts kept in the loop from gate to door.",
+      "primaryCta": "Request a transfer",
+      "secondaryCta": "Hotel partners",
+      "bullets": [
+        "Flight tracking and buffer for immigration delays",
+        "Fixed or transparent transfer pricing before confirm",
+        "Child seats and luggage-friendly vehicles on request"
+      ]
+    },
+    "tours": {
+      "meta": {
+        "title": "Tours",
+        "description": "Curated day trips and multi-stop island journeys with drivers who know Sri Lanka's roads and rhythms."
+      },
+      "title": "Tours shaped for the island",
+      "description": "Day trips and multi-stop journeys — tea country, fort towns, cultural triangle — with drivers who know timing, terrain, and guest comfort.",
+      "primaryCta": "Browse destinations",
+      "secondaryCta": "Plan a journey",
+      "cards": {
+        "dayCharters": {
+          "title": "Day charters",
+          "body": "Sunrise to sunset routes with flexible stops and a clear all-in fare."
+        },
+        "multiDay": {
+          "title": "Multi-day",
+          "body": "Coast to highlands with the same trusted driver across your itinerary."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "Safety",
+        "description": "Q Pick safety standard — verified drivers, transparent pricing, trip sharing, support, and insurance."
+      },
+      "title": "Safety is the baseline",
+      "description": "Every Q Pick journey is built on verification, transparency, and reachable support — not marketing badges.",
+      "primaryCta": "Contact support",
+      "secondaryCta": "Book a ride",
+      "pillars": {
+        "verifiedFleet": {
+          "title": "Verified fleet",
+          "body": "Identity, vehicle, and background checks before a driver joins the network."
+        },
+        "tripSharing": {
+          "title": "Trip sharing",
+          "body": "Share live status with family, hosts, or hotel front desks."
+        },
+        "alwaysReachable": {
+          "title": "Always reachable",
+          "body": "In-trip support and a published emergency line for critical moments."
+        },
+        "insurance": {
+          "title": "Insurance",
+          "body": "Coverage on every journey under the Q Pick standard."
+        }
+      },
+      "faqHeading": "Common questions",
+      "faqs": [
+        {
+          "q": "Are Q Pick drivers verified?",
+          "a": "Yes. Drivers complete identity, vehicle, and background checks before joining the network."
+        },
+        {
+          "q": "Can I share my trip?",
+          "a": "Yes. Live trip sharing lets family, hosts, or hotel front desks follow your journey."
+        },
+        {
+          "q": "What if I need help during a ride?",
+          "a": "In-trip support and a published emergency line are available for critical moments."
+        },
+        {
+          "q": "Is there insurance on journeys?",
+          "a": "Coverage applies on every journey under the Q Pick standard."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Drive",
+        "description": "Drive with Q Pick — clear earnings, fair dispatch, and tools built for Sri Lanka's roads."
+      },
+      "title": "Drive with dignity",
+      "description": "Clear earnings, fair dispatch, and a product designed for the roads you know — from Colombo arteries to highland hairpins.",
+      "primaryCta": "Apply to drive",
+      "secondaryCta": "Our standards",
+      "bullets": [
+        "Transparent trip earnings and weekly summaries",
+        "Dispatch that respects distance, ratings, and fairness",
+        "Support when something goes wrong on the road"
+      ]
+    },
+    "partners": {
+      "meta": {
+        "title": "Partners",
+        "description": "Partner with Q Pick for hotel, villa, and corporate guest transfers under one trusted standard."
+      },
+      "title": "Partners who move guests well",
+      "description": "Hotels, villas, and corporates — white-glove transfers your front desk can trust, under a shared Q Pick standard.",
+      "primaryCta": "Talk to partnerships",
+      "secondaryCta": "Airport product",
+      "body": "Guest arrival links, scheduled transfers, and operational visibility — designed so hospitality teams spend less time coordinating WhatsApp fleets and more time hosting.",
+      "logoRowEyebrow": "Built for hospitality",
+      "logoRowAriaLabel": "Hospitality partners",
+      "partnerNames": [
+        "Galle Face Hotel",
+        "Cinnamon",
+        "Jetwing",
+        "Shangri-La",
+        "Amangalla"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "About",
+        "description": "Q Pick is building the trusted private layer of movement across Sri Lanka — rides, airport transfers, and island journeys."
+      },
+      "title": "Built for how Sri Lanka moves",
+      "description": "Q Pick is the trusted private layer of movement across the island — with the calm of a luxury concierge and the reliability of a modern mobility network.",
+      "primaryCta": "Book a ride",
+      "secondaryCta": "Drive with us",
+      "paragraphs": [
+        "We exist because fragmented WhatsApp fleets and generic global apps both miss what travellers and residents actually need: certainty, hospitality, and respect for place.",
+        "Our design system, safety standard, and product surfaces — passenger, driver, and operations — share one language. Quiet technology. Human journeys."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "Support",
+        "description": "Contact Q Pick support for rides, transfers, tours, and partner enquiries."
+      },
+      "title": "Support",
+      "description": "We're here for trip questions, partner enquiries, and moments that need a human.",
+      "emailLabel": "Email",
+      "emergencyLabel": "Emergency line"
+    },
+    "destinations": {
+      "meta": {
+        "title": "Destinations",
+        "description": "Explore Q Pick destinations across Sri Lanka — Colombo, Galle, Ella, Sigiriya, and more."
+      },
+      "title": "Destinations",
+      "description": "Places framed for how you travel — harbour roads, fort walls, highland mist, and the cultural triangle."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "Destination",
+      "primaryCta": "Book a ride",
+      "secondaryCta": "Explore tours"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "Privacy",
+          "description": "Q Pick privacy policy — how we collect, use, and protect your information."
+        },
+        "title": "Privacy",
+        "description": "We collect only what we need to move you safely — and we treat trip data with care.",
+        "body": "This page is a Phase 1 shell. Full legal copy will cover account data, location during active trips, payment processors, retention periods, and your rights under applicable Sri Lankan and international privacy law.",
+        "questionsPrefix": "Questions:",
+        "supportEmail": "support@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "Terms",
+          "description": "Q Pick terms of service for passengers, partners, and drivers."
+        },
+        "title": "Terms of service",
+        "description": "The agreement that governs use of Q Pick services across rides, transfers, and tours.",
+        "body": "This page is a Phase 1 shell. Full terms will define passenger and driver obligations, cancellations, liability limits, acceptable use, and dispute resolution.",
+        "questionsPrefix": "Questions:",
+        "supportEmail": "support@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Page not found",
+      "description": "The route you requested is not part of the Q Pick map — yet.",
+      "primaryCta": "Back home",
+      "secondaryCta": "Support",
+      "continue": "Or continue to {ride}, {airport}, or {tours}.",
+      "links": {
+        "ride": "Ride",
+        "airport": "Airport",
+        "tours": "Tours"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, moved with certainty.",
+        "description": "Premium ride-hailing and tourism across Sri Lanka — airport transfers, city rides, and island journeys under one trusted standard."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Premium rides & tourism in Sri Lanka",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Premium ride-hailing and tourism across Sri Lanka — airport transfers, city rides, and island journeys under one trusted standard."
+    }
+  }
+}

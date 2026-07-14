@@ -1,32 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import { Reveal } from "@/components/motion/reveal";
+import {
+  useMessages,
+  useTranslations,
+} from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
 import { UIHeading, Prose } from "@/components/ui/typography";
 
-const proofs = [
-  "Verified drivers with identity and vehicle checks",
-  "Transparent pricing before you confirm",
-  "Live trip sharing for family and hosts",
-  "In-trip support and a published emergency line",
-  "Insurance coverage on every Q Pick journey",
-] as const;
-
 export function SafetyChecklist() {
+  const t = useTranslations();
+  const { safety } = useMessages();
+
   return (
     <Reveal>
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-end">
           <div>
-            <UIHeading>A safety standard you can feel</UIHeading>
-            <Prose className="mt-4">
-              Trust is not a badge on the hero. It is the quiet baseline of every
-              ride, transfer, and tour.
-            </Prose>
+            <UIHeading>{t("safety.heading")}</UIHeading>
+            <Prose className="mt-4">{t("safety.intro")}</Prose>
             <Link
               href="/safety"
               className="mt-6 inline-flex min-h-11 items-center text-sm font-medium text-lagoon transition-colors hover:text-lagoon-deep"
             >
-              Read the safety standard
+              {t("safety.cta")}
               <span aria-hidden="true" className="ml-2">
                 →
               </span>
@@ -34,7 +32,7 @@ export function SafetyChecklist() {
           </div>
 
           <ul className="divide-y divide-mist border-y border-mist">
-            {proofs.map((item) => (
+            {safety.proofs.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-4 py-4 text-sm leading-relaxed text-ink sm:text-base"

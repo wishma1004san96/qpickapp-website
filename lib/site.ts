@@ -11,6 +11,7 @@ export const siteConfig = {
 } as const;
 
 export const primaryNav = [
+  { href: "/", label: "Home" },
   { href: "/ride", label: "Ride" },
   { href: "/airport", label: "Airport" },
   { href: "/tours", label: "Tours" },

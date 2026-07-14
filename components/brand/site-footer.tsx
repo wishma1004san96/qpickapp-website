@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { BrandLockup } from "@/components/brand/wordmark";
+import { useTranslations } from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
 import { destinations } from "@/lib/destinations";
 import {
@@ -9,7 +12,29 @@ import {
   siteConfig,
 } from "@/lib/site";
 
+const productKeys = {
+  "/ride": "ride",
+  "/airport": "airport",
+  "/tours": "tours",
+  "/destinations": "destinations",
+  "/safety": "safety",
+} as const;
+
+const companyKeys = {
+  "/about": "about",
+  "/partners": "partners",
+  "/drive": "drive",
+  "/support": "support",
+} as const;
+
+const legalKeys = {
+  "/legal/privacy": "privacy",
+  "/legal/terms": "terms",
+} as const;
+
 export function SiteFooter() {
+  const t = useTranslations();
+
   return (
     <footer className="border-t border-mist bg-paper">
       <Container className="py-16 sm:py-20 lg:py-24">
@@ -24,11 +49,10 @@ export function SiteFooter() {
               />
             </div>
             <p className="max-w-[34ch] text-[0.9375rem] leading-[1.75] tracking-[0.01em] text-ink-muted">
-              Premium movement across Sri Lanka — airport transfers, city rides,
-              and island journeys under one trusted standard.
+              {t("footer.blurb")}
             </p>
             <p className="mt-8 font-mono text-[0.6875rem] tracking-[0.14em] text-ink-soft uppercase">
-              Emergency
+              {t("footer.emergency")}
               <span className="mx-2 text-mist" aria-hidden="true">
                 ·
               </span>
@@ -41,11 +65,27 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <FooterCol title="Move" links={footerProducts} />
-          <FooterCol title="Company" links={footerCompany} />
+          <FooterCol
+            title={t("footer.move")}
+            links={footerProducts.map((item) => ({
+              href: item.href,
+              label: t(
+                `footer.products.${productKeys[item.href as keyof typeof productKeys]}`,
+              ),
+            }))}
+          />
+          <FooterCol
+            title={t("footer.company")}
+            links={footerCompany.map((item) => ({
+              href: item.href,
+              label: t(
+                `footer.companyLinks.${companyKeys[item.href as keyof typeof companyKeys]}`,
+              ),
+            }))}
+          />
           <div>
             <p className="mb-5 font-mono text-[0.6875rem] font-medium tracking-[0.18em] text-ink uppercase">
-              Destinations
+              {t("footer.destinations")}
             </p>
             <ul className="space-y-3.5">
               {destinations.map((d) => (
@@ -54,7 +94,7 @@ export function SiteFooter() {
                     href={`/destinations/${d.slug}`}
                     className="text-sm leading-relaxed text-ink-muted transition-colors hover:text-ink"
                   >
-                    {d.name}
+                    {t(`destinations.${d.slug}.name`)}
                   </Link>
                 </li>
               ))}
@@ -63,7 +103,7 @@ export function SiteFooter() {
                   href="/destinations"
                   className="text-sm font-medium text-brand transition-colors hover:text-brand-deep"
                 >
-                  View all
+                  {t("footer.viewAll")}
                 </Link>
               </li>
             </ul>
@@ -72,7 +112,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-mist pt-9 sm:mt-20 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs tracking-wide text-ink-soft">
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.name}. {t("footer.rights")}
           </p>
           <ul className="flex flex-wrap gap-6">
             {footerLegal.map((item) => (
@@ -81,7 +121,9 @@ export function SiteFooter() {
                   href={item.href}
                   className="text-xs tracking-wide text-ink-soft transition-colors hover:text-ink"
                 >
-                  {item.label}
+                  {t(
+                    `footer.legal.${legalKeys[item.href as keyof typeof legalKeys]}`,
+                  )}
                 </Link>
               </li>
             ))}

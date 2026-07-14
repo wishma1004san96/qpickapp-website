@@ -1,34 +1,26 @@
+"use client";
+
+import {
+  useMessages,
+  useTranslations,
+} from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 import { UIHeading, Prose } from "@/components/ui/typography";
 
-const steps = [
-  {
-    n: "01",
-    title: "Request",
-    body: "Set pickup, destination, and timing. See the fare before you commit.",
-  },
-  {
-    n: "02",
-    title: "Match",
-    body: "A verified Q Pick driver is assigned — rated, insured, and trip-ready.",
-  },
-  {
-    n: "03",
-    title: "Arrive",
-    body: "Live ETA, trip sharing, and a calm handoff at the door or gate.",
-  },
-] as const;
+const STEP_KEYS = ["request", "match", "arrive"] as const;
 
 export function StepTimeline() {
+  const t = useTranslations();
+  const { stepTimeline } = useMessages();
+  const steps = STEP_KEYS.map((key) => stepTimeline.steps[key]);
+
   return (
     <Reveal>
       <Container>
         <div className="mb-12 max-w-xl">
-          <UIHeading>How certainty works</UIHeading>
-          <Prose className="mt-4">
-            Three quiet steps between where you are and where you need to be.
-          </Prose>
+          <UIHeading>{t("stepTimeline.heading")}</UIHeading>
+          <Prose className="mt-4">{t("stepTimeline.intro")}</Prose>
         </div>
 
         <ol className="grid gap-10 md:grid-cols-3 md:gap-8">

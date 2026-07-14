@@ -1,0 +1,120 @@
+.fleet-stage {
+  --fleet-brand: var(--brand, #0062fa);
+  --fleet-brand-deep: var(--brand-deep, #0036f9);
+  position: relative;
+  z-index: 2;
+  overflow-x: clip;
+  overflow-y: visible;
+  background:
+    radial-gradient(120% 80% at 50% 120%, rgb(1 147 251 / 0.35), transparent 55%),
+    linear-gradient(165deg, var(--fleet-brand) 0%, var(--fleet-brand-deep) 100%);
+  color: var(--foam, #f3f6f7);
+  padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(3rem, 8vw, 5.5rem);
+}
+
+.fleet-stage-inner {
+  margin-inline: auto;
+  max-inline-size: 72rem;
+  padding-inline: 1.25rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .fleet-stage-inner {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fleet-stage-inner {
+    padding-inline: 2rem;
+  }
+}
+
+.fleet-stage-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-inline: auto;
+  margin-block-end: 1.25rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgb(243 246 247 / 0.35);
+  background: rgb(255 255 255 / 0.14);
+  backdrop-filter: blur(10px);
+  color: var(--foam, #f3f6f7);
+  font-size: 0.75rem;
+  font-weight: 560;
+  letter-spacing: 0.04em;
+}
+
+.fleet-stage-heading {
+  margin: 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.fleet-stage-sub {
+  margin: 0.85rem auto 0;
+  max-inline-size: 640px;
+  color: rgb(243 246 247 / 0.82);
+  font-size: clamp(0.98rem, 1.4vw, 1.125rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.fleet-stage-phone-plane {
+  position: relative;
+  z-index: 3;
+  /* Full-bleed like Bolt mission screen — phone fills the stage width */
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  margin-block-start: clamp(1.25rem, 3vw, 2rem);
+  margin-block-end: clamp(-5rem, -8vw, -2.5rem);
+  padding-block-end: 0;
+  overflow-x: clip;
+}
+
+.fleet-stage-phone-parallax,
+.fleet-stage-phone-float,
+.fleet-stage-device-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  will-change: transform;
+}
+
+/* Pre-rendered Bolt-angle 3D device — near full-viewport, object-contain */
+.fleet-stage-device {
+  position: relative;
+  display: block;
+  width: min(100vw, 92rem);
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .fleet-stage-device {
+    width: min(100vw, 96rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fleet-stage-device {
+    width: min(100vw, 110rem);
+  }
+
+  .fleet-stage-phone-plane {
+    margin-block-end: clamp(-6rem, -7vw, -3.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fleet-stage-phone-parallax,
+  .fleet-stage-phone-float {
+    transform: none !important;
+  }
+}

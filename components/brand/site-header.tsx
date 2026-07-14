@@ -4,16 +4,35 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/brand/language-switcher";
-import { BrandLockup } from "@/components/brand/wordmark";
-import { ButtonLink } from "@/components/ui/button";
+import { BrandLogo } from "@/components/brand/wordmark";
+import { useTranslations } from "@/components/i18n/locale-provider";
 import { primaryNav, utilityNav } from "@/lib/site";
 
 function isNavActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+const bookNowClass =
+  "inline-flex shrink-0 min-h-11 items-center justify-center rounded-full bg-[#0A84FF] px-5 text-sm font-medium text-white shadow-[0_6px_18px_rgb(10_132_255_/_0.28)] transition-[background-color,box-shadow,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:bg-[#0077E6] hover:shadow-[0_8px_22px_rgb(10_132_255_/_0.36)] hover:-translate-y-px active:translate-y-0";
+
+const primaryNavKeys = {
+  "/": "home",
+  "/ride": "ride",
+  "/airport": "airport",
+  "/tours": "tours",
+  "/safety": "safety",
+  "/drive": "drive",
+} as const;
+
+const utilityNavKeys = {
+  "/partners": "partners",
+  "/support": "support",
+} as const;
+
 export function SiteHeader() {
   const pathname = usePathname();
+  const t = useTranslations();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menuId = useId();
@@ -61,21 +80,28 @@ export function SiteHeader() {
   const primaryLinkClass = (active: boolean) => {
     if (overHero) {
       return [
-        "relative inline-flex min-h-11 items-center px-1 text-sm font-medium tracking-wide transition-colors duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
+        "relative inline-flex min-h-11 min-w-0 items-center px-1 text-sm font-medium tracking-wide text-pretty transition-colors duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
         active ? "text-foam" : "text-foam/75 hover:text-foam",
       ].join(" ");
     }
     return [
-      "relative inline-flex min-h-11 items-center px-1 text-sm font-medium tracking-wide transition-colors duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
+      "relative inline-flex min-h-11 min-w-0 items-center px-1 text-sm font-medium tracking-wide text-pretty transition-colors duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
       active ? "text-ink" : "text-ink-muted hover:text-ink",
     ].join(" ");
   };
 
   const utilityLinkClass = overHero
-    ? "inline-flex min-h-11 items-center text-sm text-foam/65 transition-colors duration-[var(--duration-ui)] hover:text-foam"
-    : "inline-flex min-h-11 items-center text-sm text-ink-soft transition-colors duration-[var(--duration-ui)] hover:text-ink";
+    ? "inline-flex min-h-11 min-w-0 items-center text-sm text-foam/65 text-pretty transition-colors duration-[var(--duration-ui)] hover:text-foam"
+    : "inline-flex min-h-11 min-w-0 items-center text-sm text-ink-soft text-pretty transition-colors duration-[var(--duration-ui)] hover:text-ink";
 
   const activeBarClass = overHero ? "bg-foam" : "bg-brand";
+
+  const navLabel = (href: keyof typeof primaryNavKeys | keyof typeof utilityNavKeys) => {
+    if (href in primaryNavKeys) {
+      return t(`nav.${primaryNavKeys[href as keyof typeof primaryNavKeys]}`);
+    }
+    return t(`nav.${utilityNavKeys[href as keyof typeof utilityNavKeys]}`);
+  };
 
   return (
     <header
@@ -87,33 +113,34 @@ export function SiteHeader() {
           : "border-b border-mist/70 bg-foam/75 shadow-[0_1px_0_rgb(10_22_32_/_0.04)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/65",
       ].join(" ")}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-6 lg:h-[4.25rem] lg:px-8">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-5 sm:px-6 lg:h-20 lg:px-8">
         <Link
           href="/"
-          className="inline-flex min-h-11 items-center"
+          className="inline-flex h-full shrink-0 items-center"
           onClick={closeMenu}
-          aria-label="Q Pick home"
+          aria-label={t("header.homeAria")}
         >
-          <BrandLockup
-            href=""
-            tone={overHero ? "foam" : "ink"}
-            logoSize={36}
-            wordmarkSize="sm"
+          <BrandLogo
+            size={72}
             priority
+            className="!h-16 !w-16 sm:!h-[4.25rem] sm:!w-[4.25rem] lg:!h-[4.5rem] lg:!w-[4.5rem]"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav
+          className="locale-nav hidden min-w-0 items-center lg:flex"
+          aria-label={t("header.primaryNav")}
+        >
           {primaryNav.map((item) => {
             const active = isNavActive(pathname, item.href);
             return (
               <Link
-                key={item.href}
+                key={item.href === "/" ? "home" : item.href}
                 href={item.href}
                 className={primaryLinkClass(active)}
                 aria-current={active ? "page" : undefined}
               >
-                {item.label}
+                {navLabel(item.href)}
                 <span
                   aria-hidden="true"
                   className={[
@@ -127,7 +154,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden shrink-0 items-center gap-4 lg:flex">
           {utilityNav.map((item) => {
             const active = isNavActive(pathname, item.href);
             return (
@@ -137,18 +164,14 @@ export function SiteHeader() {
                 className={utilityLinkClass}
                 aria-current={active ? "page" : undefined}
               >
-                {item.label}
+                {navLabel(item.href)}
               </Link>
             );
           })}
-          <LanguageSwitcher />
-          <ButtonLink
-            href="/ride"
-            size="md"
-            variant={overHero ? "onDark" : "primary"}
-          >
-            Book Now
-          </ButtonLink>
+          <LanguageSwitcher tone={overHero ? "onDark" : "default"} />
+          <Link href="/ride" className={bookNowClass}>
+            {t("header.bookNow")}
+          </Link>
         </div>
 
         <button
@@ -165,7 +188,9 @@ export function SiteHeader() {
           aria-haspopup="dialog"
           onClick={() => setOpen((value) => !value)}
         >
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <span className="sr-only">
+            {open ? t("header.closeMenu") : t("header.openMenu")}
+          </span>
           <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
             <span
               className={[
@@ -197,7 +222,7 @@ export function SiteHeader() {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Mobile navigation"
+        aria-label={t("header.mobileNav")}
         className={[
           "lg:hidden",
           "overflow-hidden border-t transition-[max-height,opacity,border-color] duration-[var(--duration-reveal)] ease-[var(--ease-cinematic)]",
@@ -210,12 +235,15 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="flex min-h-[min(100dvh-4rem,36rem)] flex-col px-5 pb-10 pt-4 sm:px-6">
-          <nav className="flex flex-col gap-1" aria-label="Mobile primary">
+          <nav
+            className="flex flex-col gap-1"
+            aria-label={t("header.mobilePrimary")}
+          >
             {primaryNav.map((item) => {
               const active = isNavActive(pathname, item.href);
               return (
                 <Link
-                  key={item.href}
+                  key={item.href === "/" ? "home" : item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   onClick={closeMenu}
@@ -231,7 +259,7 @@ export function SiteHeader() {
                   ].join(" ")}
                 >
                   <span className="flex items-center justify-between gap-3">
-                    {item.label}
+                    {navLabel(item.href)}
                     {active ? (
                       <span
                         aria-hidden="true"
@@ -266,22 +294,20 @@ export function SiteHeader() {
                     active ? "font-medium" : "",
                   ].join(" ")}
                 >
-                  {item.label}
+                  {navLabel(item.href)}
                 </Link>
               );
             })}
             <div className="px-3 pt-2">
-              <LanguageSwitcher />
+              <LanguageSwitcher tone={overHero ? "onDark" : "default"} />
             </div>
-            <ButtonLink
+            <Link
               href="/ride"
-              size="lg"
-              className="mt-3 w-full"
-              variant={overHero ? "onDark" : "primary"}
+              className={`${bookNowClass} mt-3 w-full`}
               onClick={closeMenu}
             >
-              Book Now
-            </ButtonLink>
+              {t("header.bookNow")}
+            </Link>
           </div>
         </div>
       </div>

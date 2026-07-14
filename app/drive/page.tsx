@@ -1,25 +1,17 @@
 import type { Metadata } from "next";
-import { PageShell } from "@/components/marketing/page-shell";
+import { DriveContent } from "@/components/pages/drive-content";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getMessages } from "@/lib/i18n/get-messages";
+import { createTranslator } from "@/lib/i18n/t";
 
-export const metadata: Metadata = {
-  title: "Drive",
-  description:
-    "Drive with Q Pick — clear earnings, fair dispatch, and tools built for Sri Lanka’s roads.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = createTranslator(getMessages(await getLocale()));
+  return {
+    title: t("pages.drive.meta.title"),
+    description: t("pages.drive.meta.description"),
+  };
+}
 
 export default function DrivePage() {
-  return (
-    <PageShell
-      title="Drive with dignity"
-      description="Clear earnings, fair dispatch, and a product designed for the roads you know — from Colombo arteries to highland hairpins."
-      primaryCta={{ href: "/support", label: "Apply to drive" }}
-      secondaryCta={{ href: "/safety", label: "Our standards" }}
-    >
-      <ul className="max-w-xl space-y-3 text-ink-muted">
-        <li>Transparent trip earnings and weekly summaries</li>
-        <li>Dispatch that respects distance, ratings, and fairness</li>
-        <li>Support when something goes wrong on the road</li>
-      </ul>
-    </PageShell>
-  );
+  return <DriveContent />;
 }

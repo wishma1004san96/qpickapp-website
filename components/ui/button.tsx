@@ -28,7 +28,7 @@ const sizes: Record<Size, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] font-medium transition-[background-color,border-color,color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-[var(--radius-md)] text-center font-medium whitespace-normal transition-[background-color,border-color,color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] disabled:pointer-events-none disabled:opacity-50";
 
 export function Button({
   children,

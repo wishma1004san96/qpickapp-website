@@ -1,0 +1,818 @@
+/* Full app journey (splash -> rate -> home) - imported by experience-phone-journey.tsx */
+
+.experience-journey {
+  position: absolute;
+  inset: 0;
+  /* Match app chrome — prevents any peek-through mid crossfade */
+  background: #ffffff;
+}
+
+.experience-journey-boot-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: #000;
+}
+
+.experience-journey-splash-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  background: #fff;
+}
+
+.experience-journey-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+  transform-origin: center center;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-journey-screen {
+    will-change: auto;
+  }
+}
+
+.experience-journey-shot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.experience-app {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  color: #0a1620;
+}
+
+.experience-app--pad {
+  padding: 52px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experience-app--foam {
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgb(1 147 251 / 0.12), transparent 55%),
+    #f3f6f7;
+}
+
+.experience-app--splash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.experience-splash-glow {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 140%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    rgb(1 147 251 / 0.22) 0%,
+    rgb(0 98 250 / 0.1) 38%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.experience-splash-logo-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+}
+
+.experience-splash-logo-halo {
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgb(0 98 250 / 0.28) 0%,
+    rgb(1 147 251 / 0.08) 55%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+.experience-splash-tagline {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 0;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #4a5a66;
+}
+
+.experience-splash-loader {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 36px;
+  width: 72px;
+  height: 3px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgb(0 98 250 / 0.12);
+  overflow: hidden;
+}
+
+.experience-splash-loader-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0193fb, #0062fa);
+}
+
+.experience-app-splash-word {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0a1620;
+}
+
+.experience-app--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 24px 18px;
+}
+
+.experience-app-h {
+  margin: 0;
+  font-size: clamp(16px, 4.5vw, 18px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.experience-app-muted {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7c88;
+}
+
+.experience-app-kicker {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0062fa;
+}
+
+.experience-app-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.experience-app-search,
+.experience-app-field {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  color: #4a5a66;
+  box-shadow: 0 8px 20px rgb(10 22 32 / 0.04);
+}
+
+.experience-app-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.experience-app-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+  font-size: 10px;
+  font-weight: 600;
+  color: #4a5a66;
+}
+
+.experience-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: auto;
+  border-radius: 12px;
+  background: #0062fa;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.experience-app-btn--compact {
+  margin-top: 0;
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 11px;
+}
+
+.experience-app-btn--ghost {
+  margin-top: 12px;
+  background: transparent;
+  color: #0062fa;
+  border: 1px solid rgb(0 98 250 / 0.28);
+  width: 100%;
+  max-width: 180px;
+}
+
+.experience-app-route-card {
+  margin-top: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+  box-shadow: 0 10px 24px rgb(10 22 32 / 0.05);
+}
+
+.experience-app-route-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.experience-app-route-line {
+  width: 2px;
+  height: 14px;
+  margin: 2px 0 2px 5px;
+  background: rgb(10 22 32 / 0.12);
+}
+
+.experience-app-dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.experience-app-dot--pickup {
+  background: #0062fa;
+  box-shadow: 0 0 0 3px rgb(0 98 250 / 0.18);
+}
+
+.experience-app-dot--drop {
+  background: #0a1620;
+}
+
+.experience-app-label {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7c88;
+}
+
+.experience-app-value {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.experience-app-vehicle-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+  max-height: 52%;
+}
+
+.experience-app-vehicle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.experience-app-vehicle.is-selected {
+  border-color: rgb(0 98 250 / 0.55);
+  background: rgb(0 98 250 / 0.06);
+  box-shadow: 0 0 0 3px rgb(0 98 250 / 0.1);
+}
+
+.experience-app-vehicle-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.experience-app-vehicle-price {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0062fa;
+  white-space: nowrap;
+}
+
+.experience-app-confirm {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.experience-app-pulse {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgb(0 98 250 / 0.18);
+  border: 2px solid rgb(0 98 250 / 0.45);
+  animation: experience-app-pulse 1.4s ease-in-out infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes experience-app-pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.experience-app-searching-copy {
+  max-width: 16em;
+}
+
+.experience-app-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgb(31 122 76 / 0.12);
+  color: #1f7a4c;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.experience-app-driver {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+}
+
+.experience-app-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #5aa8ff, #0062fa 55%, #0036f9);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.experience-app-stars {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.experience-app-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4a5a66;
+  padding: 0 2px;
+}
+
+.experience-app-check {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  background: rgb(31 122 76 / 0.14);
+  color: #1f7a4c;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.experience-app .experience-live-rate-kicker {
+  margin-top: 8px;
+}
+
+.experience-app .experience-live-rate-submit {
+  margin-top: auto;
+}
+
+/* Destination — map preview + floating card */
+.experience-app--map {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #eef2f6;
+}
+
+.experience-dest-map {
+  position: relative;
+  flex: 1 1 58%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.experience-dest-map-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.experience-dest-map-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background: linear-gradient(
+    to top,
+    #f3f6f7 8%,
+    rgb(243 246 247 / 0.55) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.experience-dest-sheet {
+  position: relative;
+  z-index: 2;
+  margin-top: -18%;
+  padding: 0 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.experience-app-route-card--float {
+  box-shadow:
+    0 16px 36px rgb(10 22 32 / 0.12),
+    0 1px 0 rgb(255 255 255 / 0.9) inset;
+}
+
+/* Vehicle selection — premium cards */
+.experience-app--vehicles {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 10px 12px;
+  background:
+    radial-gradient(120% 70% at 50% -8%, rgb(1 147 251 / 0.1), transparent 50%),
+    #f3f6f7;
+  min-height: 100%;
+}
+
+.experience-vehicles-head {
+  padding: 0 4px 8px;
+}
+
+.experience-app-vehicle-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 4px;
+}
+
+.experience-app-vcard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.5px solid rgb(10 22 32 / 0.06);
+  box-shadow: 0 6px 16px rgb(10 22 32 / 0.04);
+}
+
+.experience-app-vcard.is-selected {
+  border-color: #0062fa;
+  background: linear-gradient(
+    145deg,
+    rgb(0 98 250 / 0.07) 0%,
+    #ffffff 55%
+  );
+  box-shadow:
+    0 0 0 3px rgb(0 98 250 / 0.14),
+    0 10px 22px rgb(0 98 250 / 0.12);
+  animation: experience-vcard-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes experience-vcard-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px rgb(0 98 250 / 0.14),
+      0 10px 22px rgb(0 98 250 / 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 5px rgb(0 98 250 / 0.2),
+      0 12px 26px rgb(0 98 250 / 0.16);
+  }
+}
+
+.experience-app-vcard-media {
+  width: 58px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #f7fafc, #e8eef5);
+}
+
+.experience-app-vart {
+  width: 52px;
+  height: 32px;
+}
+
+.experience-app-vcard-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-app-vcard-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.experience-app-vcard-cat {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0a1620;
+}
+
+.experience-app-vcard-model {
+  margin: 1px 0 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: #6b7c88;
+}
+
+.experience-app-vcard-price {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0062fa;
+  white-space: nowrap;
+}
+
+.experience-app-vcard-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #4a5a66;
+}
+
+.experience-app-ac {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgb(0 98 250 / 0.1);
+  color: #0062fa;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.experience-app-vcard-eta {
+  margin-left: auto;
+  color: #6b7c88;
+}
+
+.experience-app--vehicles .experience-app-confirm {
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.experience-app--vehicles .experience-app-btn {
+  margin-top: 0;
+}
+
+/* Confirm pickup pulse */
+.experience-pickup-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: experience-pickup-ring 1.8s ease-out infinite;
+}
+
+@keyframes experience-pickup-ring {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.1);
+  }
+}
+
+/* Booking confirmation */
+.experience-app--booking {
+  justify-content: space-between;
+}
+
+.experience-app-booking-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+}
+
+.experience-app-booking-rows {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+}
+
+.experience-app-booking-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  color: #6b7c88;
+}
+
+.experience-app-booking-row strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0a1620;
+  text-align: right;
+}
+
+.experience-app-booking-fare {
+  color: #0062fa !important;
+}
+
+/* Searching overlay on live map */
+.experience-dest-map--full {
+  flex: 1 1 auto;
+}
+
+.experience-search-overlay {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: linear-gradient(
+    155deg,
+    rgb(255 255 255 / 0.92) 0%,
+    rgb(255 255 255 / 0.82) 100%
+  );
+  border: 1px solid rgb(255 255 255 / 0.9);
+  box-shadow: 0 16px 36px rgb(10 22 32 / 0.14);
+  backdrop-filter: blur(16px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.experience-app-pulse--sm {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 4px;
+}
+
+.experience-search-vehicle {
+  pointer-events: none;
+}
+
+.experience-search-vehicle-glow {
+  filter: blur(2.4px);
+  animation: experience-search-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes experience-search-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.experience-pickup-ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: experience-pickup-ripple 2.2s ease-out infinite;
+}
+
+@keyframes experience-pickup-ripple {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.55);
+  }
+  70% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+.experience-app-check--pickup {
+  background: rgb(0 98 250 / 0.12);
+  color: #0062fa;
+}

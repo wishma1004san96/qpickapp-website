@@ -40,6 +40,9 @@
   --text-h3: clamp(1.25rem, 1.5vw + 0.75rem, 1.5rem);
   --text-body: clamp(1rem, 0.2vw + 0.95rem, 1.125rem);
   --text-small: 0.875rem;
+  --leading-body: 1.6;
+  --tracking-body: -0.011em;
+  --tracking-display: -0.03em;
 }
 
 @theme inline {
@@ -62,9 +65,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-inter);
-  --font-mono: var(--font-ibm-plex-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -74,6 +77,43 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  html[lang="si"] {
+    --font-sans: var(--font-sinhala), var(--font-inter);
+    --font-display: var(--font-sinhala), var(--font-inter);
+    /* Headings ~10% smaller than English */
+    --text-display: clamp(2.025rem, 4.5vw + 0.9rem, 3.15rem);
+    --text-h2: clamp(1.575rem, 2.7vw + 0.675rem, 2.25rem);
+    --text-h3: clamp(1.125rem, 1.35vw + 0.675rem, 1.35rem);
+    --text-body: clamp(0.965rem, 0.18vw + 0.92rem, 1.08rem);
+    --leading-body: 1.75;
+    --tracking-body: 0;
+    --tracking-display: -0.01em;
+  }
+
+  html[lang="ta"] {
+    --font-sans: var(--font-tamil), var(--font-inter);
+    --font-display: var(--font-tamil), var(--font-inter);
+    /* Headings ~15% smaller than English */
+    --text-display: clamp(1.9rem, 4.25vw + 0.85rem, 2.975rem);
+    --text-h2: clamp(1.485rem, 2.55vw + 0.64rem, 2.125rem);
+    --text-h3: clamp(1.06rem, 1.275vw + 0.64rem, 1.275rem);
+    --text-body: clamp(0.98rem, 0.18vw + 0.93rem, 1.1rem);
+    --leading-body: 1.78;
+    --tracking-body: 0;
+    --tracking-display: -0.01em;
+  }
+
+  html[lang="si"] .font-mono,
+  html[lang="ta"] .font-mono,
+  html[lang="si"] .locale-eyebrow,
+  html[lang="ta"] .locale-eyebrow,
+  html[lang="si"] .uppercase,
+  html[lang="ta"] .uppercase {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -93,14 +133,16 @@
   body {
     background: var(--foam);
     color: var(--ink);
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont,
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont,
       "Segoe UI", system-ui, sans-serif;
     font-size: var(--text-body);
-    line-height: 1.6;
-    letter-spacing: -0.011em;
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-body);
     overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   ::selection {
@@ -112,33 +154,177 @@
     outline: 2px solid var(--brand);
     outline-offset: 3px;
   }
+
+  /* Language-aware type only — does not alter English Hero spacing/layout */
+  html[lang="si"] {
+    --nav-gap: 0.75rem;
+    --nav-gap-wide: 1.25rem;
+  }
+  html[lang="ta"] {
+    --nav-gap: 0.65rem;
+    --nav-gap-wide: 1.15rem;
+  }
+  html[lang="si"] .font-display {
+    letter-spacing: -0.01em;
+  }
+  html[lang="ta"] .font-display {
+    letter-spacing: -0.01em;
+  }
+
+  /* Sinhala / Tamil — smaller hero type, wrap instead of clip/overlap */
+  html[lang="si"] .hero-title {
+    font-size: clamp(1.85rem, 5.4vw, 3.35rem) !important;
+    line-height: 1.12 !important;
+    white-space: normal !important;
+    max-inline-size: 100%;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  html[lang="ta"] .hero-title {
+    font-size: clamp(1.7rem, 5vw, 3.05rem) !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+    max-inline-size: 100%;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  html[lang="si"] .hero-sub {
+    font-size: clamp(1.35rem, 2.8vw, 2.05rem) !important;
+    line-height: 1.28 !important;
+    white-space: normal !important;
+    max-inline-size: 100% !important;
+    text-wrap: balance;
+  }
+  html[lang="ta"] .hero-sub {
+    font-size: clamp(1.28rem, 2.6vw, 1.95rem) !important;
+    line-height: 1.32 !important;
+    white-space: normal !important;
+    max-inline-size: 100% !important;
+    text-wrap: balance;
+  }
+  html[lang="si"] .hero-body,
+  html[lang="ta"] .hero-body {
+    font-size: 0.95rem !important;
+    line-height: 1.75 !important;
+    max-inline-size: 100% !important;
+  }
+  @media (min-width: 640px) {
+    html[lang="si"] .hero-body,
+    html[lang="ta"] .hero-body {
+      font-size: 1.05rem !important;
+    }
+  }
+  html[lang="si"] .hero-cta-btn,
+  html[lang="ta"] .hero-cta-btn {
+    font-size: 0.9375rem;
+    padding-inline: 1.35rem;
+    line-height: 1.35;
+    white-space: normal;
+  }
+  html[lang="si"] .hero-planner-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  html[lang="ta"] .hero-planner-title {
+    font-size: 1.2rem !important;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  html[lang="si"] .hero-planner-sub,
+  html[lang="ta"] .hero-planner-sub {
+    max-inline-size: 100% !important;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+  html[lang="si"] .hero-planner-tab,
+  html[lang="ta"] .hero-planner-tab {
+    font-size: 0.78rem;
+    line-height: 1.25;
+    white-space: normal;
+    padding-inline: 0.35rem;
+  }
+  html[lang="si"] .hero-planner-label,
+  html[lang="ta"] .hero-planner-label {
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  html[lang="si"] .hero-planner-note,
+  html[lang="ta"] .hero-planner-note {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  /* Trust row — keep 3 equal columns; shrink SI/TA to avoid wrap */
+  html[lang="si"] .hero-trust-label {
+    font-size: 0.72rem;
+    letter-spacing: 0;
+  }
+  html[lang="ta"] .hero-trust-label {
+    font-size: 0.68rem;
+    letter-spacing: 0;
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    html[lang="si"] .hero-trust-label {
+      font-size: 0.68rem;
+    }
+    html[lang="ta"] .hero-trust-label {
+      font-size: 0.64rem;
+    }
+  }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont,
+    font-family: var(--font-display), -apple-system, BlinkMacSystemFont,
       "Segoe UI", system-ui, sans-serif;
     font-weight: 600;
-    letter-spacing: -0.025em;
+    letter-spacing: var(--tracking-display);
   }
 
   .text-display {
     font-size: var(--text-display);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    line-height: 1.12;
+    letter-spacing: var(--tracking-display);
     font-weight: 600;
+    text-wrap: balance;
   }
 
   .text-h2 {
     font-size: var(--text-h2);
-    line-height: 1.15;
-    letter-spacing: -0.022em;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-display);
     font-weight: 600;
+    text-wrap: balance;
   }
 
   .text-h3 {
     font-size: var(--text-h3);
-    line-height: 1.3;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+
+  .locale-heading {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .locale-btn {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .locale-nav {
+    gap: var(--nav-gap, 1rem);
+  }
+
+  @media (min-width: 1280px) {
+    .locale-nav {
+      gap: var(--nav-gap-wide, 1.75rem);
+    }
   }
 
   .measure-tight {
@@ -170,10 +356,139 @@
   }
 }
 
-/* ——— Experience Q Pick · Apple product page ——— */
+/* Hero background video — full-bleed cover tuned per breakpoint */
+.hero-media {
+  isolation: isolate;
+}
+
+.hero-bg-video {
+  object-fit: cover;
+  object-position: center 55%;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  /* Prevent layout shift / iOS letterboxing quirks */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Mobile phones — tall viewport; keep road through windshield centered */
+@media (max-width: 767px) {
+  .hero-bg-video {
+    object-position: center 48%;
+  }
+}
+
+/* Tablets — balance dashboard + misty road */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bg-video {
+    object-position: center 54%;
+  }
+}
+
+/* Desktop — slight downward bias keeps dashboard + road in frame */
+@media (min-width: 1024px) {
+  .hero-bg-video {
+    object-position: center 58%;
+  }
+}
+
+/* Ultrawide / short landscape: T/B crop is strongest — favor POV core */
+@media (min-aspect-ratio: 18 / 9) {
+  .hero-bg-video {
+    object-position: center 60%;
+  }
+}
+
 .experience-stage {
-  background: #ffffff;
+  background:
+    radial-gradient(ellipse 80% 70% at 78% 42%, rgb(10 132 255 / 0.06) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 50% at 18% 70%, rgb(1 147 251 / 0.035) 0%, transparent 55%),
+    linear-gradient(165deg, #f7fafc 0%, #ffffff 42%, #f9fcfe 100%);
   font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.experience-map-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.experience-map-wash {
+  position: absolute;
+  inset: -10%;
+  opacity: 0.55;
+  background:
+    radial-gradient(circle at 72% 38%, rgb(10 132 255 / 0.1) 0%, transparent 42%),
+    radial-gradient(circle at 88% 72%, rgb(29 78 216 / 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 30% 80%, rgb(1 147 251 / 0.05) 0%, transparent 36%);
+}
+
+.experience-map-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  background-image:
+    linear-gradient(rgb(10 132 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(10 132 255 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 70% at 72% 48%, #000 20%, transparent 78%);
+}
+
+.experience-map-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.42;
+}
+
+.experience-map-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.92) 0%,
+      rgb(255 255 255 / 0.72) 26%,
+      rgb(255 255 255 / 0.28) 52%,
+      transparent 68%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 0.4) 0%,
+      transparent 16%,
+      transparent 84%,
+      rgb(255 255 255 / 0.4) 100%
+    );
+}
+
+.experience-map-pin {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.experience-map-pin--pulse .experience-map-pin-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: experience-map-pin-ring 3.2s ease-out infinite;
+}
+
+@keyframes experience-map-pin-ring {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.55);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
 }
 
 /* Product light only — strong blue glow behind the phone */
@@ -520,11 +835,11 @@
   }
 }
 
-/* ——— In-phone live product demo ——— */
+/* ——— In-phone live map tracking ——— */
 .experience-live {
   position: absolute;
   inset: 0;
-  background: #e8eef5;
+  background: #e8e4db;
   overflow: hidden;
   font-family: var(--font-inter), system-ui, sans-serif;
 }
@@ -535,166 +850,135 @@
   overflow: hidden;
 }
 
-.experience-live-map-grid {
+.experience-live-world {
   position: absolute;
-  inset: -10%;
-  background-image:
-    linear-gradient(rgb(148 163 184 / 0.28) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(148 163 184 / 0.28) 1px, transparent 1px);
-  background-size: 28px 28px;
-  transform: rotate(-6deg) scale(1.15);
-  animation: experience-map-drift 14s ease-in-out infinite;
+  inset: -18%;
+  width: 136%;
+  height: 136%;
+  will-change: transform;
 }
 
-.experience-live-map-wash {
+.experience-live-basemap {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      ellipse at 58% 28%,
-      rgb(10 132 255 / 0.16) 0%,
-      transparent 42%
-    ),
-    linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.35) 0%,
-      transparent 28%,
-      rgb(15 23 42 / 0.08) 100%
-    );
+  width: 100%;
+  height: 100%;
+  display: block;
+  shape-rendering: geometricPrecision;
 }
 
-.experience-live-route {
+.experience-live-nav {
   position: absolute;
-  inset: 8% 6% 22% 6%;
-  width: auto;
-  height: auto;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 2;
   overflow: visible;
+  shape-rendering: geometricPrecision;
 }
 
-.experience-live-route-path {
-  stroke-dasharray: 420;
-  stroke-dashoffset: 420;
-  transition: stroke-dashoffset 1.35s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 0 6px rgb(10 132 255 / 0.45));
+.experience-live-svg-pin {
+  stroke: #fff;
+  stroke-width: 2.2;
+  pointer-events: none;
 }
 
-.experience-live-route-path.is-drawn,
-.experience-live-route-path.is-static {
-  stroke-dashoffset: 0;
+.experience-live-svg-pin--pickup {
+  fill: #1a73e8;
+}
+
+.experience-live-svg-pin--driver {
+  fill: #ffffff;
+  stroke: #0062fa;
+  stroke-width: 2;
+}
+
+.experience-live-svg-pin--drop {
+  fill: #1d1d1f;
+}
+
+.experience-live-svg-pin-pulse {
+  fill: transparent;
+  stroke-width: 2;
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: experience-pin-pulse 2.2s ease-out infinite;
+}
+
+.experience-live-svg-pin-pulse--pickup {
+  stroke: rgb(26 115 232 / 0.45);
+}
+
+.experience-live-svg-pin-pulse--drop {
+  stroke: rgb(29 29 31 / 0.35);
+  animation-delay: 0.7s;
+}
+
+.experience-live-svg-car {
+  pointer-events: none;
+}
+
+.experience-live-svg-car-body {
+  fill: #0a84ff;
+  stroke: #fff;
+  stroke-width: 1.35;
+  paint-order: stroke fill;
+}
+
+.experience-live-svg-car-window {
+  fill: rgb(230 242 255 / 0.92);
+  stroke: none;
+}
+
+.experience-live-svg-car-hood {
+  fill: rgb(200 225 255 / 0.75);
+  stroke: none;
 }
 
 .experience-live-pin {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  border: 2.5px solid #fff;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.18);
+  display: none;
 }
 
-.experience-live-pin--you {
-  left: 18%;
-  bottom: 28%;
-  background: #0a84ff;
-}
-
-.experience-live-pin--dest {
-  left: 72%;
-  top: 18%;
-  background: #1d1d1f;
-  opacity: 0;
-  transform: scale(0.6);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.experience-live-pin--dest.is-on {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.experience-live-driver {
-  position: absolute;
-  left: 18%;
-  bottom: 28%;
-  width: 18px;
-  height: 18px;
-  margin: -9px 0 0 -9px;
-  opacity: 0;
-  transform: translate(0, 0);
-  transition: opacity 0.35s ease;
-  z-index: 3;
-}
-
-.experience-live-driver.is-visible {
-  opacity: 1;
-}
-
-.experience-live-driver.is-moving:not(.is-static) {
-  animation: experience-driver-move 2.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.experience-live-driver.is-arrived {
-  left: 72%;
-  top: 18%;
-  bottom: auto;
-  animation: none;
-}
-
-.experience-live-driver.is-static {
-  left: 48%;
-  top: 42%;
-  bottom: auto;
-  opacity: 1;
-}
-
-.experience-live-driver-dot {
-  position: absolute;
-  inset: 3px;
-  border-radius: 999px;
-  background: #0a84ff;
-  box-shadow: 0 0 0 2px #fff;
-  z-index: 1;
-}
-
-.experience-live-driver-pulse {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: rgb(10 132 255 / 0.35);
-  animation: experience-driver-pulse 1.6s ease-out infinite;
+.experience-live-car {
+  display: none;
 }
 
 .experience-live-status {
   position: absolute;
-  top: 52px;
+  top: max(48px, 11%);
   left: 50%;
-  z-index: 4;
+  z-index: 6;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   max-width: 86%;
-  padding: 7px 12px;
-  transform: translateX(-50%);
+  padding: 8px 14px;
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.92);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
-  backdrop-filter: blur(10px);
+  background: rgb(255 255 255 / 0.82);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow:
+    0 10px 28px rgb(0 0 0 / 0.12),
+    0 1px 0 rgb(255 255 255 / 0.8) inset;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
   white-space: nowrap;
 }
 
 .experience-live-status-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: #0a84ff;
-  box-shadow: 0 0 0 3px rgb(10 132 255 / 0.2);
+  box-shadow: 0 0 0 3px rgb(10 132 255 / 0.22);
   flex-shrink: 0;
+  animation: experience-status-blink 1.8s ease-in-out infinite;
 }
 
 .experience-live-status-text {
-  font-size: 10px;
+  font-size: clamp(10px, 2.8vw, 11px);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #1d1d1f;
@@ -705,57 +989,111 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 5;
-  padding: 0 10px 14px;
+  z-index: 6;
+  padding: 0 clamp(8px, 3.2%, 12px) clamp(12px, 3.5%, 16px);
   pointer-events: none;
 }
 
 .experience-live-card {
-  border-radius: 18px;
-  background: rgb(255 255 255 / 0.96);
+  border-radius: clamp(14px, 5vw, 18px);
+  padding: clamp(12px, 3.5%, 14px);
+  background: linear-gradient(
+    155deg,
+    rgb(255 255 255 / 0.55) 0%,
+    rgb(255 255 255 / 0.38) 100%
+  );
+  border: 1px solid rgb(255 255 255 / 0.75);
   box-shadow:
-    0 16px 40px rgb(0 0 0 / 0.14),
-    0 0 0 1px rgb(0 0 0 / 0.04);
+    0 18px 40px rgb(0 0 0 / 0.16),
+    0 1px 0 rgb(255 255 255 / 0.9) inset;
+  backdrop-filter: blur(20px) saturate(1.45);
+  -webkit-backdrop-filter: blur(20px) saturate(1.45);
+}
+
+.experience-live-card--tracking {
+  position: relative;
+  width: 100%;
+}
+
+.experience-live-card--rating {
+  position: absolute;
+  left: clamp(8px, 3.2%, 12px);
+  right: clamp(8px, 3.2%, 12px);
+  bottom: clamp(12px, 3.5%, 16px);
+  width: auto;
   padding: 14px 14px 12px;
-  backdrop-filter: blur(12px);
-  animation: experience-sheet-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.experience-live-card-kicker {
+.experience-live-rate-kicker {
   margin: 0;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   color: #0a84ff;
+  line-height: 1;
 }
 
-.experience-live-card-title {
-  margin: 4px 0 0;
-  font-size: 15px;
+.experience-live-rate-title {
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: clamp(15px, 4.2vw, 17px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: #1d1d1f;
 }
 
-.experience-live-card-sub {
-  margin: 2px 0 0;
+.experience-live-rate-driver {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.experience-live-rate-prompt {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5b6470;
+}
+
+.experience-live-rate-stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.experience-live-rate-star {
+  font-size: 22px;
+  line-height: 1;
+  color: rgb(29 29 31 / 0.18);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-live-rate-star.is-on {
+  color: #0a84ff;
+  transform: scale(1.08);
+}
+
+.experience-live-rate-input {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.7);
+  border: 1px solid rgb(29 29 31 / 0.08);
   font-size: 11px;
   font-weight: 500;
-  color: #6b7280;
+  color: #9aa3af;
 }
 
-.experience-live-card-meta {
-  display: flex;
-  justify-content: space-between;
+.experience-live-rate-submit {
   margin-top: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #374151;
-}
-
-.experience-live-cta {
-  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -766,14 +1104,6 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.experience-live-cta.is-armed {
-  transform: scale(0.98);
-  box-shadow: 0 0 0 4px rgb(10 132 255 / 0.25);
 }
 
 .experience-live-ride-row {
@@ -783,12 +1113,23 @@
 }
 
 .experience-live-avatar {
-  width: 36px;
-  height: 36px;
+  width: clamp(34px, 10vw, 38px);
+  height: clamp(34px, 10vw, 38px);
   border-radius: 999px;
-  background: linear-gradient(145deg, #93c5fd, #2563eb);
+  background: linear-gradient(145deg, #5aa8ff, #0a84ff 55%, #2563eb);
   flex-shrink: 0;
-  box-shadow: inset 0 0 0 2px #fff;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    inset 0 0 0 2px rgb(255 255 255 / 0.85),
+    0 4px 10px rgb(10 132 255 / 0.3);
+}
+
+.experience-live-avatar-initial {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
 }
 
 .experience-live-ride-copy {
@@ -796,84 +1137,84 @@
   flex: 1;
 }
 
+.experience-live-card-title {
+  margin: 0;
+  font-size: clamp(12px, 3.6vw, 14px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.experience-live-card-sub {
+  margin: 2px 0 0;
+  font-size: clamp(9px, 2.8vw, 11px);
+  font-weight: 500;
+  color: #5b6470;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .experience-live-eta {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: clamp(40px, 12vw, 44px);
+  height: clamp(40px, 12vw, 44px);
   border-radius: 12px;
-  background: #f3f4f6;
+  background: rgb(255 255 255 / 0.72);
+  border: 1px solid rgb(255 255 255 / 0.8);
   color: #1d1d1f;
   flex-shrink: 0;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.9) inset;
 }
 
 .experience-live-eta span {
-  font-size: 15px;
+  font-size: clamp(14px, 4vw, 16px);
   font-weight: 700;
   line-height: 1;
+  color: #0a84ff;
 }
 
 .experience-live-eta small {
   font-size: 8px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #6b7280;
 }
 
-.experience-live-confirm-banner {
-  margin-top: 10px;
+.experience-live-card-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 30px;
-  border-radius: 10px;
-  background: rgb(10 132 255 / 0.1);
-  color: #0a84ff;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid rgb(29 29 31 / 0.08);
+}
+
+.experience-live-plate {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #4b5563;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-live-rating {
   font-size: 11px;
   font-weight: 700;
-  animation: experience-confirm-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  color: #1d1d1f;
 }
 
-@keyframes experience-map-drift {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(1.15) translate3d(0, 0, 0);
-  }
-  50% {
-    transform: rotate(-6deg) scale(1.18) translate3d(-6px, -8px, 0);
-  }
-}
-
-@keyframes experience-driver-move {
+@keyframes experience-pin-pulse {
   0% {
-    left: 18%;
-    bottom: 28%;
-    top: auto;
-  }
-  35% {
-    left: 36%;
-    bottom: 46%;
-    top: auto;
-  }
-  65% {
-    left: 54%;
-    bottom: auto;
-    top: 34%;
-  }
-  100% {
-    left: 72%;
-    bottom: auto;
-    top: 18%;
-  }
-}
-
-@keyframes experience-driver-pulse {
-  0% {
-    transform: scale(0.7);
-    opacity: 0.7;
+    transform: scale(1);
+    opacity: 0.5;
   }
   100% {
     transform: scale(2.1);
@@ -881,25 +1222,15 @@
   }
 }
 
-@keyframes experience-sheet-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
+@keyframes experience-status-blink {
+  0%,
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    box-shadow: 0 0 0 3px rgb(10 132 255 / 0.22);
   }
-}
-
-@keyframes experience-confirm-pop {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 5px rgb(10 132 255 / 0.12);
   }
 }
 
@@ -1026,21 +1357,15 @@
   .experience-phone-float,
   .experience-ambient-glow,
   .experience-island-sheen,
-  .experience-live-map-grid,
-  .experience-live-driver-pulse,
-  .experience-live-card,
-  .experience-live-confirm-banner {
+  .experience-pin-pulse,
+  .experience-live-status-dot,
+  .experience-map-pin--pulse .experience-map-pin-ring {
     animation: none;
   }
 
   .experience-ambient-glow {
     opacity: 0.88;
     transform: translate(-50%, -50%);
-  }
-
-  .experience-live-route-path {
-    transition: none;
-    stroke-dashoffset: 0;
   }
 
   .experience-phone-static,

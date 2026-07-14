@@ -1,30 +1,17 @@
 import type { Metadata } from "next";
-import { PageShell } from "@/components/marketing/page-shell";
+import { TermsContent } from "@/components/pages/terms-content";
+import { getLocale } from "@/lib/i18n/get-locale";
+import { getMessages } from "@/lib/i18n/get-messages";
+import { createTranslator } from "@/lib/i18n/t";
 
-export const metadata: Metadata = {
-  title: "Terms",
-  description: "Q Pick terms of service for passengers, partners, and drivers.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = createTranslator(getMessages(await getLocale()));
+  return {
+    title: t("pages.legal.terms.meta.title"),
+    description: t("pages.legal.terms.meta.description"),
+  };
+}
 
 export default function TermsPage() {
-  return (
-    <PageShell
-      title="Terms of service"
-      description="The agreement that governs use of Q Pick services across rides, transfers, and tours."
-    >
-      <div className="max-w-2xl space-y-4 text-sm leading-relaxed text-ink-muted">
-        <p>
-          This page is a Phase 1 shell. Full terms will define passenger and driver
-          obligations, cancellations, liability limits, acceptable use, and dispute
-          resolution.
-        </p>
-        <p>
-          Questions:{" "}
-          <a href="mailto:support@qpick.lk" className="text-lagoon hover:text-lagoon-deep">
-            support@qpick.lk
-          </a>
-        </p>
-      </div>
-    </PageShell>
-  );
+  return <TermsContent />;
 }

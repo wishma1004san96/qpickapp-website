@@ -1,5 +1,10 @@
+"use client";
+
+import { useTranslations } from "@/components/i18n/locale-provider";
+
 /**
  * Official-style App Store / Google Play badges for Experience Q Pick.
+ * Badge artwork stays English brand style; aria labels come from messages.
  */
 export function OfficialStoreBadge({
   store,
@@ -10,15 +15,18 @@ export function OfficialStoreBadge({
   size?: "md" | "lg";
   className?: string;
 }) {
+  const t = useTranslations();
   const isLg = size === "lg";
   const iosBox = isLg ? "h-[52px] w-[156px]" : "h-[40px] w-[120px]";
   const playBox = isLg ? "h-[52px] w-[176px]" : "h-[40px] w-[135px]";
+  const aria =
+    store === "ios" ? t("storeBadges.iosAria") : t("storeBadges.androidAria");
 
   if (store === "ios") {
     return (
       <span
         role="img"
-        aria-label="Download on the App Store — coming soon"
+        aria-label={aria}
         className={`experience-store-badge inline-block overflow-hidden ${iosBox} ${className}`}
       >
         <svg
@@ -60,44 +68,39 @@ export function OfficialStoreBadge({
   return (
     <span
       role="img"
-      aria-label="Get it on Google Play — coming soon"
-      className={`experience-store-badge inline-block overflow-hidden ${playBox} ${className}`}
+      aria-label={aria}
+      className={`experience-store-badge inline-flex items-center gap-2 overflow-hidden bg-black px-2.5 ${playBox} ${className}`}
+      style={{ borderRadius: 6 }}
     >
-      <svg
-        viewBox="0 0 135 40"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
-        aria-hidden="true"
-      >
-        <rect width="135" height="40" rx="6" fill="#000" />
-        <path fill="#EA4335" d="M12.2 8.1 24.8 20 12.2 31.9z" />
-        <path fill="#FBBC04" d="M12.2 31.9 20.4 27.1 24.8 20z" />
-        <path
-          fill="#4285F4"
-          d="M27.6 17.9 24.8 20l2.8 2.1 4.2-2.4c.6-.35.6-1.05 0-1.4z"
-        />
-        <path fill="#34A853" d="M12.2 8.1 24.8 20 20.4 12.9z" />
-        <text
-          x="38"
-          y="14.5"
-          fill="#fff"
-          fontFamily="system-ui, -apple-system, sans-serif"
-          fontSize="6.2"
-          letterSpacing="0.04em"
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/logos/google-play.png"
+        alt=""
+        width={22}
+        height={24}
+        className={isLg ? "h-7 w-auto shrink-0" : "h-5 w-auto shrink-0"}
+        draggable={false}
+      />
+      <span className="flex min-w-0 flex-col items-start leading-none text-white">
+        <span
+          className={
+            isLg
+              ? "text-[8px] tracking-[0.06em] text-white/90"
+              : "text-[6.5px] tracking-[0.06em] text-white/90"
+          }
         >
           GET IT ON
-        </text>
-        <text
-          x="38"
-          y="27"
-          fill="#fff"
-          fontFamily="system-ui, -apple-system, sans-serif"
-          fontSize="12.2"
-          fontWeight="600"
+        </span>
+        <span
+          className={
+            isLg
+              ? "mt-0.5 text-[16px] font-semibold tracking-tight"
+              : "mt-0.5 text-[12.5px] font-semibold tracking-tight"
+          }
         >
           Google Play
-        </text>
-      </svg>
+        </span>
+      </span>
     </span>
   );
 }

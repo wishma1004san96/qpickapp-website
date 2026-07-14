@@ -1,9 +1,27 @@
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_Sinhala, Noto_Sans_Tamil } from "next/font/google";
 
-/** Site-wide type — Apple SF Pro–style geometric sans */
+/** Site-wide Latin UI type */
 export const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
+
+/** Sinhala — always loaded to avoid CLS on language switch */
+export const notoSinhala = Noto_Sans_Sinhala({
+  variable: "--font-sinhala",
+  subsets: ["sinhala"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+});
+
+/** Tamil — always loaded to avoid CLS on language switch */
+export const notoTamil = Noto_Sans_Tamil({
+  variable: "--font-tamil",
+  subsets: ["tamil"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });

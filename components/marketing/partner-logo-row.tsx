@@ -1,10 +1,9 @@
-const partners = [
-  "Galle Face Hotel",
-  "Cinnamon",
-  "Jetwing",
-  "Shangri-La",
-  "Amangalla",
-] as const;
+"use client";
+
+import {
+  useMessages,
+  useTranslations,
+} from "@/components/i18n/locale-provider";
 
 /** Quiet partner wordmark row — no logo assets required in Phase 1. */
 export function PartnerLogoRow({
@@ -12,10 +11,14 @@ export function PartnerLogoRow({
 }: {
   className?: string;
 }) {
+  const t = useTranslations();
+  const { pages } = useMessages();
+  const partners = pages.partners.partnerNames;
+
   return (
     <ul
       className={`flex flex-wrap items-center gap-x-8 gap-y-3 ${className}`}
-      aria-label="Hospitality partners"
+      aria-label={t("pages.partners.logoRowAriaLabel")}
     >
       {partners.map((name) => (
         <li
