@@ -9,7 +9,19 @@
     radial-gradient(120% 80% at 50% 120%, rgb(1 147 251 / 0.35), transparent 55%),
     linear-gradient(165deg, var(--fleet-brand) 0%, var(--fleet-brand-deep) 100%);
   color: var(--foam, #f3f6f7);
-  padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(3rem, 8vw, 5.5rem);
+  padding-block: var(--section-y-sm) clamp(3rem, 8vw, 5.5rem);
+}
+
+@media (min-width: 640px) {
+  .fleet-stage {
+    padding-block: var(--section-y-md) clamp(3rem, 8vw, 5.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fleet-stage {
+    padding-block: var(--section-y-lg) clamp(3rem, 8vw, 5.5rem);
+  }
 }
 
 .fleet-stage-inner {
@@ -94,6 +106,7 @@
   display: block;
   width: min(100vw, 92rem);
   max-width: 100%;
+  filter: drop-shadow(0 28px 48px rgb(7 16 24 / 0.28));
 }
 
 @media (min-width: 768px) {

@@ -297,8 +297,9 @@ function HeroMedia({
         ].join(" ")}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-map-void via-map-void/45 to-map-void/25" />
-      <div className="absolute inset-0 bg-gradient-to-r from-map-void/55 via-map-void/15 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-map-void via-map-void/50 to-map-void/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-map-void/60 via-map-void/20 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,transparent_0%,rgb(7_16_24_/_0.28)_100%)]" />
     </div>
   );
 }
@@ -314,7 +315,7 @@ function JourneyPlanner() {
 
   return (
     <form
-      className="hero-planner flex w-full flex-col gap-4 rounded-[var(--radius-lg)] border border-foam/20 bg-foam/12 px-5 py-5 shadow-[0_8px_32px_rgb(7_16_24_/_0.28)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/10 sm:gap-[1.05rem] sm:px-6 sm:py-5 lg:gap-4 lg:px-8 lg:py-5 xl:px-9 xl:py-5"
+      className="hero-planner flex w-full flex-col gap-4 rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-[1.05rem] sm:px-6 sm:py-5 lg:gap-4 lg:px-8 lg:py-5 xl:px-9 xl:py-5"
       aria-label={t("hero.planner.ariaLabel")}
       onSubmit={(event) => {
         event.preventDefault();

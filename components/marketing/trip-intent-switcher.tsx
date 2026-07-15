@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -13,10 +14,7 @@ import { UIHeading, Prose } from "@/components/ui/typography";
 
 type IntentId = "ride" | "airport" | "tour";
 
-const INTENT_MEDIA: Record<
-  IntentId,
-  { href: string; image: string }
-> = {
+const INTENT_MEDIA: Record<IntentId, { href: string; image: string }> = {
   ride: {
     href: "/ride",
     image:
@@ -35,11 +33,13 @@ const INTENT_MEDIA: Record<
 };
 
 const INTENT_IDS = ["ride", "airport", "tour"] as const;
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function TripIntentSwitcher() {
   const t = useTranslations();
   const { tripIntent } = useMessages();
   const [active, setActive] = useState<IntentId>("ride");
+  const reduceMotion = useReducedMotion() ?? false;
   const current = tripIntent[active];
   const media = INTENT_MEDIA[active];
 
@@ -47,8 +47,8 @@ export function TripIntentSwitcher() {
     <Reveal>
       <Container>
         <div className="mb-10 max-w-xl">
-          <UIHeading>{t("tripIntent.heading")}</UIHeading>
-          <Prose className="mt-4">{t("tripIntent.intro")}</Prose>
+          <UIHeading className="text-balance">{t("tripIntent.heading")}</UIHeading>
+          <Prose className="mt-4 text-pretty">{t("tripIntent.intro")}</Prose>
         </div>
 
         <div
@@ -65,7 +65,7 @@ export function TripIntentSwitcher() {
                 role="tab"
                 aria-selected={selected}
                 id={`intent-tab-${id}`}
-                className={`relative min-h-11 shrink-0 px-4 text-sm font-medium transition-colors duration-[var(--duration-ui)] ${
+                className={`relative min-h-11 shrink-0 px-4 text-sm font-medium transition-colors duration-[var(--duration-ui)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35 ${
                   selected ? "text-ink" : "text-ink-soft hover:text-ink-muted"
                 }`}
                 onClick={() => setActive(id)}
@@ -86,31 +86,53 @@ export function TripIntentSwitcher() {
           aria-labelledby={`intent-tab-${active}`}
           className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
         >
-          <div className="order-2 lg:order-1">
-            <h3 className="text-h3 font-medium text-ink">{current.title}</h3>
-            <p className="mt-4 max-w-md text-ink-muted leading-relaxed">
-              {current.body}
-            </p>
-            <Link
-              href={media.href}
-              className="mt-6 inline-flex min-h-11 items-center text-sm font-medium text-brand transition-colors hover:text-brand-deep"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${active}-copy`}
+              className="order-2 lg:order-1"
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: EASE }}
             >
-              {current.cta}
-              <span aria-hidden="true" className="ml-2">
-                →
-              </span>
-            </Link>
-          </div>
-          <div className="order-1 overflow-hidden rounded-[var(--radius-lg)] lg:order-2">
+              <h3 className="text-h3 font-medium text-balance text-ink">
+                {current.title}
+              </h3>
+              <p className="mt-4 max-w-md leading-relaxed text-pretty text-ink-muted">
+                {current.body}
+              </p>
+              <Link
+                href={media.href}
+                className="mt-6 inline-flex min-h-11 items-center text-sm font-medium text-brand transition-colors hover:text-brand-deep focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35"
+              >
+                {current.cta}
+                <span aria-hidden="true" className="ml-2">
+                  →
+                </span>
+              </Link>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="order-1 overflow-hidden rounded-[var(--radius-lg)] shadow-[var(--shadow-ambient)] transition-shadow duration-[var(--duration-ui)] hover:shadow-[var(--shadow-lift)] lg:order-2">
             <div className="relative aspect-[4/3] bg-mist sm:aspect-[16/11]">
-              <Image
-                key={media.image}
-                src={media.image}
-                alt={current.imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover motion-safe:animate-[fade-in_var(--duration-ui)_var(--ease-cinematic)]"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={media.image}
+                  className="absolute inset-0"
+                  initial={reduceMotion ? false : { opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={reduceMotion ? undefined : { opacity: 0 }}
+                  transition={{ duration: 0.45, ease: EASE }}
+                >
+                  <Image
+                    src={media.image}
+                    alt={current.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>

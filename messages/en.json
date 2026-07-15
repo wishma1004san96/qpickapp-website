@@ -134,6 +134,39 @@
     "sub": "From tuk-tuks to premium vans, every vehicle is verified, comfortable and transparently priced.",
     "phoneAria": "Q Pick vehicle list on the app"
   },
+  "howQPickWorks": {
+    "eyebrow": "HOW Q PICK WORKS",
+    "heading": "From Registration to Your Destination",
+    "sub": "Getting started with Q Pick takes less than a minute. Register, verify your number, book a ride or private tour, and track your driver in real time.",
+    "stepLabel": "Step {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "Welcome",
+        "body": "Open the Q Pick app and begin your journey."
+      },
+      "register": {
+        "n": "02",
+        "title": "Register",
+        "body": "Create your account using your mobile number."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP Verification",
+        "body": "Securely verify your mobile number."
+      },
+      "journey": {
+        "n": "04",
+        "title": "Choose Your Journey",
+        "body": "Book a ride or customize your private Sri Lanka tour."
+      },
+      "track": {
+        "n": "05",
+        "title": "Track Your Driver",
+        "body": "Watch your driver arrive with live GPS tracking and ETA."
+      }
+    }
+  },
   "journeyStory": {
     "eyebrow": "The Q Pick standard",
     "heading": "One journey. One trusted standard.",
@@ -218,32 +251,42 @@
   "destinationStrip": {
     "heading": "The island, not just the city",
     "intro": "From harbour roads to highland mist — destinations framed for how you actually travel.",
-    "allDestinations": "All destinations"
+    "allDestinations": "All destinations",
+    "travelTime": "Travel time",
+    "startingPrice": "Starting from"
   },
   "destinations": {
     "colombo": {
       "name": "Colombo",
       "region": "Western Province",
       "summary": "Harbour lights, Galle Face breeze, and the pulse of the capital — moved with quiet precision.",
-      "imageAlt": "Colombo coastal waterfront at dusk"
+      "imageAlt": "Colombo coastal waterfront at dusk",
+      "travelTime": "30–45 min from CMB",
+      "startingPrice": "LKR 4,500"
     },
     "galle": {
       "name": "Galle",
       "region": "Southern Province",
       "summary": "Fort walls, ocean wind, and the southern coast — airport to ramparts without uncertainty.",
-      "imageAlt": "Southern Sri Lankan coastline and clear ocean water"
+      "imageAlt": "Southern Sri Lankan coastline and clear ocean water",
+      "travelTime": "2–2.5 hrs from CMB",
+      "startingPrice": "LKR 18,500"
     },
     "ella": {
       "name": "Ella",
       "region": "Uva Province",
       "summary": "Mist, tea, and highland air — day charters timed to the mountain light.",
-      "imageAlt": "Lush Sri Lankan highland and tropical hillside landscape"
+      "imageAlt": "Lush Sri Lankan highland and tropical hillside landscape",
+      "travelTime": "5–6 hrs from Colombo",
+      "startingPrice": "LKR 32,000"
     },
     "sigiriya": {
       "name": "Sigiriya",
       "region": "Central Province",
       "summary": "Rock fortress and cultural triangle roads — guided by drivers who know the routes.",
-      "imageAlt": "Aerial view of Sigiriya Rock Fortress in Sri Lanka"
+      "imageAlt": "Aerial view of Sigiriya Rock Fortress in Sri Lanka",
+      "travelTime": "3.5–4.5 hrs from CMB",
+      "startingPrice": "LKR 28,000"
     }
   },
   "safety": {
@@ -272,12 +315,200 @@
       "cta": "Become a driver"
     }
   },
+  "planTour": {
+    "eyebrow": "Private tours",
+    "heading": "Plan Your Sri Lanka Tour",
+    "sub": "Build a fully customized private journey — days, destinations, and vehicle — with an instant estimate before you commit.",
+    "highlights": [
+      "Private chauffeur for your full itinerary",
+      "Mix coast, highlands, and cultural triangle stops",
+      "Transparent estimate — confirm details with Q Pick"
+    ],
+    "trust": [
+      "Instant Estimate",
+      "No Payment Required",
+      "Free Consultation"
+    ],
+    "cardLabel": "Your itinerary",
+    "daysLabel": "Select number of days",
+    "daysOption": "{count} days",
+    "travelersLabel": "Travelers",
+    "travelersOption": "{count}",
+    "arrivalLabel": "Arrival date",
+    "pickupLabel": "Pickup location",
+    "pickups": {
+      "cmb": "Bandaranaike (CMB)",
+      "colombo": "Colombo city",
+      "galle": "Galle",
+      "hotel": "Your hotel"
+    },
+    "tourTypeLabel": "Tour type",
+    "tourTypes": {
+      "private": {
+        "label": "Private chauffeur",
+        "meta": "Flexible pace · custom stops"
+      },
+      "honeymoon": {
+        "label": "Honeymoon",
+        "meta": "Coast & quiet highland stays"
+      },
+      "family": {
+        "label": "Family",
+        "meta": "Spacious vehicles · easy days"
+      },
+      "cultural": {
+        "label": "Cultural triangle",
+        "meta": "Heritage routes · guided pacing"
+      }
+    },
+    "destinationsLabel": "Select destinations",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "Select vehicle type",
+    "vehicles": {
+      "sedan": { "label": "Sedan", "meta": "1–3 guests · A/C" },
+      "suv": { "label": "SUV", "meta": "1–5 guests · A/C" },
+      "van": { "label": "Van", "meta": "1–9 guests · A/C" }
+    },
+    "distanceLabel": "Estimated distance",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "Estimated driving",
+    "hoursValue": "~{hours} hrs",
+    "breakdownLabel": "Price breakdown",
+    "breakdownDaily": "Vehicle & chauffeur",
+    "breakdownDestinations": "Destination stops",
+    "breakdownTravelers": "Extra travelers",
+    "breakdownPickup": "Airport / hotel pickup",
+    "estimateLabel": "Instant estimated price",
+    "estimateNote": "Estimate only · finalized when you plan with Q Pick",
+    "cta": "Plan My Tour"
+  },
+  "privateToursPreview": {
+    "eyebrow": "Private Tours",
+    "heading": "Plan Your Sri Lanka Journey",
+    "sub": "Discover Sri Lanka with a fully customized private chauffeur experience.",
+    "points": [
+      "Flexible itineraries",
+      "Luxury vehicles",
+      "Instant estimates"
+    ],
+    "primary": "Plan My Tour",
+    "secondary": "Explore Tours",
+    "cardLabel": "Sample itinerary",
+    "cardTitle": "5 days · Coast to highlands",
+    "previewStops": [
+      "Arrive CMB → Colombo overnight",
+      "Galle Fort & south coast",
+      "Ella tea country finale"
+    ],
+    "estimateLabel": "From",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Customize on Tours"
+  },
+  "driveWithQPick": {
+    "eyebrow": "For drivers",
+    "heading": "Drive With Q Pick",
+    "sub": "Join a premium network built for professional chauffeurs — airport runs, private tours, and guests who value calm certainty.",
+    "cta": "Become a Driver",
+    "benefits": {
+      "schedule": {
+        "title": "Flexible Schedule",
+        "body": "Go online when it works for you."
+      },
+      "earnings": {
+        "title": "Weekly Earnings",
+        "body": "Clear payouts you can track in-app."
+      },
+      "airport": {
+        "title": "Airport Transfers",
+        "body": "High-intent arrivals and departures."
+      },
+      "tours": {
+        "title": "Tour Requests",
+        "body": "Multi-day charters across the island."
+      },
+      "customers": {
+        "title": "Premium Customers",
+        "body": "Travelers who book with intention."
+      },
+      "support": {
+        "title": "Driver Support",
+        "body": "Real help when the road gets complex."
+      }
+    },
+    "dashboard": {
+      "title": "Driver Dashboard",
+      "online": "Online",
+      "earnings": "This week",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "Incoming request",
+      "route": "CMB → Colombo Fort",
+      "eta": "Pickup in 8 min · LKR 4,800",
+      "accept": "Accept trip"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Apps",
+    "heading": "Take Q Pick Everywhere.",
+    "sub": "Book rides, airport transfers and private Sri Lanka tours anytime with the Q Pick mobile app.",
+    "tablistAria": "Choose Q Pick app",
+    "tabs": {
+      "passenger": "Passenger App",
+      "driver": "Driver App"
+    },
+    "passenger": {
+      "title": "Everything You Need To Travel.",
+      "features": [
+        "Instant Ride Booking",
+        "Airport Transfers",
+        "Private Tours",
+        "Live Driver Tracking",
+        "Secure Payments",
+        "Trip History"
+      ],
+      "screenHome": "Q Pick passenger home screen",
+      "screenBooking": "Q Pick ride booking screen",
+      "screenTracking": "Q Pick live tracking screen"
+    },
+    "driver": {
+      "title": "Earn More With Q Pick.",
+      "features": [
+        "Accept Ride Requests",
+        "Airport Bookings",
+        "Tour Requests",
+        "Weekly Earnings",
+        "Navigation",
+        "Driver Dashboard"
+      ],
+      "primary": "Become a Driver",
+      "secondary": "Learn More",
+      "screens": {
+        "dashboardTitle": "Driver Dashboard",
+        "online": "Online",
+        "earningsLabel": "This week",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "New trip request",
+        "route": "CMB → Colombo Fort",
+        "fare": "LKR 4,800 · 8 min pickup",
+        "accept": "Accept trip",
+        "earningsScreenTitle": "Earnings",
+        "weekLabel": "This week",
+        "tripsLabel": "Completed trips",
+        "tripsValue": "42"
+      }
+    }
+  },
   "finalCta": {
     "brand": "Q Pick",
-    "heading": "Open Q Pick",
-    "body": "Airport, city, and island journeys — under one trusted standard.",
-    "primary": "Begin your journey",
-    "secondary": "Discover the island"
+    "heading": "Ready to Experience Sri Lanka?",
+    "body": "Airport transfers, private chauffeurs and unforgettable journeys — all under one trusted standard.",
+    "primary": "Book Your Ride",
+    "secondary": "Plan Your Tour"
   },
   "farePreview": {
     "from": "From",
@@ -516,12 +747,158 @@
     "tours": {
       "meta": {
         "title": "Tours",
-        "description": "Curated day trips and multi-stop island journeys with drivers who know Sri Lanka's roads and rhythms."
+        "description": "Plan a private Sri Lanka tour with chauffeurs who know the island — instant estimates, flexible itineraries, luxury vehicles."
       },
+      "eyebrow": "Private tours",
       "title": "Tours shaped for the island",
       "description": "Day trips and multi-stop journeys — tea country, fort towns, cultural triangle — with drivers who know timing, terrain, and guest comfort.",
-      "primaryCta": "Browse destinations",
-      "secondaryCta": "Plan a journey",
+      "primaryCta": "Plan my tour",
+      "secondaryCta": "View packages",
+      "why": {
+        "heading": "Why choose a private tour",
+        "sub": "Your pace, your stops, one trusted chauffeur — not a coach of strangers on a fixed loop.",
+        "items": [
+          {
+            "title": "Fully customizable",
+            "body": "Days, destinations, and vehicle — built around how you actually travel."
+          },
+          {
+            "title": "Same chauffeur throughout",
+            "body": "Continuity from airport to highlands without re-explaining preferences."
+          },
+          {
+            "title": "Transparent estimates",
+            "body": "See a clear range before you inquire — refine details with Q Pick."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "Popular tour packages",
+        "sub": "Starting points you can customize — or use as inspiration in the planner.",
+        "coastal": {
+          "days": "4–5 days",
+          "title": "Southern coast",
+          "body": "CMB arrival, Colombo ease-in, Galle Fort, Mirissa or Unawatuna pace.",
+          "price": "From LKR 78,000"
+        },
+        "triangle": {
+          "days": "5–6 days",
+          "title": "Cultural triangle",
+          "body": "Sigiriya, Dambulla, Polonnaruwa roads with hotel coordination built in.",
+          "price": "From LKR 112,000"
+        },
+        "highland": {
+          "days": "5–7 days",
+          "title": "Tea country",
+          "body": "Kandy to Ella with highland air, train timing optional, scenic descents.",
+          "price": "From LKR 124,000"
+        }
+      },
+      "itineraries": {
+        "heading": "Suggested itineraries",
+        "sub": "Lightweight outlines — expand or compress them in the planner.",
+        "south": {
+          "title": "South coast reset",
+          "stops": [
+            "Day 1 — CMB → Colombo",
+            "Day 2–3 — Galle & coastal towns",
+            "Day 4 — Return or extend to Ella"
+          ]
+        },
+        "culture": {
+          "title": "Heritage circuit",
+          "stops": [
+            "Day 1 — CMB → Sigiriya area",
+            "Day 2 — Cultural triangle sites",
+            "Day 3–4 — Kandy & departure logistics"
+          ]
+        },
+        "tea": {
+          "title": "Highland loop",
+          "stops": [
+            "Day 1 — Colombo → Kandy",
+            "Day 2–3 — Nuwara Eliya / Ella",
+            "Day 4 — Scenic return south or CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "Vehicle comparison",
+        "sub": "Choose comfort for your party size — all with A/C and verified chauffeurs.",
+        "colVehicle": "Vehicle",
+        "colGuests": "Guests",
+        "colBest": "Best for",
+        "colFrom": "From / day",
+        "rows": {
+          "sedan": {
+            "name": "Sedan",
+            "guests": "1–3",
+            "best": "Couples & light luggage",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Families & highland roads",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Groups & multi-stop kits",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Why travel with Q Pick",
+        "items": {
+          "chauffeur": {
+            "title": "Verified chauffeurs",
+            "body": "Identity and vehicle checks on every journey."
+          },
+          "pacing": {
+            "title": "Island pacing",
+            "body": "Routes timed for comfort, not rushed coach schedules."
+          },
+          "estimate": {
+            "title": "Clear estimates",
+            "body": "Know the range before you speak with the team."
+          },
+          "support": {
+            "title": "Reachable support",
+            "body": "Trip changes and on-road help when you need it."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "items": {
+          "customize": {
+            "q": "Can I fully customize the itinerary?",
+            "a": "Yes. Use the planner for a starting estimate, then refine stops, pacing, and hotels with Q Pick."
+          },
+          "payment": {
+            "q": "Do I pay when I get an estimate?",
+            "a": "No. The planner is for orientation only — no payment is required to explore or inquire."
+          },
+          "hotels": {
+            "q": "Do you book hotels too?",
+            "a": "We coordinate movements around your stays. Hotel booking can be arranged case by case with partners."
+          },
+          "changes": {
+            "q": "What if plans change mid-tour?",
+            "a": "Your chauffeur and support line adjust daily pacing when roads, weather, or preferences shift."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "Ready to shape your journey?",
+        "sub": "Share dates and preferences — we’ll refine the estimate into a clear private tour plan.",
+        "primary": "Send an inquiry",
+        "secondary": "Back to planner",
+        "destinations": "Browse destinations"
+      },
       "cards": {
         "dayCharters": {
           "title": "Day charters",

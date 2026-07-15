@@ -32,8 +32,17 @@
   --duration-ui: 280ms;
   --duration-reveal: 600ms;
 
+  /* Homepage section rhythm — mobile / tablet / desktop */
+  --section-y-sm: 3.5rem; /* 56px */
+  --section-y-md: 5rem; /* 80px */
+  --section-y-lg: 7.5rem; /* 120px */
+
   --shadow-ambient: 0 1px 2px rgb(10 22 32 / 0.04),
     0 8px 24px rgb(10 22 32 / 0.06);
+  --shadow-lift: 0 12px 32px rgb(10 22 32 / 0.1),
+    0 2px 6px rgb(10 22 32 / 0.04);
+  --shadow-glow-brand: 0 0 0 1px rgb(0 98 250 / 0.14),
+    0 14px 36px rgb(0 98 250 / 0.16);
 
   --text-display: clamp(2.25rem, 5vw + 1rem, 3.5rem);
   --text-h2: clamp(1.75rem, 3vw + 0.75rem, 2.5rem);

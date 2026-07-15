@@ -134,6 +134,39 @@
     "sub": "ටුක්-ටුක් සිට ප්‍රිමියම් වෑන් දක්වා, සෑම වාහනයක්ම සත්‍යාපිත, සුවපහසු සහ පැහැදිලි මිලකින් යුක්තය.",
     "phoneAria": "Q Pick යෙදුමේ වාහන ලැයිස්තුව"
   },
+  "howQPickWorks": {
+    "eyebrow": "Q Pick ක්‍රියා කරන ආකාරය",
+    "heading": "ලියාපදිංචියේ සිට ඔබේ ගමනාන්තය දක්වා",
+    "sub": "Q Pick සමඟ පටන් ගැනීමට නිමේෂයකටත් අඩු කාලයක් ගත වේ. ලියාපදිංචි වන්න, අංකය සත්‍යාපනය කරන්න, ගමනක් හෝ පෞද්ගලික සංචාරයක් වෙන්කරවා ගන්න, සහ රියදුරු සජීවීව අනුගමනය කරන්න.",
+    "stepLabel": "පියවර {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "සාදරයෙන් පිළිගනිමු",
+        "body": "Q Pick යෙදුම විවෘත කර ඔබේ ගමන ආරම්භ කරන්න."
+      },
+      "register": {
+        "n": "02",
+        "title": "ලියාපදිංචි වන්න",
+        "body": "ඔබේ ජංගම අංකයෙන් ගිණුම සාදන්න."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP සත්‍යාපනය",
+        "body": "ඔබේ ජංගම අංකය ආරක්ෂිතව සත්‍යාපනය කරන්න."
+      },
+      "journey": {
+        "n": "04",
+        "title": "ඔබේ ගමන තෝරන්න",
+        "body": "ගමනක් වෙන්කරවා ගන්න හෝ පෞද්ගලික ශ්‍රී ලංකා සංචාරයක් සකසන්න."
+      },
+      "track": {
+        "n": "05",
+        "title": "රියදුරු අනුගමනය කරන්න",
+        "body": "සජීවී GPS සහ ETA සමඟ රියදුරු පැමිණෙන ආකාරය බලන්න."
+      }
+    }
+  },
   "journeyStory": {
     "eyebrow": "Q Pick ප්‍රමිතිය",
     "heading": "එක ගමනක්. එක විශ්වාසනීය ප්‍රමිතියක්.",
@@ -218,32 +251,42 @@
   "destinationStrip": {
     "heading": "නගරය පමණක් නොව — දිවයින",
     "intro": "වරාය මාර්ගවල සිට කඳුකර මීදුම දක්වා — ඔබ සැබෑවට ගමන් කරන විලාසයට ගැලපෙන ගමනාන්ත.",
-    "allDestinations": "සියලු ගමනාන්ත"
+    "allDestinations": "සියලු ගමනාන්ත",
+    "travelTime": "ගමන් කාලය",
+    "startingPrice": "ආරම්භක මිල"
   },
   "destinations": {
     "colombo": {
       "name": "Colombo",
       "region": "බස්නාහිර පළාත",
       "summary": "වරාය ආලෝක, Galle Face සුළඟ සහ අගනුවරේ ස්පන්දනය — සන්සුන් නිරවද්‍යතාවයෙන්.",
-      "imageAlt": "සන්ධ්‍යාවේ Colombo වෙරළ ඉදිරිපස"
+      "imageAlt": "සන්ධ්‍යාවේ Colombo වෙරළ ඉදිරිපස",
+      "travelTime": "CMB සිට මිනි 30–45",
+      "startingPrice": "LKR 4,500"
     },
     "galle": {
       "name": "Galle",
       "region": "දකුණු පළාත",
       "summary": "කොටු බිත්ති, සාගර සුළං සහ දකුණු වෙරළ — ගුවන්තොටුපොළේ සිට රැම්පාර්ට් දක්වා අවිනිශ්චිතතාවයකින් තොරව.",
-      "imageAlt": "පැහැදිලි සාගරය සහිත දකුණු ශ්‍රී ලංකා වෙරළ"
+      "imageAlt": "පැහැදිලි සාගරය සහිත දකුණු ශ්‍රී ලංකා වෙරළ",
+      "travelTime": "CMB සිට පැය 2–2.5",
+      "startingPrice": "LKR 18,500"
     },
     "ella": {
       "name": "Ella",
       "region": "ඌව පළාත",
       "summary": "මීදුම, තේ සහ කඳුකර වාතය — කඳු ආලෝකයට කාලානුරූප දින චාර්ටර්.",
-      "imageAlt": "සශ්‍රීක ශ්‍රී ලංකා කඳුකර සහ නිවර්තන කඳු බෑවුම්"
+      "imageAlt": "සශ්‍රීක ශ්‍රී ලංකා කඳුකර සහ නිවර්තන කඳු බෑවුම්",
+      "travelTime": "Colombo සිට පැය 5–6",
+      "startingPrice": "LKR 32,000"
     },
     "sigiriya": {
       "name": "Sigiriya",
       "region": "මධ්‍යම පළාත",
       "summary": "ගල් බලකොටුව සහ සංස්කෘතික ත්‍රිකෝණ මාර්ග — මාර්ග දන්නා රියදුරන් සමඟ.",
-      "imageAlt": "ශ්‍රී ලංකාවේ Sigiriya Rock Fortress හි වායු දසුන"
+      "imageAlt": "ශ්‍රී ලංකාවේ Sigiriya Rock Fortress හි වායු දසුන",
+      "travelTime": "CMB සිට පැය 3.5–4.5",
+      "startingPrice": "LKR 28,000"
     }
   },
   "safety": {
@@ -272,12 +315,209 @@
       "cta": "රියදුරෙකු වන්න"
     }
   },
+  "planTour": {
+    "eyebrow": "පෞද්ගලික සංචාර",
+    "heading": "ඔබේ ශ්‍රී ලංකා සංචාරය සැලසුම් කරන්න",
+    "sub": "දින, ගමනාන්ත සහ වාහනය තෝරා සම්පූර්ණ පෞද්ගලික ගමනක් සාදන්න — කැපවීමට පෙර ක්ෂණික ඇස්තමේන්තුවක් සමඟ.",
+    "highlights": [
+      "ඔබේ සම්පූර්ණ itinerary සඳහා පෞද්ගලික රියදුරු",
+      "වෙරළ, කඳුකර සහ සංස්කෘතික ත්‍රිකෝණ නැවතුම් මිශ්‍ර කරන්න",
+      "පැහැදිලි ඇස්තමේන්තුව — Q Pick සමඟ විස්තර තහවුරු කරන්න"
+    ],
+    "trust": [
+      "ක්ෂණික ඇස්තමේන්තුව",
+      "ගෙවීමක් අවශ්‍ය නැත",
+      "නොමිලේ උපදෙස්"
+    ],
+    "cardLabel": "ඔබේ ගමන් සැලැස්ම",
+    "daysLabel": "දින ගණන තෝරන්න",
+    "daysOption": "දින {count}",
+    "travelersLabel": "සංචාරකයින්",
+    "travelersOption": "{count}",
+    "arrivalLabel": "පැමිණෙන දිනය",
+    "pickupLabel": "එකතු කරන ස්ථානය",
+    "pickups": {
+      "cmb": "බන්ඩාරනායක (CMB)",
+      "colombo": "Colombo නගරය",
+      "galle": "Galle",
+      "hotel": "ඔබේ හෝටලය"
+    },
+    "tourTypeLabel": "සංචාර වර්ගය",
+    "tourTypes": {
+      "private": {
+        "label": "පෞද්ගලික රියදුරු",
+        "meta": "නම්‍යශීලී වේගය · අභිරුචි නැවතුම්"
+      },
+      "honeymoon": {
+        "label": "මධුසමය",
+        "meta": "වෙරළ සහ සන්සුන් කඳුකර නවාතැන්"
+      },
+      "family": {
+        "label": "පවුල",
+        "meta": "පුළුල් වාහන · පහසු දින"
+      },
+      "cultural": {
+        "label": "සංස්කෘතික ත්‍රිකෝණය",
+        "meta": "උරුම මාර්ග · මග පෙන්වන වේගය"
+      }
+    },
+    "destinationsLabel": "ගමනාන්ත තෝරන්න",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "වාහන වර්ගය තෝරන්න",
+    "vehicles": {
+      "sedan": {
+        "label": "Sedan",
+        "meta": "අමුත්තන් 1–3 · A/C"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "අමුත්තන් 1–5 · A/C"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "අමුත්තන් 1–9 · A/C"
+      }
+    },
+    "distanceLabel": "ඇස්තමේන්තු දුර",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "ඇස්තමේන්තු රියදුරු කාලය",
+    "hoursValue": "~පැය {hours}",
+    "breakdownLabel": "මිල විස්තරය",
+    "breakdownDaily": "වාහනය සහ රියදුරු",
+    "breakdownDestinations": "ගමනාන්ත නැවතුම්",
+    "breakdownTravelers": "අමතර සංචාරකයින්",
+    "breakdownPickup": "ගුවන්තොටුපොළ / හෝටල් එකතුව",
+    "estimateLabel": "ක්ෂණික ඇස්තමේන්තු මිල",
+    "estimateNote": "ඇස්තමේන්තුව පමණි · Q Pick සමඟ සැලසුම් කිරීමේදී අවසන් වේ",
+    "cta": "මගේ සංචාරය සැලසුම් කරන්න"
+  },
+  "privateToursPreview": {
+    "eyebrow": "පෞද්ගලික සංචාර",
+    "heading": "ඔබේ ශ්‍රී ලංකා ගමන සැලසුම් කරන්න",
+    "sub": "සම්පූර්ණයෙන්ම අභිරුචිකරණය කළ පෞද්ගලික රියදුරු අත්දැකීමකින් ශ්‍රී ලංකාව සොයා ගන්න.",
+    "points": [
+      "නම්‍යශීලී ගමන් සැලසුම්",
+      "සුඛෝපභෝගී වාහන",
+      "ක්ෂණික ඇස්තමේන්තු"
+    ],
+    "primary": "මගේ සංචාරය සැලසුම් කරන්න",
+    "secondary": "සංචාර ගවේෂණය කරන්න",
+    "cardLabel": "නියැදි ගමන් සැලැස්ම",
+    "cardTitle": "දින 5 · වෙරළේ සිට කඳුකරය",
+    "previewStops": [
+      "CMB → Colombo රාත්‍රිය",
+      "Galle Fort සහ දකුණු වෙරළ",
+      "Ella තේ රට අවසානය"
+    ],
+    "estimateLabel": "සිට",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Tours හි අභිරුචි කරන්න"
+  },
+  "driveWithQPick": {
+    "eyebrow": "රියදුරන් සඳහා",
+    "heading": "Q Pick සමඟ රියදවන්න",
+    "sub": "වෘත්තීය රියදුරන් සඳහා ගොඩනැගූ ප්‍රිමියම් ජාලයකට එක්වන්න — ගුවන්තොටුපොළ ගමන්, පෞද්ගලික සංචාර සහ සන්සුන් විශ්වාසය අගය කරන අමුත්තන්.",
+    "cta": "රියදුරෙකු වන්න",
+    "benefits": {
+      "schedule": {
+        "title": "නම්‍යශීලී කාලසටහන",
+        "body": "ඔබට ගැලපෙන විට ඔන්ලයින් වන්න."
+      },
+      "earnings": {
+        "title": "සතිපතා ආදායම්",
+        "body": "යෙදුමේදී ලුහුඬුවෙන් බලන්න පැහැදිලි ගෙවීම්."
+      },
+      "airport": {
+        "title": "ගුවන්තොටුපොළ මාරුවීම්",
+        "body": "ඉහළ අභිප්‍රාය පැමිණීම් සහ පිටත්වීම්."
+      },
+      "tours": {
+        "title": "සංචාර ඉල්ලීම්",
+        "body": "දිවයින පුරා දින කිහිපයක චාර්ටර්."
+      },
+      "customers": {
+        "title": "ප්‍රිමියම් පාරිභෝගිකයින්",
+        "body": "අරමුණින් වෙන්කරවා ගන්නා සංචාරකයින්."
+      },
+      "support": {
+        "title": "රියදුරු සහාය",
+        "body": "මාර්ගය සංකීර්ණ වූ විට සැබෑ උදව්."
+      }
+    },
+    "dashboard": {
+      "title": "රියදුරු උපකරණ පුවරුව",
+      "online": "Online",
+      "earnings": "මේ සතිය",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "ලැබෙන ඉල්ලීම",
+      "route": "CMB → Colombo Fort",
+      "eta": "මිනි 8 කින් එක්ක · LKR 4,800",
+      "accept": "ගමන පිළිගන්න"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Apps",
+    "heading": "Q Pick සැමතැනට ගෙන යන්න.",
+    "sub": "Q Pick ජංගම යෙදුමෙන් ඕනෑම වේලාවක ගමන්, ගුවන්තොටුපොළ මාරුවීම් සහ පෞද්ගලික ශ්‍රී ලංකා සංචාර වෙන්කරවා ගන්න.",
+    "tablistAria": "Q Pick යෙදුම තෝරන්න",
+    "tabs": {
+      "passenger": "මගී යෙදුම",
+      "driver": "රියදුරු යෙදුම"
+    },
+    "passenger": {
+      "title": "ගමන් කිරීමට අවශ්‍ය සියල්ල.",
+      "features": [
+        "ක්ෂණික ගමන් වෙන්කිරීම",
+        "ගුවන්තොටුපොළ මාරුවීම්",
+        "පෞද්ගලික සංචාර",
+        "සජීවී රියදුරු අනුගමනය",
+        "ආරක්ෂිත ගෙවීම්",
+        "ගමන් ඉතිහාසය"
+      ],
+      "screenHome": "Q Pick මගී මුල් තිරය",
+      "screenBooking": "Q Pick ගමන් වෙන්කිරීමේ තිරය",
+      "screenTracking": "Q Pick සජීවී අනුගමන තිරය"
+    },
+    "driver": {
+      "title": "Q Pick සමඟ වැඩිපුර උපයන්න.",
+      "features": [
+        "ගමන් ඉල්ලීම් පිළිගන්න",
+        "ගුවන්තොටුපොළ වෙන්කිරීම්",
+        "සංචාර ඉල්ලීම්",
+        "සතිපතා ආදායම්",
+        "සංචාලනය",
+        "රියදුරු උපකරණ පුවරුව"
+      ],
+      "primary": "රියදුරෙකු වන්න",
+      "secondary": "තව දැනගන්න",
+      "screens": {
+        "dashboardTitle": "රියදුරු උපකරණ පුවරුව",
+        "online": "Online",
+        "earningsLabel": "මේ සතිය",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "නව ගමන් ඉල්ලීම",
+        "route": "CMB → Colombo Fort",
+        "fare": "LKR 4,800 · මිනි 8 කින් එක්ක",
+        "accept": "ගමන පිළිගන්න",
+        "earningsScreenTitle": "ආදායම්",
+        "weekLabel": "මේ සතිය",
+        "tripsLabel": "සම්පූර්ණ ගමන්",
+        "tripsValue": "42"
+      }
+    }
+  },
   "finalCta": {
     "brand": "Q Pick",
-    "heading": "Q Pick විවෘත කරන්න",
-    "body": "ගුවන්තොටුපොළ, නගර සහ දිවයිනේ ගමන් — එක විශ්වාසනීය ප්‍රමිතියක් යටතේ.",
-    "primary": "ඔබේ ගමන ආරම්භ කරන්න",
-    "secondary": "දිවයින සොයා ගන්න"
+    "heading": "ශ්‍රී ලංකාව අත්විඳීමට සූදානම්ද?",
+    "body": "ගුවන්තොටුපොළ මාරුවීම්, පෞද්ගලික රියදුරන් සහ අමතක නොවන ගමන් — එක විශ්වාසනීය ප්‍රමිතියක් යටතේ.",
+    "primary": "ඔබේ ගමන වෙන්කරවා ගන්න",
+    "secondary": "ඔබේ සංචාරය සැලසුම් කරන්න"
   },
   "farePreview": {
     "from": "සිට",
@@ -516,20 +756,166 @@
     "tours": {
       "meta": {
         "title": "සංචාර",
-        "description": "ශ්‍රී ලංකාවේ මාර්ග සහ රිද්මයන් දන්නා රියදුරන් සමඟ තෝරා ගත් දින චාරිකා සහ බහු-නැවතුම් දිවයින් ගමන්."
+        "description": "ක්ෂණික ඇස්තමේන්තු, නම්‍යශීලී ගමන් සැලසුම් සහ සුඛෝපභෝගී වාහන සමඟ පෞද්ගලික ශ්‍රී ලංකා සංචාරයක් සැලසුම් කරන්න."
       },
+      "eyebrow": "පෞද්ගලික සංචාර",
       "title": "දිවයිනට ගැලපෙන සංචාර",
       "description": "දින චාරිකා සහ බහු-නැවතුම් ගමන් — තේ රට, කොටු නගර, සංස්කෘතික ත්‍රිකෝණය — කාලය, භූමිය සහ අමුත්තන්ගේ සුවපහසුව දන්නා රියදුරන් සමඟ.",
-      "primaryCta": "ගමනාන්ත බලන්න",
-      "secondaryCta": "ගමනක් සැලසුම් කරන්න",
+      "primaryCta": "මගේ සංචාරය සැලසුම් කරන්න",
+      "secondaryCta": "පැකේජ බලන්න",
+      "why": {
+        "heading": "පෞද්ගලික සංචාරයක් තෝරන්නේ ඇයි",
+        "sub": "ඔබේ වේගය, ඔබේ නැවතුම්, එක විශ්වාසනීය රියදුරු — ස්ථිර ලූපයක අමුත්තන්ගේ බස් එකක් නොවේ.",
+        "items": [
+          {
+            "title": "Fully customizable",
+            "body": "Days, destinations, and vehicle — built around how you actually travel."
+          },
+          {
+            "title": "Same chauffeur throughout",
+            "body": "Continuity from airport to highlands without re-explaining preferences."
+          },
+          {
+            "title": "Transparent estimates",
+            "body": "See a clear range before you inquire — refine details with Q Pick."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "ජනප්‍රිය සංචාර පැකේජ",
+        "sub": "Starting points you can customize — or use as inspiration in the planner.",
+        "coastal": {
+          "days": "4–5 days",
+          "title": "Southern coast",
+          "body": "CMB arrival, Colombo ease-in, Galle Fort, Mirissa or Unawatuna pace.",
+          "price": "From LKR 78,000"
+        },
+        "triangle": {
+          "days": "5–6 days",
+          "title": "Cultural triangle",
+          "body": "Sigiriya, Dambulla, Polonnaruwa roads with hotel coordination built in.",
+          "price": "From LKR 112,000"
+        },
+        "highland": {
+          "days": "5–7 days",
+          "title": "Tea country",
+          "body": "Kandy to Ella with highland air, train timing optional, scenic descents.",
+          "price": "From LKR 124,000"
+        }
+      },
+      "itineraries": {
+        "heading": "යෝජිත ගමන් සැලසුම්",
+        "sub": "Lightweight outlines — expand or compress them in the planner.",
+        "south": {
+          "title": "South coast reset",
+          "stops": [
+            "Day 1 — CMB → Colombo",
+            "Day 2–3 — Galle & coastal towns",
+            "Day 4 — Return or extend to Ella"
+          ]
+        },
+        "culture": {
+          "title": "Heritage circuit",
+          "stops": [
+            "Day 1 — CMB → Sigiriya area",
+            "Day 2 — Cultural triangle sites",
+            "Day 3–4 — Kandy & departure logistics"
+          ]
+        },
+        "tea": {
+          "title": "Highland loop",
+          "stops": [
+            "Day 1 — Colombo → Kandy",
+            "Day 2–3 — Nuwara Eliya / Ella",
+            "Day 4 — Scenic return south or CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "වාහන සසඳීම",
+        "sub": "Choose comfort for your party size — all with A/C and verified chauffeurs.",
+        "colVehicle": "Vehicle",
+        "colGuests": "Guests",
+        "colBest": "Best for",
+        "colFrom": "From / day",
+        "rows": {
+          "sedan": {
+            "name": "Sedan",
+            "guests": "1–3",
+            "best": "Couples & light luggage",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Families & highland roads",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Groups & multi-stop kits",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Q Pick සමඟ ගමන් කරන්නේ ඇයි",
+        "items": {
+          "chauffeur": {
+            "title": "Verified chauffeurs",
+            "body": "Identity and vehicle checks on every journey."
+          },
+          "pacing": {
+            "title": "Island pacing",
+            "body": "Routes timed for comfort, not rushed coach schedules."
+          },
+          "estimate": {
+            "title": "Clear estimates",
+            "body": "Know the range before you speak with the team."
+          },
+          "support": {
+            "title": "Reachable support",
+            "body": "Trip changes and on-road help when you need it."
+          }
+        }
+      },
+      "faq": {
+        "heading": "නිතර අසන ප්‍රශ්න",
+        "items": {
+          "customize": {
+            "q": "Can I fully customize the itinerary?",
+            "a": "Yes. Use the planner for a starting estimate, then refine stops, pacing, and hotels with Q Pick."
+          },
+          "payment": {
+            "q": "Do I pay when I get an estimate?",
+            "a": "No. The planner is for orientation only — no payment is required to explore or inquire."
+          },
+          "hotels": {
+            "q": "Do you book hotels too?",
+            "a": "We coordinate movements around your stays. Hotel booking can be arranged case by case with partners."
+          },
+          "changes": {
+            "q": "What if plans change mid-tour?",
+            "a": "Your chauffeur and support line adjust daily pacing when roads, weather, or preferences shift."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "ඔබේ ගමන හැඩගැස්වීමට සූදානම්ද?",
+        "sub": "Share dates and preferences — we’ll refine the estimate into a clear private tour plan.",
+        "primary": "විමසුමක් යවන්න",
+        "secondary": "සැලසුම්කරු වෙත",
+        "destinations": "ගමනාන්ත බලන්න"
+      },
       "cards": {
         "dayCharters": {
-          "title": "දින චාර්ටර්",
-          "body": "නම්‍ය නැවතුම් සහ පැහැදිලි සම්පූර්ණ ගාස්තුවක් සමඟ උදෑසන සිට සන්ධ්‍යාව දක්වා මාර්ග."
+          "title": "Day charters",
+          "body": "Sunrise to sunset routes with flexible stops and a clear all-in fare."
         },
         "multiDay": {
-          "title": "බහු-දින",
-          "body": "වෙරළේ සිට කඳුකරය දක්වා — ඔබේ සැලැස්ම පුරා එකම විශ්වාසනීය රියදුරු."
+          "title": "Multi-day",
+          "body": "Coast to highlands with the same trusted driver across your itinerary."
         }
       }
     },

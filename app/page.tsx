@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { DestinationStrip } from "@/components/marketing/destination-strip";
+import { DownloadQPickApps } from "@/components/marketing/download-qpick-apps";
+import { DriveWithQPick } from "@/components/marketing/drive-with-qpick";
 import { ExperienceQPick } from "@/components/marketing/experience-qpick";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { FleetListStage } from "@/components/marketing/fleet-list-stage";
 import { HomeHero } from "@/components/marketing/home-hero";
+import { HowQPickWorks } from "@/components/marketing/how-qpick-works";
 import { JourneyStory } from "@/components/marketing/journey-story";
 import { PartnerDriverSplit } from "@/components/marketing/partner-driver-split";
+import { PrivateToursPreview } from "@/components/marketing/private-tours-preview";
 import { SafetyChecklist } from "@/components/marketing/safety-checklist";
 import { StepTimeline } from "@/components/marketing/step-timeline";
 import { TripIntentSwitcher } from "@/components/marketing/trip-intent-switcher";
@@ -30,6 +34,7 @@ export default function HomePage() {
       <HomeHero />
       <ExperienceQPick />
       <FleetListStage />
+      <HowQPickWorks />
       <JourneyStory />
       <Section tone="foam">
         <TripIntentSwitcher />
@@ -38,12 +43,15 @@ export default function HomePage() {
         <StepTimeline />
       </Section>
       <DestinationStrip />
+      <PrivateToursPreview />
       <Section tone="foam">
         <SafetyChecklist />
       </Section>
+      <DownloadQPickApps />
       <Section tone="foam" className="pt-0 sm:pt-0 lg:pt-0">
         <PartnerDriverSplit />
       </Section>
+      <DriveWithQPick />
       <FinalCta />
     </>
   );

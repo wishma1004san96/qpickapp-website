@@ -37,7 +37,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-mist bg-paper">
-      <Container className="py-16 sm:py-20 lg:py-24">
+      <Container className="py-[var(--section-y-sm)] sm:py-[var(--section-y-md)] lg:py-[var(--section-y-lg)]">
         <div className="grid gap-14 sm:gap-16 lg:grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] lg:gap-x-20 lg:gap-y-16">
           <div className="max-w-md lg:pr-4">
             <div className="mb-7">
@@ -48,7 +48,7 @@ export function SiteFooter() {
                 tone="ink"
               />
             </div>
-            <p className="max-w-[34ch] text-[0.9375rem] leading-[1.75] tracking-[0.01em] text-ink-muted">
+            <p className="max-w-[34ch] text-[0.9375rem] leading-[1.75] tracking-[0.01em] text-pretty text-ink-muted">
               {t("footer.blurb")}
             </p>
             <p className="mt-8 font-mono text-[0.6875rem] tracking-[0.14em] text-ink-soft uppercase">
@@ -58,7 +58,7 @@ export function SiteFooter() {
               </span>
               <a
                 href={`tel:${siteConfig.emergencyLine.replace(/\s/g, "")}`}
-                className="normal-case tracking-wide text-ink-muted transition-colors hover:text-ink"
+                className="normal-case tracking-wide text-ink-muted transition-colors hover:text-ink focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35"
               >
                 {siteConfig.emergencyLine}
               </a>
@@ -92,7 +92,7 @@ export function SiteFooter() {
                 <li key={d.slug}>
                   <Link
                     href={`/destinations/${d.slug}`}
-                    className="text-sm leading-relaxed text-ink-muted transition-colors hover:text-ink"
+                    className="text-sm leading-relaxed text-ink-muted transition-colors hover:text-ink focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30"
                   >
                     {t(`destinations.${d.slug}.name`)}
                   </Link>
@@ -151,7 +151,7 @@ function FooterCol({
           <li key={item.href}>
             <Link
               href={item.href}
-              className="text-sm leading-relaxed text-ink-muted transition-colors hover:text-ink"
+              className="text-sm leading-relaxed text-ink-muted transition-colors hover:text-ink focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30"
             >
               {item.label}
             </Link>

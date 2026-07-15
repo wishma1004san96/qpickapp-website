@@ -21,7 +21,10 @@ export function Section({
   tone = "foam",
 }: SectionProps) {
   return (
-    <section id={id} className={`py-16 sm:py-24 lg:py-32 ${tones[tone]} ${className}`}>
+    <section
+      id={id}
+      className={`py-[var(--section-y-sm)] sm:py-[var(--section-y-md)] lg:py-[var(--section-y-lg)] ${tones[tone]} ${className}`}
+    >
       {children}
     </section>
   );
