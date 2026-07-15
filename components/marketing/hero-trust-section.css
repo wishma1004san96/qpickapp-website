@@ -1,0 +1,206 @@
+/*
+  Floating trust badges — zero-height seam bridge.
+  Scroll-driven colors live on motion styles; CSS owns layout + hover icon glow.
+*/
+
+.hero-trust-float {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 0;
+  margin: 0;
+  padding: 0 1.25rem;
+  overflow: visible;
+  pointer-events: none;
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .hero-trust-float {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Badges on the seam; scroll cue sits directly underneath */
+.hero-trust-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  max-width: 100%;
+  /* Lift badges (+ scroll under them) higher on the Hero */
+  transform: translateY(calc(-50% - 5rem));
+  pointer-events: auto;
+}
+
+.hero-trust-bridge {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.hero-trust-scroll {
+  flex-shrink: 0;
+}
+
+.hero-trust-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+  gap: 1.5rem; /* 24px */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: max-content;
+  max-width: 100%;
+}
+
+/* Tablet — 2 × 2 */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-trust-row {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 1.5rem 1.75rem; /* 24–28px */
+  }
+}
+
+/* Desktop — one centered row */
+@media (min-width: 1024px) {
+  .hero-trust-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75rem; /* 28px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-trust-row {
+    gap: 2rem; /* 32px */
+  }
+}
+
+.hero-trust-item {
+  width: max-content;
+  max-width: min(100%, 22rem);
+  list-style: none;
+  will-change: transform;
+}
+
+@media (max-width: 639px) {
+  .hero-trust-item {
+    width: min(100%, 20.5rem);
+  }
+
+  .hero-trust-badge {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-trust-row {
+    width: min(100%, 20.5rem);
+  }
+}
+
+.hero-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.42rem 1.05rem 0.42rem 0.42rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  /* Fallback while motion hydrates — dark glass (Hero) */
+  background-color: rgb(8 16 28 / 0.58);
+  background-image: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.1) 0%,
+    rgb(255 255 255 / 0.04) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.15);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.16) inset,
+    0 8px 20px rgb(0 0 0 / 0.28),
+    0 0 16px rgb(0 98 250 / 0.14);
+  transition: filter 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Soft shadow lift on hover — colors stay scroll-driven */
+.hero-trust-item:hover .hero-trust-badge,
+.hero-trust-item:focus-within .hero-trust-badge {
+  filter: drop-shadow(0 10px 18px rgb(0 40 100 / 0.18));
+}
+
+.hero-trust-mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  color: #f4f9ff;
+  background:
+    radial-gradient(circle at 32% 28%, rgb(140 205 255 / 0.55), transparent 55%),
+    linear-gradient(160deg, #3aa8ff 0%, #0062fa 55%, #0036f9 100%);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.28) inset,
+    0 6px 14px rgb(0 98 250 / 0.4),
+    0 0 18px rgb(0 98 250 / 0.28);
+  transition: box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Blue glow around the icon only */
+.hero-trust-item:hover .hero-trust-mark,
+.hero-trust-item:focus-within .hero-trust-mark {
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.35) inset,
+    0 8px 18px rgb(0 98 250 / 0.5),
+    0 0 28px rgb(0 98 250 / 0.55),
+    0 0 40px rgb(58 168 255 / 0.35);
+}
+
+.hero-trust-label {
+  color: rgb(247 250 252 / 0.96);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-wrap: balance;
+}
+
+@media (min-width: 640px) {
+  .hero-trust-label {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-trust-label {
+    font-size: 0.9rem;
+  }
+}
+
+html[lang="si"] .hero-trust-label,
+html[lang="ta"] .hero-trust-label {
+  white-space: normal;
+  max-inline-size: 14rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-trust-badge,
+  .hero-trust-mark {
+    transition: none;
+  }
+}

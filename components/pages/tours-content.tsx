@@ -7,6 +7,8 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { PlanSriLankaTour } from "@/components/marketing/plan-sri-lanka-tour";
+import { PrivateToursPreview } from "@/components/marketing/private-tours-preview";
+import { DestinationStrip } from "@/components/marketing/destination-strip";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
@@ -67,49 +69,15 @@ export function ToursContent() {
         </Container>
       </section>
 
-      {/* Why choose private tours */}
-      <section
-        className="border-b border-mist bg-paper py-[var(--section-y-sm)] sm:py-[var(--section-y-md)] lg:py-[var(--section-y-lg)]"
-        aria-labelledby="tours-why-heading"
-      >
-        <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              id="tours-why-heading"
-              className="font-display text-h2 tracking-tight text-balance text-ink"
-            >
-              {t("pages.tours.why.heading")}
-            </h2>
-            <p className="mt-4 text-ink-muted text-pretty">
-              {t("pages.tours.why.sub")}
-            </p>
-          </div>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {tours.why.items.map((item, i) => (
-              <motion.li
-                key={item.title}
-                initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: 0.45,
-                  delay: reduceMotion ? 0 : i * 0.05,
-                  ease: EASE,
-                }}
-                className="rounded-[1.1rem] border border-mist bg-foam/60 p-5 shadow-[var(--shadow-ambient)]"
-              >
-                <p className="font-medium text-ink">{item.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-pretty text-ink-muted">
-                  {item.body}
-                </p>
-              </motion.li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* Moved planner */}
+      {/* Interactive planner */}
       <PlanSriLankaTour id="planner" ctaHref="/support" />
+
+      {/* Private tour value preview */}
+      <PrivateToursPreview
+        primaryHref="#planner"
+        secondaryHref="#packages"
+        cardHref="#planner"
+      />
 
       {/* Popular packages */}
       <section
@@ -260,6 +228,9 @@ export function ToursContent() {
           </div>
         </Container>
       </section>
+
+      {/* Destinations */}
+      <DestinationStrip />
 
       {/* Why travel with Q Pick */}
       <section

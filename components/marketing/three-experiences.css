@@ -1,0 +1,761 @@
+/*
+  Three Experiences — editorial destinations.
+  Asymmetric 12-col hierarchy · glass overlays · accent-themed panels.
+  Not equal SaaS cards.
+*/
+
+.tx-stage {
+  --tx-void: #060d16;
+  --tx-foam: var(--foam, #f3f6f7);
+  --tx-blue: var(--brand, #0062fa);
+  --tx-blue-bright: var(--brand-bright, #0193fb);
+  --tx-gold: #c9a46c;
+  --tx-gold-soft: #e4c99a;
+  --tx-drive: #9aa6b5;
+  --tx-drive-deep: #1a222c;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--tx-foam);
+  background: var(--tx-void);
+  padding-block: var(--section-y-sm);
+}
+
+@media (min-width: 640px) {
+  .tx-stage {
+    padding-block: var(--section-y-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tx-stage {
+    padding-block: calc(var(--section-y-lg) - 1rem);
+  }
+}
+
+/* Layered ambient depth */
+.tx-ambient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.tx-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.tx-ambient-orb--blue {
+  width: min(52vw, 36rem);
+  height: min(52vw, 36rem);
+  top: -12%;
+  left: -8%;
+  background: radial-gradient(
+    circle,
+    rgb(0 98 250 / 0.34) 0%,
+    transparent 70%
+  );
+  animation: tx-drift-a 18s ease-in-out infinite;
+}
+
+.tx-ambient-orb--gold {
+  width: min(40vw, 28rem);
+  height: min(40vw, 28rem);
+  top: 18%;
+  right: -6%;
+  background: radial-gradient(
+    circle,
+    rgb(201 164 108 / 0.22) 0%,
+    transparent 70%
+  );
+  animation: tx-drift-b 22s ease-in-out infinite;
+}
+
+.tx-ambient-orb--slate {
+  width: min(48vw, 32rem);
+  height: min(48vw, 32rem);
+  bottom: -10%;
+  left: 28%;
+  background: radial-gradient(
+    circle,
+    rgb(154 166 181 / 0.14) 0%,
+    transparent 68%
+  );
+  animation: tx-drift-a 26s ease-in-out infinite reverse;
+}
+
+.tx-ambient-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(6 13 22 / 0.2) 0%, transparent 18%),
+    linear-gradient(0deg, rgb(6 13 22 / 0.45) 0%, transparent 22%);
+}
+
+@keyframes tx-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, 4%, 0) scale(1.06);
+  }
+}
+
+@keyframes tx-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 3%, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tx-ambient-orb {
+    animation: none;
+  }
+}
+
+.tx-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Editorial header */
+.tx-header {
+  max-inline-size: 40rem;
+  margin-inline: auto;
+  margin-block-end: clamp(2.5rem, 5vw, 3.75rem);
+  text-align: center;
+}
+
+.tx-eyebrow {
+  margin: 0;
+  display: inline-flex;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgb(243 246 247 / 0.16);
+  background: rgb(255 255 255 / 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: var(--tx-blue-bright);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 560;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tx-heading {
+  margin: 1.15rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.9rem, 4.4vw, 3.15rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--tx-foam);
+}
+
+.tx-sub {
+  margin: 1rem auto 0;
+  max-inline-size: 34rem;
+  color: rgb(243 246 247 / 0.64);
+  font-size: clamp(0.98rem, 1.35vw, 1.125rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* —— 12-column asymmetrical mosaic —— */
+.tx-mosaic {
+  display: grid;
+  gap: 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .tx-mosaic {
+    gap: 1.35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tx-mosaic {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: minmax(28rem, 34vw) auto;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .tx-panel--ride {
+    grid-column: 1 / span 7;
+    grid-row: 1;
+  }
+
+  .tx-panel--tours {
+    grid-column: 8 / span 5;
+    grid-row: 1;
+  }
+
+  .tx-panel--drive {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tx-mosaic {
+    gap: 1.65rem;
+    grid-template-rows: minmax(30rem, 32vw) auto;
+  }
+}
+
+/* Panel shell — unique destination, not a card twin */
+.tx-panel {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  min-height: 26rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.06) inset,
+    0 18px 48px rgb(0 0 0 / 0.35);
+  transform: translateY(0) scale(1);
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .tx-panel {
+    min-height: 28rem;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tx-panel--ride {
+    min-height: 0;
+  }
+
+  .tx-panel--tours {
+    min-height: 0;
+  }
+
+  .tx-panel--drive {
+    min-height: 22rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tx-panel--drive {
+    min-height: 24rem;
+  }
+}
+
+.tx-panel:hover,
+.tx-panel:focus-within {
+  transform: translateY(-8px) scale(1.01);
+  border-color: color-mix(in srgb, var(--tx-accent) 45%, transparent);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.1) inset,
+    0 28px 64px rgb(0 0 0 / 0.42),
+    0 0 0 1px color-mix(in srgb, var(--tx-accent) 28%, transparent),
+    0 0 48px color-mix(in srgb, var(--tx-accent) 22%, transparent);
+}
+
+.tx-panel--ride {
+  --tx-accent: var(--tx-blue);
+  --tx-accent-soft: var(--tx-blue-bright);
+}
+
+.tx-panel--tours {
+  --tx-accent: var(--tx-gold);
+  --tx-accent-soft: var(--tx-gold-soft);
+}
+
+.tx-panel--drive {
+  --tx-accent: var(--tx-drive);
+  --tx-accent-soft: #d5dde6;
+}
+
+/* Composition only — framing per chapter; layout unchanged */
+.tx-panel--ride .tx-panel-img {
+  /* Zoom out: include more of the sedan + open door */
+  object-position: 42% 68%;
+  transform: scale(1);
+}
+
+.tx-panel--ride:hover .tx-panel-img,
+.tx-panel--ride:focus-within .tx-panel-img {
+  transform: scale(1.05);
+}
+
+.tx-panel--tours .tx-panel-img {
+  object-position: center 40%;
+}
+
+.tx-panel--drive .tx-panel-img {
+  /*
+    Editorial crop: chauffeur as hero, rear-door service moment clear,
+    graded to match Ride / Explore campaign (cool cinematic, not heavy sepia).
+  */
+  object-position: 74% 46%;
+  transform: scale(1.2) translateX(-3.2%);
+  transform-origin: 68% 44%;
+  filter:
+    brightness(1.03)
+    contrast(1.14)
+    saturate(1.03);
+}
+
+.tx-panel--drive:hover .tx-panel-img,
+.tx-panel--drive:focus-within .tx-panel-img {
+  transform: scale(1.24) translateX(-3.2%);
+  filter:
+    brightness(1.06)
+    contrast(1.16)
+    saturate(1.05);
+}
+
+.tx-panel-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tx-panel-img {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-panel:hover .tx-panel-img,
+.tx-panel:focus-within .tx-panel-img {
+  transform: scale(1.08);
+}
+
+.tx-panel-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(6 13 22 / 0.15) 0%,
+      rgb(6 13 22 / 0.2) 35%,
+      rgb(6 13 22 / 0.88) 100%
+    ),
+    radial-gradient(
+      90% 70% at 20% 100%,
+      color-mix(in srgb, var(--tx-accent) 28%, transparent),
+      transparent 60%
+    );
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-panel--drive .tx-panel-wash {
+  background:
+    /* Dark field behind glass — max readability */
+    linear-gradient(
+      105deg,
+      rgb(4 8 14 / 0.97) 0%,
+      rgb(5 11 18 / 0.9) 30%,
+      rgb(6 13 22 / 0.38) 50%,
+      rgb(6 13 22 / 0.08) 66%,
+      rgb(6 13 22 / 0.22) 100%
+    ),
+    /* Soft vignette — pull focus to chauffeur + CTA */
+    radial-gradient(
+      86% 80% at 68% 48%,
+      transparent 28%,
+      rgb(3 7 14 / 0.28) 62%,
+      rgb(2 5 12 / 0.5) 100%
+    ),
+    /* Dim hotel background behind the chauffeur */
+    radial-gradient(
+      52% 58% at 84% 26%,
+      rgb(4 9 16 / 0.48),
+      transparent 72%
+    ),
+    /* Vehicle body reflections — luxury porte-cochère sheen */
+    linear-gradient(
+      108deg,
+      transparent 52%,
+      rgb(255 255 255 / 0.05) 62%,
+      rgb(210 224 236 / 0.14) 72%,
+      rgb(255 228 200 / 0.1) 82%,
+      transparent 94%
+    ),
+    /* Rear-door open + service hands */
+    radial-gradient(
+      30% 40% at 68% 52%,
+      rgb(255 236 210 / 0.18),
+      transparent 70%
+    ),
+    /* Soft key light on chauffeur face */
+    radial-gradient(
+      36% 44% at 76% 40%,
+      rgb(255 250 245 / 0.12),
+      transparent 68%
+    ),
+    radial-gradient(
+      50% 60% at 72% 56%,
+      color-mix(in srgb, var(--tx-accent) 11%, transparent),
+      transparent 62%
+    );
+}
+
+@media (max-width: 1023px) {
+  .tx-panel--drive .tx-panel-img {
+    object-position: 70% 42%;
+    transform: scale(1.16) translateX(-2.4%);
+    transform-origin: 64% 42%;
+  }
+
+  .tx-panel--drive:hover .tx-panel-img,
+  .tx-panel--drive:focus-within .tx-panel-img {
+    transform: scale(1.2) translateX(-2.4%);
+  }
+
+  .tx-panel--drive .tx-panel-wash {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(6 13 22 / 0.14) 0%,
+        rgb(6 13 22 / 0.3) 36%,
+        rgb(6 13 22 / 0.92) 100%
+      ),
+      radial-gradient(
+        90% 85% at 50% 35%,
+        transparent 30%,
+        rgb(3 7 14 / 0.4) 100%
+      ),
+      radial-gradient(
+        60% 45% at 78% 22%,
+        rgb(4 9 16 / 0.4),
+        transparent 70%
+      ),
+      linear-gradient(
+        180deg,
+        rgb(210 224 236 / 0.1) 0%,
+        transparent 28%
+      ),
+      radial-gradient(
+        55% 45% at 68% 32%,
+        rgb(255 236 210 / 0.14),
+        transparent 65%
+      ),
+      radial-gradient(
+        90% 70% at 20% 100%,
+        color-mix(in srgb, var(--tx-accent) 22%, transparent),
+        transparent 60%
+      );
+  }
+}
+
+.tx-panel-glow {
+  position: absolute;
+  inset: auto -10% -30% -10%;
+  height: 55%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--tx-accent) 35%, transparent),
+    transparent 68%
+  );
+  opacity: 0.45;
+  filter: blur(24px);
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-panel:hover .tx-panel-glow,
+.tx-panel:focus-within .tx-panel-glow {
+  opacity: 0.75;
+}
+
+/* Glass content layer */
+.tx-panel-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-height: inherit;
+  padding: 1.35rem 1.35rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .tx-panel-body {
+    padding: 1.65rem 1.75rem 1.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tx-panel--ride .tx-panel-body {
+    max-inline-size: 28rem;
+    padding: 2rem 2.15rem 2.25rem;
+  }
+
+  .tx-panel--tours .tx-panel-body {
+    padding: 1.75rem 1.65rem 1.9rem;
+  }
+
+  .tx-panel--drive {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+  }
+
+  .tx-panel--drive .tx-panel-body {
+    grid-column: 1;
+    justify-content: center;
+    max-inline-size: 34rem;
+    padding: 2.25rem 2rem 2.35rem 2.5rem;
+    /* Floating glass sheet — refined, not redesigned */
+    margin: 1.75rem 0 1.75rem 1.75rem;
+    border-radius: 1.3rem;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    background:
+      linear-gradient(
+        155deg,
+        rgb(255 255 255 / 0.14) 0%,
+        rgb(255 255 255 / 0.05) 42%,
+        rgb(255 255 255 / 0.02) 100%
+      ),
+      rgb(8 14 22 / 0.48);
+    backdrop-filter: blur(28px) saturate(1.28);
+    -webkit-backdrop-filter: blur(28px) saturate(1.28);
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.2) inset,
+      0 0 0 1px rgb(0 0 0 / 0.18),
+      0 18px 44px rgb(0 0 0 / 0.34),
+      0 0 40px rgb(154 166 181 / 0.08);
+    min-height: auto;
+    height: auto;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .tx-panel--drive .tx-panel-body {
+    margin: 2rem 0 2rem 2.25rem;
+    padding: 2.4rem 2.25rem 2.5rem 2.75rem;
+  }
+}
+
+.tx-glass-chip {
+  display: inline-grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--tx-accent-soft) 40%, transparent);
+  color: var(--tx-accent-soft);
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--tx-accent) 38%, transparent),
+      color-mix(in srgb, var(--tx-accent) 12%, transparent)
+    ),
+    rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.08) inset,
+    0 8px 20px color-mix(in srgb, var(--tx-accent) 25%, transparent);
+  transition: box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-panel:hover .tx-glass-chip,
+.tx-panel:focus-within .tx-glass-chip {
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.14) inset,
+    0 10px 28px color-mix(in srgb, var(--tx-accent) 45%, transparent),
+    0 0 32px color-mix(in srgb, var(--tx-accent) 35%, transparent);
+}
+
+.tx-kicker {
+  margin: 1rem 0 0;
+  color: var(--tx-accent-soft);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 560;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.tx-title {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 650;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  text-wrap: balance;
+  color: var(--tx-foam);
+}
+
+.tx-panel--ride .tx-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.55rem);
+}
+
+.tx-desc {
+  margin: 0.7rem 0 0;
+  max-inline-size: 28rem;
+  color: rgb(243 246 247 / 0.72);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+@media (min-width: 1024px) {
+  .tx-panel--ride .tx-desc {
+    font-size: 1.02rem;
+  }
+}
+
+.tx-points {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tx-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: rgb(243 246 247 / 0.82);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.tx-point-dot {
+  flex-shrink: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.45rem;
+  border-radius: 999px;
+  background: var(--tx-accent-soft);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--tx-accent) 55%, transparent);
+}
+
+.tx-cta {
+  margin-top: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.78rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--tx-accent-soft) 45%, transparent);
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 0.14) 0%,
+      rgb(255 255 255 / 0.05) 100%
+    ),
+    color-mix(in srgb, var(--tx-accent) 22%, rgb(8 14 22 / 0.65));
+  color: var(--tx-foam);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.16) inset,
+    0 10px 24px rgb(0 0 0 / 0.28);
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-cta:hover,
+.tx-cta:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--tx-accent-soft) 70%, transparent);
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 0.18) 0%,
+      rgb(255 255 255 / 0.07) 100%
+    ),
+    color-mix(in srgb, var(--tx-accent) 36%, rgb(8 14 22 / 0.55));
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.2) inset,
+    0 14px 32px rgb(0 0 0 / 0.34),
+    0 0 28px color-mix(in srgb, var(--tx-accent) 28%, transparent);
+  outline: none;
+}
+
+.tx-cta-arrow {
+  display: inline-block;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tx-cta:hover .tx-cta-arrow,
+.tx-cta:focus-visible .tx-cta-arrow {
+  transform: translateX(3px);
+}
+
+html[lang="si"] .tx-desc,
+html[lang="ta"] .tx-desc,
+html[lang="si"] .tx-point,
+html[lang="ta"] .tx-point {
+  text-wrap: pretty;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tx-panel,
+  .tx-panel-img,
+  .tx-glass-chip,
+  .tx-cta,
+  .tx-cta-arrow,
+  .tx-panel-glow,
+  .tx-panel-wash {
+    transition: none;
+  }
+
+  .tx-panel:hover,
+  .tx-panel:focus-within {
+    transform: none;
+  }
+
+  .tx-panel:hover .tx-panel-img,
+  .tx-panel:focus-within .tx-panel-img {
+    transform: scale(1.02);
+  }
+
+  .tx-panel--drive .tx-panel-img,
+  .tx-panel--drive:hover .tx-panel-img,
+  .tx-panel--drive:focus-within .tx-panel-img {
+    transform: scale(1.2) translateX(-3.2%);
+  }
+}

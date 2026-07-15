@@ -12,8 +12,8 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { AppStoreBadge } from "@/components/ui/app-store-badge";
-import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/lib/site";
 
 type AppTab = "passenger" | "driver";
 
@@ -27,8 +27,7 @@ const DRIVER_SCREENS = ["dashboard", "request", "earnings"] as const;
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const SCREEN_MS = 3200;
-const DRIVER_PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.qpick.driver&pcampaignid=web_share";
+const DRIVER_PLAY_STORE_URL = siteConfig.store.driverGooglePlay;
 
 /**
  * Download the Q Pick Apps — passenger / driver showcase with real app screens.
@@ -257,33 +256,26 @@ export function DownloadQPickApps() {
                     {tab === "passenger" ? (
                       <>
                         <AppStoreBadge
-                          store="ios"
+                          store="android"
                           className="border-foam/20 bg-ink/80"
                         />
                         <AppStoreBadge
-                          store="android"
+                          store="ios"
                           className="border-foam/20 bg-ink/80"
                         />
                       </>
                     ) : (
                       <>
-                        <ButtonLink
+                        <AppStoreBadge
+                          store="android"
                           href={DRIVER_PLAY_STORE_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          size="lg"
-                          className="max-w-full"
-                        >
-                          {t("downloadApps.driver.primary")}
-                        </ButtonLink>
-                        <ButtonLink
-                          href="/drive"
-                          size="lg"
-                          variant="secondary"
-                          className="max-w-full border-foam/25 bg-foam/10 text-foam hover:border-foam/40 hover:bg-foam/16 hover:text-foam"
-                        >
-                          {t("downloadApps.driver.secondary")}
-                        </ButtonLink>
+                          className="border-foam/20 bg-ink/80"
+                          subtitle={t("downloadApps.store.driverPlay")}
+                        />
+                        <AppStoreBadge
+                          store="ios"
+                          className="border-foam/20 bg-ink/80"
+                        />
                       </>
                     )}
                   </div>

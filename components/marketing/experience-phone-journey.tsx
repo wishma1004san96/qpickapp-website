@@ -297,11 +297,13 @@ function JourneyStepView({
   reduceMotion,
   stars,
   onLiveComplete,
+  frozen = false,
 }: {
   id: JourneyStepId;
   reduceMotion: boolean;
   stars: number;
   onLiveComplete?: () => void;
+  frozen?: boolean;
 }) {
   switch (id) {
     case "splash":
@@ -337,8 +339,8 @@ function JourneyStepView({
       return (
         <SearchingScreen
           key="searching"
-          reduceMotion={reduceMotion}
-          onComplete={onLiveComplete}
+          reduceMotion={reduceMotion || frozen}
+          onComplete={frozen ? undefined : onLiveComplete}
         />
       );
     case "accepted":
@@ -349,7 +351,9 @@ function JourneyStepView({
           key="arriving"
           mode="arriving"
           reduceMotion={reduceMotion}
-          onComplete={onLiveComplete}
+          onComplete={frozen ? undefined : onLiveComplete}
+          frozen={frozen}
+          freezeAt={0.48}
         />
       );
     case "pickedup":
@@ -360,7 +364,9 @@ function JourneyStepView({
           key="riding"
           mode="riding"
           reduceMotion={reduceMotion}
-          onComplete={onLiveComplete}
+          onComplete={frozen ? undefined : onLiveComplete}
+          frozen={frozen}
+          freezeAt={0.42}
         />
       );
     case "completed":
@@ -380,6 +386,31 @@ function JourneyStepView({
     default:
       return null;
   }
+}
+
+/**
+ * Frozen marketing keyframe from the shared Experience phone journey.
+ * Used by How Q Pick Works — same screens/assets as Experience Q Pick.
+ */
+export function ExperienceJourneyFrame({
+  step,
+  reduceMotion = false,
+}: {
+  step: JourneyStepId;
+  reduceMotion?: boolean;
+}) {
+  return (
+    <div className="experience-journey experience-journey--frame">
+      <div className="experience-journey-screen" style={{ zIndex: 2 }}>
+        <JourneyStepView
+          id={step}
+          reduceMotion={reduceMotion}
+          stars={5}
+          frozen
+        />
+      </div>
+    </div>
+  );
 }
 
 function SplashScreen({ reduceMotion }: { reduceMotion: boolean }) {

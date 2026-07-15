@@ -33,9 +33,9 @@
   --duration-reveal: 600ms;
 
   /* Homepage section rhythm — mobile / tablet / desktop */
-  --section-y-sm: 3.5rem; /* 56px */
-  --section-y-md: 5rem; /* 80px */
-  --section-y-lg: 7.5rem; /* 120px */
+  --section-y-sm: 4rem; /* 64px */
+  --section-y-md: 5.5rem; /* 88px */
+  --section-y-lg: 8rem; /* 128px */
 
   --shadow-ambient: 0 1px 2px rgb(10 22 32 / 0.04),
     0 8px 24px rgb(10 22 32 / 0.06);
@@ -180,108 +180,34 @@
     letter-spacing: -0.01em;
   }
 
-  /* Sinhala / Tamil — smaller hero type, wrap instead of clip/overlap */
-  html[lang="si"] .hero-title {
-    font-size: clamp(1.85rem, 5.4vw, 3.35rem) !important;
-    line-height: 1.12 !important;
-    white-space: normal !important;
-    max-inline-size: 100%;
-    text-wrap: balance;
-    overflow-wrap: break-word;
-  }
-  html[lang="ta"] .hero-title {
-    font-size: clamp(1.7rem, 5vw, 3.05rem) !important;
-    line-height: 1.15 !important;
-    white-space: normal !important;
-    max-inline-size: 100%;
-    text-wrap: balance;
-    overflow-wrap: break-word;
-  }
-  html[lang="si"] .hero-sub {
-    font-size: clamp(1.35rem, 2.8vw, 2.05rem) !important;
-    line-height: 1.28 !important;
-    white-space: normal !important;
-    max-inline-size: 100% !important;
-    text-wrap: balance;
-  }
+  /*
+    Sinhala / Tamil — wrap long copy without shrinking type.
+    Layout architecture (not font-size) absorbs length differences.
+  */
+  html[lang="si"] .hero-title,
+  html[lang="ta"] .hero-title,
+  html[lang="si"] .hero-sub,
   html[lang="ta"] .hero-sub {
-    font-size: clamp(1.28rem, 2.6vw, 1.95rem) !important;
-    line-height: 1.32 !important;
-    white-space: normal !important;
-    max-inline-size: 100% !important;
+    max-inline-size: 100%;
+    overflow-wrap: break-word;
     text-wrap: balance;
   }
   html[lang="si"] .hero-body,
   html[lang="ta"] .hero-body {
-    font-size: 0.95rem !important;
-    line-height: 1.75 !important;
-    max-inline-size: 100% !important;
-  }
-  @media (min-width: 640px) {
-    html[lang="si"] .hero-body,
-    html[lang="ta"] .hero-body {
-      font-size: 1.05rem !important;
-    }
-  }
-  html[lang="si"] .hero-cta-btn,
-  html[lang="ta"] .hero-cta-btn {
-    font-size: 0.9375rem;
-    padding-inline: 1.35rem;
-    line-height: 1.35;
-    white-space: normal;
-  }
-  html[lang="si"] .hero-planner-title {
-    font-size: 1.25rem !important;
-    line-height: 1.3;
-    text-wrap: balance;
-  }
-  html[lang="ta"] .hero-planner-title {
-    font-size: 1.2rem !important;
-    line-height: 1.35;
-    text-wrap: balance;
-  }
-  html[lang="si"] .hero-planner-sub,
-  html[lang="ta"] .hero-planner-sub {
-    max-inline-size: 100% !important;
-    line-height: 1.65;
-    overflow-wrap: break-word;
+    max-inline-size: 100%;
   }
   html[lang="si"] .hero-planner-tab,
   html[lang="ta"] .hero-planner-tab {
-    font-size: 0.78rem;
-    line-height: 1.25;
     white-space: normal;
-    padding-inline: 0.35rem;
+    line-height: 1.25;
   }
   html[lang="si"] .hero-planner-label,
-  html[lang="ta"] .hero-planner-label {
-    line-height: 1.45;
-    white-space: normal;
-    overflow-wrap: break-word;
-  }
+  html[lang="ta"] .hero-planner-label,
   html[lang="si"] .hero-planner-note,
-  html[lang="ta"] .hero-planner-note {
-    font-size: 0.8125rem;
-    line-height: 1.65;
+  html[lang="ta"] .hero-planner-note,
+  html[lang="si"] .hero-planner-sub,
+  html[lang="ta"] .hero-planner-sub {
     overflow-wrap: break-word;
-  }
-
-  /* Trust row — keep 3 equal columns; shrink SI/TA to avoid wrap */
-  html[lang="si"] .hero-trust-label {
-    font-size: 0.72rem;
-    letter-spacing: 0;
-  }
-  html[lang="ta"] .hero-trust-label {
-    font-size: 0.68rem;
-    letter-spacing: 0;
-  }
-  @media (min-width: 640px) and (max-width: 1023px) {
-    html[lang="si"] .hero-trust-label {
-      font-size: 0.68rem;
-    }
-    html[lang="ta"] .hero-trust-label {
-      font-size: 0.64rem;
-    }
   }
 }
 
@@ -957,7 +883,7 @@
 
 .experience-live-status {
   position: absolute;
-  top: max(48px, 11%);
+  top: max(78px, 16.5%);
   left: 50%;
   z-index: 6;
   display: flex;
@@ -974,6 +900,90 @@
   backdrop-filter: blur(14px) saturate(1.2);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
   white-space: nowrap;
+}
+
+.experience-live-eta-badge {
+  position: absolute;
+  top: max(46px, 10%);
+  left: 50%;
+  z-index: 7;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #0a84ff;
+  color: #fff;
+  box-shadow:
+    0 10px 24px rgb(10 132 255 / 0.35),
+    0 1px 0 rgb(255 255 255 / 0.25) inset;
+  white-space: nowrap;
+}
+
+.experience-live-eta-badge-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.experience-live-eta-badge-value {
+  font-size: clamp(11px, 3vw, 12.5px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.experience-live-fabs {
+  position: absolute;
+  right: clamp(10px, 4%, 14px);
+  bottom: clamp(132px, 28%, 168px);
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.experience-live-fab {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.94);
+  color: #0a84ff;
+  border: 1px solid rgb(10 132 255 / 0.14);
+  box-shadow:
+    0 8px 20px rgb(10 22 32 / 0.14),
+    0 1px 0 rgb(255 255 255 / 0.9) inset;
+}
+
+.experience-live-svg-car-pulse {
+  stroke: rgb(10 132 255 / 0.55);
+  stroke-width: 1.6;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: experience-car-gps-pulse 2s ease-out infinite;
+}
+
+.experience-live-svg-car-pulse--delay {
+  animation-delay: 0.7s;
+}
+
+@keyframes experience-car-gps-pulse {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.55);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
 }
 
 .experience-live-status-dot {
@@ -1364,10 +1374,15 @@
   .scroll-dot,
   .phone-float,
   .experience-phone-float,
+  .experience-sat-float,
   .experience-ambient-glow,
   .experience-island-sheen,
   .experience-pin-pulse,
   .experience-live-status-dot,
+  .experience-live-svg-pin-pulse,
+  .experience-live-svg-car-pulse {
+    animation: none !important;
+  }
   .experience-map-pin--pulse .experience-map-pin-ring {
     animation: none;
   }

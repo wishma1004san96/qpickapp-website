@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/motion/reveal";
 import { useTranslations } from "@/components/i18n/locale-provider";
-import { AppStoreBadge } from "@/components/ui/app-store-badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Prose } from "@/components/ui/typography";
@@ -64,7 +63,7 @@ export function FinalCta() {
             {t("finalCta.body")}
           </Prose>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="/airport" size="lg" className="max-w-full">
+            <ButtonLink href="/ride" size="lg" className="max-w-full">
               {t("finalCta.primary")}
             </ButtonLink>
             <ButtonLink
@@ -75,10 +74,6 @@ export function FinalCta() {
             >
               {t("finalCta.secondary")}
             </ButtonLink>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <AppStoreBadge store="ios" />
-            <AppStoreBadge store="android" />
           </div>
         </Container>
       </div>

@@ -7,13 +7,20 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Image from "next/image";
-import { useRef, useState } from "react";
-import { brandAssets } from "@/lib/tokens";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   useMessages,
   useTranslations,
 } from "@/components/i18n/locale-provider";
+import {
+  ExperienceJourneyFrame,
+  type JourneyStepId,
+} from "@/components/marketing/experience-phone-journey";
 import { Container } from "@/components/ui/container";
 import "./how-qpick-works.css";
 
@@ -27,28 +34,97 @@ const STEP_IDS = [
 
 type StepId = (typeof STEP_IDS)[number];
 
+/** Frozen keyframes from the shared Experience phone journey. */
+const STEP_TO_JOURNEY: Record<StepId, JourneyStepId> = {
+  welcome: "splash",
+  register: "login",
+  otp: "dashboard",
+  journey: "vehicles",
+  track: "arriving",
+};
+
+const STEP_LAYER = [
+  "hqw-step--layer-1",
+  "hqw-step--layer-2",
+  "hqw-step--layer-3",
+  "hqw-step--layer-4",
+  "hqw-step--layer-5",
+] as const;
+
 const EASE = [0.22, 1, 0.36, 1] as const;
+const HOVER_MQ = "(hover: hover) and (pointer: fine)";
 
 /**
- * How Q Pick Works — premium journey timeline with placeholder phone UIs.
+ * How Q Pick Works — timeline of frozen frames from the Experience phone journey.
  */
 export function HowQPickWorks() {
   const t = useTranslations();
   const { howQPickWorks } = useMessages();
   const reduceMotion = useReducedMotion() ?? false;
   const sectionRef = useRef<HTMLElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const stepRefs = useRef<Array<HTMLLIElement | null>>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [canHover, setCanHover] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 0.75", "end 0.55"],
+    offset: ["start 0.7", "end 0.4"],
   });
   const lineRaw = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const lineProgress = useSpring(lineRaw, {
-    stiffness: 70,
-    damping: 28,
-    mass: 0.35,
+    stiffness: 90,
+    damping: 26,
+    mass: 0.3,
   });
+
+  useEffect(() => {
+    const media = window.matchMedia(HOVER_MQ);
+    const sync = () => setCanHover(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  /* Touch / coarse pointer — activate the most visible step only */
+  useEffect(() => {
+    if (canHover) {
+      setActiveIndex(null);
+      return;
+    }
+
+    const ratios = new Map<number, number>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const index = Number(
+            (entry.target as HTMLElement).dataset.hqwIndex,
+          );
+          if (!Number.isFinite(index)) continue;
+          ratios.set(index, entry.isIntersecting ? entry.intersectionRatio : 0);
+        }
+
+        let bestIndex: number | null = null;
+        let bestRatio = 0;
+        for (const [index, ratio] of ratios) {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestIndex = index;
+          }
+        }
+        setActiveIndex(bestRatio >= 0.35 ? bestIndex : null);
+      },
+      {
+        threshold: [0.2, 0.35, 0.5, 0.65, 0.8, 1],
+        rootMargin: "-18% 0px -18% 0px",
+      },
+    );
+
+    for (const el of stepRefs.current) {
+      if (el) io.observe(el);
+    }
+
+    return () => io.disconnect();
+  }, [canHover]);
 
   return (
     <section
@@ -56,7 +132,7 @@ export function HowQPickWorks() {
       className="hqw-stage"
       aria-labelledby="how-qpick-works-heading"
     >
-      <Container>
+      <Container className="max-w-[76rem]">
         <motion.header
           className="hqw-header"
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
@@ -91,30 +167,52 @@ export function HowQPickWorks() {
               return (
                 <motion.li
                   key={id}
-                  className={`hqw-step${isActive ? " is-active" : ""}`}
+                  ref={(node) => {
+                    stepRefs.current[index] = node;
+                  }}
+                  data-hqw-index={index}
+                  className={[
+                    "hqw-step",
+                    STEP_LAYER[index],
+                    isActive ? "is-active" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                   initial={reduceMotion ? false : { opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.35 }}
-                  onViewportEnter={() => setActiveIndex(index)}
                   transition={{
                     duration: 0.55,
                     delay: reduceMotion ? 0 : index * 0.08,
                     ease: EASE,
                   }}
-                  whileHover={reduceMotion ? undefined : { scale: 1.02 }}
+                  onMouseEnter={() => {
+                    if (canHover) setActiveIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    if (canHover) setActiveIndex(null);
+                  }}
+                  onFocus={() => {
+                    if (canHover) setActiveIndex(index);
+                  }}
+                  onBlur={(event) => {
+                    if (!canHover) return;
+                    const next = event.currentTarget.contains(
+                      event.relatedTarget as Node | null,
+                    );
+                    if (!next) setActiveIndex(null);
+                  }}
                 >
                   <div className="hqw-step-dot" aria-hidden="true">
                     <span>{step.n}</span>
                   </div>
 
                   <motion.div
-                    className="hqw-phone-float"
+                    className="hqw-device-float"
                     animate={
                       reduceMotion
                         ? undefined
-                        : isActive
-                          ? { y: [0, -10, 0], scale: 1 }
-                          : { y: [0, -5, 0], scale: 0.98 }
+                        : { y: [0, -6, 0] }
                     }
                     transition={
                       reduceMotion
@@ -126,16 +224,15 @@ export function HowQPickWorks() {
                               ease: "easeInOut",
                               delay: index * 0.18,
                             },
-                            scale: { duration: 0.45, ease: EASE },
                           }
                     }
                   >
-                    <div className="hqw-phone" aria-hidden="true">
-                      <div className="hqw-phone-notch" />
-                      <div className="hqw-phone-screen">
-                        <StepScreen id={id} />
-                      </div>
-                    </div>
+                    <ShowcaseDevice active={isActive}>
+                      <ExperienceJourneyFrame
+                        step={STEP_TO_JOURNEY[id]}
+                        reduceMotion={reduceMotion}
+                      />
+                    </ShowcaseDevice>
                   </motion.div>
 
                   <div className="hqw-copy">
@@ -155,167 +252,23 @@ export function HowQPickWorks() {
   );
 }
 
-function StepScreen({ id }: { id: StepId }) {
-  switch (id) {
-    case "welcome":
-      return <WelcomeScreen />;
-    case "register":
-      return <RegisterScreen />;
-    case "otp":
-      return <OtpScreen />;
-    case "journey":
-      return <JourneyScreen />;
-    case "track":
-      return <TrackScreen />;
-  }
-}
-
-function WelcomeScreen() {
-  return (
-    <div className="hqw-ui hqw-ui-welcome">
-      <Image
-        src={brandAssets.logo}
-        alt=""
-        width={56}
-        height={56}
-        className="hqw-ui-logo"
-      />
-      <p className="hqw-ui-brand">Q Pick</p>
-      <p className="hqw-ui-welcome-title">Welcome</p>
-      <p className="hqw-ui-muted">Your journey across Sri Lanka starts here.</p>
-      <span className="hqw-ui-btn">Get Started</span>
-    </div>
-  );
-}
-
-function RegisterScreen() {
-  return (
-    <div className="hqw-ui hqw-ui-form">
-      <p className="hqw-ui-screen-title">Create account</p>
-      <label className="hqw-ui-field">
-        <span>Full Name</span>
-        <span className="hqw-ui-input">Alex Perera</span>
-      </label>
-      <label className="hqw-ui-field">
-        <span>Mobile Number</span>
-        <span className="hqw-ui-input">+94 77 123 4567</span>
-      </label>
-      <span className="hqw-ui-btn">Continue</span>
-    </div>
-  );
-}
-
-function OtpScreen() {
-  return (
-    <div className="hqw-ui hqw-ui-form">
-      <p className="hqw-ui-screen-title">Verify number</p>
-      <p className="hqw-ui-muted">Enter the 6-digit code we sent you.</p>
-      <div className="hqw-ui-otp" aria-hidden="true">
-        {["4", "8", "1", "", "", ""].map((d, i) => (
-          <span key={i} className={d ? "is-filled" : undefined}>
-            {d}
-          </span>
-        ))}
-      </div>
-      <span className="hqw-ui-btn">Verify</span>
-    </div>
-  );
-}
-
-function JourneyScreen() {
-  const tiles = [
-    { label: "Ride", kind: "ride" },
-    { label: "Airport", kind: "airport" },
-    { label: "Tours", kind: "tours" },
-    { label: "Favorites", kind: "favorites" },
-  ] as const;
-
-  return (
-    <div className="hqw-ui hqw-ui-journey">
-      <p className="hqw-ui-screen-title">Choose your journey</p>
-      <div className="hqw-ui-search">Search destinations</div>
-      <div className="hqw-ui-tiles">
-        {tiles.map((tile) => (
-          <div key={tile.label} className="hqw-ui-tile">
-            <span className="hqw-ui-tile-icon" aria-hidden="true">
-              <TileIcon kind={tile.kind} />
-            </span>
-            <span>{tile.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function TileIcon({
-  kind,
+function ShowcaseDevice({
+  children,
+  active,
 }: {
-  kind: "ride" | "airport" | "tours" | "favorites";
+  children: ReactNode;
+  active: boolean;
 }) {
-  if (kind === "favorites") {
-    return (
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-        <path d="M12 3.5l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.4 6.2 18.4l.9-5.4L3.2 9.2l5.4-.8L12 3.5z" />
-      </svg>
-    );
-  }
-  if (kind === "ride") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        width="18"
-        height="18"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <path d="M4 15h16l-1.2-4.2A2 2 0 0 0 16.9 9H7.1a2 2 0 0 0-1.9 1.8L4 15z" />
-        <circle cx="7.5" cy="16.5" r="1.5" />
-        <circle cx="16.5" cy="16.5" r="1.5" />
-      </svg>
-    );
-  }
-  if (kind === "airport") {
-    return (
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z" />
-      </svg>
-    );
-  }
   return (
-    <svg
-      viewBox="0 0 24 24"
-      width="18"
-      height="18"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
+    <div
+      className={`hqw-device${active ? " is-active" : ""}`}
+      aria-hidden="true"
     >
-      <path d="M4 19V6a2 2 0 0 1 2-2h7l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-      <path d="M13 4v5h5" />
-    </svg>
-  );
-}
-
-function TrackScreen() {
-  return (
-    <div className="hqw-ui hqw-ui-track">
-      <div className="hqw-ui-map" aria-hidden="true">
-        <span className="hqw-ui-route" />
-        <span className="hqw-ui-pin hqw-ui-pin-a" />
-        <span className="hqw-ui-pin hqw-ui-pin-b" />
-      </div>
-      <div className="hqw-ui-driver">
-        <span className="hqw-ui-avatar" />
-        <div>
-          <p className="hqw-ui-driver-name">Nimal S.</p>
-          <p className="hqw-ui-muted">Toyota Premio · ETA 4 min</p>
+      <div className="hqw-device-shell">
+        <div className="hqw-device-glass">
+          <div className="hqw-device-island" />
+          <div className="hqw-device-screen">{children}</div>
         </div>
-      </div>
-      <div className="hqw-ui-actions">
-        <span className="hqw-ui-btn hqw-ui-btn-ghost">Call Driver</span>
-        <span className="hqw-ui-btn">Chat</span>
       </div>
     </div>
   );

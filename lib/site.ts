@@ -6,8 +6,20 @@ export const siteConfig = {
     "Premium ride-hailing and tourism across Sri Lanka — airport transfers, city rides, and island journeys under one trusted standard.",
   url: "https://qpick.lk",
   supportEmail: "support@qpick.lk",
-  emergencyLine: "+94 11 000 0000",
+  /** Official line from qpickapp.com contact */
+  emergencyLine: "+94 11 433 4334",
+  phoneLines: [
+    "+94 11 433 4334",
+    "+94 11 473 4334",
+    "+94 77 361 9000",
+    "+94 78 361 9000",
+  ] as const,
+  address: "No. 230A, Palagathura, Negombo.",
   locale: "en",
+  store: {
+    driverGooglePlay:
+      "https://play.google.com/store/apps/details?id=com.qpick.driver&pcampaignid=web_share",
+  },
 } as const;
 
 export const primaryNav = [

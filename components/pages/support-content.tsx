@@ -26,6 +26,23 @@ export function SupportContent() {
         </div>
         <div>
           <h2 className="text-sm font-medium text-ink">
+            {t("pages.support.phoneLabel")}
+          </h2>
+          <ul className="mt-2 space-y-1">
+            {siteConfig.phoneLines.map((line) => (
+              <li key={line}>
+                <a
+                  href={`tel:${line.replace(/\s/g, "")}`}
+                  className="inline-flex min-h-10 items-center font-mono text-sm text-ink hover:text-lagoon"
+                >
+                  {line}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-sm font-medium text-ink">
             {t("pages.support.emergencyLabel")}
           </h2>
           <a
@@ -34,6 +51,14 @@ export function SupportContent() {
           >
             {siteConfig.emergencyLine}
           </a>
+        </div>
+        <div>
+          <h2 className="text-sm font-medium text-ink">
+            {t("pages.support.locationLabel")}
+          </h2>
+          <p className="mt-2 text-ink-muted leading-relaxed text-pretty">
+            {siteConfig.address}
+          </p>
         </div>
       </div>
     </PageShell>

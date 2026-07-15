@@ -12,9 +12,17 @@ import { Container } from "@/components/ui/container";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * Homepage teaser for private tours — drives to `/tours` (full planner lives there).
+ * Private tours teaser — reusable on Home (legacy) and Tours.
  */
-export function PrivateToursPreview() {
+export function PrivateToursPreview({
+  primaryHref = "/tours#planner",
+  secondaryHref = "/tours#packages",
+  cardHref = "/tours#planner",
+}: {
+  primaryHref?: string;
+  secondaryHref?: string;
+  cardHref?: string;
+}) {
   const t = useTranslations();
   const { privateToursPreview } = useMessages();
   const reduceMotion = useReducedMotion() ?? false;
@@ -74,11 +82,11 @@ export function PrivateToursPreview() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/tours" size="lg" className="max-w-full">
+              <ButtonLink href={primaryHref} size="lg" className="max-w-full">
                 {t("privateToursPreview.primary")}
               </ButtonLink>
               <ButtonLink
-                href="/tours"
+                href={secondaryHref}
                 size="lg"
                 variant="secondary"
                 className="max-w-full border-foam/25 bg-foam/10 text-foam hover:border-foam/40 hover:bg-foam/16 hover:text-foam"
@@ -125,7 +133,7 @@ export function PrivateToursPreview() {
                 </p>
               </div>
               <Link
-                href="/tours"
+                href={cardHref}
                 className="inline-flex min-h-11 items-center text-sm font-medium text-brand-bright transition-colors hover:text-foam"
               >
                 {t("privateToursPreview.cardCta")}

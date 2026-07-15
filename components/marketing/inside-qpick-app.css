@@ -1,0 +1,302 @@
+﻿/* Inside the Q Pick App — UI showcase (independent of Experience Q Pick) */
+
+.iqpa-stage {
+  --iqpa-ink: #0a1620;
+  --iqpa-foam: #f3f6f7;
+  --iqpa-brand: var(--brand-bright, #0193fb);
+  --iqpa-muted: rgb(243 246 247 / 0.78);
+  position: relative;
+  overflow: clip;
+  color: var(--iqpa-foam);
+  background: #071018;
+  padding-block: var(--section-y-sm);
+  isolation: isolate;
+}
+
+@media (min-width: 640px) {
+  .iqpa-stage {
+    padding-block: var(--section-y-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .iqpa-stage {
+    padding-block: var(--section-y-lg);
+  }
+}
+
+/* Real city / destination slideshow + slow zoom */
+.iqpa-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.iqpa-bg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+  will-change: opacity;
+}
+
+.iqpa-bg-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.iqpa-bg-image {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+.iqpa-bg-slide.is-active:not(.is-static) .iqpa-bg-image {
+  animation: iqpa-ken-burns 5.5s ease-out forwards;
+}
+
+.iqpa-bg-slide.is-static .iqpa-bg-image {
+  transform: scale(1.06);
+}
+
+@keyframes iqpa-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.iqpa-bg-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(4 10 18 / 0.72) 0%,
+      rgb(4 10 18 / 0.55) 38%,
+      rgb(4 10 18 / 0.7) 100%
+    ),
+    radial-gradient(ellipse 70% 55% at 50% 40%, rgb(0 98 250 / 0.18), transparent 65%);
+}
+
+.iqpa-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.iqpa-header {
+  max-inline-size: 38rem;
+  margin-inline: auto;
+  margin-block-end: clamp(2.25rem, 4vw, 3.5rem);
+  text-align: center;
+}
+
+.iqpa-eyebrow {
+  margin: 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 560;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--iqpa-brand);
+}
+
+.iqpa-heading {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.85rem, 4vw, 2.85rem);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--iqpa-foam);
+  text-shadow: 0 8px 28px rgb(0 0 0 / 0.35);
+}
+
+.iqpa-sub {
+  margin: 0.85rem auto 0;
+  max-inline-size: 34rem;
+  font-size: clamp(0.98rem, 1.35vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--iqpa-muted);
+  text-wrap: pretty;
+}
+
+.iqpa-gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 3.25rem);
+  justify-items: center;
+}
+
+@media (min-width: 900px) {
+  .iqpa-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    align-items: start;
+  }
+}
+
+.iqpa-panel {
+  width: 100%;
+  max-inline-size: 17.5rem;
+}
+
+.iqpa-panel-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Identical shell size for all three devices — content cannot inflate. */
+.iqpa-phone {
+  position: relative;
+  width: min(100%, 15.5rem);
+  aspect-ratio: 71.5 / 149.6;
+  flex: 0 0 auto;
+  overflow: hidden;
+  filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.45))
+    drop-shadow(0 8px 16px rgb(0 0 0 / 0.28));
+}
+
+.iqpa-phone-shell {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border-radius: 2.15rem;
+  background:
+    linear-gradient(145deg, #3a3d42 0%, #1c1e22 42%, #0d0e10 100%);
+  padding: 0.42rem;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    inset 0 -1px 0 rgb(0 0 0 / 0.45);
+}
+
+.iqpa-phone-glass {
+  position: absolute;
+  inset: 0.55rem 0.7rem auto 18%;
+  height: 38%;
+  border-radius: 1.1rem;
+  background: linear-gradient(
+    125deg,
+    rgb(255 255 255 / 0.14) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: soft-light;
+}
+
+.iqpa-phone-bezel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 1.78rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.iqpa-phone-display {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #f3f6f7;
+}
+
+.iqpa-phone-display > * {
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+}
+
+.iqpa-island {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  z-index: 4;
+  width: 5.1rem;
+  height: 1.35rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0a0a0a;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+.iqpa-island-camera {
+  position: absolute;
+  top: 50%;
+  right: 0.42rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle at 35% 35%, #3a5a8a, #0a1620 70%);
+}
+
+.iqpa-phone-reflection {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -14%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(1 147 251 / 0.28) 0%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.iqpa-caption {
+  text-align: center;
+  max-inline-size: 16rem;
+}
+
+.iqpa-caption-n {
+  display: block;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 560;
+  letter-spacing: 0.16em;
+  color: var(--iqpa-brand);
+}
+
+.iqpa-caption-title {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--iqpa-foam);
+}
+
+.iqpa-caption-body {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--iqpa-muted);
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iqpa-panel-inner {
+    transform: none !important;
+  }
+
+  .iqpa-bg-slide.is-active .iqpa-bg-image {
+    animation: none !important;
+  }
+}

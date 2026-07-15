@@ -57,24 +57,24 @@
     "slides": [
       {
         "title": "Q Pick",
-        "subtitle": "Sri Lanka, moved with certainty.",
-        "description": "Airport transfers, city rides and luxury travel — privately arranged.",
-        "primary": "Begin your journey",
-        "secondary": "Discover the island"
+        "subtitle": "Luxury rides. Private tours. Professional drivers.",
+        "description": "Airport transfers, city rides, and island journeys — privately arranged under one trusted standard.",
+        "primary": "Book Ride",
+        "secondary": "Explore Tours"
       },
       {
         "title": "Airport Transfers",
         "subtitle": "Arrive with confidence.",
         "description": "Your driver waits before you land. No queues. No uncertainty.",
-        "primary": "Book Airport Pickup",
-        "secondary": "View Airport Service"
+        "primary": "Book Ride",
+        "secondary": "Explore Tours"
       },
       {
         "title": "Private Tours",
         "subtitle": "Explore beyond the ordinary.",
         "description": "Chauffeur-driven journeys across Sri Lanka, in premium comfort.",
         "primary": "Explore Tours",
-        "secondary": "Plan My Trip"
+        "secondary": "Book Ride"
       }
     ],
     "planner": {
@@ -113,8 +113,10 @@
     "trust": {
       "ariaLabel": "Why guests trust Q Pick",
       "verifiedDrivers": "Verified Drivers",
-      "hotelCoordination": "Hotel Coordination",
-      "clearPricing": "Clear Pricing"
+      "pricing": "Transparent Pricing",
+      "islandwide": "Islandwide Coverage",
+      "support": "24/7 Support",
+      "trips": "Thousands of Trips"
     }
   },
   "experience": {
@@ -126,7 +128,33 @@
       "Your Sri Lanka."
     ],
     "screenLive": "Q Pick app screen: {stepLabel}",
-    "previewAria": "Q Pick app preview showing {stepLabel}"
+    "previewAria": "Q Pick app preview showing {stepLabel}",
+    "story": {
+      "planLabel": "Tour planning",
+      "vehiclesLabel": "Vehicle selection",
+      "liveLabel": "Live journey",
+      "plan": {
+        "kicker": "Private tour",
+        "title": "Plan your journey",
+        "destinations": "Destinations",
+        "days": "Travel days",
+        "daysUnit": "days",
+        "pickup": "Pickup",
+        "pickupValue": "Bandaranaike Airport",
+        "hotel": "Hotel",
+        "hotelValue": "Shangri-La Colombo",
+        "route": "Route preview",
+        "stops": "stops",
+        "cta": "Continue"
+      },
+      "vehicles": {
+        "route": "Airport → Sigiriya · Ella · Galle",
+        "title": "Choose your vehicle",
+        "budgetLabel": "Estimated budget",
+        "budgetHint": "Before you confirm",
+        "budgetValue": "LKR 186,000"
+      }
+    }
   },
   "fleetList": {
     "eyebrow": "Premium Fleet",
@@ -134,10 +162,33 @@
     "sub": "From tuk-tuks to premium vans, every vehicle is verified, comfortable and transparently priced.",
     "phoneAria": "Q Pick vehicle list on the app"
   },
+  "insideQPickApp": {
+    "eyebrow": "Application",
+    "heading": "Inside the Q Pick App",
+    "sub": "Plan a private tour, choose the right vehicle with a clear budget, then follow your chauffeur live — one continuous journey in your pocket.",
+    "panelAria": "Q Pick app screen: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "Tour Planning",
+        "body": "Destinations, travel days, hotel, and route — composed before you ride."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "Vehicle & Budget",
+        "body": "From tuk-tuk to mini bus, with a live estimated budget before you confirm."
+      },
+      "live": {
+        "n": "03",
+        "label": "Live Journey",
+        "body": "Driver assigned, live GPS and ETA, trip complete, then a calm rating flow."
+      }
+    }
+  },
   "howQPickWorks": {
     "eyebrow": "HOW Q PICK WORKS",
     "heading": "From Registration to Your Destination",
-    "sub": "Getting started with Q Pick takes less than a minute. Register, verify your number, book a ride or private tour, and track your driver in real time.",
+    "sub": "One calm path from open to arrival: register, verify, book a ride or tour, then track your driver in real time as your journey unfolds.",
     "stepLabel": "Step {n}",
     "steps": {
       "welcome": {
@@ -201,9 +252,145 @@
       }
     }
   },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lanka’s premium travel platform",
+    "heading": "Your Journey. Your Rules.",
+    "manifesto": "From the first welcome to the final hotel door — a continuous hospitality standard ordinary ride-hailing was never built to hold.",
+    "positioningLead": "This is not just another taxi app.",
+    "positioningRest": "This is Sri Lanka’s premium travel platform.",
+    "trustEyebrow": "Powered by ATCCA",
+    "trustBody": "Q Pick is powered by ATCCA — one of Sri Lanka’s longest-established professional chauffeur associations — with decades of hospitality experience behind every welcome, every transfer, and every carefully held journey.",
+    "continuumEyebrow": "The Journey Continues",
+    "continuumBody": "A wider hospitality ecosystem is quietly taking shape — the same calm standard, extended.",
+    "continuumComingSoon": "Coming soon",
+    "continuumItems": [
+      "Food Delivery",
+      "Parcel Delivery",
+      "Currency Exchange",
+      "Local Experiences",
+      "Concierge Services"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "Arrival",
+        "title": "The island begins with a welcome.",
+        "scene": "Your flight lands. A verified Q Pick hospitality professional is already waiting — name board ready, baggage in hand, hotel route confirmed. Not a scramble on the curb. Not a marketplace bid. Simply the quiet certainty that your Sri Lanka journey has begun with care.",
+        "details": [
+          "Airport Meet & Greet by a professional chauffeur — never a random driver",
+          "Hotel transfer planned before you leave arrivals"
+        ],
+        "whisper": "One handoff. From gate to lobby.",
+        "kicker": "Chapter 01",
+        "mediaTitle": "A calm arrival",
+        "imageAlt": "Premium airport terminal corridor at dawn — the start of a calm arrival"
+      },
+      "planning": {
+        "n": "02",
+        "label": "Compose",
+        "title": "Write your Sri Lanka — exactly as you wish.",
+        "scene": "Unlike ordinary ride-hailing, Q Pick lets you shape a full island journey before a single mile begins. Choose your destinations. Choose how many days you travel. Choose your hotels. Choose your vehicle — Tuk Tuk, Sedan, SUV, Premium Van, Luxury Van, Mini Bus, or Coach. Then see an estimated budget before you confirm.",
+        "details": [
+          "Destinations across Sri Lanka, selected by you",
+          "Travel days, hotels, and vehicle category — fully in your hands",
+          "An estimated budget before you confirm — clarity without urgency"
+        ],
+        "whisper": "Your itinerary. Your pace. Your estimate.",
+        "kicker": "Chapter 02",
+        "mediaTitle": "A journey composed",
+        "imageAlt": "Open mountain landscape for composing a private Sri Lanka itinerary"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "Company",
+        "title": "Not drivers. Hospitality professionals.",
+        "scene": "Every Q Pick chauffeur is a verified hospitality professional — trained for discretion, island roads, and the quiet ritual of welcome. When you wish, you may also request a local guide for temples, tea country, wildlife, or living heritage — in English, Sinhala, Tamil, or other languages where available.",
+        "details": [
+          "Verified professional chauffeurs — hospitality first, always",
+          "Optional multilingual local guides for culture and history",
+          "Companions chosen for trust, not proximity on a map"
+        ],
+        "whisper": "The difference is who stands at the door.",
+        "kicker": "Chapter 03",
+        "mediaTitle": "Quiet professional company",
+        "imageAlt": "Professional chauffeur in a dark suit opening the door of a luxury vehicle"
+      },
+      "explore": {
+        "n": "04",
+        "label": "Discovery",
+        "title": "Where the island becomes the story.",
+        "scene": "Coast roads. Highland mist. Heritage cities. While you explore, live trip management keeps every transfer clear — and 24/7 support remains quietly available if the day shifts. Ordinary apps end when the ride ends. Q Pick stays with the journey.",
+        "details": [
+          "Live trip management for the full arc of travel",
+          "Professional support — calm, available, unintrusive"
+        ],
+        "whisper": "Logistics remain invisible. Place remains the point.",
+        "kicker": "Chapter 04",
+        "mediaTitle": "The island, uninterrupted",
+        "imageAlt": "Golden-hour aerial view of Sigiriya rising above Sri Lankan jungle"
+      },
+      "complete": {
+        "n": "05",
+        "label": "Return",
+        "title": "The same calm certainty, to the last door.",
+        "scene": "The final hotel drop closes the loop — coordinated from the app, timed to your lobby, delivered with the same hospitality that met you at the airport. One continuous standard. From first welcome to last goodbye — something ordinary ride-hailing cannot hold.",
+        "details": [
+          "Hotel pickup and drop-off held to one trusted standard",
+          "A complete Sri Lanka travel platform — not a taxi marketplace"
+        ],
+        "whisper": "The journey settles. The standard remains.",
+        "kicker": "Chapter 05",
+        "mediaTitle": "Journey held complete",
+        "imageAlt": "Luxury resort arrival at dusk — the calm end of a private journey"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "One platform",
+    "heading": "One Platform. Three Experiences.",
+    "sub": "Whether you need a ride now, a private Sri Lanka itinerary, or a place to earn with dignity — Q Pick is the same trusted standard.",
+    "cards": {
+      "ride": {
+        "title": "Ride Now",
+        "kicker": "Premium rides",
+        "description": "Verified chauffeurs and refined vehicles — city streets, airport certainty, and quiet luxury in between.",
+        "points": [
+          "Instant city rides",
+          "Airport transfers",
+          "Luxury transport"
+        ],
+        "cta": "Book Ride",
+        "imageAlt": "Guest stepping from the rear of a black executive sedan at a premium pickup"
+      },
+      "tours": {
+        "title": "Explore Sri Lanka",
+        "kicker": "Private journeys",
+        "description": "Private island journeys timed to coast, temples, and tea country — curated just for you.",
+        "points": [
+          "Private tours",
+          "Custom itineraries",
+          "Multi-day journeys"
+        ],
+        "cta": "Explore Tours",
+        "imageAlt": "Golden-hour aerial view of Sigiriya Rock Fortress rising above Sri Lankan jungle"
+      },
+      "drive": {
+        "title": "Drive With Q Pick",
+        "kicker": "Drive & earn",
+        "description": "A professional platform for serious drivers — clear earnings, flexible hours, and dignified work.",
+        "points": [
+          "Flexible earnings",
+          "Professional platform",
+          "Easy registration"
+        ],
+        "cta": "Become a Driver",
+        "imageAlt": "Professional chauffeur in a dark suit opening the rear door of a black luxury van at a hotel entrance"
+      }
+    }
+  },
   "tripIntent": {
-    "heading": "Choose how you move",
-    "intro": "One standard for daily rides, airport certainty, and island exploration.",
+    "heading": "Ride Services",
+    "intro": "City rides, airport certainty, and private tours — choose how you move under one Q Pick standard.",
     "tablistAria": "Trip intent",
     "ride": {
       "label": "Ride",
@@ -415,6 +602,7 @@
     "heading": "Drive With Q Pick",
     "sub": "Join a premium network built for professional chauffeurs — airport runs, private tours, and guests who value calm certainty.",
     "cta": "Become a Driver",
+    "secondaryCta": "Learn More",
     "benefits": {
       "schedule": {
         "title": "Flexible Schedule",
@@ -501,14 +689,18 @@
         "tripsLabel": "Completed trips",
         "tripsValue": "42"
       }
+    },
+    "store": {
+      "passengerPlay": "Passenger app",
+      "driverPlay": "Driver app"
     }
   },
   "finalCta": {
     "brand": "Q Pick",
-    "heading": "Ready to Experience Sri Lanka?",
-    "body": "Airport transfers, private chauffeurs and unforgettable journeys — all under one trusted standard.",
-    "primary": "Book Your Ride",
-    "secondary": "Plan Your Tour"
+    "heading": "Your Sri Lanka journey starts here.",
+    "body": "Book a luxury ride, plan a private tour, or continue on the Q Pick app — one trusted standard from arrival to exploration.",
+    "primary": "Book Ride",
+    "secondary": "Explore Tours"
   },
   "farePreview": {
     "from": "From",
@@ -521,6 +713,7 @@
   },
   "storeBadges": {
     "comingSoon": "Coming soon",
+    "getItOn": "Get it on",
     "appStore": "App Store",
     "googlePlay": "Google Play",
     "iosAria": "Download on the App Store — coming soon",
@@ -663,7 +856,9 @@
       "route": "Colombo Fort → Galle Fort",
       "minutesUnit": "min",
       "plate": "CAB-4821",
-      "rating": "★ 4.9"
+      "rating": "★ 4.9",
+      "call": "Call driver",
+      "chat": "Message driver"
     },
     "pickedUp": {
       "title": "You're on board",
@@ -1014,6 +1209,8 @@
       "title": "Support",
       "description": "We're here for trip questions, partner enquiries, and moments that need a human.",
       "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location",
       "emergencyLabel": "Emergency line"
     },
     "destinations": {

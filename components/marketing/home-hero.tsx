@@ -33,9 +33,9 @@ const HERO_SLIDE_FALLBACK_MS = 8000;
 const HERO_SLIDE_COUNT = 3;
 
 const HERO_SLIDE_HREFS = [
-  { primary: "/airport", secondary: "/tours" },
-  { primary: "/airport", secondary: "/airport" },
-  { primary: "/tours", secondary: "/tours" },
+  { primary: "/ride", secondary: "/tours" },
+  { primary: "/ride", secondary: "/tours" },
+  { primary: "/tours", secondary: "/ride" },
 ] as const;
 
 function slideIndexFromVideo(video: HTMLVideoElement): number {
@@ -57,18 +57,10 @@ const INTENT_IDS = ["arrive", "stay", "explore"] as const;
 
 export function HomeHero() {
   const t = useTranslations();
-  const [scrolledPast, setScrolledPast] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
   const hasVideo = Boolean(heroMedia.videoSrc);
-
-  useEffect(() => {
-    const onScroll = () => setScrolledPast(window.scrollY > 48);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const onVideoTimeUpdate = useCallback(() => {
     const video = videoRef.current;
@@ -88,7 +80,7 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-map-void text-foam"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-map-void text-foam"
       aria-label={t("hero.ariaLabel")}
     >
       <HeroMedia
@@ -97,47 +89,21 @@ export function HomeHero() {
         onTimeUpdate={onVideoTimeUpdate}
       />
 
-      <Container className="relative z-10 flex w-full flex-col pb-10 pt-28 sm:pb-14 lg:pb-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:items-end lg:gap-x-52 lg:gap-y-12 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] xl:gap-x-64 2xl:gap-x-72">
-          {/* Lift copy 72–88px without changing hero height or the booking card */}
-          <div className="hero-copy-col max-w-3xl min-w-0 -translate-y-[72px] sm:-translate-y-[80px] lg:-translate-y-[88px]">
+      {/* Content + booking card — scroll lives under the floating trust badges */}
+      <Container className="relative z-10 flex w-full flex-1 flex-col justify-start pb-28 pt-32 sm:pb-32 sm:pt-36 lg:pb-36 lg:pt-40 xl:pt-44">
+        <div className="grid grid-cols-1 gap-y-10 sm:gap-y-12 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,26rem)] lg:items-start lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(22rem,28rem)] xl:gap-x-16 2xl:gap-x-20">
+          <div className="hero-copy-col min-w-0 max-w-3xl">
             <HeroContent index={slideIndex} reduceMotion={reduceMotion} />
           </div>
 
-          <div className="hero-planner-col reveal-up min-w-0 lg:justify-self-stretch lg:w-full" style={{ animationDelay: "360ms" }}>
+          <div
+            className="hero-planner-col reveal-up min-w-0 w-full lg:justify-self-end"
+            style={{ animationDelay: "360ms" }}
+          >
             <JourneyPlanner />
-            <TrustRow />
           </div>
         </div>
       </Container>
-
-      <button
-        type="button"
-        onClick={() => {
-          const reduce = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-          ).matches;
-          window.scrollTo({
-            top: Math.round(window.innerHeight * 0.92),
-            behavior: reduce ? "auto" : "smooth",
-          });
-        }}
-        className={[
-          "absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-foam/55 transition-opacity duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
-          scrolledPast ? "pointer-events-none opacity-0" : "opacity-100",
-        ].join(" ")}
-        aria-label={t("hero.scrollAria")}
-      >
-        <span className="font-mono text-[0.65rem] tracking-[0.2em] uppercase">
-          {t("hero.scroll")}
-        </span>
-        <span
-          aria-hidden="true"
-          className="flex h-8 w-5 items-start justify-center rounded-full border border-foam/35 pt-1.5"
-        >
-          <span className="scroll-dot h-1.5 w-1 rounded-full bg-foam/80" />
-        </span>
-      </button>
     </section>
   );
 }
@@ -154,73 +120,37 @@ function HeroContent({
   const hrefs = HERO_SLIDE_HREFS[index] ?? HERO_SLIDE_HREFS[0];
 
   return (
-    <div className="hero-content-layout flex w-full min-w-0 flex-col">
-      {/* Title — reserved 2-line height, full text, natural wrap */}
-      <div
-        className="hero-title-slot relative isolate min-h-[calc(2*clamp(2.35rem,7vw,4.75rem)*0.95)]"
-        aria-live="polite"
-      >
-        <AnimatePresence initial={false} mode="sync">
-          <motion.p
-            key={`title-${slide.title}`}
-            className="hero-title absolute inset-x-0 top-0 font-display text-[clamp(2.35rem,7vw,4.75rem)] leading-[0.95] tracking-[-0.03em] text-foam text-balance"
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
-            transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
-          >
+    <div className="hero-content-layout flex w-full min-w-0 flex-col" aria-live="polite">
+      {/*
+        Flow layout — no fixed slots. Brand → heading → body → CTAs
+        with consistent gaps so longer locales wrap without overlap.
+      */}
+      <AnimatePresence initial={false} mode="wait">
+        <motion.div
+          key={`slide-${index}-${slide.title}`}
+          className="flex w-full min-w-0 flex-col gap-5 sm:gap-6"
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+          transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
+        >
+          <p className="hero-title overflow-visible font-display text-[clamp(2.1rem,6.5vw,4.75rem)] leading-[1.15] tracking-[-0.03em] text-balance text-foam">
             {slide.title === "Q Pick" ? <>Q&nbsp;Pick</> : slide.title}
-          </motion.p>
-        </AnimatePresence>
-      </div>
+          </p>
 
-      {/* Subtitle — 24px after title */}
-      <div className="hero-sub-slot relative isolate mt-6 min-h-[calc(2*clamp(1.65rem,3.6vw,2.65rem)*1.15)]">
-        <AnimatePresence initial={false} mode="sync">
-          <motion.h1
-            key={`sub-${slide.subtitle}`}
-            className="hero-sub absolute inset-x-0 top-0 font-display text-[clamp(1.65rem,3.6vw,2.65rem)] leading-[1.15] tracking-tight text-foam text-pretty text-balance"
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
-            transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
-          >
+          <h1 className="hero-sub overflow-visible font-display text-[clamp(1.45rem,3.4vw,2.65rem)] leading-[1.3] tracking-tight text-pretty text-balance text-foam">
             {slide.subtitle}
-          </motion.h1>
-        </AnimatePresence>
-      </div>
+          </h1>
 
-      {/* Description — 24px after subtitle */}
-      <div className="hero-body-slot relative isolate mt-6 min-h-[3.5rem] sm:min-h-[3.75rem]">
-        <AnimatePresence initial={false} mode="sync">
-          <motion.p
-            key={`body-${slide.description}`}
-            className="hero-body absolute inset-x-0 top-0 max-w-[44ch] text-base leading-relaxed text-foam/75 text-pretty sm:max-w-[48ch] sm:text-lg"
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
-            transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
-          >
+          <p className="hero-body max-w-[44ch] text-base leading-relaxed text-pretty text-foam/75 sm:max-w-[48ch] sm:text-lg">
             {slide.description}
-          </motion.p>
-        </AnimatePresence>
-      </div>
+          </p>
 
-      {/* Buttons — 40px after description; single horizontal row */}
-      <div className="hero-cta-slot relative isolate mt-10 min-h-12 sm:min-h-[3.25rem]">
-        <AnimatePresence initial={false} mode="sync">
-          <motion.div
-            key={`cta-${slide.primary}-${slide.secondary}`}
-            className="absolute inset-x-0 top-0 flex flex-nowrap items-center gap-3"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
-            transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
-          >
+          <div className="hero-cta mt-1 flex flex-wrap items-center gap-3 sm:mt-2">
             <ButtonLink
               href={hrefs.primary}
               size="lg"
-              className="hero-cta-btn shrink-0 whitespace-nowrap"
+              className="hero-cta-btn max-w-full shrink-0 whitespace-normal"
             >
               {slide.primary}
             </ButtonLink>
@@ -228,13 +158,13 @@ function HeroContent({
               href={hrefs.secondary}
               size="lg"
               variant="onDark"
-              className="hero-cta-btn shrink-0 whitespace-nowrap border border-foam/25 bg-foam/10 text-foam backdrop-blur-md hover:bg-foam/18 hover:text-foam"
+              className="hero-cta-btn max-w-full shrink-0 whitespace-normal border border-foam/25 bg-foam/10 text-foam backdrop-blur-md hover:bg-foam/18 hover:text-foam"
             >
               {slide.secondary}
             </ButtonLink>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
@@ -315,7 +245,7 @@ function JourneyPlanner() {
 
   return (
     <form
-      className="hero-planner flex w-full flex-col gap-4 rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-[1.05rem] sm:px-6 sm:py-5 lg:gap-4 lg:px-8 lg:py-5 xl:px-9 xl:py-5"
+            className="hero-planner flex w-full flex-col gap-4 self-start rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-4 sm:px-6 sm:py-5 lg:min-h-[32.5rem] lg:justify-between lg:gap-y-3 lg:px-8 lg:py-6 xl:px-9"
       aria-label={t("hero.planner.ariaLabel")}
       onSubmit={(event) => {
         event.preventDefault();
@@ -334,7 +264,7 @@ function JourneyPlanner() {
         <p className="hero-planner-title font-display text-xl tracking-tight text-foam sm:text-2xl">
           {t("hero.planner.title")}
         </p>
-        <p className="hero-planner-sub max-w-none text-sm leading-relaxed text-foam/60 text-pretty">
+        <p className="hero-planner-sub max-w-none text-sm leading-relaxed text-pretty text-foam/60">
           {t("hero.planner.subtitle")}
         </p>
       </div>
@@ -370,7 +300,7 @@ function JourneyPlanner() {
         <div className="flex min-w-0 flex-col gap-1.5">
           <label
             htmlFor={`${baseId}-from`}
-            className="hero-planner-label text-xs font-medium tracking-wide text-foam/70 text-pretty"
+            className="hero-planner-label text-xs font-medium tracking-wide text-pretty text-foam/70"
           >
             {copy.fromLabel}
           </label>
@@ -388,7 +318,7 @@ function JourneyPlanner() {
         <div className="flex min-w-0 flex-col gap-1.5">
           <label
             htmlFor={`${baseId}-to`}
-            className="hero-planner-label text-xs font-medium tracking-wide text-foam/70 text-pretty"
+            className="hero-planner-label text-xs font-medium tracking-wide text-pretty text-foam/70"
           >
             {copy.toLabel}
           </label>
@@ -406,7 +336,7 @@ function JourneyPlanner() {
 
       <p
         key={intent}
-        className="hero-planner-note border-t border-foam/12 pt-4 text-sm leading-relaxed text-foam/70 text-pretty animate-[fade-in_var(--duration-ui)_var(--ease-cinematic)]"
+        className="hero-planner-note border-t border-foam/12 pt-3.5 text-sm leading-relaxed text-pretty text-foam/70 animate-[fade-in_var(--duration-ui)_var(--ease-cinematic)]"
         aria-live="polite"
       >
         {copy.recommendation}
@@ -419,37 +349,5 @@ function JourneyPlanner() {
         {t("hero.planner.continue")}
       </button>
     </form>
-  );
-}
-
-function TrustRow() {
-  const t = useTranslations();
-  const items = [
-    "hero.trust.verifiedDrivers",
-    "hero.trust.hotelCoordination",
-    "hero.trust.clearPricing",
-  ] as const;
-
-  return (
-    <ul
-      className="hero-trust mt-8 grid grid-cols-1 gap-y-3 px-1 text-sm text-foam/65 sm:mt-10 sm:grid-cols-[repeat(3,minmax(0,1fr))] sm:items-stretch sm:gap-0 lg:mt-11"
-      aria-label={t("hero.trust.ariaLabel")}
-    >
-      {items.map((key, index) => (
-        <li
-          key={key}
-          className={[
-            "hero-trust-item flex min-h-0 min-w-0 items-center justify-center px-2.5 py-0.5 text-center tracking-wide",
-            index > 0 ? "sm:border-l sm:border-foam/25" : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          <span className="hero-trust-label max-w-full text-balance text-pretty">
-            {t(key)}
-          </span>
-        </li>
-      ))}
-    </ul>
   );
 }

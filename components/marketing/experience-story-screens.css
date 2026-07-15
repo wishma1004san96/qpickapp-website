@@ -1,0 +1,440 @@
+/* Story screens inside Experience phones — official Q Pick blue theme */
+
+.qstory {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 52px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  color: #0a1620;
+  background:
+    radial-gradient(120% 70% at 50% -8%, rgb(1 147 251 / 0.16), transparent 52%),
+    #f3f6f7;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Tour Planning — compact so every block + CTA fits inside the phone */
+.qstory--plan {
+  padding: 48px 11px 12px;
+  gap: 7px;
+}
+
+.qstory--plan .qstory-top {
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.qstory--plan .qstory-logo {
+  margin-bottom: 2px;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.qstory--plan .qstory-kicker {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.qstory--plan .qstory-title {
+  font-size: 15px;
+  line-height: 1.12;
+  margin-bottom: 2px;
+}
+
+.qstory--plan .qstory-label {
+  margin: 0 0 4px;
+  font-size: 9px;
+}
+
+.qstory--plan .qstory-block,
+.qstory--plan .qstory-fields,
+.qstory--plan .qstory-route {
+  flex: 0 0 auto;
+  min-height: 0;
+}
+
+.qstory--plan .qstory-chips {
+  gap: 4px;
+}
+
+.qstory--plan .qstory-chip {
+  padding: 4px 8px;
+  font-size: 9.5px;
+}
+
+.qstory--plan .qstory-days {
+  gap: 4px;
+}
+
+.qstory--plan .qstory-day {
+  padding: 6px 0;
+  font-size: 11px;
+  border-radius: 9px;
+}
+
+.qstory--plan .qstory-fields {
+  gap: 5px;
+}
+
+.qstory--plan .qstory-field {
+  gap: 1px;
+  padding: 6px 9px;
+  border-radius: 10px;
+}
+
+.qstory--plan .qstory-field-label {
+  font-size: 8px;
+}
+
+.qstory--plan .qstory-field strong {
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.qstory--plan .qstory-route {
+  margin-top: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.qstory--plan .qstory-route-preview {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.qstory--plan .qstory-route-svg {
+  flex: 1 1 auto;
+  min-height: 44px;
+  max-height: 64px;
+  height: 54px;
+}
+
+.qstory--plan .qstory-route-meta {
+  padding: 4px 9px 6px;
+  font-size: 9.5px;
+}
+
+.qstory--plan .qstory-cta {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  min-height: 34px;
+  border-radius: 11px;
+  font-size: 11.5px;
+  box-shadow: 0 6px 14px rgb(0 98 250 / 0.28);
+}
+
+.qstory-top {
+  display: grid;
+  gap: 4px;
+}
+
+.qstory-top--compact {
+  gap: 2px;
+}
+
+.qstory-logo {
+  margin-bottom: 4px;
+}
+
+.qstory-kicker {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0062fa;
+}
+
+.qstory-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0a1620;
+}
+
+.qstory-label {
+  margin: 0 0 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #4a5a66;
+}
+
+.qstory-block {
+  margin: 0;
+}
+
+.qstory-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.qstory-chip {
+  appearance: none;
+  border: 1px solid rgb(0 98 250 / 0.18);
+  background: #fff;
+  color: #0a1620;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  cursor: default;
+}
+
+.qstory-chip.is-on {
+  background: #0062fa;
+  border-color: #0062fa;
+  color: #fff;
+  box-shadow: 0 4px 12px rgb(0 98 250 / 0.28);
+}
+
+.qstory-days {
+  display: flex;
+  gap: 5px;
+}
+
+.qstory-day {
+  flex: 1;
+  appearance: none;
+  border: 1px solid rgb(0 98 250 / 0.16);
+  background: #fff;
+  border-radius: 10px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a1620;
+  cursor: default;
+}
+
+.qstory-day.is-on {
+  background: #0062fa;
+  border-color: #0062fa;
+  color: #fff;
+}
+
+.qstory-fields {
+  display: grid;
+  gap: 6px;
+}
+
+.qstory-field {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgb(0 98 250 / 0.1);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.8) inset;
+  text-align: left;
+}
+
+.qstory-field-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7c88;
+}
+
+.qstory-field strong {
+  font-size: 11.5px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: #0a1620;
+}
+
+.qstory-route {
+  margin-top: 2px;
+}
+
+.qstory-route-preview {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgb(0 98 250 / 0.12);
+  background: #fff;
+}
+
+.qstory-route-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.qstory-route-meta {
+  margin: 0;
+  padding: 6px 10px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4a5a66;
+}
+
+.qstory-cta {
+  margin-top: auto;
+  display: grid;
+  place-items: center;
+  min-height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #0193fb 0%, #0062fa 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: 0 8px 18px rgb(0 98 250 / 0.32);
+}
+
+/* Vehicles */
+.qstory--vehicles {
+  padding-bottom: 10px;
+  gap: 8px;
+}
+
+.qstory-route-line {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #0062fa;
+}
+
+.qstory-fleet {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 5px;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: none;
+}
+
+.qstory-fleet::-webkit-scrollbar {
+  display: none;
+}
+
+.qstory-vcard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 8px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgb(10 22 32 / 0.06);
+}
+
+.qstory-vcard.is-selected {
+  border-color: rgb(0 98 250 / 0.55);
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.2),
+    0 8px 16px rgb(0 98 250 / 0.14);
+}
+
+.qstory-vicon {
+  width: 36px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgb(0 98 250 / 0.1);
+  color: #0062fa;
+}
+
+.qstory-vicon svg {
+  width: 28px;
+  height: 18px;
+}
+
+.qstory-vrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.qstory-vname {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.qstory-vmeta {
+  margin: 1px 0 0;
+  font-size: 9.5px;
+  color: #6b7c88;
+}
+
+.qstory-vprice {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0062fa;
+  white-space: nowrap;
+}
+
+.qstory-budget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 11px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0a84ff 0%, #0062fa 55%, #0036f9 100%);
+  color: #fff;
+  box-shadow: 0 10px 22px rgb(0 98 250 / 0.35);
+  text-align: left;
+}
+
+.qstory-budget-label {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.qstory-budget-hint {
+  margin: 2px 0 0;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.qstory-budget-value {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.qstory-live {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+}
+
+.qstory-live-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.qstory-live-frame .experience-journey {
+  position: absolute;
+  inset: 0;
+}

@@ -136,15 +136,21 @@ function samplePath(
 
 /**
  * One-shot live nav segment — journey orchestrator advances on onComplete.
+ * Pass `frozen` to lock a mid-route marketing keyframe (no advance).
  */
 export function ExperiencePhoneLive({
   mode = "riding",
   reduceMotion: reduceMotionProp,
   onComplete,
+  frozen = false,
+  freezeAt = 0.42,
 }: {
   mode?: LiveTripMode;
   reduceMotion: boolean;
   onComplete?: () => void;
+  /** Lock the clip at `freezeAt` — shared freeze frames for How Q Pick Works. */
+  frozen?: boolean;
+  freezeAt?: number;
 }) {
   const t = useTranslations();
   const uid = useId().replace(/:/g, "");
@@ -275,6 +281,16 @@ export function ExperiencePhoneLive({
       fade.set(0);
       zoom.set(1);
 
+      if (frozen) {
+        const at = Math.max(0, Math.min(1, freezeAt));
+        progress.set(at);
+        applyProgress(at);
+        zoom.set(1.1);
+        /* Keep the map visible — fade=1 was blanking the basemap to beige. */
+        fade.set(0);
+        return;
+      }
+
       if (reduceMotion) {
         progress.set(1);
         applyProgress(1);
@@ -317,7 +333,7 @@ export function ExperiencePhoneLive({
       cancelled = true;
       controls.forEach((c) => c.stop());
     };
-  }, [mode, routeD, reduceMotion, progress, zoom, fade, applyProgress]);
+  }, [mode, routeD, reduceMotion, frozen, freezeAt, progress, zoom, fade, applyProgress]);
 
   const startPt = points[0];
   const endPt = points[points.length - 1];
@@ -365,12 +381,12 @@ export function ExperiencePhoneLive({
               strokeWidth={1}
             />
 
-            {/* Ghost full route (riding only) */}
-            {mode === "riding" ? (
+            {/* Ghost full route — always for frozen marketing frames */}
+            {mode === "riding" || frozen ? (
               <path
                 d={routeD}
                 fill="none"
-                stroke="rgb(10 132 255 / 0.22)"
+                stroke="rgb(10 132 255 / 0.28)"
                 strokeWidth={2.4}
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -448,6 +464,21 @@ export function ExperiencePhoneLive({
               className="experience-live-svg-car"
               style={{ x: carX, y: carY, rotate: smoothAngle }}
             >
+              {/* Live GPS pulse around the vehicle */}
+              <circle
+                className="experience-live-svg-car-pulse"
+                cx={0}
+                cy={0}
+                r={14}
+                fill="none"
+              />
+              <circle
+                className="experience-live-svg-car-pulse experience-live-svg-car-pulse--delay"
+                cx={0}
+                cy={0}
+                r={14}
+                fill="none"
+              />
               {/* Soft shadow under car — not a solid dot */}
               <ellipse
                 cx={0}
@@ -501,10 +532,23 @@ export function ExperiencePhoneLive({
       </div>
 
       <motion.div
+        className="experience-live-eta-badge"
+        initial={reduceMotion ? false : { y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, x: "-50%" }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+        style={{ left: "50%", x: "-50%" }}
+      >
+        <span className="experience-live-eta-badge-label">ETA</span>
+        <span className="experience-live-eta-badge-value">
+          {mode === "arriving" ? "3" : "48"} {t("phoneJourney.live.minutesUnit")}
+        </span>
+      </motion.div>
+
+      <motion.div
         className="experience-live-status"
         initial={reduceMotion ? false : { y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1, x: "-50%" }}
-        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
         style={{ left: "50%", x: "-50%" }}
       >
         <span className="experience-live-status-dot" />
@@ -514,6 +558,29 @@ export function ExperiencePhoneLive({
             : t("phoneJourney.live.statusRiding")}
         </span>
       </motion.div>
+
+      <div className="experience-live-fabs" aria-hidden="true">
+        <span className="experience-live-fab" title={t("phoneJourney.live.call")}>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+            <path
+              d="M7.2 3.8h2.1l1.1 3.2-1.4 1.4a12.4 12.4 0 0 0 5.6 5.6l1.4-1.4 3.2 1.1v2.1A2.1 2.1 0 0 1 16.9 18 13.1 13.1 0 0 1 4 5.1 2.1 2.1 0 0 1 6.1 3z"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <span className="experience-live-fab" title={t("phoneJourney.live.chat")}>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+            <path
+              d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6A2.5 2.5 0 0 1 16.5 15H11l-3.6 3.2V15H7.5A2.5 2.5 0 0 1 5 12.5z"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
 
       <div className="experience-live-sheet">
         <motion.div

@@ -90,13 +90,19 @@ export function DriveWithQPick() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: reduceMotion ? 0 : 0.2, ease: EASE }}
-              className="mt-9"
+              className="mt-9 flex flex-wrap gap-3"
             >
               <Link
                 href="/drive"
                 className="inline-flex min-h-12 max-w-full items-center justify-center rounded-[var(--radius-md)] bg-brand px-6 text-sm font-medium text-paper transition-[background-color,transform,box-shadow] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:bg-brand-deep motion-safe:hover:-translate-y-px motion-safe:hover:shadow-[var(--shadow-glow-brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
               >
                 {t("driveWithQPick.cta")}
+              </Link>
+              <Link
+                href="/drive"
+                className="inline-flex min-h-12 max-w-full items-center justify-center rounded-[var(--radius-md)] border border-foam/25 bg-foam/10 px-6 text-sm font-medium text-foam transition-[border-color,background-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:border-foam/40 hover:bg-foam/16 motion-safe:hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
+              >
+                {t("driveWithQPick.secondaryCta")}
               </Link>
             </motion.div>
           </div>
