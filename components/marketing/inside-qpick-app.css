@@ -38,7 +38,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.4s ease-in-out;
+  transition: opacity 1.35s ease-in-out;
   will-change: opacity;
 }
 
@@ -49,16 +49,24 @@
 
 .iqpa-bg-image {
   object-fit: cover;
-  object-position: center;
+  /* Landmark centered behind the phone gallery */
+  object-position: center 52%;
   transform: scale(1);
   transform-origin: center center;
+  filter: brightness(1.1) contrast(1.1) saturate(1.06);
 }
 
-.iqpa-bg-slide.is-active:not(.is-static) .iqpa-bg-image {
+@media (min-width: 900px) {
+  .iqpa-bg-image {
+    object-position: center 56%;
+  }
+}
+
+.iqpa-bg-slide.is-active .iqpa-bg-image--motion {
   animation: iqpa-ken-burns 5.5s ease-out forwards;
 }
 
-.iqpa-bg-slide.is-static .iqpa-bg-image {
+.iqpa-bg-image--static {
   transform: scale(1.06);
 }
 
@@ -67,7 +75,7 @@
     transform: scale(1);
   }
   to {
-    transform: scale(1.12);
+    transform: scale(1.08);
   }
 }
 
@@ -76,13 +84,24 @@
   inset: 0;
   z-index: 2;
   background:
+    /* ~40–45% base — lighter center so the landmark reads clearly */
     linear-gradient(
       180deg,
-      rgb(4 10 18 / 0.72) 0%,
-      rgb(4 10 18 / 0.55) 38%,
-      rgb(4 10 18 / 0.7) 100%
+      rgb(0 0 0 / 0.5) 0%,
+      rgb(0 0 0 / 0.38) 32%,
+      rgb(0 0 0 / 0.4) 58%,
+      rgb(0 0 0 / 0.46) 100%
     ),
-    radial-gradient(ellipse 70% 55% at 50% 40%, rgb(0 98 250 / 0.18), transparent 65%);
+  /* Soft edge vignette — phones stay hero, text stays legible */
+    radial-gradient(
+      ellipse 95% 85% at 50% 54%,
+      transparent 0%,
+      rgb(0 0 0 / 0.22) 72%,
+      rgb(0 0 0 / 0.38) 100%
+    ),
+    /* Subtle Q Pick blue → black brand wash */
+    radial-gradient(ellipse 80% 60% at 50% 48%, rgb(0 98 250 / 0.14) 0%, transparent 58%),
+    linear-gradient(135deg, rgb(1 147 251 / 0.1) 0%, rgb(4 10 18 / 0.55) 70%, rgb(0 0 0 / 0.72) 100%);
 }
 
 .iqpa-inner {
@@ -116,7 +135,9 @@
   letter-spacing: -0.025em;
   text-wrap: balance;
   color: var(--iqpa-foam);
-  text-shadow: 0 8px 28px rgb(0 0 0 / 0.35);
+  text-shadow:
+    0 2px 12px rgb(0 0 0 / 0.55),
+    0 8px 28px rgb(0 0 0 / 0.4);
 }
 
 .iqpa-sub {
@@ -126,6 +147,7 @@
   line-height: 1.6;
   color: var(--iqpa-muted);
   text-wrap: pretty;
+  text-shadow: 0 2px 14px rgb(0 0 0 / 0.5);
 }
 
 .iqpa-gallery {
@@ -289,6 +311,7 @@
   line-height: 1.5;
   color: var(--iqpa-muted);
   text-wrap: pretty;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -296,7 +319,15 @@
     transform: none !important;
   }
 
-  .iqpa-bg-slide.is-active .iqpa-bg-image {
+  .iqpa-bg-slide {
+    transition: none;
+  }
+
+  .iqpa-bg-slide:not(:first-child) {
+    display: none;
+  }
+
+  .iqpa-bg-image {
     animation: none !important;
   }
 }

@@ -15,47 +15,32 @@ import "./inside-qpick-app.css";
 const EASE = [0.22, 1, 0.36, 1] as const;
 const SLIDE_MS = 5500;
 
-/** Real Sri Lanka destinations — crossfade + slow zoom. */
-const CITY_SLIDES = [
+/** Sri Lanka destination backgrounds — local assets, crossfade slideshow. */
+const BG_SLIDES = [
   {
     id: "sigiriya",
+    src: "/images/app/backgrounds/sigiriya-bg.webp",
     alt: "Sigiriya Rock Fortress, Sri Lanka",
-    src: "https://images.unsplash.com/photo-1711797750174-c3750dd9d7c9?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    id: "kandy",
-    alt: "Temple of the Tooth, Kandy, Sri Lanka",
-    src: "https://images.unsplash.com/photo-1541410965313-d53b3c16ef17?auto=format&fit=crop&w=2400&q=88",
   },
   {
     id: "ella",
-    alt: "Nine Arches Bridge and Ella hills, Sri Lanka",
-    src: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2400&q=88",
+    src: "/images/app/backgrounds/ella-bg.webp",
+    alt: "Ella hills and Nine Arches Bridge, Sri Lanka",
   },
   {
     id: "galle",
-    alt: "Galle Fort coastline, Sri Lanka",
-    src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=2400&q=88",
+    src: "/images/app/backgrounds/galle-bg.webp",
+    alt: "Galle Fort, Sri Lanka",
+  },
+  {
+    id: "kandy",
+    src: "/images/app/backgrounds/kandy-bg.webp",
+    alt: "Kandy, Sri Lanka",
   },
   {
     id: "mirissa",
-    alt: "Mirissa beach, south coast Sri Lanka",
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    id: "colombo",
-    alt: "Luxury Colombo hotel arrival, Sri Lanka",
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    id: "tea",
-    alt: "Tea country hills, Nuwara Eliya Sri Lanka",
-    src: "https://images.unsplash.com/photo-1501785888041-af3ee95c1045?auto=format&fit=crop&w=2400&q=88",
-  },
-  {
-    id: "yala",
-    alt: "Wildlife safari landscape, Yala Sri Lanka",
-    src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2400&q=88",
+    src: "/images/app/backgrounds/mirissa-bg.webp",
+    alt: "Mirissa south coast, Sri Lanka",
   },
 ] as const;
 
@@ -78,7 +63,7 @@ export function InsideQPickApp() {
   useEffect(() => {
     if (reduceMotion) return;
     const id = window.setInterval(() => {
-      setSlide((n) => (n + 1) % CITY_SLIDES.length);
+      setSlide((n) => (n + 1) % BG_SLIDES.length);
     }, SLIDE_MS);
     return () => window.clearInterval(id);
   }, [reduceMotion]);
@@ -89,25 +74,27 @@ export function InsideQPickApp() {
       className="iqpa-stage"
     >
       <div className="iqpa-bg" aria-hidden="true">
-        {CITY_SLIDES.map((city, index) => {
+        {BG_SLIDES.map((bg, index) => {
           const active = reduceMotion ? index === 0 : index === slide;
           return (
             <div
-              key={city.id}
-              className={[
-                "iqpa-bg-slide",
-                active ? "is-active" : "",
-                reduceMotion ? "is-static" : "",
-              ]
+              key={bg.id}
+              className={["iqpa-bg-slide", active ? "is-active" : ""]
                 .filter(Boolean)
                 .join(" ")}
             >
               <Image
-                src={city.src}
+                src={bg.src}
                 alt=""
                 fill
                 sizes="100vw"
-                className="iqpa-bg-image"
+                className={[
+                  "iqpa-bg-image",
+                  active && !reduceMotion ? "iqpa-bg-image--motion" : "",
+                  reduceMotion ? "iqpa-bg-image--static" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
                 priority={index === 0}
               />
             </div>

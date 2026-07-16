@@ -32,32 +32,27 @@ const CHAPTERS: {
 }[] = [
   {
     id: "airport",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc80?auto=format&fit=crop&w=2200&q=88",
+    image: "/images/story/arrival.webp",
     objectPosition: "center 55%",
   },
   {
     id: "planning",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ee95c1045?auto=format&fit=crop&w=2200&q=88",
+    image: "/images/story/compose.webp",
     objectPosition: "center 40%",
   },
   {
     id: "chauffeur",
-    image:
-      "https://images.unsplash.com/photo-1730800328198-f9efbf9db53f?auto=format&fit=crop&w=2200&q=90",
+    image: "/images/story/chauffeur.webp",
     objectPosition: "78% 40%",
   },
   {
     id: "explore",
-    image:
-      "https://images.unsplash.com/photo-1711797750174-c3750dd9d7c9?auto=format&fit=crop&w=2200&q=90",
+    image: "/images/story/discovery.webp",
     objectPosition: "center 35%",
   },
   {
     id: "complete",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=88",
+    image: "/images/story/return.webp",
     objectPosition: "center 48%",
   },
 ];
