@@ -598,35 +598,36 @@
     "cardCta": "Customize on Tours"
   },
   "driveWithQPick": {
-    "eyebrow": "For drivers",
-    "heading": "Drive With Q Pick",
-    "sub": "Join a premium network built for professional chauffeurs — airport runs, private tours, and guests who value calm certainty.",
+    "eyebrow": "For Professional Chauffeurs",
+    "heading": "Drive with confidence.",
+    "headingLine2": "Earn with purpose.",
+    "sub": "Join Sri Lanka's premium chauffeur platform. Accept airport transfers, private tours and executive rides while managing your own schedule with the Q Pick Driver App.",
     "cta": "Become a Driver",
     "secondaryCta": "Learn More",
     "benefits": {
-      "schedule": {
-        "title": "Flexible Schedule",
-        "body": "Go online when it works for you."
-      },
-      "earnings": {
-        "title": "Weekly Earnings",
-        "body": "Clear payouts you can track in-app."
+      "rides": {
+        "title": "Executive Ride Requests",
+        "body": "Receive premium bookings across Sri Lanka."
       },
       "airport": {
         "title": "Airport Transfers",
-        "body": "High-intent arrivals and departures."
+        "body": "Reliable arrivals and departures."
       },
-      "tours": {
-        "title": "Tour Requests",
-        "body": "Multi-day charters across the island."
+      "schedule": {
+        "title": "Flexible Schedule",
+        "body": "Drive whenever it suits you."
+      },
+      "earnings": {
+        "title": "Weekly Payouts",
+        "body": "Transparent earnings every week."
       },
       "customers": {
-        "title": "Premium Customers",
-        "body": "Travelers who book with intention."
+        "title": "Verified Passengers",
+        "body": "Travel with trusted customers."
       },
       "support": {
-        "title": "Driver Support",
-        "body": "Real help when the road gets complex."
+        "title": "24/7 Driver Support",
+        "body": "Real support whenever you need it."
       }
     },
     "dashboard": {
