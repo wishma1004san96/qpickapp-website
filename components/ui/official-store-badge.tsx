@@ -5,6 +5,7 @@ import { useTranslations } from "@/components/i18n/locale-provider";
 /**
  * Official-style App Store / Google Play badges for Experience Q Pick.
  * Badge artwork stays English brand style; aria labels come from messages.
+ * iOS + Android share identical outer dimensions.
  */
 export function OfficialStoreBadge({
   store,
@@ -17,8 +18,8 @@ export function OfficialStoreBadge({
 }) {
   const t = useTranslations();
   const isLg = size === "lg";
-  const iosBox = isLg ? "h-[52px] w-[156px]" : "h-[40px] w-[120px]";
-  const playBox = isLg ? "h-[52px] w-[176px]" : "h-[40px] w-[135px]";
+  // Matched boxes — same width & height for both stores
+  const box = isLg ? "h-14 w-[170px]" : "h-10 w-[130px]";
   const aria =
     store === "ios" ? t("storeBadges.iosAria") : t("storeBadges.androidAria");
 
@@ -27,12 +28,13 @@ export function OfficialStoreBadge({
       <span
         role="img"
         aria-label={aria}
-        className={`experience-store-badge inline-block overflow-hidden ${iosBox} ${className}`}
+        className={`experience-store-badge inline-block overflow-hidden rounded-[6px] ${box} ${className}`}
       >
         <svg
           viewBox="0 0 120 40"
           xmlns="http://www.w3.org/2000/svg"
           className="h-full w-full"
+          preserveAspectRatio="xMidYMid meet"
           aria-hidden="true"
         >
           <rect width="120" height="40" rx="6" fill="#000" />
@@ -69,7 +71,7 @@ export function OfficialStoreBadge({
     <span
       role="img"
       aria-label={aria}
-      className={`experience-store-badge inline-flex items-center gap-2 overflow-hidden bg-black px-2.5 ${playBox} ${className}`}
+      className={`experience-store-badge inline-flex items-center justify-center gap-2 overflow-hidden bg-black px-3 ${box} ${className}`}
       style={{ borderRadius: 6 }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}

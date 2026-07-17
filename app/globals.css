@@ -587,8 +587,32 @@
 
 .experience-store-row--mobile {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
   margin-top: 28px;
+}
+
+.experience-store-row--mobile .experience-store-badge {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: 170px;
+  height: 56px;
+  min-height: 56px;
+}
+
+@media (max-width: 359.98px) {
+  .experience-store-row--mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-store-row--mobile .experience-store-badge {
+    max-width: 170px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -614,6 +638,15 @@
   padding: 0.25rem 0.5rem 1rem;
 }
 
+.experience-phone-stage--flat {
+  perspective: none !important;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+}
+
 .experience-phone-static {
   transform: none;
 }
@@ -628,6 +661,14 @@
   transform-style: preserve-3d;
   transform-origin: 50% 55%;
   will-change: transform;
+}
+
+.experience-phone-parallax--flat {
+  transform: none !important;
+  transform-style: flat !important;
+  transform-origin: center center;
+  will-change: auto;
+  margin-inline: auto;
 }
 
 .experience-phone-shell {
@@ -1368,6 +1409,29 @@
   }
   50% {
     transform: translate3d(0, -4px, 0);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .experience-phone-stage {
+    perspective: none !important;
+  }
+
+  .experience-phone-parallax,
+  .experience-phone-parallax--flat {
+    transform: none !important;
+    transform-style: flat !important;
+  }
+
+  /* Keep float as gentle Y-only bob — never introduce rotate */
+  @keyframes experience-phone-float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -4px, 0);
+    }
   }
 }
 

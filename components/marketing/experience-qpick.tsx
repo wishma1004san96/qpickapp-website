@@ -34,6 +34,7 @@ export function ExperienceQPick() {
   const { experience } = useMessages();
   const sectionRef = useRef<HTMLElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [stepLabel, setStepLabel] = useState(() =>
     t("phoneJourney.steps.splash"),
   );
@@ -50,12 +51,26 @@ export function ExperienceQPick() {
   const translateY = useTransform(springY, [-1, 1], [-10, 10]);
 
   useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(media.matches);
-    sync();
-    media.addEventListener("change", sync);
-    return () => media.removeEventListener("change", sync);
-  }, []);
+    const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileMq = window.matchMedia("(max-width: 767.98px)");
+    const syncMotion = () => setReduceMotion(motionMq.matches);
+    const syncMobile = () => {
+      const mobile = mobileMq.matches;
+      setIsMobile(mobile);
+      if (mobile) {
+        pointerX.set(0);
+        pointerY.set(0);
+      }
+    };
+    syncMotion();
+    syncMobile();
+    motionMq.addEventListener("change", syncMotion);
+    mobileMq.addEventListener("change", syncMobile);
+    return () => {
+      motionMq.removeEventListener("change", syncMotion);
+      mobileMq.removeEventListener("change", syncMobile);
+    };
+  }, [pointerX, pointerY]);
 
   const onStepChange = useCallback((id: JourneyStepId, label: string) => {
     setStepLabel(label);
@@ -68,7 +83,7 @@ export function ExperienceQPick() {
   };
 
   const onSectionPointerMove = (event: MouseEvent<HTMLElement>) => {
-    if (reduceMotion) return;
+    if (reduceMotion || isMobile) return;
     const section = sectionRef.current;
     if (!section) return;
 
@@ -83,7 +98,7 @@ export function ExperienceQPick() {
   };
 
   const onSectionPointerLeave = () => {
-    if (reduceMotion) return;
+    if (reduceMotion || isMobile) return;
     resetParallax();
   };
 
@@ -127,6 +142,7 @@ export function ExperienceQPick() {
           <div className="order-2 flex justify-center lg:justify-end">
             <IPhone16ProMockup
               reduceMotion={reduceMotion}
+              isMobile={isMobile}
               rotateX={rotateX}
               rotateY={rotateY}
               translateX={translateX}
@@ -267,6 +283,7 @@ function ExperienceMapPin({
 
 function IPhone16ProMockup({
   reduceMotion,
+  isMobile,
   rotateX,
   rotateY,
   translateX,
@@ -276,6 +293,7 @@ function IPhone16ProMockup({
   onStepChange,
 }: {
   reduceMotion: boolean;
+  isMobile: boolean;
   rotateX: MotionValue<number>;
   rotateY: MotionValue<number>;
   translateX: MotionValue<number>;
@@ -288,6 +306,7 @@ function IPhone16ProMockup({
   const stageRef = useRef<HTMLDivElement>(null);
   const [runId, setRunId] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const flatFront = reduceMotion || isMobile;
 
   useEffect(() => {
     const locked = new URLSearchParams(window.location.search).get("journey");
@@ -339,7 +358,10 @@ function IPhone16ProMockup({
   return (
     <div
       ref={stageRef}
-      className="experience-phone-stage relative [perspective:1600px]"
+      className={[
+        "experience-phone-stage relative",
+        flatFront ? "experience-phone-stage--flat" : "[perspective:1600px]",
+      ].join(" ")}
     >
       <div className="experience-ambient" aria-hidden="true">
         <div className="experience-ambient-glow" />
@@ -348,10 +370,22 @@ function IPhone16ProMockup({
       </div>
 
       <motion.div
-        className="experience-phone-parallax relative z-[1] aspect-[71.5/149.6] h-[min(68svh,520px)] w-auto max-w-[min(100%,17.5rem)] lg:h-[640px] lg:max-w-none"
+        className={[
+          "experience-phone-parallax relative z-[1]",
+          flatFront
+            ? "experience-phone-parallax--flat w-[min(82vw,320px)] max-w-[320px] aspect-[71.5/149.6] h-auto"
+            : "aspect-[71.5/149.6] h-[min(68svh,520px)] w-auto max-w-[min(100%,17.5rem)] lg:h-[640px] lg:max-w-none",
+        ].join(" ")}
         style={
-          reduceMotion
-            ? undefined
+          flatFront
+            ? {
+                rotateX: 0,
+                rotateY: 0,
+                rotateZ: 0,
+                x: 0,
+                y: 0,
+                transformPerspective: 0,
+              }
             : {
                 rotateX,
                 rotateY,
