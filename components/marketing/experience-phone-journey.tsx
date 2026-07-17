@@ -157,25 +157,28 @@ export function ExperiencePhoneJourney({
       setSplashGate(false);
       return;
     }
-    if (reduceMotion) {
-      setBlackFade(false);
-      setBootReady(true);
-      setSplashGate(false);
-      return;
-    }
+
+    // Always run the splash → login handoff. iOS "Reduce Motion" must NOT
+    // leave the phone frozen on splash (hold is null on that step).
+    const fadeMs = reduceMotion ? 0 : BLACK_FADE_MS;
+    const splashMs = reduceMotion ? 700 : SPLASH_HOLD_MS;
+
     setIndex(0);
-    setBlackFade(true);
+    setBlackFade(!reduceMotion);
     setBootReady(false);
     setSplashGate(true);
+
     const fadeId = window.setTimeout(() => {
       setBlackFade(false);
       setBootReady(true);
-    }, BLACK_FADE_MS);
-    // Force logo splash on top, then hand off to Login.
+    }, fadeMs);
+
     const gateId = window.setTimeout(() => {
       setSplashGate(false);
       setIndex(1);
-    }, BLACK_FADE_MS + SPLASH_HOLD_MS);
+      console.log("Phone slideshow started");
+    }, fadeMs + splashMs);
+
     return () => {
       window.clearTimeout(fadeId);
       window.clearTimeout(gateId);
@@ -183,23 +186,20 @@ export function ExperiencePhoneJourney({
   }, [reduceMotion]);
 
   const beginBlackFade = useCallback(() => {
-    if (reduceMotion) {
-      setBootReady(true);
-      setSplashGate(false);
-      return;
-    }
+    const fadeMs = reduceMotion ? 0 : BLACK_FADE_MS;
+    const splashMs = reduceMotion ? 700 : SPLASH_HOLD_MS;
     setIndex(0);
-    setBlackFade(true);
+    setBlackFade(!reduceMotion);
     setBootReady(false);
     setSplashGate(true);
     window.setTimeout(() => {
       setBlackFade(false);
       setBootReady(true);
-    }, BLACK_FADE_MS);
+    }, fadeMs);
     window.setTimeout(() => {
       setSplashGate(false);
       setIndex(1);
-    }, BLACK_FADE_MS + SPLASH_HOLD_MS);
+    }, fadeMs + splashMs);
   }, [reduceMotion]);
 
   const advance = useCallback(() => {
@@ -217,10 +217,17 @@ export function ExperiencePhoneJourney({
 
   useEffect(() => {
     if (!active || isLocked) return;
-    if (canAdvance) {
+    // Safety net: if splash gate somehow stalls (Safari timer quirks), force login.
+    if (index !== 0 || !splashGate) return;
+    const id = window.setTimeout(() => {
+      setSplashGate(false);
+      setBootReady(true);
+      setBlackFade(false);
+      setIndex(1);
       console.log("Phone slideshow started");
-    }
-  }, [active, canAdvance, isLocked]);
+    }, 3200);
+    return () => window.clearTimeout(id);
+  }, [active, isLocked, index, splashGate]);
 
   useEffect(() => {
     if (!canAdvance) return;
