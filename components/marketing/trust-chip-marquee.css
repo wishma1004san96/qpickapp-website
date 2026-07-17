@@ -1,16 +1,13 @@
-/*
-  Shared glass trust-chip marquee (Hero + Drive mobile).
-  Continuous Embla AutoScroll — GPU translate3d via Embla.
-*/
-
 .trust-chip-marquee {
+  /* Embla viewport — clips the wide track; does not use 100vw / calc */
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   touch-action: pan-x;
   cursor: grab;
   -webkit-user-select: none;
   user-select: none;
-  /* Soft edge fade so chips never look clipped hard */
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,
@@ -44,7 +41,7 @@
 .trust-chip-marquee-item {
   flex: 0 0 auto;
   list-style: none;
-  padding-right: 12px; /* 12px gap between chips */
+  padding-right: 12px;
 }
 
 .trust-chip-marquee-badge {
@@ -52,9 +49,9 @@
   align-items: center;
   gap: 0.55rem;
   width: max-content;
-  height: 2.5rem; /* 40px */
+  height: 2.5rem;
   min-height: 2.5rem;
-  padding: 0.35rem 1.25rem 0.35rem 0.35rem; /* ~20px end padding */
+  padding: 0.35rem 1.25rem 0.35rem 0.35rem;
   border-radius: 999px;
   border: 1px solid rgb(255 255 255 / 0.16);
   background-color: rgb(8 16 28 / 0.58);
@@ -102,6 +99,7 @@
     -webkit-mask-image: none;
     mask-image: none;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none;
   }
 

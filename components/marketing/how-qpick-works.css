@@ -4,8 +4,8 @@
   --hqw-brand-bright: var(--brand-bright, #0193fb);
   position: relative;
   z-index: 1;
-  overflow-x: clip;
-  overflow-y: visible;
+  width: 100%;
+  max-width: 100%;
   background:
     radial-gradient(90% 60% at 50% -10%, rgb(1 147 251 / 0.16), transparent 55%),
     radial-gradient(70% 50% at 100% 80%, rgb(0 98 250 / 0.12), transparent 50%),
@@ -453,6 +453,9 @@
 .hqw-carousel {
   display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   margin-inline: auto;
 }
 
@@ -493,6 +496,8 @@
 .hqw-carousel-viewport {
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .hqw-carousel-track {
@@ -501,8 +506,8 @@
 }
 
 .hqw-carousel-slide {
-  flex: 0 0 min(85%, 20rem);
-  max-width: 320px;
+  flex: 0 0 85%;
+  max-width: 20rem;
   min-width: 0;
   padding-inline: 0.5rem;
   box-sizing: border-box;
@@ -525,8 +530,8 @@
 }
 
 .hqw-carousel-phone {
-  width: min(86vw, 18.5rem);
-  max-width: 300px;
+  width: 100%;
+  max-width: 18.5rem;
   display: flex;
   justify-content: center;
 }

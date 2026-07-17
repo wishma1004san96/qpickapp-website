@@ -78,7 +78,7 @@ export function DownloadQPickApps() {
           {/* Phone — first on mobile/tablet, left on desktop */}
           <motion.div
             className="order-1 flex justify-center lg:order-1 lg:justify-start"
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, ease: EASE }}
@@ -112,12 +112,10 @@ export function DownloadQPickApps() {
                           key={`p-${screenIndex}`}
                           className="absolute inset-0"
                           initial={
-                            reduceMotion ? false : { opacity: 0, scale: 1.02 }
+                            reduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.02 }
                           }
                           animate={{ opacity: 1, scale: 1 }}
-                          exit={
-                            reduceMotion ? undefined : { opacity: 0 }
-                          }
+                          exit={{ opacity: reduceMotion ? 1 : 0 }}
                           transition={{ duration: 0.4, ease: EASE }}
                         >
                           <Image
@@ -136,12 +134,10 @@ export function DownloadQPickApps() {
                           key={`d-${screenIndex}`}
                           className="absolute inset-0"
                           initial={
-                            reduceMotion ? false : { opacity: 0, scale: 1.02 }
+                            reduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.02 }
                           }
                           animate={{ opacity: 1, scale: 1 }}
-                          exit={
-                            reduceMotion ? undefined : { opacity: 0 }
-                          }
+                          exit={{ opacity: reduceMotion ? 1 : 0 }}
                           transition={{ duration: 0.4, ease: EASE }}
                         >
                           <DriverScreen
@@ -160,7 +156,7 @@ export function DownloadQPickApps() {
           {/* Copy */}
           <motion.div
             className="order-2 lg:order-2"
-            initial={reduceMotion ? false : { opacity: 0, x: 18 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : 18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.55, ease: EASE }}
@@ -214,9 +210,9 @@ export function DownloadQPickApps() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={tab}
-                  initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                  initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                  exit={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -8 }}
                   transition={{ duration: 0.35, ease: EASE }}
                 >
                   <h3 className="text-xl font-semibold tracking-tight text-balance text-foam">

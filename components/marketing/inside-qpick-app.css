@@ -6,7 +6,8 @@
   --iqpa-brand: var(--brand-bright, #0193fb);
   --iqpa-muted: rgb(243 246 247 / 0.78);
   position: relative;
-  overflow: clip;
+  width: 100%;
+  max-width: 100%;
   color: var(--iqpa-foam);
   background: #071018;
   padding-block: var(--section-y-sm);

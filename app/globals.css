@@ -96,6 +96,11 @@
     }
   }
 
+  html {
+    width: 100%;
+    max-width: 100%;
+  }
+
   html[lang="si"] {
     --font-sans: var(--font-sinhala), var(--font-inter);
     --font-display: var(--font-sinhala), var(--font-inter);
@@ -155,7 +160,8 @@
     font-size: var(--text-body);
     line-height: var(--leading-body);
     letter-spacing: var(--tracking-body);
-    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-wrap: break-word;
@@ -370,7 +376,7 @@
 
 .experience-map-wash {
   position: absolute;
-  inset: -10%;
+  inset: 0;
   opacity: 0.55;
   background:
     radial-gradient(circle at 72% 38%, rgb(10 132 255 / 0.1) 0%, transparent 42%),
@@ -446,17 +452,17 @@
 /* Product light only — strong blue glow behind the phone */
 .experience-ambient {
   position: absolute;
-  inset: -22% -38% -18% -34%;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .experience-ambient-glow {
   position: absolute;
   left: 50%;
   top: 46%;
-  width: 130%;
+  width: 120%;
   height: 100%;
   transform: translate(-50%, -50%);
   background: radial-gradient(
@@ -637,6 +643,10 @@
 }
 
 .experience-phone-stage {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.25rem 0.5rem 1rem;
 }
 
@@ -646,7 +656,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  overflow: visible;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .experience-phone-static {

@@ -250,13 +250,13 @@ export function ExperiencePhoneJourney({
           className="experience-journey-screen"
           initial={
             reduceMotion
-              ? false
+              ? { opacity: 1, y: 0, scale: 1 }
               : { opacity: 0, y: 10, scale: 0.988 }
           }
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={
             reduceMotion
-              ? undefined
+              ? { opacity: 1, y: 0, scale: 1 }
               : { opacity: 0, y: -6, scale: 1.012 }
           }
           transition={{
@@ -420,33 +420,38 @@ function SplashScreen({ reduceMotion }: { reduceMotion: boolean }) {
 
       <motion.div
         className="experience-splash-logo-wrap"
-        initial={reduceMotion ? false : { opacity: 0, scale: 0.86 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, scale: reduceMotion ? 1 : 0.86 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease: easeOut }}
       >
         <motion.div
           className="experience-splash-logo-halo"
           aria-hidden="true"
+          initial={{ opacity: 0.35, scale: 0.92 }}
           animate={
             reduceMotion
-              ? undefined
+              ? { opacity: 0.55, scale: 1 }
               : {
                   opacity: [0.35, 0.7, 0.35],
                   scale: [0.92, 1.08, 0.92],
                 }
           }
-          transition={{
-            duration: 2.1,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : {
+                  duration: 2.1,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }
+          }
         />
         <BrandLogo size={76} />
       </motion.div>
 
       <motion.p
         className="experience-splash-tagline"
-        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: easeOut, delay: 0.35 }}
       >
@@ -456,13 +461,13 @@ function SplashScreen({ reduceMotion }: { reduceMotion: boolean }) {
       <motion.div
         className="experience-splash-loader"
         aria-hidden="true"
-        initial={reduceMotion ? false : { opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.35, delay: 0.55 }}
       >
         <motion.span
           className="experience-splash-loader-bar"
-          initial={reduceMotion ? false : { scaleX: 0 }}
+          initial={{ scaleX: reduceMotion ? 1 : 0 }}
           animate={{ scaleX: 1 }}
           transition={{
             duration: reduceMotion ? 0 : 1.05,
@@ -637,7 +642,7 @@ function ConfirmPickupScreen({ reduceMotion }: { reduceMotion: boolean }) {
 
       <motion.div
         className="experience-dest-sheet"
-        initial={reduceMotion ? false : { y: 32, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 32 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.48, ease: easeOut, delay: 0.1 }}
       >
@@ -671,7 +676,7 @@ function DestinationScreen({ reduceMotion }: { reduceMotion: boolean }) {
 
       <motion.div
         className="experience-dest-sheet"
-        initial={reduceMotion ? false : { y: 36, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 36 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: easeOut, delay: 0.12 }}
       >
@@ -728,7 +733,7 @@ function VehiclesScreen({ reduceMotion }: { reduceMotion: boolean }) {
     <div className="experience-app experience-app--vehicles">
       <motion.div
         className="experience-vehicles-head"
-        initial={reduceMotion ? false : { y: -8, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -8 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut }}
       >
@@ -748,7 +753,7 @@ function VehiclesScreen({ reduceMotion }: { reduceMotion: boolean }) {
               ]
                 .filter(Boolean)
                 .join(" ")}
-              initial={reduceMotion ? false : { y: 14, opacity: 0 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
               animate={{
                 y: 0,
                 opacity: 1,
@@ -794,7 +799,7 @@ function BookingConfirmScreen({ reduceMotion }: { reduceMotion: boolean }) {
   return (
     <div className="experience-app experience-app--pad experience-app--foam experience-app--booking">
       <motion.div
-        initial={reduceMotion ? false : { y: 18, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.45, ease: easeOut }}
       >
@@ -1006,7 +1011,7 @@ function SearchingScreen({
 
       <motion.div
         className="experience-search-overlay"
-        initial={reduceMotion ? false : { y: 20, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut }}
       >
@@ -1135,6 +1140,7 @@ function SearchRoadVehicle({
       <motion.g
         className="experience-search-vehicle"
         style={{ x, y, rotate: angle }}
+        initial={{ opacity: 1, scale: 1 }}
         animate={{
           opacity: fading ? 0 : 1,
           scale: fading ? 0.82 : selected ? 1.12 : 1,
@@ -1304,7 +1310,7 @@ function PickedUpScreen({ reduceMotion }: { reduceMotion: boolean }) {
     <div className="experience-app experience-app--center experience-app--foam">
       <motion.div
         className="experience-app-check experience-app-check--pickup"
-        initial={reduceMotion ? false : { scale: 0.6, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, scale: reduceMotion ? 1 : 0.6 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.45, ease: easeOut }}
         aria-hidden="true"
@@ -1313,7 +1319,7 @@ function PickedUpScreen({ reduceMotion }: { reduceMotion: boolean }) {
       </motion.div>
       <motion.h3
         className="experience-app-h"
-        initial={reduceMotion ? false : { y: 10, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut, delay: 0.12 }}
       >
@@ -1321,7 +1327,7 @@ function PickedUpScreen({ reduceMotion }: { reduceMotion: boolean }) {
       </motion.h3>
       <motion.p
         className="experience-app-muted"
-        initial={reduceMotion ? false : { y: 8, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 8 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: easeOut, delay: 0.2 }}
       >

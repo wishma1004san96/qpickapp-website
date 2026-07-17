@@ -18,6 +18,7 @@ import {
   useMessages,
   useTranslations,
 } from "@/components/i18n/locale-provider";
+import { Container } from "@/components/ui/container";
 
 const PARALLAX_SPRING = {
   stiffness: 120,
@@ -111,14 +112,14 @@ export function ExperienceQPick() {
     <section
       ref={sectionRef}
       aria-labelledby="experience-qpick-heading"
-      className="experience-stage relative overflow-x-clip overflow-y-visible"
+      className="experience-stage relative"
       onMouseMove={onSectionPointerMove}
       onMouseLeave={onSectionPointerLeave}
     >
       <ExperienceMapBackdrop />
 
-      <div className="relative z-[1] mx-auto w-full max-w-[1320px] px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-[120px]">
+      <Container className="relative z-[1] py-16 sm:py-20 lg:py-24">
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-[120px]">
           <div className="experience-copy order-1 relative z-[2]">
             <h2 id="experience-qpick-heading" className="experience-headline">
               {t("experience.headingLine1")}
@@ -165,7 +166,7 @@ export function ExperienceQPick() {
         <p className="sr-only" aria-live="polite">
           {t("experience.screenLive", { stepLabel })}
         </p>
-      </div>
+      </Container>
     </section>
   );
 }
@@ -390,7 +391,7 @@ function IPhone16ProMockup({
         className={[
           "experience-phone-parallax relative z-[1]",
           flatFront
-            ? "experience-phone-parallax--flat w-[min(82vw,320px)] max-w-[320px] aspect-[71.5/149.6] h-auto"
+            ? "experience-phone-parallax--flat w-full max-w-[320px] aspect-[71.5/149.6] h-auto"
             : "aspect-[71.5/149.6] h-[min(68svh,520px)] w-auto max-w-[min(100%,17.5rem)] lg:h-[640px] lg:max-w-none",
         ].join(" ")}
         style={

@@ -82,7 +82,7 @@ export function StoryPlanScreen({ reduceMotion }: { reduceMotion: boolean }) {
                 key={name}
                 type="button"
                 className={`qstory-chip${on ? " is-on" : ""}`}
-                initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+                initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: reduceMotion ? 0 : 0.04 * i, ease: EASE }}
                 onClick={() => toggleDest(name)}
@@ -182,7 +182,7 @@ export function StoryVehiclesScreen({ reduceMotion }: { reduceMotion: boolean })
           <motion.li
             key={v.id}
             className={`qstory-vcard${v.selected ? " is-selected" : ""}`}
-            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: reduceMotion ? 0 : 0.05 * i, ease: EASE }}
           >
@@ -253,9 +253,9 @@ export function StoryLiveCycle({ reduceMotion }: { reduceMotion: boolean }) {
         <motion.div
           key={step}
           className="qstory-live-frame"
-          initial={reduceMotion ? false : { opacity: 0 }}
+          initial={{ opacity: reduceMotion ? 1 : 0 }}
           animate={{ opacity: 1 }}
-          exit={reduceMotion ? undefined : { opacity: 0 }}
+          exit={{ opacity: reduceMotion ? 1 : 0 }}
           transition={{ duration: 0.35, ease: EASE }}
         >
           <ExperienceJourneyFrame step={step} reduceMotion={reduceMotion} />

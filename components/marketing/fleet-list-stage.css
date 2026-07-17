@@ -3,13 +3,14 @@
   --fleet-brand-deep: var(--brand-deep, #0036f9);
   position: relative;
   z-index: 2;
-  overflow-x: clip;
-  overflow-y: visible;
+  width: 100%;
+  max-width: 100%;
   background:
     radial-gradient(120% 80% at 50% 120%, rgb(1 147 251 / 0.35), transparent 55%),
     linear-gradient(165deg, var(--fleet-brand) 0%, var(--fleet-brand-deep) 100%);
   color: var(--foam, #f3f6f7);
   padding-block: var(--section-y-sm) clamp(3rem, 8vw, 5.5rem);
+  text-align: center;
 }
 
 @media (min-width: 640px) {
@@ -21,25 +22,6 @@
 @media (min-width: 1024px) {
   .fleet-stage {
     padding-block: var(--section-y-lg) clamp(3rem, 8vw, 5.5rem);
-  }
-}
-
-.fleet-stage-inner {
-  margin-inline: auto;
-  max-inline-size: 72rem;
-  padding-inline: 1.25rem;
-  text-align: center;
-}
-
-@media (min-width: 640px) {
-  .fleet-stage-inner {
-    padding-inline: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .fleet-stage-inner {
-    padding-inline: 2rem;
   }
 }
 
@@ -78,17 +60,17 @@
   text-wrap: pretty;
 }
 
+/* Full section width — never 100vw / calc breakout */
 .fleet-stage-phone-plane {
   position: relative;
   z-index: 3;
-  /* Full-bleed like Bolt mission screen — phone fills the stage width */
-  width: 100vw;
-  max-width: 100vw;
-  margin-inline: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
   margin-block-start: clamp(1.25rem, 3vw, 2rem);
   margin-block-end: clamp(-5rem, -8vw, -2.5rem);
   padding-block-end: 0;
-  overflow-x: clip;
+  /* drop-shadow filter paint must not expand document scrollWidth */
+  overflow: hidden;
 }
 
 .fleet-stage-phone-parallax,
@@ -97,29 +79,20 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  will-change: transform;
+  max-width: 100%;
+  min-width: 0;
 }
 
-/* Pre-rendered Bolt-angle 3D device — near full-viewport, object-contain */
 .fleet-stage-device {
   position: relative;
   display: block;
-  width: min(100vw, 92rem);
+  width: 100%;
   max-width: 100%;
-  filter: drop-shadow(0 28px 48px rgb(7 16 24 / 0.28));
-}
-
-@media (min-width: 768px) {
-  .fleet-stage-device {
-    width: min(100vw, 96rem);
-  }
+  /* Prefer box-shadow — filter drop-shadow expands scrollable overflow */
+  box-shadow: 0 28px 48px rgb(7 16 24 / 0.28);
 }
 
 @media (min-width: 1024px) {
-  .fleet-stage-device {
-    width: min(100vw, 110rem);
-  }
-
   .fleet-stage-phone-plane {
     margin-block-end: clamp(-6rem, -7vw, -3.5rem);
   }

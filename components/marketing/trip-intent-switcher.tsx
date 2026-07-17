@@ -312,7 +312,7 @@ export function TripIntentSwitcher() {
                     className="order-2 lg:order-1"
                     initial={
                       reduceMotion
-                        ? false
+                        ? { opacity: 1, y: 0 }
                         : finePointer
                           ? { opacity: 0, y: 14 }
                           : { opacity: 0 }
@@ -320,7 +320,7 @@ export function TripIntentSwitcher() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={
                       reduceMotion
-                        ? undefined
+                        ? { opacity: 1, y: 0 }
                         : finePointer
                           ? { opacity: 0, y: -10 }
                           : { opacity: 0 }
@@ -372,7 +372,7 @@ export function TripIntentSwitcher() {
                         className="absolute inset-0"
                         initial={
                           reduceMotion
-                            ? false
+                            ? { opacity: 1, y: 0 }
                             : finePointer
                               ? { opacity: 0, y: 10 }
                               : { opacity: 0 }
@@ -380,7 +380,7 @@ export function TripIntentSwitcher() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={
                           reduceMotion
-                            ? undefined
+                            ? { opacity: 1, y: 0 }
                             : finePointer
                               ? { opacity: 0, y: -8 }
                               : { opacity: 0 }

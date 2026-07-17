@@ -92,10 +92,10 @@ export function HowQPickWorks() {
       className="hqw-stage"
       aria-labelledby="how-qpick-works-heading"
     >
-      <Container className="max-w-[76rem]">
+      <Container>
         <motion.header
           className="hqw-header"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.55, ease: EASE }}
@@ -180,7 +180,7 @@ function HowQPickDesktopTimeline({
               ]
                 .filter(Boolean)
                 .join(" ")}
-              initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{

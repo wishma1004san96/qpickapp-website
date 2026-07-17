@@ -72,10 +72,10 @@ export function ThreeExperiences() {
         <div className="tx-ambient-veil" />
       </div>
 
-      <Container className="tx-inner max-w-[76rem]">
+      <Container className="tx-inner">
         <motion.header
           className="tx-header"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.55, ease: EASE }}
@@ -95,7 +95,7 @@ export function ThreeExperiences() {
               <motion.li
                 key={item.id}
                 className={`tx-panel tx-panel--${item.theme}`}
-                initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+                initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{

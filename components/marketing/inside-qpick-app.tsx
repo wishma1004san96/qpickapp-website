@@ -120,7 +120,7 @@ export function InsideQPickApp() {
               <li key={panel.id} className="iqpa-panel">
                 <motion.div
                   className="iqpa-panel-inner"
-                  initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+                  initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{

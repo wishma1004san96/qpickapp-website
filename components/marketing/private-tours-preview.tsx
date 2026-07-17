@@ -40,7 +40,7 @@ export function PrivateToursPreview({
       <Container className="relative z-[1]">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, x: -16 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.55, ease: EASE }}
@@ -97,7 +97,7 @@ export function PrivateToursPreview({
           </motion.div>
 
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.06, ease: EASE }}

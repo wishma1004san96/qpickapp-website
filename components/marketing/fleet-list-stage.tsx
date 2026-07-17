@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "@/components/i18n/locale-provider";
+import { Container } from "@/components/ui/container";
 import "./fleet-list-stage.css";
 
 /**
@@ -31,10 +32,10 @@ export function FleetListStage() {
 
   return (
     <section className="fleet-stage" aria-labelledby="fleet-stage-heading">
-      <div className="fleet-stage-inner">
+      <Container>
         <motion.p
           className="fleet-stage-eyebrow"
-          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -45,7 +46,7 @@ export function FleetListStage() {
         <motion.h2
           id="fleet-stage-heading"
           className="fleet-stage-heading"
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{
@@ -59,7 +60,7 @@ export function FleetListStage() {
 
         <motion.p
           className="fleet-stage-sub"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{
@@ -70,14 +71,14 @@ export function FleetListStage() {
         >
           {t("fleetList.sub")}
         </motion.p>
+      </Container>
 
-        <div className="fleet-stage-phone-plane">
-          {enableParallax ? (
-            <FleetPhoneParallax reduceMotion={reduceMotion} />
-          ) : (
-            <FleetPhoneStatic reduceMotion={reduceMotion} />
-          )}
-        </div>
+      <div className="fleet-stage-phone-plane">
+        {enableParallax ? (
+          <FleetPhoneParallax reduceMotion={reduceMotion} />
+        ) : (
+          <FleetPhoneStatic reduceMotion={reduceMotion} />
+        )}
       </div>
     </section>
   );
@@ -88,7 +89,7 @@ function FleetPhoneStatic({ reduceMotion }: { reduceMotion: boolean }) {
     <div className="fleet-stage-phone-parallax">
       <motion.div
         className="fleet-stage-phone-float"
-        initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}

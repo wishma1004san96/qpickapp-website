@@ -197,7 +197,7 @@ function TrustBadge({
 
   return (
     <motion.li
-      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+      initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{

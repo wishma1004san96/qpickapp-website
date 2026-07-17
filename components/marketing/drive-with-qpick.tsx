@@ -47,7 +47,7 @@ const FLOAT_CARDS = [
     titleKey: "rideTitle" as const,
     bodyKey: "rideBody" as const,
     className:
-      "left-0 top-[4%] z-[3] w-[min(10.25rem,44%)] sm:-left-6 sm:top-[8%] sm:w-auto sm:max-w-[11.5rem] lg:-left-10",
+      "left-0 top-[4%] z-[3] w-[min(10.25rem,44%)] sm:left-0 sm:top-[8%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-6 lg:-translate-x-10",
     delay: 0,
     y: [0, -8, 0] as number[],
     hideOnMobile: false,
@@ -58,7 +58,7 @@ const FLOAT_CARDS = [
     titleKey: "airportTitle" as const,
     bodyKey: "airportBody" as const,
     className:
-      "right-0 top-[14%] z-[3] w-[min(10.25rem,44%)] sm:-right-4 sm:top-[18%] sm:w-auto sm:max-w-[11.5rem] lg:-right-8",
+      "right-0 top-[14%] z-[3] w-[min(10.25rem,44%)] sm:right-0 sm:top-[18%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-4 lg:translate-x-8",
     delay: 0.4,
     y: [0, 10, 0] as number[],
     hideOnMobile: false,
@@ -69,7 +69,7 @@ const FLOAT_CARDS = [
     titleKey: "earningsTitle" as const,
     bodyKey: "earningsBody" as const,
     className:
-      "bottom-[18%] left-0 z-[3] w-[min(10.25rem,44%)] sm:-left-8 sm:bottom-[22%] sm:w-auto sm:max-w-[11.5rem] lg:-left-12",
+      "bottom-[18%] left-0 z-[3] w-[min(10.25rem,44%)] sm:left-0 sm:bottom-[22%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-8 lg:-translate-x-12",
     delay: 0.8,
     y: [0, -7, 0] as number[],
     hideOnMobile: false,
@@ -80,7 +80,7 @@ const FLOAT_CARDS = [
     titleKey: "onlineTitle" as const,
     bodyKey: "onlineBody" as const,
     className:
-      "right-0 bottom-[6%] z-[3] w-[min(10.25rem,44%)] sm:-right-6 sm:bottom-[10%] sm:w-auto sm:max-w-[11.5rem] lg:-right-10",
+      "right-0 bottom-[6%] z-[3] w-[min(10.25rem,44%)] sm:right-0 sm:bottom-[10%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-6 lg:translate-x-10",
     delay: 1.2,
     y: [0, 9, 0] as number[],
     hideOnMobile: false,
@@ -175,14 +175,15 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
     >
       <motion.div
         className="pointer-events-none absolute h-[70%] w-[75%] rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.48)_0%,rgb(1_147_251_/_0.16)_42%,transparent_72%)] blur-3xl"
+        initial={{ opacity: 0.55, scale: 0.94 }}
         animate={
           reduceMotion
-            ? undefined
+            ? { opacity: 0.7, scale: 1 }
             : { opacity: [0.55, 0.85, 0.55], scale: [0.94, 1.08, 0.94] }
         }
         transition={
           reduceMotion
-            ? undefined
+            ? { duration: 0 }
             : { duration: 7, repeat: Infinity, ease: "easeInOut" }
         }
         aria-hidden="true"
@@ -196,7 +197,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
             className={`absolute ${card.className}${
               card.hideOnMobile ? " hidden sm:block" : ""
             }`}
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, scale: reduceMotion ? 1 : 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{
@@ -241,7 +242,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
       })}
 
       <motion.div
-        initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.94 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.94 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         onViewportEnter={() => setInView(true)}
@@ -389,12 +390,17 @@ function DriverDashboardScreen({
           <div className="mt-1.5 flex items-center gap-1.5">
             <motion.span
               className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f7a4c] shadow-[0_0_0_3px_rgb(31_122_76_/_0.2)]"
+              initial={{ opacity: 0.85, scale: 1 }}
               animate={
                 reduceMotion
-                  ? undefined
+                  ? { opacity: 1, scale: 1 }
                   : { scale: [1, 1.28, 1], opacity: [0.85, 1, 0.85] }
               }
-              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }
+              }
             />
             <span className="text-[0.62rem] leading-none text-[#6b7c88]">Online</span>
           </div>
@@ -616,7 +622,7 @@ export function DriveWithQPick() {
 
   return (
     <section
-      className="relative overflow-visible bg-[#07111b] py-[var(--section-y-sm)] text-foam sm:py-[var(--section-y-md)] lg:overflow-x-clip lg:py-[var(--section-y-lg)]"
+      className="relative bg-[#07111b] py-[var(--section-y-sm)] text-foam sm:py-[var(--section-y-md)] lg:py-[var(--section-y-lg)]"
       aria-labelledby="drive-qpick-heading"
     >
       <div
@@ -625,20 +631,20 @@ export function DriveWithQPick() {
       />
 
       <Container className="relative z-[1]">
-        <div className="grid items-center gap-8 overflow-visible sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 xl:gap-20">
+        <div className="grid min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 xl:gap-20">
           {/* Phone first on mobile */}
-          <div className="order-1 overflow-visible lg:order-2">
+          <div className="order-1 min-w-0 lg:order-2">
             <DriverShowcasePhone reduceMotion={reduceMotion} />
           </div>
 
-          <div className="relative order-2 lg:order-1">
+          <div className="relative order-2 min-w-0 lg:order-1">
             <div
               className="pointer-events-none absolute -inset-x-4 -inset-y-8 bg-[radial-gradient(50%_45%_at_25%_30%,rgb(0_98_250_/_0.14),transparent_70%)]"
               aria-hidden="true"
             />
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.55, ease: EASE }}
@@ -662,7 +668,7 @@ export function DriveWithQPick() {
             </motion.div>
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
@@ -697,7 +703,7 @@ export function DriveWithQPick() {
                 return (
                   <motion.li
                     key={badge.id}
-                    initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                    initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
@@ -723,7 +729,7 @@ export function DriveWithQPick() {
               })}
             </ul>
 
-            <div className="relative mt-8 md:hidden">
+            <div className="relative mt-8 min-w-0 max-w-full md:hidden">
               <TrustChipMarquee
                 labels={TRUST_BADGES.map(
                   (badge) => driveWithQPick.trust[badge.id],

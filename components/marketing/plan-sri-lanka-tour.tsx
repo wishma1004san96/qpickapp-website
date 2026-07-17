@@ -136,7 +136,7 @@ export function PlanSriLankaTour({
       <Container className="relative z-[1]">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, x: -18 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.55, ease: EASE }}
@@ -158,7 +158,7 @@ export function PlanSriLankaTour({
               {planTour.highlights.map((item, i) => (
                 <motion.li
                   key={item}
-                  initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                  initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
@@ -204,7 +204,7 @@ export function PlanSriLankaTour({
           </motion.div>
 
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{
@@ -434,13 +434,11 @@ export function PlanSriLankaTour({
                     <motion.p
                       key={breakdown.total}
                       initial={
-                        reduceMotion ? false : { opacity: 0, y: 6, filter: "blur(4px)" }
+                        reduceMotion ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 6, filter: "blur(4px)" }
                       }
                       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                       exit={
-                        reduceMotion
-                          ? undefined
-                          : { opacity: 0, y: -4, filter: "blur(4px)" }
+                        reduceMotion ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: -4, filter: "blur(4px)" }
                       }
                       transition={{ duration: 0.32, ease: EASE }}
                       className="mt-1 font-display text-[clamp(1.5rem,3vw,2rem)] tracking-tight text-foam"
@@ -559,9 +557,9 @@ function Stat({
       <AnimatePresence mode="wait">
         <motion.p
           key={animateKey}
-          initial={reduceMotion ? false : { opacity: 0, y: 4 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 4 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={reduceMotion ? undefined : { opacity: 0 }}
+          exit={{ opacity: reduceMotion ? 1 : 0 }}
           transition={{ duration: 0.25, ease: EASE }}
           className="mt-1 text-sm font-semibold text-foam"
         >
@@ -587,7 +585,7 @@ function BreakdownRow({
       <AnimatePresence mode="wait">
         <motion.span
           key={value}
-          initial={reduceMotion ? false : { opacity: 0.4 }}
+          initial={{ opacity: reduceMotion ? 1 : 0.4 }}
           animate={{ opacity: 1 }}
           className="shrink-0 tabular-nums text-foam/90"
         >

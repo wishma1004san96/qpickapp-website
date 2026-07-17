@@ -63,7 +63,7 @@ function AnimatedCheck({ reduceMotion }: { reduceMotion: boolean }) {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          initial={reduceMotion ? false : { pathLength: 0, opacity: 0 }}
+          initial={{ pathLength: reduceMotion ? 1 : 0, opacity: reduceMotion ? 1 : 0 }}
           whileInView={{ pathLength: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: EASE, delay: 0.2 }}
@@ -106,7 +106,7 @@ function SafetyGlassPanel({ reduceMotion }: { reduceMotion: boolean }) {
         ref={panelRef}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
-        initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.97 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.97 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.65, ease: EASE }}
@@ -137,7 +137,7 @@ function SafetyGlassPanel({ reduceMotion }: { reduceMotion: boolean }) {
             return (
               <motion.li
                 key={id}
-                initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{
@@ -214,28 +214,30 @@ export function SafetyChecklist() {
       {/* Glowing orbs */}
       <motion.div
         className="pointer-events-none absolute top-[8%] left-[8%] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.18),transparent_70%)] blur-3xl"
+        initial={{ opacity: 0.45, scale: 0.92 }}
         animate={
           reduceMotion
-            ? undefined
+            ? { opacity: 0.6, scale: 1 }
             : { opacity: [0.45, 0.75, 0.45], scale: [0.92, 1.08, 0.92] }
         }
         transition={
           reduceMotion
-            ? undefined
+            ? { duration: 0 }
             : { duration: 8, repeat: Infinity, ease: "easeInOut" }
         }
         aria-hidden="true"
       />
       <motion.div
         className="pointer-events-none absolute right-[6%] bottom-[12%] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgb(1_147_251_/_0.16),transparent_70%)] blur-3xl"
+        initial={{ opacity: 0.35, scale: 1.05 }}
         animate={
           reduceMotion
-            ? undefined
+            ? { opacity: 0.5, scale: 1 }
             : { opacity: [0.35, 0.7, 0.35], scale: [1.05, 0.92, 1.05] }
         }
         transition={
           reduceMotion
-            ? undefined
+            ? { duration: 0 }
             : { duration: 9.5, repeat: Infinity, ease: "easeInOut", delay: 1 }
         }
         aria-hidden="true"
@@ -245,7 +247,7 @@ export function SafetyChecklist() {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:gap-16 xl:gap-20">
           <div>
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.55, ease: EASE }}
@@ -268,7 +270,7 @@ export function SafetyChecklist() {
             </motion.div>
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
@@ -293,7 +295,7 @@ export function SafetyChecklist() {
             </motion.div>
 
             <motion.div
-              initial={reduceMotion ? false : { opacity: 0 }}
+              initial={{ opacity: reduceMotion ? 1 : 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{

@@ -142,10 +142,10 @@ export function YourJourneyYourRules() {
         <div className="yj-ambient-veil" />
       </div>
 
-      <Container className="yj-inner max-w-[76rem]">
+      <Container className="yj-inner">
         <motion.header
           className="yj-intro"
-          initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.65, ease: EASE }}
@@ -253,7 +253,7 @@ export function YourJourneyYourRules() {
         <motion.aside
           className="yj-trust"
           aria-label={t("yourJourneyRules.trustEyebrow")}
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.55, ease: EASE }}
@@ -267,7 +267,7 @@ export function YourJourneyYourRules() {
         <motion.aside
           className="yj-continuum"
           aria-label={t("yourJourneyRules.continuumEyebrow")}
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.55, ease: EASE, delay: 0.06 }}

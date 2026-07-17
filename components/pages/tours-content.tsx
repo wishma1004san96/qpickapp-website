@@ -38,7 +38,7 @@ export function ToursContent() {
         />
         <Container className="relative z-[1]">
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE }}
             className="max-w-3xl"
@@ -101,7 +101,7 @@ export function ToursContent() {
               return (
                 <motion.article
                   key={id}
-                  initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                  initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{

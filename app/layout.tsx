@@ -152,7 +152,7 @@ export default async function RootLayout({
           />
           <SkipLink />
           <SiteHeader />
-          <main id="main" className="flex flex-1 flex-col">
+          <main id="main" className="flex w-full min-w-0 flex-1 flex-col">
             {children}
           </main>
           <SiteFooter />

@@ -338,7 +338,7 @@ export function SiteHeader() {
           ].join(" ")}
         />
 
-        <div className="relative z-[110] mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-3 px-5 sm:gap-4 sm:px-6 lg:h-20 lg:px-8">
+        <div className="relative z-[110] mx-auto flex h-[4.5rem] w-full min-w-0 max-w-6xl items-center justify-between gap-3 px-5 sm:gap-4 sm:px-6 lg:h-20 lg:px-8">
           <Link
             href="/"
             className="relative z-[110] inline-flex h-11 shrink-0 items-center"

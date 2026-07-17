@@ -243,12 +243,12 @@ function HeroContent({
   }, []);
 
   const slideMotion = reduceMotion
-    ? false
+    ? { opacity: 1, y: 0 }
     : finePointer
       ? { opacity: 0, y: 12 }
       : { opacity: 0 };
   const slideExit = reduceMotion
-    ? undefined
+    ? { opacity: 1, y: 0 }
     : finePointer
       ? { opacity: 0, y: -8 }
       : { opacity: 0 };

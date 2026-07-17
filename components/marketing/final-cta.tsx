@@ -21,27 +21,29 @@ export function FinalCta() {
         >
           <motion.div
             className="absolute -left-1/4 top-[-20%] h-[70%] w-[70%] rounded-full bg-brand/[0.07] blur-3xl"
+            initial={{ opacity: 0.45, scale: 1 }}
             animate={
               reduceMotion
-                ? undefined
+                ? { opacity: 0.6, scale: 1 }
                 : { opacity: [0.45, 0.75, 0.45], scale: [1, 1.08, 1] }
             }
             transition={
               reduceMotion
-                ? undefined
+                ? { duration: 0 }
                 : { duration: 10, repeat: Infinity, ease: "easeInOut" }
             }
           />
           <motion.div
             className="absolute -right-1/5 bottom-[-30%] h-[65%] w-[55%] rounded-full bg-brand-bright/[0.08] blur-3xl"
+            initial={{ opacity: 0.35, scale: 1.05 }}
             animate={
               reduceMotion
-                ? undefined
+                ? { opacity: 0.5, scale: 1 }
                 : { opacity: [0.35, 0.65, 0.35], scale: [1.05, 1, 1.05] }
             }
             transition={
               reduceMotion
-                ? undefined
+                ? { duration: 0 }
                 : {
                     duration: 12,
                     repeat: Infinity,

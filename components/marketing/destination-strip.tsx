@@ -251,16 +251,16 @@ export function DestinationStrip() {
       className="relative isolate overflow-hidden bg-[#050b12] py-10 text-[#f3f6f7] sm:py-14 lg:py-16"
       aria-labelledby="popular-destinations-heading"
     >
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-        <div className="absolute -top-[20%] right-[-8%] h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle,rgb(201_164_108_/_0.14)_0%,transparent_70%)] blur-[90px]" />
-        <div className="absolute bottom-[-25%] left-[-10%] h-[20rem] w-[20rem] rounded-full bg-[radial-gradient(circle,rgb(1_147_251_/_0.12)_0%,transparent_70%)] blur-[90px]" />
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-0 right-0 h-[22rem] w-[22rem] translate-x-1/4 -translate-y-1/4 rounded-full bg-[radial-gradient(circle,rgb(201_164_108_/_0.14)_0%,transparent_70%)] blur-[90px]" />
+        <div className="absolute bottom-0 left-0 h-[20rem] w-[20rem] -translate-x-1/4 translate-y-1/4 rounded-full bg-[radial-gradient(circle,rgb(1_147_251_/_0.12)_0%,transparent_70%)] blur-[90px]" />
       </div>
 
-      <Container className="relative z-[1] max-w-[76rem]">
+      <Container className="relative z-[1]">
         <div className="mb-6 flex flex-col gap-5 sm:mb-8 sm:gap-6 lg:mb-9 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <motion.div
             className="max-w-2xl"
-            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.55, ease: EASE }}
@@ -284,7 +284,7 @@ export function DestinationStrip() {
           </motion.div>
 
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.08, ease: EASE }}
@@ -309,7 +309,7 @@ export function DestinationStrip() {
             <motion.div
               key={dest.slug}
               role="listitem"
-              initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{

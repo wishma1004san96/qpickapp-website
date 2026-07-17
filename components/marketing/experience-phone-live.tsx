@@ -533,7 +533,7 @@ export function ExperiencePhoneLive({
 
       <motion.div
         className="experience-live-eta-badge"
-        initial={reduceMotion ? false : { y: -10, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -10 }}
         animate={{ y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
         style={{ left: "50%", x: "-50%" }}
@@ -546,7 +546,7 @@ export function ExperiencePhoneLive({
 
       <motion.div
         className="experience-live-status"
-        initial={reduceMotion ? false : { y: -10, opacity: 0 }}
+        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -10 }}
         animate={{ y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
         style={{ left: "50%", x: "-50%" }}
@@ -585,7 +585,7 @@ export function ExperiencePhoneLive({
       <div className="experience-live-sheet">
         <motion.div
           className="experience-live-card experience-live-card--tracking"
-          initial={reduceMotion ? false : { y: 20, opacity: 0 }}
+          initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         >

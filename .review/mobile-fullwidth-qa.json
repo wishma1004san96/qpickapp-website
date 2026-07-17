@@ -1,0 +1,62 @@
+[
+  {
+    "width": 320,
+    "ok": true,
+    "innerWidth": 320,
+    "clientWidth": 320,
+    "scrollWidth": 320,
+    "bodyW": 320,
+    "mainW": 320,
+    "headerW": 320,
+    "heroW": 320,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "width": 360,
+    "ok": true,
+    "innerWidth": 360,
+    "clientWidth": 360,
+    "scrollWidth": 360,
+    "bodyW": 360,
+    "mainW": 360,
+    "headerW": 360,
+    "heroW": 360,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "width": 375,
+    "ok": true,
+    "innerWidth": 375,
+    "clientWidth": 375,
+    "scrollWidth": 375,
+    "bodyW": 375,
+    "mainW": 375,
+    "headerW": 375,
+    "heroW": 375,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "width": 390,
+    "ok": true,
+    "innerWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "bodyW": 390,
+    "mainW": 390,
+    "headerW": 390,
+    "heroW": 390,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  {
+    "width": 430,
+    "ok": true,
+    "innerWidth": 430,
+    "clientWidth": 430,
+    "scrollWidth": 430,
+    "bodyW": 430,
+    "mainW": 430,
+    "headerW": 430,
+    "heroW": 430,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  }
+]

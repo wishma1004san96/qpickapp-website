@@ -474,7 +474,7 @@
 
 .tx-panel-glow {
   position: absolute;
-  inset: auto -10% -30% -10%;
+  inset: auto 0 -30% 0;
   height: 55%;
   z-index: 1;
   pointer-events: none;
