@@ -200,7 +200,7 @@ function DestinationsMobileCarousel({
             >
               <DestinationCard
                 dest={dest}
-                priority={index === 0}
+                priority={false}
                 className="h-[17.5rem] w-full"
               />
             </div>
@@ -318,7 +318,7 @@ export function DestinationStrip() {
                 ease: EASE,
               }}
             >
-              <DestinationCard dest={dest} priority={index === 0} />
+              <DestinationCard dest={dest} priority={false} />
             </motion.div>
           ))}
         </div>

@@ -60,8 +60,10 @@ export function HomeHero() {
   const t = useTranslations();
   const [slideIndex, setSlideIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
-  const hasVideo = Boolean(heroMedia.videoSrc);
+  const hasVideo = Boolean(heroMedia.videoSrc) && !reduceMotion;
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   const onVideoTimeUpdate = useCallback(() => {
     const video = videoRef.current;
@@ -72,12 +74,118 @@ export function HomeHero() {
 
   // Poster / reduced-motion fallback — timed slides without scrubbing video.
   useEffect(() => {
-    if (hasVideo && !reduceMotion) return;
+    if (hasVideo) return;
     const id = window.setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % HERO_SLIDE_COUNT);
     }, HERO_SLIDE_FALLBACK_MS);
     return () => window.clearInterval(id);
-  }, [hasVideo, reduceMotion]);
+  }, [hasVideo]);
+
+  // Robust mobile autoplay: muted + playsInline, retry on view / first gesture.
+  useEffect(() => {
+    if (!hasVideo) return;
+    const video = videoRef.current;
+    const root = mediaRef.current;
+    if (!video || !root) return;
+
+    let inView = true;
+    let cancelled = false;
+
+    const markPlaying = () => {
+      if (!cancelled) setVideoPlaying(true);
+    };
+
+    // iOS / Android autoplay policies
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "true");
+
+    // Avoid <source media> quirks on iOS — set src in JS
+    const preferMobile = window.matchMedia("(max-width: 767.98px)").matches;
+    const nextSrc = preferMobile
+      ? heroMedia.videoSrcMobile
+      : heroMedia.videoSrc;
+    if (!video.getAttribute("src")?.includes(nextSrc) && !video.currentSrc.includes(nextSrc)) {
+      video.src = nextSrc;
+    }
+
+    const tryPlay = () => {
+      if (cancelled || document.hidden || !inView) return;
+      video.muted = true;
+      const attempt = video.play();
+      if (attempt && typeof attempt.then === "function") {
+        attempt.then(markPlaying).catch(() => {
+          /* keep poster until a later retry succeeds */
+        });
+      }
+    };
+
+    const onPlaying = () => markPlaying();
+
+    video.addEventListener("playing", onPlaying);
+
+    // Initial attempt after metadata
+    const onLoaded = () => tryPlay();
+    if (video.readyState >= 2) tryPlay();
+    else video.addEventListener("loadeddata", onLoaded, { once: true });
+    video.load();
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const ratio = entry?.intersectionRatio ?? 0;
+        const intersecting = entry?.isIntersecting ?? false;
+        // Hysteresis — avoid pause/play thrash when mobile chrome resizes
+        if (intersecting && ratio >= 0.12) {
+          inView = true;
+          tryPlay();
+        } else if (!intersecting || ratio < 0.04) {
+          inView = false;
+          video.pause();
+          // Keep poster faded once playback started — no black/white flash
+        }
+      },
+      { threshold: [0, 0.04, 0.12, 0.35] },
+    );
+    io.observe(root);
+
+    const onVisibility = () => {
+      if (document.hidden) {
+        video.pause();
+      } else if (inView) {
+        tryPlay();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    const onFirstGesture = () => {
+      tryPlay();
+    };
+    window.addEventListener("touchstart", onFirstGesture, {
+      passive: true,
+      once: true,
+    });
+    window.addEventListener("pointerdown", onFirstGesture, {
+      passive: true,
+      once: true,
+    });
+
+    // Mount retry shortly after paint (Safari often needs this)
+    const bootTimer = window.setTimeout(tryPlay, 120);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(bootTimer);
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+      video.removeEventListener("playing", onPlaying);
+      video.removeEventListener("loadeddata", onLoaded);
+      window.removeEventListener("touchstart", onFirstGesture);
+      window.removeEventListener("pointerdown", onFirstGesture);
+    };
+  }, [hasVideo]);
 
   return (
     <section
@@ -86,7 +194,9 @@ export function HomeHero() {
     >
       <HeroMedia
         hasVideo={hasVideo}
+        mediaRef={mediaRef}
         videoRef={videoRef}
+        videoPlaying={videoPlaying}
         onTimeUpdate={onVideoTimeUpdate}
       />
 
@@ -122,6 +232,26 @@ function HeroContent({
   const { hero } = useMessages();
   const slide = hero.slides[index] ?? hero.slides[0];
   const hrefs = HERO_SLIDE_HREFS[index] ?? HERO_SLIDE_HREFS[0];
+  const [finePointer, setFinePointer] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine)");
+    const sync = () => setFinePointer(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  const slideMotion = reduceMotion
+    ? false
+    : finePointer
+      ? { opacity: 0, y: 12 }
+      : { opacity: 0 };
+  const slideExit = reduceMotion
+    ? undefined
+    : finePointer
+      ? { opacity: 0, y: -8 }
+      : { opacity: 0 };
 
   return (
     <div className="hero-content-layout flex w-full min-w-0 flex-col" aria-live="polite">
@@ -133,9 +263,9 @@ function HeroContent({
         <motion.div
           key={`slide-${index}-${slide.title}`}
           className="flex w-full min-w-0 flex-col gap-3.5 sm:gap-6"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          initial={slideMotion}
           animate={{ opacity: 1, y: 0 }}
-          exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+          exit={slideExit}
           transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
         >
           <p className="hero-title overflow-visible font-display text-[clamp(1.85rem,6vw,4.75rem)] leading-[1.12] tracking-[-0.03em] text-balance text-foam">
@@ -175,44 +305,44 @@ function HeroContent({
 
 function HeroMedia({
   hasVideo,
+  mediaRef,
   videoRef,
+  videoPlaying,
   onTimeUpdate,
 }: {
   hasVideo: boolean;
+  mediaRef: RefObject<HTMLDivElement | null>;
   videoRef: RefObject<HTMLVideoElement | null>;
+  videoPlaying: boolean;
   onTimeUpdate: () => void;
 }) {
   const t = useTranslations();
 
   return (
-    <div className="hero-media absolute inset-0 overflow-hidden">
+    <div
+      ref={mediaRef}
+      className="hero-media absolute inset-0 overflow-hidden bg-map-void"
+    >
       {hasVideo ? (
         <video
           ref={videoRef}
-          className="hero-bg-video absolute inset-0 h-full w-full motion-reduce:hidden"
+          className={[
+            "hero-bg-video absolute inset-0 h-full w-full motion-reduce:hidden",
+            "transition-opacity duration-700 ease-[var(--ease-cinematic)]",
+            videoPlaying ? "opacity-100" : "opacity-0",
+          ].join(" ")}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={heroMedia.poster.src}
           aria-hidden="true"
           disablePictureInPicture
           disableRemotePlayback
           onTimeUpdate={onTimeUpdate}
           onLoadedMetadata={onTimeUpdate}
-        >
-          {/* Mobile first — browsers pick the first matching media source */}
-          <source
-            src={heroMedia.videoSrcMobile}
-            type='video/mp4; codecs="avc1.64001F"'
-            media="(max-width: 767px)"
-          />
-          <source
-            src={heroMedia.videoSrc}
-            type='video/mp4; codecs="avc1.640028"'
-          />
-        </video>
+        />
       ) : null}
 
       <Image
@@ -220,14 +350,17 @@ function HeroMedia({
         alt={t("hero.posterAlt")}
         fill
         priority
-        quality={90}
+        quality={75}
         sizes="100vw"
         placeholder="blur"
         blurDataURL={BLUR}
         className={[
+          "object-cover transition-opacity duration-700 ease-[var(--ease-cinematic)]",
           hasVideo
-            ? "hero-bg-video motion-reduce:block hidden"
-            : "object-cover ken-burns",
+            ? videoPlaying
+              ? "pointer-events-none opacity-0 motion-reduce:opacity-100"
+              : "opacity-100"
+            : "ken-burns opacity-100",
         ].join(" ")}
       />
 

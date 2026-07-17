@@ -193,8 +193,9 @@
   .yj-media {
     position: sticky;
     top: 5.25rem;
-    min-height: min(78vh, 42rem);
-    height: min(78vh, 42rem);
+    /* svh avoids jump when mobile/desktop chrome resizes */
+    min-height: min(78svh, 42rem);
+    height: min(78svh, 42rem);
   }
 }
 
@@ -315,8 +316,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 0;
+  height: 100%;
   transform-origin: top center;
+  will-change: transform;
   background: linear-gradient(
     180deg,
     var(--yj-gold-soft) 0%,

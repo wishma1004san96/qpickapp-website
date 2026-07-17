@@ -112,7 +112,7 @@ export function ThreeExperiences() {
                     sizes={item.sizes}
                     quality={90}
                     className="tx-panel-img"
-                    priority={index === 0}
+                    priority={false}
                   />
                   <div className="tx-panel-wash" aria-hidden="true" />
                   <div className="tx-panel-glow" aria-hidden="true" />

@@ -16,6 +16,7 @@ import {
   useRef,
   useState,
   type ReactNode,
+  type RefObject,
 } from "react";
 import {
   useMessages,
@@ -64,29 +65,25 @@ const AUTOPLAY_MS = 3000;
  */
 export function HowQPickWorks() {
   const t = useTranslations();
-  const { howQPickWorks } = useMessages();
   const reduceMotion = useReducedMotion() ?? false;
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [canHover, setCanHover] = useState(false);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start 0.7", "end 0.4"],
-  });
-  const lineRaw = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const lineProgress = useSpring(lineRaw, {
-    stiffness: 90,
-    damping: 26,
-    mass: 0.3,
-  });
+  const [desktopTimeline, setDesktopTimeline] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia(HOVER_MQ);
-    const sync = () => setCanHover(media.matches);
-    sync();
-    media.addEventListener("change", sync);
-    return () => media.removeEventListener("change", sync);
+    const hoverMedia = window.matchMedia(HOVER_MQ);
+    const desktopMedia = window.matchMedia("(min-width: 1280px)");
+    const syncHover = () => setCanHover(hoverMedia.matches);
+    const syncDesktop = () => setDesktopTimeline(desktopMedia.matches);
+    syncHover();
+    syncDesktop();
+    hoverMedia.addEventListener("change", syncHover);
+    desktopMedia.addEventListener("change", syncDesktop);
+    return () => {
+      hoverMedia.removeEventListener("change", syncHover);
+      desktopMedia.removeEventListener("change", syncDesktop);
+    };
   }, []);
 
   return (
@@ -113,104 +110,142 @@ export function HowQPickWorks() {
         {/* Mobile & tablet — one phone carousel */}
         <HowQPickMobileCarousel reduceMotion={reduceMotion} />
 
-        {/* Desktop timeline — unchanged */}
-        <div className="hqw-timeline hqw-timeline--desktop">
-          <div className="hqw-rail" aria-hidden="true">
-            <div className="hqw-rail-track" />
-            <motion.div
-              className="hqw-rail-progress"
-              style={
-                reduceMotion
-                  ? { scaleX: 1 }
-                  : { scaleX: lineProgress, transformOrigin: "left center" }
-              }
-            />
-          </div>
-
-          <ol className="hqw-steps">
-            {STEP_IDS.map((id, index) => {
-              const step = howQPickWorks.steps[id];
-              const isActive = activeIndex === index;
-              return (
-                <motion.li
-                  key={id}
-                  className={[
-                    "hqw-step",
-                    STEP_LAYER[index],
-                    isActive ? "is-active" : "",
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                  initial={reduceMotion ? false : { opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{
-                    duration: 0.55,
-                    delay: reduceMotion ? 0 : index * 0.08,
-                    ease: EASE,
-                  }}
-                  onMouseEnter={() => {
-                    if (canHover) setActiveIndex(index);
-                  }}
-                  onMouseLeave={() => {
-                    if (canHover) setActiveIndex(null);
-                  }}
-                  onFocus={() => {
-                    if (canHover) setActiveIndex(index);
-                  }}
-                  onBlur={(event) => {
-                    if (!canHover) return;
-                    const next = event.currentTarget.contains(
-                      event.relatedTarget as Node | null,
-                    );
-                    if (!next) setActiveIndex(null);
-                  }}
-                >
-                  <div className="hqw-step-dot" aria-hidden="true">
-                    <span>{step.n}</span>
-                  </div>
-
-                  <motion.div
-                    className="hqw-device-float"
-                    animate={
-                      reduceMotion || !isActive
-                        ? undefined
-                        : { y: [0, -6, 0] }
-                    }
-                    transition={
-                      reduceMotion || !isActive
-                        ? undefined
-                        : {
-                            y: {
-                              duration: 5.8 + index * 0.2,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                            },
-                          }
-                    }
-                  >
-                    <ShowcaseDevice active={isActive}>
-                      <ExperienceJourneyFrame
-                        step={STEP_TO_JOURNEY[id]}
-                        reduceMotion={reduceMotion}
-                      />
-                    </ShowcaseDevice>
-                  </motion.div>
-
-                  <div className="hqw-copy">
-                    <p className="hqw-step-label">
-                      {t("howQPickWorks.stepLabel", { n: step.n })}
-                    </p>
-                    <h3 className="hqw-step-title">{step.title}</h3>
-                    <p className="hqw-step-body">{step.body}</p>
-                  </div>
-                </motion.li>
-              );
-            })}
-          </ol>
-        </div>
+        {/* Desktop timeline — scroll progress only mounts on xl */}
+        {desktopTimeline ? (
+          <HowQPickDesktopTimeline
+            sectionRef={sectionRef}
+            reduceMotion={reduceMotion}
+            canHover={canHover}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
+        ) : null}
       </Container>
     </section>
+  );
+}
+
+function HowQPickDesktopTimeline({
+  sectionRef,
+  reduceMotion,
+  canHover,
+  activeIndex,
+  setActiveIndex,
+}: {
+  sectionRef: RefObject<HTMLElement | null>;
+  reduceMotion: boolean;
+  canHover: boolean;
+  activeIndex: number | null;
+  setActiveIndex: (index: number | null) => void;
+}) {
+  const t = useTranslations();
+  const { howQPickWorks } = useMessages();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 0.7", "end 0.4"],
+  });
+  const lineRaw = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const lineProgress = useSpring(lineRaw, {
+    stiffness: 90,
+    damping: 26,
+    mass: 0.3,
+  });
+
+  return (
+    <div className="hqw-timeline hqw-timeline--desktop">
+      <div className="hqw-rail" aria-hidden="true">
+        <div className="hqw-rail-track" />
+        <motion.div
+          className="hqw-rail-progress"
+          style={
+            reduceMotion
+              ? { scaleX: 1 }
+              : { scaleX: lineProgress, transformOrigin: "left center" }
+          }
+        />
+      </div>
+
+      <ol className="hqw-steps">
+        {STEP_IDS.map((id, index) => {
+          const step = howQPickWorks.steps[id];
+          const isActive = activeIndex === index;
+          return (
+            <motion.li
+              key={id}
+              className={[
+                "hqw-step",
+                STEP_LAYER[index],
+                isActive ? "is-active" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{
+                duration: 0.55,
+                delay: reduceMotion ? 0 : index * 0.08,
+                ease: EASE,
+              }}
+              onMouseEnter={() => {
+                if (canHover) setActiveIndex(index);
+              }}
+              onMouseLeave={() => {
+                if (canHover) setActiveIndex(null);
+              }}
+              onFocus={() => {
+                if (canHover) setActiveIndex(index);
+              }}
+              onBlur={(event) => {
+                if (!canHover) return;
+                const next = event.currentTarget.contains(
+                  event.relatedTarget as Node | null,
+                );
+                if (!next) setActiveIndex(null);
+              }}
+            >
+              <div className="hqw-step-dot" aria-hidden="true">
+                <span>{step.n}</span>
+              </div>
+
+              <motion.div
+                className="hqw-device-float"
+                animate={
+                  reduceMotion || !isActive ? undefined : { y: [0, -6, 0] }
+                }
+                transition={
+                  reduceMotion || !isActive
+                    ? undefined
+                    : {
+                        y: {
+                          duration: 5.8 + index * 0.2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        },
+                      }
+                }
+              >
+                <ShowcaseDevice active={isActive}>
+                  <ExperienceJourneyFrame
+                    step={STEP_TO_JOURNEY[id]}
+                    reduceMotion={reduceMotion}
+                  />
+                </ShowcaseDevice>
+              </motion.div>
+
+              <div className="hqw-copy">
+                <p className="hqw-step-label">
+                  {t("howQPickWorks.stepLabel", { n: step.n })}
+                </p>
+                <h3 className="hqw-step-title">{step.title}</h3>
+                <p className="hqw-step-body">{step.body}</p>
+              </div>
+            </motion.li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }
 

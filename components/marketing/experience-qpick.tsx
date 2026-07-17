@@ -53,9 +53,10 @@ export function ExperienceQPick() {
   useEffect(() => {
     const motionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const mobileMq = window.matchMedia("(max-width: 767.98px)");
+    const fineMq = window.matchMedia("(pointer: fine) and (hover: hover)");
     const syncMotion = () => setReduceMotion(motionMq.matches);
     const syncMobile = () => {
-      const mobile = mobileMq.matches;
+      const mobile = mobileMq.matches || !fineMq.matches;
       setIsMobile(mobile);
       if (mobile) {
         pointerX.set(0);
@@ -66,9 +67,11 @@ export function ExperienceQPick() {
     syncMobile();
     motionMq.addEventListener("change", syncMotion);
     mobileMq.addEventListener("change", syncMobile);
+    fineMq.addEventListener("change", syncMobile);
     return () => {
       motionMq.removeEventListener("change", syncMotion);
       mobileMq.removeEventListener("change", syncMobile);
+      fineMq.removeEventListener("change", syncMobile);
     };
   }, [pointerX, pointerY]);
 
@@ -324,35 +327,49 @@ function IPhone16ProMockup({
     if (!el) return;
 
     let wasOut = true;
+    let exitTimer = 0;
+    const playingRef = { current: false };
+
+    const startJourney = () => {
+      if (playingRef.current) return;
+      playingRef.current = true;
+      wasOut = false;
+      setRunId((n) => n + 1);
+      setPlaying(true);
+    };
+
+    const stopJourney = () => {
+      if (!playingRef.current && wasOut) return;
+      playingRef.current = false;
+      wasOut = true;
+      setPlaying(false);
+      onStepChange("splash", splashLabel);
+    };
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        const visible =
-          (entry?.isIntersecting ?? false) &&
-          (entry?.intersectionRatio ?? 0) >= 0.3;
-        if (visible) {
-          if (wasOut) {
-            // Tear down any mid-journey instance and start from Splash.
-            setPlaying(false);
-            onStepChange("splash", splashLabel);
-            window.requestAnimationFrame(() => {
-              setRunId((n) => n + 1);
-              setPlaying(true);
-            });
-          }
+        const ratio = entry?.intersectionRatio ?? 0;
+        const intersecting = entry?.isIntersecting ?? false;
+        // Hysteresis — mobile browser chrome resize must not remount the phone UI
+        if (intersecting && ratio >= 0.22) {
+          window.clearTimeout(exitTimer);
+          if (wasOut) startJourney();
           wasOut = false;
-        } else {
-          wasOut = true;
-          setPlaying(false);
-          onStepChange("splash", splashLabel);
+        } else if (!intersecting || ratio < 0.06) {
+          window.clearTimeout(exitTimer);
+          exitTimer = window.setTimeout(stopJourney, 280);
         }
       },
       {
-        threshold: [0, 0.3, 0.5, 0.75, 1],
-        rootMargin: "-10% 0px -10% 0px",
+        threshold: [0, 0.06, 0.22, 0.5],
+        rootMargin: "0px",
       },
     );
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      window.clearTimeout(exitTimer);
+      io.disconnect();
+    };
   }, [onStepChange, splashLabel]);
 
   return (

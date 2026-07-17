@@ -87,7 +87,7 @@ export function InsideQPickApp() {
                 src={bg.src}
                 alt=""
                 fill
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 90vw"
                 className={[
                   "iqpa-bg-image",
                   active && !reduceMotion ? "iqpa-bg-image--motion" : "",
@@ -95,7 +95,7 @@ export function InsideQPickApp() {
                 ]
                   .filter(Boolean)
                   .join(" ")}
-                priority={index === 0}
+                priority={false}
               />
             </div>
           );

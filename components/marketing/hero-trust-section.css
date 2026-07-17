@@ -136,34 +136,6 @@
   will-change: transform;
 }
 
-.hero-trust-item--chip {
-  flex: 0 0 auto;
-  width: auto;
-  max-width: none;
-  padding-right: 0.65rem;
-}
-
-.hero-trust-carousel {
-  width: 100%;
-  overflow: hidden;
-  touch-action: pan-x;
-  cursor: grab;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.hero-trust-carousel:active {
-  cursor: grabbing;
-}
-
-.hero-trust-carousel-track {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0.15rem 0;
-  list-style: none;
-}
-
 .hero-trust-badge {
   display: inline-flex;
   align-items: center;

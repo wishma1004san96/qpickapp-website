@@ -1,8 +1,10 @@
 /**
  * Hero media — cinematic driving POV.
  *
- * Desktop/tablet: 1080p H.264 (CRF 16, ~8 Mbps)
+ * Desktop/tablet: 1080p H.264 (faststart, CRF ~26)
  * Mobile: 720p H.264 (lighter for cellular / small screens)
+ *
+ * Playback: preload=metadata, poster-first fade-in, pause when off-screen.
  */
 export const heroMedia = {
   videoSrc: "/videos/q-pick-hero.mp4",

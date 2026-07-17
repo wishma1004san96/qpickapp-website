@@ -79,7 +79,7 @@ export function SiteHeader() {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
-        menuButtonRef.current?.focus();
+        menuButtonRef.current?.focus({ preventScroll: true });
         return;
       }
       if (event.key !== "Tab" || !panelRef.current) return;
@@ -91,10 +91,10 @@ export function SiteHeader() {
       const last = focusables[focusables.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
-        last.focus();
+        last.focus({ preventScroll: true });
       } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
-        first.focus();
+        first.focus({ preventScroll: true });
       }
     };
 
@@ -104,7 +104,8 @@ export function SiteHeader() {
       const firstLink = panelRef.current?.querySelector<HTMLElement>(
         "a[href], button:not([disabled])",
       );
-      firstLink?.focus();
+      // preventScroll avoids iOS jumping the page when the menu opens
+      firstLink?.focus({ preventScroll: true });
     }, 50);
 
     return () => {

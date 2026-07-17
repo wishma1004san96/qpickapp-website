@@ -5,7 +5,6 @@ import {
   useReducedMotion,
   useScroll,
   useSpring,
-  useTransform,
 } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -78,13 +77,17 @@ export function YourJourneyYourRules() {
     damping: 30,
     mass: 0.4,
   });
-  const progressHeight = useTransform(progress, (v) => `${v * 100}%`);
+  // scaleY — avoid height layout thrash while scrolling
+  const progressScale = reduceMotion ? 1 : progress;
 
   useEffect(() => {
     const nodes = chapterRefs.current.filter(Boolean) as HTMLElement[];
     if (!nodes.length) return;
 
     const ratios = new Map<number, number>();
+    let locked = 0;
+    let settleTimer = 0;
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -95,24 +98,34 @@ export function YourJourneyYourRules() {
           ratios.set(index, entry.isIntersecting ? entry.intersectionRatio : 0);
         }
 
-        let best = 0;
-        let bestRatio = -1;
+        let best = locked;
+        let bestRatio = ratios.get(locked) ?? 0;
         for (const [index, ratio] of ratios) {
-          if (ratio > bestRatio) {
+          // Prefer a clear winner — avoids chapter flicker / sticky media thrash
+          if (ratio > bestRatio + 0.08) {
             bestRatio = ratio;
             best = index;
           }
         }
-        if (bestRatio > 0) setActiveChapter(best);
+        if (bestRatio > 0.12 && best !== locked) {
+          window.clearTimeout(settleTimer);
+          settleTimer = window.setTimeout(() => {
+            locked = best;
+            setActiveChapter(best);
+          }, 80);
+        }
       },
       {
-        threshold: [0.15, 0.3, 0.45, 0.6, 0.75, 0.9],
-        rootMargin: "-22% 0px -32% 0px",
+        threshold: [0.15, 0.3, 0.45, 0.6, 0.75],
+        rootMargin: "-20% 0px -28% 0px",
       },
     );
 
     for (const node of nodes) io.observe(node);
-    return () => io.disconnect();
+    return () => {
+      window.clearTimeout(settleTimer);
+      io.disconnect();
+    };
   }, []);
 
   const active = CHAPTERS[activeChapter] ?? CHAPTERS[0];
@@ -171,7 +184,7 @@ export function YourJourneyYourRules() {
                   sizes="(max-width: 1023px) 100vw, 48vw"
                   className="yj-media-img"
                   style={{ objectPosition: chapter.objectPosition }}
-                  priority={index === 0}
+                  priority={false}
                 />
               </div>
             ))}
@@ -187,7 +200,9 @@ export function YourJourneyYourRules() {
               <motion.div
                 className="yj-rail-progress"
                 style={{
-                  height: reduceMotion ? "100%" : progressHeight,
+                  height: "100%",
+                  scaleY: progressScale,
+                  transformOrigin: "top center",
                 }}
               />
             </div>

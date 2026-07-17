@@ -279,15 +279,22 @@ export function TripIntentSwitcher() {
                     >
                       {tripIntent[id].label}
                       {selected ? (
-                        <motion.span
-                          layoutId="ride-services-gold-underline"
-                          className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-[#c9a46c] shadow-[0_0_12px_rgb(201_164_108_/_0.45)]"
-                          transition={
-                            reduceMotion
-                              ? { duration: 0 }
-                              : { duration: TRANSITION_MS, ease: EASE }
-                          }
-                        />
+                        finePointer ? (
+                          <motion.span
+                            layoutId="ride-services-gold-underline"
+                            className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-[#c9a46c] shadow-[0_0_12px_rgb(201_164_108_/_0.45)]"
+                            transition={
+                              reduceMotion
+                                ? { duration: 0 }
+                                : { duration: TRANSITION_MS, ease: EASE }
+                            }
+                          />
+                        ) : (
+                          <span
+                            className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-[#c9a46c]"
+                            aria-hidden="true"
+                          />
+                        )
                       ) : null}
                     </button>
                   );
@@ -303,9 +310,21 @@ export function TripIntentSwitcher() {
                   <motion.div
                     key={`${active}-copy`}
                     className="order-2 lg:order-1"
-                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                    initial={
+                      reduceMotion
+                        ? false
+                        : finePointer
+                          ? { opacity: 0, y: 14 }
+                          : { opacity: 0 }
+                    }
                     animate={{ opacity: 1, y: 0 }}
-                    exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
+                    exit={
+                      reduceMotion
+                        ? undefined
+                        : finePointer
+                          ? { opacity: 0, y: -10 }
+                          : { opacity: 0 }
+                    }
                     transition={{ duration: TRANSITION_MS, ease: EASE }}
                     style={
                       tiltEnabled
@@ -351,9 +370,21 @@ export function TripIntentSwitcher() {
                       <motion.div
                         key={current.image}
                         className="absolute inset-0"
-                        initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                        initial={
+                          reduceMotion
+                            ? false
+                            : finePointer
+                              ? { opacity: 0, y: 10 }
+                              : { opacity: 0 }
+                        }
                         animate={{ opacity: 1, y: 0 }}
-                        exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                        exit={
+                          reduceMotion
+                            ? undefined
+                            : finePointer
+                              ? { opacity: 0, y: -8 }
+                              : { opacity: 0 }
+                        }
                         transition={{ duration: TRANSITION_MS, ease: EASE }}
                       >
                         <Image
@@ -363,7 +394,7 @@ export function TripIntentSwitcher() {
                           sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
                           style={{ objectPosition: current.objectPosition }}
-                          priority={active === "ride"}
+                          priority={false}
                         />
                         <div
                           className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgb(5_11_18_/_0.12)_0%,transparent_42%,rgb(5_11_18_/_0.45)_100%)]"

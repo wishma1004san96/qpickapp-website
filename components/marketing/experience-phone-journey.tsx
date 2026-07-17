@@ -314,7 +314,6 @@ function JourneyStepView({
           src={LOGIN_SHOT}
           labelKey="login"
           failedFallback={<LoginFallback />}
-          priority
         />
       );
     case "dashboard":
@@ -442,7 +441,7 @@ function SplashScreen({ reduceMotion }: { reduceMotion: boolean }) {
             ease: "easeInOut",
           }}
         />
-        <BrandLogo size={76} priority />
+        <BrandLogo size={76} />
       </motion.div>
 
       <motion.p

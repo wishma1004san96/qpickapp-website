@@ -21,6 +21,7 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
+import { TrustChipMarquee } from "@/components/marketing/trust-chip-marquee";
 import {
   ArrowRight,
   BadgeCheck,
@@ -481,7 +482,6 @@ function DashboardLiveMap({ reduceMotion }: { reduceMotion: boolean }) {
         className="pointer-events-none select-none object-cover object-[50%_42%]"
         style={{ transform: "scale(1.12)", transformOrigin: "center center" }}
         draggable={false}
-        priority
       />
 
       <svg
@@ -691,7 +691,7 @@ export function DriveWithQPick() {
               </Link>
             </motion.div>
 
-            <ul className="relative mt-9 flex flex-wrap gap-2.5 sm:gap-3">
+            <ul className="relative mt-9 hidden flex-wrap gap-2.5 sm:gap-3 md:flex">
               {TRUST_BADGES.map((badge, i) => {
                 const Icon = badge.icon;
                 return (
@@ -722,6 +722,15 @@ export function DriveWithQPick() {
                 );
               })}
             </ul>
+
+            <div className="relative mt-8 md:hidden">
+              <TrustChipMarquee
+                labels={TRUST_BADGES.map(
+                  (badge) => driveWithQPick.trust[badge.id],
+                )}
+                ariaLabel={t("driveWithQPick.trustAria")}
+              />
+            </div>
           </div>
         </div>
       </Container>

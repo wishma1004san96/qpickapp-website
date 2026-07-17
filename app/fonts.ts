@@ -8,20 +8,20 @@ export const inter = Inter({
   preload: true,
 });
 
-/** Sinhala — always loaded to avoid CLS on language switch */
+/** Sinhala — loaded sitewide for language switch; not preloaded (LCP). */
 export const notoSinhala = Noto_Sans_Sinhala({
   variable: "--font-sinhala",
   subsets: ["sinhala"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
-/** Tamil — always loaded to avoid CLS on language switch */
+/** Tamil — loaded sitewide for language switch; not preloaded (LCP). */
 export const notoTamil = Noto_Sans_Tamil({
   variable: "--font-tamil",
   subsets: ["tamil"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  preload: true,
+  preload: false,
 });

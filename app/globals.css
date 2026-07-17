@@ -90,8 +90,10 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  @media (prefers-reduced-motion: no-preference) and (pointer: fine) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   html[lang="si"] {
@@ -1474,5 +1476,13 @@
   .experience-phone-static,
   .experience-phone-float {
     transform: none !important;
+  }
+}
+
+/* Touch devices — no continuous bob (reads as page shake) */
+@media (pointer: coarse) {
+  .phone-float,
+  .experience-phone-float {
+    animation: none !important;
   }
 }
