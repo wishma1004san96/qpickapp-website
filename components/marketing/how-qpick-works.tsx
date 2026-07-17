@@ -253,7 +253,7 @@ function HowQPickMobileCarousel({ reduceMotion }: { reduceMotion: boolean }) {
   const t = useTranslations();
   const { howQPickWorks } = useMessages();
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [inView, setInView] = useState(false);
+  const [inView, setInView] = useState(true);
   const rootRef = useRef<HTMLDivElement>(null);
 
   const autoplay = useRef(
@@ -261,7 +261,7 @@ function HowQPickMobileCarousel({ reduceMotion }: { reduceMotion: boolean }) {
       delay: AUTOPLAY_MS,
       stopOnInteraction: false,
       stopOnMouseEnter: false,
-      playOnInit: false,
+      playOnInit: true,
     }),
   );
 
@@ -277,20 +277,21 @@ function HowQPickMobileCarousel({ reduceMotion }: { reduceMotion: boolean }) {
   );
 
   useEffect(() => {
+    if (!reduceMotion) {
+      console.log("Phone slideshow started");
+    }
     const node = rootRef.current;
     if (!node) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        setInView(
-          (entry?.isIntersecting ?? false) &&
-            (entry?.intersectionRatio ?? 0) >= 0.25,
-        );
+        // Soft gate: play whenever any part is visible; stop only when fully gone.
+        setInView(entry?.isIntersecting ?? false);
       },
-      { threshold: [0, 0.25, 0.5, 1] },
+      { threshold: [0, 0.01, 0.25, 1] },
     );
     io.observe(node);
     return () => io.disconnect();
-  }, []);
+  }, [reduceMotion]);
 
   useEffect(() => {
     if (reduceMotion || !emblaApi) return;

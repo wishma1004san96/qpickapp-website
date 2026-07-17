@@ -224,28 +224,17 @@ export function StoryVehiclesScreen({ reduceMotion }: { reduceMotion: boolean })
  */
 export function StoryLiveCycle({ reduceMotion }: { reduceMotion: boolean }) {
   const [index, setIndex] = useState(0);
-  const [inView, setInView] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const step = LIVE_STEPS[index] ?? LIVE_STEPS[0];
 
   useEffect(() => {
-    const node = rootRef.current;
-    if (!node) return;
-    const io = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.3),
-      { threshold: [0, 0.3, 0.6, 1], rootMargin: "0px" },
-    );
-    io.observe(node);
-    return () => io.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion || !inView) return;
+    if (reduceMotion) return;
+    console.log("Phone slideshow started");
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % LIVE_STEPS.length);
     }, 2800);
     return () => window.clearInterval(id);
-  }, [reduceMotion, inView]);
+  }, [reduceMotion]);
 
   return (
     <div ref={rootRef} className="qstory-live">

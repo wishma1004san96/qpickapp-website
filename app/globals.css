@@ -1490,10 +1490,33 @@
   }
 }
 
-/* Touch devices — no continuous bob (reads as page shake) */
+/* Touch devices — keep a gentle Y bob (reduced amplitude), never freeze */
 @media (pointer: coarse) {
-  .phone-float,
+  .phone-float {
+    animation: phone-float-touch 6.5s ease-in-out infinite !important;
+  }
+
   .experience-phone-float {
-    animation: none !important;
+    animation: experience-phone-float-touch 7s ease-in-out infinite !important;
+  }
+}
+
+@keyframes phone-float-touch {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes experience-phone-float-touch {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -2px, 0);
   }
 }

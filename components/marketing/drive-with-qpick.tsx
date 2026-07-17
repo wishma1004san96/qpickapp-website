@@ -120,7 +120,6 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const { driveWithQPick } = useMessages();
   const floats = driveWithQPick.floatCards;
   const [earnings, setEarnings] = useState(reduceMotion ? 2840 : 120);
-  const [inView, setInView] = useState(false);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -129,8 +128,10 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const shiftX = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), PARALLAX_SPRING);
   const shiftY = useSpring(useTransform(my, [-0.5, 0.5], [-8, 8]), PARALLAX_SPRING);
 
+  // Float + earnings start on mount — no viewport gate.
   useEffect(() => {
-    if (!inView) return;
+    console.log("Driver slideshow started");
+    console.log("Floating animation started");
     if (reduceMotion) {
       setEarnings(2840);
       return;
@@ -148,7 +149,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
     setEarnings(120);
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [inView, reduceMotion]);
+  }, [reduceMotion]);
 
   const onPointerMove = useCallback(
     (event: PointerEvent<HTMLDivElement>) => {
@@ -198,8 +199,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
               card.hideOnMobile ? " hidden sm:block" : ""
             }`}
             initial={{ opacity: reduceMotion ? 1 : 0, scale: reduceMotion ? 1 : 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.55,
               delay: reduceMotion ? 0 : 0.25 + card.delay * 0.15,
@@ -207,12 +207,10 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
             }}
           >
             <motion.div
-              animate={
-                reduceMotion || !inView ? undefined : { y: card.y }
-              }
+              animate={reduceMotion ? { y: 0 } : { y: card.y }}
               transition={
                 reduceMotion
-                  ? undefined
+                  ? { duration: 0 }
                   : {
                       duration: 4.2 + card.delay,
                       repeat: Infinity,
@@ -243,10 +241,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
 
       <motion.div
         initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.94 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: false, amount: 0.3 }}
-        onViewportEnter={() => setInView(true)}
-        onViewportLeave={() => setInView(false)}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: EASE }}
         className="relative z-[2] mx-auto w-[min(13.75rem,70vw)] sm:w-[min(16.5rem,58vw)] lg:w-[17rem]"
         style={
@@ -265,12 +260,10 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
         <motion.div
           className="origin-center"
           style={{ rotate: isDesktop ? 14 : 0 }}
-          animate={
-            reduceMotion || !inView ? undefined : { y: [0, -10, 0] }
-          }
+          animate={reduceMotion ? { y: 0 } : { y: [0, -10, 0] }}
           transition={
             reduceMotion
-              ? undefined
+              ? { duration: 0 }
               : { duration: 6.5, repeat: Infinity, ease: "easeInOut" }
           }
         >

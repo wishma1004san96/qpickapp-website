@@ -216,6 +216,13 @@ export function ExperiencePhoneJourney({
   }, [step.id, stepLabel, onStepChange]);
 
   useEffect(() => {
+    if (!active || isLocked) return;
+    if (canAdvance) {
+      console.log("Phone slideshow started");
+    }
+  }, [active, canAdvance, isLocked]);
+
+  useEffect(() => {
     if (!canAdvance) return;
     if (step.hold == null) return;
     const id = window.setTimeout(advance, step.hold);

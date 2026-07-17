@@ -309,69 +309,22 @@ function IPhone16ProMockup({
   const t = useTranslations();
   const stageRef = useRef<HTMLDivElement>(null);
   const [runId, setRunId] = useState(0);
-  const [playing, setPlaying] = useState(false);
+  // Start cycling on mount — do not wait for scroll / IO.
+  const [playing, setPlaying] = useState(true);
   const flatFront = reduceMotion || isMobile;
 
   useEffect(() => {
+    console.log("Phone slideshow started");
     const locked = new URLSearchParams(window.location.search).get("journey");
     if (locked) {
       setRunId(1);
       setPlaying(true);
+      return;
     }
+    // Fresh journey as soon as this phone mounts — never gate on viewport.
+    setRunId((n) => n + 1);
+    setPlaying(true);
   }, []);
-
-  useEffect(() => {
-    const locked = new URLSearchParams(window.location.search).get("journey");
-    if (locked) return; // QA lock — keep the locked screen mounted
-
-    const el = stageRef.current;
-    if (!el) return;
-
-    let wasOut = true;
-    let exitTimer = 0;
-    const playingRef = { current: false };
-
-    const startJourney = () => {
-      if (playingRef.current) return;
-      playingRef.current = true;
-      wasOut = false;
-      setRunId((n) => n + 1);
-      setPlaying(true);
-    };
-
-    const stopJourney = () => {
-      if (!playingRef.current && wasOut) return;
-      playingRef.current = false;
-      wasOut = true;
-      setPlaying(false);
-      onStepChange("splash", splashLabel);
-    };
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const ratio = entry?.intersectionRatio ?? 0;
-        const intersecting = entry?.isIntersecting ?? false;
-        // Hysteresis — mobile browser chrome resize must not remount the phone UI
-        if (intersecting && ratio >= 0.22) {
-          window.clearTimeout(exitTimer);
-          if (wasOut) startJourney();
-          wasOut = false;
-        } else if (!intersecting || ratio < 0.06) {
-          window.clearTimeout(exitTimer);
-          exitTimer = window.setTimeout(stopJourney, 280);
-        }
-      },
-      {
-        threshold: [0, 0.06, 0.22, 0.5],
-        rootMargin: "0px",
-      },
-    );
-    io.observe(el);
-    return () => {
-      window.clearTimeout(exitTimer);
-      io.disconnect();
-    };
-  }, [onStepChange, splashLabel]);
 
   return (
     <div

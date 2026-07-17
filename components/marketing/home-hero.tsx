@@ -88,11 +88,17 @@ export function HomeHero() {
     const root = mediaRef.current;
     if (!video || !root) return;
 
+    console.log("Hero mounted");
+
+    // Hero is above the fold — assume in view until IO proves otherwise.
     let inView = true;
     let cancelled = false;
+    let gestureRetried = false;
 
     const markPlaying = () => {
-      if (!cancelled) setVideoPlaying(true);
+      if (cancelled) return;
+      setVideoPlaying(true);
+      console.log("Hero video playing");
     };
 
     // iOS / Android autoplay policies
@@ -113,8 +119,11 @@ export function HomeHero() {
     }
 
     const tryPlay = () => {
-      if (cancelled || document.hidden || !inView) return;
+      // Never block the first mount attempts on a flaky low intersection ratio.
+      if (cancelled || document.hidden) return;
+      if (!inView) return;
       video.muted = true;
+      video.playsInline = true;
       const attempt = video.play();
       if (attempt && typeof attempt.then === "function") {
         attempt.then(markPlaying).catch(() => {
@@ -127,27 +136,28 @@ export function HomeHero() {
 
     video.addEventListener("playing", onPlaying);
 
-    // Initial attempt after metadata
+    // Initial attempt after metadata — do not wait for IO
     const onLoaded = () => tryPlay();
     if (video.readyState >= 2) tryPlay();
     else video.addEventListener("loadeddata", onLoaded, { once: true });
     video.load();
+    // Immediate mount play (Safari / Chrome Android)
+    void video.play().then(markPlaying).catch(() => {});
 
     const io = new IntersectionObserver(
       ([entry]) => {
         const ratio = entry?.intersectionRatio ?? 0;
         const intersecting = entry?.isIntersecting ?? false;
-        // Hysteresis — avoid pause/play thrash when mobile chrome resizes
-        if (intersecting && ratio >= 0.12) {
+        // Soft enter: any visible pixel retries play. Hard exit only when fully gone.
+        if (intersecting && ratio > 0) {
           inView = true;
           tryPlay();
-        } else if (!intersecting || ratio < 0.04) {
+        } else if (!intersecting) {
           inView = false;
           video.pause();
-          // Keep poster faded once playback started — no black/white flash
         }
       },
-      { threshold: [0, 0.04, 0.12, 0.35] },
+      { threshold: [0, 0.01, 0.1, 0.35] },
     );
     io.observe(root);
 
@@ -161,6 +171,9 @@ export function HomeHero() {
     document.addEventListener("visibilitychange", onVisibility);
 
     const onFirstGesture = () => {
+      if (gestureRetried) return;
+      gestureRetried = true;
+      inView = true;
       tryPlay();
     };
     window.addEventListener("touchstart", onFirstGesture, {
@@ -172,12 +185,14 @@ export function HomeHero() {
       once: true,
     });
 
-    // Mount retry shortly after paint (Safari often needs this)
+    // Mount retries — Safari often needs a delayed play()
     const bootTimer = window.setTimeout(tryPlay, 120);
+    const bootTimer2 = window.setTimeout(tryPlay, 600);
 
     return () => {
       cancelled = true;
       window.clearTimeout(bootTimer);
+      window.clearTimeout(bootTimer2);
       io.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
       video.removeEventListener("playing", onPlaying);
