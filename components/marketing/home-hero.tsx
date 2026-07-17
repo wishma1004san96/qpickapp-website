@@ -62,8 +62,16 @@ export function HomeHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
-  const hasVideo = Boolean(heroMedia.videoSrc) && !reduceMotion;
+  // Always mount muted hero video on capable devices — iOS "Reduce Motion"
+  // must not leave users on a frozen poster when they expect cinema.
+  const hasVideo = Boolean(heroMedia.videoSrc);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string>(heroMedia.videoSrcMobile);
+
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 767.98px)").matches;
+    setVideoSrc(mobile ? heroMedia.videoSrcMobile : heroMedia.videoSrc);
+  }, []);
 
   const onVideoTimeUpdate = useCallback(() => {
     const video = videoRef.current;
@@ -74,133 +82,139 @@ export function HomeHero() {
 
   // Poster / reduced-motion fallback — timed slides without scrubbing video.
   useEffect(() => {
-    if (hasVideo) return;
+    if (hasVideo && !reduceMotion) return;
+    if (videoPlaying) return;
     const id = window.setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % HERO_SLIDE_COUNT);
     }, HERO_SLIDE_FALLBACK_MS);
     return () => window.clearInterval(id);
-  }, [hasVideo]);
+  }, [hasVideo, reduceMotion, videoPlaying]);
 
-  // Robust mobile autoplay: muted + playsInline, retry on view / first gesture.
+  // iPhone Safari autoplay: video must stay "visible" (never opacity:0),
+  // muted + playsInline, src in DOM, retry on viewport + first touch.
   useEffect(() => {
-    if (!hasVideo) return;
+    if (!hasVideo || reduceMotion) return;
     const video = videoRef.current;
     const root = mediaRef.current;
     if (!video || !root) return;
 
     console.log("Hero mounted");
 
-    // Hero is above the fold — assume in view until IO proves otherwise.
     let inView = true;
     let cancelled = false;
-    let gestureRetried = false;
+    let pauseTimer = 0;
+
+    const unlockInline = () => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.volume = 0;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "true");
+    };
 
     const markPlaying = () => {
       if (cancelled) return;
-      setVideoPlaying(true);
-      console.log("Hero video playing");
+      if (!video.paused && video.readyState >= 2) {
+        setVideoPlaying(true);
+        console.log("Hero video playing");
+      }
     };
 
-    // iOS / Android autoplay policies
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "true");
-
-    // Avoid <source media> quirks on iOS — set src in JS
-    const preferMobile = window.matchMedia("(max-width: 767.98px)").matches;
-    const nextSrc = preferMobile
-      ? heroMedia.videoSrcMobile
-      : heroMedia.videoSrc;
-    if (!video.getAttribute("src")?.includes(nextSrc) && !video.currentSrc.includes(nextSrc)) {
-      video.src = nextSrc;
-    }
+    unlockInline();
 
     const tryPlay = () => {
-      // Never block the first mount attempts on a flaky low intersection ratio.
-      if (cancelled || document.hidden) return;
-      if (!inView) return;
-      video.muted = true;
-      video.playsInline = true;
+      if (cancelled || document.hidden || !inView) return;
+      unlockInline();
       const attempt = video.play();
       if (attempt && typeof attempt.then === "function") {
-        attempt.then(markPlaying).catch(() => {
-          /* keep poster until a later retry succeeds */
-        });
+        attempt
+          .then(() => {
+            markPlaying();
+          })
+          .catch(() => {
+            /* Low Power Mode / policy — wait for gesture retry */
+          });
+      } else {
+        markPlaying();
       }
     };
 
     const onPlaying = () => markPlaying();
+    const onCanPlay = () => tryPlay();
+    const onLoadedData = () => tryPlay();
 
     video.addEventListener("playing", onPlaying);
+    video.addEventListener("canplay", onCanPlay);
+    video.addEventListener("loadeddata", onLoadedData);
 
-    // Initial attempt after metadata — do not wait for IO
-    const onLoaded = () => tryPlay();
     if (video.readyState >= 2) tryPlay();
-    else video.addEventListener("loadeddata", onLoaded, { once: true });
-    video.load();
-    // Immediate mount play (Safari / Chrome Android)
-    void video.play().then(markPlaying).catch(() => {});
+    else tryPlay();
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        const ratio = entry?.intersectionRatio ?? 0;
         const intersecting = entry?.isIntersecting ?? false;
-        // Soft enter: any visible pixel retries play. Hard exit only when fully gone.
-        if (intersecting && ratio > 0) {
+        if (intersecting) {
+          window.clearTimeout(pauseTimer);
           inView = true;
           tryPlay();
-        } else if (!intersecting) {
-          inView = false;
-          video.pause();
+        } else {
+          // Debounce pause — iOS chrome resize must not kill playback.
+          window.clearTimeout(pauseTimer);
+          pauseTimer = window.setTimeout(() => {
+            if (cancelled) return;
+            inView = false;
+            video.pause();
+          }, 500);
         }
       },
-      { threshold: [0, 0.01, 0.1, 0.35] },
+      { threshold: [0, 0.05, 0.2] },
     );
     io.observe(root);
 
     const onVisibility = () => {
       if (document.hidden) {
         video.pause();
-      } else if (inView) {
+      } else {
+        inView = true;
         tryPlay();
       }
     };
     document.addEventListener("visibilitychange", onVisibility);
 
+    // iOS Low Power Mode: first user gesture unlocks play().
     const onFirstGesture = () => {
-      if (gestureRetried) return;
-      gestureRetried = true;
       inView = true;
       tryPlay();
     };
-    window.addEventListener("touchstart", onFirstGesture, {
-      passive: true,
-      once: true,
-    });
-    window.addEventListener("pointerdown", onFirstGesture, {
-      passive: true,
-      once: true,
-    });
+    const gestureOpts: AddEventListenerOptions = { capture: true, passive: true };
+    window.addEventListener("touchstart", onFirstGesture, gestureOpts);
+    window.addEventListener("touchend", onFirstGesture, gestureOpts);
+    window.addEventListener("pointerdown", onFirstGesture, gestureOpts);
+    window.addEventListener("click", onFirstGesture, gestureOpts);
+    root.addEventListener("touchstart", onFirstGesture, gestureOpts);
 
-    // Mount retries — Safari often needs a delayed play()
-    const bootTimer = window.setTimeout(tryPlay, 120);
-    const bootTimer2 = window.setTimeout(tryPlay, 600);
+    const bootTimers = [0, 100, 300, 800, 1600].map((ms) =>
+      window.setTimeout(tryPlay, ms),
+    );
 
     return () => {
       cancelled = true;
-      window.clearTimeout(bootTimer);
-      window.clearTimeout(bootTimer2);
+      window.clearTimeout(pauseTimer);
+      bootTimers.forEach((id) => window.clearTimeout(id));
       io.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
       video.removeEventListener("playing", onPlaying);
-      video.removeEventListener("loadeddata", onLoaded);
-      window.removeEventListener("touchstart", onFirstGesture);
-      window.removeEventListener("pointerdown", onFirstGesture);
+      video.removeEventListener("canplay", onCanPlay);
+      video.removeEventListener("loadeddata", onLoadedData);
+      window.removeEventListener("touchstart", onFirstGesture, gestureOpts);
+      window.removeEventListener("touchend", onFirstGesture, gestureOpts);
+      window.removeEventListener("pointerdown", onFirstGesture, gestureOpts);
+      window.removeEventListener("click", onFirstGesture, gestureOpts);
+      root.removeEventListener("touchstart", onFirstGesture, gestureOpts);
     };
-  }, [hasVideo]);
+  }, [hasVideo, reduceMotion, videoSrc]);
 
   return (
     <section
@@ -208,7 +222,8 @@ export function HomeHero() {
       aria-label={t("hero.ariaLabel")}
     >
       <HeroMedia
-        hasVideo={hasVideo}
+        hasVideo={hasVideo && !reduceMotion}
+        videoSrc={videoSrc}
         mediaRef={mediaRef}
         videoRef={videoRef}
         videoPlaying={videoPlaying}
@@ -320,12 +335,14 @@ function HeroContent({
 
 function HeroMedia({
   hasVideo,
+  videoSrc,
   mediaRef,
   videoRef,
   videoPlaying,
   onTimeUpdate,
 }: {
   hasVideo: boolean;
+  videoSrc: string;
   mediaRef: RefObject<HTMLDivElement | null>;
   videoRef: RefObject<HTMLVideoElement | null>;
   videoPlaying: boolean;
@@ -341,16 +358,14 @@ function HeroMedia({
       {hasVideo ? (
         <video
           ref={videoRef}
-          className={[
-            "hero-bg-video absolute inset-0 h-full w-full motion-reduce:hidden",
-            "transition-opacity duration-700 ease-[var(--ease-cinematic)]",
-            videoPlaying ? "opacity-100" : "opacity-0",
-          ].join(" ")}
+          key={videoSrc}
+          className="hero-bg-video absolute inset-0 z-0 h-full w-full object-cover"
+          src={videoSrc}
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={heroMedia.poster.src}
           aria-hidden="true"
           disablePictureInPicture
@@ -360,6 +375,8 @@ function HeroMedia({
         />
       ) : null}
 
+      {/* Poster sits ABOVE the video. iOS will not autoplay opacity:0 videos —
+          so the <video> stays fully visible underneath; we only fade the poster. */}
       <Image
         src={heroMedia.poster.src}
         alt={t("hero.posterAlt")}
@@ -370,18 +387,18 @@ function HeroMedia({
         placeholder="blur"
         blurDataURL={BLUR}
         className={[
-          "object-cover transition-opacity duration-700 ease-[var(--ease-cinematic)]",
+          "z-[1] object-cover transition-opacity duration-700 ease-[var(--ease-cinematic)]",
           hasVideo
             ? videoPlaying
-              ? "pointer-events-none opacity-0 motion-reduce:opacity-100"
+              ? "pointer-events-none opacity-0"
               : "opacity-100"
             : "ken-burns opacity-100",
         ].join(" ")}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-map-void via-map-void/50 to-map-void/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-map-void/60 via-map-void/20 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,transparent_0%,rgb(7_16_24_/_0.28)_100%)]" />
+      <div className="absolute inset-0 z-[2] bg-gradient-to-t from-map-void via-map-void/50 to-map-void/30" />
+      <div className="absolute inset-0 z-[2] bg-gradient-to-r from-map-void/60 via-map-void/20 to-transparent" />
+      <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_30%_40%,transparent_0%,rgb(7_16_24_/_0.28)_100%)]" />
     </div>
   );
 }
