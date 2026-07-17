@@ -62,8 +62,6 @@ export function HomeHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
-  // Always mount muted hero video on capable devices — iOS "Reduce Motion"
-  // must not leave users on a frozen poster when they expect cinema.
   const hasVideo = Boolean(heroMedia.videoSrc);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoSrc, setVideoSrc] = useState<string>(heroMedia.videoSrcMobile);
@@ -76,37 +74,37 @@ export function HomeHero() {
   const onVideoTimeUpdate = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
+    if (!video.paused && video.currentTime > 0.05) {
+      setVideoPlaying(true);
+    }
     const next = slideIndexFromVideo(video);
     setSlideIndex((prev) => (prev === next ? prev : next));
   }, []);
 
-  // Poster / reduced-motion fallback — timed slides without scrubbing video.
+  // Timed copy slides when video is not driving the timeline.
   useEffect(() => {
-    if (hasVideo && !reduceMotion) return;
     if (videoPlaying) return;
     const id = window.setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % HERO_SLIDE_COUNT);
     }, HERO_SLIDE_FALLBACK_MS);
     return () => window.clearInterval(id);
-  }, [hasVideo, reduceMotion, videoPlaying]);
+  }, [videoPlaying]);
 
-  // iPhone Safari autoplay: video must stay "visible" (never opacity:0),
-  // muted + playsInline, src in DOM, retry on viewport + first touch.
+  // iPhone Safari: never gate on prefers-reduced-motion (common on iOS).
+  // Never hide the <video> with opacity:0. Force muted before every play().
   useEffect(() => {
-    if (!hasVideo || reduceMotion) return;
+    if (!hasVideo) return;
     const video = videoRef.current;
     const root = mediaRef.current;
     if (!video || !root) return;
 
     console.log("Hero mounted");
-
-    let inView = true;
     let cancelled = false;
-    let pauseTimer = 0;
+    let unlocked = false;
 
-    const unlockInline = () => {
-      video.muted = true;
+    const forceMutedInline = () => {
       video.defaultMuted = true;
+      video.muted = true;
       video.volume = 0;
       video.playsInline = true;
       video.setAttribute("muted", "");
@@ -114,107 +112,79 @@ export function HomeHero() {
       video.setAttribute("webkit-playsinline", "true");
     };
 
-    const markPlaying = () => {
+    const reveal = () => {
       if (cancelled) return;
-      if (!video.paused && video.readyState >= 2) {
-        setVideoPlaying(true);
-        console.log("Hero video playing");
-      }
+      setVideoPlaying(true);
+      unlocked = true;
+      console.log("Hero video playing");
     };
-
-    unlockInline();
 
     const tryPlay = () => {
-      if (cancelled || document.hidden || !inView) return;
-      unlockInline();
-      const attempt = video.play();
-      if (attempt && typeof attempt.then === "function") {
-        attempt
-          .then(() => {
-            markPlaying();
-          })
-          .catch(() => {
-            /* Low Power Mode / policy — wait for gesture retry */
-          });
-      } else {
-        markPlaying();
+      if (cancelled || document.hidden) return;
+      forceMutedInline();
+      const p = video.play();
+      if (p !== undefined) {
+        p.then(() => {
+          if (!video.paused) reveal();
+        }).catch((err) => {
+          console.log("Hero video play blocked", String(err?.name || err));
+        });
       }
     };
 
-    const onPlaying = () => markPlaying();
-    const onCanPlay = () => tryPlay();
-    const onLoadedData = () => tryPlay();
+    forceMutedInline();
+
+    const onPlaying = () => reveal();
+    const onTimeUpdate = () => {
+      if (!video.paused && video.currentTime > 0.05) reveal();
+    };
 
     video.addEventListener("playing", onPlaying);
-    video.addEventListener("canplay", onCanPlay);
-    video.addEventListener("loadeddata", onLoadedData);
+    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("loadeddata", tryPlay);
+    video.addEventListener("canplay", tryPlay);
+    video.addEventListener("canplaythrough", tryPlay);
 
-    if (video.readyState >= 2) tryPlay();
-    else tryPlay();
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        const intersecting = entry?.isIntersecting ?? false;
-        if (intersecting) {
-          window.clearTimeout(pauseTimer);
-          inView = true;
-          tryPlay();
-        } else {
-          // Debounce pause — iOS chrome resize must not kill playback.
-          window.clearTimeout(pauseTimer);
-          pauseTimer = window.setTimeout(() => {
-            if (cancelled) return;
-            inView = false;
-            video.pause();
-          }, 500);
-        }
-      },
-      { threshold: [0, 0.05, 0.2] },
-    );
-    io.observe(root);
-
-    const onVisibility = () => {
-      if (document.hidden) {
-        video.pause();
-      } else {
-        inView = true;
-        tryPlay();
-      }
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-
-    // iOS Low Power Mode: first user gesture unlocks play().
-    const onFirstGesture = () => {
-      inView = true;
-      tryPlay();
-    };
-    const gestureOpts: AddEventListenerOptions = { capture: true, passive: true };
-    window.addEventListener("touchstart", onFirstGesture, gestureOpts);
-    window.addEventListener("touchend", onFirstGesture, gestureOpts);
-    window.addEventListener("pointerdown", onFirstGesture, gestureOpts);
-    window.addEventListener("click", onFirstGesture, gestureOpts);
-    root.addEventListener("touchstart", onFirstGesture, gestureOpts);
-
-    const bootTimers = [0, 100, 300, 800, 1600].map((ms) =>
+    tryPlay();
+    const timers = [50, 200, 500, 1000, 2000, 4000].map((ms) =>
       window.setTimeout(tryPlay, ms),
     );
 
+    const onVisibility = () => {
+      if (!document.hidden) tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    // Keep retrying until unlocked — Low Power Mode needs a real gesture.
+    const onGesture = () => {
+      tryPlay();
+      if (unlocked) {
+        window.removeEventListener("touchstart", onGesture, true);
+        window.removeEventListener("touchend", onGesture, true);
+        window.removeEventListener("pointerdown", onGesture, true);
+        window.removeEventListener("click", onGesture, true);
+      }
+    };
+    window.addEventListener("touchstart", onGesture, true);
+    window.addEventListener("touchend", onGesture, true);
+    window.addEventListener("pointerdown", onGesture, true);
+    window.addEventListener("click", onGesture, true);
+
     return () => {
       cancelled = true;
-      window.clearTimeout(pauseTimer);
-      bootTimers.forEach((id) => window.clearTimeout(id));
-      io.disconnect();
+      timers.forEach((id) => window.clearTimeout(id));
       document.removeEventListener("visibilitychange", onVisibility);
       video.removeEventListener("playing", onPlaying);
-      video.removeEventListener("canplay", onCanPlay);
-      video.removeEventListener("loadeddata", onLoadedData);
-      window.removeEventListener("touchstart", onFirstGesture, gestureOpts);
-      window.removeEventListener("touchend", onFirstGesture, gestureOpts);
-      window.removeEventListener("pointerdown", onFirstGesture, gestureOpts);
-      window.removeEventListener("click", onFirstGesture, gestureOpts);
-      root.removeEventListener("touchstart", onFirstGesture, gestureOpts);
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+      video.removeEventListener("canplaythrough", tryPlay);
+      window.removeEventListener("touchstart", onGesture, true);
+      window.removeEventListener("touchend", onGesture, true);
+      window.removeEventListener("pointerdown", onGesture, true);
+      window.removeEventListener("click", onGesture, true);
     };
-  }, [hasVideo, reduceMotion, videoSrc]);
+  }, [hasVideo, videoSrc]);
 
   return (
     <section
@@ -222,7 +192,7 @@ export function HomeHero() {
       aria-label={t("hero.ariaLabel")}
     >
       <HeroMedia
-        hasVideo={hasVideo && !reduceMotion}
+        hasVideo={hasVideo}
         videoSrc={videoSrc}
         mediaRef={mediaRef}
         videoRef={videoRef}
@@ -357,10 +327,20 @@ function HeroMedia({
     >
       {hasVideo ? (
         <video
-          ref={videoRef}
+          ref={(node) => {
+            videoRef.current = node;
+            if (node) {
+              node.defaultMuted = true;
+              node.muted = true;
+              node.volume = 0;
+              node.playsInline = true;
+              node.setAttribute("muted", "");
+              node.setAttribute("playsinline", "");
+              node.setAttribute("webkit-playsinline", "true");
+            }
+          }}
           key={videoSrc}
           className="hero-bg-video absolute inset-0 z-0 h-full w-full object-cover"
-          src={videoSrc}
           autoPlay
           muted
           loop
@@ -372,7 +352,9 @@ function HeroMedia({
           disableRemotePlayback
           onTimeUpdate={onTimeUpdate}
           onLoadedMetadata={onTimeUpdate}
-        />
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
       ) : null}
 
       {/* Poster sits ABOVE the video. iOS will not autoplay opacity:0 videos —
