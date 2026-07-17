@@ -190,6 +190,10 @@
     "heading": "From Registration to Your Destination",
     "sub": "One calm path from open to arrival: register, verify, book a ride or tour, then track your driver in real time as your journey unfolds.",
     "stepLabel": "Step {n}",
+    "prevAria": "Previous step",
+    "nextAria": "Next step",
+    "dotsAria": "Journey steps",
+    "dotAria": "Go to step {n}",
     "steps": {
       "welcome": {
         "n": "01",
@@ -477,9 +481,34 @@
     }
   },
   "safety": {
-    "heading": "A safety standard you can feel",
-    "intro": "Trust is not a badge on the hero. It is the quiet baseline of every ride, transfer, and tour.",
-    "cta": "Read the safety standard",
+    "eyebrow": "Trust & Safety",
+    "heading": "A safety standard",
+    "headingLine2": "you can feel.",
+    "intro": "Every Q Pick ride is backed by verified drivers, real-time monitoring, transparent pricing and dedicated support—so you can travel Sri Lanka with complete confidence.",
+    "cta": "Explore Safety",
+    "trustLine": "Trusted by thousands of travellers",
+    "items": {
+      "verified": {
+        "title": "Verified Drivers",
+        "body": "Every chauffeur passes identity and vehicle verification."
+      },
+      "pricing": {
+        "title": "Transparent Pricing",
+        "body": "Know your fare before confirming every ride."
+      },
+      "sharing": {
+        "title": "Live Trip Sharing",
+        "body": "Friends and family can follow your journey."
+      },
+      "support": {
+        "title": "Emergency Support",
+        "body": "24/7 assistance whenever you need help."
+      },
+      "insured": {
+        "title": "Fully Insured Trips",
+        "body": "Every Q Pick ride is protected."
+      }
+    },
     "proofs": [
       "Verified drivers with identity and vehicle checks",
       "Transparent pricing before you confirm",
@@ -604,6 +633,34 @@
     "sub": "Join Sri Lanka's premium chauffeur platform. Accept airport transfers, private tours and executive rides while managing your own schedule with the Q Pick Driver App.",
     "cta": "Become a Driver",
     "secondaryCta": "Learn More",
+    "trust": {
+      "verified": "Verified Drivers",
+      "payouts": "Weekly Payouts",
+      "support": "24/7 Support"
+    },
+    "floatCards": {
+      "rideTitle": "New Ride Request",
+      "rideBody": "Colombo Fort · 6 min",
+      "airportTitle": "Airport Transfer",
+      "airportBody": "CMB → Hilton · LKR 4,800",
+      "earningsTitle": "Today's Earnings",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "Driver Online",
+      "onlineBody": "Ready for premium rides"
+    },
+    "phone": {
+      "greeting": "Hello, Dilan",
+      "online": "Online",
+      "todayEarnings": "Today's Earnings",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "Live map",
+      "upcoming": "Upcoming Ride",
+      "route": "CMB → Colombo Fort",
+      "eta": "Pickup in 8 min",
+      "fare": "LKR 4,800",
+      "accept": "Accept",
+      "weekly": "Weekly earnings"
+    },
     "benefits": {
       "rides": {
         "title": "Executive Ride Requests",

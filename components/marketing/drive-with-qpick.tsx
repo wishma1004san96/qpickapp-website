@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  AnimatePresence,
   motion,
   useMotionValue,
   useReducedMotion,
@@ -16,7 +15,6 @@ import {
   useRef,
   useState,
   type PointerEvent,
-  type ReactNode,
 } from "react";
 import {
   useMessages,
@@ -26,89 +24,66 @@ import { Container } from "@/components/ui/container";
 import {
   ArrowRight,
   BadgeCheck,
-  CalendarClock,
-  CarFront,
   Headphones,
+  Navigation,
   Plane,
   Wallet,
-  type LucideIcon,
 } from "lucide-react";
 
-const BENEFIT_IDS = [
-  "rides",
-  "airport",
-  "schedule",
-  "earnings",
-  "customers",
-  "support",
+const EASE = [0.22, 1, 0.36, 1] as const;
+const PARALLAX_SPRING = { stiffness: 90, damping: 22, mass: 0.55 } as const;
+
+const TRUST_BADGES = [
+  { id: "verified", icon: BadgeCheck },
+  { id: "payouts", icon: Wallet },
+  { id: "support", icon: Headphones },
 ] as const;
 
-const BENEFIT_ICONS: Record<(typeof BENEFIT_IDS)[number], LucideIcon> = {
-  rides: CarFront,
-  airport: Plane,
-  schedule: CalendarClock,
-  earnings: Wallet,
-  customers: BadgeCheck,
-  support: Headphones,
-};
-
-const EASE = [0.22, 1, 0.36, 1] as const;
-
-const PARALLAX_SPRING = { stiffness: 85, damping: 24, mass: 0.55 } as const;
-
-type ScreenId = "splash" | "dashboard" | "profile";
-
-type ScreenLayout = {
-  bg: string;
-  mode: "contain" | "cover";
-  objectPosition: string;
-};
-
-type DriverScreen = {
-  id: ScreenId;
-  src: string;
-  alt: string;
-  durationMs: number;
-  layout?: ScreenLayout;
-};
-
-const SCREEN_SPRING_SHOWCASE = {
-  type: "spring" as const,
-  stiffness: 160,
-  damping: 24,
-  mass: 0.55,
-};
-
-const PROFILE_NAME = "Dilan Perera";
-const PROFILE_EMAIL = "dilan.perera@qpickdriver.com";
-
-/** 1 splash → 2 profile → 3 dashboard (Hello Dilan + map). */
-const DRIVER_SCREENS: DriverScreen[] = [
+const FLOAT_CARDS = [
   {
-    id: "splash",
-    src: "/images/app/driver-app/splash.webp",
-    alt: "Q Pick Driver splash screen",
-    durationMs: 2500,
-    layout: { bg: "#061428", mode: "contain", objectPosition: "50% 50%" },
+    id: "ride",
+    icon: Navigation,
+    titleKey: "rideTitle" as const,
+    bodyKey: "rideBody" as const,
+    className:
+      "left-0 top-[4%] z-[3] w-[min(10.25rem,44%)] sm:-left-6 sm:top-[8%] sm:w-auto sm:max-w-[11.5rem] lg:-left-10",
+    delay: 0,
+    y: [0, -8, 0] as number[],
+    hideOnMobile: false,
   },
   {
-    id: "profile",
-    src: "/images/app/driver-app/profile-avatar.webp",
-    alt: "Q Pick Driver profile",
-    durationMs: 4000,
+    id: "airport",
+    icon: Plane,
+    titleKey: "airportTitle" as const,
+    bodyKey: "airportBody" as const,
+    className:
+      "right-0 top-[14%] z-[3] w-[min(10.25rem,44%)] sm:-right-4 sm:top-[18%] sm:w-auto sm:max-w-[11.5rem] lg:-right-8",
+    delay: 0.4,
+    y: [0, 10, 0] as number[],
+    hideOnMobile: false,
   },
   {
-    id: "dashboard",
-    src: "/images/app/driver-app/hire-map.webp",
-    alt: "Q Pick Driver dashboard",
-    durationMs: 4500,
+    id: "earnings",
+    icon: Wallet,
+    titleKey: "earningsTitle" as const,
+    bodyKey: "earningsBody" as const,
+    className:
+      "bottom-[18%] left-0 z-[3] w-[min(10.25rem,44%)] sm:-left-8 sm:bottom-[22%] sm:w-auto sm:max-w-[11.5rem] lg:-left-12",
+    delay: 0.8,
+    y: [0, -7, 0] as number[],
+    hideOnMobile: false,
   },
-];
-
-const PRELOAD_SRCS = [
-  "/images/app/driver-app/splash.webp",
-  "/images/app/driver-app/profile-avatar.webp",
-  "/images/app/driver-app/hire-map.webp",
+  {
+    id: "online",
+    icon: BadgeCheck,
+    titleKey: "onlineTitle" as const,
+    bodyKey: "onlineBody" as const,
+    className:
+      "right-0 bottom-[6%] z-[3] w-[min(10.25rem,44%)] sm:-right-6 sm:bottom-[10%] sm:w-auto sm:max-w-[11.5rem] lg:-right-10",
+    delay: 1.2,
+    y: [0, 9, 0] as number[],
+    hideOnMobile: false,
+  },
 ];
 
 function useFinePointer() {
@@ -123,94 +98,38 @@ function useFinePointer() {
   return fine;
 }
 
-function ScreenshotFrame({
-  src,
-  alt,
-  layout,
-  priority,
-}: {
-  src: string;
-  alt: string;
-  layout: ScreenLayout;
-  priority?: boolean;
-}) {
-  return (
-    <div
-      className="absolute inset-0 overflow-hidden"
-      style={{ backgroundColor: layout.bg }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 1024px) 78vw, 280px"
-        className={`select-none ${
-          layout.mode === "contain" ? "object-contain" : "object-cover"
-        }`}
-        style={{ objectPosition: layout.objectPosition }}
-        priority={priority}
-        draggable={false}
-      />
-    </div>
-  );
+function useMinWidth(px: number) {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${px}px)`);
+    const sync = () => setMatches(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, [px]);
+  return matches;
 }
 
-/** Premium phone mockup — splash + native dashboard (with map) + profile. */
-function DriverAppPhoneMockup({ reduceMotion }: { reduceMotion: boolean }) {
+/** Floating iPhone showcase with glass notifications + mouse parallax. */
+function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const finePointer = useFinePointer();
-  const parallaxOn = finePointer && !reduceMotion;
-  const [screenIndex, setScreenIndex] = useState(0);
-  const [preloaded, setPreloaded] = useState(false);
-  const [earnings, setEarnings] = useState(0);
-  const phoneRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useMinWidth(1024);
+  const parallaxOn = finePointer && !reduceMotion && isDesktop;
+  const stageRef = useRef<HTMLDivElement>(null);
+  const { driveWithQPick } = useMessages();
+  const floats = driveWithQPick.floatCards;
+  const [earnings, setEarnings] = useState(reduceMotion ? 2840 : 120);
+  const [inView, setInView] = useState(false);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const rotateX = useSpring(
-    useTransform(my, [-0.5, 0.5], [6, -6]),
-    PARALLAX_SPRING,
-  );
-  const rotateY = useSpring(
-    useTransform(mx, [-0.5, 0.5], [-8, 8]),
-    PARALLAX_SPRING,
-  );
-  const parallaxX = useSpring(useTransform(mx, [-0.5, 0.5], [-5, 5]), PARALLAX_SPRING);
-  const parallaxY = useSpring(useTransform(my, [-0.5, 0.5], [-4, 4]), PARALLAX_SPRING);
-
-  const screen = DRIVER_SCREENS[screenIndex];
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [5, -5]), PARALLAX_SPRING);
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-7, 7]), PARALLAX_SPRING);
+  const shiftX = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), PARALLAX_SPRING);
+  const shiftY = useSpring(useTransform(my, [-0.5, 0.5], [-8, 8]), PARALLAX_SPRING);
 
   useEffect(() => {
-    let cancelled = false;
-    const loaders = PRELOAD_SRCS.map(
-      (src) =>
-        new Promise<void>((resolve) => {
-          const img = new window.Image();
-          img.onload = () => resolve();
-          img.onerror = () => resolve();
-          img.src = src;
-        }),
-    );
-    void Promise.all(loaders).then(() => {
-      if (!cancelled) setPreloaded(true);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion || !preloaded) return;
-    const id = window.setTimeout(() => {
-      setScreenIndex((i) => (i + 1) % DRIVER_SCREENS.length);
-    }, screen.durationMs);
-    return () => window.clearTimeout(id);
-  }, [reduceMotion, preloaded, screen.durationMs, screenIndex]);
-
-  useEffect(() => {
-    if (screen.id !== "dashboard") {
-      setEarnings(0);
-      return;
-    }
+    if (!inView) return;
     if (reduceMotion) {
       setEarnings(2840);
       return;
@@ -228,13 +147,13 @@ function DriverAppPhoneMockup({ reduceMotion }: { reduceMotion: boolean }) {
     setEarnings(120);
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [reduceMotion, screen.id, screenIndex]);
+  }, [inView, reduceMotion]);
 
   const onPointerMove = useCallback(
     (event: PointerEvent<HTMLDivElement>) => {
-      if (!parallaxOn || !phoneRef.current) return;
+      if (!parallaxOn || !stageRef.current) return;
       if (event.pointerType !== "mouse") return;
-      const rect = phoneRef.current.getBoundingClientRect();
+      const rect = stageRef.current.getBoundingClientRect();
       mx.set((event.clientX - rect.left) / rect.width - 0.5);
       my.set((event.clientY - rect.top) / rect.height - 0.5);
     },
@@ -247,131 +166,126 @@ function DriverAppPhoneMockup({ reduceMotion }: { reduceMotion: boolean }) {
   }, [mx, my]);
 
   return (
-    <div className="flex justify-center lg:justify-end">
-      <div
-        className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+    <div
+      ref={stageRef}
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
+      className="relative mx-auto flex min-h-[28rem] w-full max-w-[22rem] items-center justify-center overflow-visible px-3 py-6 [perspective:1200px] sm:min-h-[32rem] sm:max-w-[28rem] sm:px-4 sm:py-8 lg:max-w-none lg:py-10"
+    >
+      <motion.div
+        className="pointer-events-none absolute h-[70%] w-[75%] rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.48)_0%,rgb(1_147_251_/_0.16)_42%,transparent_72%)] blur-3xl"
+        animate={
+          reduceMotion
+            ? undefined
+            : { opacity: [0.55, 0.85, 0.55], scale: [0.94, 1.08, 0.94] }
+        }
+        transition={
+          reduceMotion
+            ? undefined
+            : { duration: 7, repeat: Infinity, ease: "easeInOut" }
+        }
         aria-hidden="true"
-      >
-        {PRELOAD_SRCS.map((src) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            width={840}
-            height={1900}
-            priority
-          />
-        ))}
-      </div>
+      />
 
-      <div className="[perspective:1400px]">
+      {FLOAT_CARDS.map((card) => {
+        const Icon = card.icon;
+        return (
+          <motion.div
+            key={card.id}
+            className={`absolute ${card.className}${
+              card.hideOnMobile ? " hidden sm:block" : ""
+            }`}
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 0.55,
+              delay: reduceMotion ? 0 : 0.25 + card.delay * 0.15,
+              ease: EASE,
+            }}
+          >
+            <motion.div
+              animate={
+                reduceMotion || !inView ? undefined : { y: card.y }
+              }
+              transition={
+                reduceMotion
+                  ? undefined
+                  : {
+                      duration: 4.2 + card.delay,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: card.delay,
+                    }
+              }
+            >
+              <div className="rounded-[20px] border border-white/15 bg-white/[0.08] px-3.5 py-3 shadow-[0_16px_40px_rgb(0_0_0_/_0.35)] backdrop-blur-xl">
+                <div className="flex items-start gap-2.5">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[12px] bg-brand/20 text-brand-bright">
+                    <Icon className="h-3.5 w-3.5" strokeWidth={2.2} aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[0.72rem] leading-tight font-semibold text-foam">
+                      {floats[card.titleKey]}
+                    </p>
+                    <p className="mt-0.5 text-[0.65rem] leading-snug text-foam/55">
+                      {floats[card.bodyKey]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        );
+      })}
+
+      <motion.div
+        initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.94 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        onViewportEnter={() => setInView(true)}
+        onViewportLeave={() => setInView(false)}
+        transition={{ duration: 0.7, ease: EASE }}
+        className="relative z-[2] mx-auto w-[min(13.75rem,70vw)] sm:w-[min(16.5rem,58vw)] lg:w-[17rem]"
+        style={
+          parallaxOn
+            ? {
+                rotateX,
+                rotateY,
+                x: shiftX,
+                y: shiftY,
+                transformStyle: "preserve-3d",
+                willChange: "transform",
+              }
+            : undefined
+        }
+      >
         <motion.div
-          ref={phoneRef}
-          onPointerMove={onPointerMove}
-          onPointerLeave={onPointerLeave}
-          initial={reduceMotion ? false : { opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: EASE }}
-          className="relative w-[min(17.5rem,78vw)]"
-          style={
-            parallaxOn
-              ? {
-                  rotateX,
-                  rotateY,
-                  x: parallaxX,
-                  y: parallaxY,
-                  transformStyle: "preserve-3d",
-                  willChange: "transform",
-                }
-              : undefined
+          className="origin-center"
+          style={{ rotate: isDesktop ? 14 : 0 }}
+          animate={
+            reduceMotion || !inView ? undefined : { y: [0, -10, 0] }
+          }
+          transition={
+            reduceMotion
+              ? undefined
+              : { duration: 6.5, repeat: Infinity, ease: "easeInOut" }
           }
         >
-          <motion.div
-            className="absolute -inset-12 rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.42)_0%,rgb(1_147_251_/_0.12)_38%,transparent_72%)] blur-3xl"
-            animate={
-              reduceMotion
-                ? undefined
-                : { opacity: [0.4, 0.72, 0.4], scale: [0.96, 1.08, 0.96] }
-            }
-            transition={
-              reduceMotion
-                ? undefined
-                : { duration: 6, repeat: Infinity, ease: "easeInOut" }
-            }
-            aria-hidden="true"
-          />
-
-          <motion.div
-            animate={reduceMotion ? undefined : { y: [0, -11, 0] }}
-            transition={
-              reduceMotion
-                ? undefined
-                : { duration: 6, repeat: Infinity, ease: "easeInOut" }
-            }
-            className="relative"
-            style={parallaxOn ? { transformStyle: "preserve-3d" } : undefined}
-          >
-            <div className="relative rounded-[1.75rem] bg-gradient-to-b from-[#2a313d] via-[#161e28] to-[#0a1118] p-[0.45rem] shadow-[0_2px_0_rgb(255_255_255_/_0.14)_inset,0_48px_96px_rgb(0_0_0_/_0.62),0_20px_48px_rgb(0_98_250_/_0.22),0_4px_12px_rgb(0_0_0_/_0.35)]">
+          <div className="relative rounded-[2rem] border border-white/12 bg-gradient-to-b from-[#2c3440]/90 via-[#151d28]/95 to-[#0a1118] p-[0.42rem] shadow-[0_2px_0_rgb(255_255_255_/_0.12)_inset,0_40px_90px_rgb(0_0_0_/_0.55),0_18px_48px_rgb(0_98_250_/_0.28)] backdrop-blur-sm">
+            <div className="relative aspect-[9/19.2] overflow-hidden rounded-[1.55rem] bg-[#f0f4f9]">
               <div
-                className="relative aspect-[9/19.2] overflow-hidden rounded-[1.35rem]"
-                style={{ backgroundColor: "#061428" }}
-              >
-                <div
-                  className="absolute top-2.5 left-1/2 z-[5] h-1.5 w-[34%] -translate-x-1/2 rounded-full bg-[#05080d]/95 shadow-[0_1px_2px_rgb(0_0_0_/_0.4)]"
-                  aria-hidden="true"
-                />
-
-                {!preloaded ? (
-                  <ScreenshotFrame
-                    src={DRIVER_SCREENS[0].src}
-                    alt={DRIVER_SCREENS[0].alt}
-                    layout={DRIVER_SCREENS[0].layout!}
-                    priority
-                  />
-                ) : (
-                  <AnimatePresence mode="wait" initial={false}>
-                    <motion.div
-                      key={screen.id}
-                      className="absolute inset-0 overflow-hidden"
-                      initial={
-                        reduceMotion
-                          ? false
-                          : { opacity: 0, y: 14, scale: 0.98 }
-                      }
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={
-                        reduceMotion
-                          ? undefined
-                          : { opacity: 0, y: -10, scale: 0.98 }
-                      }
-                      transition={
-                        reduceMotion ? { duration: 0 } : SCREEN_SPRING_SHOWCASE
-                      }
-                    >
-                      {screen.id === "dashboard" ? (
-                        <DriverDashboardScreen
-                          earnings={earnings}
-                          reduceMotion={reduceMotion}
-                        />
-                      ) : screen.id === "profile" ? (
-                        <DriverProfileScreen reduceMotion={reduceMotion} />
-                      ) : (
-                        <ScreenshotFrame
-                          src={screen.src}
-                          alt={screen.alt}
-                          layout={screen.layout!}
-                          priority={screenIndex === 0}
-                        />
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
-                )}
-              </div>
+                className="absolute top-2.5 left-1/2 z-10 h-1.5 w-[32%] -translate-x-1/2 rounded-full bg-[#05080d]"
+                aria-hidden="true"
+              />
+              <DriverDashboardScreen
+                earnings={earnings}
+                reduceMotion={reduceMotion}
+              />
             </div>
-          </motion.div>
+          </div>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -394,7 +308,7 @@ function ChevronRightIcon({ className }: { className?: string }) {
   );
 }
 
-/** Native driver dashboard — Hello Dilan + stats + BIA hire map. */
+/** Original Q Pick Driver dashboard — Hello Dilan + stats + BIA map. */
 function DriverDashboardScreen({
   earnings,
   reduceMotion,
@@ -695,210 +609,6 @@ function DashboardLiveMap({ reduceMotion }: { reduceMotion: boolean }) {
   );
 }
 
-type ProfileMenuItem = {
-  id: string;
-  label: string;
-  icon: ReactNode;
-  active?: boolean;
-  badge?: string;
-};
-
-/** Native profile — Dilan Perera + verified badge. */
-function DriverProfileScreen({ reduceMotion }: { reduceMotion: boolean }) {
-  const menuItems: ProfileMenuItem[] = [
-    {
-      id: "dashboard",
-      label: "Dashboard",
-      active: true,
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z" />
-        </svg>
-      ),
-    },
-    {
-      id: "history",
-      label: "Trip History",
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <circle cx="12" cy="12" r="9" />
-          <path d="M12 7v5l3 2" strokeLinecap="round" />
-        </svg>
-      ),
-    },
-    {
-      id: "payments",
-      label: "Payments",
-      badge: "New",
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <rect x="2" y="5" width="20" height="14" rx="2" />
-          <path d="M2 10h20" />
-        </svg>
-      ),
-    },
-    {
-      id: "reviews",
-      label: "Reviews",
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-          <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ),
-    },
-  ];
-
-  const motionProps = (delay: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 8 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.45, delay, ease: EASE },
-        };
-
-  return (
-    <div className="absolute inset-0 overflow-hidden bg-[#eef1f4] font-sans text-[#0a1620]">
-      <div className="absolute inset-0 overflow-hidden bg-[#eef2f6]">
-        <Image
-          src="/images/app/driver-app/dashboard-clean.webp"
-          alt=""
-          fill
-          sizes="(max-width: 1024px) 78vw, 280px"
-          className="select-none object-cover"
-          style={{ objectPosition: "78% 50%" }}
-          aria-hidden
-        />
-        <div className="absolute top-[3.5%] right-[3%] flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0062fa" strokeWidth="2" aria-hidden>
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-          </svg>
-        </div>
-      </div>
-
-      <div className="absolute inset-y-0 left-0 flex w-[86%] flex-col rounded-r-[1.1rem] bg-white shadow-[4px_0_28px_rgb(10_22_32_/_0.1)]">
-        <div className="px-4 pt-4 pb-2">
-          <motion.div className="relative h-[3.7rem] w-[3.7rem] shrink-0" {...motionProps(0)}>
-            <div className="absolute inset-0 overflow-hidden rounded-full">
-              <Image
-                src="/images/app/driver-app/profile-avatar.webp"
-                alt={PROFILE_NAME}
-                fill
-                sizes="64px"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <motion.span
-              className="absolute right-[6px] bottom-[6px] z-[1] grid h-5 w-5 place-items-center rounded-full border-2 border-white bg-white shadow-[0_1px_5px_rgb(10_22_32_/_0.2)]"
-              aria-hidden
-              animate={reduceMotion ? undefined : { scale: [1, 1.08, 1] }}
-              transition={{
-                duration: 0.85,
-                repeat: Infinity,
-                repeatDelay: 2.15,
-                ease: "easeInOut",
-              }}
-            >
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d="M12 2 4.5 5.2v5.4c0 5 3.4 9.6 7.5 11.4 4.1-1.8 7.5-6.4 7.5-11.4V5.2L12 2z"
-                  fill="#1f7a4c"
-                />
-                <path
-                  d="m9.2 11.6 2 2 3.8-3.9"
-                  stroke="white"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </motion.span>
-          </motion.div>
-
-          <motion.div className="mt-3" {...motionProps(0.06)}>
-            <p className="text-[0.98rem] leading-tight font-bold tracking-[-0.01em] text-[#1a2832]">
-              {PROFILE_NAME}
-            </p>
-            <p className="mt-1 text-[0.7rem] leading-snug text-[#7a8a96]">
-              {PROFILE_EMAIL}
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="mt-3.5 flex overflow-hidden rounded-xl bg-[#f1f4f8]"
-            {...motionProps(0.12)}
-          >
-            <div className="flex flex-1 flex-col items-center px-2 py-2.5">
-              <span className="text-[0.95rem] leading-none font-bold">4.9</span>
-              <span className="mt-1 text-[0.58rem] text-[#6b7c88]">Rating</span>
-            </div>
-            <div className="w-px bg-[#dce3ea]" />
-            <div className="flex flex-1 flex-col items-center px-2 py-2.5">
-              <span className="text-[0.95rem] leading-none font-bold">304</span>
-              <span className="mt-1 text-[0.58rem] text-[#6b7c88]">Trips</span>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="flex-1 overflow-hidden px-3 pt-3 pb-4">
-          <p className="px-1 text-[0.58rem] font-semibold tracking-[0.12em] text-[#9aa8b3] uppercase">
-            Main Menu
-          </p>
-          <ul className="mt-2 space-y-1">
-            {menuItems.map((item, i) => (
-              <motion.li key={item.id} {...motionProps(0.18 + i * 0.06)}>
-                <div
-                  className={`flex items-center gap-2.5 rounded-xl px-2.5 py-2.5 ${
-                    item.active ? "bg-[#e8f1ff] text-[#0062fa]" : "text-[#3a4a56]"
-                  }`}
-                >
-                  <span
-                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg ${
-                      item.active ? "bg-[#0062fa] text-white" : "bg-[#f1f4f8]"
-                    }`}
-                  >
-                    {item.icon}
-                  </span>
-                  <span className="min-w-0 flex-1 text-[0.8rem] font-semibold">
-                    {item.label}
-                  </span>
-                  {item.badge ? (
-                    <span className="rounded-full bg-[#e11d48] px-1.5 py-0.5 text-[0.52rem] font-semibold text-white">
-                      {item.badge}
-                    </span>
-                  ) : null}
-                  <ChevronRightIcon
-                    className={item.active ? "text-[#0062fa]" : "text-[#b0bcc6]"}
-                  />
-                </div>
-              </motion.li>
-            ))}
-          </ul>
-
-          <p className="mt-4 px-1 text-[0.58rem] font-semibold tracking-[0.12em] text-[#9aa8b3] uppercase">
-            Account
-          </p>
-          <motion.div
-            className="mt-2 flex items-center gap-2.5 rounded-xl px-2.5 py-2.5"
-            {...motionProps(0.55)}
-          >
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#fde8ea] text-[#e11d48]">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                <polyline points="16 17 21 12 16 7" />
-                <line x1="21" y1="12" x2="9" y2="12" />
-              </svg>
-            </span>
-            <span className="text-[0.8rem] font-semibold text-[#e11d48]">Sign Out</span>
-          </motion.div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function DriveWithQPick() {
   const t = useTranslations();
   const { driveWithQPick } = useMessages();
@@ -906,85 +616,50 @@ export function DriveWithQPick() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#07111b] py-[var(--section-y-sm)] text-foam sm:py-[var(--section-y-md)] lg:py-[var(--section-y-lg)]"
+      className="relative overflow-visible bg-[#07111b] py-[var(--section-y-sm)] text-foam sm:py-[var(--section-y-md)] lg:overflow-x-clip lg:py-[var(--section-y-lg)]"
       aria-labelledby="drive-qpick-heading"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_55%_at_85%_20%,rgb(0_98_250_/_0.18),transparent_55%),radial-gradient(55%_45%_at_10%_85%,rgb(1_147_251_/_0.1),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_15%_30%,rgb(0_98_250_/_0.14),transparent_60%),radial-gradient(55%_45%_at_90%_60%,rgb(1_147_251_/_0.12),transparent_55%)]"
         aria-hidden="true"
       />
 
       <Container className="relative z-[1]">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
-          <div className="relative">
+        <div className="grid items-center gap-8 overflow-visible sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 xl:gap-20">
+          {/* Phone first on mobile */}
+          <div className="order-1 overflow-visible lg:order-2">
+            <DriverShowcasePhone reduceMotion={reduceMotion} />
+          </div>
+
+          <div className="relative order-2 lg:order-1">
             <div
-              className="pointer-events-none absolute -inset-x-6 -inset-y-10 bg-[radial-gradient(55%_50%_at_30%_35%,rgb(0_98_250_/_0.16),transparent_70%)]"
+              className="pointer-events-none absolute -inset-x-4 -inset-y-8 bg-[radial-gradient(50%_45%_at_25%_30%,rgb(0_98_250_/_0.14),transparent_70%)]"
               aria-hidden="true"
             />
 
-            <motion.header
-              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.45 }}
+              viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.55, ease: EASE }}
               className="relative"
             >
               <p className="inline-flex rounded-full border border-foam/18 bg-foam/[0.07] px-3.5 py-1.5 font-mono text-[0.6875rem] tracking-[0.16em] text-brand-bright uppercase backdrop-blur-md">
                 {t("driveWithQPick.eyebrow")}
               </p>
+
               <h2
                 id="drive-qpick-heading"
-                className="mt-5 max-w-[16ch] font-display text-[clamp(1.95rem,4.2vw,3.15rem)] leading-[1.08] font-semibold tracking-tight text-balance"
+                className="mt-6 max-w-[15ch] font-display text-[clamp(2rem,4.4vw,3.35rem)] leading-[1.06] font-semibold tracking-tight text-balance"
               >
                 <span className="block">{t("driveWithQPick.heading")}</span>
                 <span className="block">{t("driveWithQPick.headingLine2")}</span>
               </h2>
-              <p className="mt-5 max-w-[42ch] text-base leading-relaxed text-pretty text-foam/65 sm:text-lg">
+
+              <p className="mt-5 max-w-[40ch] text-base leading-relaxed text-pretty text-foam/65 sm:text-lg">
                 {t("driveWithQPick.sub")}
               </p>
-            </motion.header>
-
-            <ul className="relative mt-9 grid gap-3 sm:grid-cols-2">
-              {BENEFIT_IDS.map((id, i) => {
-                const Icon = BENEFIT_ICONS[id];
-                return (
-                  <motion.li
-                    key={id}
-                    initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                      duration: 0.45,
-                      delay: reduceMotion ? 0 : 0.08 + i * 0.06,
-                      ease: EASE,
-                    }}
-                    whileHover={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            y: -6,
-                            transition: { duration: 0.25, ease: EASE },
-                          }
-                    }
-                    className="group rounded-[20px] border border-foam/12 bg-foam/[0.055] px-4 py-4 shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)] backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-[var(--ease-cinematic)] hover:border-brand/40 hover:shadow-[0_0_28px_rgb(0_98_250_/_0.18),inset_0_1px_0_rgb(255_255_255_/_0.08)]"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[12px] border border-brand/25 bg-brand/15 text-brand-bright transition-transform duration-300 ease-[var(--ease-cinematic)] group-hover:scale-110 group-hover:rotate-3">
-                        <Icon className="h-4 w-4" strokeWidth={2} aria-hidden />
-                      </span>
-                      <div className="min-w-0 pt-0.5">
-                        <p className="text-sm leading-snug font-semibold text-foam">
-                          {driveWithQPick.benefits[id].title}
-                        </p>
-                        <p className="mt-1 text-[0.8rem] leading-snug text-pretty text-foam/55">
-                          {driveWithQPick.benefits[id].body}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.li>
-                );
-              })}
-            </ul>
+            </motion.div>
 
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, y: 16 }}
@@ -992,20 +667,20 @@ export function DriveWithQPick() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: reduceMotion ? 0 : 0.48,
+                delay: reduceMotion ? 0 : 0.12,
                 ease: EASE,
               }}
-              className="relative mt-9 flex flex-wrap gap-3"
+              className="relative mt-8 flex flex-wrap gap-3"
             >
               <Link
                 href="/drive"
-                className="inline-flex min-h-12 max-w-full items-center justify-center rounded-[var(--radius-md)] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-medium text-paper shadow-[0_8px_24px_rgb(0_98_250_/_0.28)] transition-[transform,box-shadow,filter] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:shadow-[0_12px_36px_rgb(0_98_250_/_0.45)] hover:brightness-110 motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
+                className="inline-flex min-h-12 max-w-full items-center justify-center rounded-[16px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-medium text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.3)] transition-[transform,box-shadow,filter] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:shadow-[0_14px_40px_rgb(0_98_250_/_0.48)] hover:brightness-110 motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
               >
                 {t("driveWithQPick.cta")}
               </Link>
               <Link
                 href="/drive"
-                className="group inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-[var(--radius-md)] border border-foam/20 bg-foam/[0.07] px-6 text-sm font-medium text-foam backdrop-blur-md transition-[border-color,background-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:border-foam/35 hover:bg-foam/[0.12] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
+                className="group inline-flex min-h-12 max-w-full items-center justify-center gap-2 rounded-[16px] border border-foam/20 bg-foam/[0.07] px-6 text-sm font-medium text-foam backdrop-blur-md transition-[border-color,background-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:border-foam/35 hover:bg-foam/[0.12] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
               >
                 {t("driveWithQPick.secondaryCta")}
                 <ArrowRight
@@ -1015,9 +690,39 @@ export function DriveWithQPick() {
                 />
               </Link>
             </motion.div>
-          </div>
 
-          <DriverAppPhoneMockup reduceMotion={reduceMotion} />
+            <ul className="relative mt-9 flex flex-wrap gap-2.5 sm:gap-3">
+              {TRUST_BADGES.map((badge, i) => {
+                const Icon = badge.icon;
+                return (
+                  <motion.li
+                    key={badge.id}
+                    initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: reduceMotion ? 0 : 0.2 + i * 0.07,
+                      ease: EASE,
+                    }}
+                    whileHover={
+                      reduceMotion ? undefined : { y: -3, transition: { duration: 0.2 } }
+                    }
+                    className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-3.5 py-2 backdrop-blur-md"
+                  >
+                    <Icon
+                      className="h-3.5 w-3.5 text-brand-bright"
+                      strokeWidth={2.2}
+                      aria-hidden
+                    />
+                    <span className="text-[0.75rem] font-medium text-foam/85">
+                      {driveWithQPick.trust[badge.id]}
+                    </span>
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </Container>
     </section>

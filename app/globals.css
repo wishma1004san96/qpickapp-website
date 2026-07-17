@@ -32,8 +32,8 @@
   --duration-ui: 280ms;
   --duration-reveal: 600ms;
 
-  /* Homepage section rhythm — mobile / tablet / desktop */
-  --section-y-sm: 4rem; /* 64px */
+  /* Homepage section rhythm — tighter on mobile, unchanged from sm+ */
+  --section-y-sm: 2.5rem; /* 40px mobile */
   --section-y-md: 5.5rem; /* 88px */
   --section-y-lg: 8rem; /* 128px */
 
@@ -52,6 +52,12 @@
   --leading-body: 1.6;
   --tracking-body: -0.011em;
   --tracking-display: -0.03em;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --section-y-sm: 4rem; /* restore tablet/desktop section rhythm */
+  }
 }
 
 @theme inline {
@@ -152,6 +158,15 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-wrap: break-word;
     word-break: normal;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  a,
+  [role="button"],
+  [role="tab"],
+  [role="radio"] {
+    touch-action: manipulation;
   }
 
   ::selection {

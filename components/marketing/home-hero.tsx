@@ -22,6 +22,7 @@ import {
 } from "@/components/i18n/locale-provider";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { HeroTrustSection } from "@/components/marketing/hero-trust-section";
 import { heroMedia } from "@/lib/hero-media";
 
 const BLUR =
@@ -80,7 +81,7 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-map-void text-foam"
+      className="relative flex min-h-0 flex-col bg-map-void text-foam lg:min-h-[100svh]"
       aria-label={t("hero.ariaLabel")}
     >
       <HeroMedia
@@ -89,21 +90,24 @@ export function HomeHero() {
         onTimeUpdate={onVideoTimeUpdate}
       />
 
-      {/* Content + booking card — scroll lives under the floating trust badges */}
-      <Container className="relative z-10 flex w-full flex-1 flex-col justify-start pb-28 pt-32 sm:pb-32 sm:pt-36 lg:pb-36 lg:pt-40 xl:pt-44">
-        <div className="grid grid-cols-1 gap-y-10 sm:gap-y-12 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,26rem)] lg:items-start lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(22rem,28rem)] xl:gap-x-16 2xl:gap-x-20">
+      {/* Content + booking card — content-height on mobile; desktop keeps seam padding */}
+      <Container className="relative z-10 flex w-full flex-1 flex-col justify-start px-5 pb-5 pt-[calc(5.25rem+env(safe-area-inset-top))] sm:px-6 sm:pb-14 sm:pt-[calc(7rem+env(safe-area-inset-top))] lg:px-8 lg:pb-36 lg:pt-40 xl:pt-44">
+        <div className="grid grid-cols-1 gap-y-7 sm:gap-y-10 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,26rem)] lg:items-start lg:gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(22rem,28rem)] xl:gap-x-16 2xl:gap-x-20">
           <div className="hero-copy-col min-w-0 max-w-3xl">
             <HeroContent index={slideIndex} reduceMotion={reduceMotion} />
           </div>
 
           <div
-            className="hero-planner-col reveal-up min-w-0 w-full lg:justify-self-end"
+            className="hero-planner-col relative z-20 reveal-up min-w-0 w-full lg:justify-self-end"
             style={{ animationDelay: "360ms" }}
           >
             <JourneyPlanner />
           </div>
         </div>
       </Container>
+
+      {/* Trust badges + scroll — inside Hero so media covers the full mobile stack */}
+      <HeroTrustSection />
     </section>
   );
 }
@@ -128,21 +132,21 @@ function HeroContent({
       <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={`slide-${index}-${slide.title}`}
-          className="flex w-full min-w-0 flex-col gap-5 sm:gap-6"
+          className="flex w-full min-w-0 flex-col gap-3.5 sm:gap-6"
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
           transition={{ duration: HERO_COPY_MS, ease: HERO_EASE }}
         >
-          <p className="hero-title overflow-visible font-display text-[clamp(2.1rem,6.5vw,4.75rem)] leading-[1.15] tracking-[-0.03em] text-balance text-foam">
+          <p className="hero-title overflow-visible font-display text-[clamp(1.85rem,6vw,4.75rem)] leading-[1.12] tracking-[-0.03em] text-balance text-foam">
             {slide.title === "Q Pick" ? <>Q&nbsp;Pick</> : slide.title}
           </p>
 
-          <h1 className="hero-sub overflow-visible font-display text-[clamp(1.45rem,3.4vw,2.65rem)] leading-[1.3] tracking-tight text-pretty text-balance text-foam">
+          <h1 className="hero-sub overflow-visible font-display text-[clamp(1.25rem,3.2vw,2.65rem)] leading-[1.28] tracking-tight text-pretty text-balance text-foam">
             {slide.subtitle}
           </h1>
 
-          <p className="hero-body max-w-[44ch] text-base leading-relaxed text-pretty text-foam/75 sm:max-w-[48ch] sm:text-lg">
+          <p className="hero-body max-w-[44ch] text-[0.9375rem] leading-relaxed text-pretty text-foam/75 sm:max-w-[48ch] sm:text-lg">
             {slide.description}
           </p>
 
@@ -245,7 +249,7 @@ function JourneyPlanner() {
 
   return (
     <form
-            className="hero-planner flex w-full flex-col gap-4 self-start rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-4 sm:px-6 sm:py-5 lg:min-h-[32.5rem] lg:justify-between lg:gap-y-3 lg:px-8 lg:py-6 xl:px-9"
+      className="hero-planner relative z-20 flex w-full flex-col gap-4 self-start rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-4 sm:px-6 sm:py-5 lg:min-h-[32.5rem] lg:justify-between lg:gap-y-3 lg:px-8 lg:py-6 xl:px-9"
       aria-label={t("hero.planner.ariaLabel")}
       onSubmit={(event) => {
         event.preventDefault();
@@ -284,7 +288,7 @@ function JourneyPlanner() {
               aria-checked={selected}
               onClick={() => setIntent(id)}
               className={[
-                "hero-planner-tab min-h-11 flex-1 rounded-[var(--radius-sm)] px-2 text-center text-sm font-medium transition-[background-color,color] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] sm:px-3",
+                "hero-planner-tab min-h-11 min-w-0 flex-1 truncate rounded-[var(--radius-sm)] px-1.5 text-center text-[0.8125rem] font-medium transition-[background-color,color] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] sm:px-3 sm:text-sm",
                 selected
                   ? "bg-foam/95 text-ink"
                   : "text-foam/70 hover:bg-foam/5 hover:text-foam",
@@ -311,7 +315,7 @@ function JourneyPlanner() {
             type="text"
             defaultValue={copy.fromDefault}
             autoComplete="street-address"
-            className="min-h-12 w-full min-w-0 rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
+            className="min-h-12 w-full min-w-0 max-w-full rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
           />
         </div>
 
@@ -329,7 +333,7 @@ function JourneyPlanner() {
             type="text"
             defaultValue={copy.toDefault}
             autoComplete="street-address"
-            className="min-h-12 w-full min-w-0 rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
+            className="min-h-12 w-full min-w-0 max-w-full rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
           />
         </div>
       </div>

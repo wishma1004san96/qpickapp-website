@@ -252,16 +252,16 @@ export function DownloadQPickApps() {
                     ))}
                   </ul>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
                     {tab === "passenger" ? (
                       <>
                         <AppStoreBadge
                           store="android"
-                          className="border-foam/20 bg-ink/80"
+                          className="border-foam/20 bg-ink/80 sm:min-w-[12.5rem]"
                         />
                         <AppStoreBadge
                           store="ios"
-                          className="border-foam/20 bg-ink/80"
+                          className="border-foam/20 bg-ink/80 sm:min-w-[12.5rem]"
                         />
                       </>
                     ) : (
@@ -269,12 +269,12 @@ export function DownloadQPickApps() {
                         <AppStoreBadge
                           store="android"
                           href={DRIVER_PLAY_STORE_URL}
-                          className="border-foam/20 bg-ink/80"
+                          className="border-foam/20 bg-ink/80 sm:min-w-[12.5rem]"
                           subtitle={t("downloadApps.store.driverPlay")}
                         />
                         <AppStoreBadge
                           store="ios"
-                          className="border-foam/20 bg-ink/80"
+                          className="border-foam/20 bg-ink/80 sm:min-w-[12.5rem]"
                         />
                       </>
                     )}

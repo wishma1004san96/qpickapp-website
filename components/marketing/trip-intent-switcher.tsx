@@ -254,7 +254,7 @@ export function TripIntentSwitcher() {
               <motion.div
                 role="tablist"
                 aria-label={t("tripIntent.tablistAria")}
-                className="mb-9 flex gap-1 overflow-x-auto border-b border-white/10 pb-px [-ms-overflow-style:none] [scrollbar-width:none] sm:mb-10 [&::-webkit-scrollbar]:hidden"
+                className="mb-9 flex gap-1 overflow-x-auto overscroll-x-contain scroll-px-1 border-b border-white/10 pb-px [-ms-overflow-style:none] [scrollbar-width:none] sm:mb-10 [&::-webkit-scrollbar]:hidden"
                 style={
                   tiltEnabled
                     ? { x: textX, y: textY, willChange: "transform" }

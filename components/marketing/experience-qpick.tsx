@@ -93,7 +93,7 @@ export function ExperienceQPick() {
     <section
       ref={sectionRef}
       aria-labelledby="experience-qpick-heading"
-      className="experience-stage relative overflow-visible"
+      className="experience-stage relative overflow-x-clip overflow-y-visible"
       onMouseMove={onSectionPointerMove}
       onMouseLeave={onSectionPointerLeave}
     >
@@ -309,7 +309,7 @@ function IPhone16ProMockup({
       ([entry]) => {
         const visible =
           (entry?.isIntersecting ?? false) &&
-          (entry?.intersectionRatio ?? 0) >= 0.5;
+          (entry?.intersectionRatio ?? 0) >= 0.3;
         if (visible) {
           if (wasOut) {
             // Tear down any mid-journey instance and start from Splash.
@@ -328,8 +328,8 @@ function IPhone16ProMockup({
         }
       },
       {
-        threshold: [0, 0.5, 0.75, 1],
-        rootMargin: "-20% 0px -20% 0px",
+        threshold: [0, 0.3, 0.5, 0.75, 1],
+        rootMargin: "-10% 0px -10% 0px",
       },
     );
     io.observe(el);
@@ -348,7 +348,7 @@ function IPhone16ProMockup({
       </div>
 
       <motion.div
-        className="experience-phone-parallax relative z-[1] aspect-[71.5/149.6] h-[min(58svh,480px)] w-auto lg:h-[640px]"
+        className="experience-phone-parallax relative z-[1] aspect-[71.5/149.6] h-[min(68svh,520px)] w-auto max-w-[min(100%,17.5rem)] lg:h-[640px] lg:max-w-none"
         style={
           reduceMotion
             ? undefined

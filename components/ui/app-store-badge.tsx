@@ -67,7 +67,7 @@ export function AppStoreBadge({
     </>
   );
 
-  const classes = `inline-flex min-h-11 items-center gap-2.5 rounded-[var(--radius-md)] border border-mist bg-ink px-4 text-foam transition-[border-color,background-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] ${className}`;
+  const classes = `inline-flex min-h-11 w-full min-w-[11.5rem] max-w-[16rem] items-center justify-start gap-2.5 rounded-[var(--radius-md)] border border-mist bg-ink px-4 text-foam transition-[border-color,background-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] sm:w-auto ${className}`;
 
   if (href) {
     return (

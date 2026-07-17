@@ -426,12 +426,14 @@
 .qstory-live {
   position: absolute;
   inset: 0;
-  background: #fff;
+  /* Match journey chrome — avoids white flash between frames on mobile */
+  background: #0a1620;
 }
 
 .qstory-live-frame {
   position: absolute;
   inset: 0;
+  will-change: opacity;
 }
 
 .qstory-live-frame .experience-journey {

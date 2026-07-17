@@ -1,6 +1,6 @@
 /*
-  Floating trust badges — zero-height seam bridge.
-  Scroll-driven colors live on motion styles; CSS owns layout + hover icon glow.
+  Floating trust badges — zero-height seam bridge on desktop.
+  Mobile (<768): in-flow below Journey Planner inside Hero — never overlays CTA.
 */
 
 .hero-trust-float {
@@ -37,12 +37,52 @@
   pointer-events: auto;
 }
 
+/* Mobile carousel vs desktop/tablet row — base (hidden until breakpoint) */
+.hero-trust-mobile {
+  display: none;
+  width: 100%;
+}
+
 .hero-trust-bridge {
   position: relative;
   display: flex;
   justify-content: center;
   width: max-content;
   max-width: 100%;
+}
+
+/* —— Mobile: sit below planner, no overlap, covered by Hero media —— */
+@media (max-width: 767.98px) {
+  .hero-trust-float {
+    z-index: 10;
+    height: auto;
+    margin: 0;
+    /* 20–24px after planner; 24px after scroll before Fleet */
+    padding: 1.25rem 1.25rem 1.5rem;
+    pointer-events: auto;
+  }
+
+  .hero-trust-stack {
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    gap: 1.5rem; /* 24px badges → scroll */
+  }
+
+  .hero-trust-bridge {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* MUST come after base .hero-trust-mobile { display: none } */
+  .hero-trust-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-trust-desktop {
+    display: none !important;
+  }
 }
 
 .hero-trust-scroll {
@@ -55,7 +95,7 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: stretch;
-  gap: 1.5rem; /* 24px */
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -63,12 +103,12 @@
   max-width: 100%;
 }
 
-/* Tablet — 2 × 2 */
-@media (min-width: 640px) and (max-width: 1023px) {
+/* Tablet — 2 × 2 (768–1023; mobile uses carousel) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .hero-trust-row {
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
-    gap: 1.5rem 1.75rem; /* 24–28px */
+    gap: 1.5rem 1.75rem;
   }
 }
 
@@ -79,13 +119,13 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.75rem; /* 28px */
+    gap: 1.75rem;
   }
 }
 
 @media (min-width: 1280px) {
   .hero-trust-row {
-    gap: 2rem; /* 32px */
+    gap: 2rem;
   }
 }
 
@@ -96,31 +136,45 @@
   will-change: transform;
 }
 
-@media (max-width: 639px) {
-  .hero-trust-item {
-    width: min(100%, 20.5rem);
-  }
+.hero-trust-item--chip {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  padding-right: 0.65rem;
+}
 
-  .hero-trust-badge {
-    width: 100%;
-    justify-content: flex-start;
-  }
+.hero-trust-carousel {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-x;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
 
-  .hero-trust-row {
-    width: min(100%, 20.5rem);
-  }
+.hero-trust-carousel:active {
+  cursor: grabbing;
+}
+
+.hero-trust-carousel-track {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.15rem 0;
+  list-style: none;
 }
 
 .hero-trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   width: max-content;
   max-width: 100%;
-  padding: 0.42rem 1.05rem 0.42rem 0.42rem;
+  min-height: 2.375rem; /* 38px */
+  height: 2.375rem;
+  padding: 0.35rem 0.95rem 0.35rem 0.35rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  /* Fallback while motion hydrates — dark glass (Hero) */
   background-color: rgb(8 16 28 / 0.58);
   background-image: linear-gradient(
     180deg,
@@ -136,7 +190,15 @@
   transition: filter 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Soft shadow lift on hover — colors stay scroll-driven */
+@media (min-width: 768px) {
+  .hero-trust-badge {
+    gap: 0.65rem;
+    min-height: unset;
+    height: auto;
+    padding: 0.42rem 1.05rem 0.42rem 0.42rem;
+  }
+}
+
 .hero-trust-item:hover .hero-trust-badge,
 .hero-trust-item:focus-within .hero-trust-badge {
   filter: drop-shadow(0 10px 18px rgb(0 40 100 / 0.18));
@@ -146,8 +208,8 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 1.65rem;
+  height: 1.65rem;
   border-radius: 999px;
   color: #f4f9ff;
   background:
@@ -160,7 +222,13 @@
   transition: box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Blue glow around the icon only */
+@media (min-width: 768px) {
+  .hero-trust-mark {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+}
+
 .hero-trust-item:hover .hero-trust-mark,
 .hero-trust-item:focus-within .hero-trust-mark {
   box-shadow:
@@ -180,7 +248,7 @@
   text-wrap: balance;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .hero-trust-label {
     font-size: 0.875rem;
   }
@@ -196,6 +264,14 @@ html[lang="si"] .hero-trust-label,
 html[lang="ta"] .hero-trust-label {
   white-space: normal;
   max-inline-size: 14rem;
+}
+
+@media (max-width: 767.98px) {
+  html[lang="si"] .hero-trust-label,
+  html[lang="ta"] .hero-trust-label {
+    white-space: nowrap;
+    max-inline-size: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

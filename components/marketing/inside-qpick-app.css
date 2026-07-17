@@ -182,12 +182,18 @@
 /* Identical shell size for all three devices — content cannot inflate. */
 .iqpa-phone {
   position: relative;
-  width: min(100%, 15.5rem);
+  width: min(100%, 14.25rem);
   aspect-ratio: 71.5 / 149.6;
   flex: 0 0 auto;
   overflow: hidden;
   filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.45))
     drop-shadow(0 8px 16px rgb(0 0 0 / 0.28));
+}
+
+@media (min-width: 640px) {
+  .iqpa-phone {
+    width: min(100%, 15.5rem);
+  }
 }
 
 .iqpa-phone-shell {

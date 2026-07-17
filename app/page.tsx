@@ -5,7 +5,6 @@ import { ExperienceQPick } from "@/components/marketing/experience-qpick";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { FleetListStage } from "@/components/marketing/fleet-list-stage";
 import { HomeHero } from "@/components/marketing/home-hero";
-import { HeroTrustSection } from "@/components/marketing/hero-trust-section";
 import { HowQPickWorks } from "@/components/marketing/how-qpick-works";
 import { InsideQPickApp } from "@/components/marketing/inside-qpick-app";
 import { SafetyChecklist } from "@/components/marketing/safety-checklist";
@@ -31,7 +30,6 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <HeroTrustSection />
       <FleetListStage />
       <ExperienceQPick />
       <HowQPickWorks />
@@ -43,9 +41,7 @@ export default function HomePage() {
       </Section>
       <DestinationStrip />
       <DriveWithQPick />
-      <Section tone="foam">
-        <SafetyChecklist />
-      </Section>
+      <SafetyChecklist />
       <FinalCta />
     </>
   );

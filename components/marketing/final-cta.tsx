@@ -62,15 +62,15 @@ export function FinalCta() {
           <Prose className="mx-auto mt-4 max-w-[40rem] text-pretty">
             {t("finalCta.body")}
           </Prose>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="/ride" size="lg" className="max-w-full">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <ButtonLink href="/ride" size="lg" className="w-full max-w-full sm:w-auto">
               {t("finalCta.primary")}
             </ButtonLink>
             <ButtonLink
               href="/tours"
               variant="secondary"
               size="lg"
-              className="max-w-full"
+              className="w-full max-w-full sm:w-auto"
             >
               {t("finalCta.secondary")}
             </ButtonLink>

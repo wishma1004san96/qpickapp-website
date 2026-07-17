@@ -1,5 +1,7 @@
 "use client";
 
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   motion,
   useMotionTemplate,
@@ -28,7 +30,8 @@ const TRUST_KEYS = [
 
 /**
  * Floating trust badges on the Hero→Fleet seam.
- * Style tracks real overlap with the blue Fleet section — dark glass until ≥50% over blue.
+ * Mobile (<768): in-flow below planner, swipeable chips — never overlays CTA.
+ * Desktop: unchanged floating seam bridge.
  */
 export function HeroTrustSection() {
   const t = useTranslations();
@@ -38,7 +41,6 @@ export function HeroTrustSection() {
 
   const rawProgress = useMotionValue(0);
   const springProgress = useSpring(rawProgress, {
-    // ~350–500ms easeOut feel
     stiffness: 110,
     damping: 28,
     mass: 0.55,
@@ -58,14 +60,12 @@ export function HeroTrustSection() {
         return;
       }
 
-      // Portion of the badge group vertically inside the Fleet (below fleet top).
       const overlapPx = Math.min(
         badges.height,
         Math.max(0, badges.bottom - fleet.top),
       );
       const overlapRatio = overlapPx / badges.height;
 
-      // Stay dark until ≥50% overlap, then ease 0→1 through the remaining half.
       const mapped =
         overlapRatio <= OVERLAP_START
           ? 0
@@ -99,7 +99,15 @@ export function HeroTrustSection() {
     >
       <div className="hero-trust-stack">
         <div ref={bridgeRef} className="hero-trust-bridge">
-          <ul className="hero-trust-row">
+          {/* Mobile: swipeable chips — CSS-gated so desktop layout never flashes */}
+          <div className="hero-trust-mobile">
+            <TrustBadgeCarousel
+              reduceMotion={reduceMotion}
+              progress={progress}
+            />
+          </div>
+          {/* Tablet + desktop: unchanged grid / row */}
+          <ul className="hero-trust-row hero-trust-desktop">
             {TRUST_KEYS.map((key, index) => (
               <TrustBadge
                 key={key}
@@ -144,16 +152,78 @@ export function HeroTrustSection() {
   );
 }
 
+function TrustBadgeCarousel({
+  reduceMotion,
+  progress,
+}: {
+  reduceMotion: boolean;
+  progress: MotionValue<number>;
+}) {
+  const t = useTranslations();
+  const autoplay = useRef(
+    Autoplay({
+      delay: 3600,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+      playOnInit: !reduceMotion,
+    }),
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "start",
+      dragFree: true,
+      skipSnaps: false,
+      duration: reduceMotion ? 10 : 55,
+    },
+    reduceMotion ? [] : [autoplay.current],
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.reInit();
+    if (reduceMotion) return;
+    const onPointerDown = () => autoplay.current.stop();
+    const onSettle = () => autoplay.current.play();
+    emblaApi.on("pointerDown", onPointerDown);
+    emblaApi.on("settle", onSettle);
+    return () => {
+      emblaApi.off("pointerDown", onPointerDown);
+      emblaApi.off("settle", onSettle);
+    };
+  }, [emblaApi, reduceMotion]);
+
+  return (
+    <div className="hero-trust-carousel" ref={emblaRef}>
+      <ul className="hero-trust-carousel-track">
+        {TRUST_KEYS.map((key, index) => (
+          <TrustBadge
+            key={key}
+            label={t(`hero.trust.${key}`)}
+            index={index}
+            reduceMotion={reduceMotion}
+            progress={progress}
+            chip
+          />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function TrustBadge({
   label,
   index,
   reduceMotion,
   progress,
+  chip = false,
 }: {
   label: string;
   index: number;
   reduceMotion: boolean;
   progress: MotionValue<number>;
+  chip?: boolean;
 }) {
   const bg = useTransform(progress, [0, 1], [
     "rgba(8, 16, 28, 0.58)",
@@ -180,16 +250,17 @@ function TrustBadge({
 
   return (
     <motion.li
-      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
+      initial={reduceMotion || chip ? false : { opacity: 0, y: 20 }}
+      whileInView={chip ? undefined : { opacity: 1, y: 0 }}
+      animate={chip ? { opacity: 1, y: 0 } : undefined}
+      viewport={chip ? undefined : { once: true, amount: 0.4 }}
       transition={{
-        duration: 0.7,
-        delay: reduceMotion ? 0 : index * 0.1,
+        duration: chip ? 0.45 : 0.7,
+        delay: reduceMotion ? 0 : index * 0.08,
         ease: EASE,
       }}
       whileHover={
-        reduceMotion
+        reduceMotion || chip
           ? undefined
           : {
               y: -6,
@@ -197,7 +268,7 @@ function TrustBadge({
               transition: { duration: 0.4, ease: HOVER_EASE },
             }
       }
-      className="hero-trust-item"
+      className={chip ? "hero-trust-item hero-trust-item--chip" : "hero-trust-item"}
     >
       <motion.div
         className="hero-trust-badge"

@@ -14,9 +14,12 @@ import { useLocale, useTranslations } from "@/components/i18n/locale-provider";
 export function LanguageSwitcher({
   className = "",
   tone = "default",
+  compact = false,
 }: {
   className?: string;
   tone?: "default" | "onDark";
+  /** Tighter control for mobile header (still ≥44px touch target). */
+  compact?: boolean;
 }) {
   const { locale, setLocale } = useLocale();
   const t = useTranslations();
@@ -60,11 +63,14 @@ export function LanguageSwitcher({
         aria-label={t("language.choose")}
         onClick={() => setOpen((value) => !value)}
         className={[
-          "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-medium tracking-wide",
+          "inline-flex touch-manipulation items-center rounded-full font-medium tracking-wide",
           "transition-[background-color,color,border-color,box-shadow] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)]",
+          compact
+            ? "h-10 min-h-11 min-w-[4.25rem] max-w-[4.5rem] justify-center gap-1 px-2.5 text-[0.8125rem]"
+            : "min-h-11 gap-1.5 px-3 text-sm",
           onDark
-            ? "border border-foam/20 bg-foam/10 text-foam hover:bg-foam/16"
-            : "border border-mist/80 bg-paper/80 text-ink hover:border-mist hover:bg-paper",
+            ? "border border-foam/20 bg-foam/10 text-foam backdrop-blur-md hover:bg-foam/16"
+            : "border border-mist/80 bg-paper/80 text-ink backdrop-blur-md hover:border-mist hover:bg-paper",
         ].join(" ")}
       >
         <span aria-hidden="true" className="text-[0.95rem] leading-none">
@@ -74,7 +80,8 @@ export function LanguageSwitcher({
         <span
           aria-hidden="true"
           className={[
-            "ml-0.5 text-[0.65rem] opacity-70 transition-transform duration-[var(--duration-ui)]",
+            "text-[0.65rem] opacity-70 transition-transform duration-[var(--duration-ui)]",
+            compact ? "" : "ml-0.5",
             open ? "rotate-180" : "",
           ].join(" ")}
         >
@@ -88,7 +95,7 @@ export function LanguageSwitcher({
           role="listbox"
           aria-label={t("language.label")}
           className={[
-            "absolute right-0 top-[calc(100%+0.4rem)] z-50 min-w-[11.5rem] overflow-hidden rounded-[var(--radius-md)] py-1.5",
+            "absolute right-0 top-[calc(100%+0.4rem)] z-[130] min-w-[11.5rem] overflow-hidden rounded-[var(--radius-md)] py-1.5",
             "border shadow-[0_12px_32px_rgb(10_22_32_/_0.16)] backdrop-blur-xl",
             onDark
               ? "border-foam/15 bg-map-void/95 text-foam"
@@ -103,7 +110,7 @@ export function LanguageSwitcher({
                   type="button"
                   onClick={() => selectLocale(code)}
                   className={[
-                    "flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm transition-colors duration-[var(--duration-ui)]",
+                    "flex min-h-11 w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm transition-colors duration-[var(--duration-ui)]",
                     onDark ? "hover:bg-foam/10" : "hover:bg-mist/40",
                     active ? "font-medium" : "",
                   ].join(" ")}

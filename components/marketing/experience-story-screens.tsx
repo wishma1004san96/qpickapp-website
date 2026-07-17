@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrandLogo } from "@/components/brand/wordmark";
 import {
   ExperienceJourneyFrame,
@@ -224,18 +224,31 @@ export function StoryVehiclesScreen({ reduceMotion }: { reduceMotion: boolean })
  */
 export function StoryLiveCycle({ reduceMotion }: { reduceMotion: boolean }) {
   const [index, setIndex] = useState(0);
+  const [inView, setInView] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
   const step = LIVE_STEPS[index] ?? LIVE_STEPS[0];
 
   useEffect(() => {
-    if (reduceMotion) return;
+    const node = rootRef.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.3),
+      { threshold: [0, 0.3, 0.6, 1], rootMargin: "0px" },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion || !inView) return;
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % LIVE_STEPS.length);
     }, 2800);
     return () => window.clearInterval(id);
-  }, [reduceMotion]);
+  }, [reduceMotion, inView]);
 
   return (
-    <div className="qstory-live">
+    <div ref={rootRef} className="qstory-live">
       <AnimatePresence mode="wait">
         <motion.div
           key={step}

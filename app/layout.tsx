@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { inter, notoSinhala, notoTamil } from "@/app/fonts";
 import { SiteFooter } from "@/components/brand/site-footer";
@@ -23,6 +23,16 @@ const ogLocales: Record<Locale, string> = {
   en: "en_LK",
   si: "si_LK",
   ta: "ta_LK",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F3F6F7" },
+    { media: "(prefers-color-scheme: dark)", color: "#07111b" },
+  ],
 };
 
 export async function generateMetadata(): Promise<Metadata> {
