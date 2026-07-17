@@ -150,6 +150,18 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+
+    /* Keep Drive showcase bob alive — iOS often enables Reduce Motion */
+    .drive-float-bob,
+    .drive-float-bob--a,
+    .drive-float-bob--b,
+    .drive-float-bob--c,
+    .drive-float-bob--d,
+    .drive-phone-bob,
+    .drive-phone-bob--tilted {
+      animation-duration: 5s !important;
+      animation-iteration-count: infinite !important;
+    }
   }
 
   body {
