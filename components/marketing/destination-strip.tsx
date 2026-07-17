@@ -23,7 +23,7 @@ const FEATURED: FeaturedDestination[] = [
     slug: "sigiriya",
     name: "Sigiriya",
     label: "Cultural Triangle",
-    blurb: "Ancient wonders surrounded by breathtaking landscapes.",
+    blurb: "Airport and chauffeur routes into the Cultural Triangle.",
     image: "/images/app/backgrounds/sigiriya-bg.webp",
     objectPosition: "center 40%",
     href: "/destinations/sigiriya",
@@ -32,7 +32,7 @@ const FEATURED: FeaturedDestination[] = [
     slug: "ella",
     name: "Ella",
     label: "Hill Country",
-    blurb: "Tea country, mountain railways and peaceful escapes.",
+    blurb: "Intercity and day-trip rides into tea country highlands.",
     image: "/images/app/backgrounds/ella-bg.webp",
     objectPosition: "center 45%",
     href: "/destinations/ella",
@@ -41,7 +41,7 @@ const FEATURED: FeaturedDestination[] = [
     slug: "galle",
     name: "Galle",
     label: "Southern Coast",
-    blurb: "Historic coastal charm with luxury seaside experiences.",
+    blurb: "Coastal transfers and city rides along the southern road.",
     image: "/images/app/backgrounds/galle-bg.webp",
     objectPosition: "center 50%",
     href: "/destinations/galle",
@@ -99,7 +99,7 @@ function DestinationCard({
           {dest.blurb}
         </p>
         <span className="mt-3 inline-flex translate-y-0 items-center text-sm font-medium text-[#e4c99a] opacity-90 transition-[opacity,transform] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] [@media(hover:hover)]:translate-y-1 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-hover:opacity-100">
-          Explore →
+          View route →
         </span>
       </div>
     </Link>
@@ -266,20 +266,18 @@ export function DestinationStrip() {
             transition={{ duration: 0.55, ease: EASE }}
           >
             <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-[#e4c99a] uppercase">
-              Discover Sri Lanka
+              Move across Sri Lanka
             </p>
             <h2
               id="popular-destinations-heading"
               className="mt-3 font-display text-[clamp(1.75rem,3.2vw,2.55rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-balance"
             >
-              Extraordinary destinations,
-              <br className="hidden sm:block" /> crafted for unforgettable
-              journeys.
+              Destinations that fit
+              <br className="hidden sm:block" /> how you travel.
             </h2>
             <p className="mt-3.5 max-w-xl text-[0.95rem] leading-relaxed text-pretty text-[#f3f6f7]/65 sm:text-[1rem]">
-              Explore a curated collection of Sri Lanka&apos;s most iconic
-              experiences with professional chauffeurs and personalised
-              itineraries.
+              From CMB airport roads to coastal and highland routes — popular
+              places for transfers, city rides, and chauffeur journeys.
             </p>
           </motion.div>
 
@@ -291,10 +289,10 @@ export function DestinationStrip() {
             className="shrink-0"
           >
             <Link
-              href="/tours"
+              href="/airport"
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/14 bg-white/[0.06] px-6 text-sm font-medium text-[#f3f6f7] shadow-[0_1px_0_rgb(255_255_255_/_0.1)_inset] backdrop-blur-md transition-[background-color,border-color,transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#c9a46c]/45 hover:bg-white/[0.1] hover:shadow-[0_12px_28px_rgb(0_0_0_/_0.28)] motion-safe:hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0193fb]/45"
             >
-              Explore Tours →
+              Book Airport Transfer →
             </Link>
           </motion.div>
         </div>

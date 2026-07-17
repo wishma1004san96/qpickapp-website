@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useReducedMotion,
@@ -15,6 +16,7 @@ import {
   useRef,
   useState,
   type PointerEvent,
+  type ReactNode,
 } from "react";
 import {
   useMessages,
@@ -33,6 +35,12 @@ import {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PARALLAX_SPRING = { stiffness: 90, damping: 22, mass: 0.55 } as const;
+const SCREEN_SPRING = {
+  type: "spring" as const,
+  stiffness: 160,
+  damping: 24,
+  mass: 0.55,
+};
 
 const TRUST_BADGES = [
   { id: "verified", icon: BadgeCheck },
@@ -40,14 +48,63 @@ const TRUST_BADGES = [
   { id: "support", icon: Headphones },
 ] as const;
 
+type ScreenId = "splash" | "profile" | "dashboard";
+
+type ScreenLayout = {
+  bg: string;
+  mode: "contain" | "cover";
+  objectPosition: string;
+};
+
+type DriverScreen = {
+  id: ScreenId;
+  src: string;
+  alt: string;
+  durationMs: number;
+  layout?: ScreenLayout;
+};
+
+/** Splash → profile → dashboard loop */
+const DRIVER_SCREENS: DriverScreen[] = [
+  {
+    id: "splash",
+    src: "/images/app/driver-app/splash.webp",
+    alt: "Q Pick Driver splash screen",
+    durationMs: 2500,
+    layout: { bg: "#061428", mode: "contain", objectPosition: "50% 50%" },
+  },
+  {
+    id: "profile",
+    src: "/images/app/driver-app/profile-avatar.webp",
+    alt: "Q Pick Driver profile",
+    durationMs: 4000,
+  },
+  {
+    id: "dashboard",
+    src: "/images/app/driver-app/hire-map.webp",
+    alt: "Q Pick Driver dashboard",
+    durationMs: 4500,
+  },
+];
+
+const PRELOAD_SRCS = [
+  "/images/app/driver-app/splash.webp",
+  "/images/app/driver-app/profile-avatar.webp",
+  "/images/app/driver-app/hire-map.webp",
+] as const;
+
+const PROFILE_NAME = "Dilan Perera";
+const PROFILE_EMAIL = "dilan.perera@qpickdriver.com";
+
 const FLOAT_CARDS = [
   {
     id: "ride",
     icon: Navigation,
     titleKey: "rideTitle" as const,
     bodyKey: "rideBody" as const,
+    // Tuck tight against phone left edge; desktop anchors beside phone bezel
     className:
-      "left-0 top-[10%] z-[3] max-w-[11.5rem] -translate-x-[calc(100%-0.75rem)] lg:-translate-x-[calc(100%+0.25rem)]",
+      "left-0 top-[10%] z-[3] w-[10.75rem] -translate-x-[calc(100%-2.75rem)] lg:left-1/2 lg:right-auto lg:top-[12%] lg:w-[11.25rem] lg:-translate-x-[calc(100%+9rem)]",
     bobClass: "drive-float-bob drive-float-bob--a",
     delay: 0,
   },
@@ -57,7 +114,7 @@ const FLOAT_CARDS = [
     titleKey: "airportTitle" as const,
     bodyKey: "airportBody" as const,
     className:
-      "right-0 top-[18%] z-[3] max-w-[11.5rem] translate-x-[calc(100%-0.75rem)] lg:translate-x-[calc(100%+0.25rem)]",
+      "right-0 top-[10%] z-[3] w-[10.75rem] translate-x-[calc(100%-2.75rem)] lg:top-[12%] lg:w-[11.25rem] lg:translate-x-[calc(100%-3rem)]",
     bobClass: "drive-float-bob drive-float-bob--b",
     delay: 0.4,
   },
@@ -67,7 +124,7 @@ const FLOAT_CARDS = [
     titleKey: "earningsTitle" as const,
     bodyKey: "earningsBody" as const,
     className:
-      "bottom-[22%] left-0 z-[3] max-w-[11.5rem] -translate-x-[calc(100%-0.5rem)] lg:-translate-x-[calc(100%+0.5rem)]",
+      "bottom-[18%] left-0 z-[3] w-[10.75rem] -translate-x-[calc(100%-2.75rem)] lg:bottom-[20%] lg:w-[11.25rem] lg:-translate-x-[calc(100%-3rem)]",
     bobClass: "drive-float-bob drive-float-bob--c",
     delay: 0.8,
   },
@@ -76,8 +133,9 @@ const FLOAT_CARDS = [
     icon: BadgeCheck,
     titleKey: "onlineTitle" as const,
     bodyKey: "onlineBody" as const,
+    // Tuck tight against phone right edge; desktop anchors beside phone bezel
     className:
-      "right-0 bottom-[12%] z-[3] max-w-[11.5rem] translate-x-[calc(100%-0.5rem)] lg:translate-x-[calc(100%+0.5rem)]",
+      "right-0 bottom-[18%] z-[3] w-[10.75rem] translate-x-[calc(100%-2.75rem)] lg:left-1/2 lg:right-auto lg:bottom-[20%] lg:w-[11.25rem] lg:translate-x-[9rem]",
     bobClass: "drive-float-bob drive-float-bob--d",
     delay: 1.2,
   },
@@ -157,7 +215,7 @@ function useMinWidth(px: number) {
   return matches;
 }
 
-/** Floating iPhone showcase with glass notifications + mouse parallax. */
+/** Floating iPhone showcase — splash → profile → dashboard + glass cards. */
 function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const finePointer = useFinePointer();
   const isDesktop = useMinWidth(1024);
@@ -165,7 +223,9 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const { driveWithQPick } = useMessages();
   const floats = driveWithQPick.floatCards;
-  const [earnings, setEarnings] = useState(reduceMotion ? 2840 : 120);
+  const [screenIndex, setScreenIndex] = useState(0);
+  const [preloaded, setPreloaded] = useState(false);
+  const [earnings, setEarnings] = useState(0);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -174,9 +234,42 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
   const shiftX = useSpring(useTransform(mx, [-0.5, 0.5], [-10, 10]), PARALLAX_SPRING);
   const shiftY = useSpring(useTransform(my, [-0.5, 0.5], [-8, 8]), PARALLAX_SPRING);
 
-  // Float + earnings start on mount — keep count-up even when OS Reduce Motion is on.
+  const screen = DRIVER_SCREENS[screenIndex];
+
   useEffect(() => {
+    let cancelled = false;
+    const loaders = PRELOAD_SRCS.map(
+      (src) =>
+        new Promise<void>((resolve) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve();
+          img.src = src;
+        }),
+    );
+    void Promise.all(loaders).then(() => {
+      if (!cancelled) setPreloaded(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Always cycle screens on mount — do not gate on Reduce Motion.
+  useEffect(() => {
+    if (!preloaded) return;
     console.log("Driver slideshow started");
+    const id = window.setTimeout(() => {
+      setScreenIndex((i) => (i + 1) % DRIVER_SCREENS.length);
+    }, screen.durationMs);
+    return () => window.clearTimeout(id);
+  }, [preloaded, screen.durationMs, screenIndex]);
+
+  useEffect(() => {
+    if (screen.id !== "dashboard") {
+      setEarnings(0);
+      return;
+    }
     console.log("Floating animation started");
     const target = 2840;
     const duration = 1400;
@@ -191,7 +284,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
     setEarnings(120);
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, []);
+  }, [screen.id, screenIndex]);
 
   const onPointerMove = useCallback(
     (event: PointerEvent<HTMLDivElement>) => {
@@ -214,8 +307,17 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
       ref={stageRef}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
-      className="relative mx-auto flex w-full max-w-[24rem] flex-col items-center gap-5 overflow-visible px-4 py-6 sm:max-w-[36rem] sm:gap-0 sm:px-10 sm:py-8 lg:max-w-none lg:py-10 [perspective:1200px]"
+      className="relative mx-auto flex w-full max-w-[24rem] flex-col items-center gap-5 overflow-visible px-3 py-6 sm:max-w-[34rem] sm:gap-0 sm:px-8 sm:py-8 lg:max-w-none lg:px-6 lg:py-10 [perspective:1200px]"
     >
+      <div
+        className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+        aria-hidden="true"
+      >
+        {PRELOAD_SRCS.map((src) => (
+          <Image key={src} src={src} alt="" width={840} height={1900} priority />
+        ))}
+      </div>
+
       <motion.div
         className="pointer-events-none absolute top-[8%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.48)_0%,rgb(1_147_251_/_0.16)_42%,transparent_72%)] blur-3xl sm:top-1/2 sm:h-[70%] sm:w-[75%] sm:-translate-y-1/2"
         initial={{ opacity: 0.55, scale: 0.94 }}
@@ -225,7 +327,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
       />
 
       {/* Phone first on mobile — screen fully visible, no cards on top */}
-      <div className="relative z-[5] order-1 w-[min(14.5rem,72vw)] sm:absolute sm:top-1/2 sm:left-1/2 sm:w-[min(16.5rem,46%)] sm:-translate-x-1/2 sm:-translate-y-1/2 lg:w-[17rem]">
+      <div className="relative z-[5] order-1 w-[min(14.5rem,72vw)] sm:absolute sm:top-1/2 sm:left-1/2 sm:w-[min(16.5rem,48%)] sm:-translate-x-1/2 sm:-translate-y-1/2 lg:w-[17rem]">
         <motion.div
           initial={{ opacity: 0, y: 16, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -247,15 +349,60 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
             className={`origin-center drive-phone-bob${isDesktop ? " drive-phone-bob--tilted" : ""}`}
           >
             <div className="relative rounded-[2rem] border border-white/12 bg-gradient-to-b from-[#2c3440]/90 via-[#151d28]/95 to-[#0a1118] p-[0.42rem] shadow-[0_2px_0_rgb(255_255_255_/_0.12)_inset,0_40px_90px_rgb(0_0_0_/_0.55),0_18px_48px_rgb(0_98_250_/_0.28)] backdrop-blur-sm">
-              <div className="relative aspect-[9/19.2] overflow-hidden rounded-[1.55rem] bg-[#f0f4f9]">
+              <div
+                className="relative aspect-[9/19.2] overflow-hidden rounded-[1.55rem]"
+                style={{ backgroundColor: "#061428" }}
+              >
                 <div
                   className="absolute top-2.5 left-1/2 z-10 h-1.5 w-[32%] -translate-x-1/2 rounded-full bg-[#05080d]"
                   aria-hidden="true"
                 />
-                <DriverDashboardScreen
-                  earnings={earnings}
-                  reduceMotion={false}
-                />
+
+                {!preloaded ? (
+                  <ScreenshotFrame
+                    src={DRIVER_SCREENS[0].src}
+                    alt={DRIVER_SCREENS[0].alt}
+                    layout={DRIVER_SCREENS[0].layout!}
+                    priority
+                  />
+                ) : (
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={screen.id}
+                      className="absolute inset-0 overflow-hidden"
+                      initial={
+                        reduceMotion
+                          ? { opacity: 1 }
+                          : { opacity: 0, y: 14, scale: 0.98 }
+                      }
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={
+                        reduceMotion
+                          ? { opacity: 0 }
+                          : { opacity: 0, y: -10, scale: 0.98 }
+                      }
+                      transition={
+                        reduceMotion ? { duration: 0.2 } : SCREEN_SPRING
+                      }
+                    >
+                      {screen.id === "dashboard" ? (
+                        <DriverDashboardScreen
+                          earnings={earnings}
+                          reduceMotion={reduceMotion}
+                        />
+                      ) : screen.id === "profile" ? (
+                        <DriverProfileScreen reduceMotion={reduceMotion} />
+                      ) : (
+                        <ScreenshotFrame
+                          src={screen.src}
+                          alt={screen.alt}
+                          layout={screen.layout!}
+                          priority={screenIndex === 0}
+                        />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                )}
               </div>
             </div>
           </div>
@@ -276,7 +423,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
         ))}
       </div>
 
-      {/* Tablet/desktop: float beside the phone, fully outside the bezel */}
+      {/* Tablet/desktop: float beside the phone, tucked close to the bezel */}
       <div className="pointer-events-none absolute inset-0 hidden sm:block">
         {FLOAT_CARDS.map((card) => (
           <motion.div
@@ -303,6 +450,38 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
 
       {/* Reserve vertical space for absolute floats on sm+ */}
       <div className="hidden min-h-[32rem] w-full sm:block lg:min-h-[36rem]" aria-hidden="true" />
+    </div>
+  );
+}
+
+function ScreenshotFrame({
+  src,
+  alt,
+  layout,
+  priority,
+}: {
+  src: string;
+  alt: string;
+  layout: ScreenLayout;
+  priority?: boolean;
+}) {
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden"
+      style={{ backgroundColor: layout.bg }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 1024px) 78vw, 280px"
+        className={`select-none ${
+          layout.mode === "contain" ? "object-contain" : "object-cover"
+        }`}
+        style={{ objectPosition: layout.objectPosition }}
+        priority={priority}
+        draggable={false}
+      />
     </div>
   );
 }
@@ -630,6 +809,210 @@ function DashboardLiveMap({ reduceMotion }: { reduceMotion: boolean }) {
   );
 }
 
+type ProfileMenuItem = {
+  id: string;
+  label: string;
+  icon: ReactNode;
+  active?: boolean;
+  badge?: string;
+};
+
+/** Native profile — Dilan Perera + verified badge. */
+function DriverProfileScreen({ reduceMotion }: { reduceMotion: boolean }) {
+  const menuItems: ProfileMenuItem[] = [
+    {
+      id: "dashboard",
+      label: "Dashboard",
+      active: true,
+      icon: (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z" />
+        </svg>
+      ),
+    },
+    {
+      id: "history",
+      label: "Trip History",
+      icon: (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" strokeLinecap="round" />
+        </svg>
+      ),
+    },
+    {
+      id: "payments",
+      label: "Payments",
+      badge: "New",
+      icon: (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <rect x="2" y="5" width="20" height="14" rx="2" />
+          <path d="M2 10h20" />
+        </svg>
+      ),
+    },
+    {
+      id: "reviews",
+      label: "Reviews",
+      icon: (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      ),
+    },
+  ];
+
+  const motionProps = (delay: number) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 8 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.45, delay, ease: EASE },
+        };
+
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-[#eef1f4] font-sans text-[#0a1620]">
+      <div className="absolute inset-0 overflow-hidden bg-[#eef2f6]">
+        <Image
+          src="/images/app/driver-app/dashboard-clean.webp"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 78vw, 280px"
+          className="select-none object-cover"
+          style={{ objectPosition: "78% 50%" }}
+          aria-hidden
+        />
+        <div className="absolute top-[3.5%] right-[3%] flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0062fa" strokeWidth="2" aria-hidden>
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="absolute inset-y-0 left-0 flex w-[86%] flex-col rounded-r-[1.1rem] bg-white shadow-[4px_0_28px_rgb(10_22_32_/_0.1)]">
+        <div className="px-4 pt-4 pb-2">
+          <motion.div className="relative h-[3.7rem] w-[3.7rem] shrink-0" {...motionProps(0)}>
+            <div className="absolute inset-0 overflow-hidden rounded-full">
+              <Image
+                src="/images/app/driver-app/profile-avatar.webp"
+                alt={PROFILE_NAME}
+                fill
+                sizes="64px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <motion.span
+              className="absolute right-[6px] bottom-[6px] z-[1] grid h-5 w-5 place-items-center rounded-full border-2 border-white bg-white shadow-[0_1px_5px_rgb(10_22_32_/_0.2)]"
+              aria-hidden
+              animate={reduceMotion ? undefined : { scale: [1, 1.08, 1] }}
+              transition={{
+                duration: 0.85,
+                repeat: Infinity,
+                repeatDelay: 2.15,
+                ease: "easeInOut",
+              }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path
+                  d="M12 2 4.5 5.2v5.4c0 5 3.4 9.6 7.5 11.4 4.1-1.8 7.5-6.4 7.5-11.4V5.2L12 2z"
+                  fill="#1f7a4c"
+                />
+                <path
+                  d="m9.2 11.6 2 2 3.8-3.9"
+                  stroke="white"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.span>
+          </motion.div>
+
+          <motion.div className="mt-3" {...motionProps(0.06)}>
+            <p className="text-[0.98rem] leading-tight font-bold tracking-[-0.01em] text-[#1a2832]">
+              {PROFILE_NAME}
+            </p>
+            <p className="mt-1 text-[0.7rem] leading-snug text-[#7a8a96]">
+              {PROFILE_EMAIL}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="mt-3.5 flex overflow-hidden rounded-xl bg-[#f1f4f8]"
+            {...motionProps(0.12)}
+          >
+            <div className="flex flex-1 flex-col items-center px-2 py-2.5">
+              <span className="text-[0.95rem] leading-none font-bold">4.9</span>
+              <span className="mt-1 text-[0.58rem] text-[#6b7c88]">Rating</span>
+            </div>
+            <div className="w-px bg-[#dce3ea]" />
+            <div className="flex flex-1 flex-col items-center px-2 py-2.5">
+              <span className="text-[0.95rem] leading-none font-bold">304</span>
+              <span className="mt-1 text-[0.58rem] text-[#6b7c88]">Trips</span>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="flex-1 overflow-hidden px-3 pt-3 pb-4">
+          <p className="px-1 text-[0.58rem] font-semibold tracking-[0.12em] text-[#9aa8b3] uppercase">
+            Main Menu
+          </p>
+          <ul className="mt-2 space-y-1">
+            {menuItems.map((item, i) => (
+              <motion.li key={item.id} {...motionProps(0.18 + i * 0.06)}>
+                <div
+                  className={`flex items-center gap-2.5 rounded-xl px-2.5 py-2.5 ${
+                    item.active ? "bg-[#e8f1ff] text-[#0062fa]" : "text-[#3a4a56]"
+                  }`}
+                >
+                  <span
+                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg ${
+                      item.active ? "bg-[#0062fa] text-white" : "bg-[#f1f4f8]"
+                    }`}
+                  >
+                    {item.icon}
+                  </span>
+                  <span className="min-w-0 flex-1 text-[0.8rem] font-semibold">
+                    {item.label}
+                  </span>
+                  {item.badge ? (
+                    <span className="rounded-full bg-[#e11d48] px-1.5 py-0.5 text-[0.52rem] font-semibold text-white">
+                      {item.badge}
+                    </span>
+                  ) : null}
+                  <ChevronRightIcon
+                    className={item.active ? "text-[#0062fa]" : "text-[#b0bcc6]"}
+                  />
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+
+          <p className="mt-4 px-1 text-[0.58rem] font-semibold tracking-[0.12em] text-[#9aa8b3] uppercase">
+            Account
+          </p>
+          <motion.div
+            className="mt-2 flex items-center gap-2.5 rounded-xl px-2.5 py-2.5"
+            {...motionProps(0.55)}
+          >
+            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#fde8ea] text-[#e11d48]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+            </span>
+            <span className="text-[0.8rem] font-semibold text-[#e11d48]">Sign Out</span>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function DriveWithQPick() {
   const t = useTranslations();
   const { driveWithQPick } = useMessages();
@@ -646,9 +1029,9 @@ export function DriveWithQPick() {
       />
 
       <Container className="relative z-[1]">
-        <div className="grid min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 xl:gap-20">
+        <div className="grid min-w-0 items-center gap-8 overflow-visible sm:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 xl:gap-20">
           {/* Phone first on mobile */}
-          <div className="order-1 min-w-0 lg:order-2">
+          <div className="order-1 min-w-0 overflow-visible lg:order-2">
             <DriverShowcasePhone reduceMotion={reduceMotion} />
           </div>
 

@@ -34,9 +34,9 @@ const HERO_SLIDE_FALLBACK_MS = 8000;
 const HERO_SLIDE_COUNT = 3;
 
 const HERO_SLIDE_HREFS = [
+  { primary: "/ride", secondary: "/airport" },
+  { primary: "/airport", secondary: "/ride" },
   { primary: "/ride", secondary: "/tours" },
-  { primary: "/ride", secondary: "/tours" },
-  { primary: "/tours", secondary: "/ride" },
 ] as const;
 
 function slideIndexFromVideo(video: HTMLVideoElement): number {

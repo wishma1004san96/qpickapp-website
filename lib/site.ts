@@ -7,16 +7,23 @@ export const siteConfig = {
   description:
     "Premium ride-hailing and tourism across Sri Lanka — airport transfers, city rides, and island journeys under one trusted standard.",
   url: "https://qpick.lk",
-  supportEmail: "support@qpick.lk",
-  /** Official line from qpickapp.com contact */
+  supportEmail: "contact@quickpickapp.com",
+  /** Primary / general line */
   emergencyLine: "+94 11 433 4334",
+  phones: {
+    general: "+94 11 433 4334",
+    office: "+94 11 473 4334",
+    mobile: "+94 77 361 9000",
+    whatsapp: "+94 78 361 9000",
+  },
   phoneLines: [
     "+94 11 433 4334",
     "+94 11 473 4334",
     "+94 77 361 9000",
     "+94 78 361 9000",
   ] as const,
-  address: "No. 230A, Palagathura, Negombo.",
+  address: "No. 230A, Palagathura, Negombo, Sri Lanka",
+  addressLines: ["No. 230A, Palagathura,", "Negombo, Sri Lanka"] as const,
   locale: "en",
   store: {
     driverGooglePlay:
@@ -38,22 +45,57 @@ export const utilityNav = [
   { href: "/support", label: "Support" },
 ] as const;
 
+export const footerServices = [
+  { href: "/airport", key: "airport" },
+  { href: "/tours", key: "tours" },
+  { href: "/ride", key: "chauffeur" },
+  { href: "/ride", key: "cityRides" },
+  { href: "/partners", key: "corporate" },
+] as const;
+
 export const footerCompany = [
-  { href: "/about", label: "About" },
-  { href: "/partners", label: "Partners" },
-  { href: "/drive", label: "Drive with Q Pick" },
-  { href: "/support", label: "Support" },
+  { href: "/about", key: "about" },
+  { href: "/drive", key: "drive" },
+  { href: "/partners", key: "partners" },
+  { href: "/support", key: "support" },
+  { href: "mailto:contact@quickpickapp.com", key: "contact" },
 ] as const;
 
 export const footerLegal = [
-  { href: "/legal/privacy", label: "Privacy" },
-  { href: "/legal/terms", label: "Terms" },
+  { href: "/legal/privacy", key: "privacy" },
+  { href: "/legal/terms", key: "terms" },
+  { href: "/legal/privacy", key: "cookies" },
 ] as const;
 
-export const footerProducts = [
-  { href: "/ride", label: "City & intercity rides" },
-  { href: "/airport", label: "Airport transfers" },
-  { href: "/tours", label: "Tours & day trips" },
-  { href: "/destinations", label: "Destinations" },
-  { href: "/safety", label: "Safety standard" },
+export const socialLinks = [
+  {
+    key: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/qpick",
+  },
+  {
+    key: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/qpick",
+  },
+  {
+    key: "tiktok",
+    label: "TikTok",
+    href: "https://www.tiktok.com/@qpick",
+  },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/qpick",
+  },
+  {
+    key: "youtube",
+    label: "YouTube",
+    href: "https://www.youtube.com/@qpick",
+  },
 ] as const;
+
+export const whatsappLink = {
+  href: "https://wa.me/94783619000",
+  label: "WhatsApp",
+} as const;

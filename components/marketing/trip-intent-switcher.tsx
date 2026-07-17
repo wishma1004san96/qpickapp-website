@@ -27,7 +27,7 @@ import { Reveal } from "@/components/motion/reveal";
 
 type IntentId = "ride" | "airport" | "tour";
 
-const INTENT_IDS = ["ride", "airport", "tour"] as const;
+const INTENT_IDS = ["airport", "ride", "tour"] as const;
 const EASE = [0.22, 1, 0.36, 1] as const;
 const TRANSITION_MS = 0.35;
 
@@ -37,47 +37,28 @@ const SPRING = {
   mass: 0.45,
 } as const;
 
-const INTENT_CONTENT: Record<
+const INTENT_META: Record<
   IntentId,
   {
     href: string;
     image: string;
     objectPosition: string;
-    title: string;
-    body: string;
-    cta: string;
-    imageAlt: string;
   }
 > = {
   ride: {
     href: "/ride",
     image: "/images/story/chauffeur.webp",
     objectPosition: "center 40%",
-    title: "Luxury rides across Sri Lanka",
-    body: "From city transfers to long-distance travel, enjoy professionally verified chauffeurs, transparent pricing, and a seamless booking experience.",
-    cta: "Book a Ride →",
-    imageAlt:
-      "Luxury chauffeur vehicle ready for premium rides across Colombo and Sri Lanka",
   },
   airport: {
     href: "/airport",
     image: "/images/story/arrival.webp",
     objectPosition: "center 45%",
-    title: "Airport transfers without the uncertainty",
-    body: "Flight tracking, professional meet-and-greet service, premium vehicles, and reliable pickups any time of day.",
-    cta: "Reserve Airport Transfer →",
-    imageAlt:
-      "Professional chauffeur with a welcome sign for a premium airport pickup",
   },
   tour: {
     href: "/tours",
     image: "/images/story/discovery.webp",
     objectPosition: "center 35%",
-    title: "Private journeys crafted around you",
-    body: "Create personalised multi-day tours across Sri Lanka with trusted local chauffeurs and flexible itineraries.",
-    cta: "Plan Your Journey →",
-    imageAlt:
-      "Cinematic Sri Lanka travel scene — Sigiriya, Ella, or Galle journey atmosphere",
   },
 };
 
@@ -102,13 +83,14 @@ function useFinePointer() {
 export function TripIntentSwitcher() {
   const t = useTranslations();
   const { tripIntent } = useMessages();
-  const [active, setActive] = useState<IntentId>("ride");
+  const [active, setActive] = useState<IntentId>("airport");
   const [hovered, setHovered] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
   const finePointer = useFinePointer();
   const tiltEnabled = finePointer && !reduceMotion;
   const cardRef = useRef<HTMLDivElement>(null);
-  const current = INTENT_CONTENT[active];
+  const currentMeta = INTENT_META[active];
+  const currentCopy = tripIntent[active];
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -333,10 +315,10 @@ export function TripIntentSwitcher() {
                     }
                   >
                     <h3 className="font-display text-[clamp(1.45rem,2.4vw,1.95rem)] font-semibold tracking-[-0.028em] text-balance text-[#f3f6f7]">
-                      {current.title}
+                      {currentCopy.title}
                     </h3>
                     <p className="mt-4 max-w-md text-[clamp(0.98rem,1.1vw,1.08rem)] leading-relaxed text-pretty text-[#f3f6f7]/68">
-                      {current.body}
+                      {currentCopy.body}
                     </p>
                     <motion.div
                       className="mt-7 inline-flex"
@@ -347,11 +329,11 @@ export function TripIntentSwitcher() {
                       }
                     >
                       <ButtonLink
-                        href={current.href}
+                        href={currentMeta.href}
                         size="md"
                         className="rounded-full px-6 shadow-[0_12px_32px_rgb(0_98_250_/_0.28)]"
                       >
-                        {current.cta}
+                        {currentCopy.cta} →
                       </ButtonLink>
                     </motion.div>
                   </motion.div>
@@ -368,7 +350,7 @@ export function TripIntentSwitcher() {
                   <div className="relative aspect-[4/3] sm:aspect-[16/11]">
                     <AnimatePresence mode="wait">
                       <motion.div
-                        key={current.image}
+                        key={currentMeta.image}
                         className="absolute inset-0"
                         initial={
                           reduceMotion
@@ -388,12 +370,12 @@ export function TripIntentSwitcher() {
                         transition={{ duration: TRANSITION_MS, ease: EASE }}
                       >
                         <Image
-                          src={current.image}
-                          alt={current.imageAlt}
+                          src={currentMeta.image}
+                          alt={currentCopy.imageAlt}
                           fill
                           sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
-                          style={{ objectPosition: current.objectPosition }}
+                          style={{ objectPosition: currentMeta.objectPosition }}
                           priority={false}
                         />
                         <div

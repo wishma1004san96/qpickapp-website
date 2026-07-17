@@ -1586,16 +1586,16 @@
 }
 
 .drive-phone-bob--tilted {
-  transform: rotate(14deg);
+  transform: rotate(10deg);
   animation-name: drive-phone-bob-tilted;
 }
 
 @keyframes drive-phone-bob-tilted {
   0%,
   100% {
-    transform: rotate(14deg) translateY(0);
+    transform: rotate(10deg) translateY(0);
   }
   50% {
-    transform: rotate(14deg) translateY(-8px);
+    transform: rotate(10deg) translateY(-8px);
   }
 }
