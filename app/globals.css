@@ -1520,3 +1520,70 @@
     transform: translate3d(0, -2px, 0);
   }
 }
+
+/* Drive With Q Pick — continuous float (CSS so iOS Reduce Motion / Framer cannot freeze it) */
+@keyframes drive-float-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes drive-phone-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.drive-float-bob {
+  animation: drive-float-bob 4.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.drive-float-bob--a {
+  animation-duration: 4.4s;
+  animation-delay: 0s;
+}
+
+.drive-float-bob--b {
+  animation-duration: 5s;
+  animation-delay: 0.35s;
+}
+
+.drive-float-bob--c {
+  animation-duration: 4.8s;
+  animation-delay: 0.7s;
+}
+
+.drive-float-bob--d {
+  animation-duration: 5.2s;
+  animation-delay: 1s;
+}
+
+.drive-phone-bob {
+  animation: drive-phone-bob 6.5s ease-in-out infinite;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.drive-phone-bob--tilted {
+  transform: rotate(14deg);
+  animation-name: drive-phone-bob-tilted;
+}
+
+@keyframes drive-phone-bob-tilted {
+  0%,
+  100% {
+    transform: rotate(14deg) translateY(0);
+  }
+  50% {
+    transform: rotate(14deg) translateY(-8px);
+  }
+}

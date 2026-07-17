@@ -46,10 +46,11 @@ const FLOAT_CARDS = [
     icon: Navigation,
     titleKey: "rideTitle" as const,
     bodyKey: "rideBody" as const,
+    // Peek from outside the phone — never cover the screen centre.
     className:
-      "left-0 top-[4%] z-[3] w-[min(10.25rem,44%)] sm:left-0 sm:top-[8%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-6 lg:-translate-x-10",
+      "left-0 top-[8%] z-[3] w-[min(8.5rem,36%)] -translate-x-[55%] sm:left-0 sm:top-[8%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-8 lg:-translate-x-12",
+    bobClass: "drive-float-bob drive-float-bob--a",
     delay: 0,
-    y: [0, -8, 0] as number[],
     hideOnMobile: false,
   },
   {
@@ -58,9 +59,9 @@ const FLOAT_CARDS = [
     titleKey: "airportTitle" as const,
     bodyKey: "airportBody" as const,
     className:
-      "right-0 top-[14%] z-[3] w-[min(10.25rem,44%)] sm:right-0 sm:top-[18%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-4 lg:translate-x-8",
+      "right-0 top-[16%] z-[3] w-[min(8.5rem,36%)] translate-x-[55%] sm:right-0 sm:top-[18%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-6 lg:translate-x-10",
+    bobClass: "drive-float-bob drive-float-bob--b",
     delay: 0.4,
-    y: [0, 10, 0] as number[],
     hideOnMobile: false,
   },
   {
@@ -69,9 +70,9 @@ const FLOAT_CARDS = [
     titleKey: "earningsTitle" as const,
     bodyKey: "earningsBody" as const,
     className:
-      "bottom-[18%] left-0 z-[3] w-[min(10.25rem,44%)] sm:left-0 sm:bottom-[22%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-8 lg:-translate-x-12",
+      "bottom-[20%] left-0 z-[3] w-[min(8.5rem,36%)] -translate-x-[55%] sm:left-0 sm:bottom-[22%] sm:w-auto sm:max-w-[11.5rem] sm:-translate-x-10 lg:-translate-x-14",
+    bobClass: "drive-float-bob drive-float-bob--c",
     delay: 0.8,
-    y: [0, -7, 0] as number[],
     hideOnMobile: false,
   },
   {
@@ -80,9 +81,9 @@ const FLOAT_CARDS = [
     titleKey: "onlineTitle" as const,
     bodyKey: "onlineBody" as const,
     className:
-      "right-0 bottom-[6%] z-[3] w-[min(10.25rem,44%)] sm:right-0 sm:bottom-[10%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-6 lg:translate-x-10",
+      "right-0 bottom-[8%] z-[3] w-[min(8.5rem,36%)] translate-x-[55%] sm:right-0 sm:bottom-[10%] sm:w-auto sm:max-w-[11.5rem] sm:translate-x-8 lg:translate-x-12",
+    bobClass: "drive-float-bob drive-float-bob--d",
     delay: 1.2,
-    y: [0, 9, 0] as number[],
     hideOnMobile: false,
   },
 ];
@@ -172,7 +173,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
       ref={stageRef}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
-      className="relative mx-auto flex min-h-[28rem] w-full max-w-[22rem] items-center justify-center overflow-visible px-3 py-6 [perspective:1200px] sm:min-h-[32rem] sm:max-w-[28rem] sm:px-4 sm:py-8 lg:max-w-none lg:py-10"
+      className="relative mx-auto flex min-h-[30rem] w-full max-w-[24rem] items-center justify-center overflow-visible px-6 py-8 [perspective:1200px] sm:min-h-[32rem] sm:max-w-[30rem] sm:px-8 sm:py-8 lg:max-w-none lg:py-10"
     >
       <motion.div
         className="pointer-events-none absolute h-[70%] w-[75%] rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.48)_0%,rgb(1_147_251_/_0.16)_42%,transparent_72%)] blur-3xl"
@@ -195,55 +196,43 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
         return (
           <motion.div
             key={card.id}
-            className={`absolute ${card.className}${
+            className={`pointer-events-none absolute ${card.className}${
               card.hideOnMobile ? " hidden sm:block" : ""
             }`}
-            initial={{ opacity: reduceMotion ? 1 : 0, scale: reduceMotion ? 1 : 0.96 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.55,
-              delay: reduceMotion ? 0 : 0.25 + card.delay * 0.15,
+              delay: 0.2 + card.delay * 0.12,
               ease: EASE,
             }}
           >
-            <motion.div
-              animate={reduceMotion ? { y: 0 } : { y: card.y }}
-              transition={
-                reduceMotion
-                  ? { duration: 0 }
-                  : {
-                      duration: 4.2 + card.delay,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: card.delay,
-                    }
-              }
-            >
-              <div className="rounded-[20px] border border-white/15 bg-white/[0.08] px-3.5 py-3 shadow-[0_16px_40px_rgb(0_0_0_/_0.35)] backdrop-blur-xl">
-                <div className="flex items-start gap-2.5">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[12px] bg-brand/20 text-brand-bright">
+            <div className={card.bobClass}>
+              <div className="rounded-[18px] border border-white/15 bg-white/[0.1] px-2.5 py-2.5 shadow-[0_16px_40px_rgb(0_0_0_/_0.35)] backdrop-blur-xl sm:rounded-[20px] sm:px-3.5 sm:py-3">
+                <div className="flex items-start gap-2 sm:gap-2.5">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[10px] bg-brand/20 text-brand-bright sm:h-8 sm:w-8 sm:rounded-[12px]">
                     <Icon className="h-3.5 w-3.5" strokeWidth={2.2} aria-hidden />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[0.72rem] leading-tight font-semibold text-foam">
+                    <p className="text-[0.68rem] leading-tight font-semibold text-foam sm:text-[0.72rem]">
                       {floats[card.titleKey]}
                     </p>
-                    <p className="mt-0.5 text-[0.65rem] leading-snug text-foam/55">
+                    <p className="mt-0.5 text-[0.6rem] leading-snug text-foam/55 sm:text-[0.65rem]">
                       {floats[card.bodyKey]}
                     </p>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         );
       })}
 
       <motion.div
-        initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 28, scale: reduceMotion ? 1 : 0.94 }}
+        initial={{ opacity: 0, y: 20, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: EASE }}
-        className="relative z-[2] mx-auto w-[min(13.75rem,70vw)] sm:w-[min(16.5rem,58vw)] lg:w-[17rem]"
+        className="relative z-[5] mx-auto w-[min(13.75rem,62vw)] sm:w-[min(16.5rem,58vw)] lg:w-[17rem]"
         style={
           parallaxOn
             ? {
@@ -257,15 +246,8 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
             : undefined
         }
       >
-        <motion.div
-          className="origin-center"
-          style={{ rotate: isDesktop ? 14 : 0 }}
-          animate={reduceMotion ? { y: 0 } : { y: [0, -10, 0] }}
-          transition={
-            reduceMotion
-              ? { duration: 0 }
-              : { duration: 6.5, repeat: Infinity, ease: "easeInOut" }
-          }
+        <div
+          className={`origin-center drive-phone-bob${isDesktop ? " drive-phone-bob--tilted" : ""}`}
         >
           <div className="relative rounded-[2rem] border border-white/12 bg-gradient-to-b from-[#2c3440]/90 via-[#151d28]/95 to-[#0a1118] p-[0.42rem] shadow-[0_2px_0_rgb(255_255_255_/_0.12)_inset,0_40px_90px_rgb(0_0_0_/_0.55),0_18px_48px_rgb(0_98_250_/_0.28)] backdrop-blur-sm">
             <div className="relative aspect-[9/19.2] overflow-hidden rounded-[1.55rem] bg-[#f0f4f9]">
@@ -279,7 +261,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   );
