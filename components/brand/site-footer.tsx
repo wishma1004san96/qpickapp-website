@@ -116,7 +116,8 @@ export function SiteFooter() {
 
         <div className="mt-5 flex flex-col gap-2 border-t border-mist pt-4 md:mt-12 md:flex-row md:items-center md:justify-between md:gap-4 md:pt-9 lg:mt-20">
           <p className="text-xs tracking-wide text-ink-soft">
-            © {new Date().getFullYear()} {siteConfig.name}. {t("footer.rights")}
+            © {new Date().getFullYear()} {siteConfig.legalName}.{" "}
+            {t("footer.rights")}
           </p>
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5 md:gap-x-6 md:gap-y-3">
             {footerLegal.map((item) => (

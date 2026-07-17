@@ -1,5 +1,7 @@
 export const siteConfig = {
   name: "Q Pick",
+  /** Legal entity for copyright, schema, and company branding */
+  legalName: "Quick Pick App (Pvt) Ltd",
   shortName: "Q",
   tagline: "Sri Lanka, moved with certainty.",
   description:

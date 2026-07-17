@@ -101,7 +101,9 @@ export default async function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        name: siteConfig.name,
+        name: siteConfig.legalName,
+        alternateName: siteConfig.name,
+        legalName: siteConfig.legalName,
         url: siteConfig.url,
         description,
         email: siteConfig.supportEmail,
@@ -116,11 +118,19 @@ export default async function RootLayout({
         url: siteConfig.url,
         description,
         inLanguage: localeLabels[locale].htmlLang,
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.legalName,
+        },
       },
       {
         "@type": "TaxiService",
         name: `${siteConfig.name} Rides`,
-        provider: { "@type": "Organization", name: siteConfig.name },
+        provider: {
+          "@type": "Organization",
+          name: siteConfig.legalName,
+          alternateName: siteConfig.name,
+        },
         areaServed: "Sri Lanka",
         url: `${siteConfig.url}/ride`,
         description: t("pages.ride.meta.description"),
@@ -131,6 +141,10 @@ export default async function RootLayout({
         touristType: "Leisure travellers",
         url: `${siteConfig.url}/tours`,
         description: t("pages.tours.meta.description"),
+        provider: {
+          "@type": "Organization",
+          name: siteConfig.legalName,
+        },
       },
     ],
   };
