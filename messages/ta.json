@@ -91,29 +91,32 @@
       "subtitle": "நீங்கள் எவ்வாறு நகர விரும்புகிறீர்கள் எனச் சொல்லுங்கள். மீதியை நாங்கள் ஏற்பாடு செய்வோம்.",
       "journeyTypeAria": "பயண வகை",
       "continue": "தொடரவும்",
+      "scheduleTitle": "பயண அட்டவணை",
+      "travelDate": "பயண தேதி",
+      "pickupTime": "பிக்கப் நேரம்",
       "intents": {
         "arrive": "வருகை",
         "stay": "நகரம்",
         "explore": "ஆய்வு"
       },
       "arrive": {
-        "fromLabel": "வரும் இடம்",
+        "fromLabel": "விமான நிலையம்",
         "fromDefault": "Colombo Airport (CMB)",
-        "toLabel": "தங்கும் இடம்",
+        "toLabel": "இலக்கு",
         "toDefault": "Galle Face Hotel",
         "recommendation": "வருகையில் சந்திப்பு · ஹோட்டலுக்கு அறிவிப்பு · கட்டணம் தெளிவு"
       },
       "stay": {
-        "fromLabel": "இருந்து",
+        "fromLabel": "பிக்கப்",
         "fromDefault": "உங்கள் ஹோட்டல்",
-        "toLabel": "வரை",
+        "toLabel": "இலக்கு",
         "toDefault": "Galle Fort",
         "recommendation": "சரிபார்க்கப்பட்ட ஓட்டுநர் · பகிரக்கூடிய நேரடி நிலை · வெளிப்படையான விலை"
       },
       "explore": {
-        "fromLabel": "தொடக்கம்",
+        "fromLabel": "பிக்கப்",
         "fromDefault": "Colombo",
-        "toLabel": "நோக்கி",
+        "toLabel": "இலக்கு",
         "toDefault": "Ella & மலைநாடு",
         "recommendation": "நாள் தயார் வாகனம் · சாலைகளை அறிந்த ஓட்டுநர் · ஒரு அமைதியான திட்டம்"
       }
@@ -801,7 +804,12 @@
     "destinationPlaceholder": "இலக்கைத் தேடுங்கள் — எ.கா. Galle Face",
     "distance": "தூரம் (தானியங்கி)",
     "waiting": "காத்திருப்பு நேரம் (நிமிடங்கள்)",
-    "waitingHint": "முதல் {free} நிமிடங்கள் இலவசம் · பிறகு LKR {rate}/நிமி",
+    "waitingHint": "First {free} min free · LKR {rate}/min after",
+    "rideType": {
+      "title": "Ride type",
+      "now": "Ride now",
+      "schedule": "Schedule pickup"
+    },
     "vehicleType": "வாகன வகை",
     "vehicleSelection": {
       "eyebrow": "வாகனங்கள்",
@@ -825,27 +833,93 @@
       "selectRide": "பயணத்தைத் தேர்வு செய்",
       "selected": "தேர்ந்தெடுக்கப்பட்டது",
       "prev": "முந்தைய வாகனங்கள்",
-      "next": "அடுத்த வாகனங்கள்"
+      "next": "அடுத்த வாகனங்கள்",
+      "day": "Day rate",
+      "night": "Night rate",
+      "eta": "Pickup in ~{minutes} min",
+      "base": "Base",
+      "perKm": "Per km"
+    },
+    "mobileFareBar": {
+      "continue": "Continue"
     },
     "steps": {
       "locations": "இடங்கள்",
       "vehicle": "வாகனம்",
+      "details": "விவரங்கள்",
       "summary": "சுருக்கம்",
       "locationsTitle": "பிக்கப் & இலக்கைத் தேர்வு செய்யுங்கள்",
       "vehicleTitle": "வாகனத்தைத் தேர்வு செய்யுங்கள்",
+      "detailsTitle": "முன்பதிவு விவரங்கள்",
       "summaryTitle": "கட்டணச் சுருக்கம்",
-      "continueVehicle": "வாகனத்திற்கு தொடரவும்"
+      "continueVehicle": "வாகனத்திற்கு தொடரவும்",
+      "continueDetails": "முன்பதிவு விவரங்களுக்கு",
+      "continueSummary": "கட்டணச் சுருக்கத்திற்கு"
+    },
+    "bookingDetails": {
+      "title": "முன்பதிவு விவரங்கள்",
+      "pickupDate": "பிக்கப் தேதி",
+      "pickupTime": "பிக்கப் நேரம்",
+      "flightNumber": "விமான எண்",
+      "flightNumberOptional": "விருப்பத்தேர்வு",
+      "flightPlaceholder": "எ.கா. UL 226",
+      "passengerCount": "பயணிகள் எண்ணிக்கை",
+      "luggageCount": "சாமான்கள் எண்ணிக்கை",
+      "specialNotes": "சிறப்பு குறிப்புகள்",
+      "notesPlaceholder": "குழந்தை இருக்கை, சந்திப்பு, கேட் விருப்பம்…",
+      "passengerName": "Passenger name",
+      "phone": "Phone number",
+      "driverNotes": "Notes for driver",
+      "paymentMethod": "Payment method",
+      "cash": "Cash",
+      "card": "Card",
+      "wallet": "Wallet",
+      "promoCode": "Promo code",
+      "promoPlaceholder": "Enter promo code",
+      "airportPickup": "Airport pickup",
+      "yes": "Yes",
+      "no": "No",
+      "requiredHint": "Select a valid pickup date and time to continue.",
+      "requiredDetailsHint": "Enter passenger name, phone, and payment method to continue.",
+      "scheduleHint": "Choose a future pickup date and time."
     },
     "summaryLabel": "கட்டணச் சுருக்கம்",
     "summary": {
+      "bookingSummary": "Booking Summary",
       "pickup": "பிக்கப்",
       "destination": "இலக்கு",
       "distance": "தூரம்",
       "duration": "நேரம்",
       "vehicle": "வாகனம்",
+      "baseFare": "அடிப்படை கட்டணம்",
+      "distanceCharge": "தூரக் கட்டணம்",
       "waitingCharge": "காத்திருப்பு கட்டணம்",
+      "bookingFee": "முன்பதிவு கட்டணம்",
+      "airportFee": "விமான நிலையக் கட்டணம்",
+      "toll": "டோல்",
+      "parking": "பார்க்கிங்",
+      "surge": "சர்ஜ்",
+      "discount": "தள்ளுபடி",
       "total": "மதிப்பிடப்பட்ட மொத்தம்",
-      "estimatedFare": "மதிப்பிடப்பட்ட கட்டணம்"
+      "estimatedFare": "மதிப்பிடப்பட்ட கட்டணம்",
+      "finalFare": "இறுதிக் கட்டணம்",
+      "grandTotal": "Grand total",
+      "viewFareBreakdown": "View Fare Breakdown",
+      "payment": "Payment",
+      "promo": "Promo code",
+      "eta": "ETA",
+      "passengers": "Passengers",
+      "luggage": "Luggage"
+    },
+    "confirmErrors": {
+      "pickup": "Please set a pickup location.",
+      "destination": "Please set a destination.",
+      "vehicle": "Please choose a vehicle.",
+      "schedule": "Please select a valid pickup date and time.",
+      "payment": "Please select a payment method.",
+      "passengerName": "Please enter the passenger name.",
+      "phone": "Please enter a phone number.",
+      "fare": "Fare is still calculating — please wait a moment."
     },
     "estimateNote": "மதிப்பீடு மட்டும் · இறுதி கட்டணத்தை Q Pick செயலியில் உறுதிப்படுத்தவும். டாக்ஸி பயணங்கள் மட்டும் — விமான நிலையம் அல்லது சுற்றுலாவுக்கு அல்ல.",
     "cta": "இந்த பயணத்தை முன்பதிவு செய்யுங்கள்",
@@ -1096,32 +1170,171 @@
         "title": "பயணம்",
         "description": "சரிபார்க்கப்பட்ட ஓட்டுநர்களும் வெளிப்படையான கட்டணங்களுடன் இலங்கை முழுவதும் சிறந்த நகர மற்றும் மாநகரப் பயணங்கள்."
       },
-      "title": "நகர மற்றும் மாநகரப் பயணங்கள்",
-      "description": "Colombo தெருக்களுக்கு அல்லது நீண்ட கடற்கரை ஓட்டத்திற்கு சரிபார்க்கப்பட்ட Q Pick ஓட்டுநரைக் கோருங்கள். உறுதிப்படுத்தும் முன் கட்டணத்தைக் காண்க — பின்னர் கதவு வரை ஒவ்வொரு நிமிடத்தையும் தொடரவும்.",
-      "primaryCta": "கட்டணத்தை மதிப்பிடுங்கள்",
-      "secondaryCta": "பாதுகாப்புத் தரம்",
-      "features": {
-        "onDemand": {
-          "title": "தேவைக்கேற்ப",
-          "body": "உங்களுக்குத் தேவையானபோது பிக்அப் — விமான நிலையங்கள், ஹோட்டல்கள், அலுவலகங்கள் மற்றும் வீடு."
-        },
-        "scheduled": {
-          "title": "திட்டமிடப்பட்ட",
-          "body": "காலை விமானங்கள், சந்திப்புகள் மற்றும் குடும்ப விமான நிலைய ஓட்டங்களுக்கு முன்பதிவு செய்யுங்கள்."
-        },
-        "intercity": {
-          "title": "மாநகர",
-          "body": "Colombo முதல் Galle, Kandy மற்றும் அதற்கு அப்பால் — சாலைகளை அறிந்த ஓட்டுநர்களுடன்."
+      "title": "Book a Ride",
+      "description": "Book a ride anywhere in Sri Lanka with transparent pricing and verified drivers.",
+      "primaryCta": "Estimate Fare",
+      "secondaryCta": "Safety Standards",
+      "intro": {
+        "badge": "Ride",
+        "title": "Book a Ride",
+        "subtitle": "Book a ride anywhere in Sri Lanka with transparent pricing and verified drivers.",
+        "nav": {
+          "live": "Live",
+          "tracking": "Smart navigation",
+          "route": "Active route",
+          "corridor": "Colombo → Galle Face",
+          "eta": "ETA",
+          "etaValue": "12 min",
+          "distance": "Dist",
+          "distanceValue": "4.8 km",
+          "driverNearby": "Driver nearby · approaching pickup"
         }
       },
-      "farePreview": {
-        "fromLabel": "இருந்து",
-        "toLabel": "வரை",
-        "from": "Colombo Fort",
-        "to": "Galle Face",
-        "currency": "LKR",
-        "amount": "1,450",
-        "note": "மதிப்பீடு · செயலியில் உறுதிப்படுத்துங்கள்"
+      "booking": {
+        "title": "Book Your Ride",
+        "trust": {
+          "pricing": "Transparent pricing.",
+          "drivers": "Verified drivers.",
+          "tracking": "Live tracking."
+        }
+      },
+      "why": {
+        "eyebrow": "Why Q Pick",
+        "heading": "Why ride with Q Pick",
+        "items": {
+          "pricing": {
+            "title": "Transparent Pricing",
+            "body": "See the full estimate before you confirm — no surprise markups."
+          },
+          "drivers": {
+            "title": "Verified Drivers",
+            "body": "Background-checked chauffeurs. Rated, insured, trip-ready."
+          },
+          "tracking": {
+            "title": "Live Tracking",
+            "body": "Follow every minute from pickup to door with shareable ETAs."
+          },
+          "support": {
+            "title": "24/7 Support",
+            "body": "Reachable help whenever you need it — day or night."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Fleet",
+        "heading": "Choose your ride",
+        "sub": "From bike to bus — pick what fits your journey.",
+        "mini": "Mini",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Bike",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Fast city rides"
+          },
+          "tuk": {
+            "name": "Tuk",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Affordable short trips"
+          },
+          "mini": {
+            "name": "Mini",
+            "passengers": "3 Passengers",
+            "luggage": "2 Luggage",
+            "blurb": "Perfect for city travel"
+          },
+          "flex": {
+            "name": "Flex",
+            "passengers": "4 Passengers",
+            "luggage": "3 Luggage",
+            "blurb": "Compact crossover comfort"
+          },
+          "sedan": {
+            "name": "Sedan",
+            "passengers": "4 Passengers",
+            "luggage": "2 Luggage",
+            "blurb": "Comfort for business travel"
+          },
+          "minivan": {
+            "name": "Minivan",
+            "passengers": "6 Passengers",
+            "luggage": "4 Luggage",
+            "blurb": "Space for family trips"
+          },
+          "frVan": {
+            "name": "FR Van",
+            "passengers": "8 Passengers",
+            "luggage": "6 Luggage",
+            "blurb": "Group airport transfers"
+          },
+          "suv": {
+            "name": "SUV",
+            "passengers": "5 Passengers",
+            "luggage": "4 Luggage",
+            "blurb": "Ideal for families"
+          },
+          "miniBus": {
+            "name": "Mini Bus",
+            "passengers": "12 Passengers",
+            "luggage": "8 Luggage",
+            "blurb": "Small group travel"
+          },
+          "bus": {
+            "name": "Bus",
+            "passengers": "20 Passengers",
+            "luggage": "12 Luggage",
+            "blurb": "Large group transfers"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "Safety",
+        "heading": "Safety is the baseline",
+        "body": "Verification, trip sharing, and reachable support on every Q Pick journey.",
+        "cta": "View safety standard",
+        "pillars": {
+          "verified": {
+            "title": "Verified fleet",
+            "body": "Identity and vehicle checks before a driver joins."
+          },
+          "sharing": {
+            "title": "Trip sharing",
+            "body": "Share live status with family or your hotel."
+          },
+          "support": {
+            "title": "Always reachable",
+            "body": "In-trip support when plans change on the road."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "items": {
+          "fare": {
+            "q": "Is the fare estimate final?",
+            "a": "It is a live estimate based on distance, vehicle, and waiting time. Confirm the final fare in the booking flow before you ride."
+          },
+          "payment": {
+            "q": "How do I pay?",
+            "a": "Choose cash, card, or wallet in Booking Details. Payment is confirmed when you complete the booking."
+          },
+          "schedule": {
+            "q": "Can I schedule a ride in advance?",
+            "a": "Yes. Select Schedule Ride in the estimator, then choose a future date and time."
+          },
+          "safety": {
+            "q": "Are drivers verified?",
+            "a": "Yes. Q Pick drivers complete identity, vehicle, and background checks before joining the network."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "Ready when you are",
+        "sub": "Your estimate stays above — pick a vehicle and confirm when you’re set.",
+        "primary": "Continue booking",
+        "secondary": "Contact support"
       },
       "driverTrust": {
         "name": "Nuwan P.",

@@ -1,19 +1,12 @@
 /**
  * Single source of truth for ride vehicle pricing + market calibration.
- *
  * Live config: data/fare-pricing.json
- * - calculateFare / admin API read from here only
- * - PUT /api/admin/pricing writes here (when filesystem is writable)
- * - Seed defaults in pricing-settings.ts are used only when the file is missing
- *
- * Do not hardcode baseFare / perKmRate elsewhere.
  */
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs";
 import path from "path";
 import type {
   FarePricingCatalog,
-  SurgeMultipliers,
   VehiclePricingSettings,
 } from "@/lib/fare/types";
 import {
@@ -36,7 +29,6 @@ const TMP_OVERRIDE_PATH = path.join("/tmp", "qpick-fare-pricing.json");
 type Cache = { mtimeMs: number; source: string; data: FarePricingFile };
 
 let cache: Cache | null = null;
-/** In-process overlay when disk writes fail (e.g. read-only serverless). */
 let memoryOverlay: FarePricingFile | null = null;
 
 function projectPath(): string {
@@ -54,7 +46,7 @@ function resolveReadPath(): { filePath: string; mtimeMs: number } | null {
         best = { filePath, mtimeMs };
       }
     } catch {
-      // ignore missing / unreadable
+      // ignore
     }
   }
   return best;
@@ -63,20 +55,19 @@ function resolveReadPath(): { filePath: string; mtimeMs: number } | null {
 function isVehicleSettings(value: unknown): value is VehiclePricingSettings {
   if (!value || typeof value !== "object") return false;
   const v = value as Record<string, unknown>;
-  if (typeof v.baseFare !== "number" || typeof v.perKmRate !== "number") {
-    return false;
-  }
-  if (v.mode === "standard") return true;
-  if (v.mode === "dynamic") {
-    return (
-      typeof v.waitingPerMinute === "number" &&
-      typeof v.freeWaitingMinutes === "number" &&
-      typeof v.surgeEnabled === "boolean" &&
-      !!v.surgeMultipliers &&
-      typeof v.surgeMultipliers === "object"
-    );
-  }
-  return false;
+  return (
+    typeof v.dayBaseFare === "number" &&
+    typeof v.dayPerKmRate === "number" &&
+    typeof v.nightBaseFare === "number" &&
+    typeof v.nightPerKmRate === "number" &&
+    typeof v.waitingPerMinute === "number" &&
+    typeof v.minimumFare === "number" &&
+    typeof v.bookingFee === "number" &&
+    typeof v.airportPickupFee === "number" &&
+    typeof v.surgeEnabled === "boolean" &&
+    typeof v.surgeMultiplier === "number" &&
+    typeof v.longDistanceDiscountEnabled === "boolean"
+  );
 }
 
 function normalizeCatalog(
@@ -119,10 +110,6 @@ function parseFile(
   }
 }
 
-/**
- * Load the active pricing config.
- * Priority: memory overlay → newest on-disk file → seed defaults.
- */
 export function loadFarePricingFile(seed: FarePricingFile): FarePricingFile {
   if (memoryOverlay) {
     return structuredClone(memoryOverlay);
@@ -149,7 +136,7 @@ export function loadFarePricingFile(seed: FarePricingFile): FarePricingFile {
         return structuredClone(data);
       }
     } catch {
-      // fall through to seed
+      // fall through
     }
   }
 
@@ -166,9 +153,6 @@ function tryWrite(filePath: string, json: string): boolean {
   }
 }
 
-/**
- * Persist the full pricing file. Prefer project data/, then /tmp, then memory.
- */
 export function saveFarePricingFile(data: FarePricingFile): FarePricingFile {
   const normalized: FarePricingFile = {
     calibration: { ...data.calibration },
@@ -210,45 +194,30 @@ export function clearFarePricingMemoryOverlay(): void {
   cache = null;
 }
 
-export type AdminPricingPatch = {
-  baseFare?: number;
-  perKmRate?: number;
-  waitingPerMinute?: number;
-  freeWaitingMinutes?: number;
-  surgeEnabled?: boolean;
-  surgeMultipliers?: Partial<SurgeMultipliers>;
-};
+export type AdminPricingPatch = Partial<VehiclePricingSettings>;
 
 export function applyVehiclePatch(
   base: VehiclePricingSettings,
   patch: AdminPricingPatch,
 ): VehiclePricingSettings {
-  if (base.mode === "dynamic") {
-    return {
-      mode: "dynamic",
-      baseFare: num(patch.baseFare, base.baseFare),
-      perKmRate: num(patch.perKmRate, base.perKmRate),
-      waitingPerMinute: num(patch.waitingPerMinute, base.waitingPerMinute),
-      freeWaitingMinutes: num(patch.freeWaitingMinutes, base.freeWaitingMinutes),
-      surgeEnabled:
-        typeof patch.surgeEnabled === "boolean"
-          ? patch.surgeEnabled
-          : base.surgeEnabled,
-      surgeMultipliers: {
-        peak: num(patch.surgeMultipliers?.peak, base.surgeMultipliers.peak),
-        rain: num(patch.surgeMultipliers?.rain, base.surgeMultipliers.rain),
-        highDemand: num(
-          patch.surgeMultipliers?.highDemand,
-          base.surgeMultipliers.highDemand,
-        ),
-      },
-    };
-  }
-
   return {
-    mode: "standard",
-    baseFare: num(patch.baseFare, base.baseFare),
-    perKmRate: num(patch.perKmRate, base.perKmRate),
+    dayBaseFare: num(patch.dayBaseFare, base.dayBaseFare),
+    dayPerKmRate: num(patch.dayPerKmRate, base.dayPerKmRate),
+    nightBaseFare: num(patch.nightBaseFare, base.nightBaseFare),
+    nightPerKmRate: num(patch.nightPerKmRate, base.nightPerKmRate),
+    waitingPerMinute: num(patch.waitingPerMinute, base.waitingPerMinute),
+    minimumFare: num(patch.minimumFare, base.minimumFare),
+    bookingFee: num(patch.bookingFee, base.bookingFee),
+    airportPickupFee: num(patch.airportPickupFee, base.airportPickupFee),
+    surgeEnabled:
+      typeof patch.surgeEnabled === "boolean"
+        ? patch.surgeEnabled
+        : base.surgeEnabled,
+    surgeMultiplier: num(patch.surgeMultiplier, base.surgeMultiplier),
+    longDistanceDiscountEnabled:
+      typeof patch.longDistanceDiscountEnabled === "boolean"
+        ? patch.longDistanceDiscountEnabled
+        : base.longDistanceDiscountEnabled,
   };
 }
 

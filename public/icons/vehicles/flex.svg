@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Flex">
+  <title>Flex</title>
+  <path fill-rule="evenodd" d="M24 37.5 H106 L102 31.5 H96 L86 17.5 H52 L40 31.5 H28 L24 37.5 ZM48 25 L57 19.5 H80 L90 25.5 L87 27.5 L79 22.5 H58 L50.5 27 ZM64 20 V27 H68 V20.4 Z"/>
+  <path d="M56 15.8 h24 v1.2 H56 z"/>
+  <path fill-rule="evenodd" d="M 42 38.3 A 6.7 6.7 0 1 1 42 51.7 A 6.7 6.7 0 1 1 42 38.3 Z M 42 42.86 A 2.14 2.14 0 1 0 42 47.14 A 2.14 2.14 0 1 0 42 42.86 Z"/>
+  <path fill-rule="evenodd" d="M 94 38.3 A 6.7 6.7 0 1 1 94 51.7 A 6.7 6.7 0 1 1 94 38.3 Z M 94 42.86 A 2.14 2.14 0 1 0 94 47.14 A 2.14 2.14 0 1 0 94 42.86 Z"/>
+</svg>

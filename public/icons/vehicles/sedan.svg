@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Sedan">
+  <title>Sedan</title>
+  <path fill-rule="evenodd" d="M22 37.5 H110 L106 32 H100 L98 29 H88 L80 18.5 H54 L44 29 H34 L30 32 H24 L22 37.5 ZM52 25.5 L60 20 H74 L82 25.5 L79 27.5 L72 23 H61 L54.5 27 Z"/>
+  <path fill-rule="evenodd" d="M 42 38.4 A 6.6 6.6 0 1 1 42 51.6 A 6.6 6.6 0 1 1 42 38.4 Z M 42 42.89 A 2.11 2.11 0 1 0 42 47.11 A 2.11 2.11 0 1 0 42 42.89 Z"/>
+  <path fill-rule="evenodd" d="M 98 38.4 A 6.6 6.6 0 1 1 98 51.6 A 6.6 6.6 0 1 1 98 38.4 Z M 98 42.89 A 2.11 2.11 0 1 0 98 47.11 A 2.11 2.11 0 1 0 98 42.89 Z"/>
+</svg>

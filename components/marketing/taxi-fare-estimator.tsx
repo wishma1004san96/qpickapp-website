@@ -3,22 +3,39 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   Check,
+  ChevronDown,
   ChevronRight,
   Crosshair,
-  Loader2,
   Map,
   MapPin,
   Navigation,
-  Timer,
 } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   useCallback,
   useEffect,
   useId,
+  useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
+import {
+  QBrandDivider,
+  QGlowBadge,
+  QHeadingMark,
+  QPatternBackground,
+  QSpinner,
+  QWatermark,
+} from "@/components/brand/q-mark";
+import {
+  defaultSchedule,
+  formatDateInput,
+  isScheduleValid,
+  minPickupTimeForDate,
+  scheduleToInstant,
+} from "@/lib/booking/schedule";
+import { WaitingMinutesStepper } from "@/components/marketing/waiting-minutes-stepper";
 import {
   useMessages,
   useTranslations,
@@ -42,6 +59,8 @@ import { fetchRideFare } from "@/lib/ride-fare-client";
 import {
   formatLkr,
   FREE_WAITING_MINUTES,
+  TAXI_VEHICLE_IDS,
+  TAXI_VEHICLE_META,
   WAITING_RATE_PER_MIN,
   type SurgeCondition,
   type TaxiFareBreakdown,
@@ -53,31 +72,70 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 /** Preview vehicle for route-card fares before the user picks a ride */
 const ROUTE_FARE_PREVIEW_VEHICLE: TaxiVehicleId = "tuk";
 
+function isCompletelyOutsideViewport(el: HTMLElement): boolean {
+  const rect = el.getBoundingClientRect();
+  return rect.bottom <= 0 || rect.top >= window.innerHeight;
+}
+
+function scrollIntoViewIfCompletelyHidden(
+  el: HTMLElement | null,
+  smooth: boolean,
+) {
+  if (!el || !isCompletelyOutsideViewport(el)) return;
+  el.scrollIntoView({
+    behavior: smooth ? "smooth" : "auto",
+    block: "nearest",
+    inline: "nearest",
+  });
+}
+
 const inputClass =
   "min-h-11 w-full rounded-[0.9rem] border border-ink/10 bg-white/70 px-3.5 text-sm text-ink shadow-[0_1px_0_rgb(255_255_255_/_0.8)] outline-none backdrop-blur-md transition-[border-color,box-shadow] duration-[var(--duration-ui)] placeholder:text-ink/35 focus-visible:border-brand/35 focus-visible:ring-2 focus-visible:ring-brand/25 disabled:opacity-60";
 
-function parseNonNeg(raw: string): number {
-  const n = Number.parseFloat(raw);
-  if (!Number.isFinite(n) || n < 0) return 0;
-  return n;
-}
-
 type PickerTarget = "pickup" | "destination" | null;
-type StepId = 1 | 2 | 3;
+type StepId = 1 | 2 | 3 | 4;
+type RideType = "rideNow" | "schedule";
+type PaymentMethod = "cash" | "card" | "wallet";
+
+const radioOptionClass = (selected: boolean) =>
+  `rounded-[0.9rem] border px-3.5 py-2.5 text-sm font-medium transition-[border-color,background,box-shadow] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/25 ${
+    selected
+      ? "border-brand/35 bg-brand/[0.08] text-ink shadow-[0_1px_0_rgb(255_255_255_/_0.8)]"
+      : "border-ink/10 bg-white/70 text-ink-muted hover:border-ink/15"
+  }`;
 
 /**
- * Taxi fare estimator — 3-step ride booking flow.
- * 1 · Pickup & Destination → 2 · Vehicle → 3 · Fare Summary + Book Now
+ * Taxi fare estimator — ride booking flow.
+ * 1 · Locations → 2 · Vehicle → 3 · Booking Details → 4 · Fare Summary + Book
+ *
+ * When `variant="page"` is used on /ride, this becomes the sole intro + booking surface
+ * (single H1, trust chips, no duplicate marketing hero).
  */
-export function TaxiFareEstimator() {
+export function TaxiFareEstimator({
+  variant = "embedded",
+}: {
+  variant?: "embedded" | "page";
+} = {}) {
   const t = useTranslations();
   const { taxiFare } = useMessages();
+  const router = useRouter();
   const reduceMotion = useReducedMotion() ?? false;
   const formId = useId();
+  const initialSchedule = defaultSchedule();
+  const isPageHero = variant === "page";
+  const HeadingTag = isPageHero ? "h1" : "h2";
+  const trustPoints = isPageHero
+    ? ([
+        t("pages.ride.booking.trust.pricing"),
+        t("pages.ride.booking.trust.drivers"),
+        t("pages.ride.booking.trust.tracking"),
+      ] as const)
+    : null;
 
   const [pickup, setPickup] = useState<SelectedPlace | null>(null);
   const [destination, setDestination] = useState<SelectedPlace | null>(null);
-  const [waitingMinutes, setWaitingMinutes] = useState("0");
+  const [rideType, setRideType] = useState<RideType>("rideNow");
+  const [waitingMinutes, setWaitingMinutes] = useState(0);
   /** Currently selected ride vehicle — updates immediately on card click */
   const [selectedVehicle, setSelectedVehicle] =
     useState<TaxiVehicleId | null>(null);
@@ -97,11 +155,35 @@ export function TaxiFareEstimator() {
   const [fareByRouteId, setFareByRouteId] = useState<
     Record<string, number | null>
   >({});
+  const [fareByVehicleId, setFareByVehicleId] = useState<
+    Partial<Record<TaxiVehicleId, number | null>>
+  >({});
   const [tollCharges] = useState(0);
   const [parkingCharges] = useState(0);
   const [surgeConditions] = useState<SurgeCondition[]>(["normal"]);
 
-  const waiting = parseNonNeg(waitingMinutes);
+  const [pickupDate, setPickupDate] = useState(initialSchedule.date);
+  const [pickupTime, setPickupTime] = useState(initialSchedule.time);
+  const [passengerName, setPassengerName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod | "">("");
+  const [promoCode, setPromoCode] = useState("");
+  const [airportPickup, setAirportPickup] = useState(false);
+  const [flightNumber, setFlightNumber] = useState("");
+  const [passengerCount, setPassengerCount] = useState("1");
+  const [luggageCount, setLuggageCount] = useState("1");
+  const [specialNotes, setSpecialNotes] = useState("");
+  const [confirmErrors, setConfirmErrors] = useState<string[]>([]);
+  const [totalPulse, setTotalPulse] = useState(false);
+  const [fareBreakdownOpen, setFareBreakdownOpen] = useState(false);
+
+  const summaryRef = useRef<HTMLElement | null>(null);
+  const bookingDetailsRef = useRef<HTMLDivElement | null>(null);
+  const totalPulseTimerRef = useRef<number | null>(null);
+  const prevTotalRef = useRef<number | null>(null);
+
+  const waiting = waitingMinutes;
+  const todayInput = formatDateInput(new Date());
   const route =
     routes.find((r) => r.id === selectedRouteId) ??
     routes.find((r) => r.isRecommended) ??
@@ -115,14 +197,78 @@ export function TaxiFareEstimator() {
   const hasPlaces = Boolean(pickup && destination);
   const hasDistance = Boolean(route && !routeError && distanceKm > 0);
   const vehicleChosen = selectedVehicle != null;
+  const schedulingComplete =
+    rideType === "rideNow" ||
+    isScheduleValid(pickupDate.trim(), pickupTime.trim());
+  const passengersValid =
+    Number.parseInt(passengerCount, 10) >= 1 &&
+    Number.isFinite(Number.parseInt(passengerCount, 10));
+  const detailsComplete = Boolean(
+    passengerName.trim() &&
+      phone.trim() &&
+      paymentMethod &&
+      passengersValid,
+  );
+  const pickupInstant = useMemo(
+    () =>
+      scheduleToInstant(pickupDate, pickupTime) ??
+      (rideType === "rideNow" ? new Date() : undefined),
+    [pickupDate, pickupTime, rideType],
+  );
+  const fareAtIso = useMemo(
+    () => (pickupInstant ?? new Date()).toISOString(),
+    [pickupInstant],
+  );
   const canShowFare =
     vehicleChosen &&
     hasDistance &&
     fare != null &&
     fare.vehicleId === selectedVehicle &&
     Number.isFinite(fare.totalLkr);
-  const step2Unlocked = hasPlaces && hasDistance;
-  const step3Unlocked = step2Unlocked && canShowFare;
+  const canBook = canShowFare && schedulingComplete && detailsComplete;
+  const step2Unlocked = hasPlaces && hasDistance && schedulingComplete;
+  const step3Unlocked = step2Unlocked && vehicleChosen;
+  const step4Unlocked = step3Unlocked && detailsComplete;
+  const distanceLabel =
+    route && !routeLoading
+      ? `${route.distanceKm.toLocaleString("en-LK", {
+          maximumFractionDigits: 2,
+        })} km`
+      : null;
+  const durationLabel = route?.durationText ?? null;
+
+  const displayTotalLkr = useMemo(() => {
+    if (canShowFare && fare != null && Number.isFinite(fare.totalLkr)) {
+      return fare.totalLkr;
+    }
+    if (
+      selectedVehicle &&
+      fareByVehicleId[selectedVehicle] != null &&
+      Number.isFinite(fareByVehicleId[selectedVehicle] as number)
+    ) {
+      return fareByVehicleId[selectedVehicle] as number;
+    }
+    return null;
+  }, [canShowFare, fare, selectedVehicle, fareByVehicleId]);
+
+  useEffect(() => {
+    if (rideType !== "rideNow") return;
+    const sync = () => {
+      const next = defaultSchedule();
+      setPickupDate(next.date);
+      setPickupTime(next.time);
+    };
+    sync();
+    const timer = window.setInterval(sync, 60_000);
+    return () => window.clearInterval(timer);
+  }, [rideType]);
+
+  useEffect(() => {
+    if (rideType !== "schedule") return;
+    if (pickupDate && pickupDate < todayInput) {
+      setPickupDate(todayInput);
+    }
+  }, [rideType, pickupDate, todayInput]);
 
   useEffect(() => {
     if (!pickup || !destination) {
@@ -130,6 +276,7 @@ export function TaxiFareEstimator() {
       setSelectedRouteId(null);
       setRouteError(null);
       setRouteLoading(false);
+      setFareByVehicleId({});
       return;
     }
 
@@ -137,6 +284,7 @@ export function TaxiFareEstimator() {
     const timer = window.setTimeout(async () => {
       setRouteLoading(true);
       setRouteError(null);
+      setFareByVehicleId({});
       try {
         const res = await fetch("/api/ride/directions", {
           method: "POST",
@@ -224,6 +372,8 @@ export function TaxiFareEstimator() {
           waitingMinutes: waiting,
           tollCharges,
           parkingCharges,
+          airportPickup,
+          at: fareAtIso,
           conditions: surgeConditions,
           signal: controller.signal,
         });
@@ -255,7 +405,7 @@ export function TaxiFareEstimator() {
         });
         setFare(null);
       }
-    }, 120);
+    }, 60);
 
     return () => {
       controller.abort();
@@ -268,6 +418,66 @@ export function TaxiFareEstimator() {
     waiting,
     tollCharges,
     parkingCharges,
+    airportPickup,
+    fareAtIso,
+    surgeConditions,
+  ]);
+
+  // Live estimated fare for every vehicle card (same trip params)
+  useEffect(() => {
+    if (!hasDistance) {
+      setFareByVehicleId({});
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      const entries = await Promise.all(
+        TAXI_VEHICLE_IDS.map(async (vehicleId) => {
+          try {
+            const preview = await fetchRideFare({
+              vehicleId,
+              distanceKm,
+              waitingMinutes: waiting,
+              tollCharges,
+              parkingCharges,
+              airportPickup,
+              at: fareAtIso,
+              conditions: surgeConditions,
+              signal: controller.signal,
+            });
+            return [
+              vehicleId,
+              Number.isFinite(preview.totalLkr) ? preview.totalLkr : null,
+            ] as const;
+          } catch {
+            if (controller.signal.aborted) return null;
+            return [vehicleId, null] as const;
+          }
+        }),
+      );
+
+      if (controller.signal.aborted) return;
+      const next: Partial<Record<TaxiVehicleId, number | null>> = {};
+      for (const entry of entries) {
+        if (!entry) continue;
+        next[entry[0]] = entry[1];
+      }
+      setFareByVehicleId(next);
+    }, 50);
+
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+  }, [
+    hasDistance,
+    distanceKm,
+    waiting,
+    tollCharges,
+    parkingCharges,
+    airportPickup,
+    fareAtIso,
     surgeConditions,
   ]);
 
@@ -292,6 +502,8 @@ export function TaxiFareEstimator() {
               waitingMinutes: waiting,
               tollCharges,
               parkingCharges,
+              airportPickup,
+              at: fareAtIso,
               conditions: surgeConditions,
               signal: controller.signal,
             });
@@ -325,12 +537,14 @@ export function TaxiFareEstimator() {
     waiting,
     tollCharges,
     parkingCharges,
+    airportPickup,
+    fareAtIso,
     surgeConditions,
   ]);
 
-  // Auto-advance: both places + distance → step 2
+  // Auto-advance: places + distance + schedule → step 2
   useEffect(() => {
-    if (hasPlaces && hasDistance && step === 1) {
+    if (hasPlaces && hasDistance && schedulingComplete && step === 1) {
       setStep(2);
       return;
     }
@@ -339,7 +553,7 @@ export function TaxiFareEstimator() {
       setFare((prev) => (prev == null ? prev : null));
       setStep((prev) => (prev === 1 ? prev : 1));
     }
-  }, [hasPlaces, hasDistance, step]);
+  }, [hasPlaces, hasDistance, schedulingComplete, step]);
 
   const closePicker = useCallback(() => setPicker(null), []);
 
@@ -388,6 +602,42 @@ export function TaxiFareEstimator() {
     }
   }, [t]);
 
+  const pulseGrandTotal = useCallback(() => {
+    if (totalPulseTimerRef.current != null) {
+      window.clearTimeout(totalPulseTimerRef.current);
+    }
+    setTotalPulse(true);
+    totalPulseTimerRef.current = window.setTimeout(() => {
+      setTotalPulse(false);
+      totalPulseTimerRef.current = null;
+    }, 900);
+  }, []);
+
+  useEffect(() => {
+    const total =
+      canShowFare && fare != null && Number.isFinite(fare.totalLkr)
+        ? fare.totalLkr
+        : null;
+    if (total == null) {
+      prevTotalRef.current = null;
+      return;
+    }
+    if (prevTotalRef.current !== total) {
+      if (prevTotalRef.current != null || selectedVehicle != null) {
+        pulseGrandTotal();
+      }
+      prevTotalRef.current = total;
+    }
+  }, [canShowFare, fare, selectedVehicle, pulseGrandTotal]);
+
+  useEffect(() => {
+    return () => {
+      if (totalPulseTimerRef.current != null) {
+        window.clearTimeout(totalPulseTimerRef.current);
+      }
+    };
+  }, []);
+
   const onSelectRoute = useCallback((id: string) => {
     setSelectedRouteId(id);
   }, []);
@@ -395,13 +645,87 @@ export function TaxiFareEstimator() {
   const onSelectVehicle = useCallback(
     (id: TaxiVehicleId) => {
       setSelectedVehicle(id);
-      setFare(null); // clear stale estimate until live API returns
+      setFare(null);
+      const meta = TAXI_VEHICLE_META[id];
+      setPassengerCount(String(meta.passengers));
+      setLuggageCount(String(meta.luggage));
       if (hasDistance) {
         setStep(3);
+        window.requestAnimationFrame(() => {
+          bookingDetailsRef.current?.scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "nearest",
+          });
+        });
       }
+      pulseGrandTotal();
+      window.requestAnimationFrame(() => {
+        scrollIntoViewIfCompletelyHidden(
+          summaryRef.current,
+          !(reduceMotion ?? false),
+        );
+      });
     },
-    [hasDistance],
+    [hasDistance, pulseGrandTotal, reduceMotion],
   );
+
+  const onMobileContinue = useCallback(() => {
+    if (!step2Unlocked) {
+      setStep(1);
+      return;
+    }
+    if (!vehicleChosen) {
+      setStep(2);
+      return;
+    }
+    if (!detailsComplete) {
+      setStep(3);
+      return;
+    }
+    setStep(4);
+    scrollIntoViewIfCompletelyHidden(
+      summaryRef.current,
+      !(reduceMotion ?? false),
+    );
+  }, [
+    step2Unlocked,
+    vehicleChosen,
+    detailsComplete,
+    reduceMotion,
+  ]);
+
+  const handleBook = useCallback(() => {
+    const errs: string[] = [];
+    if (!pickup) errs.push(t("taxiFare.confirmErrors.pickup"));
+    if (!destination) errs.push(t("taxiFare.confirmErrors.destination"));
+    if (!selectedVehicle) errs.push(t("taxiFare.confirmErrors.vehicle"));
+    if (!schedulingComplete) errs.push(t("taxiFare.confirmErrors.schedule"));
+    if (!passengerName.trim()) {
+      errs.push(t("taxiFare.confirmErrors.passengerName"));
+    }
+    if (!phone.trim()) errs.push(t("taxiFare.confirmErrors.phone"));
+    if (!paymentMethod) errs.push(t("taxiFare.confirmErrors.payment"));
+    if (!canShowFare) errs.push(t("taxiFare.confirmErrors.fare"));
+
+    if (errs.length > 0) {
+      setConfirmErrors(errs);
+      return;
+    }
+
+    setConfirmErrors([]);
+    router.push("/support");
+  }, [
+    pickup,
+    destination,
+    selectedVehicle,
+    schedulingComplete,
+    passengerName,
+    phone,
+    paymentMethod,
+    canShowFare,
+    t,
+    router,
+  ]);
 
   const locationActionClass =
     "inline-flex min-h-10 items-center gap-1.5 rounded-full border border-ink/8 bg-white/80 px-3 text-xs font-semibold text-ink transition-[background,box-shadow,opacity] hover:bg-white hover:shadow-[0_8px_20px_rgb(0_98_250_/_0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35 disabled:opacity-55";
@@ -448,52 +772,90 @@ export function TaxiFareEstimator() {
   const steps: Array<{ id: StepId; label: string }> = [
     { id: 1, label: t("taxiFare.steps.locations") },
     { id: 2, label: t("taxiFare.steps.vehicle") },
-    { id: 3, label: t("taxiFare.steps.summary") },
+    { id: 3, label: t("taxiFare.steps.details") },
+    { id: 4, label: t("taxiFare.steps.summary") },
   ];
 
   return (
     <section
       id="taxi-fare"
       aria-labelledby={`${formId}-heading`}
-      className="relative isolate overflow-hidden rounded-[1.75rem] border border-ink/8 bg-[linear-gradient(165deg,#f7fafc_0%,#eef4fb_48%,#e8f0fa_100%)] shadow-[0_24px_64px_rgb(10_22_32_/_0.08)]"
+      className="relative isolate rounded-[1.75rem] border border-ink/8 bg-[linear-gradient(165deg,#f7fafc_0%,#eef4fb_48%,#e8f0fa_100%)] shadow-[0_24px_64px_rgb(10_22_32_/_0.08)]"
     >
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
+        aria-hidden="true"
+      >
         <div className="absolute -top-[20%] left-1/2 h-[55%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.12)_0%,transparent_68%)] blur-2xl" />
         <div className="absolute -right-[8%] bottom-[-25%] h-[45%] w-[40%] rounded-full bg-brand-bright/[0.08] blur-3xl" />
+        <QPatternBackground opacity={0.028} cellSize={64} />
+        <QWatermark tone="brand" opacity={0.05} size={360} blur={2} />
       </div>
 
-      <div className="relative z-[1] p-5 sm:p-7 lg:p-8">
+      <div className="relative z-[1] p-5 pb-24 sm:p-7 lg:p-8 lg:pb-8">
         <motion.div
           initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.5, ease: EASE }}
         >
-          <p className="font-mono text-[0.6875rem] tracking-[0.16em] text-brand uppercase">
-            {t("taxiFare.eyebrow")}
-          </p>
-          <h2
-            id={`${formId}-heading`}
-            className="mt-2 font-display text-[clamp(1.45rem,2.6vw,1.85rem)] font-semibold tracking-tight text-balance text-ink"
-          >
-            {t("taxiFare.heading")}
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-muted sm:text-[0.9375rem]">
-            {t("taxiFare.sub")}
-          </p>
+          {isPageHero ? (
+            <>
+              <p className="font-mono text-[0.6875rem] tracking-[0.16em] text-brand uppercase">
+                {t("pages.ride.intro.badge")}
+              </p>
+              <HeadingTag
+                id={`${formId}-heading`}
+                className="mt-2.5 font-display text-[clamp(1.85rem,4vw,2.55rem)] font-semibold tracking-tight text-balance text-ink"
+              >
+                <QHeadingMark markSize={24} className="text-inherit">
+                  {t("pages.ride.booking.title")}
+                </QHeadingMark>
+              </HeadingTag>
+              <ul className="mt-3.5 flex flex-wrap gap-x-4 gap-y-1.5">
+                {trustPoints?.map((point) => (
+                  <li
+                    key={point}
+                    className="text-sm font-medium text-ink-muted sm:text-[0.9375rem]"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <>
+              <p className="font-mono text-[0.6875rem] tracking-[0.16em] text-brand uppercase">
+                {t("taxiFare.eyebrow")}
+              </p>
+              <HeadingTag
+                id={`${formId}-heading`}
+                className="mt-2 font-display text-[clamp(1.45rem,2.6vw,1.85rem)] font-semibold tracking-tight text-balance text-ink"
+              >
+                <QHeadingMark markSize={22} className="text-inherit">
+                  {t("taxiFare.heading")}
+                </QHeadingMark>
+              </HeadingTag>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-muted sm:text-[0.9375rem]">
+                {t("taxiFare.sub")}
+              </p>
+            </>
+          )}
 
           {/* Step progress */}
-          <ol className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
+          <ol className={`flex flex-wrap items-center gap-2 sm:gap-3 ${isPageHero ? "mt-7" : "mt-6"}`}>
             {steps.map((s, index) => {
               const done =
-                (s.id === 1 && hasPlaces) ||
+                (s.id === 1 && hasPlaces && schedulingComplete) ||
                 (s.id === 2 && vehicleChosen) ||
-                (s.id === 3 && canShowFare);
+                (s.id === 3 && detailsComplete) ||
+                (s.id === 4 && canBook);
               const active = step === s.id;
               const unlocked =
                 s.id === 1 ||
                 (s.id === 2 && step2Unlocked) ||
-                (s.id === 3 && step3Unlocked);
+                (s.id === 3 && step3Unlocked) ||
+                (s.id === 4 && step4Unlocked);
 
               return (
                 <li key={s.id} className="flex items-center gap-2 sm:gap-3">
@@ -508,7 +870,26 @@ export function TaxiFareEstimator() {
                   <button
                     type="button"
                     disabled={!unlocked}
-                    onClick={() => unlocked && setStep(s.id)}
+                    onClick={() => {
+                      if (!unlocked) return;
+                      setStep(s.id);
+                      if (s.id === 3) {
+                        window.requestAnimationFrame(() => {
+                          bookingDetailsRef.current?.scrollIntoView({
+                            behavior: reduceMotion ? "auto" : "smooth",
+                            block: "nearest",
+                          });
+                        });
+                      }
+                      if (s.id === 4) {
+                        window.requestAnimationFrame(() => {
+                          scrollIntoViewIfCompletelyHidden(
+                            summaryRef.current,
+                            !reduceMotion,
+                          );
+                        });
+                      }
+                    }}
                     className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold transition-[background,color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 disabled:cursor-not-allowed disabled:opacity-40 ${
                       active
                         ? "bg-gradient-to-b from-[#2b7dff] to-[#0062fa] text-paper shadow-[0_8px_20px_rgb(0_98_250_/_0.3)]"
@@ -540,15 +921,16 @@ export function TaxiFareEstimator() {
           </ol>
         </motion.div>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-          <div className="min-w-0 space-y-8">
+        <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
+          <div className="min-w-0 space-y-5">
             {/* STEP 1 */}
             <StepPanel
               step={1}
               title={t("taxiFare.steps.locationsTitle")}
               active={step === 1}
-              done={hasPlaces}
+              done={hasPlaces && schedulingComplete}
               reduceMotion={reduceMotion}
+              brand
             >
               <div className="grid gap-3">
                 <NominatimAutocomplete
@@ -570,10 +952,7 @@ export function TaxiFareEstimator() {
                         onClick={() => void onUseCurrentLocation()}
                       >
                         {locatingPickup ? (
-                          <Loader2
-                            className="h-3.5 w-3.5 animate-spin text-brand"
-                            aria-hidden
-                          />
+                          <QSpinner size={14} />
                         ) : (
                           <Crosshair
                             className="h-3.5 w-3.5 text-brand"
@@ -623,31 +1002,94 @@ export function TaxiFareEstimator() {
                     {locationActionError}
                   </p>
                 ) : null}
-                <div>
-                  <label
-                    htmlFor={`${formId}-waiting`}
-                    className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-ink"
+
+                <fieldset>
+                  <legend className="mb-2 text-sm font-medium text-ink">
+                    {t("taxiFare.rideType.title")}
+                  </legend>
+                  <div
+                    className="flex flex-wrap gap-2"
+                    role="radiogroup"
+                    aria-label={t("taxiFare.rideType.title")}
                   >
-                    <Timer className="h-3.5 w-3.5 text-brand/70" aria-hidden />
-                    {t("taxiFare.waiting")}
-                  </label>
-                  <input
-                    id={`${formId}-waiting`}
-                    type="number"
-                    inputMode="decimal"
-                    min={0}
-                    step={1}
-                    value={waitingMinutes}
-                    onChange={(e) => setWaitingMinutes(e.target.value)}
-                    className={`${inputClass} sm:max-w-xs`}
-                  />
-                  <p className="mt-2 text-xs text-ink-muted">
-                    {t("taxiFare.waitingHint", {
-                      free: FREE_WAITING_MINUTES,
-                      rate: WAITING_RATE_PER_MIN,
+                    {(["rideNow", "schedule"] as const).map((id) => {
+                      const selected = rideType === id;
+                      return (
+                        <button
+                          key={id}
+                          type="button"
+                          role="radio"
+                          aria-checked={selected}
+                          onClick={() => setRideType(id)}
+                          className={radioOptionClass(selected)}
+                        >
+                          {id === "rideNow"
+                            ? t("taxiFare.rideType.now")
+                            : t("taxiFare.rideType.schedule")}
+                        </button>
+                      );
                     })}
-                  </p>
-                </div>
+                  </div>
+                </fieldset>
+
+                {rideType === "schedule" ? (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="flex min-w-0 flex-col gap-1.5">
+                      <label
+                        htmlFor={`${formId}-pickup-date`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.pickupDate")}
+                        <span className="text-brand"> *</span>
+                      </label>
+                      <input
+                        id={`${formId}-pickup-date`}
+                        type="date"
+                        required
+                        min={todayInput}
+                        value={pickupDate}
+                        onChange={(e) => setPickupDate(e.target.value)}
+                        className={inputClass}
+                      />
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-1.5">
+                      <label
+                        htmlFor={`${formId}-pickup-time`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.pickupTime")}
+                        <span className="text-brand"> *</span>
+                      </label>
+                      <input
+                        id={`${formId}-pickup-time`}
+                        type="time"
+                        required
+                        min={minPickupTimeForDate(pickupDate)}
+                        value={pickupTime}
+                        onChange={(e) => setPickupTime(e.target.value)}
+                        className={inputClass}
+                      />
+                    </div>
+                    {!schedulingComplete ? (
+                      <p className="text-xs text-ink-muted sm:col-span-2">
+                        {t("taxiFare.bookingDetails.scheduleHint")}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <WaitingMinutesStepper
+                  id={`${formId}-waiting`}
+                  label={t("taxiFare.waiting")}
+                  hint={t("taxiFare.waitingHint", {
+                    free: FREE_WAITING_MINUTES,
+                    rate: WAITING_RATE_PER_MIN,
+                  })}
+                  value={waitingMinutes}
+                  onChange={setWaitingMinutes}
+                  min={0}
+                  max={180}
+                />
               </div>
 
               <div className="mt-5">
@@ -660,6 +1102,8 @@ export function TaxiFareEstimator() {
                   routeCoordinates={route?.coordinates}
                   isRouteLoading={routeLoading}
                   routeError={routeError}
+                  distanceLabel={distanceLabel}
+                  durationLabel={durationLabel}
                 />
               </div>
 
@@ -674,7 +1118,7 @@ export function TaxiFareEstimator() {
                 </div>
               ) : null}
 
-              {hasPlaces && hasDistance ? (
+              {step2Unlocked ? (
                 <div className="mt-5 flex justify-end">
                   <button
                     type="button"
@@ -686,7 +1130,8 @@ export function TaxiFareEstimator() {
                   </button>
                 </div>
               ) : hasPlaces && routeLoading ? (
-                <p className="mt-4 text-sm text-ink-muted">
+                <p className="mt-4 inline-flex items-center gap-2 text-sm text-ink-muted">
+                  <QSpinner size={16} />
                   {t("taxiFare.calculatingShort")}
                 </p>
               ) : null}
@@ -704,15 +1149,17 @@ export function TaxiFareEstimator() {
                   exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
                   transition={{ duration: 0.35, ease: EASE }}
                 >
+                  <QBrandDivider className="mb-5" />
                   <StepPanel
                     step={2}
                     title={t("taxiFare.steps.vehicleTitle")}
                     active={step === 2}
                     done={vehicleChosen}
                     reduceMotion={reduceMotion}
+                    brand
                   >
                     {routes.length > 1 ? (
-                      <div className="mb-6">
+                      <div className="mb-4">
                         <RouteSelection
                           routes={routes}
                           selectedRouteId={selectedRouteId}
@@ -726,15 +1173,40 @@ export function TaxiFareEstimator() {
                       selectedId={selectedVehicle}
                       onSelect={onSelectVehicle}
                       embedded
+                      tripDurationSeconds={route?.durationSeconds}
+                      at={pickupInstant ?? new Date()}
+                      fareByVehicleId={fareByVehicleId}
                     />
+                    {vehicleChosen ? (
+                      <div className="mt-4 flex justify-end">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setStep(3);
+                            window.requestAnimationFrame(() => {
+                              bookingDetailsRef.current?.scrollIntoView({
+                                behavior: reduceMotion ? "auto" : "smooth",
+                                block: "nearest",
+                              });
+                            });
+                          }}
+                          className="inline-flex min-h-10 items-center gap-1.5 rounded-[14px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-4 text-sm font-semibold text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.3)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_14px_36px_rgb(0_98_250_/_0.42)] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
+                        >
+                          {t("taxiFare.steps.continueDetails")}
+                          <ChevronRight className="h-4 w-4" aria-hidden />
+                        </button>
+                      </div>
+                    ) : null}
                   </StepPanel>
                 </motion.div>
               ) : null}
             </AnimatePresence>
           </div>
 
-          {/* STEP 3 — Fare summary */}
+          {/* Right column — sticky Fare Summary + compact Booking Details */}
+          <div className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
           <motion.aside
+            ref={summaryRef}
             initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -743,30 +1215,35 @@ export function TaxiFareEstimator() {
               delay: reduceMotion ? 0 : 0.08,
               ease: EASE,
             }}
-            className={`flex flex-col rounded-[1.5rem] bg-[#050b12] p-5 text-[#f3f6f7] shadow-[0_24px_64px_rgb(10_22_32_/_0.35)] sm:p-7 lg:sticky lg:top-24 lg:self-start ${
-              step3Unlocked ? "ring-1 ring-brand/30" : ""
+            className={`relative flex flex-col overflow-hidden rounded-[1.5rem] bg-[#050b12] p-5 text-[#f3f6f7] shadow-[0_24px_64px_rgb(10_22_32_/_0.35)] sm:p-6 ${
+              step4Unlocked || step === 4 || vehicleChosen
+                ? "ring-1 ring-brand/30"
+                : ""
             }`}
           >
-            <div className="flex items-center gap-2">
+            <QWatermark tone="foam" opacity={0.055} size={200} blur={2} />
+            <QGlowBadge size={22} className="top-4 right-4" />
+            <div className="relative z-[1] flex items-center gap-2">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-b from-[#2b7dff] to-[#0062fa] text-[0.6875rem] font-bold text-paper">
-                3
+                4
               </span>
-              <p className="font-mono text-[0.65rem] tracking-[0.16em] text-[#e4c99a]/80 uppercase">
+              <QHeadingMark
+                as="p"
+                tone="foam"
+                markSize={18}
+                className="font-mono text-[0.65rem] tracking-[0.16em] text-[#e4c99a]/80 uppercase"
+              >
                 {t("taxiFare.steps.summaryTitle")}
-              </p>
+              </QHeadingMark>
             </div>
 
-            <dl className="mt-6 space-y-3.5 text-sm">
+            <dl className="relative z-[1] mt-5 space-y-2.5 text-sm">
               <SummaryRow
                 label={t("taxiFare.summary.distance")}
                 value={
                   routeLoading
                     ? t("taxiFare.calculatingShort")
-                    : route
-                      ? `${route.distanceKm.toLocaleString("en-LK", {
-                          maximumFractionDigits: 2,
-                        })} km`
-                      : "—"
+                    : distanceLabel || "—"
                 }
               />
               <SummaryRow
@@ -782,66 +1259,443 @@ export function TaxiFareEstimator() {
                 value={vehicleLabel || "—"}
               />
               <SummaryRow
-                label={t("taxiFare.summary.waitingCharge")}
+                label={t("taxiFare.summary.estimatedFare")}
                 value={
-                  canShowFare && fare ? formatLkr(fare.waitingCharge) : "—"
+                  displayTotalLkr != null
+                    ? formatLkr(displayTotalLkr)
+                    : routeLoading
+                      ? t("taxiFare.calculatingShort")
+                      : "—"
                 }
               />
             </dl>
 
-            <div className="mt-6 border-t border-white/10 pt-5">
+            <div className="relative z-[1] mt-4">
+              <button
+                type="button"
+                aria-expanded={fareBreakdownOpen}
+                onClick={() => setFareBreakdownOpen((o) => !o)}
+                className="inline-flex w-full items-center justify-between gap-2 rounded-[0.75rem] border border-white/10 bg-white/[0.04] px-3 py-2 text-left text-xs font-medium text-[#f3f6f7]/70 transition-colors hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+              >
+                {t("taxiFare.summary.viewFareBreakdown")}
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 transition-transform duration-300 ${
+                    fareBreakdownOpen ? "rotate-180" : ""
+                  }`}
+                  aria-hidden
+                />
+              </button>
+              <AnimatePresence initial={false}>
+                {fareBreakdownOpen ? (
+                  <motion.dl
+                    initial={
+                      reduceMotion
+                        ? { opacity: 1, height: "auto" }
+                        : { opacity: 0, height: 0 }
+                    }
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={
+                      reduceMotion
+                        ? undefined
+                        : { opacity: 0, height: 0 }
+                    }
+                    transition={{ duration: 0.28, ease: EASE }}
+                    className="mt-3 space-y-2.5 overflow-hidden text-sm"
+                  >
+                    <SummaryRow
+                      label={t("taxiFare.summary.baseFare")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.baseFare ?? fare.firstKmFare)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.distanceCharge")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(
+                              fare.distanceCharge ?? fare.additionalKmFare,
+                            )
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.waitingCharge")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.waitingCharge)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.bookingFee")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.bookingFee ?? 0)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.airportFee")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.airportPickupFee ?? 0)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.toll")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.tollCharges)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.parking")}
+                      value={
+                        canShowFare && fare
+                          ? formatLkr(fare.parkingCharges)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.surge")}
+                      value={
+                        canShowFare && fare && fare.surgeAmount > 0
+                          ? formatLkr(fare.surgeAmount)
+                          : "—"
+                      }
+                    />
+                    <SummaryRow
+                      label={t("taxiFare.summary.discount")}
+                      value={
+                        canShowFare &&
+                        fare &&
+                        (fare.longDistanceDiscount ?? 0) > 0
+                          ? `−${formatLkr(fare.longDistanceDiscount ?? 0)}`
+                          : canShowFare && fare
+                            ? formatLkr(0)
+                            : "—"
+                      }
+                    />
+                  </motion.dl>
+                ) : null}
+              </AnimatePresence>
+            </div>
+
+            <div
+              className={`relative z-[1] mt-5 rounded-[1rem] border border-transparent pt-4 transition-[box-shadow,background-color,border-color] duration-500 ${
+                totalPulse
+                  ? "fare-total-pulse border-brand/40 bg-brand/15 px-3 pb-3 shadow-[0_0_0_1px_rgb(1_147_251_/_0.35),0_0_28px_rgb(0_98_250_/_0.35)]"
+                  : "border-t border-t-white/10"
+              }`}
+            >
               <p className="text-xs font-medium tracking-wide text-[#f3f6f7]/55 uppercase">
-                {t("taxiFare.summary.estimatedFare")}
+                {t("taxiFare.summary.grandTotal")}
               </p>
               <AnimatePresence mode="wait">
                 <motion.p
                   key={
-                    canShowFare && fare
-                      ? `${selectedVehicle}-${fare.totalLkr}`
+                    displayTotalLkr != null
+                      ? `${selectedVehicle}-${displayTotalLkr}`
                       : routeLoading
                         ? "loading"
                         : "empty"
                   }
-                  initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
-                  transition={{ duration: 0.28, ease: EASE }}
-                  className="mt-1.5 font-display text-[clamp(1.85rem,3.5vw,2.35rem)] font-semibold tracking-tight text-[#f3f6f7]"
+                  initial={
+                    reduceMotion
+                      ? { opacity: 1 }
+                      : { opacity: 0, y: 10, scale: 0.98 }
+                  }
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={
+                    reduceMotion
+                      ? undefined
+                      : { opacity: 0, y: -8, scale: 0.98 }
+                  }
+                  transition={{ duration: 0.32, ease: EASE }}
+                  className={`mt-1 font-display text-[clamp(1.75rem,3.2vw,2.15rem)] font-semibold tracking-tight ${
+                    totalPulse ? "text-[#7eb6ff]" : "text-[#f3f6f7]"
+                  }`}
                 >
-                  {routeLoading ? (
-                    <span className="inline-flex items-center gap-2 text-[1.25rem] font-medium text-[#f3f6f7]/70">
-                      <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
+                  {routeLoading && displayTotalLkr == null ? (
+                    <span className="inline-flex items-center gap-2 text-[1.15rem] font-medium text-[#f3f6f7]/70">
+                      <QSpinner size={18} className="text-[#7eb6ff]" />
                       {t("taxiFare.calculatingShort")}
                     </span>
-                  ) : canShowFare && fare ? (
-                    formatLkr(fare.totalLkr)
+                  ) : displayTotalLkr != null ? (
+                    formatLkr(displayTotalLkr)
                   ) : (
                     "—"
                   )}
                 </motion.p>
               </AnimatePresence>
-              <p className="mt-2 text-xs leading-relaxed text-[#f3f6f7]/48">
+              <p className="mt-1.5 text-[0.6875rem] leading-relaxed text-[#f3f6f7]/45">
                 {t("taxiFare.estimateNote")}
               </p>
             </div>
 
-            <div className="mt-auto flex flex-col gap-2.5 pt-8">
-              <Link
-                href="/support"
-                aria-disabled={!canShowFare}
-                className={`inline-flex min-h-12 items-center justify-center rounded-[14px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-semibold text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.35)] transition-[transform,box-shadow,filter,opacity] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50 ${
-                  canShowFare
+            <div className="relative z-[1] mt-5 flex flex-col gap-2">
+              <button
+                type="button"
+                onClick={handleBook}
+                className={`inline-flex min-h-11 items-center justify-center rounded-[14px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-semibold text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.35)] transition-[transform,box-shadow,filter,opacity] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50 ${
+                  canBook
                     ? "hover:shadow-[0_14px_36px_rgb(0_98_250_/_0.45)] hover:brightness-110 motion-safe:hover:-translate-y-0.5"
-                    : "pointer-events-none opacity-40"
+                    : "opacity-40"
                 }`}
               >
                 {t("taxiFare.bookNow")}
-              </Link>
-              <p className="text-center text-[0.6875rem] text-[#f3f6f7]/40">
+              </button>
+              {confirmErrors.length > 0 ? (
+                <ul
+                  className="space-y-1 text-center text-[0.6875rem] text-red-300"
+                  role="alert"
+                >
+                  {confirmErrors.map((msg) => (
+                    <li key={msg}>{msg}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {!detailsComplete && vehicleChosen ? (
+                <p className="text-center text-[0.6875rem] text-[#f3f6f7]/45">
+                  {t("taxiFare.bookingDetails.requiredDetailsHint")}
+                </p>
+              ) : null}
+              <p className="text-center text-[0.625rem] text-[#f3f6f7]/40">
                 {t("taxiFare.scopeNote")}
               </p>
             </div>
           </motion.aside>
+
+          <AnimatePresence initial={false}>
+            {step3Unlocked ? (
+              <motion.div
+                ref={bookingDetailsRef}
+                key="booking-details-right"
+                initial={
+                  reduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }
+                }
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: EASE }}
+              >
+                <StepPanel
+                  step={3}
+                  title={t("taxiFare.steps.detailsTitle")}
+                  active={step === 3}
+                  done={detailsComplete}
+                  reduceMotion={reduceMotion}
+                  brand
+                  watermark
+                >
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <label
+                        htmlFor={`${formId}-passenger-name`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.passengerName")}
+                        <span className="text-brand"> *</span>
+                      </label>
+                      <input
+                        id={`${formId}-passenger-name`}
+                        type="text"
+                        required
+                        value={passengerName}
+                        onChange={(e) => setPassengerName(e.target.value)}
+                        autoComplete="name"
+                        className={inputClass}
+                      />
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <label
+                        htmlFor={`${formId}-phone`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.phone")}
+                        <span className="text-brand"> *</span>
+                      </label>
+                      <input
+                        id={`${formId}-phone`}
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        autoComplete="tel"
+                        className={inputClass}
+                      />
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <label
+                        htmlFor={`${formId}-passengers`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.passengerCount")}
+                        <span className="text-brand"> *</span>
+                      </label>
+                      <input
+                        id={`${formId}-passengers`}
+                        type="number"
+                        min={1}
+                        max={60}
+                        value={passengerCount}
+                        onChange={(e) => setPassengerCount(e.target.value)}
+                        className={inputClass}
+                      />
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-1">
+                      <label
+                        htmlFor={`${formId}-luggage`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.luggageCount")}
+                      </label>
+                      <input
+                        id={`${formId}-luggage`}
+                        type="number"
+                        min={0}
+                        max={40}
+                        value={luggageCount}
+                        onChange={(e) => setLuggageCount(e.target.value)}
+                        className={inputClass}
+                      />
+                    </div>
+                    <fieldset className="sm:col-span-2">
+                      <legend className="text-xs font-medium text-ink/70">
+                        {t("taxiFare.bookingDetails.paymentMethod")}
+                        <span className="text-brand"> *</span>
+                      </legend>
+                      <div
+                        className="mt-1.5 flex flex-wrap gap-1.5"
+                        role="radiogroup"
+                        aria-label={t(
+                          "taxiFare.bookingDetails.paymentMethod",
+                        )}
+                      >
+                        {(["cash", "card", "wallet"] as const).map((id) => {
+                          const selected = paymentMethod === id;
+                          return (
+                            <button
+                              key={id}
+                              type="button"
+                              role="radio"
+                              aria-checked={selected}
+                              onClick={() => setPaymentMethod(id)}
+                              className={radioOptionClass(selected)}
+                            >
+                              {t(`taxiFare.bookingDetails.${id}`)}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </fieldset>
+                    <div className="flex min-w-0 flex-col gap-1 sm:col-span-2">
+                      <label
+                        htmlFor={`${formId}-promo`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.promoCode")}
+                      </label>
+                      <input
+                        id={`${formId}-promo`}
+                        type="text"
+                        value={promoCode}
+                        onChange={(e) => setPromoCode(e.target.value)}
+                        placeholder={t(
+                          "taxiFare.bookingDetails.promoPlaceholder",
+                        )}
+                        autoComplete="off"
+                        className={`${inputClass} max-w-xs`}
+                      />
+                    </div>
+                    <fieldset className="sm:col-span-2">
+                      <legend className="text-xs font-medium text-ink/70">
+                        {t("taxiFare.bookingDetails.airportPickup")}
+                      </legend>
+                      <div
+                        className="mt-1.5 flex flex-wrap gap-1.5"
+                        role="radiogroup"
+                        aria-label={t(
+                          "taxiFare.bookingDetails.airportPickup",
+                        )}
+                      >
+                        {([false, true] as const).map((value) => {
+                          const selected = airportPickup === value;
+                          return (
+                            <button
+                              key={String(value)}
+                              type="button"
+                              role="radio"
+                              aria-checked={selected}
+                              onClick={() => {
+                                setAirportPickup(value);
+                                if (!value) setFlightNumber("");
+                              }}
+                              className={radioOptionClass(selected)}
+                            >
+                              {value
+                                ? t("taxiFare.bookingDetails.yes")
+                                : t("taxiFare.bookingDetails.no")}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </fieldset>
+                    {airportPickup ? (
+                      <div className="flex min-w-0 flex-col gap-1 sm:col-span-2">
+                        <label
+                          htmlFor={`${formId}-flight`}
+                          className="text-xs font-medium text-ink/70"
+                        >
+                          {t("taxiFare.bookingDetails.flightNumber")}
+                          <span className="ml-1 font-normal text-ink/40">
+                            (
+                            {t(
+                              "taxiFare.bookingDetails.flightNumberOptional",
+                            )}
+                            )
+                          </span>
+                        </label>
+                        <input
+                          id={`${formId}-flight`}
+                          type="text"
+                          value={flightNumber}
+                          onChange={(e) => setFlightNumber(e.target.value)}
+                          placeholder={t(
+                            "taxiFare.bookingDetails.flightPlaceholder",
+                          )}
+                          autoComplete="off"
+                          className={inputClass}
+                        />
+                      </div>
+                    ) : null}
+                    <div className="flex min-w-0 flex-col gap-1 sm:col-span-2">
+                      <label
+                        htmlFor={`${formId}-notes`}
+                        className="text-xs font-medium text-ink/70"
+                      >
+                        {t("taxiFare.bookingDetails.driverNotes")}
+                      </label>
+                      <textarea
+                        id={`${formId}-notes`}
+                        rows={2}
+                        value={specialNotes}
+                        onChange={(e) => setSpecialNotes(e.target.value)}
+                        placeholder={t(
+                          "taxiFare.bookingDetails.notesPlaceholder",
+                        )}
+                        className={`${inputClass} min-h-[3.25rem] resize-y py-2`}
+                      />
+                    </div>
+                  </div>
+                </StepPanel>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+          </div>
         </div>
       </div>
 
@@ -859,6 +1713,69 @@ export function TaxiFareEstimator() {
           }
         />
       ) : null}
+
+      {/* Mobile sticky fare bar — desktop uses the sticky Fare Summary aside */}
+      <div
+        className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden ${
+          hasDistance ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        aria-hidden={!hasDistance}
+      >
+        <div
+          className={`pointer-events-auto mx-auto flex max-w-lg items-center gap-3 rounded-[1.15rem] border border-ink/10 bg-[#050b12]/94 px-3.5 py-3 text-[#f3f6f7] shadow-[0_-8px_32px_rgb(10_22_32_/_0.28)] backdrop-blur-xl transition-[transform,opacity] duration-300 ${
+            hasDistance
+              ? "translate-y-0"
+              : "translate-y-6"
+          } ${totalPulse ? "ring-2 ring-brand/50" : ""}`}
+        >
+          <div className="min-w-0 flex-1">
+            <p className="text-[0.625rem] font-medium tracking-wide text-[#f3f6f7]/55 uppercase">
+              {t("taxiFare.summary.estimatedFare")}
+            </p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={
+                  displayTotalLkr != null
+                    ? `m-${displayTotalLkr}`
+                    : routeLoading
+                      ? "m-loading"
+                      : "m-empty"
+                }
+                initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
+                transition={{ duration: 0.25, ease: EASE }}
+                className={`truncate font-display text-lg font-semibold tracking-tight ${
+                  totalPulse ? "text-[#7eb6ff]" : "text-[#f3f6f7]"
+                }`}
+              >
+                {routeLoading && displayTotalLkr == null
+                  ? t("taxiFare.calculatingShort")
+                  : displayTotalLkr != null
+                    ? formatLkr(displayTotalLkr)
+                    : "—"}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              if (canBook) {
+                handleBook();
+                return;
+              }
+              onMobileContinue();
+            }}
+            disabled={!hasDistance}
+            className="inline-flex shrink-0 items-center gap-1 rounded-[0.85rem] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-4 py-2.5 text-sm font-semibold text-paper shadow-[0_8px_20px_rgb(0_98_250_/_0.35)] disabled:opacity-40"
+          >
+            {canBook
+              ? t("taxiFare.bookNow")
+              : t("taxiFare.mobileFareBar.continue")}
+            <ChevronRight className="h-4 w-4" aria-hidden />
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
@@ -870,6 +1787,8 @@ function StepPanel({
   done,
   children,
   reduceMotion,
+  brand = false,
+  watermark = false,
 }: {
   step: number;
   title: string;
@@ -877,11 +1796,13 @@ function StepPanel({
   done: boolean;
   children: ReactNode;
   reduceMotion: boolean;
+  brand?: boolean;
+  watermark?: boolean;
 }) {
   return (
     <motion.div
       layout={!reduceMotion}
-      className={`rounded-[1.35rem] border p-4 sm:p-5 ${
+      className={`relative overflow-hidden rounded-[1.35rem] border p-4 sm:p-5 ${
         active
           ? "border-brand/25 bg-white/70 shadow-[0_16px_40px_rgb(0_98_250_/_0.1)]"
           : done
@@ -889,7 +1810,16 @@ function StepPanel({
             : "border-ink/6 bg-white/35"
       }`}
     >
-      <div className="mb-4 flex items-center gap-2.5">
+      {watermark || brand ? (
+        <QWatermark
+          tone="brand"
+          opacity={active ? 0.05 : 0.035}
+          size={200}
+          blur={1.75}
+        />
+      ) : null}
+      {brand ? <QGlowBadge size={20} className="top-3.5 right-3.5" /> : null}
+      <div className="relative z-[1] mb-4 flex items-center gap-2.5">
         <span
           className={`grid h-7 w-7 place-items-center rounded-full text-[0.6875rem] font-bold ${
             active || done
@@ -907,7 +1837,7 @@ function StepPanel({
           {title}
         </h3>
       </div>
-      {children}
+      <div className="relative z-[1]">{children}</div>
     </motion.div>
   );
 }

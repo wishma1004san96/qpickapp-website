@@ -1712,4 +1712,61 @@
   }
 }
 
+/* Premium Q brand spinner — soft arc + gentle mark pulse */
+@keyframes q-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes q-spinner-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.q-spinner-arc {
+  animation: q-spinner-rotate 0.9s linear infinite;
+}
+
+.q-spinner-mark {
+  animation: q-spinner-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .q-spinner-arc,
+  .q-spinner-mark {
+    animation: none;
+  }
+}
+
+/* Fare estimator — brief Grand Total highlight */
+@keyframes fare-total-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(0 98 250 / 0.45);
+  }
+  40% {
+    box-shadow: 0 0 0 6px rgb(0 98 250 / 0.18);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(0 98 250 / 0);
+  }
+}
+
+.fare-total-pulse {
+  animation: fare-total-pulse 0.9s var(--ease-cinematic, ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fare-total-pulse {
+    animation: none;
+  }
+}
+
 

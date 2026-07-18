@@ -1,0 +1,129 @@
+/* Ride page visual polish — glass, glow, micro-interactions */
+
+.ride-section {
+  border-top: 1px solid rgb(10 22 32 / 0.04);
+}
+
+/* Why cards */
+.ride-why-card {
+  border: 1px solid rgb(255 255 255 / 0.7);
+  background:
+    linear-gradient(165deg, rgb(255 255 255 / 0.92) 0%, rgb(248 250 255 / 0.78) 100%);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 14px 36px rgb(10 22 32 / 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.ride-why-card-edge {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(1 147 251 / 0.55) 35%,
+    rgb(0 98 250 / 0.85) 50%,
+    rgb(1 147 251 / 0.55) 65%,
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+.ride-why-card:hover {
+  border-color: rgb(0 98 250 / 0.18);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 0 0 1px rgb(0 98 250 / 0.08),
+    0 18px 44px rgb(0 98 250 / 0.14),
+    0 8px 20px rgb(10 22 32 / 0.06);
+}
+
+.ride-why-icon-wrap {
+  display: inline-grid;
+  place-items: center;
+}
+
+.ride-why-icon-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgb(0 98 250 / 0.28), transparent 68%);
+  opacity: 0.55;
+  transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ride-why-card:hover .ride-why-icon-glow {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Fleet cards */
+.ride-fleet-card {
+  border: 1.5px solid rgb(10 22 32 / 0.07);
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.98) 0%,
+    rgb(248 250 255 / 0.9) 100%
+  );
+  box-shadow: 0 10px 28px rgb(10 22 32 / 0.04);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease;
+}
+
+.ride-fleet-card:hover {
+  border-color: rgb(0 98 250 / 0.22);
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.08),
+    0 16px 40px rgb(0 98 250 / 0.12);
+}
+
+.ride-fleet-card--selected {
+  border-color: rgb(0 98 250 / 0.55);
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 1) 0%,
+    rgb(238 244 251 / 0.95) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.2),
+    0 0 28px rgb(0 98 250 / 0.2),
+    0 16px 40px rgb(0 98 250 / 0.16);
+}
+
+.ride-fleet-card--selected:hover {
+  border-color: rgb(0 98 250 / 0.65);
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.25),
+    0 0 32px rgb(0 98 250 / 0.24),
+    0 18px 44px rgb(0 98 250 / 0.18);
+}
+
+.ride-safety-card {
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ride-safety-card:hover {
+  border-color: rgb(0 98 250 / 0.16);
+  box-shadow: 0 14px 32px rgb(0 98 250 / 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ride-fleet-img {
+    transition: none !important;
+  }
+
+  .ride-why-card,
+  .ride-fleet-card,
+  .ride-safety-card {
+    transition: none !important;
+  }
+}

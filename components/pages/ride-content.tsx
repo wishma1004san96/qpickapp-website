@@ -1,56 +1,36 @@
 "use client";
 
 import {
-  useMessages,
-  useTranslations,
-} from "@/components/i18n/locale-provider";
-import { DriverTrustRow } from "@/components/marketing/driver-trust-row";
-import { PageShell } from "@/components/marketing/page-shell";
+  RideFaqSection,
+  RideFinalCta,
+  RideFleetSection,
+  RideSafetySection,
+  RideWhySection,
+} from "@/components/marketing/ride-page-sections";
 import { TaxiFareEstimator } from "@/components/marketing/taxi-fare-estimator";
+import { Container } from "@/components/ui/container";
 
+/**
+ * Ride page — single booking surface first (no duplicate intro).
+ * Estimator is the page hero → why / fleet / safety / FAQ / CTA.
+ */
 export function RideContent() {
-  const t = useTranslations();
-  const { pages } = useMessages();
-  const { ride } = pages;
-  const features = [
-    ride.features.onDemand,
-    ride.features.scheduled,
-    ride.features.intercity,
-  ];
-
   return (
-    <PageShell
-      title={t("pages.ride.title")}
-      description={t("pages.ride.description")}
-      primaryCta={{ href: "#taxi-fare", label: t("pages.ride.primaryCta") }}
-      secondaryCta={{ href: "/safety", label: t("pages.ride.secondaryCta") }}
-    >
-      <div className="space-y-12 sm:space-y-14">
-        <div className="grid gap-8 sm:grid-cols-3">
-          {features.map((item) => (
-            <div key={item.title} className="border-t border-mist pt-5">
-              <h2 className="text-lg font-medium text-ink">{item.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
+    <div className="bg-foam">
+      <section
+        className="border-b border-ink/5 bg-[linear-gradient(180deg,#eef4fb_0%,#F8FAFF_45%,#ffffff_100%)] pt-24 sm:pt-28"
+        aria-label="Ride booking"
+      >
+        <Container className="pb-9 pt-5 sm:pb-11 sm:pt-7 lg:pb-12">
+          <TaxiFareEstimator variant="page" />
+        </Container>
+      </section>
 
-        <TaxiFareEstimator />
-
-        <div className="max-w-md">
-          <DriverTrustRow
-            name={ride.driverTrust.name}
-            trips={ride.driverTrust.trips}
-            rating={ride.driverTrust.rating}
-            verifiedLabel={ride.driverTrust.verifiedLabel}
-            tripsLabel={t("pages.ride.driverTrust.tripsLabel", {
-              count: ride.driverTrust.trips,
-            })}
-          />
-        </div>
-      </div>
-    </PageShell>
+      <RideWhySection />
+      <RideFleetSection />
+      <RideSafetySection />
+      <RideFaqSection />
+      <RideFinalCta />
+    </div>
   );
 }

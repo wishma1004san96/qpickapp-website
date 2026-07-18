@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Mini Bus">
+  <title>Mini Bus</title>
+  <path fill-rule="evenodd" d="M20 37.5 H110 V22.5 L102 11.5 H50 L36 15 L28 22.5 L24 31 L20 37.5 ZM34 22.5 L44 14 H52 V24 L36 25 ZM58 13 H68 V23.5 H58 ZM72 13 H82 V23.5 H72 ZM86 13 H100 V23.5 H86 Z"/>
+  <path fill-rule="evenodd" d="M 40 38.3 A 6.7 6.7 0 1 1 40 51.7 A 6.7 6.7 0 1 1 40 38.3 Z M 40 42.86 A 2.14 2.14 0 1 0 40 47.14 A 2.14 2.14 0 1 0 40 42.86 Z"/>
+  <path fill-rule="evenodd" d="M 100 38.3 A 6.7 6.7 0 1 1 100 51.7 A 6.7 6.7 0 1 1 100 38.3 Z M 100 42.86 A 2.14 2.14 0 1 0 100 47.14 A 2.14 2.14 0 1 0 100 42.86 Z"/>
+</svg>

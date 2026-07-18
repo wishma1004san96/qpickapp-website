@@ -1,64 +1,54 @@
 /**
- * Shared types for the Q Pick hybrid fare engine.
- * Ride bookings only — not for Airport / Tours.
+ * Q Pick Day & Night fare types — Ride bookings only.
+ * Single vehicle pricing shape for every fleet type.
  */
 
 import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
 
-export type PricingMode = "dynamic" | "standard";
+export type TimeOfDay = "day" | "night";
 
-/** Market conditions that can raise dynamic fares. */
+/** @deprecated Kept for API compatibility — engine is unified day/night. */
+export type PricingMode = "dayNight";
+
+/** @deprecated Legacy surge condition labels — prefer surgeMultiplier on vehicle. */
 export type SurgeCondition = "normal" | "peak" | "rain" | "highDemand";
 
-export type SurgeMultipliers = {
-  peak: number;
-  rain: number;
-  highDemand: number;
-};
-
-/** Admin-editable rates for dynamic vehicles (Bike / Tuk / Mini Car / Wagon). */
-export type DynamicVehiclePricing = {
-  mode: "dynamic";
-  baseFare: number;
-  perKmRate: number;
+/** Admin-editable rates for every vehicle. */
+export type VehiclePricingSettings = {
+  dayBaseFare: number;
+  dayPerKmRate: number;
+  nightBaseFare: number;
+  nightPerKmRate: number;
   waitingPerMinute: number;
-  /** Free waiting window before per-minute charge applies */
-  freeWaitingMinutes: number;
+  minimumFare: number;
+  /** Optional flat fee (0 = off). */
+  bookingFee: number;
+  /** Optional flat fee when airport pickup is flagged (0 = off). */
+  airportPickupFee: number;
+  /** When true, apply surgeMultiplier to the fare subtotal. */
   surgeEnabled: boolean;
-  surgeMultipliers: SurgeMultipliers;
+  /** Multiplier used when surgeEnabled (1 = no change). */
+  surgeMultiplier: number;
+  /** When true, apply automatic long-distance per-km bands. */
+  longDistanceDiscountEnabled: boolean;
 };
-
-/** Admin-editable rates for standard vehicles. */
-export type StandardVehiclePricing = {
-  mode: "standard";
-  baseFare: number;
-  perKmRate: number;
-};
-
-export type VehiclePricingSettings =
-  | DynamicVehiclePricing
-  | StandardVehiclePricing;
 
 export type FarePricingCatalog = Record<TaxiVehicleId, VehiclePricingSettings>;
 
-/** Runtime conditions supplied when calculating a fare. */
 export type FareContext = {
-  /** Driving distance in kilometres (metres / 1000). */
   distanceKm: number;
-  /**
-   * Rider-entered idle / waiting minutes only.
-   * Must NOT be route duration / driving time.
-   */
+  /** Rider-entered idle minutes only — never route duration. */
   waitingMinutes?: number;
   tollCharges?: number;
   parkingCharges?: number;
-  /** Active market conditions (ignored for standard vehicles) */
-  conditions?: SurgeCondition[];
-  /**
-   * Optional explicit multiplier override from backend.
-   * When set, replaces condition-derived multiplier (still respects surgeEnabled).
-   */
+  /** When true, include vehicle airportPickupFee. */
+  airportPickup?: boolean;
+  /** Explicit surge override (still requires surgeEnabled). */
   surgeMultiplierOverride?: number;
+  /** Instant used for day/night (defaults to now, Asia/Colombo). */
+  at?: Date | string | number;
+  /** @deprecated Ignored by day/night engine. */
+  conditions?: SurgeCondition[];
 };
 
 export type FareEngineInput = FareContext & {
@@ -68,34 +58,41 @@ export type FareEngineInput = FareContext & {
 export type FareBreakdown = {
   vehicleId: TaxiVehicleId;
   pricingMode: PricingMode;
+  timeOfDay: TimeOfDay;
   distanceKm: number;
 
   baseFare: number;
   perKmRate: number;
+  /** Distance-only charge after long-distance banding (excludes base). */
   distanceCharge: number;
+  /** Savings from long-distance banding (0 if disabled). */
+  longDistanceDiscount: number;
 
   waitingMinutes: number;
   billableWaitingMinutes: number;
   waitingCharge: number;
 
-  /** Applied surge multiplier (1 = none). Dynamic vehicles only. */
+  bookingFee: number;
+  airportPickupFee: number;
+
+  surgeEnabled: boolean;
   surgeMultiplier: number;
-  /** Amount attributed to surge (core × multiplier − core) */
   surgeAmount: number;
-  activeConditions: SurgeCondition[];
 
   tollCharges: number;
   parkingCharges: number;
 
-  /** base + distance (+ waiting) before surge */
   subtotalBeforeSurge: number;
-  /** After surge, before toll/parking */
   subtotalAfterSurge: number;
+  /** Amount added to reach minimumFare, if any. */
+  minimumFareTopUp: number;
+  minimumFare: number;
 
-  /** Raw total before market calibration */
+  /** Alias for pre-calibration total (calibration usually 1). */
   totalBeforeCalibration: number;
-  /** Configurable PickMe-alignment factor (e.g. 0.95) */
   marketAdjustment: number;
-  /** Final estimated fare after calibration */
   totalLkr: number;
+
+  /** @deprecated Always empty / normal for compatibility. */
+  activeConditions: SurgeCondition[];
 };

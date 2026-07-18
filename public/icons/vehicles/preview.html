@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q Pick Vehicle Icons v6</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "SF Pro Display", system-ui, sans-serif;
+        background: #eef1f4;
+        color: #0a1620;
+        padding: 28px;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; letter-spacing: -0.02em; }
+      p { margin: 0 0 20px; color: #667788; font-size: 12px; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 18px 12px 14px;
+        text-align: center;
+        border: 1px solid rgba(10, 22, 32, 0.07);
+        min-height: 130px;
+      }
+      .card.selected {
+        border-color: #0062fa;
+        box-shadow: 0 0 0 1px rgba(0, 98, 250, 0.18), 0 0 20px rgba(0, 98, 250, 0.16);
+        color: #0062fa;
+      }
+      .icon {
+        width: 100%;
+        height: 56px;
+        color: inherit;
+      }
+      .icon svg {
+        width: 100%;
+        height: 56px;
+      }
+      .name {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Q Pick Vehicle Icon Pack v6</h1>
+    <p>Filled polygonal automotive silhouettes · Uber / Bolt language</p>
+    <div class="grid" id="grid"></div>
+    <script>
+      const icons = [
+        ["bike", "Bike"],
+        ["tuk", "Tuk"],
+        ["mini", "Mini"],
+        ["flex", "Flex"],
+        ["sedan", "Sedan"],
+        ["minivan", "Minivan"],
+        ["fr-van", "FR Van"],
+        ["suv", "SUV"],
+        ["mini-bus", "Mini Bus"],
+        ["bus", "Bus"],
+      ];
+      const grid = document.getElementById("grid");
+      Promise.all(
+        icons.map(async ([file, name]) => {
+          const res = await fetch("./" + file + ".svg?v=6");
+          const text = await res.text();
+          const card = document.createElement("div");
+          card.className = "card" + (name === "Sedan" ? " selected" : "");
+          card.innerHTML =
+            '<div class="icon">' +
+            text.replace(/<\?xml[^>]*>/, "").replace(/<title>[^<]*<\/title>/, "") +
+            '</div><div class="name">' +
+            name +
+            "</div>";
+          return card;
+        })
+      ).then((cards) => cards.forEach((c) => grid.appendChild(c)));
+    </script>
+  </body>
+</html>

@@ -5,8 +5,8 @@ import { useMemo } from "react";
 import { CircleMarker, Marker, Popup } from "react-leaflet";
 import type { SelectedPlace } from "@/lib/osm/types";
 
-const PICKUP_BLUE = "#0062fa";
-const DEST_INK = "#0a1620";
+const PICKUP_GREEN = "#16a34a";
+const DEST_RED = "#dc2626";
 
 /**
  * SVG data-URI pin — avoids DivIcon/Tailwind CSS fights that hide markers.
@@ -109,7 +109,7 @@ export function PickupMarker({ place }: { place: SelectedPlace }) {
     <PlaceMarkers
       place={place}
       letter="A"
-      fill={PICKUP_BLUE}
+      fill={PICKUP_GREEN}
       title="A · Pickup"
       zIndexOffset={1000}
     />
@@ -121,7 +121,7 @@ export function DestinationMarker({ place }: { place: SelectedPlace }) {
     <PlaceMarkers
       place={place}
       letter="B"
-      fill={DEST_INK}
+      fill={DEST_RED}
       title="B · Destination"
       zIndexOffset={1100}
     />

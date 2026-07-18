@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Bus">
+  <title>Bus</title>
+  <path fill-rule="evenodd" d="M16 37.5 H114 V21 L106 10.5 H46 L32 14.5 L24 21 L20 31 L16 37.5 ZM30 21.5 L40 13 H48 V23.5 L32 24.5 ZM54 12 H62 V22.5 H54 ZM66 12 H74 V22.5 H66 ZM78 12 H86 V22.5 H78 ZM90 12 H104 V22.5 H90 Z"/>
+  <path d="M54 24 v11 h1.5 V24 z" opacity="0.45"/>
+  <path fill-rule="evenodd" d="M 38 38.2 A 6.8 6.8 0 1 1 38 51.8 A 6.8 6.8 0 1 1 38 38.2 Z M 38 42.82 A 2.18 2.18 0 1 0 38 47.18 A 2.18 2.18 0 1 0 38 42.82 Z"/>
+  <path fill-rule="evenodd" d="M 104 38.2 A 6.8 6.8 0 1 1 104 51.8 A 6.8 6.8 0 1 1 104 38.2 Z M 104 42.82 A 2.18 2.18 0 1 0 104 47.18 A 2.18 2.18 0 1 0 104 42.82 Z"/>
+</svg>

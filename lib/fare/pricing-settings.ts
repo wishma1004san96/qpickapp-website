@@ -1,8 +1,6 @@
 /**
  * Vehicle pricing accessors.
- *
- * Single source of truth: data/fare-pricing.json (via pricing-store).
- * Seed catalog below is used only when the JSON file is missing / reset.
+ * Single source of truth: data/fare-pricing.json
  */
 
 import {
@@ -14,10 +12,7 @@ import {
   type FarePricingFile,
 } from "@/lib/fare/pricing-store";
 import type {
-  DynamicVehiclePricing,
   FarePricingCatalog,
-  StandardVehiclePricing,
-  SurgeMultipliers,
   VehiclePricingSettings,
 } from "@/lib/fare/types";
 import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
@@ -25,58 +20,49 @@ import { TAXI_VEHICLE_IDS } from "@/lib/taxi-fare-vehicles";
 
 export type { AdminPricingPatch };
 
-const DEFAULT_SURGE: SurgeMultipliers = {
-  peak: 1.25,
-  rain: 1.15,
-  highDemand: 1.4,
-};
-
-function dynamic(
-  baseFare: number,
-  perKmRate: number,
+function vehicle(
+  dayBaseFare: number,
+  dayPerKmRate: number,
+  nightBaseFare: number,
+  nightPerKmRate: number,
   waitingPerMinute: number,
-  surge: Partial<SurgeMultipliers> = {},
-): DynamicVehiclePricing {
+  minimumFare: number,
+): VehiclePricingSettings {
   return {
-    mode: "dynamic",
-    baseFare,
-    perKmRate,
+    dayBaseFare,
+    dayPerKmRate,
+    nightBaseFare,
+    nightPerKmRate,
     waitingPerMinute,
-    freeWaitingMinutes: 5,
-    surgeEnabled: true,
-    surgeMultipliers: { ...DEFAULT_SURGE, ...surge },
-  };
-}
-
-function standard(baseFare: number, perKmRate: number): StandardVehiclePricing {
-  return {
-    mode: "standard",
-    baseFare,
-    perKmRate,
+    minimumFare,
+    bookingFee: 0,
+    airportPickupFee: 0,
+    surgeEnabled: false,
+    surgeMultiplier: 1,
+    longDistanceDiscountEnabled: true,
   };
 }
 
 /**
- * Seed only — live rates come from data/fare-pricing.json.
- * Keep in sync with that file when changing defaults.
+ * Seed catalog — keep in sync with data/fare-pricing.json.
  */
 export const DEFAULT_FARE_PRICING_CATALOG: FarePricingCatalog = {
-  bike: dynamic(80, 55, 2),
-  tuk: dynamic(100, 75, 2),
-  miniCar: dynamic(140, 90, 3),
-  wagon: dynamic(150, 95, 3),
-  sedan: standard(130, 150),
-  miniVan: standard(180, 200),
-  van: standard(220, 240),
-  longVan: standard(230, 250),
-  suv: standard(240, 260),
-  miniBus: standard(320, 340),
-  longBus: standard(500, 520),
+  bike: vehicle(100, 60, 140, 80, 2, 150),
+  tuk: vehicle(200, 95, 260, 120, 2, 300),
+  miniCar: vehicle(250, 110, 320, 140, 3, 400), // Flex
+  wagon: vehicle(300, 120, 390, 155, 3, 450),
+  sedan: vehicle(500, 155, 650, 195, 3, 600),
+  suv: vehicle(1000, 250, 1300, 310, 4, 1200),
+  miniVan: vehicle(330, 130, 420, 165, 4, 500),
+  van: vehicle(900, 200, 1150, 240, 5, 1200), // FR Van
+  longVan: vehicle(1350, 235, 1700, 280, 5, 1700), // HR Van
+  miniBus: vehicle(3500, 400, 4500, 450, 6, 3500),
+  longBus: vehicle(6000, 600, 7500, 700, 8, 6000), // Bus
 };
 
-/** Seed calibration — live value is in data/fare-pricing.json. */
+/** Day/night rates already encode market positioning — calibration default is 1. */
 export const DEFAULT_FARE_CALIBRATION = {
-  marketAdjustment: 0.95,
+  marketAdjustment: 1,
 } as const;
 
 function seedFile(): FarePricingFile {
@@ -104,13 +90,9 @@ export function getActiveCalibration(): { marketAdjustment: number } {
 
 export function resetFarePricingCatalog(): FarePricingCatalog {
   clearFarePricingMemoryOverlay();
-  const saved = saveFarePricingFile(seedFile());
-  return saved.vehicles;
+  return saveFarePricingFile(seedFile()).vehicles;
 }
 
-/**
- * Merge partial admin updates into the live JSON config and persist.
- */
 export function updateFarePricingCatalog(
   patch: Partial<Record<TaxiVehicleId, AdminPricingPatch>>,
 ): FarePricingCatalog {

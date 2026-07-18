@@ -3,7 +3,7 @@
  * Live fare math runs on the server via POST /api/ride/fare.
  */
 
-import type { FareBreakdown, SurgeCondition } from "@/lib/fare/types";
+import type { FareBreakdown, SurgeCondition, TimeOfDay } from "@/lib/fare/types";
 import {
   TAXI_VEHICLE_IDS,
   type TaxiVehicleId,
@@ -14,22 +14,18 @@ export {
   DYNAMIC_PRICING_VEHICLE_IDS,
   isDynamicPricingVehicle,
 } from "@/lib/taxi-fare-vehicles";
-export type { FareBreakdown, SurgeCondition };
+export type { FareBreakdown, SurgeCondition, TimeOfDay };
 
-/** @deprecated Prefer baseFare / perKmRate from live catalog */
 export type TaxiVehicleRate = {
   id: TaxiVehicleId;
   firstKm: number;
   afterFirstKm: number;
 };
 
-/**
- * Display-only fallbacks for waiting-hint copy in the estimator.
- * Actual fare waiting rates come from data/fare-pricing.json per vehicle.
- */
-export const FREE_WAITING_MINUTES = 5;
-/** @deprecated Not used by calculateFare — live waitingPerMinute is in fare-pricing.json */
-export const WAITING_RATE_PER_MIN = 30;
+/** Waiting is charged from the first minute in the day/night engine. */
+export const FREE_WAITING_MINUTES = 0;
+/** Display fallback — live rate comes from the pricing catalog. */
+export const WAITING_RATE_PER_MIN = 3;
 
 export type TaxiFareBreakdown = {
   vehicleId: TaxiVehicleId;
@@ -53,6 +49,12 @@ export type TaxiFareBreakdown = {
   marketAdjustment?: number;
   baseFare?: number;
   perKmRate?: number;
+  timeOfDay?: TimeOfDay;
+  bookingFee?: number;
+  airportPickupFee?: number;
+  longDistanceDiscount?: number;
+  minimumFareTopUp?: number;
+  distanceCharge?: number;
 };
 
 export function formatLkr(amount: number): string {
@@ -76,7 +78,6 @@ export type TaxiVehicleMeta = {
   rating: number;
 };
 
-/** Capacity / comfort meta for the ride vehicle picker (display only). */
 export const TAXI_VEHICLE_META: Record<TaxiVehicleId, TaxiVehicleMeta> = {
   bike: {
     passengers: 1,

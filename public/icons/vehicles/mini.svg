@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Mini">
+  <title>Mini</title>
+  <path fill-rule="evenodd" d="M28 37.5 H98 L94 32 H88 L78 19 H54 L44 32 H32 L28 37.5 ZM50 26 L58 21 H72 L80 26.5 L77 28.5 L71 24 H59 L52.5 28 Z"/>
+  <path fill-rule="evenodd" d="M 44 38.4 A 6.6 6.6 0 1 1 44 51.6 A 6.6 6.6 0 1 1 44 38.4 Z M 44 42.89 A 2.11 2.11 0 1 0 44 47.11 A 2.11 2.11 0 1 0 44 42.89 Z"/>
+  <path fill-rule="evenodd" d="M 88 38.4 A 6.6 6.6 0 1 1 88 51.6 A 6.6 6.6 0 1 1 88 38.4 Z M 88 42.89 A 2.11 2.11 0 1 0 88 47.11 A 2.11 2.11 0 1 0 88 42.89 Z"/>
+</svg>

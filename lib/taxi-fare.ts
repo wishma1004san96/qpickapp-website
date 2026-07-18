@@ -1,8 +1,6 @@
 /**
  * Taxi ride fare — server facade for Ride bookings.
  * Client UI must import from @/lib/taxi-fare-ui (no Node fs).
- *
- * Do NOT reuse for Airport Transfers or Tour bookings.
  */
 
 import { calculateFare } from "@/lib/fare/fare-engine";
@@ -35,6 +33,7 @@ export {
   type TaxiVehicleRate,
   type FareBreakdown,
   type SurgeCondition,
+  type TimeOfDay,
 } from "@/lib/taxi-fare-ui";
 
 export { calculateFare } from "@/lib/fare/fare-engine";
@@ -46,25 +45,25 @@ export type TaxiFareInput = {
   extrasLkr?: number;
   tollCharges?: number;
   parkingCharges?: number;
+  airportPickup?: boolean;
+  at?: Date | string | number;
   conditions?: SurgeCondition[];
   surgeMultiplierOverride?: number;
 };
 
-/** Legacy rate table derived from the live catalog (server-only). */
 export function getTaxiVehicleRates(): Record<TaxiVehicleId, TaxiVehicleRate> {
   const rates = {} as Record<TaxiVehicleId, TaxiVehicleRate>;
   for (const id of TAXI_VEHICLE_IDS) {
     const p = getVehiclePricing(id);
     rates[id] = {
       id,
-      firstKm: p.baseFare,
-      afterFirstKm: p.perKmRate,
+      firstKm: p.dayBaseFare,
+      afterFirstKm: p.dayPerKmRate,
     };
   }
   return rates;
 }
 
-/** @deprecated Use getTaxiVehicleRates() or getVehiclePricing() */
 export const TAXI_VEHICLE_RATES: Record<TaxiVehicleId, TaxiVehicleRate> =
   new Proxy({} as Record<TaxiVehicleId, TaxiVehicleRate>, {
     get(_target, prop: string) {
@@ -73,8 +72,8 @@ export const TAXI_VEHICLE_RATES: Record<TaxiVehicleId, TaxiVehicleRate> =
       const p = getVehiclePricing(prop as TaxiVehicleId);
       return {
         id: prop as TaxiVehicleId,
-        firstKm: p.baseFare,
-        afterFirstKm: p.perKmRate,
+        firstKm: p.dayBaseFare,
+        afterFirstKm: p.dayPerKmRate,
       } satisfies TaxiVehicleRate;
     },
     ownKeys() {
@@ -90,22 +89,17 @@ export const TAXI_VEHICLE_RATES: Record<TaxiVehicleId, TaxiVehicleRate> =
 
 export function getTaxiVehicleRate(id: TaxiVehicleId): TaxiVehicleRate {
   const p = getVehiclePricing(id);
-  return { id, firstKm: p.baseFare, afterFirstKm: p.perKmRate };
+  return { id, firstKm: p.dayBaseFare, afterFirstKm: p.dayPerKmRate };
 }
 
 export function calculateBillableWaitingMinutes(waitingMinutes: number): number {
-  const mins = Math.max(0, waitingMinutes);
-  return Math.max(0, mins - FREE_WAITING_MINUTES);
+  return Math.max(0, waitingMinutes);
 }
 
 export function calculateWaitingCharge(waitingMinutes: number): number {
   return calculateBillableWaitingMinutes(waitingMinutes) * WAITING_RATE_PER_MIN;
 }
 
-/**
- * Full taxi fare estimate for Ride bookings.
- * Routes through the hybrid Fare Engine (server-only live catalog).
- */
 export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
   const toll =
     input.tollCharges ??
@@ -122,26 +116,24 @@ export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
     waitingMinutes: input.waitingMinutes,
     tollCharges: toll,
     parkingCharges: parking,
+    airportPickup: input.airportPickup,
+    at: input.at,
     conditions: input.conditions,
     surgeMultiplierOverride: input.surgeMultiplierOverride,
   });
-
-  const additionalKmFare = Math.max(0, result.distanceCharge - result.baseFare);
-  const additionalKm =
-    result.perKmRate > 0 ? additionalKmFare / result.perKmRate : 0;
 
   return {
     vehicleId: result.vehicleId,
     distanceKm: result.distanceKm,
     firstKmFare: result.baseFare,
     additionalKmRate: result.perKmRate,
-    additionalKm,
-    additionalKmFare,
+    additionalKm: result.distanceKm,
+    additionalKmFare: result.distanceCharge,
     waitingMinutes: result.waitingMinutes,
     billableWaitingMinutes: result.billableWaitingMinutes,
     waitingCharge: result.waitingCharge,
     extrasLkr: extrasFromSplit || result.tollCharges + result.parkingCharges,
-    distanceFare: result.distanceCharge,
+    distanceFare: result.baseFare + result.distanceCharge,
     totalLkr: result.totalLkr,
     pricingMode: result.pricingMode,
     surgeMultiplier: result.surgeMultiplier,
@@ -152,5 +144,11 @@ export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
     marketAdjustment: result.marketAdjustment,
     baseFare: result.baseFare,
     perKmRate: result.perKmRate,
+    timeOfDay: result.timeOfDay,
+    bookingFee: result.bookingFee,
+    airportPickupFee: result.airportPickupFee,
+    longDistanceDiscount: result.longDistanceDiscount,
+    minimumFareTopUp: result.minimumFareTopUp,
+    distanceCharge: result.distanceCharge,
   };
 }

@@ -1,6 +1,6 @@
 /**
  * Client helper — always calculate fares on the server so live catalog
- * + calibration updates apply immediately (no stale client bundle rates).
+ * updates apply immediately (no stale client bundle rates).
  */
 
 import type {
@@ -15,6 +15,8 @@ export type FetchRideFareInput = {
   waitingMinutes?: number;
   tollCharges?: number;
   parkingCharges?: number;
+  airportPickup?: boolean;
+  at?: string;
   conditions?: SurgeCondition[];
   surgeMultiplierOverride?: number;
   signal?: AbortSignal;
@@ -34,6 +36,8 @@ export async function fetchRideFare(
       waitingMinutes: input.waitingMinutes ?? 0,
       tollCharges: input.tollCharges,
       parkingCharges: input.parkingCharges,
+      airportPickup: input.airportPickup === true,
+      at: input.at,
       conditions: input.conditions,
       surgeMultiplierOverride: input.surgeMultiplierOverride,
     }),
@@ -44,16 +48,15 @@ export async function fetchRideFare(
     throw new Error(data.error || "Unable to calculate fare.");
   }
 
-  // Temporary client debug — mirrors server calculateFare active pricing
-  const baseFare = data.baseFare ?? data.firstKmFare;
-  const perKmRate = data.perKmRate ?? data.additionalKmRate;
-  const calibration = data.marketAdjustment ?? 1;
   console.info(
     [
       `Vehicle: ${data.vehicleId}`,
-      `Base Fare: ${baseFare}`,
-      `Per KM: ${perKmRate}`,
-      `Calibration: ${calibration}`,
+      `Period: ${data.timeOfDay ?? "—"}`,
+      `Base Fare: ${data.baseFare ?? data.firstKmFare}`,
+      `Per KM: ${data.perKmRate ?? data.additionalKmRate}`,
+      `Distance Charge: ${data.distanceCharge ?? data.additionalKmFare}`,
+      `Waiting: ${data.waitingCharge}`,
+      `Discount: ${data.longDistanceDiscount ?? 0}`,
       `Final Fare: ${data.totalLkr}`,
     ].join("\n"),
   );

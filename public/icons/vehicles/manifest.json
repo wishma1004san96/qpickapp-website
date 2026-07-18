@@ -1,0 +1,69 @@
+{
+  "name": "Q Pick Vehicle Icon Pack",
+  "version": "6.0.0",
+  "viewBox": "0 0 128 56",
+  "style": "polygonal-automotive-uber",
+  "color": "currentColor",
+  "icons": [
+    {
+      "id": "bike",
+      "file": "bike.svg",
+      "title": "Bike",
+      "path": "/icons/vehicles/bike.svg"
+    },
+    {
+      "id": "tuk",
+      "file": "tuk.svg",
+      "title": "Tuk",
+      "path": "/icons/vehicles/tuk.svg"
+    },
+    {
+      "id": "mini",
+      "file": "mini.svg",
+      "title": "Mini",
+      "path": "/icons/vehicles/mini.svg"
+    },
+    {
+      "id": "flex",
+      "file": "flex.svg",
+      "title": "Flex",
+      "path": "/icons/vehicles/flex.svg"
+    },
+    {
+      "id": "sedan",
+      "file": "sedan.svg",
+      "title": "Sedan",
+      "path": "/icons/vehicles/sedan.svg"
+    },
+    {
+      "id": "minivan",
+      "file": "minivan.svg",
+      "title": "Minivan",
+      "path": "/icons/vehicles/minivan.svg"
+    },
+    {
+      "id": "frVan",
+      "file": "fr-van.svg",
+      "title": "FR Van",
+      "path": "/icons/vehicles/fr-van.svg"
+    },
+    {
+      "id": "suv",
+      "file": "suv.svg",
+      "title": "SUV",
+      "path": "/icons/vehicles/suv.svg"
+    },
+    {
+      "id": "miniBus",
+      "file": "mini-bus.svg",
+      "title": "Mini Bus",
+      "path": "/icons/vehicles/mini-bus.svg"
+    },
+    {
+      "id": "bus",
+      "file": "bus.svg",
+      "title": "Bus",
+      "path": "/icons/vehicles/bus.svg"
+    }
+  ]
+}

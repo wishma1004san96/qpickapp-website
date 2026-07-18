@@ -1,7 +1,7 @@
 "use client";
 
-import { Loader2 } from "lucide-react";
 import { MapContainer, TileLayer } from "react-leaflet";
+import { QSpinner } from "@/components/brand/q-mark";
 import { DestinationMarker, PickupMarker } from "@/components/maps/Markers";
 import {
   DEFAULT_ZOOM,
@@ -23,6 +23,9 @@ export type RideMapProps = {
   isRouteLoading?: boolean;
   routeError?: string | null;
   className?: string;
+  /** Optional labels for map HUD (distance / duration) */
+  distanceLabel?: string | null;
+  durationLabel?: string | null;
 };
 
 /**
@@ -38,6 +41,8 @@ export function RideMap({
   isRouteLoading = false,
   routeError = null,
   className = "",
+  distanceLabel = null,
+  durationLabel = null,
 }: RideMapProps) {
   const selected =
     routes.find((r) => r.id === selectedRouteId) ??
@@ -106,6 +111,21 @@ export function RideMap({
         ) : null}
       </MapContainer>
 
+      {distanceLabel || durationLabel ? (
+        <div className="pointer-events-none absolute top-3 left-3 z-[450] flex max-w-[calc(100%-1.5rem)] flex-wrap gap-2">
+          {distanceLabel ? (
+            <span className="rounded-full border border-white/25 bg-[#050b12]/78 px-3 py-1.5 text-[0.6875rem] font-semibold tracking-wide text-white shadow-[0_8px_20px_rgb(10_22_32_/_0.28)] backdrop-blur-md">
+              {distanceLabel}
+            </span>
+          ) : null}
+          {durationLabel ? (
+            <span className="rounded-full border border-white/25 bg-[#050b12]/78 px-3 py-1.5 text-[0.6875rem] font-semibold tracking-wide text-white shadow-[0_8px_20px_rgb(10_22_32_/_0.28)] backdrop-blur-md">
+              {durationLabel}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
+
       {isRouteLoading ? (
         <div
           className="absolute inset-0 z-[500] flex items-center justify-center bg-[#050b12]/35 backdrop-blur-[2px]"
@@ -113,7 +133,7 @@ export function RideMap({
           aria-busy="true"
         >
           <div className="flex items-center gap-2.5 rounded-full border border-white/20 bg-white/95 px-4 py-2.5 text-sm font-medium text-ink shadow-[0_12px_32px_rgb(10_22_32_/_0.2)]">
-            <Loader2 className="h-4 w-4 animate-spin text-brand" aria-hidden />
+            <QSpinner size={16} />
             Calculating route…
           </div>
         </div>

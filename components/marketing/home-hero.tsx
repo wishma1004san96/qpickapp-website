@@ -20,9 +20,22 @@ import {
   useMessages,
   useTranslations,
 } from "@/components/i18n/locale-provider";
+import {
+  QGlowBadge,
+  QHeadingMark,
+  QWatermark,
+} from "@/components/brand/q-mark";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { HeroTrustSection } from "@/components/marketing/hero-trust-section";
+import {
+  defaultSchedule,
+  formatDateInput,
+  formatTimeInput,
+  isScheduleValid,
+  minPickupTimeForDate,
+  nowPlusMinutes,
+} from "@/lib/booking/schedule";
 import { heroMedia } from "@/lib/hero-media";
 
 const BLUR =
@@ -385,6 +398,10 @@ function HeroMedia({
   );
 }
 
+
+const plannerFieldClass =
+  "min-h-12 w-full min-w-0 max-w-full rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon [color-scheme:dark]";
+
 function JourneyPlanner() {
   const router = useRouter();
   const t = useTranslations();
@@ -394,27 +411,93 @@ function JourneyPlanner() {
   const copy = messages.hero.planner[intent];
   const activeHref = useMemo(() => INTENT_HREFS[intent], [intent]);
 
+  const [from, setFrom] = useState(copy.fromDefault);
+  const [to, setTo] = useState(copy.toDefault);
+  const initialSchedule = useMemo(() => defaultSchedule(), []);
+  const [travelDate, setTravelDate] = useState(initialSchedule.date);
+  const [pickupTime, setPickupTime] = useState(initialSchedule.time);
+
+  const [nowTick, setNowTick] = useState(() => Date.now());
+  useEffect(() => {
+    if (intent !== "explore") return;
+    const id = window.setInterval(() => setNowTick(Date.now()), 30_000);
+    return () => window.clearInterval(id);
+  }, [intent]);
+
+  const now = useMemo(() => new Date(nowTick), [nowTick]);
+  const minDate = formatDateInput(now);
+  const minTime = minPickupTimeForDate(travelDate, now);
+
+  useEffect(() => {
+    const next = messages.hero.planner[intent];
+    setFrom(next.fromDefault);
+    setTo(next.toDefault);
+    if (intent === "explore") {
+      const schedule = defaultSchedule();
+      setTravelDate(schedule.date);
+      setPickupTime(schedule.time);
+    }
+  }, [intent, messages.hero.planner]);
+
+  useEffect(() => {
+    if (intent !== "explore") return;
+    if (
+      travelDate === formatDateInput(now) &&
+      pickupTime < formatTimeInput(now)
+    ) {
+      setPickupTime(formatTimeInput(nowPlusMinutes(30, now)));
+    }
+  }, [intent, travelDate, pickupTime, now]);
+
+  const locationsComplete = from.trim().length > 0 && to.trim().length > 0;
+  const exploreScheduleComplete = isScheduleValid(
+    travelDate,
+    pickupTime,
+    now,
+  );
+  const canContinue =
+    intent === "explore"
+      ? locationsComplete && exploreScheduleComplete
+      : locationsComplete;
+
+  const onTravelDateChange = (value: string) => {
+    setTravelDate(value);
+    if (value === formatDateInput(now) && pickupTime < formatTimeInput(now)) {
+      setPickupTime(formatTimeInput(nowPlusMinutes(30, now)));
+    }
+  };
+
   return (
     <form
-      className="hero-planner relative z-20 flex w-full flex-col gap-4 self-start rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-4 sm:px-6 sm:py-5 lg:min-h-[32.5rem] lg:justify-between lg:gap-y-3 lg:px-8 lg:py-6 xl:px-9"
+      className="hero-planner relative z-20 flex w-full flex-col gap-4 self-start overflow-hidden rounded-[var(--radius-lg)] border border-foam/22 bg-foam/14 px-5 py-5 shadow-[0_12px_40px_rgb(7_16_24_/_0.32)] backdrop-blur-xl supports-[backdrop-filter]:bg-foam/12 sm:gap-4 sm:px-6 sm:py-5 lg:min-h-[32.5rem] lg:justify-between lg:gap-y-3 lg:px-8 lg:py-6 xl:px-9"
       aria-label={t("hero.planner.ariaLabel")}
       onSubmit={(event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        if (!canContinue) return;
         const params = new URLSearchParams();
-        const from = String(data.get("from") ?? "").trim();
-        const to = String(data.get("to") ?? "").trim();
-        if (from) params.set("from", from);
-        if (to) params.set("to", to);
+        if (from.trim()) params.set("from", from.trim());
+        if (to.trim()) params.set("to", to.trim());
         params.set("intent", intent);
+        if (intent === "explore") {
+          params.set("date", travelDate);
+          params.set("time", pickupTime);
+        }
         const query = params.toString();
         router.push(query ? `${activeHref}?${query}` : activeHref);
       }}
     >
+      <QWatermark tone="foam" opacity={0.05} size={260} blur={2} />
+      <QGlowBadge size={22} className="top-3.5 right-3.5 sm:top-4 sm:right-4" />
+      <div className="relative z-[1] flex flex-1 flex-col gap-4 lg:justify-between lg:gap-y-3">
       <div className="flex flex-col gap-1.5">
-        <p className="hero-planner-title font-display text-xl tracking-tight text-foam sm:text-2xl">
+        <QHeadingMark
+          as="p"
+          tone="foam"
+          markSize={22}
+          className="hero-planner-title font-display text-xl tracking-tight text-foam sm:text-2xl"
+        >
           {t("hero.planner.title")}
-        </p>
+        </QHeadingMark>
         <p className="hero-planner-sub max-w-none text-sm leading-relaxed text-pretty text-foam/60">
           {t("hero.planner.subtitle")}
         </p>
@@ -456,13 +539,14 @@ function JourneyPlanner() {
             {copy.fromLabel}
           </label>
           <input
-            key={`${intent}-from`}
             id={`${baseId}-from`}
             name="from"
             type="text"
-            defaultValue={copy.fromDefault}
+            value={from}
+            onChange={(e) => setFrom(e.target.value)}
             autoComplete="street-address"
-            className="min-h-12 w-full min-w-0 max-w-full rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
+            required
+            className={plannerFieldClass}
           />
         </div>
 
@@ -474,15 +558,62 @@ function JourneyPlanner() {
             {copy.toLabel}
           </label>
           <input
-            key={`${intent}-to`}
             id={`${baseId}-to`}
             name="to"
             type="text"
-            defaultValue={copy.toDefault}
+            value={to}
+            onChange={(e) => setTo(e.target.value)}
             autoComplete="street-address"
-            className="min-h-12 w-full min-w-0 max-w-full rounded-[var(--radius-md)] border border-foam/20 bg-map-void/35 px-3.5 text-sm text-foam outline-none transition-[border-color] duration-[var(--duration-ui)] placeholder:text-foam/40 focus:border-lagoon"
+            required
+            className={plannerFieldClass}
           />
         </div>
+
+        {intent === "explore" ? (
+          <div className="grid gap-3 border-t border-foam/12 pt-3.5 sm:grid-cols-2 sm:gap-3.5">
+            <p className="hero-planner-label text-xs font-medium tracking-wide text-pretty text-foam/70 sm:col-span-2">
+              {t("hero.planner.scheduleTitle")}
+            </p>
+            <div className="flex min-w-0 flex-col gap-1.5">
+              <label
+                htmlFor={`${baseId}-travel-date`}
+                className="hero-planner-label text-xs font-medium tracking-wide text-pretty text-foam/70"
+              >
+                {t("hero.planner.travelDate")}
+                <span className="text-brand-bright"> *</span>
+              </label>
+              <input
+                id={`${baseId}-travel-date`}
+                name="date"
+                type="date"
+                required
+                min={minDate}
+                value={travelDate}
+                onChange={(e) => onTravelDateChange(e.target.value)}
+                className={plannerFieldClass}
+              />
+            </div>
+            <div className="flex min-w-0 flex-col gap-1.5">
+              <label
+                htmlFor={`${baseId}-pickup-time`}
+                className="hero-planner-label text-xs font-medium tracking-wide text-pretty text-foam/70"
+              >
+                {t("hero.planner.pickupTime")}
+                <span className="text-brand-bright"> *</span>
+              </label>
+              <input
+                id={`${baseId}-pickup-time`}
+                name="time"
+                type="time"
+                required
+                min={minTime}
+                value={pickupTime}
+                onChange={(e) => setPickupTime(e.target.value)}
+                className={plannerFieldClass}
+              />
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <p
@@ -495,10 +626,12 @@ function JourneyPlanner() {
 
       <button
         type="submit"
-        className="hero-planner-submit inline-flex min-h-12 w-full items-center justify-center rounded-[var(--radius-md)] bg-lagoon px-5 text-sm font-medium text-paper transition-colors duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:bg-lagoon-deep"
+        disabled={!canContinue}
+        className="hero-planner-submit inline-flex min-h-12 w-full items-center justify-center rounded-[var(--radius-md)] bg-lagoon px-5 text-sm font-medium text-paper transition-[colors,opacity] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:bg-lagoon-deep disabled:pointer-events-none disabled:opacity-40"
       >
         {t("hero.planner.continue")}
       </button>
+      </div>
     </form>
   );
 }

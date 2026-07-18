@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="Minivan">
+  <title>Minivan</title>
+  <path fill-rule="evenodd" d="M24 37.5 H106 L102 30 H96 L88 15.5 H50 L38 30 H28 L24 37.5 ZM46 24 L55 17.5 H82 L92 24.5 L89 27 L81 21 H56 L48.5 26.5 ZM64 18 V26 H68.5 V18.5 Z"/>
+  <path fill-rule="evenodd" d="M 42 38.4 A 6.6 6.6 0 1 1 42 51.6 A 6.6 6.6 0 1 1 42 38.4 Z M 42 42.89 A 2.11 2.11 0 1 0 42 47.11 A 2.11 2.11 0 1 0 42 42.89 Z"/>
+  <path fill-rule="evenodd" d="M 98 38.4 A 6.6 6.6 0 1 1 98 51.6 A 6.6 6.6 0 1 1 98 38.4 Z M 98 42.89 A 2.11 2.11 0 1 0 98 47.11 A 2.11 2.11 0 1 0 98 42.89 Z"/>
+</svg>

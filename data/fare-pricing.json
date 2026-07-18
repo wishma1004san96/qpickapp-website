@@ -1,94 +1,150 @@
 {
   "calibration": {
-    "marketAdjustment": 0.95
+    "marketAdjustment": 1
   },
   "vehicles": {
     "bike": {
-      "mode": "dynamic",
-      "baseFare": 80,
-      "perKmRate": 55,
+      "dayBaseFare": 100,
+      "dayPerKmRate": 60,
+      "nightBaseFare": 140,
+      "nightPerKmRate": 80,
       "waitingPerMinute": 2,
-      "freeWaitingMinutes": 5,
-      "surgeEnabled": true,
-      "surgeMultipliers": {
-        "peak": 1.25,
-        "rain": 1.15,
-        "highDemand": 1.4
-      }
+      "minimumFare": 150,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "tuk": {
-      "mode": "dynamic",
-      "baseFare": 100,
-      "perKmRate": 75,
+      "dayBaseFare": 200,
+      "dayPerKmRate": 95,
+      "nightBaseFare": 260,
+      "nightPerKmRate": 120,
       "waitingPerMinute": 2,
-      "freeWaitingMinutes": 5,
-      "surgeEnabled": true,
-      "surgeMultipliers": {
-        "peak": 1.25,
-        "rain": 1.15,
-        "highDemand": 1.4
-      }
+      "minimumFare": 300,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "miniCar": {
-      "mode": "dynamic",
-      "baseFare": 140,
-      "perKmRate": 90,
+      "dayBaseFare": 250,
+      "dayPerKmRate": 110,
+      "nightBaseFare": 320,
+      "nightPerKmRate": 140,
       "waitingPerMinute": 3,
-      "freeWaitingMinutes": 5,
-      "surgeEnabled": true,
-      "surgeMultipliers": {
-        "peak": 1.25,
-        "rain": 1.15,
-        "highDemand": 1.4
-      }
+      "minimumFare": 400,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "wagon": {
-      "mode": "dynamic",
-      "baseFare": 150,
-      "perKmRate": 95,
+      "dayBaseFare": 300,
+      "dayPerKmRate": 120,
+      "nightBaseFare": 390,
+      "nightPerKmRate": 155,
       "waitingPerMinute": 3,
-      "freeWaitingMinutes": 5,
-      "surgeEnabled": true,
-      "surgeMultipliers": {
-        "peak": 1.25,
-        "rain": 1.15,
-        "highDemand": 1.4
-      }
+      "minimumFare": 450,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "sedan": {
-      "mode": "standard",
-      "baseFare": 130,
-      "perKmRate": 150
-    },
-    "miniVan": {
-      "mode": "standard",
-      "baseFare": 180,
-      "perKmRate": 200
-    },
-    "van": {
-      "mode": "standard",
-      "baseFare": 220,
-      "perKmRate": 240
-    },
-    "longVan": {
-      "mode": "standard",
-      "baseFare": 230,
-      "perKmRate": 250
+      "dayBaseFare": 500,
+      "dayPerKmRate": 155,
+      "nightBaseFare": 650,
+      "nightPerKmRate": 195,
+      "waitingPerMinute": 3,
+      "minimumFare": 600,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "suv": {
-      "mode": "standard",
-      "baseFare": 240,
-      "perKmRate": 260
+      "dayBaseFare": 1000,
+      "dayPerKmRate": 250,
+      "nightBaseFare": 1300,
+      "nightPerKmRate": 310,
+      "waitingPerMinute": 4,
+      "minimumFare": 1200,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
+    },
+    "miniVan": {
+      "dayBaseFare": 330,
+      "dayPerKmRate": 130,
+      "nightBaseFare": 420,
+      "nightPerKmRate": 165,
+      "waitingPerMinute": 4,
+      "minimumFare": 500,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
+    },
+    "van": {
+      "dayBaseFare": 900,
+      "dayPerKmRate": 200,
+      "nightBaseFare": 1150,
+      "nightPerKmRate": 240,
+      "waitingPerMinute": 5,
+      "minimumFare": 1200,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
+    },
+    "longVan": {
+      "dayBaseFare": 1350,
+      "dayPerKmRate": 235,
+      "nightBaseFare": 1700,
+      "nightPerKmRate": 280,
+      "waitingPerMinute": 5,
+      "minimumFare": 1700,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "miniBus": {
-      "mode": "standard",
-      "baseFare": 320,
-      "perKmRate": 340
+      "dayBaseFare": 3500,
+      "dayPerKmRate": 400,
+      "nightBaseFare": 4500,
+      "nightPerKmRate": 450,
+      "waitingPerMinute": 6,
+      "minimumFare": 3500,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     },
     "longBus": {
-      "mode": "standard",
-      "baseFare": 500,
-      "perKmRate": 520
+      "dayBaseFare": 6000,
+      "dayPerKmRate": 600,
+      "nightBaseFare": 7500,
+      "nightPerKmRate": 700,
+      "waitingPerMinute": 8,
+      "minimumFare": 6000,
+      "bookingFee": 0,
+      "airportPickupFee": 0,
+      "surgeEnabled": false,
+      "surgeMultiplier": 1,
+      "longDistanceDiscountEnabled": true
     }
   }
 }

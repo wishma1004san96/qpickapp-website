@@ -1,0 +1,69 @@
+/* Q Pick vehicle icon — selected chrome & micro-interactions */
+
+.qpick-vehicle-glyph {
+  color: currentColor;
+  display: block;
+  overflow: visible;
+  transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.qpick-vehicle-glyph--selected {
+  color: #0062fa;
+}
+
+.qpick-vehicle-icon-frame {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  padding: 0.55rem 0.7rem;
+  border-radius: 1rem;
+  border: 1.5px solid rgb(10 22 32 / 0.1);
+  background: rgb(255 255 255 / 0.92);
+  color: rgb(10 22 32 / 0.78);
+  box-shadow: 0 8px 20px rgb(10 22 32 / 0.05);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.28s ease,
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.qpick-vehicle-icon-frame:hover {
+  border-color: rgb(0 98 250 / 0.28);
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.06),
+    0 12px 28px rgb(0 98 250 / 0.1);
+}
+
+.qpick-vehicle-icon-frame--selected {
+  color: #0062fa;
+  border-color: rgb(0 98 250 / 0.55);
+  background: rgb(248 250 255 / 0.98);
+  box-shadow:
+    0 0 0 1px rgb(0 98 250 / 0.18),
+    0 0 24px rgb(0 98 250 / 0.22),
+    0 12px 28px rgb(0 98 250 / 0.14);
+}
+
+.qpick-vehicle-icon-check {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #0062fa;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 4px 12px rgb(0 98 250 / 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qpick-vehicle-glyph,
+  .qpick-vehicle-icon-frame {
+    transition: none;
+  }
+}

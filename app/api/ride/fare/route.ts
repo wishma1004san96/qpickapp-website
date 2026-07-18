@@ -6,7 +6,6 @@ import type { SurgeCondition } from "@/lib/fare/types";
 import { TAXI_VEHICLE_IDS, type TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
 
 export const runtime = "nodejs";
-/** Never cache fare responses — pricing/calibration must be live. */
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -16,14 +15,15 @@ type FareBody = {
   waitingMinutes?: number;
   tollCharges?: number;
   parkingCharges?: number;
+  airportPickup?: boolean;
+  at?: string;
   conditions?: SurgeCondition[];
   surgeMultiplierOverride?: number;
 };
 
 /**
  * POST /api/ride/fare
- * Server-side fare calculation using the live pricing catalog + calibration.
- * Body: { vehicleId, distanceKm, waitingMinutes?, tollCharges?, parkingCharges?, conditions? }
+ * Day & Night pricing from data/fare-pricing.json
  */
 export async function POST(request: Request) {
   let body: FareBody;
@@ -65,6 +65,8 @@ export async function POST(request: Request) {
     waitingMinutes: body.waitingMinutes ?? 0,
     tollCharges: body.tollCharges,
     parkingCharges: body.parkingCharges,
+    airportPickup: body.airportPickup === true,
+    at: body.at,
     conditions: body.conditions,
     surgeMultiplierOverride: body.surgeMultiplierOverride,
   });
@@ -73,8 +75,12 @@ export async function POST(request: Request) {
     {
       ...breakdown,
       marketAdjustment: calibration.marketAdjustment,
-      baseFare: settings.baseFare,
-      perKmRate: settings.perKmRate,
+      dayBaseFare: settings.dayBaseFare,
+      dayPerKmRate: settings.dayPerKmRate,
+      nightBaseFare: settings.nightBaseFare,
+      nightPerKmRate: settings.nightPerKmRate,
+      waitingPerMinute: settings.waitingPerMinute,
+      minimumFare: settings.minimumFare,
     },
     {
       headers: {

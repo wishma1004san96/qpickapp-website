@@ -30,10 +30,8 @@ export type { FareCalibrationSettings } from "@/lib/fare/calibration";
 
 export type {
   PricingMode,
+  TimeOfDay,
   SurgeCondition,
-  SurgeMultipliers,
-  DynamicVehiclePricing,
-  StandardVehiclePricing,
   VehiclePricingSettings,
   FarePricingCatalog,
   FareContext,
@@ -47,3 +45,5 @@ export {
 } from "@/lib/taxi-fare-vehicles";
 
 export { metersToKm } from "@/lib/fare/math";
+export { resolveTimeOfDay } from "@/lib/fare/time-of-day";
+export { LONG_DISTANCE_BANDS } from "@/lib/fare/long-distance";

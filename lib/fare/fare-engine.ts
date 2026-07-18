@@ -1,24 +1,16 @@
 /**
- * Q Pick Fare Engine — routes to Dynamic or Standard pricing by vehicle.
+ * Q Pick Fare Engine — Day & Night pricing for every Ride vehicle.
  *
- * Core formula (normal conditions):
- *   baseFare + (distanceKm × perKmRate) + waitingCharge + toll + parking
+ * Final =
+ *   Base + Distance×PerKM + Waiting + Booking + Airport + Toll + Parking
+ *   × Surge (optional) · then Minimum Fare floor
  *
- * Dynamic (Bike / Tuk / Mini Car / Wagon):
- *   (Base + Distance×PerKM + Waiting) × Surge + Toll + Parking
- *
- * Standard (Sedan and above):
- *   Base + Distance×PerKM + Toll + Parking
- *
- * Then:
- *   finalFare = calculatedFare × marketAdjustment
- *
- * Waiting is rider-entered idle time only — never driving duration.
+ * Long-distance discount reduces Per KM only.
+ * Waiting is rider idle time only.
  */
 
 import { applyMarketCalibration, getFareCalibration } from "@/lib/fare/calibration";
-import { calculateDynamicFare } from "@/lib/fare/engines/dynamic";
-import { calculateStandardFare } from "@/lib/fare/engines/standard";
+import { calculateDayNightFare } from "@/lib/fare/engines/day-night";
 import {
   getFarePricingCatalog,
   getVehiclePricing,
@@ -27,69 +19,39 @@ import {
 } from "@/lib/fare/pricing-settings";
 import { VEHICLE_PRICING_LABELS } from "@/lib/fare/vehicle-labels";
 import type { FareBreakdown, FareEngineInput } from "@/lib/fare/types";
-import {
-  isDynamicPricingVehicle,
-  type TaxiVehicleId,
-} from "@/lib/taxi-fare-vehicles";
+import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
 
-export function getPricingMode(
-  vehicleId: TaxiVehicleId,
-): "dynamic" | "standard" {
-  return isDynamicPricingVehicle(vehicleId) ? "dynamic" : "standard";
+/** @deprecated Unified day/night engine — always "dayNight". */
+export function getPricingMode(_vehicleId: TaxiVehicleId): "dayNight" {
+  return "dayNight";
 }
 
-/**
- * Calculate a ride fare for the selected vehicle.
- * Reads rates ONLY from data/fare-pricing.json (via getVehiclePricing).
- * Automatically selects the correct pricing engine, then applies market calibration.
- */
 export function calculateFare(input: FareEngineInput): FareBreakdown {
   const settings = getVehiclePricing(input.vehicleId);
-  const ctx = {
+  const raw = calculateDayNightFare(input.vehicleId, settings, {
     distanceKm: input.distanceKm,
-    // Idle waiting only — never pass route durationSeconds here
     waitingMinutes: input.waitingMinutes,
     tollCharges: input.tollCharges,
     parkingCharges: input.parkingCharges,
-    conditions: input.conditions,
+    airportPickup: input.airportPickup,
     surgeMultiplierOverride: input.surgeMultiplierOverride,
-  };
-
-  let raw: FareBreakdown;
-
-  if (settings.mode === "dynamic" && isDynamicPricingVehicle(input.vehicleId)) {
-    raw = calculateDynamicFare(input.vehicleId, settings, ctx);
-  } else if (settings.mode === "standard") {
-    raw = calculateStandardFare(input.vehicleId, settings, ctx);
-  } else {
-    // Safety: treat mismatched settings as standard
-    raw = calculateStandardFare(
-      input.vehicleId,
-      {
-        mode: "standard",
-        baseFare: settings.baseFare,
-        perKmRate: settings.perKmRate,
-      },
-      ctx,
-    );
-  }
+    at: input.at,
+  });
 
   const { marketAdjustment } = getFareCalibration();
   const calibrated = applyMarketCalibration(raw.totalLkr, marketAdjustment);
 
-  const finalFare = calibrated.totalLkr;
-  const precise =
-    Math.round(calibrated.totalBeforeCalibration * marketAdjustment * 100) /
-    100;
-
-  // Temporary debug — active pricing used for this estimate
   console.info(
     [
       `Vehicle: ${VEHICLE_PRICING_LABELS[input.vehicleId]}`,
-      `Base Fare: ${settings.baseFare}`,
-      `Per KM: ${settings.perKmRate}`,
-      `Calibration: ${marketAdjustment}`,
-      `Final Fare: ${precise}`,
+      `Period: ${raw.timeOfDay}`,
+      `Base Fare: ${raw.baseFare}`,
+      `Per KM: ${raw.perKmRate}`,
+      `Distance Charge: ${raw.distanceCharge}`,
+      `Waiting: ${raw.waitingCharge}`,
+      `Discount: ${raw.longDistanceDiscount}`,
+      `Calibration: ${calibrated.marketAdjustment}`,
+      `Final Fare: ${calibrated.totalLkr}`,
     ].join("\n"),
   );
 
@@ -97,11 +59,10 @@ export function calculateFare(input: FareEngineInput): FareBreakdown {
     ...raw,
     totalBeforeCalibration: calibrated.totalBeforeCalibration,
     marketAdjustment: calibrated.marketAdjustment,
-    totalLkr: finalFare,
+    totalLkr: calibrated.totalLkr,
   };
 }
 
-/** Convenience namespace for services / API routes. */
 export const fareEngine = {
   calculate: calculateFare,
   getPricingMode,

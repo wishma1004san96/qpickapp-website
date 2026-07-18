@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="SUV">
+  <title>SUV</title>
+  <path fill-rule="evenodd" d="M24 37.5 H104 L100 30 H94 L86 16 H54 L42 30 H30 L26 33 L24 37.5 ZM50 24.5 L59 18.5 H78 L88 25 L85 27 L77 21.5 H60 L52.5 26.5 ZM66 19 V26.5 H70 V19.5 Z"/>
+  <path d="M32 34.2 h66 v1.3 H32 z" opacity="0.4"/>
+  <path fill-rule="evenodd" d="M 42 37.8 A 7.2 7.2 0 1 1 42 52.2 A 7.2 7.2 0 1 1 42 37.8 Z M 42 42.7 A 2.30 2.30 0 1 0 42 47.3 A 2.30 2.30 0 1 0 42 42.7 Z"/>
+  <path fill-rule="evenodd" d="M 96 37.8 A 7.2 7.2 0 1 1 96 52.2 A 7.2 7.2 0 1 1 96 37.8 Z M 96 42.7 A 2.30 2.30 0 1 0 96 47.3 A 2.30 2.30 0 1 0 96 42.7 Z"/>
+</svg>

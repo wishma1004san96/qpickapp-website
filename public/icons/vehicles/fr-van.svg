@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 56" fill="currentColor" role="img" aria-label="FR Van">
+  <title>FR Van</title>
+  <path fill-rule="evenodd" d="M22 37.5 H108 V24 L102 13 H52 L40 16 L30 24 L26 31 L22 37.5 ZM36 24 L46 15 H52 V25.5 L38 26.5 ZM58 14.5 H72 V24.5 H58 ZM78 14.5 H98 V24.5 H78 Z"/>
+  <path fill-rule="evenodd" d="M 44 38.3 A 6.7 6.7 0 1 1 44 51.7 A 6.7 6.7 0 1 1 44 38.3 Z M 44 42.86 A 2.14 2.14 0 1 0 44 47.14 A 2.14 2.14 0 1 0 44 42.86 Z"/>
+  <path fill-rule="evenodd" d="M 100 38.3 A 6.7 6.7 0 1 1 100 51.7 A 6.7 6.7 0 1 1 100 38.3 Z M 100 42.86 A 2.14 2.14 0 1 0 100 47.14 A 2.14 2.14 0 1 0 100 42.86 Z"/>
+</svg>
