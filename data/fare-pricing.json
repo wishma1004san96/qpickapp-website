@@ -1,0 +1,94 @@
+{
+  "calibration": {
+    "marketAdjustment": 0.95
+  },
+  "vehicles": {
+    "bike": {
+      "mode": "dynamic",
+      "baseFare": 80,
+      "perKmRate": 55,
+      "waitingPerMinute": 2,
+      "freeWaitingMinutes": 5,
+      "surgeEnabled": true,
+      "surgeMultipliers": {
+        "peak": 1.25,
+        "rain": 1.15,
+        "highDemand": 1.4
+      }
+    },
+    "tuk": {
+      "mode": "dynamic",
+      "baseFare": 100,
+      "perKmRate": 75,
+      "waitingPerMinute": 2,
+      "freeWaitingMinutes": 5,
+      "surgeEnabled": true,
+      "surgeMultipliers": {
+        "peak": 1.25,
+        "rain": 1.15,
+        "highDemand": 1.4
+      }
+    },
+    "miniCar": {
+      "mode": "dynamic",
+      "baseFare": 140,
+      "perKmRate": 90,
+      "waitingPerMinute": 3,
+      "freeWaitingMinutes": 5,
+      "surgeEnabled": true,
+      "surgeMultipliers": {
+        "peak": 1.25,
+        "rain": 1.15,
+        "highDemand": 1.4
+      }
+    },
+    "wagon": {
+      "mode": "dynamic",
+      "baseFare": 150,
+      "perKmRate": 95,
+      "waitingPerMinute": 3,
+      "freeWaitingMinutes": 5,
+      "surgeEnabled": true,
+      "surgeMultipliers": {
+        "peak": 1.25,
+        "rain": 1.15,
+        "highDemand": 1.4
+      }
+    },
+    "sedan": {
+      "mode": "standard",
+      "baseFare": 130,
+      "perKmRate": 150
+    },
+    "miniVan": {
+      "mode": "standard",
+      "baseFare": 180,
+      "perKmRate": 200
+    },
+    "van": {
+      "mode": "standard",
+      "baseFare": 220,
+      "perKmRate": 240
+    },
+    "longVan": {
+      "mode": "standard",
+      "baseFare": 230,
+      "perKmRate": 250
+    },
+    "suv": {
+      "mode": "standard",
+      "baseFare": 240,
+      "perKmRate": 260
+    },
+    "miniBus": {
+      "mode": "standard",
+      "baseFare": 320,
+      "perKmRate": 340
+    },
+    "longBus": {
+      "mode": "standard",
+      "baseFare": 500,
+      "perKmRate": 520
+    }
+  }
+}

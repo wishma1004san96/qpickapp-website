@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useTranslations } from "@/components/i18n/locale-provider";
-import { formatLkr } from "@/lib/taxi-fare";
+import { formatLkr } from "@/lib/taxi-fare-ui";
 import type { DrivingRouteEstimate } from "@/lib/osm/types";
 
 const EASE = [0.22, 1, 0.36, 1] as const;

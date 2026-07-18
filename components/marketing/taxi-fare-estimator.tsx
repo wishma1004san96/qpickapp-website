@@ -46,7 +46,7 @@ import {
   type SurgeCondition,
   type TaxiFareBreakdown,
   type TaxiVehicleId,
-} from "@/lib/taxi-fare";
+} from "@/lib/taxi-fare-ui";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 

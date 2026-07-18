@@ -16,6 +16,8 @@ export {
   DEFAULT_FARE_PRICING_CATALOG,
 } from "@/lib/fare/pricing-settings";
 
+export { VEHICLE_PRICING_LABELS } from "@/lib/fare/vehicle-labels";
+
 export {
   getFareCalibration,
   updateFareCalibration,

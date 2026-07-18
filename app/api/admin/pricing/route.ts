@@ -16,34 +16,41 @@ import {
 } from "@/lib/taxi-fare-vehicles";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 /**
  * Admin pricing catalog + market calibration.
+ * Single source of truth: data/fare-pricing.json
  * GET  /api/admin/pricing — vehicles + calibration
- * PUT  /api/admin/pricing — merge vehicle and/or calibration updates
- * POST /api/admin/pricing { "action": "reset" } — restore defaults
+ * PUT  /api/admin/pricing — merge vehicle and/or calibration updates (persisted)
+ * POST /api/admin/pricing { "action": "reset" } — restore seed defaults
  *
  * Secure this route with auth before production use.
  */
 
 export async function GET() {
-  return NextResponse.json({
-    vehicles: getFarePricingCatalog(),
-    calibration: getFareCalibration(),
-    dynamicVehicleIds: [...DYNAMIC_PRICING_VEHICLE_IDS],
-    fields: {
-      all: ["baseFare", "perKmRate"],
-      dynamicOnly: [
-        "waitingPerMinute",
-        "freeWaitingMinutes",
-        "surgeEnabled",
-        "surgeMultipliers.peak",
-        "surgeMultipliers.rain",
-        "surgeMultipliers.highDemand",
-      ],
-      calibration: ["marketAdjustment"],
+  return NextResponse.json(
+    {
+      vehicles: getFarePricingCatalog(),
+      calibration: getFareCalibration(),
+      source: "data/fare-pricing.json",
+      dynamicVehicleIds: [...DYNAMIC_PRICING_VEHICLE_IDS],
+      fields: {
+        all: ["baseFare", "perKmRate"],
+        dynamicOnly: [
+          "waitingPerMinute",
+          "freeWaitingMinutes",
+          "surgeEnabled",
+          "surgeMultipliers.peak",
+          "surgeMultipliers.rain",
+          "surgeMultipliers.highDemand",
+        ],
+        calibration: ["marketAdjustment"],
+      },
     },
-  });
+    { headers: { "Cache-Control": "no-store, max-age=0" } },
+  );
 }
 
 type VehiclePatch = {
@@ -118,10 +125,14 @@ export async function PUT(request: Request) {
     updateFareCalibration(payload.calibration);
   }
 
-  return NextResponse.json({
-    vehicles: getFarePricingCatalog(),
-    calibration: getFareCalibration(),
-  });
+  return NextResponse.json(
+    {
+      vehicles: getFarePricingCatalog(),
+      calibration: getFareCalibration(),
+      source: "data/fare-pricing.json",
+    },
+    { headers: { "Cache-Control": "no-store, max-age=0" } },
+  );
 }
 
 export async function POST(request: Request) {

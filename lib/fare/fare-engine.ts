@@ -25,6 +25,7 @@ import {
   resetFarePricingCatalog,
   updateFarePricingCatalog,
 } from "@/lib/fare/pricing-settings";
+import { VEHICLE_PRICING_LABELS } from "@/lib/fare/vehicle-labels";
 import type { FareBreakdown, FareEngineInput } from "@/lib/fare/types";
 import {
   isDynamicPricingVehicle,
@@ -39,6 +40,7 @@ export function getPricingMode(
 
 /**
  * Calculate a ride fare for the selected vehicle.
+ * Reads rates ONLY from data/fare-pricing.json (via getVehiclePricing).
  * Automatically selects the correct pricing engine, then applies market calibration.
  */
 export function calculateFare(input: FareEngineInput): FareBreakdown {
@@ -75,11 +77,27 @@ export function calculateFare(input: FareEngineInput): FareBreakdown {
   const { marketAdjustment } = getFareCalibration();
   const calibrated = applyMarketCalibration(raw.totalLkr, marketAdjustment);
 
+  const finalFare = calibrated.totalLkr;
+  const precise =
+    Math.round(calibrated.totalBeforeCalibration * marketAdjustment * 100) /
+    100;
+
+  // Temporary debug — active pricing used for this estimate
+  console.info(
+    [
+      `Vehicle: ${VEHICLE_PRICING_LABELS[input.vehicleId]}`,
+      `Base Fare: ${settings.baseFare}`,
+      `Per KM: ${settings.perKmRate}`,
+      `Calibration: ${marketAdjustment}`,
+      `Final Fare: ${precise}`,
+    ].join("\n"),
+  );
+
   return {
     ...raw,
     totalBeforeCalibration: calibrated.totalBeforeCalibration,
     marketAdjustment: calibrated.marketAdjustment,
-    totalLkr: calibrated.totalLkr,
+    totalLkr: finalFare,
   };
 }
 

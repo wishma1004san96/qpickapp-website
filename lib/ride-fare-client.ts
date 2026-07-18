@@ -3,7 +3,11 @@
  * + calibration updates apply immediately (no stale client bundle rates).
  */
 
-import type { SurgeCondition, TaxiFareBreakdown, TaxiVehicleId } from "@/lib/taxi-fare";
+import type {
+  SurgeCondition,
+  TaxiFareBreakdown,
+  TaxiVehicleId,
+} from "@/lib/taxi-fare-ui";
 
 export type FetchRideFareInput = {
   vehicleId: TaxiVehicleId;
@@ -40,16 +44,19 @@ export async function fetchRideFare(
     throw new Error(data.error || "Unable to calculate fare.");
   }
 
-  // Temporary client debug — confirms values reaching the UI
-  console.info("[Ride fare debug:client]", {
-    selectedVehicle: data.vehicleId,
-    baseFare: data.baseFare ?? data.firstKmFare,
-    perKmRate: data.perKmRate ?? data.additionalKmRate,
-    distance: data.distanceKm,
-    waitingCharge: data.waitingCharge,
-    calibrationFactor: data.marketAdjustment,
-    finalFare: data.totalLkr,
-  });
+  // Temporary client debug — mirrors server calculateFare active pricing
+  const baseFare = data.baseFare ?? data.firstKmFare;
+  const perKmRate = data.perKmRate ?? data.additionalKmRate;
+  const calibration = data.marketAdjustment ?? 1;
+  console.info(
+    [
+      `Vehicle: ${data.vehicleId}`,
+      `Base Fare: ${baseFare}`,
+      `Per KM: ${perKmRate}`,
+      `Calibration: ${calibration}`,
+      `Final Fare: ${data.totalLkr}`,
+    ].join("\n"),
+  );
 
   return data;
 }

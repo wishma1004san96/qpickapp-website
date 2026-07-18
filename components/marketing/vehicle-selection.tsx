@@ -25,7 +25,7 @@ import {
   TAXI_VEHICLE_IDS,
   TAXI_VEHICLE_META,
   type TaxiVehicleId,
-} from "@/lib/taxi-fare";
+} from "@/lib/taxi-fare-ui";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 /** Approximate card width + gap for arrow navigation */

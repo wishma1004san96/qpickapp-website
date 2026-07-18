@@ -1,46 +1,56 @@
 /**
- * Taxi ride fare — public facade for Ride UI.
- * Calculation is delegated to the hybrid Fare Engine
- * (Dynamic: Bike/Tuk/Mini Car/Wagon · Standard: all others).
+ * Taxi ride fare — server facade for Ride bookings.
+ * Client UI must import from @/lib/taxi-fare-ui (no Node fs).
  *
  * Do NOT reuse for Airport Transfers or Tour bookings.
  */
 
 import { calculateFare } from "@/lib/fare/fare-engine";
 import { getVehiclePricing } from "@/lib/fare/pricing-settings";
-import type { FareBreakdown, SurgeCondition } from "@/lib/fare/types";
+import type { SurgeCondition } from "@/lib/fare/types";
+import {
+  FREE_WAITING_MINUTES,
+  WAITING_RATE_PER_MIN,
+  type TaxiFareBreakdown,
+  type TaxiVehicleRate,
+} from "@/lib/taxi-fare-ui";
 import {
   TAXI_VEHICLE_IDS,
   type TaxiVehicleId,
 } from "@/lib/taxi-fare-vehicles";
 
-export { TAXI_VEHICLE_IDS, type TaxiVehicleId };
 export {
+  TAXI_VEHICLE_IDS,
+  type TaxiVehicleId,
   DYNAMIC_PRICING_VEHICLE_IDS,
   isDynamicPricingVehicle,
-} from "@/lib/taxi-fare-vehicles";
-export { calculateFare } from "@/lib/fare/fare-engine";
-export type { FareBreakdown, SurgeCondition } from "@/lib/fare/types";
+  FREE_WAITING_MINUTES,
+  WAITING_RATE_PER_MIN,
+  formatLkr,
+  formatLkrCompact,
+  formatRs,
+  TAXI_VEHICLE_META,
+  type TaxiVehicleMeta,
+  type TaxiFareBreakdown,
+  type TaxiVehicleRate,
+  type FareBreakdown,
+  type SurgeCondition,
+} from "@/lib/taxi-fare-ui";
 
-/** @deprecated Prefer baseFare / perKmRate from admin catalog */
-export type TaxiVehicleRate = {
-  id: TaxiVehicleId;
-  /** Maps to base fare */
-  firstKm: number;
-  /** Maps to per-km rate */
-  afterFirstKm: number;
+export { calculateFare } from "@/lib/fare/fare-engine";
+
+export type TaxiFareInput = {
+  vehicleId: TaxiVehicleId;
+  distanceKm: number;
+  waitingMinutes: number;
+  extrasLkr?: number;
+  tollCharges?: number;
+  parkingCharges?: number;
+  conditions?: SurgeCondition[];
+  surgeMultiplierOverride?: number;
 };
 
-/** Default free waiting (dynamic vehicles) — overridable per vehicle in admin catalog. */
-export const FREE_WAITING_MINUTES = 5;
-
-/**
- * Fallback waiting rate for legacy helpers.
- * Dynamic vehicles use per-vehicle waitingPerMinute from the catalog.
- */
-export const WAITING_RATE_PER_MIN = 30;
-
-/** Legacy rate table derived from the live admin catalog (UI-compatible). */
+/** Legacy rate table derived from the live catalog (server-only). */
 export function getTaxiVehicleRates(): Record<TaxiVehicleId, TaxiVehicleRate> {
   const rates = {} as Record<TaxiVehicleId, TaxiVehicleRate>;
   for (const id of TAXI_VEHICLE_IDS) {
@@ -78,45 +88,6 @@ export const TAXI_VEHICLE_RATES: Record<TaxiVehicleId, TaxiVehicleRate> =
     },
   });
 
-export type TaxiFareInput = {
-  vehicleId: TaxiVehicleId;
-  distanceKm: number;
-  waitingMinutes: number;
-  /** Combined extras — split into toll + parking when possible */
-  extrasLkr?: number;
-  tollCharges?: number;
-  parkingCharges?: number;
-  conditions?: SurgeCondition[];
-  surgeMultiplierOverride?: number;
-};
-
-/**
- * UI-compatible breakdown. Prefer FareBreakdown from the fare engine for new code.
- */
-export type TaxiFareBreakdown = {
-  vehicleId: TaxiVehicleId;
-  distanceKm: number;
-  firstKmFare: number;
-  additionalKmRate: number;
-  additionalKm: number;
-  additionalKmFare: number;
-  waitingMinutes: number;
-  billableWaitingMinutes: number;
-  waitingCharge: number;
-  extrasLkr: number;
-  distanceFare: number;
-  totalLkr: number;
-  pricingMode: FareBreakdown["pricingMode"];
-  surgeMultiplier: number;
-  surgeAmount: number;
-  tollCharges: number;
-  parkingCharges: number;
-  totalBeforeCalibration?: number;
-  marketAdjustment?: number;
-  baseFare?: number;
-  perKmRate?: number;
-};
-
 export function getTaxiVehicleRate(id: TaxiVehicleId): TaxiVehicleRate {
   const p = getVehiclePricing(id);
   return { id, firstKm: p.baseFare, afterFirstKm: p.perKmRate };
@@ -133,7 +104,7 @@ export function calculateWaitingCharge(waitingMinutes: number): number {
 
 /**
  * Full taxi fare estimate for Ride bookings.
- * Routes through the hybrid Fare Engine automatically.
+ * Routes through the hybrid Fare Engine (server-only live catalog).
  */
 export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
   const toll =
@@ -155,11 +126,7 @@ export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
     surgeMultiplierOverride: input.surgeMultiplierOverride,
   });
 
-  // Distance-only portion of charge beyond base (for legacy summary fields)
-  const additionalKmFare = Math.max(
-    0,
-    result.distanceCharge - result.baseFare,
-  );
+  const additionalKmFare = Math.max(0, result.distanceCharge - result.baseFare);
   const additionalKm =
     result.perKmRate > 0 ? additionalKmFare / result.perKmRate : 0;
 
@@ -187,105 +154,3 @@ export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
     perKmRate: result.perKmRate,
   };
 }
-
-export function formatLkr(amount: number): string {
-  const rounded = Math.round(amount);
-  return `LKR ${rounded.toLocaleString("en-LK")}`;
-}
-
-export function formatLkrCompact(amount: number): string {
-  return Math.round(amount).toLocaleString("en-LK");
-}
-
-export function formatRs(amount: number): string {
-  return `Rs.${Math.round(amount).toLocaleString("en-LK")}`;
-}
-
-export type TaxiVehicleMeta = {
-  passengers: number;
-  luggage: number;
-  airConditioning: boolean;
-  available: boolean;
-  rating: number;
-};
-
-/** Capacity / comfort meta for the ride vehicle picker (display only). */
-export const TAXI_VEHICLE_META: Record<TaxiVehicleId, TaxiVehicleMeta> = {
-  bike: {
-    passengers: 1,
-    luggage: 1,
-    airConditioning: false,
-    available: true,
-    rating: 4.6,
-  },
-  tuk: {
-    passengers: 3,
-    luggage: 2,
-    airConditioning: false,
-    available: true,
-    rating: 4.5,
-  },
-  miniCar: {
-    passengers: 3,
-    luggage: 2,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  wagon: {
-    passengers: 4,
-    luggage: 3,
-    airConditioning: true,
-    available: true,
-    rating: 4.6,
-  },
-  sedan: {
-    passengers: 4,
-    luggage: 2,
-    airConditioning: true,
-    available: true,
-    rating: 4.9,
-  },
-  miniVan: {
-    passengers: 6,
-    luggage: 4,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  van: {
-    passengers: 8,
-    luggage: 6,
-    airConditioning: true,
-    available: true,
-    rating: 4.8,
-  },
-  longVan: {
-    passengers: 10,
-    luggage: 8,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  suv: {
-    passengers: 5,
-    luggage: 4,
-    airConditioning: true,
-    available: true,
-    rating: 4.9,
-  },
-  miniBus: {
-    passengers: 14,
-    luggage: 8,
-    airConditioning: true,
-    available: true,
-    rating: 4.6,
-  },
-  longBus: {
-    passengers: 30,
-    luggage: 12,
-    airConditioning: true,
-    available: true,
-    rating: 4.5,
-  },
-};

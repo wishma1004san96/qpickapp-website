@@ -69,25 +69,6 @@ export async function POST(request: Request) {
     surgeMultiplierOverride: body.surgeMultiplierOverride,
   });
 
-  // Temporary debug — remove after pricing updates are verified live
-  console.info("[Ride fare debug]", {
-    selectedVehicle: id,
-    pricingMode: settings.mode,
-    baseFare: settings.baseFare,
-    perKmRate: settings.perKmRate,
-    waitingPerMinute:
-      settings.mode === "dynamic" ? settings.waitingPerMinute : 0,
-    distanceKm: body.distanceKm,
-    waitingMinutes: body.waitingMinutes ?? 0,
-    waitingCharge: breakdown.waitingCharge,
-    calibrationFactor: calibration.marketAdjustment,
-    totalBeforeCalibration:
-      "totalBeforeCalibration" in breakdown
-        ? (breakdown as { totalBeforeCalibration?: number }).totalBeforeCalibration
-        : undefined,
-    finalFare: breakdown.totalLkr,
-  });
-
   return NextResponse.json(
     {
       ...breakdown,
