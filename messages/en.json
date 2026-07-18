@@ -595,9 +595,18 @@
     },
     "vehicleLabel": "Select vehicle type",
     "vehicles": {
-      "sedan": { "label": "Sedan", "meta": "1–3 guests · A/C" },
-      "suv": { "label": "SUV", "meta": "1–5 guests · A/C" },
-      "van": { "label": "Van", "meta": "1–9 guests · A/C" }
+      "sedan": {
+        "label": "Sedan",
+        "meta": "1–3 guests · A/C"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 guests · A/C"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "1–9 guests · A/C"
+      }
     },
     "distanceLabel": "Estimated distance",
     "distanceValue": "~{km} km",
@@ -781,6 +790,129 @@
     "from": "From",
     "to": "To",
     "note": "Estimate · confirm in app"
+  },
+  "taxiFare": {
+    "eyebrow": "Taxi fare estimator",
+    "heading": "Estimate your taxi fare",
+    "sub": "Three calm steps — set locations on the map, choose your ride, then review the fare and book.",
+    "pickup": "Pickup location",
+    "pickupPlaceholder": "Search pickup — e.g. Colombo Fort",
+    "destination": "Destination",
+    "destinationPlaceholder": "Search destination — e.g. Galle Face",
+    "distance": "Distance (auto)",
+    "waiting": "Waiting time (minutes)",
+    "waitingHint": "First {free} minutes free · then LKR {rate}/min",
+    "vehicleType": "Vehicle type",
+    "vehicleSelection": {
+      "eyebrow": "Fleet",
+      "heading": "Choose Your Ride",
+      "sub": "Select the perfect vehicle for your journey.",
+      "startingFrom": "Starting From",
+      "from": "From",
+      "after1Km": "After 1 KM",
+      "passengers": "Passengers",
+      "luggage": "Luggage",
+      "seats": "{count} Seats",
+      "bags": "{count} Bags",
+      "rating": "Rated {rating} out of 5",
+      "ac": "Air Conditioning",
+      "availability": "Availability",
+      "available": "Available",
+      "unavailable": "Unavailable",
+      "yes": "Yes",
+      "no": "No",
+      "select": "Select",
+      "selectRide": "Select Ride",
+      "selected": "Selected",
+      "prev": "Previous vehicles",
+      "next": "Next vehicles"
+    },
+    "steps": {
+      "locations": "Locations",
+      "vehicle": "Vehicle",
+      "summary": "Summary",
+      "locationsTitle": "Choose Pickup & Destination",
+      "vehicleTitle": "Choose Vehicle",
+      "summaryTitle": "Fare Summary",
+      "continueVehicle": "Continue to vehicle"
+    },
+    "summaryLabel": "Fare summary",
+    "summary": {
+      "pickup": "Pickup",
+      "destination": "Destination",
+      "distance": "Distance",
+      "duration": "Time",
+      "vehicle": "Vehicle",
+      "waitingCharge": "Waiting charge",
+      "total": "Estimated total",
+      "estimatedFare": "Estimated Fare"
+    },
+    "estimateNote": "Estimate only · confirm final fare in the Q Pick app. Taxi rides only — not for airport transfers or tours.",
+    "cta": "Book this ride",
+    "bookNow": "Book Now",
+    "scopeNote": "Taxi Ride pricing · separate from Airport & Tours",
+    "vehicles": {
+      "bike": "Bike",
+      "tuk": "Tuk",
+      "miniCar": "Mini Car",
+      "wagon": "Wagon",
+      "sedan": "Sedan",
+      "miniVan": "Mini Van",
+      "van": "Van",
+      "longVan": "Long Van (HR)",
+      "suv": "SUV",
+      "miniBus": "Mini Bus",
+      "longBus": "Long Bus"
+    },
+    "calculatingRoute": "Calculating driving distance and travel time…",
+    "calculatingShort": "Calculating…",
+    "routeReady": "Route ready · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "Routes",
+      "heading": "Choose a route",
+      "recommended": "Recommended",
+      "alternative": "Alternative",
+      "roadHighway": "Highway",
+      "roadNormal": "Normal",
+      "tags": {
+        "fastest": "Fastest Route",
+        "avoidHighway": "Avoid Highway",
+        "highway": "Highway Route",
+        "scenic": "Scenic Route",
+        "alternative": "Alternative Route"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "Set pickup on map",
+      "setDestination": "Set destination on map",
+      "pickupTitle": "Confirm pickup",
+      "destinationTitle": "Confirm destination",
+      "pickupHint": "Search, use your location, or move the map",
+      "destinationHint": "Search or move the map to set destination",
+      "pickupAddress": "Pickup address",
+      "destinationAddress": "Destination address",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "confirmPickup": "Confirm pickup",
+      "confirmDestination": "Confirm destination",
+      "resolving": "Finding address…",
+      "close": "Close",
+      "searchLabel": "Search",
+      "searchPickup": "Search pickup location",
+      "searchDestination": "Search destination",
+      "searching": "Searching…",
+      "noResults": "No results found",
+      "useCurrentLocation": "Use current location",
+      "selectOnMap": "Select on map",
+      "locating": "Locating…",
+      "locationDenied": "Location permission was denied. Enable it in browser settings, or pick on the map.",
+      "locationUnavailable": "Unable to get your current location. Try search or the map instead."
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API Key is missing.",
+      "routeFailed": "Unable to calculate the route. Please try again.",
+      "selectFromSuggestions": "Please choose pickup and destination from the suggestions list."
+    }
   },
   "driverTrust": {
     "verified": "Verified Q Pick driver",
@@ -966,7 +1098,7 @@
       },
       "title": "City and intercity rides",
       "description": "Request a verified Q Pick driver for Colombo streets or the long coastal run. See the fare before you confirm — then track every minute to the door.",
-      "primaryCta": "Get started",
+      "primaryCta": "Estimate fare",
       "secondaryCta": "Safety standard",
       "features": {
         "onDemand": {

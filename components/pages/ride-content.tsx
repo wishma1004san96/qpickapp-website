@@ -5,8 +5,8 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { DriverTrustRow } from "@/components/marketing/driver-trust-row";
-import { FarePreview } from "@/components/marketing/fare-preview";
 import { PageShell } from "@/components/marketing/page-shell";
+import { TaxiFareEstimator } from "@/components/marketing/taxi-fare-estimator";
 
 export function RideContent() {
   const t = useTranslations();
@@ -22,10 +22,10 @@ export function RideContent() {
     <PageShell
       title={t("pages.ride.title")}
       description={t("pages.ride.description")}
-      primaryCta={{ href: "/support", label: t("pages.ride.primaryCta") }}
+      primaryCta={{ href: "#taxi-fare", label: t("pages.ride.primaryCta") }}
       secondaryCta={{ href: "/safety", label: t("pages.ride.secondaryCta") }}
     >
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="space-y-12 sm:space-y-14">
         <div className="grid gap-8 sm:grid-cols-3">
           {features.map((item) => (
             <div key={item.title} className="border-t border-mist pt-5">
@@ -37,16 +37,9 @@ export function RideContent() {
           ))}
         </div>
 
-        <div className="space-y-4">
-          <FarePreview
-            from={ride.farePreview.from}
-            to={ride.farePreview.to}
-            currency={ride.farePreview.currency}
-            amount={ride.farePreview.amount}
-            note={ride.farePreview.note}
-            fromLabel={ride.farePreview.fromLabel}
-            toLabel={ride.farePreview.toLabel}
-          />
+        <TaxiFareEstimator />
+
+        <div className="max-w-md">
           <DriverTrustRow
             name={ride.driverTrust.name}
             trips={ride.driverTrust.trips}
