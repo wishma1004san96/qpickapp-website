@@ -16,6 +16,16 @@ export {
   DEFAULT_FARE_PRICING_CATALOG,
 } from "@/lib/fare/pricing-settings";
 
+export {
+  getFareCalibration,
+  updateFareCalibration,
+  resetFareCalibration,
+  applyMarketCalibration,
+  DEFAULT_FARE_CALIBRATION,
+} from "@/lib/fare/calibration";
+
+export type { FareCalibrationSettings } from "@/lib/fare/calibration";
+
 export type {
   PricingMode,
   SurgeCondition,
@@ -33,3 +43,5 @@ export {
   DYNAMIC_PRICING_VEHICLE_IDS,
   isDynamicPricingVehicle,
 } from "@/lib/taxi-fare-vehicles";
+
+export { metersToKm } from "@/lib/fare/math";

@@ -10,7 +10,19 @@ export function roundLkr(amount: number): number {
   return Math.round(amount);
 }
 
-/** Base Fare + (Distance × Per KM). */
+/**
+ * Convert routing metres to kilometres.
+ * Always use this (or equivalent) — never treat metres as km.
+ */
+export function metersToKm(distanceMeters: number): number {
+  const meters = clampNonNeg(distanceMeters);
+  return Math.round((meters / 1000) * 100) / 100;
+}
+
+/**
+ * Core distance fare:
+ *   baseFare + (distanceKm × perKmRate)
+ */
 export function calculateDistanceCharge(
   distanceKm: number,
   baseFare: number,
@@ -36,6 +48,10 @@ export function calculateBillableWaitingMinutes(
   return Math.max(0, waiting - free);
 }
 
+/**
+ * Waiting charge from rider-entered idle time only.
+ * Driving / route duration must NEVER be passed as waitingMinutes.
+ */
 export function calculateWaitingCharge(
   waitingMinutes: number,
   freeWaitingMinutes: number,

@@ -1,9 +1,10 @@
 /**
- * Standard Pricing Engine — Sedan / Minivan / FR Van / HR Van / SUV / Mini Bus / Bus
- * (and Mini Car — kept for existing UI).
+ * Standard Pricing Engine — Sedan / Minivan / FR Van / HR Van / SUV / Mini Bus / Bus.
  *
- * Final Fare = Base + (Distance × Per KM) + Toll + Parking
- * No waiting · no surge.
+ * Final (before market calibration) =
+ *   baseFare + (distanceKm × perKmRate) + toll + parking
+ *
+ * No waiting · no surge · no hidden multipliers.
  */
 
 import {
@@ -30,7 +31,7 @@ export function calculateStandardFare(
   const parkingCharges = clampNonNeg(ctx.parkingCharges);
 
   const subtotal = distanceCharge;
-  const totalLkr = roundLkr(subtotal + tollCharges + parkingCharges);
+  const rawTotal = roundLkr(subtotal + tollCharges + parkingCharges);
 
   return {
     vehicleId,
@@ -49,6 +50,8 @@ export function calculateStandardFare(
     parkingCharges: roundLkr(parkingCharges),
     subtotalBeforeSurge: roundLkr(subtotal),
     subtotalAfterSurge: roundLkr(subtotal),
-    totalLkr,
+    totalBeforeCalibration: rawTotal,
+    marketAdjustment: 1,
+    totalLkr: rawTotal,
   };
 }

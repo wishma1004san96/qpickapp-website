@@ -1,13 +1,22 @@
 /**
  * Q Pick Fare Engine — routes to Dynamic or Standard pricing by vehicle.
  *
+ * Core formula (normal conditions):
+ *   baseFare + (distanceKm × perKmRate) + waitingCharge + toll + parking
+ *
  * Dynamic (Bike / Tuk / Mini Car / Wagon):
  *   (Base + Distance×PerKM + Waiting) × Surge + Toll + Parking
  *
- * Standard (all other ride vehicles):
+ * Standard (Sedan and above):
  *   Base + Distance×PerKM + Toll + Parking
+ *
+ * Then:
+ *   finalFare = calculatedFare × marketAdjustment
+ *
+ * Waiting is rider-entered idle time only — never driving duration.
  */
 
+import { applyMarketCalibration, getFareCalibration } from "@/lib/fare/calibration";
 import { calculateDynamicFare } from "@/lib/fare/engines/dynamic";
 import { calculateStandardFare } from "@/lib/fare/engines/standard";
 import {
@@ -30,12 +39,13 @@ export function getPricingMode(
 
 /**
  * Calculate a ride fare for the selected vehicle.
- * Automatically selects the correct pricing engine.
+ * Automatically selects the correct pricing engine, then applies market calibration.
  */
 export function calculateFare(input: FareEngineInput): FareBreakdown {
   const settings = getVehiclePricing(input.vehicleId);
   const ctx = {
     distanceKm: input.distanceKm,
+    // Idle waiting only — never pass route durationSeconds here
     waitingMinutes: input.waitingMinutes,
     tollCharges: input.tollCharges,
     parkingCharges: input.parkingCharges,
@@ -43,24 +53,34 @@ export function calculateFare(input: FareEngineInput): FareBreakdown {
     surgeMultiplierOverride: input.surgeMultiplierOverride,
   };
 
+  let raw: FareBreakdown;
+
   if (settings.mode === "dynamic" && isDynamicPricingVehicle(input.vehicleId)) {
-    return calculateDynamicFare(input.vehicleId, settings, ctx);
+    raw = calculateDynamicFare(input.vehicleId, settings, ctx);
+  } else if (settings.mode === "standard") {
+    raw = calculateStandardFare(input.vehicleId, settings, ctx);
+  } else {
+    // Safety: treat mismatched settings as standard
+    raw = calculateStandardFare(
+      input.vehicleId,
+      {
+        mode: "standard",
+        baseFare: settings.baseFare,
+        perKmRate: settings.perKmRate,
+      },
+      ctx,
+    );
   }
 
-  if (settings.mode === "standard") {
-    return calculateStandardFare(input.vehicleId, settings, ctx);
-  }
+  const { marketAdjustment } = getFareCalibration();
+  const calibrated = applyMarketCalibration(raw.totalLkr, marketAdjustment);
 
-  // Safety: treat mismatched settings as standard
-  return calculateStandardFare(
-    input.vehicleId,
-    {
-      mode: "standard",
-      baseFare: settings.baseFare,
-      perKmRate: settings.perKmRate,
-    },
-    ctx,
-  );
+  return {
+    ...raw,
+    totalBeforeCalibration: calibrated.totalBeforeCalibration,
+    marketAdjustment: calibrated.marketAdjustment,
+    totalLkr: calibrated.totalLkr,
+  };
 }
 
 /** Convenience namespace for services / API routes. */
@@ -71,4 +91,5 @@ export const fareEngine = {
   getCatalog: getFarePricingCatalog,
   updateCatalog: updateFarePricingCatalog,
   resetCatalog: resetFarePricingCatalog,
+  getCalibration: getFareCalibration,
 };

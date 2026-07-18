@@ -1,9 +1,15 @@
 /**
  * Dynamic Pricing Engine — Bike / Tuk / Mini Car / Wagon.
  *
- * Final Fare =
- *   (Base + Distance×PerKM + Waiting) × SurgeMultiplier
- *   + Toll + Parking
+ * Core (normal, no surge):
+ *   baseFare + (distanceKm × perKmRate) + waitingCharge + toll + parking
+ *
+ * With surge (dynamic vehicles only):
+ *   (baseFare + distanceCharge + waitingCharge) × surge
+ *   + toll + parking
+ *
+ * Waiting = rider-entered idle minutes only (never driving duration).
+ * Market calibration is applied by the fare engine after this step.
  */
 
 import {
@@ -28,6 +34,7 @@ export function calculateDynamicFare(
   const { distanceKm, baseFare, perKmRate, distanceCharge } =
     calculateDistanceCharge(ctx.distanceKm, settings.baseFare, settings.perKmRate);
 
+  // Idle waiting only — callers must not pass route duration here
   const waitingMinutes = clampNonNeg(ctx.waitingMinutes);
   const { billableWaitingMinutes, waitingCharge } = calculateWaitingCharge(
     waitingMinutes,
@@ -38,6 +45,7 @@ export function calculateDynamicFare(
   const tollCharges = clampNonNeg(ctx.tollCharges);
   const parkingCharges = clampNonNeg(ctx.parkingCharges);
 
+  // Core before surge (no hidden multipliers)
   const subtotalBeforeSurge = distanceCharge + waitingCharge;
 
   const { multiplier, activeConditions } = resolveSurgeMultiplier(
@@ -51,7 +59,7 @@ export function calculateDynamicFare(
     multiplier,
   );
 
-  const totalLkr = roundLkr(afterSurge + tollCharges + parkingCharges);
+  const rawTotal = roundLkr(afterSurge + tollCharges + parkingCharges);
 
   return {
     vehicleId,
@@ -70,6 +78,8 @@ export function calculateDynamicFare(
     parkingCharges: roundLkr(parkingCharges),
     subtotalBeforeSurge: roundLkr(subtotalBeforeSurge),
     subtotalAfterSurge: roundLkr(afterSurge),
-    totalLkr,
+    totalBeforeCalibration: rawTotal,
+    marketAdjustment: 1,
+    totalLkr: rawTotal,
   };
 }

@@ -1,4 +1,5 @@
 import { enrichRouteOptions } from "@/lib/osm/route-options";
+import { metersToKm } from "@/lib/fare/math";
 import {
   formatDistanceKm,
   formatDuration,
@@ -141,7 +142,7 @@ function parseFeature(feature: OrsGeoJsonFeature): {
     return null;
   }
 
-  const distanceKm = Math.round((meters / 1000) * 100) / 100;
+  const distanceKm = metersToKm(meters);
   const coordinates: [number, number][] = [];
   for (const pair of line) {
     const lng = pair[0];

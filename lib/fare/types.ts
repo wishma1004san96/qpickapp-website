@@ -43,7 +43,12 @@ export type FarePricingCatalog = Record<TaxiVehicleId, VehiclePricingSettings>;
 
 /** Runtime conditions supplied when calculating a fare. */
 export type FareContext = {
+  /** Driving distance in kilometres (metres / 1000). */
   distanceKm: number;
+  /**
+   * Rider-entered idle / waiting minutes only.
+   * Must NOT be route duration / driving time.
+   */
   waitingMinutes?: number;
   tollCharges?: number;
   parkingCharges?: number;
@@ -73,7 +78,7 @@ export type FareBreakdown = {
   billableWaitingMinutes: number;
   waitingCharge: number;
 
-  /** Applied multiplier (1 = none) */
+  /** Applied surge multiplier (1 = none). Dynamic vehicles only. */
   surgeMultiplier: number;
   /** Amount attributed to surge (core × multiplier − core) */
   surgeAmount: number;
@@ -82,9 +87,15 @@ export type FareBreakdown = {
   tollCharges: number;
   parkingCharges: number;
 
-  /** base + distanceCharge (+ waiting before surge for dynamic) */
+  /** base + distance (+ waiting) before surge */
   subtotalBeforeSurge: number;
   /** After surge, before toll/parking */
   subtotalAfterSurge: number;
+
+  /** Raw total before market calibration */
+  totalBeforeCalibration: number;
+  /** Configurable PickMe-alignment factor (e.g. 0.95) */
+  marketAdjustment: number;
+  /** Final estimated fare after calibration */
   totalLkr: number;
 };
