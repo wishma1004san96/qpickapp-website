@@ -50,7 +50,7 @@ function standard(baseFare: number, perKmRate: number): StandardVehiclePricing {
 export const DEFAULT_FARE_PRICING_CATALOG: FarePricingCatalog = {
   bike: dynamic(80, 55, 2),
   tuk: dynamic(100, 75, 2),
-  miniCar: dynamic(150, 95, 3),
+  miniCar: dynamic(140, 90, 3),
   wagon: dynamic(150, 95, 3),
   // Standard (no surge / no waiting)
   sedan: standard(130, 150),
