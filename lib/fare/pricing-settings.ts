@@ -1,6 +1,11 @@
 /**
- * Admin-editable fare catalog (defaults).
- * Runtime updates via /api/admin/pricing — no UI change required.
+ * Admin-editable fare catalog.
+ *
+ * Live reads ALWAYS start from DEFAULT_FARE_PRICING_CATALOG, then apply
+ * in-memory admin patches. This prevents a stale module-level clone from
+ * overriding source/default pricing updates (HMR / redeploy / code edits).
+ *
+ * Runtime patches: PUT /api/admin/pricing
  */
 
 import type {
@@ -8,8 +13,10 @@ import type {
   FarePricingCatalog,
   StandardVehiclePricing,
   SurgeMultipliers,
+  VehiclePricingSettings,
 } from "@/lib/fare/types";
 import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
+import { TAXI_VEHICLE_IDS } from "@/lib/taxi-fare-vehicles";
 
 const DEFAULT_SURGE: SurgeMultipliers = {
   peak: 1.25,
@@ -62,22 +69,7 @@ export const DEFAULT_FARE_PRICING_CATALOG: FarePricingCatalog = {
   longBus: standard(500, 520), // Bus
 };
 
-let catalog: FarePricingCatalog = structuredClone(DEFAULT_FARE_PRICING_CATALOG);
-
-export function getFarePricingCatalog(): FarePricingCatalog {
-  return structuredClone(catalog);
-}
-
-export function getVehiclePricing(id: TaxiVehicleId) {
-  return structuredClone(catalog[id]);
-}
-
-export function resetFarePricingCatalog(): FarePricingCatalog {
-  catalog = structuredClone(DEFAULT_FARE_PRICING_CATALOG);
-  return getFarePricingCatalog();
-}
-
-type AdminPricingPatch = {
+export type AdminPricingPatch = {
   baseFare?: number;
   perKmRate?: number;
   waitingPerMinute?: number;
@@ -86,50 +78,73 @@ type AdminPricingPatch = {
   surgeMultipliers?: Partial<SurgeMultipliers>;
 };
 
+/** Admin overrides only — defaults are always read fresh from DEFAULT_*. */
+let adminPatches: Partial<Record<TaxiVehicleId, AdminPricingPatch>> = {};
+
+function applyPatch(
+  base: VehiclePricingSettings,
+  patch: AdminPricingPatch,
+): VehiclePricingSettings {
+  if (base.mode === "dynamic") {
+    return {
+      mode: "dynamic",
+      baseFare: num(patch.baseFare, base.baseFare),
+      perKmRate: num(patch.perKmRate, base.perKmRate),
+      waitingPerMinute: num(patch.waitingPerMinute, base.waitingPerMinute),
+      freeWaitingMinutes: num(patch.freeWaitingMinutes, base.freeWaitingMinutes),
+      surgeEnabled:
+        typeof patch.surgeEnabled === "boolean"
+          ? patch.surgeEnabled
+          : base.surgeEnabled,
+      surgeMultipliers: {
+        peak: num(patch.surgeMultipliers?.peak, base.surgeMultipliers.peak),
+        rain: num(patch.surgeMultipliers?.rain, base.surgeMultipliers.rain),
+        highDemand: num(
+          patch.surgeMultipliers?.highDemand,
+          base.surgeMultipliers.highDemand,
+        ),
+      },
+    };
+  }
+
+  return {
+    mode: "standard",
+    baseFare: num(patch.baseFare, base.baseFare),
+    perKmRate: num(patch.perKmRate, base.perKmRate),
+  };
+}
+
+export function getFarePricingCatalog(): FarePricingCatalog {
+  const next = {} as FarePricingCatalog;
+  for (const id of TAXI_VEHICLE_IDS) {
+    next[id] = getVehiclePricing(id);
+  }
+  return next;
+}
+
+export function getVehiclePricing(id: TaxiVehicleId): VehiclePricingSettings {
+  const base = structuredClone(DEFAULT_FARE_PRICING_CATALOG[id]);
+  const patch = adminPatches[id];
+  if (!patch) return base;
+  return applyPatch(base, patch);
+}
+
+export function resetFarePricingCatalog(): FarePricingCatalog {
+  adminPatches = {};
+  return getFarePricingCatalog();
+}
+
 /**
- * Merge partial admin updates into the live catalog.
- * Unknown keys / invalid numbers are ignored for safety.
+ * Merge partial admin updates. Unknown keys / invalid numbers are ignored.
  */
 export function updateFarePricingCatalog(
   patch: Partial<Record<TaxiVehicleId, AdminPricingPatch>>,
 ): FarePricingCatalog {
   for (const id of Object.keys(patch) as TaxiVehicleId[]) {
-    const current = catalog[id];
     const next = patch[id];
-    if (!current || !next) continue;
-
-    if (current.mode === "dynamic") {
-      catalog[id] = {
-        mode: "dynamic",
-        baseFare: num(next.baseFare, current.baseFare),
-        perKmRate: num(next.perKmRate, current.perKmRate),
-        waitingPerMinute: num(next.waitingPerMinute, current.waitingPerMinute),
-        freeWaitingMinutes: num(
-          next.freeWaitingMinutes,
-          current.freeWaitingMinutes,
-        ),
-        surgeEnabled:
-          typeof next.surgeEnabled === "boolean"
-            ? next.surgeEnabled
-            : current.surgeEnabled,
-        surgeMultipliers: {
-          peak: num(next.surgeMultipliers?.peak, current.surgeMultipliers.peak),
-          rain: num(next.surgeMultipliers?.rain, current.surgeMultipliers.rain),
-          highDemand: num(
-            next.surgeMultipliers?.highDemand,
-            current.surgeMultipliers.highDemand,
-          ),
-        },
-      };
-    } else {
-      catalog[id] = {
-        mode: "standard",
-        baseFare: num(next.baseFare, current.baseFare),
-        perKmRate: num(next.perKmRate, current.perKmRate),
-      };
-    }
+    if (!next) continue;
+    adminPatches[id] = { ...adminPatches[id], ...next };
   }
-
   return getFarePricingCatalog();
 }
 

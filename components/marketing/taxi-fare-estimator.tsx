@@ -38,8 +38,8 @@ import type {
   SelectedPlace,
 } from "@/lib/osm/types";
 import { OpenRouteServiceError } from "@/lib/openrouteservice";
+import { fetchRideFare } from "@/lib/ride-fare-client";
 import {
-  calculateTaxiFare,
   formatLkr,
   FREE_WAITING_MINUTES,
   WAITING_RATE_PER_MIN,
@@ -94,6 +94,9 @@ export function TaxiFareEstimator() {
   const [routeError, setRouteError] = useState<string | null>(null);
 
   const [fare, setFare] = useState<TaxiFareBreakdown | null>(null);
+  const [fareByRouteId, setFareByRouteId] = useState<
+    Record<string, number | null>
+  >({});
   const [tollCharges] = useState(0);
   const [parkingCharges] = useState(0);
   const [surgeConditions] = useState<SurgeCondition[]>(["normal"]);
@@ -203,8 +206,8 @@ export function TaxiFareEstimator() {
   }, [pickup, destination]);
 
   /**
-   * Recalculate fare whenever vehicle, selected route distance, waiting,
-   * surge, or extras change. Always reads live rates from the pricing catalog.
+   * Recalculate fare via server API whenever vehicle / distance / waiting /
+   * surge / extras change. Uses live catalog + calibration (never client bundle rates).
    */
   useEffect(() => {
     if (!selectedVehicle || !hasDistance) {
@@ -212,48 +215,113 @@ export function TaxiFareEstimator() {
       return;
     }
 
-    try {
-      const next = calculateTaxiFare({
-        vehicleId: selectedVehicle,
-        distanceKm,
-        waitingMinutes: waiting,
-        tollCharges,
-        parkingCharges,
-        conditions: surgeConditions,
-      });
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        const next = await fetchRideFare({
+          vehicleId: selectedVehicle,
+          distanceKm,
+          waitingMinutes: waiting,
+          tollCharges,
+          parkingCharges,
+          conditions: surgeConditions,
+          signal: controller.signal,
+        });
 
-      if (
-        next == null ||
-        !Number.isFinite(next.totalLkr) ||
-        Number.isNaN(next.totalLkr)
-      ) {
-        console.error("[Ride fare] Invalid fare result", {
+        if (
+          next == null ||
+          !Number.isFinite(next.totalLkr) ||
+          Number.isNaN(next.totalLkr)
+        ) {
+          console.error("[Ride fare] Invalid fare result", {
+            selectedVehicle,
+            distanceKm,
+            waiting,
+            next,
+          });
+          setFare(null);
+          return;
+        }
+
+        setFare(next);
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        if (error instanceof Error && error.name === "AbortError") return;
+        console.error("[Ride fare] fetchRideFare failed", {
           selectedVehicle,
           distanceKm,
           waiting,
-          tollCharges,
-          parkingCharges,
-          surgeConditions,
-          next,
+          error,
         });
-        setFare((prev) => (prev == null ? prev : null));
-        return;
+        setFare(null);
       }
+    }, 120);
 
-      setFare(next);
-    } catch (error) {
-      console.error("[Ride fare] calculateTaxiFare failed", {
-        selectedVehicle,
-        distanceKm,
-        waiting,
-        error,
-      });
-      setFare((prev) => (prev == null ? prev : null));
-    }
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
   }, [
     selectedVehicle,
     distanceKm,
     hasDistance,
+    waiting,
+    tollCharges,
+    parkingCharges,
+    surgeConditions,
+  ]);
+
+  // Route-card fare previews — same live server pricing
+  useEffect(() => {
+    if (routes.length === 0) {
+      setFareByRouteId({});
+      return;
+    }
+
+    const previewVehicle = selectedVehicle ?? ROUTE_FARE_PREVIEW_VEHICLE;
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      const entries = await Promise.all(
+        routes.map(async (option) => {
+          const id = option.id;
+          if (!id) return null;
+          try {
+            const preview = await fetchRideFare({
+              vehicleId: previewVehicle,
+              distanceKm: option.distanceKm,
+              waitingMinutes: waiting,
+              tollCharges,
+              parkingCharges,
+              conditions: surgeConditions,
+              signal: controller.signal,
+            });
+            return [
+              id,
+              Number.isFinite(preview.totalLkr) ? preview.totalLkr : null,
+            ] as const;
+          } catch {
+            if (controller.signal.aborted) return null;
+            return [id, null] as const;
+          }
+        }),
+      );
+
+      if (controller.signal.aborted) return;
+      const next: Record<string, number | null> = {};
+      for (const entry of entries) {
+        if (!entry) continue;
+        next[entry[0]] = entry[1];
+      }
+      setFareByRouteId(next);
+    }, 150);
+
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+  }, [
+    routes,
+    selectedVehicle,
     waiting,
     tollCharges,
     parkingCharges,
@@ -324,83 +392,15 @@ export function TaxiFareEstimator() {
     setSelectedRouteId(id);
   }, []);
 
-  const farePreviewVehicle = selectedVehicle ?? ROUTE_FARE_PREVIEW_VEHICLE;
-  const fareByRouteId: Record<string, number | null> = {};
-  for (const option of routes) {
-    const id = option.id;
-    if (!id) continue;
-    try {
-      const preview = calculateTaxiFare({
-        vehicleId: farePreviewVehicle,
-        distanceKm: option.distanceKm,
-        waitingMinutes: waiting,
-        tollCharges,
-        parkingCharges,
-        conditions: surgeConditions,
-      });
-      fareByRouteId[id] = Number.isFinite(preview.totalLkr)
-        ? preview.totalLkr
-        : null;
-    } catch {
-      fareByRouteId[id] = null;
-    }
-  }
-
   const onSelectVehicle = useCallback(
     (id: TaxiVehicleId) => {
       setSelectedVehicle(id);
-
-      // Recalculate immediately so the summary never shows a stale vehicle fare
-      if (!hasDistance) {
-        setFare(null);
-        return;
-      }
-
-      try {
-        const next = calculateTaxiFare({
-          vehicleId: id,
-          distanceKm,
-          waitingMinutes: waiting,
-          tollCharges,
-          parkingCharges,
-          conditions: surgeConditions,
-        });
-
-        if (
-          next == null ||
-          !Number.isFinite(next.totalLkr) ||
-          Number.isNaN(next.totalLkr)
-        ) {
-          console.error("[Ride fare] Invalid fare after vehicle select", {
-            selectedVehicle: id,
-            distanceKm,
-            waiting,
-            next,
-          });
-          setFare(null);
-          return;
-        }
-
-        setFare(next);
+      setFare(null); // clear stale estimate until live API returns
+      if (hasDistance) {
         setStep(3);
-      } catch (error) {
-        console.error("[Ride fare] calculateTaxiFare failed on vehicle select", {
-          selectedVehicle: id,
-          distanceKm,
-          waiting,
-          error,
-        });
-        setFare(null);
       }
     },
-    [
-      hasDistance,
-      distanceKm,
-      waiting,
-      tollCharges,
-      parkingCharges,
-      surgeConditions,
-    ],
+    [hasDistance],
   );
 
   const locationActionClass =

@@ -111,6 +111,10 @@ export type TaxiFareBreakdown = {
   surgeAmount: number;
   tollCharges: number;
   parkingCharges: number;
+  totalBeforeCalibration?: number;
+  marketAdjustment?: number;
+  baseFare?: number;
+  perKmRate?: number;
 };
 
 export function getTaxiVehicleRate(id: TaxiVehicleId): TaxiVehicleRate {
@@ -177,6 +181,10 @@ export function calculateTaxiFare(input: TaxiFareInput): TaxiFareBreakdown {
     surgeAmount: result.surgeAmount,
     tollCharges: result.tollCharges,
     parkingCharges: result.parkingCharges,
+    totalBeforeCalibration: result.totalBeforeCalibration,
+    marketAdjustment: result.marketAdjustment,
+    baseFare: result.baseFare,
+    perKmRate: result.perKmRate,
   };
 }
 
