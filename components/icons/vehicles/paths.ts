@@ -11,25 +11,35 @@ import {
 export const VEHICLE_ICON_PUBLIC_PATHS: Record<QPickVehicleIconId, string> = {
   bike: "/icons/vehicles/bike.svg",
   tuk: "/icons/vehicles/tuk.svg",
-  mini: "/icons/vehicles/mini.svg",
-  flex: "/icons/vehicles/flex.svg",
+  // Q Flex = compact hatchback (former Mini glyph/asset)
+  flex: "/icons/vehicles/mini.svg",
+  // Q Mini = Wagon R upgrade (former Flex glyph as SVG stand-in)
+  mini: "/icons/vehicles/flex.svg",
   sedan: "/icons/vehicles/sedan.svg",
   minivan: "/icons/vehicles/minivan.svg",
   frVan: "/icons/vehicles/fr-van.svg",
+  highRoofVan: "/icons/vehicles/fr-van.svg",
   suv: "/icons/vehicles/suv.svg",
   miniBus: "/icons/vehicles/mini-bus.svg",
   bus: "/icons/vehicles/bus.svg",
 };
 
-/** Transparent WebP photo cutouts from the fleet showcase. */
+/**
+ * Transparent WebP photo cutouts.
+ * Q Flex → former Mini hatchback photo
+ * Q Mini → Wagon R photo
+ * Q Flat Roof Van → flat-roof-van
+ * Q High Roof Van → high-roof-van
+ */
 export const VEHICLE_PHOTO_PUBLIC_PATHS: Record<QPickVehicleIconId, string> = {
   bike: "/images/fleet/vehicles/bike.webp",
   tuk: "/images/fleet/vehicles/tuk.webp",
-  mini: "/images/fleet/vehicles/mini.webp",
-  flex: "/images/fleet/vehicles/flex.webp",
+  flex: "/images/fleet/vehicles/mini.webp",
+  mini: "/images/fleet/vehicles/wagon-r.png",
   sedan: "/images/fleet/vehicles/sedan.webp",
   minivan: "/images/fleet/vehicles/minivan.webp",
-  frVan: "/images/fleet/vehicles/fr-van.webp",
+  frVan: "/images/fleet/vehicles/flat-roof-van.webp",
+  highRoofVan: "/images/fleet/vehicles/high-roof-van.webp",
   suv: "/images/fleet/vehicles/suv.webp",
   miniBus: "/images/fleet/vehicles/mini-bus.webp",
   bus: "/images/fleet/vehicles/bus.webp",

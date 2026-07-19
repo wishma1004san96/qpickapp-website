@@ -19,7 +19,10 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { useMessages, useTranslations } from "@/components/i18n/locale-provider";
-import { vehiclePhotoSrc } from "@/components/icons/vehicles";
+import {
+  fleetVehicleNameKey,
+  vehiclePhotoSrc,
+} from "@/components/icons/vehicles";
 import farePricingCatalog from "@/data/fare-pricing.json";
 import { resolveTimeOfDay } from "@/lib/fare/time-of-day";
 import {
@@ -261,7 +264,8 @@ function VehicleCarouselCard({
   const t = useTranslations();
   const { taxiFare } = useMessages();
   const meta = TAXI_VEHICLE_META[id];
-  const name = taxiFare.vehicles[id];
+  const fleetNameKey = fleetVehicleNameKey(id);
+  const name = fleetNameKey ? t(fleetNameKey) : taxiFare.vehicles[id];
   const hasEstimate =
     estimatedFareLkr != null && Number.isFinite(estimatedFareLkr);
 
@@ -342,6 +346,7 @@ function VehicleCarouselCard({
             alt={name}
             width={160}
             height={96}
+            unoptimized
             className="h-full w-auto max-w-[9.5rem] object-contain"
             sizes="160px"
           />

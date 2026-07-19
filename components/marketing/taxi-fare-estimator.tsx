@@ -40,6 +40,7 @@ import {
   useMessages,
   useTranslations,
 } from "@/components/i18n/locale-provider";
+import { fleetVehicleNameKey } from "@/components/icons/vehicles";
 import { LocationPickerDynamic } from "@/components/maps/LocationPickerDynamic";
 import { RideMapDynamic } from "@/components/maps/RideMapDynamic";
 import { NominatimAutocomplete } from "@/components/marketing/nominatim-autocomplete";
@@ -192,7 +193,10 @@ export function TaxiFareEstimator({
   const distanceKm = route?.distanceKm ?? 0;
 
   const vehicleLabel = selectedVehicle
-    ? taxiFare.vehicles[selectedVehicle]
+    ? (() => {
+        const key = fleetVehicleNameKey(selectedVehicle);
+        return key ? t(key) : taxiFare.vehicles[selectedVehicle];
+      })()
     : null;
   const hasPlaces = Boolean(pickup && destination);
   const hasDistance = Boolean(route && !routeError && distanceKm > 0);
@@ -792,7 +796,13 @@ export function TaxiFareEstimator({
         <QWatermark tone="brand" opacity={0.05} size={360} blur={2} />
       </div>
 
-      <div className="relative z-[1] p-5 pb-24 sm:p-7 lg:p-8 lg:pb-8">
+      <div
+        className={`relative z-[1] ${
+          isPageHero
+            ? "p-6 pb-28 sm:p-8 sm:pb-28 lg:p-9 lg:pb-10"
+            : "p-5 pb-24 sm:p-7 lg:p-8 lg:pb-8"
+        }`}
+      >
         <motion.div
           initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -812,7 +822,7 @@ export function TaxiFareEstimator({
                   {t("pages.ride.booking.title")}
                 </QHeadingMark>
               </HeadingTag>
-              <ul className="mt-3.5 flex flex-wrap gap-x-4 gap-y-1.5">
+              <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
                 {trustPoints?.map((point) => (
                   <li
                     key={point}
@@ -843,7 +853,11 @@ export function TaxiFareEstimator({
           )}
 
           {/* Step progress */}
-          <ol className={`flex flex-wrap items-center gap-2 sm:gap-3 ${isPageHero ? "mt-7" : "mt-6"}`}>
+          <ol
+            className={`flex flex-wrap items-center gap-2 sm:gap-3 ${
+              isPageHero ? "mt-16" : "mt-6"
+            }`}
+          >
             {steps.map((s, index) => {
               const done =
                 (s.id === 1 && hasPlaces && schedulingComplete) ||
@@ -921,8 +935,12 @@ export function TaxiFareEstimator({
           </ol>
         </motion.div>
 
-        <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
-          <div className="min-w-0 space-y-5">
+        <div
+          className={`grid items-start gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8 ${
+            isPageHero ? "mt-14" : "mt-8"
+          }`}
+        >
+          <div className="min-w-0 space-y-5 self-start">
             {/* STEP 1 */}
             <StepPanel
               step={1}
@@ -1204,11 +1222,11 @@ export function TaxiFareEstimator({
           </div>
 
           {/* Right column — sticky Fare Summary + compact Booking Details */}
-          <div className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
+          <div className="flex min-w-0 flex-col gap-4 self-start lg:sticky lg:top-24">
           <motion.aside
             ref={summaryRef}
-            initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{
               duration: 0.5,

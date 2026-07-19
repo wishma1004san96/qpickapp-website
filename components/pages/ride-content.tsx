@@ -18,10 +18,10 @@ export function RideContent() {
   return (
     <div className="bg-foam">
       <section
-        className="border-b border-ink/5 bg-[linear-gradient(180deg,#eef4fb_0%,#F8FAFF_45%,#ffffff_100%)] pt-24 sm:pt-28"
+        className="border-b border-ink/5 bg-[linear-gradient(180deg,#eef4fb_0%,#F8FAFF_45%,#ffffff_100%)] pt-[6.6rem] sm:pt-[7.7rem]"
         aria-label="Ride booking"
       >
-        <Container className="pb-9 pt-5 sm:pb-11 sm:pt-7 lg:pb-12">
+        <Container className="flex flex-col justify-center pb-11 pt-7 sm:pb-14 sm:pt-9 lg:pb-16 lg:pt-10">
           <TaxiFareEstimator variant="page" />
         </Container>
       </section>

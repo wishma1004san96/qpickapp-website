@@ -236,11 +236,14 @@ export const VEHICLE_GLYPHS: Record<
 > = {
   bike: BikeGlyph,
   tuk: TukGlyph,
-  mini: MiniGlyph,
-  flex: FlexGlyph,
+  // Q Flex = compact hatchback (former Mini silhouette)
+  flex: MiniGlyph,
+  // Q Mini = Wagon R upgrade (former Flex/wagon silhouette)
+  mini: FlexGlyph,
   sedan: SedanGlyph,
   minivan: MinivanGlyph,
   frVan: FrVanGlyph,
+  highRoofVan: FrVanGlyph,
   suv: SuvGlyph,
   miniBus: MiniBusGlyph,
   bus: BusGlyph,

@@ -1,0 +1,45 @@
+/* Airport Transfer Rates module */
+
+.airport-rates-section {
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 0%, rgb(0 98 250 / 0.05), transparent 60%),
+    #ffffff;
+}
+
+.airport-fare-card {
+  border: 1px solid rgb(255 255 255 / 0.75);
+  background: linear-gradient(
+    165deg,
+    rgb(255 255 255 / 0.96) 0%,
+    rgb(248 250 255 / 0.88) 100%
+  );
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 18px 48px rgb(10 22 32 / 0.07),
+    0 0 0 1px rgb(0 98 250 / 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.airport-fare-card-edge {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(1 147 251 / 0.55) 35%,
+    rgb(0 98 250 / 0.9) 50%,
+    rgb(1 147 251 / 0.55) 65%,
+    transparent 100%
+  );
+}
+
+.airport-popular-chip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.airport-search-results {
+  overscroll-behavior: contain;
+}

@@ -1,7 +1,10 @@
 /**
  * Vehicle ID catalog for Ride bookings.
  * Kept separate so the fare engine can import IDs without circular deps.
- * Do not change these IDs — they power the existing UI.
+ * Do not change these IDs — they power pricing / API.
+ *
+ * Display branding (Q Flex, Q Mini, …) maps via `TAXI_VEHICLE_TO_ICON`
+ * + Fleet catalog / `pages.ride.fleet.vehicles`.
  */
 
 export const TAXI_VEHICLE_IDS = [

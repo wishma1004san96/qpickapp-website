@@ -926,17 +926,17 @@
     "bookNow": "இப்போது முன்பதிவு செய்",
     "scopeNote": "டாக்ஸி பயண விலை · விமான நிலையம் & சுற்றுலாவிலிருந்து தனி",
     "vehicles": {
-      "bike": "பைக்",
-      "tuk": "டக்",
-      "miniCar": "மினி கார்",
-      "wagon": "வாகன்",
-      "sedan": "செடான்",
-      "miniVan": "மினி வேன்",
-      "van": "வேன்",
-      "longVan": "லாங் வேன் (HR)",
-      "suv": "SUV",
-      "miniBus": "மினி பஸ்",
-      "longBus": "லாங் பஸ்"
+      "bike": "Q Bike",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q Minivan",
+      "van": "Q Flat Roof Van",
+      "longVan": "Q High Roof Van",
+      "suv": "Q SUV",
+      "miniBus": "Q Mini Bus",
+      "longBus": "Q Bus"
     },
     "calculatingRoute": "ஓட்டும் தூரம் மற்றும் பயண நேரத்தைக் கணக்கிடுகிறது…",
     "calculatingShort": "கணக்கிடுகிறது…",
@@ -1228,113 +1228,140 @@
         "suv": "SUV",
         "vehicles": {
           "bike": {
-            "name": "Bike",
+            "name": "Q Bike",
             "passengers": "",
             "luggage": "",
-            "blurb": "Fast city rides"
+            "blurb": "விரைவான நகர பயணங்கள்"
           },
           "tuk": {
-            "name": "Tuk",
+            "name": "Q Tuk",
             "passengers": "",
             "luggage": "",
-            "blurb": "Affordable short trips"
-          },
-          "mini": {
-            "name": "Mini",
-            "passengers": "3 Passengers",
-            "luggage": "2 Luggage",
-            "blurb": "Perfect for city travel"
+            "blurb": "மலிவான குறுகிய பயணங்கள்"
           },
           "flex": {
-            "name": "Flex",
-            "passengers": "4 Passengers",
-            "luggage": "3 Luggage",
-            "blurb": "Compact crossover comfort"
+            "name": "Q Flex",
+            "passengers": "3 பயணிகள்",
+            "luggage": "2 சாமான்கள்",
+            "blurb": "நகர பயணத்திற்கு சிறிய ஹேட்ச்பேக்"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "4 பயணிகள்",
+            "luggage": "2 சாமான்கள்",
+            "blurb": "நகரத்திற்கு விரிவான Wagon R"
           },
           "sedan": {
-            "name": "Sedan",
-            "passengers": "4 Passengers",
-            "luggage": "2 Luggage",
-            "blurb": "Comfort for business travel"
+            "name": "Q Sedan",
+            "passengers": "4 பயணிகள்",
+            "luggage": "2 சாமான்கள்",
+            "blurb": "வணிக பயணத்திற்கு வசதி"
           },
           "minivan": {
-            "name": "Minivan",
-            "passengers": "6 Passengers",
-            "luggage": "4 Luggage",
-            "blurb": "Space for family trips"
+            "name": "Q Minivan",
+            "passengers": "6 பயணிகள்",
+            "luggage": "4 சாமான்கள்",
+            "blurb": "குடும்ப பயணத்திற்கு இடம்"
           },
           "frVan": {
-            "name": "FR Van",
-            "passengers": "8 Passengers",
-            "luggage": "6 Luggage",
-            "blurb": "Group airport transfers"
+            "name": "Q Flat Roof Van",
+            "passengers": "8 பயணிகள்",
+            "luggage": "6 சாமான்கள்",
+            "blurb": "குழு விமான நிலைய பரிமாற்றங்கள்"
+          },
+          "highRoofVan": {
+            "name": "Q High Roof Van",
+            "passengers": "10 பயணிகள்",
+            "luggage": "8 சாமான்கள்",
+            "blurb": "சுற்றுலா மற்றும் பரிமாற்றங்களுக்கு அதிக இடம்"
           },
           "suv": {
-            "name": "SUV",
-            "passengers": "5 Passengers",
-            "luggage": "4 Luggage",
-            "blurb": "Ideal for families"
+            "name": "Q SUV",
+            "passengers": "5 பயணிகள்",
+            "luggage": "4 சாமான்கள்",
+            "blurb": "குடும்பங்களுக்கு ஏற்றது"
           },
           "miniBus": {
-            "name": "Mini Bus",
-            "passengers": "12 Passengers",
-            "luggage": "8 Luggage",
-            "blurb": "Small group travel"
+            "name": "Q Mini Bus",
+            "passengers": "12 பயணிகள்",
+            "luggage": "8 சாமான்கள்",
+            "blurb": "சிறிய குழு பயணம்"
           },
           "bus": {
-            "name": "Bus",
-            "passengers": "20 Passengers",
-            "luggage": "12 Luggage",
-            "blurb": "Large group transfers"
+            "name": "Q Bus",
+            "passengers": "20 பயணிகள்",
+            "luggage": "12 சாமான்கள்",
+            "blurb": "பெரிய குழு பரிமாற்றங்கள்"
           }
         }
       },
       "safety": {
-        "eyebrow": "Safety",
-        "heading": "Safety is the baseline",
-        "body": "Verification, trip sharing, and reachable support on every Q Pick journey.",
-        "cta": "View safety standard",
+        "eyebrow": "பாதுகாப்பு",
+        "heading": "நம்பிக்கையுடன் பயணியுங்கள்.",
+        "body": "ஒவ்வொரு Q Pick பயணமும் சரிபார்க்கப்பட்ட ஓட்டுநர்கள், நேரலை பயணப் பகிர்வு, அவசர உதவி மற்றும் அர்ப்பணிக்கப்பட்ட ஆதரவுடன் பாதுகாக்கப்படுகிறது.",
+        "cta": "பாதுகாப்பு பற்றி அறியுங்கள்",
         "pillars": {
           "verified": {
-            "title": "Verified fleet",
-            "body": "Identity and vehicle checks before a driver joins."
+            "title": "Verified Fleet",
+            "body": "ஒவ்வொரு ஓட்டுநரும் இணையத்தில் சேரும் முன் அடையாளம் மற்றும் வாகன சோதனைகள்."
           },
           "sharing": {
-            "title": "Trip sharing",
-            "body": "Share live status with family or your hotel."
+            "title": "Trip Sharing",
+            "body": "குடும்பம், நண்பர்கள் அல்லது உங்கள் ஹோட்டலுடன் நேரலை பயண நிலையைப் பகிரவும்."
           },
           "support": {
-            "title": "Always reachable",
-            "body": "In-trip support when plans change on the road."
+            "title": "24/7 Support",
+            "body": "உங்களுக்குத் தேவையான போது உதவி — பகல் அல்லது இரவு."
+          },
+          "emergency": {
+            "title": "Emergency Assistance",
+            "body": "சாலையில் ஏதேனும் தவறாக உணர்ந்தால் பயணத்திற்குள் மேம்படுத்தல் பாதைகள்."
           }
         }
       },
       "faq": {
-        "heading": "Frequently asked questions",
+        "heading": "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+        "sub": "முன்பதிவுக்கு முன் தெளிவான பதில்கள் — பயணங்கள், விமான நிலையம் மற்றும் சுற்றுலா.",
         "items": {
-          "fare": {
-            "q": "Is the fare estimate final?",
-            "a": "It is a live estimate based on distance, vehicle, and waiting time. Confirm the final fare in the booking flow before you ride."
+          "fareCalc": {
+            "q": "கட்டணம் எவ்வாறு கணக்கிடப்படுகிறது?",
+            "a": "டாக்ஸி கட்டணங்கள் அடிப்படைக் கட்டணம், தூரம், காத்திருப்பு நேரம் மற்றும் பகல்/இரவு விகிதங்களை இணைக்கின்றன. உறுதிப்படுத்தும் முன் நேரலை மதிப்பீட்டைக் காணலாம்."
           },
-          "payment": {
-            "q": "How do I pay?",
-            "a": "Choose cash, card, or wallet in Booking Details. Payment is confirmed when you complete the booking."
+          "airport": {
+            "q": "விமான நிலைய பரிமாற்றத்தை முன்பதிவு செய்ய முடியுமா?",
+            "a": "ஆம். Bandaranaike (CMB) க்கு Airport Transfers வழியாக நேரமிட்ட பிக்அப்பைக் கோருங்கள்."
           },
-          "schedule": {
-            "q": "Can I schedule a ride in advance?",
-            "a": "Yes. Select Schedule Ride in the estimator, then choose a future date and time."
+          "tour": {
+            "q": "எனது இலங்கை சுற்றுலாவை தனிப்பயனாக்க முடியுமா?",
+            "a": "ஆம். தனிப்பட்ட சுற்றுலாக்கள் உங்கள் நாட்கள், நிறுத்தங்கள் மற்றும் வாகனத்தைச் சுற்றி உருவாக்கப்படுகின்றன — பயணத்திற்கு முன் Q Pick உடன் திட்டத்தைச் செம்மைப்படுத்துங்கள்."
           },
-          "safety": {
-            "q": "Are drivers verified?",
-            "a": "Yes. Q Pick drivers complete identity, vehicle, and background checks before joining the network."
+          "vehicle": {
+            "q": "எனது வாகன வகையைத் தேர்ந்தெடுக்க முடியுமா?",
+            "a": "ஆம். Q Bike முதல் Q Bus வரை, booking carousel அல்லது Fleet பிரிவில் பொருத்தமான வகையைத் தேர்ந்தெடுக்கவும்."
+          },
+          "drivers": {
+            "q": "அனைத்து ஓட்டுநர்களும் சரிபார்க்கப்பட்டவர்களா?",
+            "a": "ஆம். Q Pick ஓட்டுநர்கள் அடையாளம், வாகனம் மற்றும் பின்னணி சோதனைகளை முடிக்கிறார்கள்."
+          },
+          "share": {
+            "q": "எனது பயணத்தை குடும்பத்துடன் பகிர முடியுமா?",
+            "a": "ஆம். நேரலை பயண நிலையைப் பகிர்ந்து குடும்பம் பயணத்தைப் பின்பற்றலாம்."
+          },
+          "cancel": {
+            "q": "எனது முன்பதிவை ரத்து செய்ய முடியுமா?",
+            "a": "ஆம். ஆப் அல்லது Support மூலம் ரத்து செய்யுங்கள். நேரம் மற்றும் கட்டணங்கள் முன்பதிவு வகையைப் பொறுத்தது."
+          },
+          "contact": {
+            "q": "ஆதரவை எவ்வாறு தொடர்பு கொள்வது?",
+            "a": "Support பக்கம் வழியாக எப்போதும் — தொலைபேசி, WhatsApp அல்லது மின்னஞ்சல். எங்கள் குழு 24/7 கிடைக்கும்."
           }
         }
       },
       "finalCta": {
-        "heading": "Ready when you are",
-        "sub": "Your estimate stays above — pick a vehicle and confirm when you’re set.",
-        "primary": "Continue booking",
-        "secondary": "Contact support"
+        "heading": "இன்னும் கேள்விகள் உள்ளதா?",
+        "sub": "உங்கள் பயணம் அல்லது இலங்கை சுற்றுலாவைத் திட்டமிட எங்கள் குழு 24/7 கிடைக்கும்.",
+        "primary": "உங்கள் பயணத்தை முன்பதிவு செய்யுங்கள்",
+        "secondary": "ஆதரவைத் தொடர்பு கொள்ளுங்கள்"
       },
       "driverTrust": {
         "name": "Nuwan P.",
@@ -1346,18 +1373,81 @@
     },
     "airport": {
       "meta": {
-        "title": "விமான நிலையம்",
-        "description": "ஹோட்டல்கள், வில்லாக்கள் மற்றும் விருந்தினர்களுக்கான சந்திப்பு-வரவேற்பு நேரத்துடன் Bandaranaike (CMB) விமான நிலைய பரிமாற்றங்கள்."
+        "title": "விமான நிலைய பரிமாற்றங்கள்",
+        "description": "விமானக் கண்காணிப்பு, சந்திப்பு-வரவேற்பு, தொழில்முறை ஓட்டுநர்கள் மற்றும் வெளிப்படையான நிலையான விலையுடன் Bandaranaike (CMB) பிரீமியம் விமான நிலைய பரிமாற்றங்கள்."
       },
-      "title": "நம்பிக்கையுடன் விமான நிலைய பரிமாற்றங்கள்",
-      "description": "CMB இல் இறங்கி நேராக உங்கள் ஹோட்டல் அல்லது வில்லாவிற்குச் செல்லுங்கள். விமானத்தை அறிந்த நேரம், சந்திப்பு-வரவேற்பு விருப்பங்கள் மற்றும் வாயிலிருந்து கதவு வரை விருந்தோம்பல் தொடர்பில்.",
-      "primaryCta": "பரிமாற்றத்தைக் கோருங்கள்",
-      "secondaryCta": "ஹோட்டல் பங்குதாரர்கள்",
-      "bullets": [
-        "விமானக் கண்காணிப்பு மற்றும் குடிவரவு தாமதங்களுக்கான இடையகம்",
-        "உறுதிப்படுத்தும் முன் நிலையான அல்லது வெளிப்படையான பரிமாற்ற விலை",
-        "கோரிக்கையின் பேரில் குழந்தை இருக்கைகள் மற்றும் பயணப்பை வசதி வாகனங்கள்"
-      ]
+      "hero": {
+        "eyebrow": "விமான நிலைய பரிமாற்றங்கள்",
+        "titleLine1": "விமான நிலைய பரிமாற்றங்கள்,",
+        "titleLine2": "சரியான நேரத்தில்.",
+        "description": "Bandaranaike சர்வதேச விமான நிலையம் (CMB) இருந்து இலங்கையில் எங்கும் — தொழில்முறை ஓட்டுநர்கள், நேரடி விமானக் கண்காணிப்பு, சந்திப்பு-வரவேற்பு மற்றும் வெளிப்படையான விலையுடன்.",
+        "primaryCta": "விமான நிலைய பரிமாற்றத்தை முன்பதிவு செய்யுங்கள்",
+        "secondaryCta": "வாகனங்களை ஆராயுங்கள்",
+        "imageAlt": "Bandaranaike சர்வதேச விமான நிலையத்தில் பயணிகளை வரவேற்கும் Q Pick ஓட்டுநர்",
+        "trust": {
+          "tracking": "விமானக் கண்காணிப்பு",
+          "greet": "சந்திப்பு-வரவேற்பு",
+          "pricing": "நிலையான விலை",
+          "support": "24/7 ஆதரவு"
+        },
+        "cards": {
+          "flight": {
+            "label": "விமானம்",
+            "code": "UL225",
+            "status": "நேரத்தில்"
+          },
+          "driver": {
+            "label": "ஓட்டுநர்",
+            "status": "6 நிமிடத்தில் வருகிறார்",
+            "eta": "நேரடி ETA"
+          },
+          "meetGreet": "சந்திப்பு-வரவேற்பு உள்ளிட்டது"
+        }
+      },
+      "rates": {
+        "eyebrow": "அதிகாரப்பூர்வ கட்டணங்கள்",
+        "heading": "விமான நிலைய பரிமாற்ற கட்டணங்கள்",
+        "sub": "எந்த இலக்கையும் தேடி Bandaranaike சர்வதேச விமான நிலையம் (CMB) இருந்து அதிகாரப்பூர்வ குளிரூட்டப்பட்ட பரிமாற்ற கட்டணத்தைப் பாருங்கள்.",
+        "popular": "பிரபல இலக்குகள்",
+        "searchLabel": "இலக்கைத் தேடுங்கள்",
+        "searchPlaceholder": "இலக்கு அல்லது குறியீட்டைத் தேடுங்கள் — எ.கா. Kandy, Kan, K015",
+        "searching": "தேடுகிறது…",
+        "noResults": "அந்தத் தேடலுக்கு இலக்குகள் இல்லை. வேறு பெயர் அல்லது குறியீட்டை முயற்சிக்கவும்.",
+        "emptyTitle": "ஒரு இலக்கைத் தேர்ந்தெடுக்கவும்",
+        "emptyBody": "மேலே உள்ள பிரபல இலக்கைத் தேர்ந்தெடுக்கவும் அல்லது கட்டணத்தை உடனடி பார்க்க தட்டச்சு செய்யவும்.",
+        "disclaimer": "காட்டப்படும் கட்டணங்கள் அதிகாரப்பூர்வ விமான நிலைய பரிமாற்ற கட்டணப் பட்டியலை அடிப்படையாகக் கொண்டவை. காத்திருப்பு நேரம், கூடுதல் நிறுத்தங்கள், சுங்கச்சாவடிகள் அல்லது சிறப்பு கோரிக்கைகளுக்கு கூடுதல் கட்டணங்கள் பொருந்தலாம்.",
+        "card": {
+          "destination": "இலக்கு",
+          "fare": "அதிகாரப்பூர்வ விமான நிலைய பரிமாற்ற கட்டணம்",
+          "airport": "விமான நிலையம்",
+          "status": "நிலை",
+          "statusValue": "அதிகாரப்பூர்வ விமான நிலைய கட்டணம்",
+          "code": "குறியீடு",
+          "bookCta": "விமான நிலைய பரிமாற்றத்தை முன்பதிவு செய்யுங்கள்"
+        }
+      },
+      "features": {
+        "eyebrow": "ஏன் Q Pick விமான நிலையம்",
+        "heading": "வாயிலிருந்து கதவு வரை நம்பிக்கை.",
+        "items": {
+          "tracking": {
+            "title": "விமானக் கண்காணிப்பு",
+            "body": "உங்கள் வருகையை தானாகக் கண்காணிக்கும்."
+          },
+          "greet": {
+            "title": "சந்திப்பு-வரவேற்பு",
+            "body": "உங்கள் ஓட்டுநர் வருகைப் பகுதியில் காத்திருப்பார்."
+          },
+          "pricing": {
+            "title": "வெளிப்படையான விலை",
+            "body": "முன்பதிவுக்கு முன் கட்டணத்தை அறியுங்கள்."
+          },
+          "support": {
+            "title": "24/7 ஆதரவு",
+            "body": "எப்போதும் கிடைக்கும்."
+          }
+        }
+      }
     },
     "tours": {
       "meta": {

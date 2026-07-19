@@ -3,10 +3,14 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   Check,
-  ChevronDown,
   Clock3,
   Eye,
+  Headphones,
+  LocateFixed,
+  Minus,
+  Plus,
   ShieldCheck,
+  Siren,
   Wallet,
 } from "lucide-react";
 import Image from "next/image";
@@ -32,7 +36,23 @@ const WHY_ICONS = {
 
 const FLEET_IDS = QPICK_VEHICLE_ICON_IDS;
 
-const FAQ_IDS = ["fare", "payment", "schedule", "safety"] as const;
+const SAFETY_PILLARS = [
+  { id: "verified", Icon: ShieldCheck },
+  { id: "sharing", Icon: LocateFixed },
+  { id: "support", Icon: Headphones },
+  { id: "emergency", Icon: Siren },
+] as const;
+
+const FAQ_IDS = [
+  "fareCalc",
+  "airport",
+  "tour",
+  "vehicle",
+  "drivers",
+  "share",
+  "cancel",
+  "contact",
+] as const;
 
 function SectionReveal({
   children,
@@ -171,7 +191,7 @@ export function RideFleetSection() {
         />
 
         <div
-          className="mt-8 grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-4"
+          className="ride-fleet-grid mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 min-[1440px]:grid-cols-4"
           role="radiogroup"
           aria-label={t("pages.ride.fleet.heading")}
         >
@@ -219,15 +239,17 @@ export function RideFleetSection() {
                   </motion.span>
                 ) : null}
 
-                <div className="ride-fleet-image relative mx-auto flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-[0.9rem] bg-[linear-gradient(180deg,#f8faff_0%,#eef4fb_100%)]">
-                  <Image
-                    src={VEHICLE_PHOTO_PUBLIC_PATHS[id]}
-                    alt={name}
-                    width={240}
-                    height={144}
-                    className="ride-fleet-img h-[78%] w-auto max-w-[92%] object-contain transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
-                    sizes="(max-width: 640px) 42vw, (max-width: 1024px) 22vw, 160px"
-                  />
+                <div className="ride-fleet-image">
+                  <span className="ride-fleet-image-frame">
+                    <Image
+                      src={VEHICLE_PHOTO_PUBLIC_PATHS[id]}
+                      alt={name}
+                      fill
+                      unoptimized
+                      className="ride-fleet-img"
+                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 22vw, 180px"
+                    />
+                  </span>
                 </div>
 
                 <h3 className="mt-3 font-display text-sm font-semibold tracking-tight text-ink sm:text-[0.95rem]">
@@ -263,76 +285,122 @@ export function RideFleetSection() {
   );
 }
 
-/** Compact safety strip for the Ride page. */
+/** Premium safety section — two-column luxury layout. */
 export function RideSafetySection() {
   const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
-  const pillars = ["verified", "sharing", "support"] as const;
 
   return (
     <section
-      className="ride-section bg-[#F8FAFF] py-12 sm:py-14"
+      className="ride-safety-premium relative overflow-hidden py-16 sm:py-20 lg:py-24"
       aria-labelledby="ride-safety-heading"
     >
-      <Container>
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10">
+      <div className="ride-safety-premium__glow" aria-hidden />
+      <div className="ride-safety-premium__orb ride-safety-premium__orb--a" aria-hidden />
+      <div className="ride-safety-premium__orb ride-safety-premium__orb--b" aria-hidden />
+
+      <Container className="relative z-[1]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-14 xl:gap-16">
           <SectionReveal>
-            <p className="font-mono text-[0.6875rem] tracking-[0.18em] text-brand uppercase">
+            <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-brand uppercase">
               {t("pages.ride.safety.eyebrow")}
             </p>
             <h2
               id="ride-safety-heading"
-              className="mt-2 font-display text-[clamp(1.65rem,3.2vw,2.15rem)] leading-[1.15] font-semibold tracking-[-0.025em] text-ink"
+              className="mt-3 font-display text-[clamp(2rem,4.2vw,3rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-balance text-ink"
             >
               {t("pages.ride.safety.heading")}
             </h2>
-            <p className="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-ink-muted">
+            <p className="mt-5 max-w-lg text-[1.05rem] leading-[1.65] text-ink-muted sm:text-[1.125rem]">
               {t("pages.ride.safety.body")}
             </p>
             <ButtonLink
               href="/safety"
-              className="mt-5 transition-[box-shadow,transform] duration-300 hover:shadow-[0_10px_28px_rgb(0_98_250_/_0.18)] motion-safe:hover:-translate-y-0.5"
-              variant="secondary"
+              size="lg"
+              className="mt-8 shadow-[0_14px_36px_rgb(0_98_250_/_0.28)] transition-[box-shadow,transform] duration-300 hover:shadow-[0_18px_44px_rgb(0_98_250_/_0.38)] motion-safe:hover:-translate-y-0.5"
             >
               {t("pages.ride.safety.cta")}
             </ButtonLink>
           </SectionReveal>
 
-          <ul className="grid gap-3 sm:grid-cols-3">
-            {pillars.map((id, index) => (
-              <motion.li
-                key={id}
-                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
+          <div className="ride-safety-cards relative">
+            <svg
+              className="ride-safety-cards__lines pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden
+            >
+              <motion.path
+                d="M28 28 C 48 28, 52 48, 72 48"
+                fill="none"
+                stroke="rgb(0 98 250 / 0.18)"
+                strokeWidth="0.35"
+                initial={reduceMotion ? false : { pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.35,
-                  delay: reduceMotion ? 0 : index * 0.05,
-                  ease: EASE,
-                }}
-                whileHover={
-                  reduceMotion
-                    ? undefined
-                    : { y: -4, transition: { duration: 0.25, ease: EASE } }
-                }
-                className="ride-safety-card rounded-[1.25rem] border border-ink/6 bg-paper/90 p-4 shadow-[0_10px_28px_rgb(10_22_32_/_0.04)] backdrop-blur-sm"
-              >
-                <p className="text-sm font-semibold tracking-tight text-ink">
-                  {t(`pages.ride.safety.pillars.${id}.title`)}
-                </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">
-                  {t(`pages.ride.safety.pillars.${id}.body`)}
-                </p>
-              </motion.li>
-            ))}
-          </ul>
+                transition={{ duration: 1.1, ease: EASE, delay: 0.25 }}
+              />
+              <motion.path
+                d="M28 72 C 48 72, 52 52, 72 52"
+                fill="none"
+                stroke="rgb(0 98 250 / 0.14)"
+                strokeWidth="0.35"
+                initial={reduceMotion ? false : { pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.1, ease: EASE, delay: 0.4 }}
+              />
+            </svg>
+
+            <ul className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+              {SAFETY_PILLARS.map(({ id, Icon }, index) => (
+                <motion.li
+                  key={id}
+                  initial={
+                    reduceMotion ? false : { opacity: 0, y: 22, scale: 0.96 }
+                  }
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: reduceMotion ? 0 : 0.08 + index * 0.08,
+                    ease: EASE,
+                  }}
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : { y: -6, transition: { duration: 0.28, ease: EASE } }
+                  }
+                  className={`ride-safety-glass ${
+                    index % 2 === 1 ? "sm:mt-6" : ""
+                  }`}
+                >
+                  <span className="ride-safety-glass__icon relative" aria-hidden>
+                    <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    {id === "verified" ? (
+                      <Check
+                        className="absolute -right-1 -bottom-1 h-3.5 w-3.5 rounded-full bg-brand p-[1px] text-paper"
+                        strokeWidth={3}
+                      />
+                    ) : null}
+                  </span>
+                  <h3 className="mt-4 font-display text-[1.05rem] font-semibold tracking-tight text-ink">
+                    {t(`pages.ride.safety.pillars.${id}.title`)}
+                  </h3>
+                  <p className="mt-2 text-[0.875rem] leading-relaxed text-ink-muted">
+                    {t(`pages.ride.safety.pillars.${id}.body`)}
+                  </p>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </section>
   );
 }
 
-/** Ride FAQ accordion. */
+/** Premium glass FAQ accordion. */
 export function RideFaqSection() {
   const t = useTranslations();
   const [openId, setOpenId] = useState<string | null>(FAQ_IDS[0]);
@@ -340,39 +408,61 @@ export function RideFaqSection() {
 
   return (
     <section
-      className="ride-section bg-paper py-12 sm:py-14"
+      className="ride-faq-premium relative overflow-hidden bg-paper py-16 sm:py-20 lg:py-24"
       aria-labelledby="ride-faq-heading"
     >
-      <Container className="max-w-3xl">
-        <SectionReveal>
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(60%_80%_at_50%_0%,rgb(0_98_250_/_0.06),transparent_70%)]"
+        aria-hidden
+      />
+      <Container className="relative z-[1] max-w-3xl">
+        <SectionReveal className="text-center sm:text-left">
           <h2
             id="ride-faq-heading"
-            className="font-display text-[clamp(1.65rem,3.2vw,2.15rem)] leading-[1.15] font-semibold tracking-[-0.025em] text-ink"
+            className="font-display text-[clamp(1.85rem,3.6vw,2.65rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-ink"
           >
             {t("pages.ride.faq.heading")}
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-[1.05rem] leading-relaxed text-ink-muted sm:mx-0">
+            {t("pages.ride.faq.sub")}
+          </p>
         </SectionReveal>
 
-        <ul className="mt-7 divide-y divide-ink/8 border-y border-ink/8">
-          {FAQ_IDS.map((id) => {
+        <ul className="mt-10 space-y-3.5 sm:mt-12 sm:space-y-4">
+          {FAQ_IDS.map((id, index) => {
             const open = openId === id;
             return (
-              <li key={id}>
+              <motion.li
+                key={id}
+                initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.4,
+                  delay: reduceMotion ? 0 : index * 0.04,
+                  ease: EASE,
+                }}
+                className={`ride-faq-item ${open ? "ride-faq-item--open" : ""}`}
+              >
                 <button
                   type="button"
                   aria-expanded={open}
                   onClick={() => setOpenId(open ? null : id)}
-                  className="flex w-full items-center justify-between gap-4 py-4 text-left transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35"
+                  className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left sm:px-6 sm:py-6"
                 >
-                  <span className="text-sm font-semibold tracking-tight text-ink sm:text-base">
+                  <span className="font-display text-[1.05rem] leading-snug font-semibold tracking-tight text-ink sm:text-[1.15rem]">
                     {t(`pages.ride.faq.items.${id}.q`)}
                   </span>
-                  <ChevronDown
-                    className={`h-4 w-4 shrink-0 text-ink-muted transition-transform duration-300 ${
-                      open ? "rotate-180 text-brand" : ""
-                    }`}
+                  <span
+                    className={`ride-faq-item__toggle ${open ? "ride-faq-item__toggle--open" : ""}`}
                     aria-hidden
-                  />
+                  >
+                    {open ? (
+                      <Minus className="h-4 w-4" strokeWidth={2.25} />
+                    ) : (
+                      <Plus className="h-4 w-4" strokeWidth={2.25} />
+                    )}
+                  </span>
                 </button>
                 <AnimatePresence initial={false}>
                   {open ? (
@@ -388,16 +478,16 @@ export function RideFaqSection() {
                           ? undefined
                           : { opacity: 0, height: 0 }
                       }
-                      transition={{ duration: 0.28, ease: EASE }}
+                      transition={{ duration: 0.32, ease: EASE }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-4 text-sm leading-relaxed text-ink-muted">
+                      <p className="px-5 pb-5 text-[0.975rem] leading-[1.7] text-ink-muted sm:px-6 sm:pb-6 sm:text-[1.02rem]">
                         {t(`pages.ride.faq.items.${id}.a`)}
                       </p>
                     </motion.div>
                   ) : null}
                 </AnimatePresence>
-              </li>
+              </motion.li>
             );
           })}
         </ul>
@@ -406,7 +496,7 @@ export function RideFaqSection() {
   );
 }
 
-/** Final booking CTA — points back to the estimator. */
+/** Premium post-FAQ CTA card. */
 export function RideFinalCta() {
   const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
@@ -419,36 +509,43 @@ export function RideFinalCta() {
   };
 
   return (
-    <section className="ride-section relative overflow-hidden bg-[linear-gradient(165deg,#0a1620_0%,#0c1f38_50%,#071018_100%)] py-12 text-foam sm:py-14">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_60%_at_50%_0%,rgb(0_98_250_/_0.22),transparent_65%)]"
-        aria-hidden
-      />
-      <Container className="relative">
-        <SectionReveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-[clamp(1.65rem,3.2vw,2.25rem)] leading-[1.15] font-semibold tracking-[-0.025em] text-balance">
-            {t("pages.ride.finalCta.heading")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-[0.9375rem] leading-relaxed text-foam/65">
-            {t("pages.ride.finalCta.sub")}
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={scrollToEstimator}
-              className="inline-flex min-h-12 items-center justify-center rounded-[var(--radius-md)] bg-brand px-6 text-sm font-medium text-paper shadow-[0_12px_32px_rgb(0_98_250_/_0.4)] transition-[background-color,transform,box-shadow] duration-[var(--duration-ui)] hover:bg-brand-bright hover:shadow-[0_16px_40px_rgb(0_98_250_/_0.5)] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
-            >
-              {t("pages.ride.finalCta.primary")}
-            </button>
-            <ButtonLink
-              href="/support"
-              variant="secondary"
-              className="min-h-12 border-foam/20 bg-transparent text-foam transition-[border-color,background,transform] duration-300 hover:border-foam/40 hover:bg-foam/10 hover:text-foam motion-safe:hover:-translate-y-0.5"
-            >
-              {t("pages.ride.finalCta.secondary")}
-            </ButtonLink>
+    <section className="ride-section bg-foam pb-16 sm:pb-20 lg:pb-24">
+      <Container>
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 20, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.55, ease: EASE }}
+          className="ride-final-premium relative overflow-hidden rounded-[1.75rem] px-6 py-12 text-center text-foam sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-14"
+        >
+          <div className="ride-final-premium__glow" aria-hidden />
+          <div className="ride-final-premium__orb" aria-hidden />
+          <div className="relative z-[1] mx-auto max-w-2xl">
+            <h2 className="font-display text-[clamp(1.85rem,3.5vw,2.65rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-balance">
+              {t("pages.ride.finalCta.heading")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-[1.05rem] leading-relaxed text-foam/70 sm:text-[1.125rem]">
+              {t("pages.ride.finalCta.sub")}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-9 sm:gap-4">
+              <ButtonLink
+                href="/support"
+                variant="onDark"
+                size="lg"
+                className="min-w-[10.5rem] shadow-[0_12px_32px_rgb(0_0_0_/_0.25)]"
+              >
+                {t("pages.ride.finalCta.secondary")}
+              </ButtonLink>
+              <button
+                type="button"
+                onClick={scrollToEstimator}
+                className="inline-flex min-h-12 min-w-[10.5rem] items-center justify-center rounded-[var(--radius-md)] bg-brand px-6 text-base font-medium text-paper shadow-[0_14px_36px_rgb(0_98_250_/_0.45)] transition-[background-color,transform,box-shadow] duration-[var(--duration-ui)] hover:bg-brand-bright hover:shadow-[0_18px_44px_rgb(0_98_250_/_0.55)] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
+              >
+                {t("pages.ride.finalCta.primary")}
+              </button>
+            </div>
           </div>
-        </SectionReveal>
+        </motion.div>
       </Container>
     </section>
   );

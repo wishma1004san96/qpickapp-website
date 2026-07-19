@@ -8,6 +8,7 @@ import {
   TAXI_VEHICLE_IDS,
   type TaxiVehicleId,
 } from "@/lib/taxi-fare-vehicles";
+import { fleetCapacityForTaxiId } from "@/components/icons/vehicles/fleet-catalog";
 
 export { TAXI_VEHICLE_IDS, type TaxiVehicleId };
 export {
@@ -78,82 +79,28 @@ export type TaxiVehicleMeta = {
   rating: number;
 };
 
-export const TAXI_VEHICLE_META: Record<TaxiVehicleId, TaxiVehicleMeta> = {
-  bike: {
-    passengers: 1,
-    luggage: 1,
-    airConditioning: false,
-    available: true,
-    rating: 4.6,
-  },
-  tuk: {
-    passengers: 3,
-    luggage: 2,
-    airConditioning: false,
-    available: true,
-    rating: 4.5,
-  },
-  miniCar: {
-    passengers: 3,
-    luggage: 2,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  wagon: {
-    passengers: 4,
-    luggage: 3,
-    airConditioning: true,
-    available: true,
-    rating: 4.6,
-  },
-  sedan: {
-    passengers: 4,
-    luggage: 2,
-    airConditioning: true,
-    available: true,
-    rating: 4.9,
-  },
-  miniVan: {
-    passengers: 6,
-    luggage: 4,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  van: {
-    passengers: 8,
-    luggage: 6,
-    airConditioning: true,
-    available: true,
-    rating: 4.8,
-  },
-  longVan: {
-    passengers: 10,
-    luggage: 8,
-    airConditioning: true,
-    available: true,
-    rating: 4.7,
-  },
-  suv: {
-    passengers: 5,
-    luggage: 4,
-    airConditioning: true,
-    available: true,
-    rating: 4.9,
-  },
-  miniBus: {
-    passengers: 14,
-    luggage: 8,
-    airConditioning: true,
-    available: true,
-    rating: 4.6,
-  },
-  longBus: {
-    passengers: 30,
-    luggage: 12,
-    airConditioning: true,
-    available: true,
-    rating: 4.5,
-  },
+const TAXI_VEHICLE_EXTRAS: Record<
+  TaxiVehicleId,
+  Omit<TaxiVehicleMeta, "passengers" | "luggage">
+> = {
+  bike: { airConditioning: false, available: true, rating: 4.6 },
+  tuk: { airConditioning: false, available: true, rating: 4.5 },
+  miniCar: { airConditioning: true, available: true, rating: 4.7 },
+  wagon: { airConditioning: true, available: true, rating: 4.6 },
+  sedan: { airConditioning: true, available: true, rating: 4.9 },
+  miniVan: { airConditioning: true, available: true, rating: 4.7 },
+  van: { airConditioning: true, available: true, rating: 4.8 },
+  longVan: { airConditioning: true, available: true, rating: 4.7 },
+  suv: { airConditioning: true, available: true, rating: 4.9 },
+  miniBus: { airConditioning: true, available: true, rating: 4.6 },
+  longBus: { airConditioning: true, available: true, rating: 4.5 },
 };
+
+/** Capacity comes from Fleet catalog — one source of truth with Fleet UI. */
+export const TAXI_VEHICLE_META: Record<TaxiVehicleId, TaxiVehicleMeta> =
+  Object.fromEntries(
+    TAXI_VEHICLE_IDS.map((id) => {
+      const capacity = fleetCapacityForTaxiId(id);
+      return [id, { ...TAXI_VEHICLE_EXTRAS[id], ...capacity }];
+    }),
+  ) as Record<TaxiVehicleId, TaxiVehicleMeta>;

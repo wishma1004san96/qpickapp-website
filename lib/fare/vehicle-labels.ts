@@ -5,15 +5,15 @@
 import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
 
 export const VEHICLE_PRICING_LABELS: Record<TaxiVehicleId, string> = {
-  bike: "Bike",
-  tuk: "Tuk",
-  miniCar: "Mini Car",
-  wagon: "Wagon",
-  sedan: "Sedan",
-  miniVan: "Mini Van",
-  van: "Van",
-  longVan: "Long Van",
-  suv: "SUV",
-  miniBus: "Mini Bus",
-  longBus: "Long Bus",
+  bike: "Q Bike",
+  tuk: "Q Tuk",
+  miniCar: "Q Flex",
+  wagon: "Q Mini",
+  sedan: "Q Sedan",
+  miniVan: "Q Minivan",
+  van: "Q Flat Roof Van",
+  longVan: "Q High Roof Van",
+  suv: "Q SUV",
+  miniBus: "Q Mini Bus",
+  longBus: "Q Bus",
 };

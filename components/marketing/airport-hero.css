@@ -1,0 +1,158 @@
+/* Airport page hero — premium transfer landing */
+
+.airport-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 12% 18%, rgb(0 98 250 / 0.1), transparent 58%),
+    radial-gradient(ellipse 55% 50% at 88% 22%, rgb(1 147 251 / 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 45% at 70% 88%, rgb(0 98 250 / 0.06), transparent 60%),
+    linear-gradient(165deg, #ffffff 0%, #f5f9ff 38%, #e8f1fc 72%, #eef4fb 100%);
+}
+
+.airport-hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.airport-hero-orb--a {
+  top: 8%;
+  left: -6%;
+  width: min(28rem, 55vw);
+  height: min(28rem, 55vw);
+  background: rgb(0 98 250 / 0.12);
+}
+
+.airport-hero-orb--b {
+  top: 28%;
+  right: -8%;
+  width: min(22rem, 48vw);
+  height: min(22rem, 48vw);
+  background: rgb(1 147 251 / 0.1);
+}
+
+.airport-hero-orb--c {
+  bottom: -10%;
+  left: 35%;
+  width: min(26rem, 50vw);
+  height: min(18rem, 40vw);
+  background: rgb(0 54 249 / 0.06);
+}
+
+.airport-hero-runway {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='120' viewBox='0 0 240 120' fill='none'%3E%3Cpath d='M12 78h216' stroke='%230062FA' stroke-width='1.2' stroke-dasharray='10 8'/%3E%3Cpath d='M40 78V52l20-14h28l12 14h52l12-14h28l20 14v26' stroke='%230062FA' stroke-width='1.1'/%3E%3Ccircle cx='198' cy='42' r='3' fill='%230062FA'/%3E%3Cpath d='M198 42l18-8M198 42l18 4' stroke='%230062FA' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 240px 120px;
+  background-repeat: repeat;
+}
+
+.airport-hero-visual {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 28px 64px rgb(10 22 32 / 0.14),
+    0 10px 28px rgb(0 98 250 / 0.1);
+}
+
+.airport-hero-visual-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      155deg,
+      rgb(255 255 255 / 0.22) 0%,
+      transparent 42%,
+      rgb(5 11 18 / 0.28) 100%
+    ),
+    linear-gradient(to top, rgb(5 11 18 / 0.35) 0%, transparent 45%);
+}
+
+.airport-float-card {
+  border: 1px solid rgb(255 255 255 / 0.55);
+  background: linear-gradient(
+    160deg,
+    rgb(255 255 255 / 0.88) 0%,
+    rgb(248 250 255 / 0.72) 100%
+  );
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 16px 40px rgb(10 22 32 / 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.airport-feature-card {
+  border: 1px solid rgb(255 255 255 / 0.7);
+  background: linear-gradient(
+    165deg,
+    rgb(255 255 255 / 0.92) 0%,
+    rgb(248 250 255 / 0.78) 100%
+  );
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 14px 36px rgb(10 22 32 / 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.airport-feature-card:hover {
+  border-color: rgb(0 98 250 / 0.18);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 0 0 1px rgb(0 98 250 / 0.08),
+    0 18px 44px rgb(0 98 250 / 0.14),
+    0 8px 20px rgb(10 22 32 / 0.06);
+}
+
+.airport-feature-card-edge {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(1 147 251 / 0.55) 35%,
+    rgb(0 98 250 / 0.85) 50%,
+    rgb(1 147 251 / 0.55) 65%,
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+.airport-feature-icon-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgb(0 98 250 / 0.28), transparent 68%);
+  opacity: 0.55;
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.airport-feature-card:hover .airport-feature-icon-glow {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .airport-hero-orb {
+    filter: blur(32px);
+  }
+}

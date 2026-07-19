@@ -926,17 +926,17 @@
     "bookNow": "දැන් වෙන්කරවන්න",
     "scopeNote": "ටැක්සි ගමන් මිලකරණය · ගුවන්තොටුපොළ සහ සංචාර වලින් වෙනස්",
     "vehicles": {
-      "bike": "බයික්",
-      "tuk": "ටුක්",
-      "miniCar": "මිනි කාර්",
-      "wagon": "වැගන්",
-      "sedan": "සෙඩාන්",
-      "miniVan": "මිනි වෑන්",
-      "van": "වෑන්",
-      "longVan": "ලෝන්ග් වෑන් (HR)",
-      "suv": "SUV",
-      "miniBus": "මිනි බස්",
-      "longBus": "ලෝන්ග් බස්"
+      "bike": "Q Bike",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q Minivan",
+      "van": "Q Flat Roof Van",
+      "longVan": "Q High Roof Van",
+      "suv": "Q SUV",
+      "miniBus": "Q Mini Bus",
+      "longBus": "Q Bus"
     },
     "calculatingRoute": "ධාවන දුර සහ ගමන් කාලය ගණනය කරමින්…",
     "calculatingShort": "ගණනය කරමින්…",
@@ -1228,113 +1228,140 @@
         "suv": "SUV",
         "vehicles": {
           "bike": {
-            "name": "Bike",
+            "name": "Q Bike",
             "passengers": "",
             "luggage": "",
-            "blurb": "Fast city rides"
+            "blurb": "ඉක්මන් නගර ගමන්"
           },
           "tuk": {
-            "name": "Tuk",
+            "name": "Q Tuk",
             "passengers": "",
             "luggage": "",
-            "blurb": "Affordable short trips"
-          },
-          "mini": {
-            "name": "Mini",
-            "passengers": "3 Passengers",
-            "luggage": "2 Luggage",
-            "blurb": "Perfect for city travel"
+            "blurb": "දැරිය හැකි කෙටි ගමන්"
           },
           "flex": {
-            "name": "Flex",
-            "passengers": "4 Passengers",
-            "luggage": "3 Luggage",
-            "blurb": "Compact crossover comfort"
+            "name": "Q Flex",
+            "passengers": "මගීන් 3",
+            "luggage": "බඩු 2",
+            "blurb": "නගරයට කුඩා හැච්බැක්"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "මගීන් 4",
+            "luggage": "බඩු 2",
+            "blurb": "නගරයට වඩා ඉඩකඩ සහිත Wagon R"
           },
           "sedan": {
-            "name": "Sedan",
-            "passengers": "4 Passengers",
-            "luggage": "2 Luggage",
-            "blurb": "Comfort for business travel"
+            "name": "Q Sedan",
+            "passengers": "මගීන් 4",
+            "luggage": "බඩු 2",
+            "blurb": "ව්‍යාපාරික ගමනට සුවපහසුව"
           },
           "minivan": {
-            "name": "Minivan",
-            "passengers": "6 Passengers",
-            "luggage": "4 Luggage",
-            "blurb": "Space for family trips"
+            "name": "Q Minivan",
+            "passengers": "මගීන් 6",
+            "luggage": "බඩු 4",
+            "blurb": "පවුලේ ගමන් සඳහා ඉඩ"
           },
           "frVan": {
-            "name": "FR Van",
-            "passengers": "8 Passengers",
-            "luggage": "6 Luggage",
-            "blurb": "Group airport transfers"
+            "name": "Q Flat Roof Van",
+            "passengers": "මගීන් 8",
+            "luggage": "බඩු 6",
+            "blurb": "කණ්ඩායම් ගුවන්තොටුපළ මාරු"
+          },
+          "highRoofVan": {
+            "name": "Q High Roof Van",
+            "passengers": "මගීන් 10",
+            "luggage": "බඩු 8",
+            "blurb": "සංචාර හා මාරු සඳහා වැඩි ඉඩ"
           },
           "suv": {
-            "name": "SUV",
-            "passengers": "5 Passengers",
-            "luggage": "4 Luggage",
-            "blurb": "Ideal for families"
+            "name": "Q SUV",
+            "passengers": "මගීන් 5",
+            "luggage": "බඩු 4",
+            "blurb": "පවුල් සඳහා සුදුසු"
           },
           "miniBus": {
-            "name": "Mini Bus",
-            "passengers": "12 Passengers",
-            "luggage": "8 Luggage",
-            "blurb": "Small group travel"
+            "name": "Q Mini Bus",
+            "passengers": "මගීන් 12",
+            "luggage": "බඩු 8",
+            "blurb": "කුඩා කණ්ඩායම් ගමන්"
           },
           "bus": {
-            "name": "Bus",
-            "passengers": "20 Passengers",
-            "luggage": "12 Luggage",
-            "blurb": "Large group transfers"
+            "name": "Q Bus",
+            "passengers": "මගීන් 20",
+            "luggage": "බඩු 12",
+            "blurb": "විශාල කණ්ඩායම් මාරු"
           }
         }
       },
       "safety": {
-        "eyebrow": "Safety",
-        "heading": "Safety is the baseline",
-        "body": "Verification, trip sharing, and reachable support on every Q Pick journey.",
-        "cta": "View safety standard",
+        "eyebrow": "ආරක්ෂාව",
+        "heading": "විශ්වාසයෙන් ගමන් කරන්න.",
+        "body": "සෑම Q Pick ගමනක්ම සත්‍යාපිත රියදුරන්, සජීවී ගමන් බෙදාගැනීම, හදිසි ආධාර සහ කැපවූ පාරිභෝගික සහාය සමඟ ආරක්ෂා කෙරේ.",
+        "cta": "ආරක්ෂාව ගැන දැනගන්න",
         "pillars": {
           "verified": {
-            "title": "Verified fleet",
-            "body": "Identity and vehicle checks before a driver joins."
+            "title": "Verified Fleet",
+            "body": "සෑම රියදුරෙකුම ජාලයට එකතු වීමට පෙර අනන්‍යතාව සහ වාහන පරීක්ෂා."
           },
           "sharing": {
-            "title": "Trip sharing",
-            "body": "Share live status with family or your hotel."
+            "title": "Trip Sharing",
+            "body": "පවුල, මිතුරන් හෝ හෝටලය සමඟ සජීවී ගමන් තත්ත්වය බෙදාගන්න."
           },
           "support": {
-            "title": "Always reachable",
-            "body": "In-trip support when plans change on the road."
+            "title": "24/7 Support",
+            "body": "ඔබට අවශ්‍ය විට උදව් — දහවල් හෝ රාත්‍රිය."
+          },
+          "emergency": {
+            "title": "Emergency Assistance",
+            "body": "මාර්ගයේ යමක් වැරදි බවක් දැනුණු විට ගමන තුළ උත්සන්න කිරීමේ මාර්ග."
           }
         }
       },
       "faq": {
-        "heading": "Frequently asked questions",
+        "heading": "නිතර අසන ප්‍රශ්න",
+        "sub": "වෙන්කරවීමට පෙර පැහැදිලි පිළිතුරු — ගමන්, ගුවන්තොටුපොළ සහ සංචාර.",
         "items": {
-          "fare": {
-            "q": "Is the fare estimate final?",
-            "a": "It is a live estimate based on distance, vehicle, and waiting time. Confirm the final fare in the booking flow before you ride."
+          "fareCalc": {
+            "q": "ගාස්තුව ගණනය කරන්නේ කෙසේද?",
+            "a": "ටැක්සි ගාස්තු මූලික ගාස්තුව, දුර, රැඳී සිටීමේ කාලය සහ දිවා/රාත්‍රී අනුපාත එකතු කරයි. තහවුරු කිරීමට පෙර ජීවමාන ඇස්තමේන්තුවක් පෙනේ."
           },
-          "payment": {
-            "q": "How do I pay?",
-            "a": "Choose cash, card, or wallet in Booking Details. Payment is confirmed when you complete the booking."
+          "airport": {
+            "q": "ගුවන්තොටුපොළ මාරුවක් කල්තියා වෙන්කරවිය හැකිද?",
+            "a": "ඔව්. Bandaranaike (CMB) සඳහා Airport Transfers භාවිතා කර කාලසටහන්ගත පික්අප් ඉල්ලන්න."
           },
-          "schedule": {
-            "q": "Can I schedule a ride in advance?",
-            "a": "Yes. Select Schedule Ride in the estimator, then choose a future date and time."
+          "tour": {
+            "q": "මගේ ශ්‍රී ලංකා සංචාරය අභිරුචිකරණය කළ හැකිද?",
+            "a": "ඔව්. පෞද්ගලික සංචාර ඔබේ දින, නැවතුම් සහ වාහනය වටා ගොඩනැගේ — ගමනට පෙර Q Pick සමඟ සැලසුම පිරිපහදු කරන්න."
           },
-          "safety": {
-            "q": "Are drivers verified?",
-            "a": "Yes. Q Pick drivers complete identity, vehicle, and background checks before joining the network."
+          "vehicle": {
+            "q": "මගේ වාහන කාණ්ඩය තෝරාගත හැකිද?",
+            "a": "ඔව්. Q Bike සිට Q Bus දක්වා, booking carousel හෝ Fleet කොටසෙන් ගැළපෙන කාණ්ඩය තෝරන්න."
+          },
+          "drivers": {
+            "q": "සියලු රියදුරන් සත්‍යාපිතද?",
+            "a": "ඔව්. Q Pick රියදුරන් අනන්‍යතාව, වාහන සහ පසුබිම් පරීක්ෂා සම්පූර්ණ කරයි."
+          },
+          "share": {
+            "q": "මගේ ගමන පවුල සමඟ බෙදාගත හැකිද?",
+            "a": "ඔව්. සජීවී ගමන් තත්ත්වය බෙදාගෙන පවුලට ගමන අනුගමනය කළ හැක."
+          },
+          "cancel": {
+            "q": "මගේ වෙන්කිරීම අවලංගු කළ හැකිද?",
+            "a": "ඔව්. යෙදුමෙන් හෝ Support හරහා අවලංගු කරන්න. කාලය සහ ගාස්තු වෙන්කිරීමේ වර්ගය අනුව වෙනස් වේ."
+          },
+          "contact": {
+            "q": "සහාය අමතන්නේ කෙසේද?",
+            "a": "Support පිටුව හරහා ඕනෑම වේලාවක — දුරකථනය, WhatsApp හෝ ඊමේල්. අපේ කණ්ඩායම 24/7 ලබා ගත හැක."
           }
         }
       },
       "finalCta": {
-        "heading": "Ready when you are",
-        "sub": "Your estimate stays above — pick a vehicle and confirm when you’re set.",
-        "primary": "Continue booking",
-        "secondary": "Contact support"
+        "heading": "තවමත් ප්‍රශ්න තිබේද?",
+        "sub": "ඔබේ ගමන හෝ ශ්‍රී ලංකා සංචාරය සැලසුම් කිරීමට අපේ කණ්ඩායම 24/7 ලබා ගත හැක.",
+        "primary": "ඔබේ ගමන වෙන්කරවන්න",
+        "secondary": "සහාය අමතන්න"
       },
       "driverTrust": {
         "name": "Nuwan P.",
@@ -1346,18 +1373,81 @@
     },
     "airport": {
       "meta": {
-        "title": "ගුවන්තොටුපොළ",
-        "description": "හෝටල්, විලා සහ අමුත්තන් සඳහා හමුවී-පිළිගැනීම් කාලානුරූප Bandaranaike (CMB) ගුවන්තොටුපොළ ප්‍රවාහන."
+        "title": "ගුවන්තොටුපොළ ප්‍රවාහන",
+        "description": "ගුවන්යානා අනුගමනය, හමුවී-පිළිගැනීම්, වෘත්තීය රියදුරන් සහ විනිවිද පෙනෙන ස්ථිර මිල සහිත Bandaranaike (CMB) ප්‍රිමියම් ගුවන්තොටුපොළ ප්‍රවාහන."
       },
-      "title": "විශ්වාසය සහිත ගුවන්තොටුපොළ ප්‍රවාහන",
-      "description": "CMB හි ගොඩබසින්න සහ සෘජුවම ඔබේ හෝටලයට හෝ විලාවට යන්න. ගුවන්යානා-දැනුම්ත කාල, හමුවී-පිළිගැනීම් විකල්ප සහ දොරටුවේ සිට දොරට සත්කාරකයන් ජාලයේදීම.",
-      "primaryCta": "ප්‍රවාහනය ඉල්ලන්න",
-      "secondaryCta": "හෝටල් හවුල්කරුවන්",
-      "bullets": [
-        "ගුවන්යානා අනුගමනය සහ ආගමන ප්‍රමාද සඳහා බෆර්",
-        "තහවුරු කිරීමට පෙර ස්ථිර හෝ විනිවිද පෙනෙන ප්‍රවාහන මිල",
-        "ඉල්ලීම මත ළමා ආසන සහ බඩු ගෙන යා හැකි වාහන"
-      ]
+      "hero": {
+        "eyebrow": "ගුවන්තොටුපොළ ප්‍රවාහන",
+        "titleLine1": "ගුවන්තොටුපොළ ප්‍රවාහන,",
+        "titleLine2": "නිවැරදි කාලයට.",
+        "description": "Bandaranaike ජාත්‍යන්තර ගුවන්තොටුපොළ (CMB) සිට ශ්‍රී ලංකාවේ ඕනෑම ස්ථානයකට — වෘත්තීය රියදුරන්, සජීවී ගුවන්යානා අනුගමනය, හමුවී-පිළිගැනීම් සහ විනිවිද පෙනෙන මිල ගණන් සමඟ.",
+        "primaryCta": "ගුවන්තොටුපොළ ප්‍රවාහනය වෙන්කරන්න",
+        "secondaryCta": "වාහන බලන්න",
+        "imageAlt": "Bandaranaike ජාත්‍යන්තර ගුවන්තොටුපොළේ Q Pick රියදුරු අමුත්තන් පිළිගනිමින්",
+        "trust": {
+          "tracking": "ගුවන්යානා අනුගමනය",
+          "greet": "හමුවී-පිළිගැනීම",
+          "pricing": "ස්ථිර මිල",
+          "support": "24/7 සහාය"
+        },
+        "cards": {
+          "flight": {
+            "label": "ගුවන්යානා",
+            "code": "UL225",
+            "status": "නියමිත වේලාවට"
+          },
+          "driver": {
+            "label": "රියදුරු",
+            "status": "විනාඩි 6කින් පැමිණේ",
+            "eta": "සජීවී ETA"
+          },
+          "meetGreet": "හමුවී-පිළිගැනීම ඇතුළත්"
+        }
+      },
+      "rates": {
+        "eyebrow": "නිල ගාස්තු",
+        "heading": "ගුවන්තොටුපොළ ප්‍රවාහන ගාස්තු",
+        "sub": "ඕනෑම ගමනාන්තයක් සොයා Bandaranaike ජාත්‍යන්තර ගුවන්තොටුපොළ (CMB) සිට නිල වායු සමනය සහිත ප්‍රවාහන ගාස්තුව බලන්න.",
+        "popular": "ජනප්‍රිය ගමනාන්ත",
+        "searchLabel": "ගමනාන්තය සොයන්න",
+        "searchPlaceholder": "ගමනාන්තය හෝ කේතය සොයන්න — උදා. Kandy, Kan, K015",
+        "searching": "සොයමින්…",
+        "noResults": "එම සෙවුමට ගමනාන්ත නැත. වෙනත් නමක් හෝ කේතයක් උත්සාහ කරන්න.",
+        "emptyTitle": "ගමනාන්තයක් තෝරන්න",
+        "emptyBody": "ඉහත ජනප්‍රිය ගමනාන්තයක් තෝරන්න හෝ ගාස්තුව වහාම බැලීමට ටයිප් කරන්න.",
+        "disclaimer": "පෙන්වන ගාස්තු නිල ගුවන්තොටුපොළ ප්‍රවාහන ගාස්තු ලැයිස්තුව මත පදනම් වේ. රැඳී සිටීමේ කාලය, අමතර නැවතුම්, ටෝල් හෝ විශේෂ ඉල්ලීම් සඳහා අමතර ගාස්තු අදාළ විය හැක.",
+        "card": {
+          "destination": "ගමනාන්තය",
+          "fare": "නිල ගුවන්තොටුපොළ ප්‍රවාහන ගාස්තුව",
+          "airport": "ගුවන්තොටුපොළ",
+          "status": "තත්ත්වය",
+          "statusValue": "නිල ගුවන්තොටුපොළ ගාස්තුව",
+          "code": "කේතය",
+          "bookCta": "ගුවන්තොටුපොළ ප්‍රවාහනය වෙන්කරන්න"
+        }
+      },
+      "features": {
+        "eyebrow": "Q Pick ගුවන්තොටුපොළ ඇයි",
+        "heading": "දොරටුවේ සිට දොරට විශ්වාසය.",
+        "items": {
+          "tracking": {
+            "title": "ගුවන්යානා අනුගමනය",
+            "body": "ඔබේ පැමිණීම ස්වයංක්‍රීයව අධීක්ෂණය කරයි."
+          },
+          "greet": {
+            "title": "හමුවී-පිළිගැනීම",
+            "body": "ඔබේ රියදුරු පැමිණීම් තුළ රැඳී සිටී."
+          },
+          "pricing": {
+            "title": "විනිවිද පෙනෙන මිල",
+            "body": "වෙන්කිරීමට පෙර ගාස්තුව දැනගන්න."
+          },
+          "support": {
+            "title": "24/7 සහාය",
+            "body": "සැමවිටම ලබා ගත හැක."
+          }
+        }
+      }
     },
     "tours": {
       "meta": {

@@ -13,6 +13,12 @@ export {
 } from "./paths";
 
 export {
+  FLEET_VEHICLE_CAPACITY,
+  fleetCapacityForTaxiId,
+  fleetVehicleNameKey,
+} from "./fleet-catalog";
+
+export {
   BikeGlyph,
   TukGlyph,
   MiniGlyph,

@@ -926,17 +926,17 @@
     "bookNow": "Book Now",
     "scopeNote": "Taxi Ride pricing · separate from Airport & Tours",
     "vehicles": {
-      "bike": "Bike",
-      "tuk": "Tuk",
-      "miniCar": "Mini Car",
-      "wagon": "Wagon",
-      "sedan": "Sedan",
-      "miniVan": "Mini Van",
-      "van": "Van",
-      "longVan": "Long Van (HR)",
-      "suv": "SUV",
-      "miniBus": "Mini Bus",
-      "longBus": "Long Bus"
+      "bike": "Q Bike",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q Minivan",
+      "van": "Q Flat Roof Van",
+      "longVan": "Q High Roof Van",
+      "suv": "Q SUV",
+      "miniBus": "Q Mini Bus",
+      "longBus": "Q Bus"
     },
     "calculatingRoute": "Calculating driving distance and travel time…",
     "calculatingShort": "Calculating…",
@@ -1228,61 +1228,67 @@
         "suv": "SUV",
         "vehicles": {
           "bike": {
-            "name": "Bike",
+            "name": "Q Bike",
             "passengers": "",
             "luggage": "",
             "blurb": "Fast city rides"
           },
           "tuk": {
-            "name": "Tuk",
+            "name": "Q Tuk",
             "passengers": "",
             "luggage": "",
             "blurb": "Affordable short trips"
           },
-          "mini": {
-            "name": "Mini",
+          "flex": {
+            "name": "Q Flex",
             "passengers": "3 Passengers",
             "luggage": "2 Luggage",
-            "blurb": "Perfect for city travel"
+            "blurb": "Compact hatchback for city travel"
           },
-          "flex": {
-            "name": "Flex",
+          "mini": {
+            "name": "Q Mini",
             "passengers": "4 Passengers",
-            "luggage": "3 Luggage",
-            "blurb": "Compact crossover comfort"
+            "luggage": "2 Luggage",
+            "blurb": "Roomier Wagon R for city travel"
           },
           "sedan": {
-            "name": "Sedan",
+            "name": "Q Sedan",
             "passengers": "4 Passengers",
             "luggage": "2 Luggage",
             "blurb": "Comfort for business travel"
           },
           "minivan": {
-            "name": "Minivan",
+            "name": "Q Minivan",
             "passengers": "6 Passengers",
             "luggage": "4 Luggage",
             "blurb": "Space for family trips"
           },
           "frVan": {
-            "name": "FR Van",
+            "name": "Q Flat Roof Van",
             "passengers": "8 Passengers",
             "luggage": "6 Luggage",
-            "blurb": "Group airport transfers"
+            "blurb": "Comfortable group airport transfers"
+          },
+          "highRoofVan": {
+            "name": "Q High Roof Van",
+            "passengers": "10 Passengers",
+            "luggage": "8 Luggage",
+            "blurb": "More space for tours and transfers"
           },
           "suv": {
-            "name": "SUV",
+            "name": "Q SUV",
             "passengers": "5 Passengers",
             "luggage": "4 Luggage",
             "blurb": "Ideal for families"
           },
           "miniBus": {
-            "name": "Mini Bus",
+            "name": "Q Mini Bus",
             "passengers": "12 Passengers",
             "luggage": "8 Luggage",
             "blurb": "Small group travel"
           },
           "bus": {
-            "name": "Bus",
+            "name": "Q Bus",
             "passengers": "20 Passengers",
             "luggage": "12 Luggage",
             "blurb": "Large group transfers"
@@ -1291,50 +1297,71 @@
       },
       "safety": {
         "eyebrow": "Safety",
-        "heading": "Safety is the baseline",
-        "body": "Verification, trip sharing, and reachable support on every Q Pick journey.",
-        "cta": "View safety standard",
+        "heading": "Travel with confidence.",
+        "body": "Every Q Pick journey is protected with verified drivers, real-time trip sharing, emergency assistance and dedicated customer support.",
+        "cta": "Learn about Safety",
         "pillars": {
           "verified": {
-            "title": "Verified fleet",
-            "body": "Identity and vehicle checks before a driver joins."
+            "title": "Verified Fleet",
+            "body": "Identity and vehicle checks before every driver joins the network."
           },
           "sharing": {
-            "title": "Trip sharing",
-            "body": "Share live status with family or your hotel."
+            "title": "Trip Sharing",
+            "body": "Share live trip status with family, friends, or your hotel."
           },
           "support": {
-            "title": "Always reachable",
-            "body": "In-trip support when plans change on the road."
+            "title": "24/7 Support",
+            "body": "Reachable help whenever you need it — day or night."
+          },
+          "emergency": {
+            "title": "Emergency Assistance",
+            "body": "In-trip escalation paths when something feels wrong on the road."
           }
         }
       },
       "faq": {
         "heading": "Frequently asked questions",
+        "sub": "Clear answers before you book — rides, airport transfers, and tours.",
         "items": {
-          "fare": {
-            "q": "Is the fare estimate final?",
-            "a": "It is a live estimate based on distance, vehicle, and waiting time. Confirm the final fare in the booking flow before you ride."
+          "fareCalc": {
+            "q": "How is the fare calculated?",
+            "a": "Taxi fares combine base fare, distance, waiting time, and time-of-day rates. You see a live estimate in the booking flow before you confirm."
           },
-          "payment": {
-            "q": "How do I pay?",
-            "a": "Choose cash, card, or wallet in Booking Details. Payment is confirmed when you complete the booking."
+          "airport": {
+            "q": "Can I pre-book an airport transfer?",
+            "a": "Yes. Use Airport Transfers to request a timed pickup for Bandaranaike (CMB), with flight-aware buffers when you need them."
           },
-          "schedule": {
-            "q": "Can I schedule a ride in advance?",
-            "a": "Yes. Select Schedule Ride in the estimator, then choose a future date and time."
+          "tour": {
+            "q": "Can I customize my Sri Lanka tour?",
+            "a": "Yes. Private tours are built around your days, stops, and vehicle — refine the plan with Q Pick before you travel."
           },
-          "safety": {
-            "q": "Are drivers verified?",
+          "vehicle": {
+            "q": "Can I choose my vehicle category?",
+            "a": "Yes. From Q Bike to Q Bus, pick the category that fits passengers and luggage in the booking carousel or Fleet section."
+          },
+          "drivers": {
+            "q": "Are all drivers verified?",
             "a": "Yes. Q Pick drivers complete identity, vehicle, and background checks before joining the network."
+          },
+          "share": {
+            "q": "Can I share my trip with family?",
+            "a": "Yes. Share live trip status so family, friends, or your hotel can follow the journey."
+          },
+          "cancel": {
+            "q": "Can I cancel my booking?",
+            "a": "Yes. Cancel from the app or with Support. Timing and any fees depend on the booking type and how close you are to pickup."
+          },
+          "contact": {
+            "q": "How can I contact support?",
+            "a": "Reach us anytime via the Support page — phone, WhatsApp, or email. Our team is available 24/7."
           }
         }
       },
       "finalCta": {
-        "heading": "Ready when you are",
-        "sub": "Your estimate stays above — pick a vehicle and confirm when you’re set.",
-        "primary": "Continue booking",
-        "secondary": "Contact support"
+        "heading": "Still have questions?",
+        "sub": "Our team is available 24/7 to help you plan your ride or your Sri Lanka journey.",
+        "primary": "Book Your Ride",
+        "secondary": "Contact Support"
       },
       "driverTrust": {
         "name": "Nuwan P.",
@@ -1346,18 +1373,81 @@
     },
     "airport": {
       "meta": {
-        "title": "Airport",
-        "description": "Bandaranaike (CMB) airport transfers with meet-and-greet timing for hotels, villas, and guests."
+        "title": "Airport Transfers",
+        "description": "Premium Bandaranaike (CMB) airport transfers with flight tracking, meet & greet, professional chauffeurs, and transparent fixed pricing."
       },
-      "title": "Airport transfers with certainty",
-      "description": "Land at CMB and move straight to your hotel or villa. Flight-aware timing, meet-and-greet options, and hosts kept in the loop from gate to door.",
-      "primaryCta": "Request a transfer",
-      "secondaryCta": "Hotel partners",
-      "bullets": [
-        "Flight tracking and buffer for immigration delays",
-        "Fixed or transparent transfer pricing before confirm",
-        "Child seats and luggage-friendly vehicles on request"
-      ]
+      "hero": {
+        "eyebrow": "Airport Transfers",
+        "titleLine1": "Airport Transfers,",
+        "titleLine2": "Perfectly Timed.",
+        "description": "From Bandaranaike International Airport (CMB) to anywhere in Sri Lanka with professional chauffeurs, live flight tracking, meet & greet and transparent pricing.",
+        "primaryCta": "Book Airport Transfer",
+        "secondaryCta": "Explore Vehicles",
+        "imageAlt": "Q Pick chauffeur welcoming travelers at Bandaranaike International Airport with a premium transfer vehicle",
+        "trust": {
+          "tracking": "Flight Tracking",
+          "greet": "Meet & Greet",
+          "pricing": "Fixed Pricing",
+          "support": "24/7 Support"
+        },
+        "cards": {
+          "flight": {
+            "label": "Flight",
+            "code": "UL225",
+            "status": "On Time"
+          },
+          "driver": {
+            "label": "Driver",
+            "status": "Arriving in 6 min",
+            "eta": "Live ETA"
+          },
+          "meetGreet": "Meet & Greet Included"
+        }
+      },
+      "rates": {
+        "eyebrow": "Official Rates",
+        "heading": "Airport Transfer Rates",
+        "sub": "Search any destination and see the official air-conditioned transfer fare from Bandaranaike International Airport (CMB).",
+        "popular": "Popular destinations",
+        "searchLabel": "Search destination",
+        "searchPlaceholder": "Search destination or code — e.g. Kandy, Kan, K015",
+        "searching": "Searching…",
+        "noResults": "No destinations match that search. Try another name or code.",
+        "emptyTitle": "Select a destination",
+        "emptyBody": "Choose a popular destination above or start typing to find your fare instantly.",
+        "disclaimer": "Displayed fares are based on the official airport transfer rate list. Additional charges may apply for waiting time, extra stops, tolls or special requests.",
+        "card": {
+          "destination": "Destination",
+          "fare": "Official Airport Transfer Fare",
+          "airport": "Airport",
+          "status": "Status",
+          "statusValue": "Official Airport Rate",
+          "code": "Code",
+          "bookCta": "Book Airport Transfer"
+        }
+      },
+      "features": {
+        "eyebrow": "Why Q Pick Airport",
+        "heading": "Certainty from gate to door.",
+        "items": {
+          "tracking": {
+            "title": "Flight Tracking",
+            "body": "Monitor your arrival automatically."
+          },
+          "greet": {
+            "title": "Meet & Greet",
+            "body": "Your driver waits inside arrivals."
+          },
+          "pricing": {
+            "title": "Transparent Pricing",
+            "body": "Know your fare before booking."
+          },
+          "support": {
+            "title": "24/7 Support",
+            "body": "Always available."
+          }
+        }
+      }
     },
     "tours": {
       "meta": {
