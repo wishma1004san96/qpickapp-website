@@ -115,13 +115,13 @@ export function FinalCta() {
               {t("finalCta.primary")}
             </Link>
             <Link
-              href="/airport"
+              href="/airport-transfer"
               className="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-ink/10 bg-white/70 px-6 text-sm font-medium text-ink shadow-[0_4px_16px_rgb(10_22_32_/_0.04)] backdrop-blur-md transition-[transform,box-shadow,border-color,background-color] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:border-brand/25 hover:bg-white hover:shadow-[0_10px_28px_rgb(0_98_250_/_0.12)] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35"
             >
               {t("finalCta.secondary")}
             </Link>
             <Link
-              href="/tours"
+              href="/tour-booking"
               className="inline-flex min-h-12 items-center justify-center rounded-[14px] border border-ink/15 bg-transparent px-6 text-sm font-medium text-ink transition-[transform,box-shadow,border-color,background-color] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:border-brand/30 hover:bg-brand/[0.04] hover:shadow-[0_8px_24px_rgb(0_98_250_/_0.1)] motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/35"
             >
               {t("finalCta.download")}

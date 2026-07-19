@@ -51,12 +51,12 @@ const INTENT_META: Record<
     objectPosition: "center 40%",
   },
   airport: {
-    href: "/airport",
+    href: "/airport-transfer",
     image: "/images/story/arrival.webp",
     objectPosition: "center 45%",
   },
   tour: {
-    href: "/tours",
+    href: "/tour-booking",
     image: "/images/story/discovery.webp",
     objectPosition: "center 35%",
   },

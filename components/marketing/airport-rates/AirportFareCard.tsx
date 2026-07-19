@@ -38,10 +38,13 @@ export function AirportFareCard({ rate, labels }: AirportFareCardProps) {
           : { opacity: 0, y: 12, scale: 0.98, transition: { duration: 0.2 } }
       }
       transition={{ duration: 0.42, ease: EASE }}
-      className="airport-fare-card relative overflow-hidden rounded-[24px] p-5 sm:p-7"
+      className="relative overflow-hidden rounded-[24px] border border-white/80 bg-gradient-to-b from-white/96 to-[#f8faff]/90 p-5 shadow-[0_1px_0_rgb(255_255_255_/_0.95)_inset,0_18px_48px_rgb(10_22_32_/_0.07),0_0_0_1px_rgb(0_98_250_/_0.04)] backdrop-blur-xl sm:p-7"
       aria-live="polite"
     >
-      <span className="airport-fare-card-edge" aria-hidden />
+      <span
+        className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-brand to-transparent"
+        aria-hidden
+      />
       <div
         className="pointer-events-none absolute -top-16 -right-10 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgb(0_98_250_/_0.18),transparent_68%)] blur-2xl"
         aria-hidden
@@ -121,7 +124,7 @@ export function AirportFareCard({ rate, labels }: AirportFareCardProps) {
 export function AirportFareCardSkeleton() {
   return (
     <div
-      className="airport-fare-card animate-pulse rounded-[24px] p-5 sm:p-7"
+      className="relative animate-pulse overflow-hidden rounded-[24px] border border-white/80 bg-gradient-to-b from-white/96 to-[#f8faff]/90 p-5 shadow-[0_18px_48px_rgb(10_22_32_/_0.06)] sm:p-7"
       aria-hidden
     >
       <div className="h-3 w-24 rounded bg-ink/10" />

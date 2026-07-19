@@ -70,7 +70,7 @@ export function ToursContent() {
       </section>
 
       {/* Interactive planner */}
-      <PlanSriLankaTour id="planner" ctaHref="/support" />
+      <PlanSriLankaTour id="planner" ctaHref="/tour-booking" />
 
       {/* Private tour value preview */}
       <PrivateToursPreview

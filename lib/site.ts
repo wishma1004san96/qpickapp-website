@@ -34,8 +34,8 @@ export const siteConfig = {
 export const primaryNav = [
   { href: "/", label: "Home" },
   { href: "/ride", label: "Ride" },
-  { href: "/airport", label: "Airport" },
-  { href: "/tours", label: "Tours" },
+  { href: "/airport-transfer", label: "Airport" },
+  { href: "/tour-booking", label: "Tours" },
   { href: "/safety", label: "Safety" },
   { href: "/drive", label: "Drive" },
 ] as const;
@@ -46,8 +46,8 @@ export const utilityNav = [
 ] as const;
 
 export const footerServices = [
-  { href: "/airport", key: "airport" },
-  { href: "/tours", key: "tours" },
+  { href: "/airport-transfer", key: "airport" },
+  { href: "/tour-booking", key: "tours" },
   { href: "/ride", key: "chauffeur" },
   { href: "/ride", key: "cityRides" },
   { href: "/partners", key: "corporate" },

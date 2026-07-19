@@ -1,0 +1,129 @@
+// Three completely separate booking systems — do not mix models or workflows.
+// Status values are String (SQLite); TypeScript unions live in each domain module.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── 1. Taxi Ride Requests (real-time, nearby drivers) ───────────────────────
+
+model RideRequest {
+  id                   String   @id @default(cuid())
+  referenceCode        String   @unique
+  /// PENDING | SEARCHING_DRIVERS | DRIVER_ASSIGNED | DRIVER_EN_ROUTE | IN_PROGRESS | COMPLETED | CANCELLED | NO_DRIVERS_FOUND
+  status               String   @default("PENDING")
+
+  passengerName        String
+  passengerPhone       String
+  paymentMethod        String
+
+  pickupLabel          String
+  pickupLat            Float
+  pickupLng            Float
+  destinationLabel     String
+  destinationLat       Float
+  destinationLng       Float
+
+  vehicleType          String
+  scheduledAt          DateTime?
+  isAirportPickup      Boolean  @default(false)
+  passengerCount       Int      @default(1)
+  luggageCount         Int      @default(0)
+  notes                String?
+
+  estimatedFareLkr     Float?
+  estimatedDistanceKm  Float?
+  estimatedDurationMin Float?
+
+  nearbyDriversFound   Int      @default(0)
+  assignedDriverName   String?
+  assignedDriverPhone  String?
+  assignedVehiclePlate String?
+
+  statusHistory        String   @default("[]")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("ride_requests")
+}
+
+// ─── 2. Airport Transfer Requests (CMB pickup, admin assigns driver) ─────────
+
+model AirportTransferRequest {
+  id                  String   @id @default(cuid())
+  referenceCode       String   @unique
+  /// SUBMITTED | UNDER_REVIEW | DRIVER_ASSIGNED | CONFIRMED | IN_PROGRESS | COMPLETED | CANCELLED | REJECTED
+  status              String   @default("SUBMITTED")
+
+  passengerName       String
+  passengerPhone      String
+  passengerEmail      String?
+  nationality         String?
+
+  pickupLabel         String   @default("Bandaranaike International Airport (CMB)")
+  pickupCode          String   @default("CMB")
+  destinationLabel    String
+  destinationCode     String?
+  officialFareLkr     Float?
+
+  transferDate        String
+  transferTime        String
+  passengers          Int      @default(1)
+  luggage             String
+  vehicleType         String
+  specialRequest      String?
+
+  assignedDriverName  String?
+  assignedDriverPhone String?
+  adminNotes          String?
+
+  statusHistory       String   @default("[]")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("airport_transfer_requests")
+}
+
+// ─── 3. Tour Booking Requests (admin assigns driver/guide) ───────────────────
+
+model TourBookingRequest {
+  id                  String   @id @default(cuid())
+  referenceCode       String   @unique
+  /// SUBMITTED | UNDER_REVIEW | GUIDE_ASSIGNED | CONFIRMED | IN_PROGRESS | COMPLETED | CANCELLED | REJECTED
+  status              String   @default("SUBMITTED")
+
+  passengerName       String
+  passengerPhone      String
+  passengerEmail      String?
+
+  destinations        String
+  startDate           String
+  endDate             String?
+  numberOfDays        Int
+  vehicleType         String
+  passengers          Int      @default(2)
+  specialRequest      String?
+
+  assignedGuideName   String?
+  assignedGuidePhone  String?
+  assignedDriverName  String?
+  assignedDriverPhone String?
+  adminNotes          String?
+
+  statusHistory       String   @default("[]")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("tour_booking_requests")
+}

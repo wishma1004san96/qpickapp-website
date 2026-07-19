@@ -175,6 +175,7 @@ export function TaxiFareEstimator({
   const [luggageCount, setLuggageCount] = useState("1");
   const [specialNotes, setSpecialNotes] = useState("");
   const [confirmErrors, setConfirmErrors] = useState<string[]>([]);
+  const [bookingSubmitting, setBookingSubmitting] = useState(false);
   const [totalPulse, setTotalPulse] = useState(false);
   const [fareBreakdownOpen, setFareBreakdownOpen] = useState(false);
 
@@ -698,7 +699,7 @@ export function TaxiFareEstimator({
     reduceMotion,
   ]);
 
-  const handleBook = useCallback(() => {
+  const handleBook = useCallback(async () => {
     const errs: string[] = [];
     if (!pickup) errs.push(t("taxiFare.confirmErrors.pickup"));
     if (!destination) errs.push(t("taxiFare.confirmErrors.destination"));
@@ -716,8 +717,68 @@ export function TaxiFareEstimator({
       return;
     }
 
+    if (!pickup || !destination || !selectedVehicle || !paymentMethod) return;
+
     setConfirmErrors([]);
-    router.push("/support");
+    setBookingSubmitting(true);
+
+    try {
+      const notesParts = [
+        specialNotes.trim(),
+        flightNumber.trim() ? `Flight: ${flightNumber.trim()}` : "",
+        promoCode.trim() ? `Promo: ${promoCode.trim()}` : "",
+      ].filter(Boolean);
+
+      const res = await fetch("/api/ride-requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          passengerName: passengerName.trim(),
+          passengerPhone: phone.trim(),
+          paymentMethod,
+          pickupLabel: pickup.label || pickup.displayName,
+          pickupLat: pickup.lat,
+          pickupLng: pickup.lng,
+          destinationLabel: destination.label || destination.displayName,
+          destinationLat: destination.lat,
+          destinationLng: destination.lng,
+          vehicleType: selectedVehicle,
+          scheduledAt:
+            rideType === "rideNow"
+              ? new Date().toISOString()
+              : (pickupInstant ?? new Date()).toISOString(),
+          isAirportPickup: airportPickup,
+          passengerCount: Number.parseInt(passengerCount, 10) || 1,
+          luggageCount: Number.parseInt(luggageCount, 10) || 0,
+          notes: notesParts.join(" · ") || null,
+          estimatedFareLkr: displayTotalLkr,
+          estimatedDistanceKm: distanceKm || null,
+          estimatedDurationMin: route
+            ? Math.round(route.durationSeconds / 60)
+            : null,
+        }),
+      });
+
+      const data = (await res.json()) as {
+        item?: { id: string };
+        error?: string;
+      };
+
+      if (!res.ok || !data.item?.id) {
+        setConfirmErrors([
+          data.error ?? "Could not create ride request. Please try again.",
+        ]);
+        return;
+      }
+
+      router.push(`/ride/confirmation/${data.item.id}`);
+    } catch {
+      setConfirmErrors([
+        "Could not create ride request. Please try again.",
+      ]);
+    } finally {
+      setBookingSubmitting(false);
+    }
   }, [
     pickup,
     destination,
@@ -727,6 +788,17 @@ export function TaxiFareEstimator({
     phone,
     paymentMethod,
     canShowFare,
+    specialNotes,
+    flightNumber,
+    promoCode,
+    rideType,
+    pickupInstant,
+    airportPickup,
+    passengerCount,
+    luggageCount,
+    displayTotalLkr,
+    distanceKm,
+    route,
     t,
     router,
   ]);
@@ -1458,14 +1530,17 @@ export function TaxiFareEstimator({
             <div className="relative z-[1] mt-5 flex flex-col gap-2">
               <button
                 type="button"
-                onClick={handleBook}
-                className={`inline-flex min-h-11 items-center justify-center rounded-[14px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-semibold text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.35)] transition-[transform,box-shadow,filter,opacity] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50 ${
+                onClick={() => void handleBook()}
+                disabled={bookingSubmitting}
+                className={`inline-flex min-h-11 items-center justify-center rounded-[14px] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-6 text-sm font-semibold text-paper shadow-[0_10px_28px_rgb(0_98_250_/_0.35)] transition-[transform,box-shadow,filter,opacity] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50 disabled:opacity-50 ${
                   canBook
                     ? "hover:shadow-[0_14px_36px_rgb(0_98_250_/_0.45)] hover:brightness-110 motion-safe:hover:-translate-y-0.5"
                     : "opacity-40"
                 }`}
               >
-                {t("taxiFare.bookNow")}
+                {bookingSubmitting
+                  ? "Finding nearby drivers…"
+                  : t("taxiFare.bookNow")}
               </button>
               {confirmErrors.length > 0 ? (
                 <ul
@@ -1779,17 +1854,19 @@ export function TaxiFareEstimator({
             type="button"
             onClick={() => {
               if (canBook) {
-                handleBook();
+                void handleBook();
                 return;
               }
               onMobileContinue();
             }}
-            disabled={!hasDistance}
+            disabled={!hasDistance || bookingSubmitting}
             className="inline-flex shrink-0 items-center gap-1 rounded-[0.85rem] bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-4 py-2.5 text-sm font-semibold text-paper shadow-[0_8px_20px_rgb(0_98_250_/_0.35)] disabled:opacity-40"
           >
-            {canBook
-              ? t("taxiFare.bookNow")
-              : t("taxiFare.mobileFareBar.continue")}
+            {bookingSubmitting
+              ? "Booking…"
+              : canBook
+                ? t("taxiFare.bookNow")
+                : t("taxiFare.mobileFareBar.continue")}
             <ChevronRight className="h-4 w-4" aria-hidden />
           </button>
         </div>

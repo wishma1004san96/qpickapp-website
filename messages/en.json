@@ -1413,8 +1413,8 @@
         "searchPlaceholder": "Search destination or code — e.g. Kandy, Kan, K015",
         "searching": "Searching…",
         "noResults": "No destinations match that search. Try another name or code.",
-        "emptyTitle": "Select a destination",
-        "emptyBody": "Choose a popular destination above or start typing to find your fare instantly.",
+        "emptyTitle": "Find your fare",
+        "emptyBody": "Search any destination to instantly view the official airport transfer fare.",
         "disclaimer": "Displayed fares are based on the official airport transfer rate list. Additional charges may apply for waiting time, extra stops, tolls or special requests.",
         "card": {
           "destination": "Destination",
@@ -1425,6 +1425,56 @@
           "code": "Code",
           "bookCta": "Book Airport Transfer"
         }
+      },
+      "booking": {
+        "eyebrow": "Private Chauffeur",
+        "heading": "Book your airport transfer.",
+        "sub": "From Bandaranaike International Airport to anywhere in Sri Lanka — official fares, timed to your journey.",
+        "title": "Airport Transfer",
+        "from": "From",
+        "to": "To",
+        "toPlaceholder": "Search destination",
+        "searching": "Searching…",
+        "noResults": "No destinations match. Try another name or code.",
+        "date": "Journey Date",
+        "time": "Pickup Time",
+        "passengers": "Passengers",
+        "adult": "Adult",
+        "luggage": "Luggage",
+        "luggageOptions": {
+          "cabin": "Cabin",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "vehicle": "Vehicle Type",
+        "vehicleOptions": {
+          "mini": "Mini",
+          "sedan": "Sedan",
+          "van": "Van",
+          "suv": "SUV"
+        },
+        "nationality": "Nationality",
+        "nationalityPlaceholder": "Select nationality",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "Indian",
+          "uk": "British",
+          "us": "American",
+          "de": "German",
+          "au": "Australian",
+          "cn": "Chinese",
+          "other": "Other"
+        },
+        "special": "Special Request",
+        "specialPlaceholder": "Optional — child seat, meet & greet notes, hotel name…",
+        "distance": "Estimated Distance",
+        "duration": "Estimated Duration",
+        "officialPrice": "Official Airport Transfer Fare",
+        "cta": "Book Your Ride",
+        "ctaLoading": "Opening booking…",
+        "summaryTitle": "Trip Summary",
+        "route": "Route",
+        "destinationPending": "Select a destination"
       },
       "features": {
         "eyebrow": "Why Q Pick Airport",

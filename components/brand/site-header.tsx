@@ -20,8 +20,8 @@ const bookNowClass =
 const primaryNavKeys = {
   "/": "home",
   "/ride": "ride",
-  "/airport": "airport",
-  "/tours": "tours",
+  "/airport-transfer": "airport",
+  "/tour-booking": "tours",
   "/safety": "safety",
   "/drive": "drive",
 } as const;
