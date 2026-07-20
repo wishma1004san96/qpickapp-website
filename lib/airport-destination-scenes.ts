@@ -1,7 +1,14 @@
 /**
  * Immersive destination scenes for Airport Transfer booking UI.
  * Pricing still comes only from official AIRPORT_RATES — these are visual/estimate metadata.
+ *
+ * Photography: lib/destination-images.ts (local WebP under public/images/destinations/).
  */
+
+import {
+  DESTINATION_IMAGES,
+  resolveDestinationImage,
+} from "@/lib/destination-images";
 
 export type DestinationScene = {
   id: string;
@@ -29,95 +36,84 @@ export const DEFAULT_AIRPORT_SCENE: DestinationScene = {
   durationMin: 0,
 };
 
+function scene(
+  id: keyof typeof DESTINATION_IMAGES,
+  meta: Omit<DestinationScene, "id" | "image" | "imageAlt">,
+): DestinationScene {
+  const photo = DESTINATION_IMAGES[id];
+  return {
+    id,
+    image: photo.src,
+    imageAlt: photo.alt,
+    ...meta,
+  };
+}
+
 export const DESTINATION_SCENES: readonly DestinationScene[] = [
-  {
-    id: "sigiriya",
+  scene("sigiriya", {
     match: ["sigiriya"],
     name: "Sigiriya",
     province: "Central Province",
     description:
       "The Lion Rock rises from the jungle canopy — arrive with quiet certainty after the flight.",
-    image: "/images/app/backgrounds/sigiriya-bg.webp",
-    imageAlt: "Sigiriya Rock Fortress at golden hour",
     distanceKm: 170,
     durationMin: 210,
-  },
-  {
-    id: "ella",
-    match: ["ella", "haputale", "bandarawela"],
+  }),
+  scene("ella", {
+    match: ["ella", "haputale", "bandarawela", "nine arch"],
     name: "Ella",
     province: "Uva Province",
     description:
       "Nine Arches and highland mist — the hill country begins the moment you leave arrivals.",
-    image: "/images/app/backgrounds/ella-bg.webp",
-    imageAlt: "Ella highland landscape near Nine Arches Bridge",
     distanceKm: 220,
     durationMin: 330,
-  },
-  {
-    id: "galle",
+  }),
+  scene("galle", {
     match: ["galle", "unawatuna", "ahungalla", "beruwala", "aluthgama", "ambalangoda"],
     name: "Galle",
     province: "Southern Province",
     description:
       "Dutch Fort ramparts and Indian Ocean light — the southern coast, delivered without scramble.",
-    image: "/images/app/backgrounds/galle-bg.webp",
-    imageAlt: "Galle Fort and southern coast",
     distanceKm: 150,
     durationMin: 150,
-  },
-  {
-    id: "bentota",
+  }),
+  scene("bentota", {
     match: ["bentota"],
     name: "Bentota",
     province: "Southern Province",
     description:
       "Palm-lined beaches and lagoon calm — a coastal transfer timed for resort check-in.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80",
-    imageAlt: "Tropical beach shoreline at Bentota",
     distanceKm: 100,
     durationMin: 120,
-  },
-  {
-    id: "hikkaduwa",
+  }),
+  scene("hikkaduwa", {
     match: ["hikkaduwa"],
     name: "Hikkaduwa",
     province: "Southern Province",
     description:
       "Coral reef waters and golden sand — southern ease from gate to beachfront.",
-    image:
-      "https://images.unsplash.com/photo-1519046904884-4511a5d0c5d4?auto=format&fit=crop&w=1800&q=80",
-    imageAlt: "Hikkaduwa beach coastline",
     distanceKm: 130,
     durationMin: 150,
-  },
-  {
-    id: "kandy",
+  }),
+  scene("kandy", {
     match: ["kandy", "katugastota", "peradeniya", "pilimathalawa", "digana"],
     name: "Kandy",
     province: "Central Province",
     description:
       "Temple of the Tooth and lake mist — the hill capital, reached with composed care.",
-    image: "/images/app/backgrounds/kandy-bg.webp",
-    imageAlt: "Kandy lake and temple cityscape",
     distanceKm: 115,
     durationMin: 180,
-  },
-  {
-    id: "mirissa",
+  }),
+  scene("mirissa", {
     match: ["mirissa", "weligama", "matara"],
     name: "Mirissa",
     province: "Southern Province",
     description:
       "Coconut Hill sunsets and whale-watching shores — the deep south, privately arranged.",
-    image: "/images/app/backgrounds/mirissa-bg.webp",
-    imageAlt: "Mirissa coconut hill and ocean view",
     distanceKm: 180,
     durationMin: 210,
-  },
-  {
-    id: "colombo",
+  }),
+  scene("colombo", {
     match: [
       "colombo",
       "fort",
@@ -135,37 +131,81 @@ export const DESTINATION_SCENES: readonly DestinationScene[] = [
     province: "Western Province",
     description:
       "Lotus Tower skyline and harbour lights — the capital, without the curb-side uncertainty.",
-    image:
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1800&q=80",
-    imageAlt: "Colombo city skyline at dusk",
     distanceKm: 35,
     durationMin: 45,
-  },
-  {
-    id: "negombo",
+  }),
+  scene("negombo", {
     match: ["negombo", "katunayake", "seeduwa", "ja-ela", "ekala"],
     name: "Negombo",
     province: "Western Province",
     description:
       "Lagoon breeze minutes from the runway — the closest calm after landing.",
-    image:
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=80",
-    imageAlt: "Negombo lagoon and fishing boats",
     distanceKm: 15,
     durationMin: 25,
-  },
-  {
-    id: "dambulla",
+  }),
+  scene("dambulla", {
     match: ["dambulla", "habarana"],
     name: "Dambulla",
     province: "Central Province",
     description:
       "Cave temples and cultural triangle roads — inland Sri Lanka, chauffeur-led.",
-    image: "/images/app/backgrounds/sigiriya-bg.webp",
-    imageAlt: "Cultural triangle landscape near Dambulla",
     distanceKm: 150,
     durationMin: 180,
-  },
+  }),
+  scene("yala", {
+    match: ["yala"],
+    name: "Yala",
+    province: "Southern Province",
+    description:
+      "Leopard country and scrubland roads — safari timing handled with quiet precision.",
+    distanceKm: 290,
+    durationMin: 360,
+  }),
+  scene("nuwara-eliya", {
+    match: ["nuwara eliya", "nuwaraeliya", "nuwara-eliya"],
+    name: "Nuwara Eliya",
+    province: "Central Province",
+    description:
+      "Tea country mist and highland air — the cool hills after the coast.",
+    distanceKm: 180,
+    durationMin: 300,
+  }),
+  scene("anuradhapura", {
+    match: ["anuradhapura"],
+    name: "Anuradhapura",
+    province: "North Central Province",
+    description:
+      "Sacred stupas and ancient roads — the cultural triangle, chauffeured.",
+    distanceKm: 200,
+    durationMin: 270,
+  }),
+  scene("polonnaruwa", {
+    match: ["polonnaruwa"],
+    name: "Polonnaruwa",
+    province: "North Central Province",
+    description:
+      "Stone kings and quiet ruins — heritage travel without the scramble.",
+    distanceKm: 230,
+    durationMin: 300,
+  }),
+  scene("trincomalee", {
+    match: ["trincomalee", "nilaveli", "pigeon island"],
+    name: "Trincomalee",
+    province: "Eastern Province",
+    description:
+      "East-coast calm and Nilaveli light — the other ocean, privately timed.",
+    distanceKm: 260,
+    durationMin: 330,
+  }),
+  scene("arugam-bay", {
+    match: ["arugam", "arugam bay"],
+    name: "Arugam Bay",
+    province: "Eastern Province",
+    description:
+      "Surf breaks and east-coast energy — a long drive worth arriving composed.",
+    distanceKm: 320,
+    durationMin: 420,
+  }),
 ] as const;
 
 /** More specific matches first (longer tokens preferred via sort). */
@@ -178,25 +218,28 @@ export function resolveDestinationScene(
   let best: DestinationScene | null = null;
   let bestLen = 0;
 
-  for (const scene of DESTINATION_SCENES) {
-    for (const token of scene.match) {
+  for (const sceneRow of DESTINATION_SCENES) {
+    for (const token of sceneRow.match) {
       if (hay.includes(token) && token.length > bestLen) {
-        best = scene;
+        best = sceneRow;
         bestLen = token.length;
       }
     }
   }
 
   if (!best) {
+    const photo = resolveDestinationImage(destinationName);
     return {
       ...DEFAULT_AIRPORT_SCENE,
       name: destinationName,
       description:
         "Your private transfer from Bandaranaike International Airport — official fare, professional chauffeur.",
+      ...(photo
+        ? { image: photo.src, imageAlt: photo.alt }
+        : {}),
     };
   }
 
-  // Prefer scene display name when token is a suburb of a known destination
   return best;
 }
 

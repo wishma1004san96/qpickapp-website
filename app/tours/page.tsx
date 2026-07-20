@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
-import { ToursContent } from "@/components/pages/tours-content";
-import { getLocale } from "@/lib/i18n/get-locale";
-import { getMessages } from "@/lib/i18n/get-messages";
-import { createTranslator } from "@/lib/i18n/t";
+import { ToursHub } from "@/components/tours/tours-hub";
+import { getHubSeo } from "@/lib/tours/repository";
+import { siteConfig } from "@/lib/site";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = createTranslator(getMessages(await getLocale()));
+  const seo = getHubSeo();
   return {
-    title: t("pages.tours.meta.title"),
-    description: t("pages.tours.meta.description"),
+    title: seo.title,
+    description: seo.description,
+    alternates: {
+      canonical: seo.canonicalPath ?? "/tours",
+    },
+    openGraph: {
+      title: seo.ogTitle ?? seo.title,
+      description: seo.description,
+      url: `${siteConfig.url}${seo.canonicalPath ?? "/tours"}`,
+      images: seo.ogImage ? [{ url: seo.ogImage }] : undefined,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.twitterTitle ?? seo.title,
+      description: seo.twitterDescription ?? seo.description,
+      images: seo.ogImage ? [seo.ogImage] : undefined,
+    },
   };
 }
 
 export default function ToursPage() {
-  return <ToursContent />;
+  return <ToursHub />;
 }

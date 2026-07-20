@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { TourBookingPage } from "@/components/bookings/tour-booking/tour-booking-form";
+import { TourBookingExperience } from "@/components/bookings/tour-booking/tour-booking-experience";
 
 export const metadata: Metadata = {
-  title: "Tour Booking",
+  title: "Plan Your Private Sri Lanka Tour | Q Pick",
   description:
-    "Request a private Sri Lanka tour. Choose destinations, dates, vehicle, and days — admin assigns a driver/guide.",
+    "Build a custom private chauffeur itinerary across Sri Lanka — destinations, dates, vehicle, and preferences. Submit a tour request online.",
+  alternates: {
+    canonical: "/tour-booking",
+  },
 };
 
 export default function TourBookingRoutePage() {
-  return <TourBookingPage />;
+  return <TourBookingExperience />;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { Polyline } from "react-leaflet";
+import { filterValidLatLngTuples } from "@/components/maps/map-coordinates";
 
 export type RoutePolylineOption = {
   id: string;
@@ -23,6 +24,7 @@ const ALT_COLOR = "#C5CDD6";
  * Driving route polylines — selected route is Q Pick blue & thick;
  * alternatives are light gray & thinner. Draw unselected first so
  * the selected path paints on top.
+ * Skips any route with fewer than 2 valid coordinates.
  */
 export function RouteLayer({
   coordinates = [],
@@ -33,15 +35,23 @@ export function RouteLayer({
   const options: RoutePolylineOption[] =
     routes && routes.length > 0
       ? routes
-      : coordinates.length >= 2
-        ? [
-            {
-              id: "primary",
-              coordinates,
-              selected: true,
-            },
-          ]
-        : [];
+          .map((route) => ({
+            ...route,
+            coordinates: filterValidLatLngTuples(route.coordinates),
+          }))
+          .filter((route) => route.coordinates.length >= 2)
+      : (() => {
+          const coords = filterValidLatLngTuples(coordinates);
+          return coords.length >= 2
+            ? [
+                {
+                  id: "primary",
+                  coordinates: coords,
+                  selected: true,
+                },
+              ]
+            : [];
+        })();
 
   if (options.length === 0) return null;
 
@@ -54,7 +64,6 @@ export function RouteLayer({
   return (
     <>
       {ordered.map((route) => {
-        if (route.coordinates.length < 2) return null;
         const selected =
           route.selected ||
           (selectedRouteId != null && route.id === selectedRouteId);

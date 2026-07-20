@@ -21,7 +21,7 @@ const primaryNavKeys = {
   "/": "home",
   "/ride": "ride",
   "/airport-transfer": "airport",
-  "/tour-booking": "tours",
+  "/tours": "tours",
   "/safety": "safety",
   "/drive": "drive",
 } as const;

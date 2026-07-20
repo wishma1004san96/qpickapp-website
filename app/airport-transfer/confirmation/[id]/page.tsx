@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BookingConfirmation } from "@/components/bookings/booking-confirmation";
+import { AirportTransferSuccess } from "@/components/bookings/airport-transfer/airport-transfer-success";
 import {
   getAirportTransferRequest,
   AIRPORT_STATUS_LABELS,
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props) {
   const item = await getAirportTransferRequest(id);
   return {
     title: item
-      ? `Airport transfer · ${item.referenceCode}`
+      ? `Transfer confirmed · ${item.referenceCode}`
       : "Airport transfer confirmation",
     robots: { index: false, follow: false },
   };
@@ -30,22 +30,18 @@ export default async function AirportTransferConfirmationPage({
   const status = item.status as AirportTransferStatus;
 
   return (
-    <BookingConfirmation
-      title="Airport transfer request submitted"
-      subtitle="Our team will review your Airport Transfer Request and assign a driver. This is not a Taxi Ride booking."
+    <AirportTransferSuccess
       referenceCode={item.referenceCode}
       statusLabel={AIRPORT_STATUS_LABELS[status] ?? status}
-      statusHint="You will receive confirmation once an admin assigns a driver."
+      statusHint="Admin will review your request. Driver assignment status updates here once a chauffeur is confirmed."
       details={[
         { label: "Pickup", value: item.pickupLabel },
         { label: "Destination", value: item.destinationLabel },
         {
-          label: "Schedule",
+          label: "Arrival",
           value: `${item.transferDate} · ${item.transferTime}`,
         },
         { label: "Vehicle", value: item.vehicleType },
-        { label: "Passengers", value: String(item.passengers) },
-        { label: "Luggage", value: item.luggage },
         { label: "Passenger", value: item.passengerName },
         { label: "Phone", value: item.passengerPhone },
         ...(item.officialFareLkr != null
@@ -62,10 +58,6 @@ export default async function AirportTransferConfirmationPage({
       ]}
       history={item.statusHistory}
       statusLabels={AIRPORT_STATUS_LABELS}
-      primaryHref="/airport-transfer"
-      primaryLabel="New airport transfer"
-      secondaryHref="/airport"
-      secondaryLabel="Airport rates"
     />
   );
 }

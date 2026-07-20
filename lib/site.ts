@@ -35,7 +35,7 @@ export const primaryNav = [
   { href: "/", label: "Home" },
   { href: "/ride", label: "Ride" },
   { href: "/airport-transfer", label: "Airport" },
-  { href: "/tour-booking", label: "Tours" },
+  { href: "/tours", label: "Tours" },
   { href: "/safety", label: "Safety" },
   { href: "/drive", label: "Drive" },
 ] as const;
@@ -47,7 +47,7 @@ export const utilityNav = [
 
 export const footerServices = [
   { href: "/airport-transfer", key: "airport" },
-  { href: "/tour-booking", key: "tours" },
+  { href: "/tours", key: "tours" },
   { href: "/ride", key: "chauffeur" },
   { href: "/ride", key: "cityRides" },
   { href: "/partners", key: "corporate" },

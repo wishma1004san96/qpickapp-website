@@ -3,6 +3,7 @@
 import L from "leaflet";
 import { useMemo } from "react";
 import { CircleMarker, Marker, Popup } from "react-leaflet";
+import { isValidLatLng } from "@/components/maps/map-coordinates";
 import type { SelectedPlace } from "@/lib/osm/types";
 
 const PICKUP_GREEN = "#16a34a";
@@ -73,6 +74,9 @@ function PlaceMarkers({
   zIndexOffset: number;
 }) {
   const icon = useMemo(() => createPinIcon(fill, letter), [fill, letter]);
+
+  if (!isValidLatLng(place)) return null;
+
   const position: [number, number] = [place.lat, place.lng];
 
   return (

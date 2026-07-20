@@ -1618,6 +1618,7 @@
 }
 
 .leaflet-marker-icon.qpick-map-pin-icon {
+  position: relative;
   background: transparent !important;
   border: none !important;
 }
@@ -1633,6 +1634,140 @@
 
 .leaflet-popup-content {
   margin: 10px 12px;
+}
+
+/* Sri Lanka tour explorer — premium chauffeur route map */
+.tour-sri-lanka-map .leaflet-container {
+  background: #e8eef4;
+  font: inherit;
+}
+
+.tour-sri-lanka-map .leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 8px 20px rgb(10 22 32 / 0.12) !important;
+  overflow: hidden;
+  border-radius: 12px !important;
+}
+
+.tour-sri-lanka-map .leaflet-control-zoom a {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  color: #0a1620 !important;
+  background: rgb(255 255 255 / 0.95) !important;
+  border-bottom-color: rgb(10 22 32 / 0.08) !important;
+}
+
+.tour-sri-lanka-map .leaflet-control-zoom a:hover {
+  color: #0062fa !important;
+  background: #fff !important;
+}
+
+.tour-route-line {
+  stroke-dasharray: 14 10;
+  animation: tour-route-dash 1.4s linear infinite;
+}
+
+.tour-route-line--active {
+  stroke-dasharray: 18 8;
+  animation-duration: 1.1s;
+}
+
+@keyframes tour-route-dash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.qpick-map-pin-icon {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+}
+
+.qpick-map-pin-icon img {
+  display: block;
+  filter: drop-shadow(0 4px 8px rgb(10 22 32 / 0.28));
+}
+
+.qpick-map-pin--pulse {
+  animation: qpick-pin-pulse 1.8s ease-out infinite;
+}
+
+.qpick-map-pin--pulse::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
+  border-radius: 999px;
+  background: rgb(0 98 250 / 0.28);
+  animation: qpick-pin-ring 1.8s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes qpick-pin-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes qpick-pin-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-route-line,
+  .tour-route-line--active,
+  .qpick-map-pin--pulse,
+  .qpick-map-pin--pulse::after {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+.tour-map-tooltip {
+  border: none !important;
+  border-radius: 999px !important;
+  background: rgb(10 22 32 / 0.92) !important;
+  color: #f4f7fa !important;
+  box-shadow: 0 8px 24px rgb(10 22 32 / 0.28) !important;
+  padding: 4px 10px !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+}
+
+.tour-map-tooltip::before {
+  border-top-color: rgb(10 22 32 / 0.92) !important;
+}
+
+.tour-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgb(10 22 32 / 0.18);
+  padding: 0;
+}
+
+.tour-map-popup .leaflet-popup-content {
+  margin: 10px 12px;
+}
+
+.tour-map-popup .leaflet-popup-tip {
+  box-shadow: none;
 }
 
 /* Vehicle carousel — hide native scrollbar (Uber-style swipe row) */

@@ -4,9 +4,14 @@ import L from "leaflet";
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import type { SelectedPlace } from "@/lib/osm/types";
+import {
+  CMB_MAP_CENTER_TUPLE,
+  filterValidLatLngTuples,
+  isValidLatLng,
+  toLatLngTuple,
+} from "@/components/maps/map-coordinates";
 
-const SRI_LANKA_CENTER: [number, number] = [7.8731, 80.7718];
-const DEFAULT_ZOOM = 7;
+const DEFAULT_ZOOM = 11;
 const PICKUP_ZOOM = 15.5;
 
 export type MapCameraProps = {
@@ -21,6 +26,7 @@ export type MapCameraProps = {
 
 /**
  * Camera control: flyTo pickup, then fitBounds when destination/route exist.
+ * Never calls flyTo / fitBounds with invalid LatLngs.
  */
 export function MapCamera({
   pickup,
@@ -34,27 +40,33 @@ export function MapCamera({
   const prevDestRef = useRef<string | null>(null);
   const prevRouteSigRef = useRef("");
 
+  const safePickup = isValidLatLng(pickup) ? pickup : null;
+  const safeDestination = isValidLatLng(destination) ? destination : null;
+
   useEffect(() => {
-    const pickupKey = pickup ? `${pickup.lat},${pickup.lng}` : null;
-    const destKey = destination
-      ? `${destination.lat},${destination.lng}`
+    const pickupKey = safePickup
+      ? `${safePickup.lat},${safePickup.lng}`
+      : null;
+    const destKey = safeDestination
+      ? `${safeDestination.lat},${safeDestination.lng}`
       : null;
 
-    const unionPoints =
+    const unionPoints = filterValidLatLngTuples(
       allRouteCoordinates.length > 0
         ? allRouteCoordinates.flat()
-        : routeCoordinates;
+        : routeCoordinates,
+    );
     const routeSig = [
       selectedRouteKey ?? "",
       allRouteCoordinates
-        .map(
-          (line) =>
-            `${line.length}:${line[0]?.join(",") ?? ""}:${line[line.length - 1]?.join(",") ?? ""}`,
-        )
+        .map((line) => {
+          const valid = filterValidLatLngTuples(line);
+          return `${valid.length}:${valid[0]?.join(",") ?? ""}:${valid[valid.length - 1]?.join(",") ?? ""}`;
+        })
         .join(";"),
-      routeCoordinates.length,
-      routeCoordinates[0]?.join(",") ?? "",
-      routeCoordinates[routeCoordinates.length - 1]?.join(",") ?? "",
+      unionPoints.length,
+      unionPoints[0]?.join(",") ?? "",
+      unionPoints[unionPoints.length - 1]?.join(",") ?? "",
     ].join("|");
 
     const pickupChanged = pickupKey !== prevPickupRef.current;
@@ -65,75 +77,112 @@ export function MapCamera({
     prevDestRef.current = destKey;
     prevRouteSigRef.current = routeSig;
 
-    if (!pickup && !destination) {
-      map.setView(SRI_LANKA_CENTER, DEFAULT_ZOOM, { animate: true });
+    if (!safePickup && !safeDestination) {
+      map.setView(CMB_MAP_CENTER_TUPLE, DEFAULT_ZOOM, { animate: true });
       return;
     }
 
-    // Single selected place — fly to that result's exact lat/lng (never a city center)
-    if (pickup && !destination) {
+    if (safePickup && !safeDestination) {
       if (pickupChanged) {
-        map.flyTo([pickup.lat, pickup.lng], PICKUP_ZOOM, {
-          animate: true,
-          duration: 0.85,
-          easeLinearity: 0.25,
-        });
+        const center = toLatLngTuple(safePickup);
+        if (center) {
+          map.flyTo(center, PICKUP_ZOOM, {
+            animate: true,
+            duration: 0.85,
+            easeLinearity: 0.25,
+          });
+        }
       }
       return;
     }
 
-    if (!pickup && destination) {
+    if (!safePickup && safeDestination) {
       if (destChanged) {
-        map.flyTo([destination.lat, destination.lng], PICKUP_ZOOM, {
-          animate: true,
-          duration: 0.85,
-          easeLinearity: 0.25,
-        });
+        const center = toLatLngTuple(safeDestination);
+        if (center) {
+          map.flyTo(center, PICKUP_ZOOM, {
+            animate: true,
+            duration: 0.85,
+            easeLinearity: 0.25,
+          });
+        }
       }
       return;
     }
 
-    // Both points — fit route(s) or exact marker coordinates
-    // Re-fit on place change or first route arrival; soft pan when only selection changes
-    if (pickup && destination && (destChanged || routeChanged || pickupChanged)) {
+    if (
+      safePickup &&
+      safeDestination &&
+      (destChanged || routeChanged || pickupChanged)
+    ) {
+      const pickupTuple = toLatLngTuple(safePickup);
+      const destTuple = toLatLngTuple(safeDestination);
       const points: [number, number][] =
         unionPoints.length > 1
           ? unionPoints
-          : [
-              [pickup.lat, pickup.lng],
-              [destination.lat, destination.lng],
-            ];
+          : [pickupTuple, destTuple].filter(
+              (p): p is [number, number] => p != null,
+            );
 
-      const bounds = L.latLngBounds(points);
-      const onlySelectionChanged =
-        !pickupChanged && !destChanged && routeChanged && Boolean(selectedRouteKey);
+      if (points.length === 0) {
+        map.setView(CMB_MAP_CENTER_TUPLE, DEFAULT_ZOOM, { animate: true });
+        return;
+      }
 
-      map.flyToBounds(bounds, {
-        padding: [56, 56],
-        maxZoom: onlySelectionChanged ? map.getZoom() : 16,
-        animate: true,
-        duration: onlySelectionChanged ? 0.45 : 0.9,
-      });
+      if (points.length === 1) {
+        map.flyTo(points[0], PICKUP_ZOOM, {
+          animate: true,
+          duration: 0.85,
+          easeLinearity: 0.25,
+        });
+        return;
+      }
+
+      try {
+        const bounds = L.latLngBounds(points);
+        if (!bounds.isValid()) {
+          map.setView(CMB_MAP_CENTER_TUPLE, DEFAULT_ZOOM, { animate: true });
+          return;
+        }
+
+        const onlySelectionChanged =
+          !pickupChanged &&
+          !destChanged &&
+          routeChanged &&
+          Boolean(selectedRouteKey);
+
+        map.flyToBounds(bounds, {
+          padding: [56, 56],
+          maxZoom: onlySelectionChanged ? map.getZoom() : 16,
+          animate: true,
+          duration: onlySelectionChanged ? 0.45 : 0.9,
+        });
+      } catch {
+        map.setView(CMB_MAP_CENTER_TUPLE, DEFAULT_ZOOM, { animate: true });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- compare via routeSig, not array identity
   }, [
     map,
-    pickup,
-    destination,
+    safePickup,
+    safeDestination,
     selectedRouteKey,
-    // Serialize geometries so new array identities don't retrigger endlessly
     routeCoordinates.length > 0
       ? `${routeCoordinates.length}:${routeCoordinates[0]?.join(",")}:${routeCoordinates[routeCoordinates.length - 1]?.join(",")}`
       : "",
     allRouteCoordinates
-      .map(
-        (line) =>
-          `${line.length}:${line[0]?.join(",") ?? ""}:${line[line.length - 1]?.join(",") ?? ""}`,
-      )
+      .map((line) => {
+        const valid = filterValidLatLngTuples(line);
+        return `${valid.length}:${valid[0]?.join(",") ?? ""}:${valid[valid.length - 1]?.join(",") ?? ""}`;
+      })
       .join("|"),
   ]);
 
   return null;
 }
 
-export { SRI_LANKA_CENTER, DEFAULT_ZOOM, PICKUP_ZOOM };
+export {
+  CMB_MAP_CENTER_TUPLE as SRI_LANKA_CENTER,
+  DEFAULT_ZOOM,
+  PICKUP_ZOOM,
+};

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { AirportTransferBookingPage } from "@/components/bookings/airport-transfer/airport-transfer-booking-form";
+import { AirportTransferExperience } from "@/components/bookings/airport-transfer/airport-transfer-experience";
 
 export const metadata: Metadata = {
-  title: "Airport Transfer Booking",
+  title: "Airport Chauffeur · Book Transfer",
   description:
-    "Request an airport transfer from Bandaranaike International Airport (CMB). Admin reviews and assigns a driver.",
+    "Book a premium private transfer from Bandaranaike International Airport (CMB). Guided luxury booking — destination, vehicle, flight, and chauffeur request.",
 };
 
 export default function AirportTransferPage() {
-  return <AirportTransferBookingPage />;
+  return <AirportTransferExperience />;
 }
