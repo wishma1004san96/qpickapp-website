@@ -1,0 +1,148 @@
+/* Footer — official store badges on mobile (side by side, natural ratio) */
+@media (max-width: 767.98px) {
+  .site-footer-store-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-footer-store-badges > a,
+  .site-footer-store-badges > .site-footer-store-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .site-footer-store-badges > a {
+    border-radius: 0.375rem;
+    transition: opacity 180ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .site-footer-store-badges > a:active {
+    opacity: 0.88;
+  }
+
+  .site-footer-store-badges .experience-store-badge {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .site-footer-store-badges .experience-store-badge svg {
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+}
+
+/* Footer — compact mobile density (Uber / Airbnb / Bolt style) */
+@media (max-width: 767.98px) {
+  .site-footer .site-footer-container {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .site-footer .site-footer-card {
+    padding: 0.625rem !important;
+    border-radius: 1.125rem;
+  }
+
+  .site-footer .site-footer-grid {
+    gap: 0.625rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer .site-footer-grid > :first-child,
+  .site-footer .site-footer-download {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .site-footer-blurb,
+  .site-footer .site-footer-legal-name {
+    margin-top: 0.375rem !important;
+  }
+
+  .site-footer .site-footer-blurb {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+
+  .site-footer .site-footer-contact {
+    margin-top: 0.5rem !important;
+  }
+
+  .site-footer .site-footer-contact > * + * {
+    margin-top: 0.25rem !important;
+  }
+
+  .site-footer .site-footer-contact .flex {
+    gap: 0.375rem !important;
+  }
+
+  .site-footer .site-footer-contact [class*="mt-0.5"],
+  .site-footer .site-footer-contact ul {
+    margin-top: 0.0625rem !important;
+  }
+
+  .site-footer .site-footer-contact ul > * + * {
+    margin-top: 0 !important;
+  }
+
+  .site-footer .site-footer-contact .text-sm {
+    line-height: 1.35;
+  }
+
+  .site-footer .site-footer-ctas {
+    margin-top: 0.5rem !important;
+    gap: 0.375rem !important;
+  }
+
+  .site-footer .site-footer-col-title,
+  .site-footer .site-footer-download-title {
+    margin-bottom: 0.25rem !important;
+  }
+
+  .site-footer .site-footer-col-links a {
+    min-height: 1.75rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: 1.35;
+  }
+
+  .site-footer .site-footer-download > div {
+    gap: 0.25rem !important;
+  }
+
+  .site-footer .site-footer-store-badges {
+    gap: 0.5rem;
+  }
+
+  .site-footer .site-footer-social {
+    margin-top: 0.5rem !important;
+    gap: 0.375rem !important;
+  }
+
+  .site-footer .site-footer-copyright {
+    margin-top: 0.5rem !important;
+    min-height: 0 !important;
+    padding-top: 0.375rem !important;
+    padding-bottom: 0.375rem !important;
+    gap: 0.25rem !important;
+  }
+
+  .site-footer .site-footer-copyright ul {
+    gap: 0.375rem 0.75rem !important;
+  }
+
+  .site-footer .site-footer-copyright a {
+    min-height: 1.75rem !important;
+  }
+}

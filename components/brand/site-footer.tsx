@@ -7,6 +7,7 @@ import { BrandLockup } from "@/components/brand/wordmark";
 import { LanguageSwitcher } from "@/components/brand/language-switcher";
 import { useTranslations } from "@/components/i18n/locale-provider";
 import { AppStoreBadge } from "@/components/ui/app-store-badge";
+import { OfficialStoreBadge } from "@/components/ui/official-store-badge";
 import {
   footerCompany,
   footerLegal,
@@ -15,6 +16,7 @@ import {
   socialLinks,
   whatsappLink,
 } from "@/lib/site";
+import "./site-footer.css";
 
 const tel = (n: string) => `tel:${n.replace(/\s/g, "")}`;
 
@@ -26,21 +28,21 @@ export function SiteFooter() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <footer className="relative w-full min-w-0 overflow-x-hidden bg-[linear-gradient(165deg,#061018_0%,#0a1620_45%,#0c1c2e_100%)] pb-[env(safe-area-inset-bottom)] text-foam">
+    <footer className="site-footer relative w-full min-w-0 overflow-x-hidden bg-[linear-gradient(165deg,#061018_0%,#0a1620_45%,#0c1c2e_100%)] pb-[env(safe-area-inset-bottom)] text-foam">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_15%_20%,rgb(0_98_250_/_0.14),transparent_55%),radial-gradient(ellipse_55%_40%_at_90%_85%,rgb(1_147_251_/_0.1),transparent_50%)]"
       />
 
-      <div className="relative mx-auto w-full min-w-0 max-w-[1400px] px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-12 lg:px-10 lg:py-14 xl:px-12">
+      <div className="site-footer-container relative mx-auto w-full min-w-0 max-w-[1400px] px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-12 lg:px-10 lg:py-14 xl:px-12">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.12 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="min-w-0 w-full rounded-[1.25rem] border border-foam/10 bg-foam/[0.05] p-4 shadow-[0_20px_48px_rgb(0_0_0_/_0.28),inset_0_1px_0_rgb(255_255_255_/_0.06)] backdrop-blur-xl sm:rounded-[1.5rem] sm:p-5 md:p-6 lg:rounded-[1.75rem] lg:p-7"
+          className="site-footer-card min-w-0 w-full rounded-[1.25rem] border border-foam/10 bg-foam/[0.05] p-4 shadow-[0_20px_48px_rgb(0_0_0_/_0.28),inset_0_1px_0_rgb(255_255_255_/_0.06)] backdrop-blur-xl sm:rounded-[1.5rem] sm:p-5 md:p-6 lg:rounded-[1.75rem] lg:p-7"
         >
-          <div className="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0 xl:gap-x-10">
+          <div className="site-footer-grid grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-7 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0 xl:gap-x-10">
             {/* Brand + contact + action buttons */}
             <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
               <BrandLockup
@@ -50,16 +52,16 @@ export function SiteFooter() {
                 tone="foam"
               />
 
-              <p className="mt-2.5 max-w-[34ch] text-sm leading-[1.5] tracking-[0.01em] text-pretty text-foam/75">
+              <p className="site-footer-blurb mt-2.5 max-w-[34ch] text-sm leading-[1.5] tracking-[0.01em] text-pretty text-foam/75">
                 {t("footer.blurb")}
               </p>
 
-              <p className="mt-2.5 text-sm font-medium tracking-wide text-foam/95">
+              <p className="site-footer-legal-name mt-2.5 text-sm font-medium tracking-wide text-foam/95">
                 {siteConfig.legalName}
               </p>
 
               {/* Contact — compact */}
-              <div className="mt-3 w-full min-w-0 space-y-2 text-center md:text-left">
+              <div className="site-footer-contact mt-3 w-full min-w-0 space-y-2 text-center md:text-left">
                 <div className="flex justify-center gap-2 md:justify-start">
                   <span className="mt-0.5 shrink-0 text-[0.85rem] leading-none" aria-hidden="true">
                     📍
@@ -145,7 +147,7 @@ export function SiteFooter() {
               </div>
 
               {/* CTAs: stacked mobile · horizontal row from md up */}
-              <div className="mt-3.5 flex w-full min-w-0 flex-col gap-2 md:flex-row md:flex-wrap md:gap-2">
+              <div className="site-footer-ctas mt-3.5 flex w-full min-w-0 flex-col gap-2 md:flex-row md:flex-wrap md:gap-2">
                 <a
                   href={tel(siteConfig.phones.general)}
                   className="inline-flex min-h-12 w-full flex-1 items-center justify-center gap-1.5 rounded-full border border-foam/20 bg-foam/[0.08] px-3 text-sm font-medium text-foam transition-[background-color,border-color,transform] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:-translate-y-0.5 hover:border-brand/40 hover:bg-foam/[0.14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 md:min-h-9 md:w-auto md:flex-none md:px-3.5 md:text-[0.8125rem]"
@@ -194,24 +196,36 @@ export function SiteFooter() {
             />
 
             {/* Download + Social */}
-            <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
-              <p className="mb-2.5 font-mono text-[0.625rem] font-medium tracking-[0.18em] text-foam/55 uppercase">
+            <div className="site-footer-download flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
+              <p className="site-footer-download-title mb-2.5 font-mono text-[0.625rem] font-medium tracking-[0.18em] text-foam/55 uppercase">
                 {t("footer.downloadApp")}
               </p>
               <div className="flex w-full max-w-xs flex-col items-stretch gap-2 md:max-w-none md:items-start">
-                <AppStoreBadge
-                  store="android"
-                  href={siteConfig.store.driverGooglePlay}
-                  subtitle={t("downloadApps.store.driverPlay")}
-                  className="!max-w-none !min-h-10 w-full border-foam/20 bg-foam/[0.08] hover:border-foam/35"
-                />
-                <AppStoreBadge
-                  store="ios"
-                  className="!max-w-none !min-h-10 w-full border-foam/20 bg-foam/[0.08]"
-                />
+                <div className="site-footer-store-badges md:hidden">
+                  <OfficialStoreBadge
+                    store="android"
+                    fit="natural"
+                    href={siteConfig.store.driverGooglePlay}
+                  />
+                  <div className="site-footer-store-slot">
+                    <OfficialStoreBadge store="ios" fit="natural" />
+                  </div>
+                </div>
+                <div className="hidden w-full flex-col items-stretch gap-2 md:flex">
+                  <AppStoreBadge
+                    store="android"
+                    href={siteConfig.store.driverGooglePlay}
+                    subtitle={t("downloadApps.store.driverPlay")}
+                    className="!max-w-none !min-h-10 w-full border-foam/20 bg-foam/[0.08] hover:border-foam/35"
+                  />
+                  <AppStoreBadge
+                    store="ios"
+                    className="!max-w-none !min-h-10 w-full border-foam/20 bg-foam/[0.08]"
+                  />
+                </div>
               </div>
 
-              <ul className="mt-3.5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
+              <ul className="site-footer-social mt-3.5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
                 {socialLinks.map((item) => (
                   <li key={item.key}>
                     <a
@@ -230,7 +244,7 @@ export function SiteFooter() {
           </div>
 
           {/* Copyright — compact ~50–60px */}
-          <div className="mt-5 flex min-h-[52px] min-w-0 flex-col items-center justify-center gap-2 border-t border-foam/15 py-3 text-center lg:mt-5 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:text-left">
+          <div className="site-footer-copyright mt-5 flex min-h-[52px] min-w-0 flex-col items-center justify-center gap-2 border-t border-foam/15 py-3 text-center lg:mt-5 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:text-left">
             <p className="max-w-full text-[0.6875rem] leading-none tracking-wide break-words text-foam/50">
               © {new Date().getFullYear()} {siteConfig.legalName}
             </p>
@@ -269,11 +283,11 @@ function FooterCol({
   }[];
 }) {
   return (
-    <div className="min-w-0 text-center md:text-left">
-      <p className="mb-2 font-mono text-[0.625rem] font-medium tracking-[0.18em] text-foam/55 uppercase">
+    <div className="site-footer-col min-w-0 text-center md:text-left">
+      <p className="site-footer-col-title mb-2 font-mono text-[0.625rem] font-medium tracking-[0.18em] text-foam/55 uppercase">
         {title}
       </p>
-      <ul className="space-y-0">
+      <ul className="site-footer-col-links space-y-0">
         {links.map((item) => (
           <li key={item.key}>
             {item.external ? (
