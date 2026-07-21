@@ -314,7 +314,7 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
         aria-hidden="true"
       >
         {PRELOAD_SRCS.map((src) => (
-          <Image key={src} src={src} alt="" width={840} height={1900} priority />
+          <Image key={src} src={src} alt="" width={840} height={1900} />
         ))}
       </div>
 
@@ -363,7 +363,6 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
                     src={DRIVER_SCREENS[0].src}
                     alt={DRIVER_SCREENS[0].alt}
                     layout={DRIVER_SCREENS[0].layout!}
-                    priority
                   />
                 ) : (
                   <AnimatePresence mode="wait" initial={false}>
@@ -397,7 +396,6 @@ function DriverShowcasePhone({ reduceMotion }: { reduceMotion: boolean }) {
                           src={screen.src}
                           alt={screen.alt}
                           layout={screen.layout!}
-                          priority={screenIndex === 0}
                         />
                       )}
                     </motion.div>
@@ -458,12 +456,10 @@ function ScreenshotFrame({
   src,
   alt,
   layout,
-  priority,
 }: {
   src: string;
   alt: string;
   layout: ScreenLayout;
-  priority?: boolean;
 }) {
   return (
     <div
@@ -479,7 +475,6 @@ function ScreenshotFrame({
           layout.mode === "contain" ? "object-contain" : "object-cover"
         }`}
         style={{ objectPosition: layout.objectPosition }}
-        priority={priority}
         draggable={false}
       />
     </div>
@@ -901,7 +896,6 @@ function DriverProfileScreen({ reduceMotion }: { reduceMotion: boolean }) {
                 fill
                 sizes="64px"
                 className="object-cover"
-                priority
               />
             </div>
             <motion.span

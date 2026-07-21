@@ -156,7 +156,6 @@ export function CinematicGallery({
                 fill
                 className="object-contain"
                 sizes="100vw"
-                priority
               />
             </motion.div>
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-foam/50">

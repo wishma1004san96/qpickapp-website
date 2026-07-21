@@ -3,7 +3,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import {
-  DEFAULT_AIRPORT_SCENE,
   type DestinationScene,
 } from "@/lib/airport-destination-scenes";
 
@@ -19,7 +18,6 @@ export function AirportDestinationCanvas({
   className = "",
 }: AirportDestinationCanvasProps) {
   const reduceMotion = useReducedMotion() ?? false;
-  const isDefault = scene.id === DEFAULT_AIRPORT_SCENE.id;
 
   return (
     <div
@@ -38,7 +36,6 @@ export function AirportDestinationCanvas({
             src={scene.image}
             alt={scene.imageAlt}
             fill
-            priority={isDefault}
             sizes="(max-width: 1024px) 100vw, 55vw"
             className="object-cover"
           />

@@ -661,6 +661,18 @@
   cursor: default;
 }
 
+.experience-store-badge--android svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.experience-store-badge--android image {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 .experience-store-badge:hover {
   transform: translateY(-2px);
 }

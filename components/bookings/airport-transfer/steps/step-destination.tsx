@@ -242,7 +242,6 @@ export function StepDestination({ selected, onSelect }: StepDestinationProps) {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 640px"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-map-void via-map-void/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-5">

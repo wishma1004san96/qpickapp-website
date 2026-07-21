@@ -48,6 +48,7 @@ type BrandLogoProps = {
   className?: string;
   size?: number;
   priority?: boolean;
+  loading?: "lazy" | "eager";
 };
 
 /** Official Q Pick app logo mark. */
@@ -55,6 +56,7 @@ export function BrandLogo({
   className = "",
   size = 36,
   priority = false,
+  loading,
 }: BrandLogoProps) {
   return (
     <Image
@@ -63,6 +65,7 @@ export function BrandLogo({
       width={size}
       height={size}
       priority={priority}
+      loading={priority ? "eager" : loading}
       sizes={`${size}px`}
       className={`shrink-0 object-contain ${className}`}
       style={{ width: size, height: size }}

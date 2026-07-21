@@ -12,8 +12,10 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { AppStoreBadge } from "@/components/ui/app-store-badge";
+import { OfficialStoreBadge } from "@/components/ui/official-store-badge";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/lib/site";
+import "./download-qpick-apps.css";
 
 type AppTab = "passenger" | "driver";
 
@@ -248,7 +250,31 @@ export function DownloadQPickApps() {
                     ))}
                   </ul>
 
-                  <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+                  <div className="download-apps-store-badges sm:hidden">
+                    {tab === "passenger" ? (
+                      <>
+                        <div className="download-apps-store-slot">
+                          <OfficialStoreBadge store="android" fit="natural" />
+                        </div>
+                        <div className="download-apps-store-slot">
+                          <OfficialStoreBadge store="ios" fit="natural" />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <OfficialStoreBadge
+                          store="android"
+                          fit="natural"
+                          href={DRIVER_PLAY_STORE_URL}
+                        />
+                        <div className="download-apps-store-slot">
+                          <OfficialStoreBadge store="ios" fit="natural" />
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  <div className="mt-8 hidden w-full flex-col gap-3 sm:flex sm:w-auto sm:flex-row sm:flex-wrap">
                     {tab === "passenger" ? (
                       <>
                         <AppStoreBadge

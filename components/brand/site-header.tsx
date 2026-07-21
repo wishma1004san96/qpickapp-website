@@ -348,6 +348,7 @@ export function SiteHeader() {
             <BrandLogo
               size={72}
               priority
+              loading="eager"
               className="!h-14 !w-14 sm:!h-[4.25rem] sm:!w-[4.25rem] lg:!h-[4.5rem] lg:!w-[4.5rem]"
             />
           </Link>

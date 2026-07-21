@@ -28,6 +28,7 @@ export function QMark({
       width={size}
       height={size}
       priority={priority}
+      loading={priority ? "eager" : undefined}
       sizes={`${Math.ceil(size * 2)}px`}
       className={`shrink-0 object-contain ${className}`}
       style={{ width: size, height: size }}

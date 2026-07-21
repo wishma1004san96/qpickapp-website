@@ -1,0 +1,50 @@
+/* Download App — premium mobile store badges */
+@media (max-width: 639.98px) {
+  .download-apps-store-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+    width: 100%;
+    margin-top: 2rem;
+    padding-inline: 1.25rem; /* comfortable side margins */
+  }
+
+  .download-apps-store-badges > a,
+  .download-apps-store-badges > .download-apps-store-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(15.625rem, 100%); /* ~250px */
+    max-width: 15.625rem;
+    height: 2.625rem; /* 42px */
+    min-height: 2.625rem;
+    flex-shrink: 0;
+  }
+
+  .download-apps-store-badges > a {
+    border-radius: 0.375rem;
+    transition: opacity 180ms ease, transform 180ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .download-apps-store-badges > a:active {
+    transform: scale(0.985);
+    opacity: 0.92;
+  }
+
+  .download-apps-store-badges .experience-store-badge {
+    display: block;
+    height: 2.625rem;
+    width: auto;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .download-apps-store-badges .experience-store-badge svg {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+}
