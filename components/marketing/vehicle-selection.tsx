@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useReducedMotion } from "framer-motion";
 import { useTranslations } from "@/components/i18n/locale-provider";
@@ -38,7 +44,7 @@ export type VehicleSelectionProps = {
 };
 
 /**
- * Ride booking vehicle picker — horizontal carousel of VehicleCarouselCard.
+ * Premium vehicle picker — horizontal carousel (ride) or responsive grid (tours/transfers).
  */
 export function VehicleSelection({
   vehicleIds = TAXI_VEHICLE_IDS,
@@ -108,6 +114,7 @@ export function VehicleSelection({
   const onPointerDown = (e: ReactPointerEvent) => {
     const el = scrollerRef.current;
     if (!el) return;
+    if ((e.target as HTMLElement).closest("[data-vehicle-id]")) return;
     dragRef.current = {
       active: true,
       startX: e.clientX,
@@ -131,11 +138,13 @@ export function VehicleSelection({
     const drag = dragRef.current;
     if (!el || !drag.active) return;
     drag.active = false;
+    drag.moved = false;
     try {
       el.releasePointerCapture(e.pointerId);
     } catch {
       /* ignore */
     }
+    updateArrows();
   };
 
   const handleCardSelect = (id: string) => {
@@ -143,7 +152,7 @@ export function VehicleSelection({
     onSelect(id);
   };
 
-  const cards = vehicleIds.map((id, index) => (
+  const renderCard = (id: string, index: number, fluid: boolean) => (
     <VehicleCarouselCard
       key={id}
       id={id}
@@ -157,22 +166,32 @@ export function VehicleSelection({
       showEta={showEta}
       showDayNightBadge={showDayNightBadge}
       at={at}
-      fluid={layout === "grid"}
+      fluid={fluid}
     />
-  ));
+  );
 
   const grid = (
     <div
-      className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+      className="grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
       role="radiogroup"
       aria-label={t("taxiFare.vehicleSelection.heading")}
     >
-      {cards}
+      {vehicleIds.map((id, index) => renderCard(id, index, true))}
     </div>
   );
 
-  const carousel = (
-    <div className="relative">
+  const mobileStack = (
+    <div
+      className="grid w-full min-w-0 grid-cols-1 gap-4 sm:hidden"
+      role="radiogroup"
+      aria-label={t("taxiFare.vehicleSelection.heading")}
+    >
+      {vehicleIds.map((id, index) => renderCard(id, index, true))}
+    </div>
+  );
+
+  const desktopCarousel = (
+    <div className="relative hidden min-w-0 sm:block">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-[2] flex items-center pl-0.5">
         <button
           type="button"
@@ -202,10 +221,17 @@ export function VehicleSelection({
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
-        className="qpick-vehicle-carousel flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 py-4 md:px-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="qpick-vehicle-carousel flex w-full min-w-0 cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-2 py-4 md:px-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {cards}
+        {vehicleIds.map((id, index) => renderCard(id, index, false))}
       </div>
+    </div>
+  );
+
+  const carousel = (
+    <div className="min-w-0 w-full overflow-hidden">
+      {mobileStack}
+      {desktopCarousel}
     </div>
   );
 
@@ -214,7 +240,7 @@ export function VehicleSelection({
   if (embedded) return inner;
 
   return (
-    <section className="space-y-3">
+    <section className="min-w-0 space-y-3">
       <div>
         <p className="font-mono text-[0.6875rem] tracking-[0.16em] text-brand uppercase">
           {t("taxiFare.vehicleSelection.eyebrow")}

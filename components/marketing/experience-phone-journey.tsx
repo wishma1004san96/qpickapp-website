@@ -18,7 +18,10 @@ import {
   type ReactNode,
 } from "react";
 import { BrandLogo } from "@/components/brand/wordmark";
-import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import {
+  DEFAULT_FLEET_PHOTO_SRC,
+  vehiclePhotoSrc,
+} from "@/components/icons/vehicles";
 import {
   useMessages,
   useTranslations,
@@ -768,33 +771,16 @@ function VehiclesScreen({ reduceMotion }: { reduceMotion: boolean }) {
               ]
                 .filter(Boolean)
                 .join(" ")}
-              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 }}
-              animate={{
-                y: 0,
-                opacity: 1,
-                scale: selected ? 1.02 : 1,
-              }}
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{
                 duration: 0.4,
                 ease: easeOut,
                 delay: reduceMotion ? 0 : 0.05 * i,
               }}
             >
-              <div className="experience-app-vcard-media flex justify-center" aria-hidden="true">
-                <div className="scale-[0.55] origin-top">
-                  <VehicleCarouselCard
-                    id={v.id}
-                    index={i}
-                    selected={selected}
-                    displayOnly
-                    name={v.model}
-                    priceLabel={v.price}
-                    subtitle={v.category}
-                    passengers={v.seats}
-                    showEta={false}
-                    showDayNightBadge={false}
-                  />
-                </div>
+              <div className="experience-app-vcard-media" aria-hidden="true">
+                <VehiclePhoto kind={v.id} />
               </div>
               <div className="experience-app-vcard-body">
                 <div className="experience-app-vcard-top">
@@ -835,16 +821,8 @@ function BookingConfirmScreen({ reduceMotion }: { reduceMotion: boolean }) {
         <h3 className="experience-app-h">{t("phoneJourney.booking.title")}</h3>
 
         <div className="experience-app-booking-hero">
-          <div className="experience-app-vcard-media flex justify-center" aria-hidden="true">
-            <div className="scale-[0.5] origin-top">
-              <VehicleCarouselCard
-                id="sedan"
-                selected
-                displayOnly
-                showEta={false}
-                showDayNightBadge={false}
-              />
-            </div>
+          <div className="experience-app-vcard-media" aria-hidden="true">
+            <VehiclePhoto kind="sedan" />
           </div>
           <div>
             <p className="experience-app-vcard-cat">{t("phoneJourney.vehicles.categories.sedan")}</p>
@@ -1435,6 +1413,22 @@ function SubmittedScreen() {
       <p className="experience-app-muted">{t("phoneJourney.submitted.subtitle")}</p>
       <div className="experience-app-btn experience-app-btn--ghost">{t("phoneJourney.submitted.backHome")}</div>
     </div>
+  );
+}
+
+function VehiclePhoto({ kind }: { kind: string }) {
+  const src = vehiclePhotoSrc(kind) ?? DEFAULT_FLEET_PHOTO_SRC;
+
+  return (
+    <Image
+      src={src}
+      alt=""
+      width={56}
+      height={34}
+      unoptimized
+      className="experience-app-vphoto"
+      aria-hidden
+    />
   );
 }
 

@@ -1,9 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { BrandLogo } from "@/components/brand/wordmark";
-import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import {
+  DEFAULT_FLEET_PHOTO_SRC,
+  vehiclePhotoSrc,
+} from "@/components/icons/vehicles";
 import {
   QPICK_VEHICLE_ICON_LABELS,
   type QPickVehicleIconId,
@@ -186,26 +190,39 @@ export function StoryVehiclesScreen({ reduceMotion }: { reduceMotion: boolean })
         <h3 className="qstory-title">{t("experience.story.vehicles.title")}</h3>
       </header>
 
-      <div className="qstory-fleet-scroll flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {STORY_FLEET.map((v, i) => {
-          const name = QPICK_VEHICLE_ICON_LABELS[v.iconId];
-          return (
-            <div key={v.iconId} className="shrink-0 scale-[0.72] origin-top-left">
-              <VehicleCarouselCard
-                id={v.iconId}
-                index={i}
-                selected={Boolean(v.selected)}
-                displayOnly
-                name={name}
-                priceLabel={v.price}
-                subtitle={v.meta}
-                showEta={false}
-                showDayNightBadge={false}
+      <ul className="qstory-fleet">
+        {STORY_FLEET.map((v, i) => (
+          <motion.li
+            key={v.iconId}
+            className={`qstory-vcard${v.selected ? " is-selected" : ""}`}
+            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: reduceMotion ? 0 : 0.05 * i, ease: EASE }}
+          >
+            <div className="qstory-vphoto-wrap" aria-hidden="true">
+              <Image
+                src={vehiclePhotoSrc(v.iconId) ?? DEFAULT_FLEET_PHOTO_SRC}
+                alt=""
+                width={40}
+                height={28}
+                unoptimized
+                className="qstory-vphoto"
               />
             </div>
-          );
-        })}
-      </div>
+            <div className="qstory-vbody">
+              <div className="qstory-vrow">
+                <div className="qstory-vcopy">
+                  <p className="qstory-vname">
+                    {QPICK_VEHICLE_ICON_LABELS[v.iconId]}
+                  </p>
+                  <p className="qstory-vmeta">{v.meta}</p>
+                </div>
+                <p className="qstory-vprice">{v.price}</p>
+              </div>
+            </div>
+          </motion.li>
+        ))}
+      </ul>
 
       <div className="qstory-budget">
         <div>

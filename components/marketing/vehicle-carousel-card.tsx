@@ -62,9 +62,7 @@ export type VehicleCarouselCardProps = {
   selected?: boolean;
   reduceMotion?: boolean;
   onSelect?: (id: string) => void;
-  /** Numeric fare — formatted as LKR (Ride booking) */
   estimatedFareLkr?: number | null;
-  /** Text price line — tours, transfers, quotes */
   priceLabel?: string | null;
   etaMinutes?: number;
   showEta?: boolean;
@@ -74,16 +72,13 @@ export type VehicleCarouselCardProps = {
   passengers?: number;
   luggage?: number;
   subtitle?: string;
-  /** Non-interactive preview (summary, sticky card, journey) */
   displayOnly?: boolean;
   disabled?: boolean;
+  /** Full-width card for responsive grid layouts */
   fluid?: boolean;
   className?: string;
 };
 
-/**
- * Canonical Q Pick vehicle card — same layout as the Ride booking flow.
- */
 export function VehicleCarouselCard({
   id,
   index = 0,
@@ -123,12 +118,20 @@ export function VehicleCarouselCard({
   const hasPriceLabel = Boolean(priceLabel?.trim());
   const imageId = resolveVehicleIconId(id) ?? id;
 
-  const widthClass = fluid
-    ? "h-[248px] w-full max-w-none sm:h-[256px]"
+  const sizeClass = fluid
+    ? "h-[248px] w-full min-w-0 max-w-full sm:h-[256px]"
     : "h-[248px] w-[220px] shrink-0 snap-center sm:h-[256px] sm:w-[236px]";
 
+  const frameClass = `group relative flex flex-col items-center justify-start rounded-[24px] px-3.5 py-3.5 text-center outline-none transition-[box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-brand/45 ${sizeClass} ${
+    fluid ? "overflow-hidden" : "overflow-visible"
+  } ${
+    selected
+      ? "shadow-[0_18px_44px_rgb(0_98_250_/_0.26)]"
+      : "shadow-[0_12px_32px_rgb(10_22_32_/_0.08)] hover:shadow-[0_16px_40px_rgb(0_98_250_/_0.14)]"
+  } ${disabled ? "pointer-events-none opacity-45 saturate-50" : ""} ${className}`;
+
   const cardBody = (
-  <>
+    <>
       <span
         className={`pointer-events-none absolute inset-0 rounded-[24px] p-[1.5px] ${
           selected
@@ -140,14 +143,14 @@ export function VehicleCarouselCard({
         <span className="block h-full w-full rounded-[22.5px] bg-[linear-gradient(165deg,rgb(255_255_255_/_0.94)_0%,rgb(238_244_251_/_0.86)_100%)] backdrop-blur-xl" />
       </span>
 
-      {selected ? (
+      {selected && !fluid ? (
         <span
           className="pointer-events-none absolute -top-6 left-1/2 h-24 w-32 -translate-x-1/2 rounded-full bg-brand/28 blur-3xl"
           aria-hidden
         />
       ) : null}
 
-      <div className="relative z-[1] flex w-full flex-col items-center">
+      <div className="relative z-[1] flex w-full min-w-0 flex-col items-center">
         {showDayNightBadge ? (
           <span
             className={`absolute top-0 left-0 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.625rem] font-semibold tracking-wide ${
@@ -233,14 +236,8 @@ export function VehicleCarouselCard({
           </p>
         ) : null}
       </div>
-  </>
+    </>
   );
-
-  const frameClass = `group relative flex flex-col items-center justify-start overflow-visible rounded-[24px] px-3.5 py-3.5 text-center outline-none transition-[box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-brand/45 ${widthClass} ${
-    selected
-      ? "shadow-[0_18px_44px_rgb(0_98_250_/_0.26)]"
-      : "shadow-[0_12px_32px_rgb(10_22_32_/_0.08)] hover:shadow-[0_16px_40px_rgb(0_98_250_/_0.14)]"
-  } ${disabled ? "pointer-events-none opacity-45 saturate-50" : ""} ${className}`;
 
   if (displayOnly) {
     return (
@@ -250,22 +247,42 @@ export function VehicleCarouselCard({
     );
   }
 
+  if (fluid) {
+    return (
+      <button
+        type="button"
+        role="radio"
+        aria-checked={selected}
+        data-vehicle-id={id}
+        onPointerDown={(e) => e.stopPropagation()}
+        onClick={() => onSelect?.(id)}
+        disabled={disabled}
+        className={frameClass}
+      >
+        {cardBody}
+      </button>
+    );
+  }
+
   return (
     <motion.button
       type="button"
       role="radio"
       aria-checked={selected}
       data-vehicle-id={id}
-      initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.35 }}
+      onPointerDown={(e) => e.stopPropagation()}
+      initial={reduceMotion || fluid ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+      whileInView={
+        reduceMotion || fluid ? undefined : { opacity: 1, y: 0 }
+      }
+      viewport={fluid ? undefined : { once: true, amount: 0.35 }}
       transition={{
         duration: 0.35,
-        delay: reduceMotion ? 0 : Math.min(index * 0.035, 0.25),
+        delay: reduceMotion || fluid ? 0 : Math.min(index * 0.035, 0.25),
         ease: EASE,
       }}
       whileHover={
-        reduceMotion
+        reduceMotion || fluid
           ? undefined
           : {
               y: -4,
@@ -275,8 +292,8 @@ export function VehicleCarouselCard({
       }
       whileTap={reduceMotion ? undefined : { scale: 0.98 }}
       animate={{
-        scale: selected ? 1.025 : 1,
-        y: selected && !reduceMotion ? -2 : 0,
+        scale: selected && !fluid ? 1.025 : 1,
+        y: selected && !reduceMotion && !fluid ? -2 : 0,
       }}
       onClick={() => onSelect?.(id)}
       disabled={disabled}
