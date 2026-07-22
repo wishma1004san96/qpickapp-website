@@ -1,16 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import {
   TOUR_ACCOMMODATIONS,
   TOUR_PREFERENCES,
 } from "@/lib/tours/constants";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import {
+  FLEET_VEHICLE_CAPACITY,
+} from "@/components/icons/vehicles/fleet-catalog";
+import { useTranslations } from "@/components/i18n/locale-provider";
 import { formatTourPriceLkr } from "@/lib/tours/pricing-display";
 import {
   addDaysISO,
   estimateTourStartingPrice,
 } from "@/lib/tours/mappers";
-import { getPackageBySlug, getTourPricingConfig, getVehicleById } from "@/lib/tours/repository";
+import { getPackageBySlug, getTourPricingConfig } from "@/lib/tours/repository";
 import type { TourPlannerDraft } from "../types";
 
 type StepReviewProps = {
@@ -18,12 +22,20 @@ type StepReviewProps = {
 };
 
 export function StepReview({ draft }: StepReviewProps) {
-  const vehicle = draft.vehicleId ? getVehicleById(draft.vehicleId) : null;
+  const t = useTranslations();
+  const fleetId = draft.vehicleId;
+  const capacity = fleetId ? FLEET_VEHICLE_CAPACITY[fleetId] : null;
+  const vehicleName = fleetId
+    ? t(`pages.ride.fleet.vehicles.${fleetId}.name`)
+    : null;
+  const vehicleBlurb = fleetId
+    ? t(`pages.ride.fleet.vehicles.${fleetId}.blurb`)
+    : null;
   const pkg = draft.packageSlug ? getPackageBySlug(draft.packageSlug) : null;
   const endDate = addDaysISO(draft.startDate, draft.numberOfDays);
   const estimate = estimateTourStartingPrice(
     pkg,
-    vehicle?.dayRateHintLkr ?? null,
+    null,
     draft.numberOfDays,
   );
   const pricing = getTourPricingConfig();
@@ -50,14 +62,19 @@ export function StepReview({ draft }: StepReviewProps) {
       </header>
 
       <div className="overflow-hidden rounded-[1.35rem] border border-ink/8 bg-white shadow-[0_12px_36px_rgb(10_22_32_/_0.06)]">
-        {vehicle ? (
-          <div className="relative h-36 bg-[#eef3f8]">
-            <Image
-              src={vehicle.imageSrc}
-              alt={vehicle.imageAlt}
-              fill
-              className="object-contain p-4"
-              sizes="640px"
+        {fleetId ? (
+          <div className="p-4">
+            <VehicleCarouselCard
+              id={fleetId}
+              selected
+              displayOnly
+              name={vehicleName ?? undefined}
+              passengers={capacity?.passengers}
+              luggage={capacity?.luggage}
+              subtitle={vehicleBlurb ?? undefined}
+              showEta={false}
+              showDayNightBadge={false}
+              fluid
             />
           </div>
         ) : null}
@@ -82,8 +99,8 @@ export function StepReview({ draft }: StepReviewProps) {
           <Row
             label="Vehicle"
             value={
-              vehicle
-                ? `${vehicle.name} · ${vehicle.passengers} passengers · ${vehicle.luggage} bags${vehicle.ac ? " · A/C" : ""}`
+              fleetId && capacity && vehicleName
+                ? `${vehicleName} · ${capacity.passengers} passengers · ${capacity.luggage} bags · A/C`
                 : "—"
             }
           />

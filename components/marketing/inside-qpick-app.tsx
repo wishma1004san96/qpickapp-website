@@ -10,6 +10,7 @@ import {
   StoryVehiclesScreen,
 } from "@/components/marketing/experience-story-screens";
 import { Container } from "@/components/ui/container";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 import "./inside-qpick-app.css";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -19,27 +20,27 @@ const SLIDE_MS = 5500;
 const BG_SLIDES = [
   {
     id: "sigiriya",
-    src: "/images/app/backgrounds/sigiriya-bg.webp",
+    src: getDestinationImageSrc("sigiriya"),
     alt: "Sigiriya Rock Fortress, Sri Lanka",
   },
   {
     id: "ella",
-    src: "/images/app/backgrounds/ella-bg.webp",
+    src: getDestinationImageSrc("ella"),
     alt: "Ella hills and Nine Arches Bridge, Sri Lanka",
   },
   {
     id: "galle",
-    src: "/images/app/backgrounds/galle-bg.webp",
+    src: getDestinationImageSrc("galle"),
     alt: "Galle Fort, Sri Lanka",
   },
   {
     id: "kandy",
-    src: "/images/app/backgrounds/kandy-bg.webp",
+    src: getDestinationImageSrc("kandy"),
     alt: "Kandy, Sri Lanka",
   },
   {
     id: "mirissa",
-    src: "/images/app/backgrounds/mirissa-bg.webp",
+    src: getDestinationImageSrc("mirissa"),
     alt: "Mirissa south coast, Sri Lanka",
   },
 ] as const;

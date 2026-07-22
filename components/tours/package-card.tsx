@@ -1,57 +1,104 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Car, Clock, MapPin, Star } from "lucide-react";
 import type { TourPackage } from "@/lib/tours/types";
 import { formatTourPriceLkr } from "@/lib/tours/pricing-display";
 import {
   getBookHref,
+  getDestinationsForPackage,
   getGalleryImage,
   getPackageHref,
   getTourPricingConfig,
+  getVehicleById,
 } from "@/lib/tours/repository";
 
 type PackageCardProps = {
   package: TourPackage;
   className?: string;
+  variant?: "default" | "related";
 };
 
-export function PackageCard({ package: pkg, className = "" }: PackageCardProps) {
+function routeSummary(pkg: TourPackage) {
+  const destinations = getDestinationsForPackage(pkg.slug);
+  if (destinations.length === 0) return null;
+  const names = destinations.map((d) => d.name);
+  if (names.length <= 3) return names.join(" → ");
+  return `${names.slice(0, 2).join(" → ")} → … → ${names[names.length - 1]}`;
+}
+
+export function PackageCard({
+  package: pkg,
+  className = "",
+  variant = "default",
+}: PackageCardProps) {
   const hero = getGalleryImage(pkg.heroGalleryId);
   const detailHref = getPackageHref(pkg.slug);
   const bookHref = getBookHref(pkg.slug);
   const pricing = getTourPricingConfig();
+  const vehicle = getVehicleById(pkg.vehicleId);
+  const route = variant === "related" ? routeSummary(pkg) : null;
+  const isRelated = variant === "related";
 
   return (
     <article
-      className={`group flex flex-col overflow-hidden rounded-[1.35rem] border border-ink/8 bg-white/80 shadow-[0_12px_36px_rgb(10_22_32_/_0.06)] backdrop-blur-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_48px_rgb(10_22_32_/_0.12)] ${className}`}
+      className={`group tour-detail-card tour-detail-card--lift flex flex-col overflow-hidden ${className}`}
     >
-      <Link href={detailHref} className="relative block aspect-[16/10] overflow-hidden">
+      <Link
+        href={detailHref}
+        className="tour-detail-img-zoom relative block aspect-[16/10] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2"
+      >
         {hero ? (
-          <Image
-            src={hero.src}
-            alt={hero.alt}
-            fill
-            loading="lazy"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <>
+            <Image
+              src={hero.src}
+              alt={hero.alt}
+              fill
+              loading="lazy"
+              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-map-void/55 via-map-void/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-95" />
+          </>
         ) : (
           <div className="absolute inset-0 bg-mist" aria-hidden />
         )}
-        <span className="absolute top-3 left-3 rounded-full bg-map-void/80 px-3 py-1 text-[0.6875rem] font-semibold tracking-wide text-foam backdrop-blur-md">
-          {pkg.durationDays} days
-        </span>
+        <div className="absolute top-3 left-3 flex flex-wrap gap-2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-map-void/75 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-foam backdrop-blur-md">
+            <Clock className="h-3 w-3" aria-hidden />
+            {pkg.durationDays} days
+          </span>
+          {isRelated ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-map-void/75 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-foam backdrop-blur-md">
+              <Star className="h-3 w-3 fill-amber-300 text-amber-300" aria-hidden />
+              4.9
+            </span>
+          ) : null}
+        </div>
+        {isRelated && vehicle ? (
+          <span className="absolute right-3 bottom-3 inline-flex items-center gap-1 rounded-full border border-foam/20 bg-foam/15 px-2.5 py-1 text-[0.6875rem] font-medium text-foam backdrop-blur-md">
+            <Car className="h-3 w-3" aria-hidden />
+            {vehicle.name}
+          </span>
+        ) : null}
       </Link>
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-lg font-semibold tracking-tight text-ink">
-          <Link href={detailHref} className="hover:text-brand">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <h3 className="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">
+          <Link href={detailHref} className="hover:text-brand focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40">
             {pkg.title}
           </Link>
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink/55">
-          {pkg.highlights[0]}
-        </p>
+        {isRelated && route ? (
+          <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-ink/50">
+            <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand/70" aria-hidden />
+            <span>{route}</span>
+          </p>
+        ) : (
+          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink/55">
+            {pkg.highlights[0]}
+          </p>
+        )}
         <ul className="mt-3 flex flex-wrap gap-1.5">
-          {pkg.highlights.slice(0, 3).map((h) => (
+          {pkg.highlights.slice(0, isRelated ? 2 : 3).map((h) => (
             <li
               key={h}
               className="rounded-full bg-foam px-2.5 py-1 text-[0.6875rem] text-ink/60"
@@ -68,16 +115,16 @@ export function PackageCard({ package: pkg, className = "" }: PackageCardProps) 
             {pricing.quoteHint}
           </p>
         ) : null}
-        <div className="mt-auto flex gap-2 pt-4">
+        <div className="mt-auto flex flex-wrap gap-2.5 pt-5 sm:gap-3">
           <Link
             href={detailHref}
-            className="inline-flex flex-1 items-center justify-center rounded-2xl border border-ink/12 px-3 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand/30 hover:bg-brand/[0.04]"
+            className="tour-detail-btn tour-detail-btn--ghost min-h-11 flex-1 px-3 text-sm"
           >
             View Details
           </Link>
           <Link
             href={bookHref}
-            className="inline-flex flex-1 items-center justify-center rounded-2xl bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-3 py-2.5 text-sm font-semibold text-paper shadow-[0_10px_24px_rgb(0_98_250_/_0.28)] transition-[filter] hover:brightness-110"
+            className="tour-detail-btn tour-detail-btn--primary min-h-11 flex-1 px-3 text-sm"
           >
             Plan this tour
           </Link>

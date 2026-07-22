@@ -1,3 +1,5 @@
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
+
 export type DestinationSlug = "colombo" | "galle" | "ella" | "sigiriya";
 
 /** Slug + image only — copy lives in messages.destinations.{slug}. */
@@ -9,23 +11,19 @@ export type Destination = {
 export const destinations: Destination[] = [
   {
     slug: "colombo",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85",
+    image: getDestinationImageSrc("colombo"),
   },
   {
     slug: "galle",
-    image:
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1800&q=85",
+    image: getDestinationImageSrc("galle"),
   },
   {
     slug: "ella",
-    image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1800&q=85",
+    image: getDestinationImageSrc("ella"),
   },
   {
     slug: "sigiriya",
-    image:
-      "https://images.unsplash.com/photo-1711797750174-c3750dd9d7c9?auto=format&fit=crop&w=1800&q=85",
+    image: getDestinationImageSrc("sigiriya"),
   },
 ];
 

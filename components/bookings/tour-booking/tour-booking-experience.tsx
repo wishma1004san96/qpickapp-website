@@ -11,10 +11,13 @@ import {
   prefillFromPackageSlug,
   todayISO,
 } from "@/lib/tours/mappers";
+import { fleetVehiclePhoto } from "@/components/icons/vehicles/fleet-catalog";
+import {
+  QPICK_VEHICLE_ICON_IDS,
+  type QPickVehicleIconId,
+} from "@/components/icons/vehicles/types";
 import {
   getAllDestinations,
-  getAllVehicles,
-  getVehicleById,
 } from "@/lib/tours/repository";
 import { TourTripSummary } from "./tour-trip-summary";
 import { StepAccommodation } from "./steps/step-accommodation";
@@ -53,7 +56,7 @@ function initialDraft(): TourPlannerDraft {
     destinations: [],
     startDate: todayISO(),
     numberOfDays: 7,
-    vehicleId: "suv",
+    vehicleId: "sedan",
     preferences: [],
     accommodation: null,
     specialNotes: "",
@@ -69,22 +72,29 @@ function TourBookingExperienceInner() {
   const searchParams = useSearchParams();
   const reduceMotion = useReducedMotion() ?? false;
   const destinations = useMemo(() => getAllDestinations(), []);
-  const vehicles = useMemo(() => getAllVehicles(), []);
 
   const packageSlugParam = searchParams.get("package");
+  const vehicleParam = searchParams.get("vehicle");
 
   const [step, setStep] = useState<TourPlannerStep>("destinations");
   const [draft, setDraft] = useState<TourPlannerDraft>(() => {
     const base = initialDraft();
     const prefill = prefillFromPackageSlug(packageSlugParam);
-    if (!prefill) return base;
+    const fleetFromUrl =
+      vehicleParam &&
+      (QPICK_VEHICLE_ICON_IDS as readonly string[]).includes(vehicleParam)
+        ? (vehicleParam as QPickVehicleIconId)
+        : null;
+    if (!prefill) {
+      return fleetFromUrl ? { ...base, vehicleId: fleetFromUrl } : base;
+    }
     return {
       ...base,
       packageSlug: prefill.packageSlug,
       packageTitle: prefill.packageTitle,
       destinations: prefill.destinations,
       numberOfDays: prefill.numberOfDays,
-      vehicleId: prefill.vehicleId,
+      vehicleId: fleetFromUrl ?? prefill.vehicleId,
     };
   });
   const [error, setError] = useState<string | null>(null);
@@ -136,8 +146,8 @@ function TourBookingExperienceInner() {
       setError("Select a vehicle.");
       return;
     }
-    const vehicle = getVehicleById(draft.vehicleId);
-    if (!vehicle) {
+    const photo = fleetVehiclePhoto(draft.vehicleId);
+    if (!photo) {
       setError("Invalid vehicle selection.");
       return;
     }
@@ -163,7 +173,7 @@ function TourBookingExperienceInner() {
           startDate: draft.startDate,
           endDate: endDate || null,
           numberOfDays: draft.numberOfDays,
-          vehicleType: vehicle.apiValue,
+          vehicleType: draft.vehicleId,
           passengers: draft.passengers,
           specialRequest,
         }),
@@ -266,7 +276,6 @@ function TourBookingExperienceInner() {
               ) : null}
               {step === "vehicle" ? (
                 <StepVehicleTour
-                  vehicles={vehicles}
                   selected={draft.vehicleId}
                   passengers={draft.passengers}
                   onSelect={(vehicleId) =>

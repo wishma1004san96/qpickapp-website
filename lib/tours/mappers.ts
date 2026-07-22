@@ -1,17 +1,18 @@
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
 import type {
   TourAccommodationId,
   TourPackage,
   TourPreferenceId,
-  TourVehicleId,
 } from "./types";
-import { getDestinationBySlug, getPackageBySlug, getVehicleById } from "./repository";
+import { tourVehicleToFleetIcon } from "./vehicles";
+import { getDestinationBySlug, getPackageBySlug } from "./repository";
 
 export type TourPlannerPrefill = {
   packageSlug: string | null;
   packageTitle: string | null;
   destinations: string[];
   numberOfDays: number;
-  vehicleId: TourVehicleId;
+  vehicleId: QPickVehicleIconId;
   vehicleApiValue: string;
 };
 
@@ -19,7 +20,7 @@ export function prefillFromPackageSlug(slug: string | null | undefined): TourPla
   if (!slug?.trim()) return null;
   const pkg = getPackageBySlug(slug.trim());
   if (!pkg) return null;
-  const vehicle = getVehicleById(pkg.vehicleId);
+  const fleetIconId = tourVehicleToFleetIcon(pkg.vehicleId);
   const destinations = pkg.destinationSlugs
     .map((s) => getDestinationBySlug(s)?.name ?? s)
     .filter(Boolean);
@@ -29,8 +30,8 @@ export function prefillFromPackageSlug(slug: string | null | undefined): TourPla
     packageTitle: pkg.title,
     destinations,
     numberOfDays: pkg.durationDays,
-    vehicleId: pkg.vehicleId,
-    vehicleApiValue: vehicle?.apiValue ?? pkg.vehicleId,
+    vehicleId: fleetIconId,
+    vehicleApiValue: fleetIconId,
   };
 }
 

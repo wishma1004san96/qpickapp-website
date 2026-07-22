@@ -1649,9 +1649,37 @@
 }
 
 /* Sri Lanka tour explorer — premium chauffeur route map */
-.tour-sri-lanka-map .leaflet-container {
+.tour-sri-lanka-map {
+  position: relative;
+}
+
+.tour-sri-lanka-map--luxury .leaflet-container {
   background: #e8eef4;
   font: inherit;
+  border-radius: 1.35rem;
+}
+
+.tour-route-map-shell {
+  background: linear-gradient(
+    145deg,
+    rgb(255 255 255 / 0.92),
+    rgb(244 247 250 / 0.88)
+  );
+}
+
+.tour-route-map-glass {
+  background:
+    radial-gradient(circle at 20% 10%, rgb(0 98 250 / 0.06), transparent 42%),
+    radial-gradient(circle at 80% 90%, rgb(201 162 39 / 0.05), transparent 38%),
+    rgb(238 242 246 / 0.65);
+}
+
+.tour-route-map-summary {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.82),
+    rgb(255 255 255 / 0.55)
+  );
 }
 
 .tour-sri-lanka-map .leaflet-control-zoom {
@@ -1751,6 +1779,95 @@
     animation: none;
     stroke-dasharray: none;
   }
+}
+
+.tour-map-label-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.tour-map-label {
+  display: inline-block;
+  max-width: 9rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: rgb(10 22 32 / 0.9);
+  color: #f4f7fa;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 8px 20px rgb(10 22 32 / 0.22);
+  pointer-events: none;
+}
+
+.tour-map-direction-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.tour-map-hover-card {
+  position: absolute;
+  z-index: 1200;
+  width: min(16rem, 72vw);
+  transform: translate(-50%, -100%);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.96);
+  border: 1px solid rgb(255 255 255 / 0.7);
+  box-shadow: 0 20px 50px rgb(10 22 32 / 0.2);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+.tour-map-hover-card__image {
+  height: 5.5rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.tour-map-hover-card__body {
+  padding: 0.75rem 0.875rem 0.875rem;
+}
+
+.tour-map-hover-card__eyebrow {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0062fa;
+}
+
+.tour-map-hover-card__title {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0a1620;
+}
+
+.tour-map-hover-card__meta {
+  margin-top: 0.375rem;
+  font-size: 0.6875rem;
+  color: #4a5a66;
+}
+
+.tour-map-hover-card__meta span {
+  font-weight: 600;
+  color: #0a1620;
+}
+
+.tour-map-hover-card__desc {
+  margin-top: 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  color: #5b6b78;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .tour-map-tooltip {

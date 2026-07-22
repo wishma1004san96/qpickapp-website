@@ -1,50 +1,55 @@
+import {
+  fleetVehiclePhoto,
+  FLEET_VEHICLE_CAPACITY,
+} from "@/components/icons/vehicles/fleet-catalog";
 import type { TransferVehicle, VehicleId } from "./types";
 
+function transferVehicle(
+  id: VehicleId,
+  tagline: string,
+  fareFactor: number,
+  luggageSize: TransferVehicle["luggageSize"],
+): TransferVehicle {
+  const photo = fleetVehiclePhoto(id)!;
+  const capacity = FLEET_VEHICLE_CAPACITY[photo.iconId];
+  return {
+    id,
+    name: photo.name,
+    tagline,
+    image: photo.src,
+    passengers: capacity.passengers,
+    luggage: capacity.luggage,
+    luggageSize,
+    ac: true,
+    fareFactor,
+  };
+}
+
 export const TRANSFER_VEHICLES: TransferVehicle[] = [
-  {
-    id: "mini",
-    name: "Q Mini",
-    tagline: "Smart & efficient for solo or couple arrivals",
-    image: "/images/fleet/vehicles/mini.webp",
-    passengers: 3,
-    luggage: 2,
-    luggageSize: "cabin",
-    ac: true,
-    fareFactor: 1,
-  },
-  {
-    id: "sedan",
-    name: "Executive Sedan",
-    tagline: "The classic chauffeur arrival — composed and quiet",
-    image: "/images/fleet/vehicles/sedan.webp",
-    passengers: 3,
-    luggage: 3,
-    luggageSize: "medium",
-    ac: true,
-    fareFactor: 1,
-  },
-  {
-    id: "suv",
-    name: "Premium SUV",
-    tagline: "Space and presence for family or highland roads",
-    image: "/images/fleet/vehicles/suv.webp",
-    passengers: 5,
-    luggage: 4,
-    luggageSize: "large",
-    ac: true,
-    fareFactor: 1.15,
-  },
-  {
-    id: "van",
-    name: "Luxury Van",
-    tagline: "Group transfers with room for every bag",
-    image: "/images/fleet/vehicles/van.webp",
-    passengers: 7,
-    luggage: 6,
-    luggageSize: "large",
-    ac: true,
-    fareFactor: 1.25,
-  },
+  transferVehicle(
+    "mini",
+    "Smart & efficient for solo or couple arrivals",
+    1,
+    "cabin",
+  ),
+  transferVehicle(
+    "sedan",
+    "The classic chauffeur arrival — composed and quiet",
+    1,
+    "medium",
+  ),
+  transferVehicle(
+    "suv",
+    "Space and presence for family or highland roads",
+    1.15,
+    "large",
+  ),
+  transferVehicle(
+    "van",
+    "Group transfers with room for every bag",
+    1.25,
+    "large",
+  ),
 ];
 
 export function getTransferVehicle(id: VehicleId | null): TransferVehicle | null {

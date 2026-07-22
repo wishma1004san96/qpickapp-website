@@ -33,6 +33,7 @@ import {
   formatDuration,
   type DestinationScene,
 } from "@/lib/airport-destination-scenes";
+import { VehicleSelection } from "@/components/marketing/vehicle-selection";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -383,28 +384,16 @@ export function AirportBookingForm({
         {/* Vehicle */}
         <div className="mt-4">
           <p className="text-xs font-medium text-ink/70">{labels.vehicle}</p>
-          <div className="mt-1.5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-            {(["mini", "sedan", "van", "suv"] as const).map((v) => {
-              const active = state.vehicle === v;
-              return (
-                <button
-                  key={v}
-                  type="button"
-                  onClick={() => onChange({ vehicle: v })}
-                  className={`rounded-[14px] border px-2 py-2.5 text-center text-xs font-semibold transition ${
-                    active
-                      ? "border-brand/40 bg-brand/[0.1] text-brand"
-                      : "border-ink/8 bg-white/70 text-ink-muted hover:border-brand/20"
-                  }`}
-                >
-                  <Car
-                    className={`mx-auto mb-1 h-4 w-4 ${active ? "text-brand" : ""}`}
-                    aria-hidden
-                  />
-                  {labels.vehicleOptions[v]}
-                </button>
-              );
-            })}
+          <div className="mt-2">
+            <VehicleSelection
+              vehicleIds={["mini", "sedan", "van", "suv"]}
+              selectedId={state.vehicle}
+              onSelect={(id) => onChange({ vehicle: id as VehicleType })}
+              embedded
+              layout="carousel"
+              showEta={false}
+              showDayNightBadge={false}
+            />
           </div>
         </div>
 

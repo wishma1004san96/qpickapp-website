@@ -35,28 +35,18 @@ export function IslandExplorerMap({
     return packages.filter((p) => p.destinationSlugs.includes(selectedSlug));
   }, [packages, selectedSlug]);
 
-  /** Routes follow each package's itinerary order — not destinationSlugs order */
-  const routes = useMemo(() => {
-    if (!selectedSlug || relatedPackages.length === 0) return [];
-    return relatedPackages.map((pkg, index) => {
-      const route = buildItineraryRoute(pkg, destinations, {
-        bookendAirport: true,
-      });
-      return {
-        id: pkg.slug,
-        label: pkg.title,
-        coordinates: route.coordinates,
-        selected: index === 0,
-      };
-    });
-  }, [selectedSlug, relatedPackages, destinations]);
-
   const primaryRoute = useMemo(() => {
     if (!selectedSlug || relatedPackages.length === 0) return null;
     return buildItineraryRoute(relatedPackages[0], destinations, {
       bookendAirport: true,
     });
   }, [selectedSlug, relatedPackages, destinations]);
+
+  const routeSummary = useMemo(() => {
+    if (!primaryRoute) return "Select a destination to reveal a chauffeur route";
+    const stops = primaryRoute.destinationStops.length;
+    return `${stops} stops · ${relatedPackages[0]?.durationDays ?? "—"} days · Private chauffeur`;
+  }, [primaryRoute, relatedPackages]);
 
   function select(slug: string) {
     const next = selectedSlug === slug ? null : slug;
@@ -66,32 +56,31 @@ export function IslandExplorerMap({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)] lg:gap-8">
-      <div className="overflow-hidden rounded-[1.75rem] border border-ink/8 bg-white shadow-[0_20px_50px_rgb(10_22_32_/_0.08)]">
-        <div className="border-b border-ink/6 px-5 py-4 sm:px-6">
+      <div className="tour-route-map-shell overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/75 shadow-[0_24px_60px_rgb(10_22_32_/_0.1)] backdrop-blur-xl">
+        <div className="border-b border-ink/6 bg-white/50 px-5 py-4 backdrop-blur-md sm:px-6">
           <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-brand uppercase">
             Explore the island
           </p>
           <h3 className="mt-1 font-display text-2xl font-semibold text-ink sm:text-3xl">
             Interactive Sri Lanka map
           </h3>
-          <p className="mt-1.5 max-w-xl text-sm text-ink/50">
-            Routes follow each package&apos;s day-by-day itinerary — Airport to
-            final stop and back — not a random marker connection.
+          <p className="mt-2 font-display text-sm font-medium text-ink/70">
+            {routeSummary}
           </p>
         </div>
-        <div className="relative p-2 sm:p-3">
+        <div className="tour-route-map-glass relative p-3 sm:p-4">
           <SriLankaTourMapDynamic
             destinations={destinations}
             itineraryRoute={primaryRoute}
-            routes={primaryRoute ? [] : routes}
             animateRoute={Boolean(primaryRoute)}
             hoveredSlug={hovered}
             selectedSlug={selectedSlug}
             onHover={setHovered}
             onSelect={select}
+            className="rounded-[1.35rem] shadow-[0_20px_50px_rgb(10_22_32_/_0.12)]"
           />
           {selectedSlug && relatedPackages.length > 0 ? (
-            <p className="absolute bottom-5 left-5 z-[500] max-w-[min(100%,300px)] rounded-full bg-map-void/85 px-3 py-1.5 text-[0.6875rem] font-medium text-foam backdrop-blur-md">
+            <p className="absolute bottom-6 left-6 z-[500] max-w-[min(100%,320px)] rounded-full border border-white/50 bg-map-void/80 px-3.5 py-1.5 text-[0.6875rem] font-medium text-foam shadow-lg backdrop-blur-md">
               Showing itinerary route for {relatedPackages[0].title}
               {relatedPackages.length > 1
                 ? ` · +${relatedPackages.length - 1} more packages`

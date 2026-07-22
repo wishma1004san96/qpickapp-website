@@ -1,4 +1,5 @@
 import type { TourPackage } from "../types";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 const sharedIncluded = [
   "Private air-conditioned vehicle for the listed days",
@@ -22,7 +23,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     title: "3 Days Cultural Triangle",
     durationDays: 3,
     destinationSlugs: ["negombo", "sigiriya", "dambulla", "anuradhapura", "polonnaruwa"],
-    categoryIds: ["popular", "cultural", "family", "photography"],
+    categoryIds: ["popular", "cultural-heritage", "family", "festival", "custom-private"],
     vehicleId: "suv",
     startingPriceLkr: null,
     highlights: [
@@ -45,7 +46,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "A 3-day private chauffeur tour of Sri Lanka’s Cultural Triangle — Sigiriya, Dambulla, and Anuradhapura or Polonnaruwa with Q Pick.",
       canonicalPath: "/tours/3-days-cultural-triangle",
-      ogImage: "/images/destinations/sigiriya.webp",
+      ogImage: getDestinationImageSrc("sigiriya"),
       ogTitle: "3 Days Cultural Triangle | Q Pick Private Tours",
       twitterTitle: "3 Days Cultural Triangle Private Tour",
       twitterDescription:
@@ -88,7 +89,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     title: "5 Days Hill Country Escape",
     durationDays: 5,
     destinationSlugs: ["kandy", "nuwara-eliya", "ella"],
-    categoryIds: ["popular", "hill-country", "nature", "honeymoon", "photography", "family"],
+    categoryIds: ["popular", "hill-country-tea", "train-journeys", "honeymoon", "family", "luxury-escapes", "custom-private"],
     vehicleId: "suv",
     startingPriceLkr: null,
     highlights: [
@@ -111,7 +112,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "Private 5-day hill country tour through Kandy, Nuwara Eliya tea estates and Ella’s Nine Arches Bridge with Q Pick.",
       canonicalPath: "/tours/5-days-hill-country-escape",
-      ogImage: "/images/destinations/ella.webp",
+      ogImage: getDestinationImageSrc("ella"),
       ogTitle: "5 Days Hill Country Escape | Q Pick",
       twitterTitle: "Hill Country Escape Private Tour",
       twitterDescription: "Kandy, tea country and Ella with a private chauffeur.",
@@ -167,7 +168,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     title: "7 Days Best of Sri Lanka",
     durationDays: 7,
     destinationSlugs: ["colombo", "sigiriya", "dambulla", "kandy", "ella", "galle", "mirissa"],
-    categoryIds: ["popular", "cultural", "beach", "hill-country", "honeymoon", "family", "luxury"],
+    categoryIds: ["popular", "cultural-heritage", "beach-holidays", "hill-country-tea", "honeymoon", "family", "luxury-escapes", "food", "custom-private"],
     vehicleId: "suv",
     startingPriceLkr: null,
     highlights: [
@@ -190,7 +191,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "See Sigiriya, Kandy, Ella and the southern coast on Q Pick’s 7-day Best of Sri Lanka private chauffeur tour.",
       canonicalPath: "/tours/7-days-best-of-sri-lanka",
-      ogImage: "/images/destinations/galle.webp",
+      ogImage: getDestinationImageSrc("galle"),
       ogTitle: "7 Days Best of Sri Lanka | Q Pick",
       twitterTitle: "Best of Sri Lanka 7-Day Private Tour",
       twitterDescription: "Culture, highlands and coast with a private chauffeur.",
@@ -225,7 +226,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     title: "10 Days Wildlife Adventure",
     durationDays: 10,
     destinationSlugs: ["colombo", "sigiriya", "kandy", "nuwara-eliya", "ella", "yala", "mirissa", "galle"],
-    categoryIds: ["popular", "wildlife", "adventure", "nature", "photography", "luxury"],
+    categoryIds: ["popular", "wildlife-safari", "adventure", "hill-country-tea", "luxury-escapes", "custom-private"],
     vehicleId: "suv",
     startingPriceLkr: null,
     highlights: [
@@ -248,7 +249,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "A 10-day private Sri Lanka wildlife adventure — Cultural Triangle, hill country, Yala safari logistics and southern beaches with Q Pick.",
       canonicalPath: "/tours/10-days-wildlife-adventure",
-      ogImage: "/images/destinations/yala.webp",
+      ogImage: getDestinationImageSrc("yala"),
       ogTitle: "10 Days Wildlife Adventure | Q Pick",
       twitterTitle: "Wildlife Adventure Private Tour",
       twitterDescription: "Yala safari window with heritage and coast, privately chauffeured.",
@@ -304,7 +305,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       "trincomalee",
       "colombo",
     ],
-    categoryIds: ["popular", "cultural", "wildlife", "beach", "hill-country", "family", "nature"],
+    categoryIds: ["popular", "cultural-heritage", "wildlife-safari", "beach-holidays", "hill-country-tea", "family", "train-journeys", "custom-private"],
     vehicleId: "van",
     startingPriceLkr: null,
     highlights: [
@@ -334,7 +335,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "A complete 14-day private Sri Lanka tour covering Cultural Triangle, tea country, Yala, southern beaches and seasonal east-coast options.",
       canonicalPath: "/tours/14-days-complete-sri-lanka",
-      ogImage: "/images/destinations/anuradhapura.webp",
+      ogImage: getDestinationImageSrc("anuradhapura"),
       ogTitle: "14 Days Complete Sri Lanka | Q Pick",
       twitterTitle: "Complete Sri Lanka 14-Day Private Tour",
       twitterDescription: "Heritage, highlands, wildlife and coast with private chauffeur.",
@@ -401,15 +402,19 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     categoryIds: [
       "popular",
-      "cultural",
-      "wildlife",
-      "beach",
-      "hill-country",
+      "cultural-heritage",
+      "wildlife-safari",
+      "beach-holidays",
+      "hill-country-tea",
       "honeymoon",
       "family",
       "adventure",
-      "luxury",
-      "nature",
+      "luxury-escapes",
+      "train-journeys",
+      "ayurveda-wellness",
+      "food",
+      "festival",
+      "custom-private",
     ],
     vehicleId: "van",
     startingPriceLkr: null,
@@ -440,7 +445,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "The 21-day Grand Explorer private tour of Sri Lanka — heritage, highlands, wildlife, and both coasts with a dedicated Q Pick chauffeur.",
       canonicalPath: "/tours/21-days-grand-explorer",
-      ogImage: "/images/destinations/colombo.webp",
+      ogImage: getDestinationImageSrc("colombo"),
       ogTitle: "21 Days Grand Explorer | Q Pick",
       twitterTitle: "Grand Explorer 21-Day Private Tour",
       twitterDescription: "Full-island private chauffeur journey across Sri Lanka.",

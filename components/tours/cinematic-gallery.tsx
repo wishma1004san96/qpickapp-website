@@ -49,7 +49,7 @@ export function CinematicGallery({
         <button
           type="button"
           onClick={() => setLightbox(0)}
-          className="group relative aspect-[16/10] overflow-hidden rounded-[1.35rem] md:col-span-7 md:row-span-2 md:aspect-auto md:min-h-[420px]"
+          className="tour-detail-img-zoom group relative aspect-[16/10] overflow-hidden rounded-[1.5rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 md:col-span-7 md:row-span-2 md:aspect-auto md:min-h-[420px]"
         >
           <Image
             src={hero.src}
@@ -65,7 +65,7 @@ export function CinematicGallery({
         </button>
 
         {showVideoPlaceholder ? (
-          <div className="relative flex aspect-[16/10] flex-col items-center justify-center overflow-hidden rounded-[1.35rem] border border-ink/8 bg-gradient-to-br from-[#0b1c28] to-[#1a3344] md:col-span-5 md:aspect-auto">
+          <div className="relative flex aspect-[16/10] flex-col items-center justify-center overflow-hidden rounded-[1.5rem] border border-ink/8 bg-gradient-to-br from-[#0b1c28] to-[#1a3344] md:col-span-5 md:aspect-auto">
             <Play className="h-10 w-10 text-foam/40" aria-hidden />
             <p className="mt-3 text-sm font-semibold text-foam/80">
               Cinematic film
@@ -84,7 +84,7 @@ export function CinematicGallery({
               key={image.id}
               type="button"
               onClick={() => setLightbox(index)}
-              className="group relative aspect-[16/10] overflow-hidden rounded-[1.35rem] md:col-span-5 md:aspect-auto"
+              className="tour-detail-img-zoom group relative aspect-[16/10] overflow-hidden rounded-[1.5rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 md:col-span-5 md:aspect-auto"
             >
               <Image
                 src={image.src}
@@ -108,7 +108,7 @@ export function CinematicGallery({
                 key={image.id}
                 type="button"
                 onClick={() => setLightbox(index)}
-                className="relative h-24 w-36 shrink-0 overflow-hidden rounded-[1rem]"
+                className="tour-detail-img-zoom relative h-24 w-36 shrink-0 overflow-hidden rounded-[1rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
               >
                 <Image
                   src={image.src}
@@ -139,8 +139,8 @@ export function CinematicGallery({
             <button
               type="button"
               onClick={close}
-              className="absolute top-4 right-4 rounded-full bg-foam/10 p-2 text-foam hover:bg-foam/20"
-              aria-label="Close"
+              className="absolute top-4 right-4 rounded-full bg-foam/10 p-2.5 text-foam transition-colors hover:bg-foam/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/60"
+              aria-label="Close gallery"
             >
               <X className="h-5 w-5" />
             </button>

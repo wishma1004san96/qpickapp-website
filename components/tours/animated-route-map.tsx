@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import {
   useCallback,
   useEffect,
@@ -11,10 +10,18 @@ import {
   type ReactNode,
 } from "react";
 import type L from "leaflet";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import type { TourMapStopDetail } from "@/components/tours/maps/sri-lanka-tour-map";
+import { useTourMapSync } from "@/components/tours/tour-map-sync-context";
 import { useTourRoadRoute } from "@/hooks/use-tour-road-route";
 import type { TourItineraryRoute } from "@/lib/tours/itinerary-route";
+import { getStopSchedule } from "@/lib/tours/map-stop-schedule";
 import { getTourGoogleMapsUrl } from "@/lib/tours/road-route";
-import { getPackageBySlug } from "@/lib/tours/repository";
+import {
+  getDestinationBySlug,
+  getPackageBySlug,
+  getPackageDayChapters,
+} from "@/lib/tours/repository";
 import type { TourVehicle } from "@/lib/tours/types";
 
 type AnimatedRouteMapProps = {
@@ -33,7 +40,7 @@ const MapDynamic = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[min(56vh,480px)] min-h-[300px] w-full items-center justify-center bg-[#e8eef3] text-sm text-ink/45">
+      <div className="flex h-[min(56vh,480px)] min-h-[300px] w-full items-center justify-center rounded-[1.5rem] bg-[#eef2f6] text-sm text-ink/45">
         Preparing chauffeur route…
       </div>
     ),
@@ -47,11 +54,14 @@ export function AnimatedRouteMap({
   vehicle = null,
   durationDays,
 }: AnimatedRouteMapProps) {
-  const [activeStopId, setActiveStopId] = useState<string | null>(null);
+  const mapSync = useTourMapSync();
+  const [localStopId, setLocalStopId] = useState<string | null>(null);
+  const [localDay, setLocalDay] = useState<number | null>(null);
+  const activeStopId = mapSync?.activeStopId ?? localStopId;
+  const activeDay = mapSync?.activeDay ?? localDay;
   const [focusStopId, setFocusStopId] = useState<string | null>(null);
   const [focusToken, setFocusToken] = useState(0);
   const [resetToken, setResetToken] = useState(0);
-  const [activeDay, setActiveDay] = useState<number | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const mapShellRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -73,10 +83,46 @@ export function AnimatedRouteMap({
     getPackageBySlug(itineraryRoute.packageSlug)?.durationDays ??
     itineraryRoute.destinationStops.length;
 
+  const chapters = useMemo(
+    () => getPackageDayChapters(itineraryRoute.packageSlug),
+    [itineraryRoute.packageSlug],
+  );
+
   const mapsUrl = useMemo(
     () => getTourGoogleMapsUrl(itineraryRoute.stops),
     [itineraryRoute.stops],
   );
+
+  const stopDetails = useMemo(() => {
+    const details: Record<string, TourMapStopDetail> = {};
+    const lastDest =
+      itineraryRoute.destinationStops[itineraryRoute.destinationStops.length - 1];
+
+    for (const stop of itineraryRoute.stops) {
+      const day = stop.day ?? stop.days[0] ?? null;
+      const chapter = day != null ? chapters.find((c) => c.day === day) : null;
+      const dest = stop.destinationSlug
+        ? getDestinationBySlug(stop.destinationSlug)
+        : null;
+      const schedule = getStopSchedule(stop, {
+        isLastDestination: lastDest?.id === stop.id,
+        dayIndex: day ?? undefined,
+      });
+
+      details[stop.id] = {
+        imageSrc: chapter?.imageSrc ?? dest?.imageSrc,
+        imageAlt: chapter?.imageAlt ?? dest?.imageAlt,
+        day,
+        arrivalTime: schedule.arrivalTime,
+        departureTime: schedule.departureTime,
+        description:
+          chapter?.description ??
+          stop.dayDescription ??
+          dest?.description?.slice(0, 120),
+      };
+    }
+    return details;
+  }, [itineraryRoute, chapters]);
 
   const listItems = useMemo(() => {
     const pkg = getPackageBySlug(itineraryRoute.packageSlug);
@@ -142,6 +188,19 @@ export function AnimatedRouteMap({
 
   const destinationCount = itineraryRoute.destinationStops.length;
 
+  const routeSummary = useMemo(() => {
+    const parts: string[] = [];
+    if (roadRoute?.distanceText && roadRoute.distanceKm > 0) {
+      parts.push(roadRoute.distanceText);
+    }
+    if (roadRoute?.durationText && roadRoute.durationSeconds > 0) {
+      parts.push(roadRoute.durationText);
+    }
+    parts.push(`${destinationCount} Stops`);
+    parts.push(vehicle?.name ? `${vehicle.name}` : "Private Chauffeur");
+    return parts.join(" • ");
+  }, [roadRoute, destinationCount, vehicle?.name]);
+
   const scrollToItineraryDay = useCallback((day: number | null, stopId: string) => {
     if (day != null) {
       const chapter = document.getElementById(`itinerary-day-${day}`);
@@ -158,9 +217,17 @@ export function AnimatedRouteMap({
       ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
 
+  function syncHover(stopId: string | null, day: number | null) {
+    if (mapSync) {
+      mapSync.setActiveStop(stopId, day);
+    } else {
+      setLocalStopId(stopId);
+      setLocalDay(day);
+    }
+  }
+
   function activateFromList(stopId: string, day: number | null) {
-    setActiveStopId(stopId);
-    setActiveDay(day);
+    syncHover(stopId, day);
     setFocusStopId(stopId);
     setFocusToken((t) => t + 1);
   }
@@ -168,16 +235,29 @@ export function AnimatedRouteMap({
   function activateFromMarker(stopId: string) {
     const stop = itineraryRoute.stops.find((s) => s.id === stopId);
     const day = stop?.day ?? stop?.days[0] ?? null;
-    setActiveStopId(stopId);
-    setActiveDay(day);
+    syncHover(stopId, day);
     setFocusStopId(stopId);
     setFocusToken((t) => t + 1);
     scrollToItineraryDay(day, stopId);
   }
 
+  function handleHoverStop(stopId: string | null) {
+    if (!stopId) {
+      syncHover(null, null);
+      return;
+    }
+    const stop = itineraryRoute.stops.find((s) => s.id === stopId);
+    const day = stop?.day ?? stop?.days[0] ?? null;
+    syncHover(stopId, day);
+  }
+
   function resetRoute() {
-    setActiveStopId(null);
-    setActiveDay(null);
+    if (mapSync) {
+      mapSync.clearActive();
+    } else {
+      setLocalStopId(null);
+      setLocalDay(null);
+    }
     setFocusStopId(null);
     setResetToken((t) => t + 1);
     mapRef.current?.closePopup();
@@ -203,60 +283,24 @@ export function AnimatedRouteMap({
     mapRef.current = map;
   }, []);
 
-  const stats = [
-    {
-      label: "Distance",
-      value: routeLoading
-        ? "…"
-        : roadRoute?.distanceText && roadRoute.distanceKm > 0
-          ? roadRoute.distanceText
-          : "—",
-    },
-    {
-      label: "Drive time",
-      value: routeLoading
-        ? "…"
-        : roadRoute?.durationText && roadRoute.durationSeconds > 0
-          ? roadRoute.durationText
-          : "—",
-    },
-    {
-      label: "Destinations",
-      value: String(destinationCount),
-    },
-    {
-      label: "Days",
-      value: String(days),
-    },
-    {
-      label: "Vehicle",
-      value: vehicle?.name ?? "Private",
-    },
-  ];
-
   return (
     <div
-      className={`overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_16px_40px_rgb(10_22_32_/_0.06)] ${className}`}
+      className={`tour-detail-card tour-route-map-shell overflow-hidden ${className}`}
     >
-      {/* Route statistics */}
-      <div className="grid grid-cols-2 gap-px border-b border-ink/8 bg-ink/[0.04] sm:grid-cols-5">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="bg-white px-3 py-3 text-center sm:px-4 sm:py-3.5"
-          >
-            <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-ink/40 uppercase">
-              {stat.label}
-            </p>
-            <p className="mt-1 font-display text-sm font-semibold tracking-tight text-ink sm:text-[0.9375rem]">
-              {stat.value}
-            </p>
-          </div>
-        ))}
+      <div className="tour-route-map-summary border-b border-ink/8 bg-white/60 px-4 py-3.5 backdrop-blur-md sm:px-6">
+        <p className="font-mono text-[0.5625rem] tracking-[0.18em] text-brand uppercase">
+          Your private route
+        </p>
+        <p className="mt-1 font-display text-sm font-semibold tracking-tight text-ink sm:text-base">
+          {routeLoading ? "Tracing Sri Lankan roads…" : routeSummary}
+        </p>
       </div>
 
       <div className="grid gap-0 lg:grid-cols-[1fr_300px]">
-        <div ref={mapShellRef} className="relative min-h-[300px] bg-[#e8eef3] p-2 sm:p-3">
+        <div
+          ref={mapShellRef}
+          className="tour-route-map-glass relative min-h-[300px] p-3 sm:p-4"
+        >
           <MapDynamic
             itineraryRoute={itineraryRoute}
             roadRoute={roadRoute}
@@ -264,17 +308,17 @@ export function AnimatedRouteMap({
             focusStopId={focusStopId}
             focusToken={focusToken}
             resetToken={resetToken}
+            stopDetails={stopDetails}
             animateRoute
             interactive
-            onHoverStop={setActiveStopId}
+            onHoverStop={handleHoverStop}
             onSelectStop={activateFromMarker}
             onMapReady={onMapReady}
             heightClass="h-[min(56vh,480px)] w-full min-h-[300px]"
-            className="rounded-[1rem]"
+            className="rounded-[1.35rem] shadow-[0_20px_50px_rgb(10_22_32_/_0.12)]"
           />
 
-          {/* Map controls */}
-          <div className="pointer-events-none absolute top-4 right-4 z-[1000] flex flex-col gap-2 sm:top-5 sm:right-5">
+          <div className="pointer-events-none absolute top-5 right-5 z-[1000] flex flex-col gap-2 sm:top-6 sm:right-6">
             <ControlButton
               label={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
               onClick={() => void toggleFullscreen()}
@@ -288,7 +332,7 @@ export function AnimatedRouteMap({
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-xl border border-ink/10 bg-white/95 text-sm font-semibold text-ink shadow-[0_8px_20px_rgb(10_22_32_/_0.12)] backdrop-blur-sm transition hover:border-brand/30 hover:text-brand"
+              className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/90 text-sm font-semibold text-ink shadow-[0_8px_24px_rgb(10_22_32_/_0.14)] backdrop-blur-md transition hover:border-brand/30 hover:text-brand"
               aria-label="Open in Google Maps"
               title="Open in Google Maps"
             >
@@ -296,35 +340,31 @@ export function AnimatedRouteMap({
             </a>
           </div>
 
-          {(routeLoading || routeError) && (
-            <div className="pointer-events-none absolute bottom-5 left-1/2 z-[1000] max-w-[90%] -translate-x-1/2 rounded-full bg-map-void/85 px-4 py-2 text-center text-[0.6875rem] font-medium text-white shadow-lg">
-              {routeLoading
-                ? "Tracing Sri Lankan roads…"
-                : "Road routing unavailable — markers still synced to your itinerary."}
+          {routeError ? (
+            <div className="pointer-events-none absolute bottom-6 left-1/2 z-[1000] max-w-[90%] -translate-x-1/2 rounded-full bg-map-void/85 px-4 py-2 text-center text-[0.6875rem] font-medium text-white shadow-lg backdrop-blur-sm">
+              Road routing unavailable — markers still synced to your itinerary.
             </div>
-          )}
+          ) : null}
         </div>
 
-        <div className="flex flex-col border-t border-ink/8 bg-foam/50 lg:border-t-0 lg:border-l">
+        <div className="flex flex-col border-t border-ink/8 bg-foam/40 lg:border-t-0 lg:border-l">
           {vehicle ? (
-            <div className="flex items-center gap-3 border-b border-ink/8 bg-white/70 px-5 py-4">
-              <div className="relative h-14 w-[4.5rem] shrink-0 overflow-hidden">
-                <Image
-                  src={vehicle.imageSrc}
-                  alt={vehicle.imageAlt}
-                  fill
-                  className="object-contain object-center"
-                  sizes="72px"
+            <div className="border-b border-ink/8 bg-white/70 px-4 py-4 sm:px-5">
+              <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-brand uppercase">
+                Your vehicle
+              </p>
+              <div className="mt-2.5">
+                <VehicleCarouselCard
+                  id={vehicle.fleetIconId ?? vehicle.id}
+                  selected
+                  displayOnly
+                  name={vehicle.name}
+                  passengers={vehicle.passengers}
+                  luggage={vehicle.luggage}
+                  showEta={false}
+                  showDayNightBadge={false}
+                  fluid
                 />
-              </div>
-              <div className="min-w-0">
-                <p className="font-mono text-[0.5625rem] tracking-[0.16em] text-brand uppercase">
-                  Your vehicle
-                </p>
-                <p className="truncate font-display text-base font-semibold text-ink">
-                  {vehicle.name}
-                </p>
-                <p className="truncate text-xs text-ink/45">{vehicle.tagline}</p>
               </div>
             </div>
           ) : null}
@@ -337,7 +377,7 @@ export function AnimatedRouteMap({
               {heading}
             </h3>
             <p className="mt-1 text-xs text-ink/45">
-              Hover a day to highlight the road. Tap a pin to open that chapter.
+              {days} days · hover a stop to preview · tap to jump to that day
             </p>
             <ol className="mt-4 max-h-[min(52vh,360px)] space-y-0 overflow-y-auto overscroll-contain pr-1">
               {listItems.map((item) => {
@@ -355,30 +395,19 @@ export function AnimatedRouteMap({
                   >
                     <button
                       type="button"
-                      onMouseEnter={() => {
-                        setActiveStopId(item.stopId);
-                        if (item.day != null) setActiveDay(item.day);
-                      }}
-                      onMouseLeave={() => {
-                        setActiveStopId(null);
-                        setActiveDay(null);
-                      }}
-                      onFocus={() => {
-                        setActiveStopId(item.stopId);
-                        if (item.day != null) setActiveDay(item.day);
-                      }}
+                      onMouseEnter={() => syncHover(item.stopId, item.day)}
+                      onMouseLeave={() => syncHover(null, null)}
+                      onFocus={() => syncHover(item.stopId, item.day)}
                       onClick={() => activateFromList(item.stopId, item.day)}
-                      className={`flex w-full gap-3 border-t border-ink/8 py-3 text-left text-sm transition-colors ${
+                      className={`flex w-full gap-3 rounded-xl border-t border-ink/8 py-3 text-left text-sm transition-all ${
                         active
-                          ? "bg-brand/[0.08] text-ink"
-                          : "text-ink/85 hover:bg-white/70"
+                          ? "bg-brand/[0.1] text-ink shadow-[inset_0_0_0_1px_rgb(0_98_250_/_0.2)]"
+                          : "text-ink/85 hover:bg-white/80"
                       }`}
                     >
                       <span
                         className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.6875rem] font-bold ${
-                          active
-                            ? "bg-brand text-white"
-                            : "bg-ink text-white"
+                          active ? "bg-brand text-white" : "bg-ink text-white"
                         }`}
                       >
                         {item.number}
@@ -417,7 +446,7 @@ function ControlButton({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-xl border border-ink/10 bg-white/95 text-base font-semibold text-ink shadow-[0_8px_20px_rgb(10_22_32_/_0.12)] backdrop-blur-sm transition hover:border-brand/30 hover:text-brand"
+      className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/90 text-base font-semibold text-ink shadow-[0_8px_24px_rgb(10_22_32_/_0.14)] backdrop-blur-md transition hover:border-brand/30 hover:text-brand"
     >
       {children}
     </button>

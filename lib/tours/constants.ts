@@ -6,16 +6,20 @@ import type {
 
 export const TOUR_CATEGORY_IDS: TourCategoryId[] = [
   "popular",
-  "cultural",
-  "beach",
-  "wildlife",
-  "luxury",
+  "cultural-heritage",
+  "wildlife-safari",
+  "beach-holidays",
+  "hill-country-tea",
   "adventure",
+  "train-journeys",
   "honeymoon",
+  "luxury-escapes",
   "family",
-  "photography",
-  "nature",
-  "hill-country",
+  "ayurveda-wellness",
+  "food",
+  "festival",
+  "airport-transfers",
+  "custom-private",
 ];
 
 export const TOUR_PREFERENCES: { id: TourPreferenceId; label: string }[] = [

@@ -1,12 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import { Check, ChevronRight, Loader2 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Check, ChevronRight, Loader2 } from "lucide-react";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useTranslations } from "@/components/i18n/locale-provider";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import {
+  FLEET_VEHICLE_CAPACITY,
+} from "@/components/icons/vehicles/fleet-catalog";
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
 import { buildItineraryRoute } from "@/lib/tours/itinerary-route";
-import type { TourDestination, TourPackage, TourVehicle } from "@/lib/tours/types";
+import type { TourDestination, TourPackage } from "@/lib/tours/types";
 import {
   addDaysISO,
   estimateTourStartingPrice,
@@ -15,7 +21,6 @@ import { formatTourPriceLkr } from "@/lib/tours/pricing-display";
 import {
   getPackageBySlug,
   getTourPricingConfig,
-  getVehicleById,
 } from "@/lib/tours/repository";
 import type { TourPlannerDraft, TourPlannerStep } from "./types";
 
@@ -51,13 +56,21 @@ export function TourTripSummary({
   onContinue,
   destinationsCatalog,
 }: TourTripSummaryProps) {
+  const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
-  const vehicle = draft.vehicleId ? getVehicleById(draft.vehicleId) : null;
+  const fleetId: QPickVehicleIconId | null = draft.vehicleId;
+  const capacity = fleetId ? FLEET_VEHICLE_CAPACITY[fleetId] : null;
+  const vehicleName = fleetId
+    ? t(`pages.ride.fleet.vehicles.${fleetId}.name`)
+    : null;
+  const vehicleBlurb = fleetId
+    ? t(`pages.ride.fleet.vehicles.${fleetId}.blurb`)
+    : null;
   const pkg = draft.packageSlug ? getPackageBySlug(draft.packageSlug) : null;
   const endDate = addDaysISO(draft.startDate, draft.numberOfDays);
   const estimate = estimateTourStartingPrice(
     pkg,
-    vehicle?.dayRateHintLkr ?? null,
+    null,
     draft.numberOfDays,
   );
   const pricing = getTourPricingConfig();
@@ -81,7 +94,7 @@ export function TourTripSummary({
       durationDays: Math.max(selectedDestsOrdered.length, draft.numberOfDays),
       destinationSlugs: selectedDestsOrdered.map((d) => d.slug),
       categoryIds: ["popular"],
-      vehicleId: draft.vehicleId ?? "suv",
+      vehicleId: "sedan",
       startingPriceLkr: null,
       highlights: [],
       travelTips: [],
@@ -116,7 +129,6 @@ export function TourTripSummary({
     destinationsCatalog,
     draft.packageTitle,
     draft.numberOfDays,
-    draft.vehicleId,
   ]);
 
   return (
@@ -185,19 +197,25 @@ export function TourTripSummary({
         </div>
 
         <AnimatePresence mode="wait">
-          {vehicle ? (
+          {fleetId ? (
             <motion.div
-              key={vehicle.id}
+              key={fleetId}
               initial={reduceMotion ? false : { opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative h-20 overflow-hidden rounded-[1rem] bg-[#eef3f8]"
+              exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
+              transition={{ duration: 0.28 }}
             >
-              <Image
-                src={vehicle.imageSrc}
-                alt={vehicle.imageAlt}
-                fill
-                className="object-contain p-2"
-                sizes="320px"
+              <VehicleCarouselCard
+                id={fleetId}
+                selected
+                displayOnly
+                name={vehicleName ?? undefined}
+                passengers={capacity?.passengers}
+                luggage={capacity?.luggage}
+                subtitle={vehicleBlurb ?? undefined}
+                showEta={false}
+                showDayNightBadge={false}
+                fluid
               />
             </motion.div>
           ) : null}
@@ -226,7 +244,7 @@ export function TourTripSummary({
               Vehicle
             </dt>
             <dd className="mt-0.5 text-sm font-semibold text-ink">
-              {vehicle?.name ?? "—"}
+              {vehicleName ?? "—"}
             </dd>
           </div>
           <div>
@@ -280,5 +298,3 @@ export function TourTripSummary({
     </aside>
   );
 }
-
-export type { TourVehicle };

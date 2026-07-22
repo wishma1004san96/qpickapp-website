@@ -24,9 +24,9 @@ export function DestinationExperienceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45 }}
-      className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-ink/8 bg-white/80 shadow-[0_12px_36px_rgb(10_22_32_/_0.06)] backdrop-blur-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgb(10_22_32_/_0.12)]"
+      className="group tour-detail-card tour-detail-card--lift flex h-full flex-col overflow-hidden"
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <div className="tour-detail-img-zoom relative aspect-[16/10]">
         <Image
           src={destination.imageSrc}
           alt={destination.imageAlt}
@@ -90,7 +90,7 @@ export function DestinationExperienceCard({
 
   if (href) {
     return (
-      <Link href={href} className="block h-full">
+      <Link href={href} className="block h-full rounded-[1.5rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2">
         {body}
       </Link>
     );

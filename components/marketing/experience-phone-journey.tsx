@@ -18,6 +18,7 @@ import {
   type ReactNode,
 } from "react";
 import { BrandLogo } from "@/components/brand/wordmark";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
 import {
   useMessages,
   useTranslations,
@@ -779,8 +780,21 @@ function VehiclesScreen({ reduceMotion }: { reduceMotion: boolean }) {
                 delay: reduceMotion ? 0 : 0.05 * i,
               }}
             >
-              <div className="experience-app-vcard-media" aria-hidden="true">
-                <VehicleArt kind={v.id} />
+              <div className="experience-app-vcard-media flex justify-center" aria-hidden="true">
+                <div className="scale-[0.55] origin-top">
+                  <VehicleCarouselCard
+                    id={v.id}
+                    index={i}
+                    selected={selected}
+                    displayOnly
+                    name={v.model}
+                    priceLabel={v.price}
+                    subtitle={v.category}
+                    passengers={v.seats}
+                    showEta={false}
+                    showDayNightBadge={false}
+                  />
+                </div>
               </div>
               <div className="experience-app-vcard-body">
                 <div className="experience-app-vcard-top">
@@ -821,8 +835,16 @@ function BookingConfirmScreen({ reduceMotion }: { reduceMotion: boolean }) {
         <h3 className="experience-app-h">{t("phoneJourney.booking.title")}</h3>
 
         <div className="experience-app-booking-hero">
-          <div className="experience-app-vcard-media" aria-hidden="true">
-            <VehicleArt kind="sedan" />
+          <div className="experience-app-vcard-media flex justify-center" aria-hidden="true">
+            <div className="scale-[0.5] origin-top">
+              <VehicleCarouselCard
+                id="sedan"
+                selected
+                displayOnly
+                showEta={false}
+                showDayNightBadge={false}
+              />
+            </div>
           </div>
           <div>
             <p className="experience-app-vcard-cat">{t("phoneJourney.vehicles.categories.sedan")}</p>
@@ -1413,85 +1435,6 @@ function SubmittedScreen() {
       <p className="experience-app-muted">{t("phoneJourney.submitted.subtitle")}</p>
       <div className="experience-app-btn experience-app-btn--ghost">{t("phoneJourney.submitted.backHome")}</div>
     </div>
-  );
-}
-
-function VehicleArt({ kind }: { kind: string }) {
-  const common = {
-    viewBox: "0 0 64 40",
-    className: "experience-app-vart",
-  } as const;
-
-  if (kind === "tuk") {
-    return (
-      <svg {...common}>
-        <ellipse cx="32" cy="34" rx="20" ry="3" fill="rgb(10 22 32 / 0.08)" />
-        <path
-          d="M18 28 L22 16 H42 L48 28 Z"
-          fill="#F4C430"
-          stroke="#0A1620"
-          strokeWidth="1.2"
-        />
-        <circle cx="24" cy="29" r="4" fill="#1D1D1F" />
-        <circle cx="44" cy="29" r="4" fill="#1D1D1F" />
-        <path d="M26 16 H40 V12 H28 Z" fill="#0A84FF" opacity="0.85" />
-      </svg>
-    );
-  }
-  if (kind === "mini") {
-    return (
-      <svg {...common}>
-        <ellipse cx="32" cy="34" rx="22" ry="3" fill="rgb(10 22 32 / 0.08)" />
-        <path
-          d="M12 26 H52 L48 18 H18 Z"
-          fill="#E8EEF4"
-          stroke="#0062FA"
-          strokeWidth="1.3"
-        />
-        <path d="M22 18 H42 L40 14 H24 Z" fill="#0193FB" opacity="0.55" />
-        <circle cx="22" cy="28" r="4.5" fill="#1D1D1F" />
-        <circle cx="44" cy="28" r="4.5" fill="#1D1D1F" />
-      </svg>
-    );
-  }
-  if (kind === "sedan") {
-    return (
-      <svg {...common}>
-        <ellipse cx="32" cy="34" rx="24" ry="3" fill="rgb(10 22 32 / 0.1)" />
-        <path
-          d="M8 27 H56 L52 20 H42 L36 12 H24 L18 20 H12 Z"
-          fill="#0062FA"
-        />
-        <path d="M24 13 H36 L40 20 H20 Z" fill="#B8DAFF" />
-        <circle cx="20" cy="28" r="4.5" fill="#0A1620" />
-        <circle cx="46" cy="28" r="4.5" fill="#0A1620" />
-        <rect x="10" y="22" width="4" height="2" rx="1" fill="#FFE08A" />
-      </svg>
-    );
-  }
-  if (kind === "suv") {
-    return (
-      <svg {...common}>
-        <ellipse cx="32" cy="34" rx="24" ry="3" fill="rgb(10 22 32 / 0.08)" />
-        <path
-          d="M10 28 H54 V16 H44 L40 10 H22 L16 16 H10 Z"
-          fill="#4A5A66"
-        />
-        <path d="M22 11 H40 L42 16 H20 Z" fill="#A8C8E8" />
-        <circle cx="20" cy="29" r="5" fill="#0A1620" />
-        <circle cx="46" cy="29" r="5" fill="#0A1620" />
-      </svg>
-    );
-  }
-  return (
-    <svg {...common}>
-      <ellipse cx="32" cy="34" rx="26" ry="3" fill="rgb(10 22 32 / 0.08)" />
-      <path d="M6 28 H58 V14 H14 L10 20 H6 Z" fill="#6B7C88" />
-      <path d="M16 14 H40 V10 H18 Z" fill="#C5D8EA" />
-      <circle cx="18" cy="29" r="4.5" fill="#0A1620" />
-      <circle cx="30" cy="29" r="4.5" fill="#0A1620" />
-      <circle cx="50" cy="29" r="4.5" fill="#0A1620" />
-    </svg>
   );
 }
 

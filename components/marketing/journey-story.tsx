@@ -15,6 +15,7 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 type ChapterKey = "arrive" | "stay" | "explore";
 
@@ -25,20 +26,17 @@ const CHAPTER_MEDIA: readonly {
 }[] = [
   {
     key: "arrive",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=80",
+    image: getDestinationImageSrc("negombo"),
     align: "left",
   },
   {
     key: "stay",
-    image:
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=2000&q=80",
+    image: getDestinationImageSrc("galle"),
     align: "right",
   },
   {
     key: "explore",
-    image:
-      "https://images.unsplash.com/photo-1711797750174-c3750dd9d7c9?auto=format&fit=crop&w=2000&q=85",
+    image: getDestinationImageSrc("sigiriya"),
     align: "left",
   },
 ] as const;

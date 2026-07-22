@@ -13,9 +13,13 @@ export {
 } from "./paths";
 
 export {
+  DEFAULT_FLEET_PHOTO_SRC,
   FLEET_VEHICLE_CAPACITY,
   fleetCapacityForTaxiId,
   fleetVehicleNameKey,
+  fleetVehiclePhoto,
+  requireFleetVehiclePhoto,
+  type FleetVehiclePhoto,
 } from "./fleet-catalog";
 
 export {

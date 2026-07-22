@@ -1,11 +1,12 @@
 import type { TourSeoMeta, TrustSignal } from "../types";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 export const HUB_SEO: TourSeoMeta = {
   title: "Private Sri Lanka Tours with Chauffeur | Q Pick",
   description:
     "Explore Sri Lanka with Q Pick — private chauffeurs, premium vehicles, and tailor-made journeys across cultural sites, hill country, beaches, and wildlife.",
   canonicalPath: "/tours",
-  ogImage: "/images/destinations/sigiriya.webp",
+  ogImage: getDestinationImageSrc("sigiriya"),
   ogTitle: "Explore Sri Lanka with Q Pick Private Tours",
   twitterTitle: "Private Sri Lanka Tours | Q Pick",
   twitterDescription:
@@ -51,12 +52,40 @@ export const TRUST_SIGNALS: TrustSignal[] = [
   },
 ];
 
+/** Curated trust signals for package detail pages. */
+export const PACKAGE_DETAIL_TRUST_SIGNALS: TrustSignal[] = [
+  {
+    id: "rating",
+    title: "4.9 Guest Rating",
+    description:
+      "Consistently rated by private-tour guests for chauffeur care, pacing, and communication.",
+  },
+  {
+    id: "licensed",
+    title: "Licensed Operator",
+    description:
+      "Quick Pick App (Pvt) Ltd — registered Sri Lankan operator with vetted chauffeurs and insured vehicles.",
+  },
+  {
+    id: "secure",
+    title: "Secure Booking",
+    description:
+      "Written quotes, confirmed itineraries, and transparent inclusions before you travel.",
+  },
+  {
+    id: "support",
+    title: "24/7 Support",
+    description:
+      "A real Q Pick desk before departure and on the road — WhatsApp and phone, day and night.",
+  },
+];
+
 export const HUB_HERO = {
   eyebrow: "Q Pick Private Tours",
   headline: "Explore Sri Lanka with Q Pick",
   subtitle:
     "Discover unforgettable journeys with private chauffeurs, premium vehicles and tailor-made experiences.",
-  primaryCta: { label: "Explore Packages", href: "/tours#packages" },
+  primaryCta: { label: "Explore Collections", href: "/tours#explore-categories" },
   secondaryCta: { label: "Plan My Tour", href: "/tour-booking" },
   imageId: "sigiriya-hero",
 } as const;

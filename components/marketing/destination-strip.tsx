@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/container";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 type FeaturedDestination = {
   slug: "sigiriya" | "ella" | "galle";
@@ -24,7 +25,7 @@ const FEATURED: FeaturedDestination[] = [
     name: "Sigiriya",
     label: "Cultural Triangle",
     blurb: "Airport and chauffeur routes into the Cultural Triangle.",
-    image: "/images/app/backgrounds/sigiriya-bg.webp",
+    image: getDestinationImageSrc("sigiriya"),
     objectPosition: "center 40%",
     href: "/destinations/sigiriya",
   },
@@ -33,7 +34,7 @@ const FEATURED: FeaturedDestination[] = [
     name: "Ella",
     label: "Hill Country",
     blurb: "Intercity and day-trip rides into tea country highlands.",
-    image: "/images/app/backgrounds/ella-bg.webp",
+    image: getDestinationImageSrc("ella"),
     objectPosition: "center 45%",
     href: "/destinations/ella",
   },
@@ -42,7 +43,7 @@ const FEATURED: FeaturedDestination[] = [
     name: "Galle",
     label: "Southern Coast",
     blurb: "Coastal transfers and city rides along the southern road.",
-    image: "/images/app/backgrounds/galle-bg.webp",
+    image: getDestinationImageSrc("galle"),
     objectPosition: "center 50%",
     href: "/destinations/galle",
   },

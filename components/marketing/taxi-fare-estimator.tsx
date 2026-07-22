@@ -22,7 +22,6 @@ import {
 } from "react";
 import {
   QBrandDivider,
-  QGlowBadge,
   QHeadingMark,
   QPatternBackground,
   QSpinner,
@@ -1261,7 +1260,7 @@ export function TaxiFareEstimator({
                     ) : null}
                     <VehicleSelection
                       selectedId={selectedVehicle}
-                      onSelect={onSelectVehicle}
+                      onSelect={(id) => onSelectVehicle(id as TaxiVehicleId)}
                       embedded
                       tripDurationSeconds={route?.durationSeconds}
                       at={pickupInstant ?? new Date()}
@@ -1312,7 +1311,6 @@ export function TaxiFareEstimator({
             }`}
           >
             <QWatermark tone="foam" opacity={0.055} size={200} blur={2} />
-            <QGlowBadge size={22} className="top-4 right-4" />
             <div className="relative z-[1] flex items-center gap-2">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-b from-[#2b7dff] to-[#0062fa] text-[0.6875rem] font-bold text-paper">
                 4
@@ -1913,7 +1911,6 @@ function StepPanel({
           blur={1.75}
         />
       ) : null}
-      {brand ? <QGlowBadge size={20} className="top-3.5 right-3.5" /> : null}
       <div className="relative z-[1] mb-4 flex items-center gap-2.5">
         <span
           className={`grid h-7 w-7 place-items-center rounded-full text-[0.6875rem] font-bold ${

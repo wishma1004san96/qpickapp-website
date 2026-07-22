@@ -1,199 +1,108 @@
 /**
  * Destination photography catalog for airport transfer cards.
- *
- * Prefer local WebP under `/images/destinations/`.
- * Remote Unsplash URLs are temporary fallbacks — swap `src` to local when assets land.
+ * Filenames match destination names — see lib/destination-image-catalog.ts.
  */
 
-export type DestinationImageSlug =
-  | "negombo"
-  | "colombo"
-  | "kandy"
-  | "galle"
-  | "ella"
-  | "sigiriya"
-  | "yala"
-  | "bentota"
-  | "mirissa"
-  | "nuwara-eliya"
-  | "anuradhapura"
-  | "polonnaruwa"
-  | "trincomalee"
-  | "arugam-bay"
-  | "hikkaduwa"
-  | "dambulla";
+import {
+  DESTINATION_IMAGE_FILES,
+  destinationImagePublicPath,
+  getDestinationImageFilename,
+  getDestinationImageSrc,
+  resolveDestinationSlugFromName,
+  type DestinationImageSlug,
+} from "@/lib/destination-image-catalog";
+
+export type { DestinationImageSlug };
 
 export type DestinationImage = {
   slug: DestinationImageSlug;
-  /** Card / scene image path or URL */
+  /** Card / scene image path */
   src: string;
   alt: string;
   landmark: string;
 };
 
-const LOCAL = "/images/destinations";
+const LANDMARKS: Record<DestinationImageSlug, string> = {
+  negombo: "Negombo Beach / Lagoon",
+  colombo: "Lotus Tower & Colombo skyline",
+  kandy: "Temple of the Sacred Tooth Relic",
+  galle: "Galle Fort Lighthouse",
+  ella: "Nine Arches Bridge",
+  sigiriya: "Sigiriya Rock Fortress",
+  yala: "Yala leopard safari",
+  bentota: "Bentota Beach",
+  mirissa: "Mirissa Beach",
+  "nuwara-eliya": "Tea plantations",
+  anuradhapura: "Ruwanwelisaya",
+  polonnaruwa: "Polonnaruwa Vatadage",
+  trincomalee: "Nilaveli / Trincomalee Beach",
+  "arugam-bay": "Arugam Bay surfing",
+  hikkaduwa: "Hikkaduwa coral reef",
+  dambulla: "Dambulla Cave Temple",
+};
 
-/**
- * Single source of truth — update `src` here when replacing assets.
- * All primary destinations use local WebP under public/images/destinations/.
- */
+const ALTS: Record<DestinationImageSlug, string> = {
+  negombo:
+    "Traditional Sri Lankan Oruwa sailing canoe on Negombo Beach with turquoise water and palm trees",
+  colombo:
+    "Colombo skyline with Lotus Tower rising above Beira Lake and the city harbour",
+  kandy:
+    "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa) in Kandy with the iconic octagonal Paththirippuwa",
+  galle:
+    "Galle Fort Lighthouse on the Dutch Fort ramparts overlooking the beach and Indian Ocean",
+  ella:
+    "Nine Arches Bridge in Ella with a blue train crossing the stone viaduct through highland jungle",
+  sigiriya:
+    "Sigiriya Rock Fortress rising above ancient ruins and tropical forest in Central Sri Lanka",
+  yala:
+    "Sri Lankan leopard drinking at a waterhole in Yala National Park during golden hour",
+  bentota:
+    "Aerial view of Bentota Beach with turquoise ocean, resort pool, and palm coastline",
+  mirissa:
+    "Mirissa Beach with palm-lined coastline and turquoise Indian Ocean water",
+  "nuwara-eliya":
+    "Terraced tea plantations covering the hillsides near Nuwara Eliya in Sri Lanka’s highlands",
+  anuradhapura:
+    "Ruwanwelisaya stupa in Anuradhapura — the great white dagoba under a soft cloudy sky",
+  polonnaruwa:
+    "Ancient Polonnaruwa Vatadage stone shrine with Buddha statue framed by carved pillars and stairway",
+  trincomalee:
+    "Quiet sandy shoreline near Trincomalee and Nilaveli with pandanus trees and a fishing boat",
+  "arugam-bay":
+    "Surfer riding a turquoise barrel wave at Arugam Bay on Sri Lanka’s east coast",
+  hikkaduwa:
+    "Snorkeler swimming alongside a sea turtle in clear turquoise water at Hikkaduwa coral reef",
+  dambulla:
+    "Interior of Dambulla Cave Temple with seated Buddha statues, white stupa, and painted rock ceiling",
+};
+
+/** Single source of truth — keyed by slug; paths derived from on-disk filenames. */
 export const DESTINATION_IMAGES: Record<DestinationImageSlug, DestinationImage> =
-  {
-    negombo: {
-      slug: "negombo",
-      src: `${LOCAL}/negombo.webp`,
-      alt: "Traditional Sri Lankan Oruwa sailing canoe on Negombo Beach with turquoise water and palm trees",
-      landmark: "Negombo Beach / Lagoon",
-    },
-    colombo: {
-      slug: "colombo",
-      src: `${LOCAL}/colombo.webp`,
-      alt: "Colombo skyline with Lotus Tower rising above Beira Lake and the city harbour",
-      landmark: "Lotus Tower & Colombo skyline",
-    },
-    kandy: {
-      slug: "kandy",
-      src: `${LOCAL}/kandy.webp`,
-      alt: "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa) in Kandy with the iconic octagonal Paththirippuwa",
-      landmark: "Temple of the Sacred Tooth Relic",
-    },
-    galle: {
-      slug: "galle",
-      src: `${LOCAL}/galle.webp`,
-      alt: "Galle Fort Lighthouse on the Dutch Fort ramparts overlooking the beach and Indian Ocean",
-      landmark: "Galle Fort Lighthouse",
-    },
-    ella: {
-      slug: "ella",
-      src: `${LOCAL}/ella.webp`,
-      alt: "Nine Arches Bridge in Ella with a blue train crossing the stone viaduct through highland jungle",
-      landmark: "Nine Arches Bridge",
-    },
-    sigiriya: {
-      slug: "sigiriya",
-      src: `${LOCAL}/sigiriya.webp`,
-      alt: "Sigiriya Rock Fortress rising above ancient ruins and tropical forest in Central Sri Lanka",
-      landmark: "Sigiriya Rock Fortress",
-    },
-    yala: {
-      slug: "yala",
-      src: `${LOCAL}/yala.webp`,
-      alt: "Sri Lankan leopard drinking at a waterhole in Yala National Park during golden hour",
-      landmark: "Yala leopard safari",
-    },
-    bentota: {
-      slug: "bentota",
-      src: `${LOCAL}/bentota.webp`,
-      alt: "Aerial view of Bentota Beach with turquoise ocean, resort pool, and palm coastline",
-      landmark: "Bentota Beach",
-    },
-    mirissa: {
-      slug: "mirissa",
-      src: `${LOCAL}/mirissa.webp`,
-      alt: "Coconut Tree Hill in Mirissa with palm trees on a cliff overlooking the blue Indian Ocean",
-      landmark: "Coconut Tree Hill",
-    },
-    "nuwara-eliya": {
-      slug: "nuwara-eliya",
-      src: `${LOCAL}/nuwara-eliya.webp`,
-      alt: "Terraced tea plantations covering the hillsides near Nuwara Eliya in Sri Lanka’s highlands",
-      landmark: "Tea plantations",
-    },
-    anuradhapura: {
-      slug: "anuradhapura",
-      src: `${LOCAL}/anuradhapura.webp`,
-      alt: "Ruwanwelisaya stupa in Anuradhapura — the great white dagoba under a soft cloudy sky",
-      landmark: "Ruwanwelisaya",
-    },
-    polonnaruwa: {
-      slug: "polonnaruwa",
-      src: `${LOCAL}/polonnaruwa.webp`,
-      alt: "Ancient Polonnaruwa Vatadage stone shrine with Buddha statue framed by carved pillars and stairway",
-      landmark: "Polonnaruwa Vatadage",
-    },
-    trincomalee: {
-      slug: "trincomalee",
-      src: `${LOCAL}/trincomalee.webp`,
-      alt: "Quiet sandy shoreline near Trincomalee and Nilaveli with pandanus trees and a fishing boat",
-      landmark: "Nilaveli / Trincomalee Beach",
-    },
-    "arugam-bay": {
-      slug: "arugam-bay",
-      src: `${LOCAL}/arugam-bay.webp`,
-      alt: "Surfer riding a turquoise barrel wave at Arugam Bay on Sri Lanka’s east coast",
-      landmark: "Arugam Bay surfing",
-    },
-    hikkaduwa: {
-      slug: "hikkaduwa",
-      src: `${LOCAL}/hikkaduwa.webp`,
-      alt: "Snorkeler swimming alongside a sea turtle in clear turquoise water at Hikkaduwa coral reef",
-      landmark: "Hikkaduwa coral reef",
-    },
-    dambulla: {
-      slug: "dambulla",
-      src: `${LOCAL}/dambulla.webp`,
-      alt: "Interior of Dambulla Cave Temple with seated Buddha statues, white stupa, and painted rock ceiling",
-      landmark: "Dambulla Cave Temple",
-    },
-  };
-
-/** Match destination name/label → image slug (longest token wins). */
-const MATCH_TOKENS: { slug: DestinationImageSlug; tokens: readonly string[] }[] =
-  [
-    { slug: "sigiriya", tokens: ["sigiriya"] },
-    { slug: "nuwara-eliya", tokens: ["nuwara eliya", "nuwaraeliya", "nuwara-eliya"] },
-    { slug: "anuradhapura", tokens: ["anuradhapura"] },
-    { slug: "polonnaruwa", tokens: ["polonnaruwa"] },
-    { slug: "trincomalee", tokens: ["trincomalee", "nilaveli", "pigeon island"] },
-    { slug: "arugam-bay", tokens: ["arugam", "arugam bay"] },
-    { slug: "hikkaduwa", tokens: ["hikkaduwa"] },
-    { slug: "bentota", tokens: ["bentota"] },
-    { slug: "mirissa", tokens: ["mirissa", "weligama"] },
-    { slug: "ella", tokens: ["ella", "haputale", "bandarawela", "nine arch"] },
-    { slug: "galle", tokens: ["galle", "unawatuna", "ahungalla", "beruwala", "aluthgama"] },
-    { slug: "kandy", tokens: ["kandy", "katugastota", "peradeniya", "pilimathalawa"] },
-    { slug: "yala", tokens: ["yala"] },
-    { slug: "dambulla", tokens: ["dambulla", "habarana"] },
-    { slug: "negombo", tokens: ["negombo", "katunayake", "seeduwa", "ja-ela", "ekala"] },
-    {
-      slug: "colombo",
-      tokens: [
-        "colombo",
-        "fort",
-        "bambalapitiya",
-        "kollupitiya",
-        "wellawatta",
-        "borella",
-        "rajagiriya",
-        "nugegoda",
-        "dehiwala",
-        "mt.lavinia",
-        "mount lavinia",
+  Object.fromEntries(
+    (Object.keys(DESTINATION_IMAGE_FILES) as DestinationImageSlug[]).map(
+      (slug) => [
+        slug,
+        {
+          slug,
+          src: getDestinationImageSrc(slug),
+          alt: ALTS[slug],
+          landmark: LANDMARKS[slug],
+        },
       ],
-    },
-  ];
+    ),
+  ) as Record<DestinationImageSlug, DestinationImage>;
 
+/** Match destination name/label → image (longest token wins). */
 export function resolveDestinationImage(
   destinationName: string | null | undefined,
 ): DestinationImage | null {
-  if (!destinationName?.trim()) return null;
-  const hay = destinationName.toLowerCase();
-
-  let best: DestinationImage | null = null;
-  let bestLen = 0;
-
-  for (const row of MATCH_TOKENS) {
-    for (const token of row.tokens) {
-      if (hay.includes(token) && token.length > bestLen) {
-        best = DESTINATION_IMAGES[row.slug];
-        bestLen = token.length;
-      }
-    }
-  }
-
-  return best;
+  const slug = resolveDestinationSlugFromName(destinationName);
+  if (!slug) return null;
+  return DESTINATION_IMAGES[slug];
 }
 
 export function destinationImageSrc(slug: DestinationImageSlug): string {
-  return DESTINATION_IMAGES[slug].src;
+  return getDestinationImageSrc(slug);
 }
+
+export { destinationImagePublicPath, getDestinationImageFilename };

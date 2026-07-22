@@ -1,17 +1,23 @@
 /** Tour domain types — UI must import data only via repository. */
 
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
+
 export type TourCategoryId =
   | "popular"
-  | "cultural"
-  | "beach"
-  | "wildlife"
-  | "luxury"
+  | "cultural-heritage"
+  | "wildlife-safari"
+  | "beach-holidays"
+  | "hill-country-tea"
   | "adventure"
+  | "train-journeys"
   | "honeymoon"
+  | "luxury-escapes"
   | "family"
-  | "photography"
-  | "nature"
-  | "hill-country";
+  | "ayurveda-wellness"
+  | "food"
+  | "festival"
+  | "airport-transfers"
+  | "custom-private";
 
 export type TourVehicleId =
   | "sedan"
@@ -105,6 +111,8 @@ export type TourVehicle = {
   tagline: string;
   imageSrc: string;
   imageAlt: string;
+  /** Official Q Pick fleet icon id — same assets as Choose Your Ride. */
+  fleetIconId?: QPickVehicleIconId;
   passengers: number;
   luggage: number;
   ac: boolean;
@@ -146,6 +154,8 @@ export type TourCategory = {
   title: string;
   intro: string;
   keywords: string[];
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export type TourReview = {
@@ -155,6 +165,10 @@ export type TourReview = {
   location: string;
   rating: number;
   published: boolean;
+  /** ISO 3166-1 alpha-2 for flag display */
+  countryCode?: string;
+  /** When set, review appears on matching package detail pages only. */
+  packageSlugs?: string[];
 };
 
 export type TrustSignal = {

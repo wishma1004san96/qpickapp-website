@@ -1,24 +1,30 @@
 "use client";
 
-import { VehicleCard } from "@/components/tours/vehicle-card";
-import type { TourVehicle, TourVehicleId } from "@/lib/tours/types";
+import { QPICK_VEHICLE_ICON_IDS } from "@/components/icons/vehicles/types";
+import { VehicleSelection } from "@/components/marketing/vehicle-selection";
+import {
+  FLEET_VEHICLE_CAPACITY,
+} from "@/components/icons/vehicles/fleet-catalog";
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
+import { useTranslations } from "@/components/i18n/locale-provider";
 
 type StepVehicleTourProps = {
-  vehicles: TourVehicle[];
-  selected: TourVehicleId | null;
+  selected: QPickVehicleIconId | null;
   passengers: number;
-  onSelect: (id: TourVehicleId) => void;
+  onSelect: (id: QPickVehicleIconId) => void;
   onPassengersChange: (count: number) => void;
 };
 
 export function StepVehicleTour({
-  vehicles,
   selected,
   passengers,
   onSelect,
   onPassengersChange,
 }: StepVehicleTourProps) {
-  const selectedVehicle = vehicles.find((v) => v.id === selected);
+  const t = useTranslations();
+  const fleetId = selected ?? "sedan";
+  const capacity = FLEET_VEHICLE_CAPACITY[fleetId];
+  const vehicleName = t(`pages.ride.fleet.vehicles.${fleetId}.name`);
 
   return (
     <div className="space-y-6">
@@ -30,8 +36,8 @@ export function StepVehicleTour({
           Choose your vehicle
         </h2>
         <p className="mt-2 text-sm text-ink/55">
-          Luxury private vehicles with air conditioning — sized for passengers
-          and luggage.
+          Official Q Pick fleet — private, air-conditioned vehicles sized for
+          passengers and luggage.
         </p>
       </header>
 
@@ -51,25 +57,23 @@ export function StepVehicleTour({
           }
           className="mt-2 w-full rounded-[14px] border border-ink/10 bg-white px-3.5 py-3 text-sm outline-none focus:border-brand/35 focus:ring-2 focus:ring-brand/20"
         />
-        {selectedVehicle ? (
+        {selected ? (
           <p className="mt-2 text-xs text-ink/45">
-            {selectedVehicle.name} seats up to {selectedVehicle.passengers}{" "}
-            passengers with {selectedVehicle.luggage} bags
-            {selectedVehicle.ac ? " and A/C" : ""}.
+            {vehicleName} seats up to {capacity.passengers} passengers with{" "}
+            {capacity.luggage} bags and A/C.
           </p>
         ) : null}
       </label>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {vehicles.map((vehicle) => (
-          <VehicleCard
-            key={vehicle.id}
-            vehicle={vehicle}
-            selected={selected === vehicle.id}
-            onSelect={onSelect}
-          />
-        ))}
-      </div>
+      <VehicleSelection
+        vehicleIds={QPICK_VEHICLE_ICON_IDS}
+        selectedId={fleetId}
+        onSelect={(id) => onSelect(id as QPickVehicleIconId)}
+        embedded
+        layout="grid"
+        showEta={false}
+        showDayNightBadge={false}
+      />
     </div>
   );
 }

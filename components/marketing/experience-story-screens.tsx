@@ -3,6 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { BrandLogo } from "@/components/brand/wordmark";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import {
+  QPICK_VEHICLE_ICON_LABELS,
+  type QPickVehicleIconId,
+} from "@/components/icons/vehicles/types";
 import {
   ExperienceJourneyFrame,
   type JourneyStepId,
@@ -22,19 +27,23 @@ const DESTINATIONS = [
 
 const DAY_OPTIONS = [1, 2, 3, 5, 7] as const;
 
-const FLEET: {
-  id: string;
-  name: string;
+const STORY_FLEET: {
+  iconId: QPickVehicleIconId;
   meta: string;
   price: string;
   selected?: boolean;
 }[] = [
-  { id: "tuk", name: "Tuk Tuk", meta: "3 seats", price: "LKR 2,400" },
-  { id: "sedan", name: "Sedan", meta: "4 seats · A/C", price: "LKR 18,500", selected: true },
-  { id: "suv", name: "SUV", meta: "6 seats · A/C", price: "LKR 24,000" },
-  { id: "premiumVan", name: "Premium Van", meta: "8 seats · A/C", price: "LKR 32,000" },
-  { id: "luxuryVan", name: "Luxury Van", meta: "6 seats · A/C", price: "LKR 48,000" },
-  { id: "miniBus", name: "Mini Bus", meta: "12 seats · A/C", price: "LKR 55,000" },
+  { iconId: "tuk", meta: "3 seats", price: "LKR 2,400" },
+  {
+    iconId: "sedan",
+    meta: "4 seats · A/C",
+    price: "LKR 18,500",
+    selected: true,
+  },
+  { iconId: "suv", meta: "6 seats · A/C", price: "LKR 24,000" },
+  { iconId: "minivan", meta: "8 seats · A/C", price: "LKR 32,000" },
+  { iconId: "highRoofVan", meta: "10 seats · A/C", price: "LKR 48,000" },
+  { iconId: "miniBus", meta: "12 seats · A/C", price: "LKR 55,000" },
 ];
 
 const LIVE_STEPS: JourneyStepId[] = [
@@ -177,30 +186,26 @@ export function StoryVehiclesScreen({ reduceMotion }: { reduceMotion: boolean })
         <h3 className="qstory-title">{t("experience.story.vehicles.title")}</h3>
       </header>
 
-      <ul className="qstory-fleet">
-        {FLEET.map((v, i) => (
-          <motion.li
-            key={v.id}
-            className={`qstory-vcard${v.selected ? " is-selected" : ""}`}
-            initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: reduceMotion ? 0 : 0.05 * i, ease: EASE }}
-          >
-            <div className={`qstory-vicon qstory-vicon--${v.id}`} aria-hidden="true">
-              <FleetGlyph kind={v.id} />
+      <div className="qstory-fleet-scroll flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {STORY_FLEET.map((v, i) => {
+          const name = QPICK_VEHICLE_ICON_LABELS[v.iconId];
+          return (
+            <div key={v.iconId} className="shrink-0 scale-[0.72] origin-top-left">
+              <VehicleCarouselCard
+                id={v.iconId}
+                index={i}
+                selected={Boolean(v.selected)}
+                displayOnly
+                name={name}
+                priceLabel={v.price}
+                subtitle={v.meta}
+                showEta={false}
+                showDayNightBadge={false}
+              />
             </div>
-            <div className="qstory-vbody">
-              <div className="qstory-vrow">
-                <div>
-                  <p className="qstory-vname">{v.name}</p>
-                  <p className="qstory-vmeta">{v.meta}</p>
-                </div>
-                <p className="qstory-vprice">{v.price}</p>
-              </div>
-            </div>
-          </motion.li>
-        ))}
-      </ul>
+          );
+        })}
+      </div>
 
       <div className="qstory-budget">
         <div>
@@ -251,39 +256,5 @@ export function StoryLiveCycle({ reduceMotion }: { reduceMotion: boolean }) {
         </motion.div>
       </AnimatePresence>
     </div>
-  );
-}
-
-function FleetGlyph({ kind }: { kind: string }) {
-  if (kind === "tuk") {
-    return (
-      <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
-        <path
-          d="M6 20h22l2-8H12L6 20Z"
-          fill="currentColor"
-          opacity="0.9"
-        />
-        <circle cx="12" cy="21" r="3.2" fill="#0a1620" />
-        <circle cx="26" cy="21" r="3.2" fill="#0a1620" />
-        <path d="M12 8h10l4 4H14L12 8Z" fill="currentColor" opacity="0.55" />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
-      <path
-        d="M5 18h30l-1.5-6.5a3 3 0 0 0-2.9-2.3H9.4a3 3 0 0 0-2.9 2.3L5 18Z"
-        fill="currentColor"
-        opacity="0.9"
-      />
-      <path
-        d="M10 9.2 12 6.2a2 2 0 0 1 1.6-.8h12.8a2 2 0 0 1 1.6.8l2 3"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        opacity="0.7"
-      />
-      <circle cx="11" cy="18" r="2.8" fill="#0a1620" />
-      <circle cx="29" cy="18" r="2.8" fill="#0a1620" />
-    </svg>
   );
 }

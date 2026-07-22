@@ -3,11 +3,47 @@
  * Fare engine IDs stay in `taxi-fare-vehicles.ts` (pricing). Photos live in `paths.ts`.
  */
 
+import { VEHICLE_PHOTO_PUBLIC_PATHS } from "@/components/icons/vehicles/paths";
 import {
+  QPICK_VEHICLE_ICON_LABELS,
   resolveVehicleIconId,
   type QPickVehicleIconId,
 } from "@/components/icons/vehicles/types";
 import type { TaxiVehicleId } from "@/lib/taxi-fare-vehicles";
+
+/** Default fleet photo when a product id cannot be resolved. */
+export const DEFAULT_FLEET_PHOTO_SRC = VEHICLE_PHOTO_PUBLIC_PATHS.sedan;
+
+export type FleetVehiclePhoto = {
+  src: string;
+  alt: string;
+  name: string;
+  iconId: QPickVehicleIconId;
+};
+
+/** Official Q Pick fleet photo + label for any fare / tour / transfer vehicle id. */
+export function fleetVehiclePhoto(id: string): FleetVehiclePhoto | null {
+  const iconId = resolveVehicleIconId(id);
+  if (!iconId) return null;
+  const name = QPICK_VEHICLE_ICON_LABELS[iconId];
+  return {
+    iconId,
+    src: VEHICLE_PHOTO_PUBLIC_PATHS[iconId],
+    alt: `${name} — official Q Pick fleet vehicle`,
+    name,
+  };
+}
+
+export function requireFleetVehiclePhoto(id: string): FleetVehiclePhoto {
+  return (
+    fleetVehiclePhoto(id) ?? {
+      iconId: "sedan",
+      src: DEFAULT_FLEET_PHOTO_SRC,
+      name: QPICK_VEHICLE_ICON_LABELS.sedan,
+      alt: `${QPICK_VEHICLE_ICON_LABELS.sedan} — official Q Pick fleet vehicle`,
+    }
+  );
+}
 
 /** Passengers / luggage — must match `pages.ride.fleet.vehicles` copy. */
 export const FLEET_VEHICLE_CAPACITY: Record<

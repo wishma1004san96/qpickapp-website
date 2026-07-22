@@ -1,7 +1,7 @@
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
 import type {
   TourAccommodationId,
   TourPreferenceId,
-  TourVehicleId,
 } from "@/lib/tours/types";
 
 export type TourPlannerStep =
@@ -31,7 +31,7 @@ export type TourPlannerDraft = {
   destinations: string[];
   startDate: string;
   numberOfDays: number;
-  vehicleId: TourVehicleId | null;
+  vehicleId: QPickVehicleIconId | null;
   preferences: TourPreferenceId[];
   accommodation: TourAccommodationId | null;
   specialNotes: string;

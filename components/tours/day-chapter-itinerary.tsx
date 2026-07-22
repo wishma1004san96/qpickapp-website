@@ -2,18 +2,26 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { useTourMapSync } from "@/components/tours/tour-map-sync-context";
 import type { TourDayChapter } from "@/lib/tours/types";
 
 type DayChapterItineraryProps = {
   chapters: TourDayChapter[];
+  dayToStopId?: Record<number, string>;
 };
 
-export function DayChapterItinerary({ chapters }: DayChapterItineraryProps) {
+export function DayChapterItinerary({
+  chapters,
+  dayToStopId,
+}: DayChapterItineraryProps) {
   const reduceMotion = useReducedMotion() ?? false;
+  const mapSync = useTourMapSync();
 
   return (
     <div className="space-y-8 sm:space-y-12">
-      {chapters.map((chapter, index) => (
+      {chapters.map((chapter, index) => {
+        const active = mapSync?.activeDay === chapter.day;
+        return (
         <motion.article
           key={chapter.day}
           id={`itinerary-day-${chapter.day}`}
@@ -21,11 +29,22 @@ export function DayChapterItinerary({ chapters }: DayChapterItineraryProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.05 }}
-          className={`scroll-mt-28 grid items-center gap-6 lg:grid-cols-2 lg:gap-10 ${
+          onMouseEnter={() =>
+            mapSync?.setActiveStop(
+              dayToStopId?.[chapter.day] ?? null,
+              chapter.day,
+            )
+          }
+          onMouseLeave={() => mapSync?.clearActive()}
+          className={`scroll-mt-28 grid items-center gap-6 rounded-[1.5rem] p-2 transition-all lg:grid-cols-2 lg:gap-10 ${
             index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+          } ${
+            active
+              ? "bg-brand/[0.06] shadow-[inset_0_0_0_1px_rgb(0_98_250_/_0.18)]"
+              : ""
           }`}
         >
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[1.5rem] shadow-[0_20px_50px_rgb(10_22_32_/_0.12)]">
+          <div className="tour-detail-img-zoom relative aspect-[16/11] overflow-hidden rounded-[1.5rem] shadow-[0_20px_50px_rgb(10_22_32_/_0.12)]">
             <Image
               src={chapter.imageSrc}
               alt={chapter.imageAlt}
@@ -67,7 +86,8 @@ export function DayChapterItinerary({ chapters }: DayChapterItineraryProps) {
             <div className="mt-6 h-px w-16 bg-brand/40" aria-hidden />
           </div>
         </motion.article>
-      ))}
+        );
+      })}
     </div>
   );
 }

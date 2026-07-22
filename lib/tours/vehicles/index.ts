@@ -1,81 +1,91 @@
-import type { TourVehicle } from "../types";
+import { fleetVehiclePhoto } from "@/components/icons/vehicles/fleet-catalog";
+import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
+import type { TourVehicle, TourVehicleId } from "../types";
 
-const V = "/images/fleet/vehicles";
+/** Tour catalog → official Q Pick fleet photo IDs (same as Choose Your Ride). */
+export const TOUR_FLEET_IDS: Record<TourVehicleId, QPickVehicleIconId> = {
+  sedan: "sedan",
+  suv: "suv",
+  van: "frVan",
+  luxuryVan: "highRoofVan",
+  miniCoach: "miniBus",
+};
+
+export function tourVehicleToFleetIcon(
+  vehicleId: TourVehicleId,
+): QPickVehicleIconId {
+  return TOUR_FLEET_IDS[vehicleId];
+}
+
+function fleetVehicle(
+  id: TourVehicleId,
+  tagline: string,
+  passengers: number,
+  luggage: number,
+  recommendedTourTypes: string[],
+  apiValue: string,
+  wifi = true,
+): TourVehicle {
+  const fleetId = TOUR_FLEET_IDS[id];
+  const photo = fleetVehiclePhoto(fleetId)!;
+  return {
+    id,
+    name: photo.name,
+    tagline,
+    imageSrc: photo.src,
+    imageAlt: photo.alt,
+    fleetIconId: fleetId,
+    passengers,
+    luggage,
+    ac: true,
+    wifi,
+    chargingPorts: true,
+    recommendedTourTypes,
+    dayRateHintLkr: null,
+    apiValue,
+  };
+}
 
 export const TOUR_VEHICLES: TourVehicle[] = [
-  {
-    id: "sedan",
-    name: "Sedan",
-    tagline: "Composed comfort for couples and small groups",
-    imageSrc: `${V}/sedan.webp`,
-    imageAlt: "Sedan for private Sri Lanka tour chauffeur service",
-    passengers: 3,
-    luggage: 2,
-    ac: true,
-    wifi: false,
-    chargingPorts: true,
-    recommendedTourTypes: ["Honeymoon", "City & short circuits", "Couple escapes"],
-    dayRateHintLkr: null,
-    apiValue: "sedan",
-  },
-  {
-    id: "suv",
-    name: "SUV",
-    tagline: "Elevated ride for hill country and longer days",
-    imageSrc: `${V}/suv.webp`,
-    imageAlt: "Air-conditioned SUV for private Sri Lanka tours",
-    passengers: 4,
-    luggage: 3,
-    ac: true,
-    wifi: true,
-    chargingPorts: true,
-    recommendedTourTypes: ["Hill country", "Cultural Triangle", "Photography"],
-    dayRateHintLkr: null,
-    apiValue: "suv",
-  },
-  {
-    id: "van",
-    name: "Van",
-    tagline: "Spacious cabin for families and friends",
-    imageSrc: `${V}/van.webp`,
-    imageAlt: "Passenger van for family Sri Lanka tour packages",
-    passengers: 6,
-    luggage: 6,
-    ac: true,
-    wifi: true,
-    chargingPorts: true,
-    recommendedTourTypes: ["Family", "Multi-stop circuits", "Group of friends"],
-    dayRateHintLkr: null,
-    apiValue: "van",
-  },
-  {
-    id: "luxuryVan",
-    name: "Luxury Van",
-    tagline: "Premium seating for longer island journeys",
-    imageSrc: `${V}/high-roof-van.webp`,
-    imageAlt: "High-roof van for premium Sri Lanka chauffeur tours",
-    passengers: 7,
-    luggage: 7,
-    ac: true,
-    wifi: true,
-    chargingPorts: true,
-    recommendedTourTypes: ["Luxury", "Grand Explorer", "Extended island tours"],
-    dayRateHintLkr: null,
-    apiValue: "luxuryVan",
-  },
-  {
-    id: "miniCoach",
-    name: "Mini Coach",
-    tagline: "Group travel without shared coach schedules",
-    imageSrc: `${V}/mini-bus.webp`,
-    imageAlt: "Mini coach for larger group Sri Lanka private tours",
-    passengers: 12,
-    luggage: 12,
-    ac: true,
-    wifi: true,
-    chargingPorts: true,
-    recommendedTourTypes: ["Large families", "Corporate groups", "Multi-family trips"],
-    dayRateHintLkr: null,
-    apiValue: "miniCoach",
-  },
+  fleetVehicle(
+    "sedan",
+    "Composed comfort for couples and small groups",
+    4,
+    2,
+    ["Honeymoon", "City & short circuits", "Couple escapes"],
+    "sedan",
+    false,
+  ),
+  fleetVehicle(
+    "suv",
+    "Elevated ride for hill country and longer days",
+    5,
+    4,
+    ["Hill country", "Cultural Triangle", "Photography"],
+    "suv",
+  ),
+  fleetVehicle(
+    "van",
+    "Spacious cabin for families and friends",
+    8,
+    6,
+    ["Family", "Multi-stop circuits", "Group of friends"],
+    "van",
+  ),
+  fleetVehicle(
+    "luxuryVan",
+    "Premium seating for longer island journeys",
+    10,
+    8,
+    ["Luxury", "Grand Explorer", "Extended island tours"],
+    "luxuryVan",
+  ),
+  fleetVehicle(
+    "miniCoach",
+    "Group travel without shared coach schedules",
+    12,
+    8,
+    ["Large families", "Corporate groups", "Multi-family trips"],
+    "miniCoach",
+  ),
 ];

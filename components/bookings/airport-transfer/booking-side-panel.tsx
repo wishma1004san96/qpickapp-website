@@ -10,7 +10,8 @@ import {
   Shield,
   UserRound,
 } from "lucide-react";
-import Image from "next/image";
+import { useTranslations } from "@/components/i18n/locale-provider";
+import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
 import { RideMapDynamic } from "@/components/maps/RideMapDynamic";
 import { AIRPORT_ORIGIN, formatAirportFare } from "@/lib/airport-rates";
 import type {
@@ -151,28 +152,20 @@ export function BookingSidePanel({
 
         {/* Vehicle */}
         {vehicle ? (
-          <div className="flex items-center gap-3 rounded-[1.1rem] border border-ink/8 bg-white p-3">
-            <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-xl bg-[#eef3f8]">
-              <Image
-                src={vehicle.image}
-                alt=""
-                fill
-                className="object-contain p-1"
-                sizes="64px"
-              />
-            </div>
-            <div className="min-w-0">
-              <p className="text-[0.625rem] tracking-wide text-ink/40 uppercase">
-                Vehicle
-              </p>
-              <p className="truncate text-sm font-semibold text-ink">
-                {vehicle.name}
-              </p>
-              <p className="text-xs text-ink/45">
-                {vehicle.passengers} pax · {vehicle.luggage} bags
-              </p>
-            </div>
-          </div>
+          <VehicleCarouselCard
+            id={vehicle.id}
+            selected
+            displayOnly
+            name={vehicle.name}
+            passengers={vehicle.passengers}
+            luggage={vehicle.luggage}
+            priceLabel={
+              displayFare != null ? formatAirportFare(displayFare) : undefined
+            }
+            showEta={false}
+            showDayNightBadge={false}
+            fluid
+          />
         ) : (
           <div className="rounded-[1.1rem] border border-dashed border-ink/12 px-3 py-3 text-xs text-ink/40">
             Select a vehicle to see capacity and fare

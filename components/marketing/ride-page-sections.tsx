@@ -13,12 +13,11 @@ import {
   Siren,
   Wallet,
 } from "lucide-react";
-import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import { useTranslations } from "@/components/i18n/locale-provider";
+import { VehicleSelection } from "@/components/marketing/vehicle-selection";
 import {
   QPICK_VEHICLE_ICON_IDS,
-  VEHICLE_PHOTO_PUBLIC_PATHS,
   type QPickVehicleIconId,
 } from "@/components/icons/vehicles";
 import { ButtonLink } from "@/components/ui/button";
@@ -33,8 +32,6 @@ const WHY_ICONS = {
   tracking: Eye,
   support: Clock3,
 } as const;
-
-const FLEET_IDS = QPICK_VEHICLE_ICON_IDS;
 
 const SAFETY_PILLARS = [
   { id: "verified", Icon: ShieldCheck },
@@ -171,10 +168,9 @@ export function RideWhySection() {
   );
 }
 
-/** Fleet showcase — full Q Pick vehicle category set. */
+/** Fleet showcase — same vehicle cards as Ride booking. */
 export function RideFleetSection() {
   const t = useTranslations();
-  const reduceMotion = useReducedMotion() ?? false;
   const [selected, setSelected] = useState<QPickVehicleIconId>("sedan");
 
   return (
@@ -190,95 +186,16 @@ export function RideFleetSection() {
           sub={t("pages.ride.fleet.sub")}
         />
 
-        <div
-          className="ride-fleet-grid mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 min-[1440px]:grid-cols-4"
-          role="radiogroup"
-          aria-label={t("pages.ride.fleet.heading")}
-        >
-          {FLEET_IDS.map((id, index) => {
-            const isSelected = selected === id;
-            const passengers = t(`pages.ride.fleet.vehicles.${id}.passengers`);
-            const luggage = t(`pages.ride.fleet.vehicles.${id}.luggage`);
-            const blurb = t(`pages.ride.fleet.vehicles.${id}.blurb`);
-            const name = t(`pages.ride.fleet.vehicles.${id}.name`);
-            const hasMeta = Boolean(passengers || luggage);
-
-            return (
-              <motion.button
-                key={id}
-                type="button"
-                role="radio"
-                aria-checked={isSelected}
-                onClick={() => setSelected(id)}
-                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{
-                  duration: 0.35,
-                  delay: reduceMotion ? 0 : index * 0.035,
-                  ease: EASE,
-                }}
-                whileHover={
-                  reduceMotion
-                    ? undefined
-                    : { y: -5, transition: { duration: 0.25, ease: EASE } }
-                }
-                animate={{ scale: isSelected && !reduceMotion ? 1.02 : 1 }}
-                className={`ride-fleet-card group relative flex flex-col overflow-hidden rounded-[1.35rem] px-3 pt-3 pb-4 text-left outline-none focus-visible:ring-2 focus-visible:ring-brand/45 ${
-                  isSelected ? "ride-fleet-card--selected" : ""
-                }`}
-              >
-                {isSelected ? (
-                  <motion.span
-                    initial={reduceMotion ? false : { scale: 0.6, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="absolute top-2.5 right-2.5 z-[2] grid h-6 w-6 place-items-center rounded-full bg-gradient-to-b from-[#2b7dff] to-[#0062fa] text-paper shadow-[0_6px_16px_rgb(0_98_250_/_0.4)]"
-                    aria-hidden
-                  >
-                    <Check className="h-3 w-3" strokeWidth={3} />
-                  </motion.span>
-                ) : null}
-
-                <div className="ride-fleet-image">
-                  <span className="ride-fleet-image-frame">
-                    <Image
-                      src={VEHICLE_PHOTO_PUBLIC_PATHS[id]}
-                      alt={name}
-                      fill
-                      unoptimized
-                      className="ride-fleet-img"
-                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 22vw, 180px"
-                    />
-                  </span>
-                </div>
-
-                <h3 className="mt-3 font-display text-sm font-semibold tracking-tight text-ink sm:text-[0.95rem]">
-                  {name}
-                </h3>
-                {hasMeta ? (
-                  <div className="mt-1.5 space-y-0.5">
-                    {passengers ? (
-                      <p className="text-[0.6875rem] font-medium leading-snug text-brand/85">
-                        {passengers}
-                      </p>
-                    ) : null}
-                    {luggage ? (
-                      <p className="text-[0.6875rem] font-medium leading-snug text-brand/85">
-                        {luggage}
-                      </p>
-                    ) : null}
-                  </div>
-                ) : null}
-                <p
-                  className={`text-[0.6875rem] leading-snug text-ink-muted ${
-                    hasMeta ? "mt-1.5" : "mt-1"
-                  }`}
-                >
-                  {blurb}
-                </p>
-              </motion.button>
-            );
-          })}
+        <div className="mt-8">
+          <VehicleSelection
+            vehicleIds={QPICK_VEHICLE_ICON_IDS}
+            selectedId={selected}
+            onSelect={(id) => setSelected(id as QPickVehicleIconId)}
+            embedded
+            layout="grid"
+            showEta={false}
+            showDayNightBadge={false}
+          />
         </div>
       </Container>
     </section>

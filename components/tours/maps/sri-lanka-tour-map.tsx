@@ -2,19 +2,18 @@
 
 import L from "leaflet";
 import {
+  Fragment,
   useEffect,
   useMemo,
   useRef,
   useState,
-  type RefObject,
 } from "react";
+import { createPortal } from "react-dom";
 import {
   MapContainer,
   Marker,
   Polyline,
-  Popup,
   TileLayer,
-  Tooltip,
   useMap,
 } from "react-leaflet";
 import { filterValidLatLngTuples } from "@/components/maps/map-coordinates";
@@ -34,9 +33,14 @@ const SRI_LANKA_BOUNDS: L.LatLngBoundsExpression = [
   [9.9, 82.05],
 ];
 
-const BRAND_BLUE = "#0062fa";
-const COMPLETED_TEAL = "#0f766e";
-const UPCOMING_INK = "#0a1620";
+const MARKER_COLORS = {
+  start: "#0062fa",
+  intermediate: "#c9a227",
+  destination: "#16a34a",
+  return: "#dc2626",
+  active: "#0062fa",
+  hub: "#0a1620",
+} as const;
 
 export type TourMapRoute = {
   id: string;
@@ -45,21 +49,42 @@ export type TourMapRoute = {
   selected?: boolean;
 };
 
-export type TourPinState = "active" | "completed" | "upcoming";
+export type TourMapStopDetail = {
+  imageSrc?: string;
+  imageAlt?: string;
+  day?: number | null;
+  arrivalTime?: string;
+  departureTime?: string;
+  description?: string;
+};
 
-/**
- * Official Q Pick teardrop pin (matches ride booking Markers).
- */
-function createQPickPinIcon(label: string, state: TourPinState) {
-  const fill =
-    state === "active"
-      ? BRAND_BLUE
-      : state === "completed"
-        ? COMPLETED_TEAL
-        : UPCOMING_INK;
-  const pulseClass = state === "active" ? " qpick-map-pin--pulse" : "";
-  const size = state === "active" ? 46 : 40;
-  const height = state === "active" ? 60 : 52;
+type MarkerRole = "start" | "intermediate" | "destination" | "return" | "hub";
+
+function resolveMarkerRole(
+  stop: TourRouteStop,
+  destinationStops: TourRouteStop[],
+): MarkerRole {
+  if (stop.id === "airport-start") return "start";
+  if (stop.id === "airport-end") return "return";
+  const lastDest = destinationStops[destinationStops.length - 1];
+  if (lastDest && stop.id === lastDest.id) return "destination";
+  return "intermediate";
+}
+
+function markerFill(role: MarkerRole, active: boolean): string {
+  if (active) return MARKER_COLORS.active;
+  return MARKER_COLORS[role === "hub" ? "hub" : role];
+}
+
+function createQPickPinIcon(
+  label: string,
+  role: MarkerRole,
+  active: boolean,
+) {
+  const fill = markerFill(role, active);
+  const pulseClass = active ? " qpick-map-pin--pulse" : "";
+  const size = active ? 46 : 40;
+  const height = active ? 60 : 52;
 
   const svg = encodeURIComponent(
     `
@@ -83,8 +108,73 @@ function createQPickPinIcon(label: string, state: TourPinState) {
     html: `<img src="data:image/svg+xml,${svg}" width="${size}" height="${height}" alt="" draggable="false" style="display:block;width:${size}px;height:${height}px" />`,
     iconSize: [size, height],
     iconAnchor: [size / 2, height],
-    popupAnchor: [0, -height + 8],
   });
+}
+
+function createLabelIcon(label: string, offsetX: number, offsetY: number) {
+  return L.divIcon({
+    className: "tour-map-label-icon",
+    html: `<span class="tour-map-label" style="transform:translate(${offsetX}px,${offsetY}px)">${label}</span>`,
+    iconSize: [0, 0],
+    iconAnchor: [0, 0],
+  });
+}
+
+function createDirectionIcon(bearing: number) {
+  const svg = encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="#0062fa" d="M7 1 L12 11 L7 9 L2 11 Z" transform="rotate(${bearing} 7 7)"/></svg>`,
+  );
+  return L.divIcon({
+    className: "tour-map-direction-icon",
+    html: `<img src="data:image/svg+xml,${svg}" width="14" height="14" alt="" draggable="false" />`,
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+  });
+}
+
+function bearingDegrees(
+  from: [number, number],
+  to: [number, number],
+): number {
+  const lat1 = (from[0] * Math.PI) / 180;
+  const lat2 = (to[0] * Math.PI) / 180;
+  const dLng = ((to[1] - from[1]) * Math.PI) / 180;
+  const y = Math.sin(dLng) * Math.cos(lat2);
+  const x =
+    Math.cos(lat1) * Math.sin(lat2) -
+    Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+  return (Math.atan2(y, x) * 180) / Math.PI;
+}
+
+function computeLabelOffsets(
+  stops: { id: string; lat: number; lng: number; label: string }[],
+): Map<string, { x: number; y: number }> {
+  const offsets = new Map<string, { x: number; y: number }>();
+  const groups = new Map<string, typeof stops>();
+
+  for (const stop of stops) {
+    const key = `${stop.lat.toFixed(2)},${stop.lng.toFixed(2)}`;
+    const group = groups.get(key) ?? [];
+    group.push(stop);
+    groups.set(key, group);
+  }
+
+  const patterns = [
+    { x: 0, y: 10 },
+    { x: 14, y: 4 },
+    { x: -14, y: 4 },
+    { x: 0, y: -6 },
+    { x: 20, y: 12 },
+    { x: -20, y: 12 },
+  ];
+
+  for (const group of groups.values()) {
+    group.forEach((stop, index) => {
+      offsets.set(stop.id, patterns[index % patterns.length] ?? { x: 0, y: 10 });
+    });
+  }
+
+  return offsets;
 }
 
 function FitRoute({
@@ -98,7 +188,9 @@ function FitRoute({
   useEffect(() => {
     const pts = filterValidLatLngTuples(coordinates);
     if (pts.length >= 2) {
-      map.fitBounds(pts, { padding: [56, 56], maxZoom: 10, animate: true });
+      map.fitBounds(pts, { padding: [40, 40], maxZoom: 11, animate: true });
+    } else if (pts.length === 1) {
+      map.setView(pts[0], 10, { animate: true });
     } else {
       map.fitBounds(SRI_LANKA_BOUNDS, { padding: [24, 24], animate: false });
     }
@@ -117,17 +209,13 @@ function FlyToStop({
   useEffect(() => {
     if (!stop || focusToken <= 0) return;
     map.flyTo([stop.lat, stop.lng], Math.max(map.getZoom(), 10), {
-      duration: 0.9,
+      duration: 0.85,
     });
   }, [map, stop, focusToken]);
   return null;
 }
 
-function MapApiBridge({
-  onReady,
-}: {
-  onReady: (map: L.Map) => void;
-}) {
+function MapApiBridge({ onReady }: { onReady: (map: L.Map) => void }) {
   const map = useMap();
   useEffect(() => {
     onReady(map);
@@ -135,162 +223,132 @@ function MapApiBridge({
   return null;
 }
 
+function VisibleObserver({
+  onVisible,
+}: {
+  onVisible: (visible: boolean) => void;
+}) {
+  const map = useMap();
+
+  useEffect(() => {
+    const el = map.getContainer();
+    const observer = new IntersectionObserver(
+      ([entry]) => onVisible(entry.isIntersecting),
+      { threshold: 0.25 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [map, onVisible]);
+
+  return null;
+}
+
 function AnimatedRoadLine({
   coordinates,
   animate,
-  highlighted,
+  visible,
 }: {
   coordinates: [number, number][];
   animate: boolean;
-  highlighted: boolean;
+  visible: boolean;
 }) {
   const safe = useMemo(
     () => filterValidLatLngTuples(coordinates),
     [coordinates],
   );
   const [visibleCount, setVisibleCount] = useState(2);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!animate || safe.length < 2) return undefined;
-    const step = Math.max(4, Math.ceil(safe.length / 60));
-    let n = Math.min(24, safe.length);
+    if (!animate || !visible || safe.length < 2 || hasAnimated) return undefined;
+    const step = Math.max(3, Math.ceil(safe.length / 72));
+    let n = Math.min(20, safe.length);
     let intervalId = 0;
     const startId = window.setTimeout(() => {
       setVisibleCount(n);
       intervalId = window.setInterval(() => {
         n = Math.min(n + step, safe.length);
         setVisibleCount(n);
-        if (n >= safe.length) window.clearInterval(intervalId);
-      }, 40);
-    }, 0);
+        if (n >= safe.length) {
+          window.clearInterval(intervalId);
+          setHasAnimated(true);
+        }
+      }, 32);
+    }, 120);
     return () => {
       window.clearTimeout(startId);
       window.clearInterval(intervalId);
     };
-  }, [animate, safe]);
+  }, [animate, visible, safe, hasAnimated]);
 
   const positions =
-    !animate || safe.length < 2
+    !animate || !visible || hasAnimated || safe.length < 2
       ? safe
       : safe.slice(0, Math.max(2, Math.min(visibleCount, safe.length)));
+
+  const directionPoints = useMemo(() => {
+    if (positions.length < 4) return [];
+    const out: { pos: [number, number]; bearing: number }[] = [];
+    const slots = [0.2, 0.45, 0.7, 0.9];
+    for (const slot of slots) {
+      const index = Math.min(
+        positions.length - 2,
+        Math.max(1, Math.floor(positions.length * slot)),
+      );
+      const from = positions[index];
+      const to = positions[index + 1];
+      if (!from || !to) continue;
+      out.push({ pos: from, bearing: bearingDegrees(from, to) });
+    }
+    return out;
+  }, [positions]);
+
   if (positions.length < 2) return null;
 
   return (
-    <Polyline
-      key={animate ? `road-${visibleCount}` : "road-full"}
-      positions={positions}
-      className={
-        highlighted
-          ? "tour-route-line tour-route-line--active"
-          : "tour-route-line"
-      }
-      pathOptions={{
-        color: highlighted ? BRAND_BLUE : "#5b8def",
-        weight: highlighted ? 6 : 4.5,
-        opacity: highlighted ? 0.98 : 0.72,
-        lineCap: "round",
-        lineJoin: "round",
-      }}
-    />
-  );
-}
-
-function RoadLegsLayer({
-  roadRoute,
-  activeStopId,
-  animate,
-}: {
-  roadRoute: TourRoadRoute;
-  activeStopId: string | null;
-  animate: boolean;
-}) {
-  const activeLegIndex = useMemo(() => {
-    if (!activeStopId) return -1;
-    return roadRoute.legs.findIndex((leg) => leg.toId === activeStopId);
-  }, [activeStopId, roadRoute.legs]);
-
-  // When no focus: one animated full route. When focused: all legs + highlight.
-  if (!activeStopId || activeLegIndex < 0) {
-    return (
-      <AnimatedRoadLine
-        coordinates={roadRoute.coordinates}
-        animate={animate}
-        highlighted
-      />
-    );
-  }
-
-  return (
     <>
-      {roadRoute.legs.map((leg, index) => {
-        const coords = filterValidLatLngTuples(leg.coordinates);
-        if (coords.length < 2) return null;
-        const active = index === activeLegIndex;
-        const completed = index < activeLegIndex;
-        return (
-          <Polyline
-            key={`${leg.fromId}-${leg.toId}`}
-            positions={coords}
-            className={
-              active
-                ? "tour-route-line tour-route-line--active"
-                : "tour-route-line"
-            }
-            pathOptions={{
-              color: active
-                ? BRAND_BLUE
-                : completed
-                  ? COMPLETED_TEAL
-                  : "#94b8f0",
-              weight: active ? 7 : completed ? 5 : 3.5,
-              opacity: active ? 1 : completed ? 0.85 : 0.45,
-              lineCap: "round",
-              lineJoin: "round",
-            }}
-          />
-        );
-      })}
+      <Polyline
+        key={animate && !hasAnimated ? `road-${visibleCount}` : "road-full"}
+        positions={positions}
+        className="tour-route-line tour-route-line--active"
+        pathOptions={{
+          color: "#0062fa",
+          weight: 5,
+          opacity: 0.92,
+          lineCap: "round",
+          lineJoin: "round",
+        }}
+      />
+      {directionPoints.map((point, i) => (
+        <Marker
+          key={`dir-${i}`}
+          position={point.pos}
+          icon={createDirectionIcon(point.bearing)}
+          interactive={false}
+          zIndexOffset={50}
+        />
+      ))}
     </>
   );
 }
 
-function ActivePopupOpener({
-  markerRef,
-  open,
-}: {
-  markerRef: RefObject<L.Marker | null>;
-  open: boolean;
-}) {
-  useEffect(() => {
-    const marker = markerRef.current;
-    if (!marker) return;
-    if (open) {
-      marker.openPopup();
-    } else {
-      marker.closePopup();
-    }
-  }, [markerRef, open]);
-  return null;
-}
-
 function ItineraryMarkers({
   stops,
+  destinationStops,
   activeStopId,
+  stopDetails,
   onHoverStop,
   onSelectStop,
   interactive,
 }: {
   stops: TourRouteStop[];
+  destinationStops: TourRouteStop[];
   activeStopId: string | null;
+  stopDetails?: Record<string, TourMapStopDetail>;
   onHoverStop?: (stopId: string | null) => void;
   onSelectStop?: (stopId: string) => void;
   interactive: boolean;
 }) {
-  const activeSeq = useMemo(() => {
-    if (!activeStopId) return null;
-    return stops.find((s) => s.id === activeStopId)?.sequence ?? null;
-  }, [activeStopId, stops]);
-
   const rendered = useMemo(() => {
     const out: TourRouteStop[] = [];
     const seenAirport = new Set<string>();
@@ -305,24 +363,35 @@ function ItineraryMarkers({
     return out;
   }, [stops]);
 
+  const labelOffsets = useMemo(
+    () =>
+      computeLabelOffsets(
+        rendered.map((s) => ({
+          id: s.id,
+          lat: s.lat,
+          lng: s.lng,
+          label: s.label,
+        })),
+      ),
+    [rendered],
+  );
+
   return (
     <>
       {rendered.map((stop) => {
         const active = activeStopId === stop.id;
-        let state: TourPinState = "upcoming";
-        if (active) state = "active";
-        else if (activeSeq != null && stop.sequence < activeSeq) {
-          state = "completed";
-        }
-
-        const icon = createQPickPinIcon(stop.markerLabel, state);
+        const role = resolveMarkerRole(stop, destinationStops);
+        const icon = createQPickPinIcon(stop.markerLabel, role, active);
+        const offset = labelOffsets.get(stop.id) ?? { x: 0, y: 10 };
 
         return (
-          <MarkerWithPopup
+          <MarkerWithLabel
             key={stop.id}
             stop={stop}
             icon={icon}
+            labelIcon={createLabelIcon(stop.label, offset.x, offset.y)}
             active={active}
+            detail={stopDetails?.[stop.id]}
             interactive={interactive}
             onHoverStop={onHoverStop}
             onSelectStop={onSelectStop}
@@ -333,9 +402,10 @@ function ItineraryMarkers({
   );
 }
 
-function MarkerWithPopup({
+function MarkerWithLabel({
   stop,
   icon,
+  labelIcon,
   active,
   interactive,
   onHoverStop,
@@ -343,55 +413,111 @@ function MarkerWithPopup({
 }: {
   stop: TourRouteStop;
   icon: L.DivIcon;
+  labelIcon: L.DivIcon;
   active: boolean;
+  detail?: TourMapStopDetail;
   interactive: boolean;
   onHoverStop?: (stopId: string | null) => void;
   onSelectStop?: (stopId: string) => void;
 }) {
-  const markerRef = useRef<L.Marker | null>(null);
-
   return (
-    <Marker
-      ref={markerRef}
-      position={[stop.lat, stop.lng]}
-      icon={icon}
-      zIndexOffset={active ? 1200 : stop.kind === "airport" ? 200 : 400}
-      eventHandlers={
-        interactive
-          ? {
-              mouseover: () => onHoverStop?.(stop.id),
-              mouseout: () => onHoverStop?.(null),
-              click: (e) => {
-                L.DomEvent.stopPropagation(e.originalEvent);
-                onSelectStop?.(stop.id);
-              },
-            }
-          : undefined
-      }
-    >
-      <ActivePopupOpener markerRef={markerRef} open={active} />
-      <Popup className="tour-map-popup" closeButton={false} autoClose={false}>
-        <div className="min-w-[9rem] font-sans text-[0.8125rem] leading-snug text-[#0a1620]">
-          <p className="font-mono text-[0.625rem] tracking-[0.14em] text-[#0062fa] uppercase">
-            Stop {stop.markerLabel}
-          </p>
-          <p className="mt-0.5 font-semibold tracking-tight">{stop.label}</p>
-          {stop.dayTitle ? (
-            <p className="mt-1 text-[0.7rem] text-[#4a5a66]">
-              {stop.day != null ? `Day ${stop.day} · ` : ""}
-              {stop.dayTitle}
-            </p>
-          ) : null}
-        </div>
-      </Popup>
-      <Tooltip direction="top" offset={[0, -48]} className="tour-map-tooltip">
-        <span className="font-semibold">{stop.label}</span>
-      </Tooltip>
-    </Marker>
+    <>
+      <Marker
+        position={[stop.lat, stop.lng]}
+        icon={icon}
+        zIndexOffset={active ? 1200 : stop.kind === "airport" ? 200 : 400}
+        eventHandlers={
+          interactive
+            ? {
+                mouseover: () => onHoverStop?.(stop.id),
+                mouseout: () => onHoverStop?.(null),
+                click: (e) => {
+                  L.DomEvent.stopPropagation(e.originalEvent);
+                  onSelectStop?.(stop.id);
+                },
+              }
+            : undefined
+        }
+      />
+      <Marker
+        position={[stop.lat, stop.lng]}
+        icon={labelIcon}
+        interactive={false}
+        zIndexOffset={active ? 1100 : 100}
+      />
+    </>
   );
 }
 
-/** Hub explorer: destination pins only (no itinerary route until a package is chosen). */
+function HoverCardLayer({
+  stop,
+  detail,
+}: {
+  stop: TourRouteStop;
+  detail: TourMapStopDetail;
+}) {
+  const map = useMap();
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [host, setHost] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setHost(map.getContainer().closest(".tour-sri-lanka-map") as HTMLElement);
+  }, [map]);
+
+  useEffect(() => {
+    function update() {
+      const point = map.latLngToContainerPoint([stop.lat, stop.lng]);
+      setPos({ x: point.x, y: point.y });
+    }
+    update();
+    map.on("move zoom", update);
+    return () => {
+      map.off("move zoom", update);
+    };
+  }, [map, stop.lat, stop.lng]);
+
+  if (!host) return null;
+
+  return createPortal(
+    <div
+      className="tour-map-hover-card"
+      style={{
+        left: pos.x,
+        top: pos.y - 72,
+      }}
+    >
+      {detail.imageSrc ? (
+        <div
+          className="tour-map-hover-card__image"
+          style={{ backgroundImage: `url(${detail.imageSrc})` }}
+          role="img"
+          aria-label={detail.imageAlt ?? stop.label}
+        />
+      ) : null}
+      <div className="tour-map-hover-card__body">
+        <p className="tour-map-hover-card__eyebrow">
+          {detail.day != null ? `Day ${detail.day}` : `Stop ${stop.markerLabel}`}
+        </p>
+        <p className="tour-map-hover-card__title">{stop.label}</p>
+        {detail.arrivalTime ? (
+          <p className="tour-map-hover-card__meta">
+            <span>Arrive</span> {detail.arrivalTime}
+          </p>
+        ) : null}
+        {detail.departureTime ? (
+          <p className="tour-map-hover-card__meta">
+            <span>Depart</span> {detail.departureTime}
+          </p>
+        ) : null}
+        {detail.description ? (
+          <p className="tour-map-hover-card__desc">{detail.description}</p>
+        ) : null}
+      </div>
+    </div>,
+    host,
+  );
+}
+
 function DestinationPins({
   destinations,
   hoveredSlug,
@@ -407,37 +533,51 @@ function DestinationPins({
   onSelect?: (slug: string) => void;
   interactive: boolean;
 }) {
+  const labelOffsets = useMemo(
+    () =>
+      computeLabelOffsets(
+        destinations.map((d) => ({
+          id: d.slug,
+          lat: d.lat,
+          lng: d.lng,
+          label: d.name,
+        })),
+      ),
+    [destinations],
+  );
+
   return (
     <>
       {destinations.map((dest, index) => {
         const active = hoveredSlug === dest.slug || selectedSlug === dest.slug;
-        const icon = createQPickPinIcon(
-          String(index + 1),
-          active ? "active" : "upcoming",
-        );
+        const icon = createQPickPinIcon(String(index + 1), "hub", active);
+        const offset = labelOffsets.get(dest.slug) ?? { x: 0, y: 10 };
         return (
-          <Marker
-            key={dest.slug}
-            position={[dest.lat, dest.lng]}
-            icon={icon}
-            zIndexOffset={active ? 900 : 300}
-            eventHandlers={
-              interactive
-                ? {
-                    mouseover: () => onHover?.(dest.slug),
-                    mouseout: () => onHover?.(null),
-                    click: (e) => {
-                      L.DomEvent.stopPropagation(e.originalEvent);
-                      onSelect?.(dest.slug);
-                    },
-                  }
-                : undefined
-            }
-          >
-            <Tooltip direction="top" offset={[0, -48]} className="tour-map-tooltip">
-              <span className="font-semibold">{dest.name}</span>
-            </Tooltip>
-          </Marker>
+          <Fragment key={dest.slug}>
+            <Marker
+              position={[dest.lat, dest.lng]}
+              icon={icon}
+              zIndexOffset={active ? 900 : 300}
+              eventHandlers={
+                interactive
+                  ? {
+                      mouseover: () => onHover?.(dest.slug),
+                      mouseout: () => onHover?.(null),
+                      click: (e) => {
+                        L.DomEvent.stopPropagation(e.originalEvent);
+                        onSelect?.(dest.slug);
+                      },
+                    }
+                  : undefined
+              }
+            />
+            <Marker
+              position={[dest.lat, dest.lng]}
+              icon={createLabelIcon(dest.name, offset.x, offset.y)}
+              interactive={false}
+              zIndexOffset={active ? 850 : 80}
+            />
+          </Fragment>
         );
       })}
     </>
@@ -447,7 +587,6 @@ function DestinationPins({
 export type SriLankaTourMapProps = {
   destinations?: TourDestination[];
   itineraryRoute?: TourItineraryRoute | null;
-  /** Real road-network geometry (ORS / OSRM). Preferred over straight stop lines. */
   roadRoute?: TourRoadRoute | null;
   routes?: TourMapRoute[];
   activeStopId?: string | null;
@@ -457,6 +596,7 @@ export type SriLankaTourMapProps = {
   animateRoute?: boolean;
   hoveredSlug?: string | null;
   selectedSlug?: string | null;
+  stopDetails?: Record<string, TourMapStopDetail>;
   onHover?: (slug: string | null) => void;
   onSelect?: (slug: string) => void;
   onHoverStop?: (stopId: string | null) => void;
@@ -468,9 +608,6 @@ export type SriLankaTourMapProps = {
   interactive?: boolean;
 };
 
-/**
- * Premium chauffeur journey map — road-network routes, Q Pick pins, segment highlight.
- */
 export function SriLankaTourMap({
   destinations = [],
   itineraryRoute = null,
@@ -483,6 +620,7 @@ export function SriLankaTourMap({
   animateRoute = true,
   hoveredSlug = null,
   selectedSlug = null,
+  stopDetails,
   onHover,
   onSelect,
   onHoverStop,
@@ -493,6 +631,8 @@ export function SriLankaTourMap({
   compact = false,
   interactive = true,
 }: SriLankaTourMapProps) {
+  const [routeVisible, setRouteVisible] = useState(false);
+
   const resolvedHeight =
     heightClass ??
     (compact
@@ -511,11 +651,9 @@ export function SriLankaTourMap({
   const focusStop =
     itineraryRoute?.stops.find((s) => s.id === focusStopId) ?? null;
 
-  const hasRoadNetwork = Boolean(roadRoute && roadRoute.coordinates.length >= 2);
-
   return (
     <div
-      className={`tour-sri-lanka-map relative overflow-hidden rounded-[1.25rem] ${resolvedHeight} ${className}`}
+      className={`tour-sri-lanka-map tour-sri-lanka-map--luxury relative overflow-hidden rounded-[1.5rem] ${resolvedHeight} ${className}`}
     >
       <MapContainer
         center={SRI_LANKA_CENTER}
@@ -529,43 +667,47 @@ export function SriLankaTourMap({
         doubleClickZoom={interactive}
         zoomControl={interactive}
         attributionControl
-        className="h-full w-full bg-[#e8eef4]"
+        className="h-full w-full"
         style={{ height: "100%", width: "100%" }}
       >
-        {/* Premium light basemap with strong road contrast */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · &copy; <a href="https://carto.com/">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           subdomains="abcd"
         />
         {onMapReady ? <MapApiBridge onReady={onMapReady} /> : null}
-        <FitRoute
-          coordinates={
-            primaryCoords.length
-              ? primaryCoords
-              : destinations.map((d) => [d.lat, d.lng] as [number, number])
-          }
-          resetToken={resetToken}
-        />
+        <VisibleObserver onVisible={setRouteVisible} />
+        <FitRoute coordinates={primaryCoords} resetToken={resetToken} />
         <FlyToStop stop={focusStop} focusToken={focusToken} />
+
+        {primaryCoords.length >= 2 ? (
+          <AnimatedRoadLine
+            coordinates={primaryCoords}
+            animate={animateRoute}
+            visible={routeVisible}
+          />
+        ) : null}
 
         {itineraryRoute ? (
           <>
-            {hasRoadNetwork && roadRoute ? (
-              <RoadLegsLayer
-                key={`${roadRoute.provider}-${roadRoute.coordinates.length}`}
-                roadRoute={roadRoute}
-                activeStopId={activeStopId}
-                animate={animateRoute}
-              />
-            ) : null}
             <ItineraryMarkers
               stops={itineraryRoute.stops}
+              destinationStops={itineraryRoute.destinationStops}
               activeStopId={activeStopId}
+              stopDetails={stopDetails}
               onHoverStop={onHoverStop}
               onSelectStop={onSelectStop}
               interactive={interactive}
             />
+            {activeStopId && stopDetails?.[activeStopId] ? (
+              <HoverCardLayer
+                stop={
+                  itineraryRoute.stops.find((s) => s.id === activeStopId) ??
+                  itineraryRoute.stops[0]
+                }
+                detail={stopDetails[activeStopId]!}
+              />
+            ) : null}
           </>
         ) : (
           <>
@@ -582,17 +724,13 @@ export function SriLankaTourMap({
                       : "tour-route-line"
                   }
                   pathOptions={{
-                    color: route.selected ? BRAND_BLUE : "#5b8def",
+                    color: route.selected ? "#0062fa" : "#94b8f0",
                     weight: route.selected ? 5 : 3,
-                    opacity: route.selected ? 0.95 : 0.55,
+                    opacity: route.selected ? 0.92 : 0.5,
                     lineCap: "round",
                     lineJoin: "round",
                   }}
-                >
-                  <Tooltip sticky className="tour-map-tooltip">
-                    {route.label}
-                  </Tooltip>
-                </Polyline>
+                />
               );
             })}
             <DestinationPins

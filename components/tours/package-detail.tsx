@@ -1,39 +1,54 @@
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { PackageDetailHero } from "@/components/tours/package-detail-hero";
+import { PackageDetailJourneySync } from "@/components/tours/package-detail-journey-sync";
+import { PackageDetailRouteMap } from "@/components/tours/package-detail-route-map";
+import { PackageDetailVehicleExperience } from "@/components/tours/package-detail-vehicle-experience";
+import { PackageDetailVehicleProvider } from "@/components/tours/package-detail-vehicle-context";
+import {
+  TourDetailSection,
+  TourReveal,
+  TourSectionHeader,
+} from "@/components/tours/package-detail-ui";
 import { Container } from "@/components/ui/container";
-import { AnimatedRouteMap } from "@/components/tours/animated-route-map";
+import { notFound } from "next/navigation";
 import { CinematicFinalCta } from "@/components/tours/cinematic-final-cta";
 import { CinematicGallery } from "@/components/tours/cinematic-gallery";
 import { DayChapterItinerary } from "@/components/tours/day-chapter-itinerary";
 import { DestinationExperienceCard } from "@/components/tours/destination-experience-card";
 import { FaqAccordion } from "@/components/tours/faq-accordion";
+import { IncludedExcluded } from "@/components/tours/included-excluded";
 import { JsonLd } from "@/components/tours/json-ld";
+import { PackageBookingForm } from "@/components/tours/package-booking-form";
 import { PackageCard } from "@/components/tours/package-card";
+import { PackageStickyBooking } from "@/components/tours/package-sticky-booking";
+import { Reviews } from "@/components/tours/reviews";
 import { SuggestedStays } from "@/components/tours/suggested-stays";
-import { VehicleCard } from "@/components/tours/vehicle-card";
+import { TourHighlights } from "@/components/tours/tour-highlights";
+import { TrustSection } from "@/components/tours/trust-section";
 import { WhyThisTour } from "@/components/tours/why-this-tour";
-import { formatTourPriceLkr } from "@/lib/tours/pricing-display";
 import {
   getAllVehicles,
   getBookHref,
+  getCategoryById,
   getDestinationsForPackage,
+  getExpandedPackageGallery,
   getFaqsByIds,
   getGalleryImage,
   getPackageBySlug,
   getPackageDayChapters,
-  getPackageGallery,
+  getPackageDetailTrustSignals,
   getPackageHref,
   getPackageItineraryRoute,
+  getReviewsForPackage,
+  getReviewsSectionMeta,
   getSuggestedStaysForPackage,
   getTourPricingConfig,
-  getVehicleById,
 } from "@/lib/tours/repository";
 import {
   buildBreadcrumbJsonLd,
   buildFaqPageJsonLd,
   buildTouristTripJsonLd,
 } from "@/lib/tours/schema";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 type PackageDetailProps = {
   slug: string;
@@ -44,20 +59,28 @@ export function PackageDetail({ slug }: PackageDetailProps) {
   if (!pkg) notFound();
 
   const hero = getGalleryImage(pkg.heroGalleryId);
-  const gallery = getPackageGallery(pkg.slug);
+  const gallery = getExpandedPackageGallery(pkg.slug);
   const destinations = getDestinationsForPackage(pkg.slug);
+  const destinationNames = destinations.map((d) => d.name);
   const chapters = getPackageDayChapters(pkg.slug);
   const itineraryRoute = getPackageItineraryRoute(pkg.slug);
   const faqs = getFaqsByIds(pkg.faqIds);
-  const vehicle = getVehicleById(pkg.vehicleId);
   const vehicles = getAllVehicles();
   const stays = getSuggestedStaysForPackage(pkg.slug);
   const related = pkg.relatedPackageSlugs
     .map((s) => getPackageBySlug(s))
     .filter((p): p is NonNullable<typeof p> => p != null);
+  const reviews = getReviewsForPackage(pkg.slug);
+  const reviewsMeta = getReviewsSectionMeta();
+  const trustSignals = getPackageDetailTrustSignals();
   const bookHref = getBookHref(pkg.slug);
   const pricing = getTourPricingConfig();
   const features = pkg.experienceFeatures ?? [];
+  const primaryCategoryId =
+    pkg.categoryIds.find((id) => id !== "popular") ?? pkg.categoryIds[0];
+  const tourStyle =
+    getCategoryById(primaryCategoryId)?.title.replace(" Tour Packages", "") ??
+    "Private Tour";
 
   const schemas = [
     buildBreadcrumbJsonLd([
@@ -70,362 +93,282 @@ export function PackageDetail({ slug }: PackageDetailProps) {
   ];
 
   return (
-    <>
-      <JsonLd data={schemas} />
+    <PackageDetailVehicleProvider
+      vehicles={vehicles}
+      initialVehicleId={pkg.vehicleId}
+      recommendedVehicleId={pkg.vehicleId}
+    >
+      <div className="tour-detail-page">
+        <JsonLd data={schemas} />
 
-      <section className="relative isolate min-h-[min(78vh,720px)] overflow-hidden bg-map-void text-foam">
-        {hero ? (
-          <Image
-            src={hero.src}
-            alt={hero.alt}
-            fill
-            priority
-            className="object-cover scale-105"
-            sizes="100vw"
-          />
-        ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-map-void via-map-void/50 to-map-void/25" />
-        <Container className="relative flex min-h-[min(78vh,720px)] flex-col justify-end pb-14 pt-28">
-          <nav aria-label="Breadcrumb" className="text-xs text-foam/55">
-            <ol className="flex flex-wrap gap-2">
-              <li>
-                <Link href="/" className="hover:text-foam">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden>/</li>
-              <li>
-                <Link href="/tours" className="hover:text-foam">
-                  Tours
-                </Link>
-              </li>
-              <li aria-hidden>/</li>
-              <li className="text-foam/80">{pkg.title}</li>
-            </ol>
-          </nav>
-          <p className="mt-5 font-mono text-[0.6875rem] tracking-[0.2em] text-brand-bright uppercase">
-            {pkg.durationDays}-day private chauffeur journey
-          </p>
-          <h1 className="mt-2 max-w-3xl font-display text-[clamp(2.2rem,5.5vw,3.75rem)] font-semibold leading-[1.05] tracking-tight">
-            {pkg.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foam/70 sm:text-base">
-            {pkg.seo.intro.slice(0, 160)}
-            {pkg.seo.intro.length > 160 ? "…" : ""}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href={bookHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-7 text-sm font-semibold text-paper shadow-[0_14px_32px_rgb(0_98_250_/_0.4)]"
-            >
-              Book This Tour
-            </Link>
-            <a
-              href="#itinerary"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-foam/25 bg-foam/10 px-7 text-sm font-semibold text-foam backdrop-blur-md"
-            >
-              Read the journey
-            </a>
-          </div>
-        </Container>
-      </section>
+        <PackageDetailHero pkg={pkg} hero={hero} tourStyle={tourStyle} />
 
       <div className="bg-foam">
-        <Container className="grid gap-12 py-14 lg:grid-cols-[1fr_340px] lg:gap-14 lg:py-20">
-          <article className="min-w-0 space-y-16">
-            <section>
-              <p className="font-mono text-[0.6875rem] tracking-[0.18em] text-brand uppercase">
-                Overview
-              </p>
-              <h2 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
-                A journey, not a checklist
-              </h2>
-              <p className="mt-4 text-[0.975rem] leading-relaxed text-ink/65 sm:text-base">
-                {pkg.seo.intro}
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-display text-2xl font-semibold text-ink">
-                Gallery
-              </h2>
-              <div className="mt-5">
-                <CinematicGallery
-                  images={gallery.length ? gallery : hero ? [hero] : []}
-                  showVideoPlaceholder={pkg.videoPlaceholder !== false}
+        <Container className="tour-detail-layout">
+          <article className="tour-detail-main tour-detail-article">
+            <TourReveal>
+              <TourDetailSection aria-label="Overview">
+                <TourSectionHeader
+                  eyebrow="Overview"
+                  title="A journey, not a checklist"
                 />
-              </div>
-            </section>
+                <p className="tour-detail-body tour-detail-stack max-w-3xl">
+                  {pkg.seo.intro}
+                </p>
+              </TourDetailSection>
+            </TourReveal>
+
+            <TourReveal>
+              <TourHighlights highlights={pkg.highlights} />
+            </TourReveal>
+
+            <TourReveal>
+              <TourDetailSection aria-label="Gallery">
+                <TourSectionHeader
+                  eyebrow="Visual journey"
+                  title="Gallery"
+                  lead="Premium Sri Lankan landscapes, heritage sites, and coastlines on your private route."
+                />
+                <div className="tour-detail-stack">
+                  <CinematicGallery
+                    images={gallery.length ? gallery : hero ? [hero] : []}
+                    showVideoPlaceholder={pkg.videoPlaceholder !== false}
+                  />
+                </div>
+              </TourDetailSection>
+            </TourReveal>
 
             {features.length > 0 ? (
-              <WhyThisTour features={features} />
+              <TourReveal>
+                <WhyThisTour features={features} />
+              </TourReveal>
             ) : null}
 
-            <section>
-              <h2 className="font-display text-2xl font-semibold text-ink">
-                Chauffeur journey
-              </h2>
-              <p className="mt-2 text-sm text-ink/55">
-                Real Sri Lankan roads, numbered stops, and your private vehicle —
-                synced to the day-by-day itinerary.
-              </p>
-              <div className="mt-5">
-                {itineraryRoute ? (
-                  <AnimatedRouteMap
-                    itineraryRoute={itineraryRoute}
-                    title={pkg.title}
-                    vehicle={vehicle}
-                    durationDays={pkg.durationDays}
-                  />
-                ) : null}
-              </div>
-            </section>
+            <TourReveal>
+              <TrustSection
+                signals={trustSignals}
+                title="Travel with confidence"
+                className="tour-detail-card p-6 sm:p-8"
+              />
+            </TourReveal>
 
-            <section id="itinerary" className="scroll-mt-28">
-              <p className="font-mono text-[0.6875rem] tracking-[0.18em] text-brand uppercase">
-                Day by day
-              </p>
-              <h2 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
-                Scroll the story
-              </h2>
-              <p className="mt-2 max-w-xl text-sm text-ink/55">
-                Each day is a visual chapter — arrival, heritage, highlands,
-                wildlife, or coast.
-              </p>
-              <div className="mt-10">
-                <DayChapterItinerary chapters={chapters} />
-              </div>
-            </section>
+            <PackageDetailJourneySync>
+              <TourReveal>
+                <TourDetailSection aria-label="Chauffeur journey">
+                  <TourSectionHeader
+                    title="Chauffeur journey"
+                    lead="Real Sri Lankan roads, numbered stops, and your private vehicle — synced to the day-by-day itinerary."
+                  />
+                  <div className="tour-detail-stack">
+                    {itineraryRoute ? (
+                      <PackageDetailRouteMap
+                        itineraryRoute={itineraryRoute}
+                        title={pkg.title}
+                        durationDays={pkg.durationDays}
+                      />
+                    ) : null}
+                  </div>
+                </TourDetailSection>
+              </TourReveal>
+
+              <TourReveal>
+                <TourDetailSection id="itinerary" aria-label="Day by day itinerary">
+                  <TourSectionHeader
+                    eyebrow="Day by day"
+                    title="Scroll the story"
+                    lead="Each day is a visual chapter — arrival, heritage, highlands, wildlife, or coast."
+                  />
+                  <div className="tour-detail-stack">
+                    <DayChapterItinerary
+                      chapters={chapters}
+                      dayToStopId={itineraryRoute?.dayToStopId}
+                    />
+                  </div>
+                </TourDetailSection>
+              </TourReveal>
+            </PackageDetailJourneySync>
 
             {destinations.length > 0 ? (
-              <section>
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  Places on this journey
-                </h2>
-                <div className="mt-6 grid gap-5 sm:grid-cols-2">
-                  {destinations.map((destination, i) => (
-                    <DestinationExperienceCard
-                      key={destination.slug}
-                      destination={destination}
-                      timeFromPrevious={
-                        i === 0
-                          ? "From CMB corridor"
-                          : `After ${destinations[i - 1]?.name}`
-                      }
-                    />
-                  ))}
-                </div>
-              </section>
+              <TourReveal>
+                <TourDetailSection aria-label="Places on this journey">
+                  <TourSectionHeader title="Places on this journey" />
+                  <div className="tour-detail-grid tour-detail-grid--2 tour-detail-equal-cards tour-detail-stack">
+                    {destinations.map((destination, i) => (
+                      <DestinationExperienceCard
+                        key={destination.slug}
+                        destination={destination}
+                        timeFromPrevious={
+                          i === 0
+                            ? "From CMB corridor"
+                            : `After ${destinations[i - 1]?.name}`
+                        }
+                      />
+                    ))}
+                  </div>
+                </TourDetailSection>
+              </TourReveal>
             ) : null}
 
-            <SuggestedStays stays={stays} />
+            <TourReveal>
+              <SuggestedStays stays={stays} />
+            </TourReveal>
 
-            <section>
-              <h2 className="font-display text-2xl font-semibold text-ink">
-                Vehicle experience
-              </h2>
-              <p className="mt-2 text-sm text-ink/55">
-                Recommended class highlighted — change freely when you plan.
-              </p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {vehicles.map((v) => (
-                  <VehicleCard
-                    key={v.id}
-                    vehicle={v}
-                    selected={v.id === pkg.vehicleId}
-                    experience
-                  />
-                ))}
-              </div>
-            </section>
+            <TourReveal>
+              <TourDetailSection aria-label="Vehicle experience">
+                <TourSectionHeader
+                  eyebrow="Private fleet"
+                  title="Vehicle experience"
+                  lead="Premium real-world vehicles — recommended class highlighted. Change freely when you plan."
+                />
+                <PackageDetailVehicleExperience />
+              </TourDetailSection>
+            </TourReveal>
 
-            <section className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-[1.35rem] border border-ink/8 bg-white p-6">
-                <h2 className="font-display text-xl font-semibold text-ink">
-                  Included
-                </h2>
-                <ul className="mt-4 space-y-2.5 text-sm text-ink/65">
-                  {pkg.included.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="text-brand">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-[1.35rem] border border-ink/8 bg-white p-6">
-                <h2 className="font-display text-xl font-semibold text-ink">
-                  Excluded
-                </h2>
-                <ul className="mt-4 space-y-2.5 text-sm text-ink/65">
-                  {pkg.excluded.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="text-ink/30">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
+            <TourReveal>
+              <IncludedExcluded
+                included={pkg.included}
+                excluded={pkg.excluded}
+              />
+            </TourReveal>
 
-            <section className="grid gap-6 lg:grid-cols-2">
-              <div>
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  Travel tips
-                </h2>
-                <ul className="mt-4 space-y-2">
-                  {pkg.travelTips.map((tip) => (
-                    <li
-                      key={tip}
-                      className="rounded-[1rem] border border-ink/8 bg-white px-4 py-3 text-sm leading-relaxed text-ink/70"
-                    >
-                      {tip}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  Packing tips
-                </h2>
-                <ul className="mt-4 space-y-2">
-                  {(pkg.packingTips ?? []).map((tip) => (
-                    <li
-                      key={tip}
-                      className="rounded-[1rem] border border-ink/8 bg-white px-4 py-3 text-sm leading-relaxed text-ink/70"
-                    >
-                      {tip}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
+            <TourReveal>
+              <TourDetailSection aria-label="Travel and packing tips">
+                <div className="tour-detail-grid tour-detail-grid--2">
+                  <div>
+                    <TourSectionHeader title="Travel tips" />
+                    <ul className="tour-detail-stack space-y-2.5">
+                      {pkg.travelTips.map((tip) => (
+                        <li
+                          key={tip}
+                          className="tour-detail-card tour-detail-card--lift px-4 py-3.5 text-sm leading-[1.65] text-ink/70"
+                        >
+                          {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <TourSectionHeader title="Packing tips" />
+                    <ul className="tour-detail-stack space-y-2.5">
+                      {(pkg.packingTips ?? []).map((tip) => (
+                        <li
+                          key={tip}
+                          className="tour-detail-card tour-detail-card--lift px-4 py-3.5 text-sm leading-[1.65] text-ink/70"
+                        >
+                          {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </TourDetailSection>
+            </TourReveal>
 
-            <section>
-              <h2 className="font-display text-2xl font-semibold text-ink">
-                Best time & weather
-              </h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <p className="rounded-[1.35rem] border border-ink/8 bg-white p-5 text-sm leading-relaxed text-ink/65">
-                  <span className="block font-mono text-[0.625rem] tracking-wide text-ink/40 uppercase">
-                    Best time to visit
-                  </span>
-                  <span className="mt-2 block">{pkg.bestTimeToVisit}</span>
-                </p>
-                <p className="rounded-[1.35rem] border border-dashed border-ink/15 bg-foam/80 p-5 text-sm leading-relaxed text-ink/55">
-                  <span className="block font-mono text-[0.625rem] tracking-wide text-ink/40 uppercase">
-                    Weather placeholder
-                  </span>
-                  <span className="mt-2 block">
-                    Live forecasts will appear here in a future update. For now,
-                    use each destination’s seasonal guidance above and tell us
-                    your travel month when requesting a quote.
-                  </span>
-                </p>
-              </div>
-            </section>
+            <TourReveal>
+              <TourDetailSection aria-label="Best time and weather">
+                <TourSectionHeader title="Best time & weather" />
+                <div className="tour-detail-grid tour-detail-grid--2 tour-detail-stack">
+                  <p className="tour-detail-card px-5 py-5 text-sm leading-[1.65] text-ink/65">
+                    <span className="tour-detail-eyebrow">Best time to visit</span>
+                    <span className="mt-3 block tour-detail-body">{pkg.bestTimeToVisit}</span>
+                  </p>
+                  <p className="tour-detail-card border-dashed px-5 py-5 text-sm leading-[1.65] text-ink/58">
+                    <span className="tour-detail-eyebrow">Weather guidance</span>
+                    <span className="mt-3 block tour-detail-body">
+                      Share your travel month in the booking form — we advise on
+                      seasonal routing, east vs west coast, and safari windows
+                      for your dates.
+                    </span>
+                  </p>
+                </div>
+              </TourDetailSection>
+            </TourReveal>
+
+            <TourReveal>
+              <PackageBookingForm
+                pkg={pkg}
+                vehicles={vehicles}
+                destinationNames={destinationNames}
+              />
+            </TourReveal>
+
+            <TourReveal>
+              <TourDetailSection aria-label="Guest reviews">
+                <TourSectionHeader
+                  eyebrow="Guest stories"
+                  title={reviewsMeta.title}
+                />
+                {reviews.length > 0 ? (
+                  <Reviews reviews={reviews} className="tour-detail-stack" />
+                ) : (
+                  <p className="tour-detail-lead tour-detail-stack">
+                    {reviewsMeta.emptyBody}
+                  </p>
+                )}
+              </TourDetailSection>
+            </TourReveal>
 
             {faqs.length > 0 ? (
-              <section>
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  FAQ
-                </h2>
-                <div className="mt-5">
-                  <FaqAccordion faqs={faqs} />
-                </div>
-              </section>
+              <TourReveal>
+                <TourDetailSection aria-label="Frequently asked questions">
+                  <TourSectionHeader
+                    eyebrow="Frequently asked questions"
+                    title="FAQ"
+                    lead="Everything you need to know before planning your journey with Q Pick."
+                  />
+                  <div className="tour-detail-stack mt-6 sm:mt-8">
+                    <FaqAccordion faqs={faqs} />
+                  </div>
+                </TourDetailSection>
+              </TourReveal>
             ) : null}
 
             {related.length > 0 ? (
-              <section>
-                <h2 className="font-display text-2xl font-semibold text-ink">
-                  Related journeys
-                </h2>
-                <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                  {related.map((rel) => (
-                    <PackageCard key={rel.slug} package={rel} />
-                  ))}
-                </div>
-              </section>
+              <TourReveal>
+                <TourDetailSection aria-label="Related journeys">
+                  <TourSectionHeader title="Related journeys" />
+                  <div className="tour-detail-grid tour-detail-grid--2 tour-detail-equal-cards tour-detail-stack">
+                    {related.map((rel) => (
+                      <PackageCard
+                        key={rel.slug}
+                        package={rel}
+                        variant="related"
+                      />
+                    ))}
+                  </div>
+                </TourDetailSection>
+              </TourReveal>
             ) : null}
           </article>
 
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="overflow-hidden rounded-[1.75rem] border border-ink/8 bg-white/90 shadow-[0_20px_50px_rgb(10_22_32_/_0.1)] backdrop-blur-xl">
-              {hero ? (
-                <div className="relative h-36">
-                  <Image
-                    src={hero.src}
-                    alt={hero.alt}
-                    fill
-                    className="object-cover"
-                    sizes="340px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-                </div>
-              ) : null}
-              <div className="p-6">
-                <p className="font-mono text-[0.625rem] tracking-wide text-ink/40 uppercase">
-                  Private quote
-                </p>
-                <p className="mt-1 font-display text-2xl font-semibold text-brand-deep">
-                  {formatTourPriceLkr(pkg.startingPriceLkr)}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-ink/45">
-                  {pricing.quoteHint}
-                </p>
-                <dl className="mt-5 space-y-3 border-t border-ink/8 pt-5 text-sm">
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-ink/45">Duration</dt>
-                    <dd className="font-semibold text-ink">
-                      {pkg.durationDays} days
-                    </dd>
-                  </div>
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-ink/45">Vehicle</dt>
-                    <dd className="font-semibold text-ink">
-                      {vehicle?.name ?? "—"}
-                    </dd>
-                  </div>
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-ink/45">Stops</dt>
-                    <dd className="font-semibold text-ink">
-                      {pkg.destinationSlugs.length}
-                    </dd>
-                  </div>
-                </dl>
-                <Link
-                  href={bookHref}
-                  className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-2xl bg-gradient-to-b from-[#2b7dff] to-[#0062fa] text-sm font-semibold text-paper shadow-[0_12px_28px_rgb(0_98_250_/_0.35)]"
-                >
-                  Book This Tour
-                </Link>
-                <a
-                  href="https://wa.me/94783619000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex h-11 w-full items-center justify-center rounded-2xl border border-ink/12 text-sm font-semibold text-ink hover:border-brand/30"
-                >
-                  Speak with an expert
-                </a>
-              </div>
-            </div>
-          </aside>
+          <div className="tour-detail-aside">
+            <PackageStickyBooking
+              pkg={pkg}
+              heroSrc={hero?.src}
+              heroAlt={hero?.alt}
+              bookHref={bookHref}
+              pricing={pricing}
+              included={pkg.included}
+            />
+          </div>
         </Container>
 
-        <Container className="pb-20 sm:pb-24">
-          <CinematicFinalCta
-            headline="Your Sri Lanka Journey Starts Here"
-            body={`Ready for ${pkg.title}? Open the planner — we confirm pacing, vehicle, and a written quote.`}
-            primaryLabel="Plan My Journey"
-            primaryHref={bookHref}
-            secondaryLabel="Speak With A Travel Expert"
-            secondaryHref="https://wa.me/94783619000"
-            imageSrc={hero?.src ?? "/images/destinations/sigiriya.webp"}
-            imageAlt={hero?.alt ?? "Sri Lanka private tour"}
-          />
+        <Container className="pb-16 sm:pb-20 lg:pb-24">
+          <TourReveal>
+            <CinematicFinalCta
+              headline="Your Sri Lanka Journey Starts Here"
+              body={`Ready for ${pkg.title}? Submit the form above or open the planner — we confirm pacing, vehicle, and a written quote.`}
+              primaryLabel="Plan My Journey"
+              primaryHref={bookHref}
+              secondaryLabel="Speak With A Travel Expert"
+              secondaryHref="https://wa.me/94783619000"
+              imageSrc={hero?.src ?? getDestinationImageSrc("sigiriya")}
+              imageAlt={hero?.alt ?? "Sri Lanka private tour"}
+            />
+          </TourReveal>
         </Container>
       </div>
-    </>
+      </div>
+    </PackageDetailVehicleProvider>
   );
 }

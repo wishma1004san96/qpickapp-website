@@ -9,6 +9,7 @@ import {
   DESTINATION_IMAGES,
   resolveDestinationImage,
 } from "@/lib/destination-images";
+import { getLandmarkImageSrc } from "@/lib/destination-image-catalog";
 
 export type DestinationScene = {
   id: string;
@@ -69,7 +70,7 @@ export const DESTINATION_SCENES: readonly DestinationScene[] = [
     durationMin: 330,
   }),
   scene("galle", {
-    match: ["galle", "unawatuna", "ahungalla", "beruwala", "aluthgama", "ambalangoda"],
+    match: ["galle", "ahungalla", "beruwala", "aluthgama", "ambalangoda"],
     name: "Galle",
     province: "Southern Province",
     description:
@@ -95,6 +96,18 @@ export const DESTINATION_SCENES: readonly DestinationScene[] = [
     distanceKm: 130,
     durationMin: 150,
   }),
+  {
+    id: "unawatuna",
+    match: ["unawatuna"],
+    name: "Unawatuna",
+    province: "Southern Province",
+    description:
+      "Golden bay and reef snorkelling — the south coast, privately arranged.",
+    image: getLandmarkImageSrc("unawatuna"),
+    imageAlt: "Unawatuna Beach with turquoise water and palm-fringed shoreline",
+    distanceKm: 155,
+    durationMin: 165,
+  },
   scene("kandy", {
     match: ["kandy", "katugastota", "peradeniya", "pilimathalawa", "digana"],
     name: "Kandy",

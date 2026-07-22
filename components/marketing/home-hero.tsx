@@ -21,7 +21,6 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import {
-  QGlowBadge,
   QHeadingMark,
   QWatermark,
 } from "@/components/brand/q-mark";
@@ -487,7 +486,6 @@ function JourneyPlanner() {
       }}
     >
       <QWatermark tone="foam" opacity={0.05} size={260} blur={2} />
-      <QGlowBadge size={22} className="top-3.5 right-3.5 sm:top-4 sm:right-4" />
       <div className="relative z-[1] flex flex-1 flex-col gap-4 lg:justify-between lg:gap-y-3">
       <div className="flex flex-col gap-1.5">
         <QHeadingMark

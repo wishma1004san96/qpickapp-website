@@ -1,3 +1,4 @@
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 import {
   buildItineraryRoute,
   type TourItineraryRoute,
@@ -19,6 +20,7 @@ import {
   HUB_HERO,
   HUB_SEO,
   INTERNAL_LINKS,
+  PACKAGE_DETAIL_TRUST_SIGNALS,
   TRUST_SIGNALS,
 } from "./seo/hub";
 import { TOUR_SUGGESTED_STAYS } from "./stays";
@@ -132,7 +134,9 @@ export function getPackageDayChapters(slug: string): TourDayChapter[] {
     return {
       ...day,
       imageSrc:
-        dest?.imageSrc ?? gallery?.src ?? "/images/destinations/sigiriya.webp",
+        dest?.imageSrc ??
+        gallery?.src ??
+        getDestinationImageSrc("sigiriya"),
       imageAlt:
         dest?.imageAlt ?? gallery?.alt ?? `Day ${day.day} on ${pkg.title}`,
       destinationName: dest?.name ?? null,
@@ -193,6 +197,51 @@ export function getPackageGallery(slug: string): TourGalleryImage[] {
     .filter((g): g is TourGalleryImage => g != null);
 }
 
+/** Package gallery plus destination & story imagery — deduped by src. */
+export function getExpandedPackageGallery(slug: string): TourGalleryImage[] {
+  const pkg = getPackageBySlug(slug);
+  if (!pkg) return [];
+
+  const seen = new Set<string>();
+  const images: TourGalleryImage[] = [];
+
+  function push(image: TourGalleryImage | null) {
+    if (!image || seen.has(image.src)) return;
+    seen.add(image.src);
+    images.push(image);
+  }
+
+  push(getGalleryImage(pkg.heroGalleryId));
+  for (const id of pkg.galleryIds) push(getGalleryImage(id));
+
+  for (const dest of getDestinationsForPackage(slug)) {
+    push({
+      id: `dest-${dest.slug}`,
+      src: dest.imageSrc,
+      alt: dest.imageAlt,
+      tags: [dest.slug, "destination"],
+    });
+  }
+
+  for (const id of ["chauffeur-story", "discovery-story", "compose-story"]) {
+    push(getGalleryImage(id));
+  }
+
+  return images;
+}
+
+export function getReviewsForPackage(slug: string): TourReview[] {
+  const all = getReviews();
+  const matched = all.filter(
+    (r) => !r.packageSlugs?.length || r.packageSlugs.includes(slug),
+  );
+  return matched.length > 0 ? matched : all.slice(0, 3);
+}
+
+export function getPackageDetailTrustSignals() {
+  return PACKAGE_DETAIL_TRUST_SIGNALS;
+}
+
 export function getCategories(): TourCategory[] {
   return TOUR_CATEGORIES;
 }
@@ -212,7 +261,7 @@ export function getCategorySeo(categoryId: TourCategoryId): TourSeoMeta {
     title: `${category.title} Tours Sri Lanka | Q Pick`,
     description: category.intro,
     canonicalPath: `/tours#${category.hash}`,
-    ogImage: HUB_SEO.ogImage,
+    ogImage: category.imageSrc,
   };
 }
 

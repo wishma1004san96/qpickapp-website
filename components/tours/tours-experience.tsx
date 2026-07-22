@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { CategoryCard } from "@/components/tours/category-card";
 import { CinematicFinalCta } from "@/components/tours/cinematic-final-cta";
 import { DestinationExperienceCard } from "@/components/tours/destination-experience-card";
 import { FaqAccordion } from "@/components/tours/faq-accordion";
+import { TourSectionHeader } from "@/components/tours/package-detail-ui";
 import { IslandExplorerMap } from "@/components/tours/island-explorer-map";
-import { PackageCard } from "@/components/tours/package-card";
+import { TourCategoryExplorer } from "@/components/tours/tour-category-explorer";
 import { TrustSection } from "@/components/tours/trust-section";
 import { VehicleCard } from "@/components/tours/vehicle-card";
 import type {
@@ -23,6 +23,7 @@ import type {
   TourVehicle,
   TrustSignal,
 } from "@/lib/tours/types";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 
 type ToursExperienceProps = {
   hero: {
@@ -57,18 +58,6 @@ type ToursExperienceProps = {
   bookHref: string;
 };
 
-const BROWSE_ORDER = [
-  "cultural",
-  "beach",
-  "wildlife",
-  "luxury",
-  "adventure",
-  "honeymoon",
-  "family",
-  "photography",
-  "nature",
-] as const;
-
 export function ToursExperience({
   hero,
   heroImage,
@@ -86,17 +75,6 @@ export function ToursExperience({
 }: ToursExperienceProps) {
   const reduceMotion = useReducedMotion() ?? false;
   const [filterSlug, setFilterSlug] = useState<string | null>(null);
-
-  const featured = useMemo(() => {
-    if (!filterSlug) return packages.filter((p) => p.popular);
-    return packages.filter((p) => p.destinationSlugs.includes(filterSlug));
-  }, [packages, filterSlug]);
-
-  const filterName = destinations.find((d) => d.slug === filterSlug)?.name;
-
-  const browseCategories = BROWSE_ORDER.map((id) =>
-    categories.find((c) => c.id === id),
-  ).filter((c): c is TourCategory => c != null);
 
   return (
     <>
@@ -137,7 +115,7 @@ export function ToursExperience({
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                href={hero.primaryCta.href}
+                href="#explore-categories"
                 className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-b from-[#2b7dff] to-[#0062fa] px-7 text-sm font-semibold text-paper shadow-[0_14px_32px_rgb(0_98_250_/_0.4)]"
               >
                 {hero.primaryCta.label}
@@ -163,79 +141,15 @@ export function ToursExperience({
           />
         </Container>
 
-        <section id="packages" className="scroll-mt-24">
-          <Container className="pb-16 sm:pb-20">
-            <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="font-mono text-[0.6875rem] tracking-[0.18em] text-brand uppercase">
-                  Featured journeys
-                </p>
-                <h2 className="mt-1 font-display text-[clamp(1.6rem,3.5vw,2.4rem)] font-semibold text-ink">
-                  {filterName
-                    ? `Journeys through ${filterName}`
-                    : "Private tour packages"}
-                </h2>
-                <p className="mt-2 max-w-2xl text-sm text-ink/55">
-                  Each itinerary is a living story — refine destinations, pace,
-                  and vehicle in the planner.
-                </p>
-              </div>
-              {filterSlug ? (
-                <button
-                  type="button"
-                  onClick={() => setFilterSlug(null)}
-                  className="text-sm font-semibold text-brand hover:underline"
-                >
-                  Clear map filter
-                </button>
-              ) : (
-                <Link
-                  href={bookHref}
-                  className="text-sm font-semibold text-brand hover:underline"
-                >
-                  Plan My Tour →
-                </Link>
-              )}
-            </div>
-            <AnimatePresence mode="popLayout">
-              <motion.div
-                layout
-                className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
-              >
-                {featured.map((pkg) => (
-                  <PackageCard key={pkg.slug} package={pkg} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
-            {featured.length === 0 ? (
-              <p className="mt-6 text-sm text-ink/50">
-                No published packages currently list this stop — plan a custom
-                route instead.
-              </p>
-            ) : null}
-          </Container>
-        </section>
-
         <Container className="pb-16 sm:pb-20">
-          <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold text-ink">
-            Browse by mood
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm text-ink/55">
-            Culture, coast, wildlife, luxury — choose how you want Sri Lanka to
-            feel.
-          </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {browseCategories.map((category) => (
-              <CategoryCard
-                key={category.id}
-                category={category}
-                packageCount={
-                  packages.filter((p) => p.categoryIds.includes(category.id))
-                    .length
-                }
-              />
-            ))}
-          </div>
+          <TourCategoryExplorer
+            categories={categories}
+            packages={packages}
+            destinations={destinations}
+            bookHref={bookHref}
+            mapFilterSlug={filterSlug}
+            onClearMapFilter={() => setFilterSlug(null)}
+          />
         </Container>
 
         <Container className="pb-16 sm:pb-20">
@@ -254,7 +168,7 @@ export function ToursExperience({
                 href={
                   destination.relatedPackageSlugs[0]
                     ? `/tours/${destination.relatedPackageSlugs[0]}`
-                    : "/tours#packages"
+                    : "/tours#explore-categories"
                 }
               />
             ))}
@@ -323,12 +237,13 @@ export function ToursExperience({
         </Container>
 
         <Container className="pb-16 sm:pb-20">
-          <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold text-ink">
-            FAQ
-          </h2>
-          <div className="mt-6">
-            <FaqAccordion faqs={faqs} />
-          </div>
+          <TourSectionHeader
+            eyebrow="Frequently asked questions"
+            title="FAQ"
+            lead="Everything you need to know before planning your journey with Q Pick."
+            className="mb-6 sm:mb-8"
+          />
+          <FaqAccordion faqs={faqs} />
         </Container>
 
         <Container className="pb-20 sm:pb-24">
@@ -339,7 +254,7 @@ export function ToursExperience({
             primaryHref={finalCta.href}
             secondaryLabel={finalCta.secondaryLabel}
             secondaryHref={finalCta.secondaryHref}
-            imageSrc={finalCtaImage?.src ?? "/images/destinations/ella.webp"}
+            imageSrc={finalCtaImage?.src ?? getDestinationImageSrc("ella")}
             imageAlt={
               finalCtaImage?.alt ?? "Scenic Sri Lanka highland journey"
             }

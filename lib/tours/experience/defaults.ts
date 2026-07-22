@@ -28,7 +28,7 @@ export function deriveExperienceFeatures(pkg: TourPackage): TourExperienceFeatur
     },
   ];
 
-  if (pkg.categoryIds.includes("cultural")) {
+  if (pkg.categoryIds.includes("cultural-heritage")) {
     features.push({
       id: "unesco",
       title: "UNESCO heritage",
@@ -36,7 +36,7 @@ export function deriveExperienceFeatures(pkg: TourPackage): TourExperienceFeatur
         "Time for Sigiriya climbs, cave temples, and ancient cities without a day-coach rush.",
     });
   }
-  if (pkg.categoryIds.includes("wildlife")) {
+  if (pkg.categoryIds.includes("wildlife-safari")) {
     features.push({
       id: "safari",
       title: "Safari window",
@@ -44,7 +44,11 @@ export function deriveExperienceFeatures(pkg: TourPackage): TourExperienceFeatur
         "Early park logistics for Yala and seasonal wildlife — jeep fees arranged as clear add-ons.",
     });
   }
-  if (pkg.categoryIds.includes("hill-country") || pkg.destinationSlugs.includes("ella")) {
+  if (
+    pkg.categoryIds.includes("hill-country-tea") ||
+    pkg.categoryIds.includes("train-journeys") ||
+    pkg.destinationSlugs.includes("ella")
+  ) {
     features.push({
       id: "train",
       title: "Scenic train option",
@@ -52,7 +56,10 @@ export function deriveExperienceFeatures(pkg: TourPackage): TourExperienceFeatur
         "Optional highland rail segments while your chauffeur transfers luggage by road.",
     });
   }
-  if (pkg.categoryIds.includes("photography") || pkg.destinationSlugs.includes("sigiriya")) {
+  if (
+    pkg.categoryIds.includes("cultural-heritage") ||
+    pkg.destinationSlugs.includes("sigiriya")
+  ) {
     features.push({
       id: "sunrise",
       title: "Sunrise experiences",
@@ -60,7 +67,7 @@ export function deriveExperienceFeatures(pkg: TourPackage): TourExperienceFeatur
         "Softer light for fortress climbs, Nine Arches frames, and coastal sunsets.",
     });
   }
-  if (pkg.categoryIds.includes("beach")) {
+  if (pkg.categoryIds.includes("beach-holidays")) {
     features.push({
       id: "coast",
       title: "Coastal recovery",

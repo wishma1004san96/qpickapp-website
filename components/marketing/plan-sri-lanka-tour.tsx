@@ -7,17 +7,17 @@ import {
   useMessages,
   useTranslations,
 } from "@/components/i18n/locale-provider";
+import { QPICK_VEHICLE_ICON_IDS, type QPickVehicleIconId } from "@/components/icons/vehicles/types";
+import { VehicleSelection } from "@/components/marketing/vehicle-selection";
 import { Container } from "@/components/ui/container";
 
 const DAY_OPTIONS = [3, 5, 7, 10] as const;
 const TRAVELER_OPTIONS = [1, 2, 4, 6] as const;
 const DEST_IDS = ["colombo", "galle", "ella", "sigiriya", "kandy"] as const;
-const VEHICLE_IDS = ["sedan", "suv", "van"] as const;
 const PICKUP_IDS = ["cmb", "colombo", "galle", "hotel"] as const;
 const TOUR_TYPE_IDS = ["private", "honeymoon", "family", "cultural"] as const;
 
 type DestId = (typeof DEST_IDS)[number];
-type VehicleId = (typeof VEHICLE_IDS)[number];
 type PickupId = (typeof PICKUP_IDS)[number];
 type TourTypeId = (typeof TOUR_TYPE_IDS)[number];
 
@@ -30,10 +30,18 @@ const DEST_KM: Record<DestId, number> = {
   kandy: 120,
 };
 
-const VEHICLE_DAILY: Record<VehicleId, number> = {
+const VEHICLE_DAILY: Record<QPickVehicleIconId, number> = {
+  bike: 8000,
+  tuk: 12000,
+  flex: 15000,
+  mini: 16500,
   sedan: 18500,
+  minivan: 26000,
+  frVan: 32000,
+  highRoofVan: 38000,
   suv: 24500,
-  van: 32000,
+  miniBus: 45000,
+  bus: 65000,
 };
 
 const TOUR_TYPE_FACTOR: Record<TourTypeId, number> = {
@@ -77,7 +85,7 @@ export function PlanSriLankaTour({
     "colombo",
     "galle",
   ]);
-  const [vehicle, setVehicle] = useState<VehicleId>("sedan");
+  const [vehicle, setVehicle] = useState<QPickVehicleIconId>("sedan");
 
   const minArrivalDate = useMemo(() => {
     const d = new Date();
@@ -339,41 +347,15 @@ export function PlanSriLankaTour({
             </fieldset>
 
             <fieldset className="mt-6">
-              <legend className="text-sm font-semibold text-foam">
-                {t("planTour.vehicleLabel")}
-              </legend>
-              <div
-                className="mt-3 grid gap-2 sm:grid-cols-3"
-                role="radiogroup"
-                aria-label={t("planTour.vehicleLabel")}
-              >
-                {VEHICLE_IDS.map((id) => {
-                  const selected = vehicle === id;
-                  return (
-                    <button
-                      key={id}
-                      type="button"
-                      role="radio"
-                      aria-checked={selected}
-                      onClick={() => setVehicle(id)}
-                      className={[
-                        "rounded-[0.9rem] border px-3 py-3 text-left transition-[background-color,border-color,box-shadow] duration-[var(--duration-ui)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50",
-                        selected
-                          ? "border-brand bg-brand/20 shadow-[var(--shadow-glow-brand)]"
-                          : "border-foam/15 bg-foam/[0.04] hover:border-foam/30",
-                      ].join(" ")}
-                    >
-                      <VehicleThumb kind={id} />
-                      <span className="mt-2 block text-sm font-semibold text-foam">
-                        {planTour.vehicles[id].label}
-                      </span>
-                      <span className="mt-0.5 block text-[0.72rem] text-foam/55">
-                        {planTour.vehicles[id].meta}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+              <VehicleSelection
+                vehicleIds={QPICK_VEHICLE_ICON_IDS}
+                selectedId={vehicle}
+                onSelect={(id) => setVehicle(id as QPickVehicleIconId)}
+                embedded
+                layout="carousel"
+                showEta={false}
+                showDayNightBadge={false}
+              />
             </fieldset>
 
             <div className="mt-6 grid gap-3 border-t border-foam/12 pt-5 sm:grid-cols-2">
@@ -451,7 +433,11 @@ export function PlanSriLankaTour({
                   </p>
                 </div>
                 <Link
-                  href={ctaHref}
+                  href={
+                    ctaHref.includes("?")
+                      ? `${ctaHref}&vehicle=${vehicle}`
+                      : `${ctaHref}?vehicle=${vehicle}`
+                  }
                   className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-brand px-6 text-sm font-medium text-paper transition-[background-color,transform,box-shadow] duration-[var(--duration-ui)] ease-[var(--ease-cinematic)] hover:bg-brand-deep motion-safe:hover:-translate-y-px motion-safe:hover:shadow-[var(--shadow-glow-brand)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright/50"
                 >
                   {t("planTour.cta")}
@@ -593,51 +579,5 @@ function BreakdownRow({
         </motion.span>
       </AnimatePresence>
     </li>
-  );
-}
-
-function VehicleThumb({ kind }: { kind: VehicleId }) {
-  const common = {
-    viewBox: "0 0 64 36",
-    className: "h-8 w-full text-brand-bright",
-    "aria-hidden": true as const,
-  };
-
-  if (kind === "sedan") {
-    return (
-      <svg {...common}>
-        <path
-          d="M8 24 H56 L52 17 H42 L36 10 H24 L18 17 H12 Z"
-          fill="currentColor"
-          opacity="0.9"
-        />
-        <path d="M24 11 H36 L40 17 H20 Z" fill="#B8DAFF" />
-        <circle cx="20" cy="25" r="4" fill="#0A1620" />
-        <circle cx="46" cy="25" r="4" fill="#0A1620" />
-      </svg>
-    );
-  }
-  if (kind === "suv") {
-    return (
-      <svg {...common}>
-        <path
-          d="M10 25 H54 V14 H44 L40 9 H22 L16 14 H10 Z"
-          fill="currentColor"
-          opacity="0.85"
-        />
-        <path d="M22 10 H40 L42 14 H20 Z" fill="#A8C8E8" />
-        <circle cx="20" cy="26" r="4.2" fill="#0A1620" />
-        <circle cx="46" cy="26" r="4.2" fill="#0A1620" />
-      </svg>
-    );
-  }
-  return (
-    <svg {...common}>
-      <path d="M6 25 H58 V13 H14 L10 18 H6 Z" fill="currentColor" opacity="0.8" />
-      <path d="M16 13 H40 V9 H18 Z" fill="#C5D8EA" />
-      <circle cx="18" cy="26" r="4" fill="#0A1620" />
-      <circle cx="30" cy="26" r="4" fill="#0A1620" />
-      <circle cx="50" cy="26" r="4" fill="#0A1620" />
-    </svg>
   );
 }

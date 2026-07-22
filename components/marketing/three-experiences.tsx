@@ -8,6 +8,7 @@ import {
   useTranslations,
 } from "@/components/i18n/locale-provider";
 import { Container } from "@/components/ui/container";
+import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
 import "./three-experiences.css";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -26,8 +27,7 @@ const EXPERIENCES: {
     id: "ride",
     href: "/ride",
     theme: "ride",
-    image:
-      "https://images.unsplash.com/photo-1698840059740-ba83e510733b?auto=format&fit=crop&w=2000&q=90",
+    image: getDestinationImageSrc("colombo"),
     sizes: "(max-width: 1023px) 100vw, 58vw",
     icon: RideIcon,
   },
@@ -35,8 +35,7 @@ const EXPERIENCES: {
     id: "tours",
     href: "/airport-transfer",
     theme: "tours",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=90",
+    image: getDestinationImageSrc("sigiriya"),
     sizes: "(max-width: 1023px) 100vw, 42vw",
     icon: ToursIcon,
   },
@@ -44,8 +43,7 @@ const EXPERIENCES: {
     id: "drive",
     href: "/drive",
     theme: "drive",
-    image:
-      "https://images.unsplash.com/photo-1730800328198-f9efbf9db53f?auto=format&fit=crop&w=2200&q=90",
+    image: getDestinationImageSrc("kandy"),
     sizes: "(max-width: 1023px) 100vw, 100vw",
     icon: DriveIcon,
   },
