@@ -352,6 +352,9 @@ function TourBookingExperienceInner() {
               canContinue={canContinue}
               submitting={submitting}
               onContinue={onContinue}
+              onVehicleChange={(vehicleId) =>
+                setDraft((d) => ({ ...d, vehicleId }))
+              }
               destinationsCatalog={destinations}
             />
           </div>

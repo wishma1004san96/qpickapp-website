@@ -1668,47 +1668,134 @@
     "safety": {
       "meta": {
         "title": "ආරක්ෂාව",
-        "description": "Q Pick ආරක්ෂක ප්‍රමිතිය — තහවුරු කළ රියදුරන්, විනිවිද පෙනෙන මිල, ගමන් බෙදාගැනීම, සහාය සහ රක්ෂණය."
+        "description": "Q Pick ආරක්ෂාව — තහවුරු කළ රියදුරන්, රක්ෂිත වාහන, සජීවී GPS නිරීක්ෂණය සහ ශ්‍රී ලංකාව පුරා 24/7 සහාය."
       },
-      "title": "ආරක්ෂාව පදනමයි",
-      "description": "සෑම Q Pick ගමනක්ම තහවුරු කිරීම, විනිවිදභාවය සහ ළඟා විය හැකි සහාය මත ගොඩනැගේ — අලෙවි ලේබල නොවේ.",
-      "primaryCta": "සහාය අමතන්න",
-      "secondaryCta": "ගමනක් වෙන්කරවන්න",
-      "pillars": {
-        "verifiedFleet": {
-          "title": "තහවුරු කළ බලඝණය",
-          "body": "රියදුරෙකු ජාලයට එකතු වීමට පෙර අනන්‍යතා, වාහන සහ පසුබිම් පරීක්ෂා."
-        },
-        "tripSharing": {
-          "title": "ගමන් බෙදාගැනීම",
-          "body": "පවුල්, සත්කාරකයන් හෝ හෝටල් ඉදිරිපස මේස සමඟ සජීවී තත්ත්වය බෙදා ගන්න."
-        },
-        "alwaysReachable": {
-          "title": "සැමවිට ළඟා විය හැක",
-          "body": "ගමනේදී සහාය සහ අවස්ථාවන් සඳහා ප්‍රකාශිත හදිසි රේඛාව."
-        },
-        "insurance": {
-          "title": "රක්ෂණය",
-          "body": "Q Pick ප්‍රමිතිය යටතේ සෑම ගමනකම ආවරණය."
+      "hero": {
+        "eyebrow": "Trust & Safety",
+        "headline": "Travel Sri Lanka",
+        "headlineLine2": "with absolute confidence.",
+        "description": "Every Q Pick journey is backed by verified chauffeurs, insured vehicles, live tracking, and dedicated support — so you can explore the island with peace of mind.",
+        "primaryCta": "Book a ride",
+        "secondaryCta": "Contact support",
+        "imageAlt": "Q Pick private chauffeur beside a premium vehicle in Sri Lanka"
+      },
+      "standards": {
+        "eyebrow": "Our standard",
+        "heading": "Safety built into every journey",
+        "description": "From Colombo corridors to highland hairpins, Q Pick maintains the same verification, monitoring, and support standard on every trip.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "Verified Drivers",
+            "body": "Identity, background, and licence checks before any chauffeur joins the Q Pick network."
+          },
+          "verifiedVehicles": {
+            "title": "Verified Vehicles",
+            "body": "Regular inspections, insurance validation, and air-conditioned fleet standards across every category."
+          },
+          "gpsTracking": {
+            "title": "GPS Tracking",
+            "body": "Live journey visibility for you, your hosts, and our operations desk throughout the trip."
+          },
+          "support247": {
+            "title": "24/7 Support",
+            "body": "In-trip assistance and a published emergency line for moments that need immediate human help."
+          }
         }
       },
-      "faqHeading": "නිතර අසන ප්‍රශ්න",
+      "timeline": {
+        "eyebrow": "Journey protection",
+        "heading": "Protected from booking to arrival",
+        "steps": {
+          "book": {
+            "title": "Book",
+            "body": "Confirm your ride, transfer, or tour with transparent pricing and a dedicated chauffeur assignment."
+          },
+          "verification": {
+            "title": "Verification",
+            "body": "Driver and vehicle details are verified against the Q Pick safety standard before dispatch."
+          },
+          "pickup": {
+            "title": "Pickup",
+            "body": "Your chauffeur arrives with vehicle details shared — airport, hotel, or villa collection."
+          },
+          "tracking": {
+            "title": "Live Tracking",
+            "body": "Follow your journey in real time and share live status with family or your hotel front desk."
+          },
+          "arrival": {
+            "title": "Safe Arrival",
+            "body": "Reach your destination with support on standby until your journey is complete."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "Always reachable",
+        "heading": "Emergency assistance",
+        "description": "If something feels wrong on the road, our team is one call or message away — day or night, anywhere on the island.",
+        "hotline": {
+          "label": "Emergency Hotline",
+          "hint": "For urgent in-trip situations requiring immediate assistance."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "Message our support desk for fast coordination and trip updates."
+        },
+        "email": {
+          "label": "Email",
+          "hint": "For non-urgent enquiries, partner requests, and booking follow-ups."
+        }
+      },
+      "stats": {
+        "eyebrow": "By the numbers",
+        "heading": "A standard travellers trust",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Verified Drivers"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "Insured Journeys"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "Support Coverage"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "Customer Satisfaction"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "Your journey awaits",
+        "heading": "Travel With Confidence",
+        "description": "Book a private chauffeur, airport transfer, or island tour — backed by the Q Pick safety standard from first mile to last.",
+        "primaryCta": "Book a ride",
+        "secondaryCta": "Plan a tour",
+        "imageAlt": "Sigiriya Rock Fortress rising above tropical forest in Sri Lanka"
+      },
+      "faqHeading": "Common questions",
       "faqs": [
         {
-          "q": "Q Pick රියදුරන් තහවුරු කර තිබේද?",
-          "a": "ඔව්. රියදුරන් ජාලයට එකතු වීමට පෙර අනන්‍යතා, වාහන සහ පසුබිම් පරීక్షා සම්පූර්ණ කරයි."
+          "q": "Are Q Pick drivers verified?",
+          "a": "Yes. Drivers complete identity, vehicle, and background checks before joining the network."
         },
         {
-          "q": "මට මගේ ගමන බෙදා ගත හැකිද?",
-          "a": "ඔව්. සජීවී ගමන් බෙදාගැනීමෙන් පවුල්, සත්කාරකයන් හෝ හෝටල් ඉදිරිපස මේස ඔබේ ගමන අනුගමනය කළ හැක."
+          "q": "Can I share my trip?",
+          "a": "Yes. Live trip sharing lets family, hosts, or hotel front desks follow your journey."
         },
         {
-          "q": "ගමනේදී උදව් අවශ්‍ය නම් කුමක්ද?",
-          "a": "ගමනේදී සහාය සහ විවේචනාත්මක අවස්ථා සඳහා ප්‍රකාශිත හදිසි රේඛාවක් තිබේ."
+          "q": "What if I need help during a ride?",
+          "a": "In-trip support and a published emergency line are available for critical moments."
         },
         {
-          "q": "ගමන්වල රක්ෂණය තිබේද?",
-          "a": "Q Pick ප්‍රමිතිය යටතේ සෑම ගමනකම ආවරණය අදාළ වේ."
+          "q": "Is there insurance on journeys?",
+          "a": "Coverage applies on every journey under the Q Pick standard."
         }
       ]
     },
@@ -1717,15 +1804,145 @@
         "title": "රියදුරු",
         "description": "Q Pick සමඟ රියදවන්න — පැහැදිලි ආදායම්, සාධාරණ යෙදවීම් සහ ශ්‍රී ලංකාවේ මාර්ග සඳහා ගොඩනැගූ මෙවලම්."
       },
-      "title": "ගෞරවයෙන් රියදවන්න",
-      "description": "පැහැදිලි ආදායම්, සාධාරණ යෙදවීම් සහ ඔබ දන්නා මාර්ග සඳහා නිර්මාණය කළ නිෂ්පාදනයක් — Colombo ධමනිවල සිට කඳුකර හිරික්කන් දක්වා.",
-      "primaryCta": "රියදවීමට අයදුම් කරන්න",
-      "secondaryCta": "අපේ ප්‍රමිති",
-      "bullets": [
-        "විනිවිද පෙනෙන ගමන් ආදායම් සහ සතිපතා සාරාංශ",
-        "දුර, ශ්‍රේණිගත කිරීම් සහ සාධාරණත්වයට ගරු කරන යෙදවීම්",
-        "මාර්ගයේ යමක් වැරදුණු විට සහාය"
-      ]
+      "hero": {
+        "eyebrow": "Chauffeur recruitment",
+        "headline": "Drive Sri Lanka's",
+        "headlineLine2": "premium journeys.",
+        "description": "Join a curated network of professional chauffeurs serving tourists, hotels, and corporate travellers — with transparent earnings, dignified dispatch, and support built for the roads you know.",
+        "primaryCta": "Apply now",
+        "secondaryCta": "See requirements",
+        "imageAlt": "Q Pick professional chauffeur beside a premium vehicle in Sri Lanka"
+      },
+      "whyJoin": {
+        "eyebrow": "Why join Q Pick",
+        "heading": "Built for drivers who take pride in the road",
+        "description": "Q Pick is not a generic ride-hail app. We connect verified chauffeurs with premium demand — airport transfers, private tours, and corporate travel.",
+        "cards": {
+          "earnings": {
+            "title": "Higher Earnings",
+            "body": "Access premium airport, tour, and chauffeur fares — not race-to-the-bottom pricing."
+          },
+          "schedule": {
+            "title": "Flexible Schedule",
+            "body": "Choose when you go online. Balance airport runs, day hires, and multi-day tours on your terms."
+          },
+          "clients": {
+            "title": "Premium Tourists & Corporate Clients",
+            "body": "Serve hotel guests, business travellers, and curated tour clients who expect professionalism."
+          },
+          "support": {
+            "title": "24/7 Driver Support",
+            "body": "Operations desk and emergency line when you need help on the road — day or night."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Fleet categories",
+        "heading": "Drive the vehicle you operate",
+        "description": "Q Pick supports a full spectrum of private chauffeur categories — from compact city cars to high-roof vans and coaches."
+      },
+      "journey": {
+        "eyebrow": "Your path to approval",
+        "heading": "From application to your first premium trip",
+        "steps": {
+          "apply": {
+            "title": "Apply",
+            "body": "Complete the online registration with your personal, vehicle, and document details."
+          },
+          "verify": {
+            "title": "Verify Documents",
+            "body": "Our team reviews your NIC, licence, insurance, and vehicle registration."
+          },
+          "inspection": {
+            "title": "Vehicle Inspection",
+            "body": "A standards check confirms your vehicle meets Q Pick safety and comfort requirements."
+          },
+          "training": {
+            "title": "Training",
+            "body": "Brief onboarding on Q Pick service standards, app usage, and guest hospitality."
+          },
+          "approved": {
+            "title": "Approved",
+            "body": "Once verified, your profile goes live — but you cannot go online until fully approved."
+          },
+          "start": {
+            "title": "Start Driving",
+            "body": "Accept premium trips, airport transfers, and tour assignments across the island."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "Driver voices",
+        "heading": "Chauffeurs who chose Q Pick",
+        "items": [
+          {
+            "name": "Kasun Perera",
+            "role": "Sedan chauffeur · Colombo",
+            "quote": "Airport transfers and hotel pickups are consistent. I know the fare before I accept, and support answers when I call."
+          },
+          {
+            "name": "Nimal Fernando",
+            "role": "High-roof van · Kandy",
+            "quote": "Tour groups and family transfers pay better than random city rides. Q Pick clients expect quality — and tip accordingly."
+          },
+          {
+            "name": "Ruwan Silva",
+            "role": "SUV chauffeur · Galle",
+            "quote": "The onboarding was thorough but fair. Once approved, the app and operations team made it easy to stay busy during season."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "Qualifications",
+        "heading": "Driver requirements",
+        "description": "We maintain a high bar to protect guests and chauffeurs alike. Please ensure you meet these before applying.",
+        "items": [
+          "Valid Sri Lankan driving licence with at least 3 years of experience",
+          "National Identity Card (NIC) and a clear background check",
+          "Registered, insured vehicle in good mechanical condition",
+          "Valid revenue licence and comprehensive insurance documents",
+          "Smartphone with mobile data for the Q Pick Driver app",
+          "Professional appearance and courteous guest communication",
+          "Fluency in at least one of Sinhala, English, or Tamil",
+          "Willingness to serve airport, city, and inter-city premium trips"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "Illustrative earnings",
+        "heading": "Example earnings",
+        "description": "The figures below are illustrative examples only — not guaranteed income. Actual earnings depend on hours, season, vehicle category, and trip type.",
+        "disclaimer": "Illustrative only. Not a guarantee of income. Subject to Q Pick commission, demand, and individual performance.",
+        "examples": [
+          {
+            "label": "Airport transfer (CMB → Colombo)",
+            "amount": "LKR 8,500 – 12,000",
+            "note": "Sedan · one-way · off-peak"
+          },
+          {
+            "label": "Full-day chauffeur hire",
+            "amount": "LKR 18,000 – 28,000",
+            "note": "SUV or van · 8–10 hours · fuel excluded"
+          },
+          {
+            "label": "Multi-day tour (per day)",
+            "amount": "LKR 22,000 – 35,000",
+            "note": "High-roof van · cultural triangle route"
+          },
+          {
+            "label": "City ride (Colombo)",
+            "amount": "LKR 2,500 – 5,500",
+            "note": "Mini or sedan · metered fare"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "Ready to join?",
+        "heading": "Become a Q Pick Chauffeur",
+        "description": "Start your application today. Complete registration at your own pace — our team will guide you through verification and approval.",
+        "primaryCta": "Apply now",
+        "secondaryCta": "View requirements",
+        "imageAlt": "Q Pick chauffeur map and trip dashboard on mobile"
+      }
     },
     "partners": {
       "meta": {

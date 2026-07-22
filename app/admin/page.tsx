@@ -27,6 +27,11 @@ const modules = [
     title: "Taxi fare pricing",
     body: "Meter rates for the Ride estimator (not used by Airport/Tour).",
   },
+  {
+    href: "/admin/drivers/pending",
+    title: "Pending Drivers",
+    body: "Review driver onboarding applications, verify documents, and approve chauffeurs.",
+  },
 ] as const;
 
 export default function AdminHubPage() {

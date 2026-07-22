@@ -127,3 +127,75 @@ model TourBookingRequest {
   @@index([createdAt])
   @@map("tour_booking_requests")
 }
+
+// ─── 4. Driver Applications (onboarding — separate from booking flows) ───────
+
+model DriverApplication {
+  id                   String   @id @default(cuid())
+  referenceCode        String   @unique
+  /// DRAFT | SUBMITTED | PENDING_REVIEW | APPROVED | REJECTED | SUSPENDED
+  status               String   @default("DRAFT")
+
+  fullName             String?
+  mobile               String?  @unique
+  email                String?  @unique
+  passwordHash         String?
+  /// google | email
+  authProvider         String?
+  authSubject          String?  @unique
+  accountVerified      Boolean  @default(false)
+  sessionToken         String?  @unique
+
+  profilePhotoPath     String?
+  dateOfBirth          String?
+  gender               String?
+  address              String?
+  city                 String?
+  district             String?
+  nicNumber            String?
+  emergencyContactName String?
+  emergencyContactPhone String?
+
+  licenseNumber        String?
+  licenseExpiry        String?
+  yearsExperience      Int?
+  languagesSpoken      String   @default("[]")
+
+  vehicleCategory      String?
+  vehicleMake          String?
+  vehicleModel         String?
+  vehicleYear          Int?
+  registrationNumber   String?
+  vehicleColour        String?
+  passengerCapacity    Int?
+  luggageCapacity      Int?
+  airConditioning      Boolean  @default(true)
+  wifiAvailable        Boolean  @default(false)
+
+  bankName             String?
+  bankBranch           String?
+  accountHolderName    String?
+  accountNumber        String?
+
+  documents            String   @default("{}")
+  adminChecklist       String   @default("{}")
+
+  declarationAccepted  Boolean  @default(false)
+  termsAccepted        Boolean  @default(false)
+  privacyAccepted      Boolean  @default(false)
+
+  adminNotes           String?
+  missingDocRequest    String?
+  canGoOnline          Boolean  @default(false)
+  isOnline             Boolean  @default(false)
+  currentStep          Int      @default(1)
+
+  statusHistory        String   @default("[]")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  submittedAt          DateTime?
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("driver_applications")
+}

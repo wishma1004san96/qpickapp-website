@@ -1,16 +1,20 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Check, ChevronRight, Loader2 } from "lucide-react";
-import { useMemo } from "react";
+import { Check, ChevronRight, Loader2, Pencil, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTranslations } from "@/components/i18n/locale-provider";
 import { VehicleCarouselCard } from "@/components/marketing/vehicle-carousel-card";
+import { VehicleSelection } from "@/components/marketing/vehicle-selection";
 import {
   FLEET_VEHICLE_CAPACITY,
 } from "@/components/icons/vehicles/fleet-catalog";
-import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
+import {
+  QPICK_VEHICLE_ICON_IDS,
+  type QPickVehicleIconId,
+} from "@/components/icons/vehicles/types";
 import { buildItineraryRoute } from "@/lib/tours/itinerary-route";
 import type { TourDestination, TourPackage } from "@/lib/tours/types";
 import {
@@ -45,6 +49,7 @@ type TourTripSummaryProps = {
   canContinue: boolean;
   submitting: boolean;
   onContinue: () => void;
+  onVehicleChange?: (vehicleId: QPickVehicleIconId) => void;
   destinationsCatalog: TourDestination[];
 };
 
@@ -54,10 +59,12 @@ export function TourTripSummary({
   canContinue,
   submitting,
   onContinue,
+  onVehicleChange,
   destinationsCatalog,
 }: TourTripSummaryProps) {
   const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
+  const [vehiclePickerOpen, setVehiclePickerOpen] = useState(false);
   const fleetId: QPickVehicleIconId | null = draft.vehicleId;
   const capacity = fleetId ? FLEET_VEHICLE_CAPACITY[fleetId] : null;
   const vehicleName = fleetId
@@ -75,6 +82,15 @@ export function TourTripSummary({
   );
   const pricing = getTourPricingConfig();
   const ctaLabel = step === "contact" ? "Submit tour request" : "Continue";
+
+  useEffect(() => {
+    if (!vehiclePickerOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setVehiclePickerOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [vehiclePickerOpen]);
 
   const selectedDestsOrdered = useMemo(() => {
     return draft.destinations
@@ -204,7 +220,19 @@ export function TourTripSummary({
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
               transition={{ duration: 0.28 }}
+              className="relative"
             >
+              {onVehicleChange ? (
+                <button
+                  type="button"
+                  onClick={() => setVehiclePickerOpen(true)}
+                  className="absolute top-2 right-2 z-10 inline-flex items-center gap-1 rounded-full border border-ink/10 bg-white/95 px-2.5 py-1 text-[0.6875rem] font-semibold text-brand shadow-sm backdrop-blur-sm transition hover:border-brand/25 hover:bg-white"
+                  aria-label="Change vehicle"
+                >
+                  <Pencil className="h-3 w-3" aria-hidden />
+                  Change
+                </button>
+              ) : null}
               <VehicleCarouselCard
                 id={fleetId}
                 selected
@@ -295,6 +323,69 @@ export function TourTripSummary({
           {pricing.quoteHint}
         </p>
       </div>
+
+      <AnimatePresence>
+        {vehiclePickerOpen && onVehicleChange ? (
+          <motion.div
+            role="dialog"
+            aria-modal
+            aria-labelledby="tour-vehicle-picker-title"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={reduceMotion ? undefined : { opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-end justify-center bg-map-void/55 p-4 backdrop-blur-sm sm:items-center"
+            onClick={() => setVehiclePickerOpen(false)}
+          >
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduceMotion ? undefined : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.28 }}
+              className="flex max-h-[min(88vh,760px)] w-full max-w-lg flex-col overflow-hidden rounded-[1.5rem] border border-ink/8 bg-white shadow-[0_24px_60px_rgb(10_22_32_/_0.2)]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-3 border-b border-ink/6 px-5 py-4">
+                <div>
+                  <p className="font-mono text-[0.625rem] tracking-[0.16em] text-brand uppercase">
+                    Fleet
+                  </p>
+                  <h3
+                    id="tour-vehicle-picker-title"
+                    className="mt-1 font-display text-lg font-semibold text-ink"
+                  >
+                    Change vehicle
+                  </h3>
+                  <p className="mt-1 text-xs text-ink/50">
+                    Select a private Q Pick vehicle for your journey.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setVehiclePickerOpen(false)}
+                  className="rounded-full p-2 text-ink/45 transition hover:bg-ink/5 hover:text-ink"
+                  aria-label="Close vehicle selector"
+                >
+                  <X className="h-4 w-4" aria-hidden />
+                </button>
+              </div>
+              <div className="overflow-y-auto px-4 py-4 sm:px-5">
+                <VehicleSelection
+                  vehicleIds={QPICK_VEHICLE_ICON_IDS}
+                  selectedId={fleetId ?? "sedan"}
+                  onSelect={(id) => {
+                    onVehicleChange(id as QPickVehicleIconId);
+                    setVehiclePickerOpen(false);
+                  }}
+                  embedded
+                  layout="grid"
+                  showEta={false}
+                  showDayNightBadge={false}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </aside>
   );
 }
