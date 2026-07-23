@@ -3,6 +3,8 @@
 import L from "leaflet";
 import {
   Fragment,
+  memo,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -32,6 +34,10 @@ const SRI_LANKA_BOUNDS: L.LatLngBoundsExpression = [
   [5.85, 79.4],
   [9.9, 82.05],
 ];
+
+const EMPTY_ROUTE_COORDS: [number, number][] = [];
+
+const DESTINATION_FOCUS_ZOOM = 10;
 
 const MARKER_COLORS = {
   start: "#0062fa",
@@ -83,12 +89,15 @@ function createQPickPinIcon(
 ) {
   const fill = markerFill(role, active);
   const pulseClass = active ? " qpick-map-pin--pulse" : "";
-  const size = active ? 46 : 40;
-  const height = active ? 60 : 52;
+  /** Fixed dimensions — icon never changes size to prevent hover flicker. */
+  const visualW = 46;
+  const visualH = 60;
+  const hitW = 46;
+  const hitH = 60;
 
   const svg = encodeURIComponent(
     `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${height}" viewBox="0 0 40 52">
+    <svg xmlns="http://www.w3.org/2000/svg" width="${visualW}" height="${visualH}" viewBox="0 0 40 52">
       <defs>
         <filter id="s" x="-30%" y="-20%" width="160%" height="160%">
           <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#0a1620" flood-opacity="0.4"/>
@@ -105,16 +114,72 @@ function createQPickPinIcon(
 
   return L.divIcon({
     className: `qpick-map-pin-icon${pulseClass}`,
-    html: `<img src="data:image/svg+xml,${svg}" width="${size}" height="${height}" alt="" draggable="false" style="display:block;width:${size}px;height:${height}px" />`,
-    iconSize: [size, height],
-    iconAnchor: [size / 2, height],
+    html: `<div style="width:${hitW}px;height:${hitH}px;display:flex;align-items:flex-end;justify-content:center;pointer-events:auto"><img src="data:image/svg+xml,${svg}" width="${visualW}" height="${visualH}" alt="" draggable="false" style="display:block;width:${visualW}px;height:${visualH}px" /></div>`,
+    iconSize: [hitW, hitH],
+    iconAnchor: [hitW / 2, hitH],
   });
 }
 
-function createLabelIcon(label: string, offsetX: number, offsetY: number) {
+function buildPinSvgDataUrl(markerLabel: string, active: boolean): string {
+  const fill = markerFill("hub", active);
+  const visualW = 46;
+  const visualH = 60;
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${visualW}" height="${visualH}" viewBox="0 0 40 52">
+      <defs>
+        <filter id="s" x="-30%" y="-20%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#0a1620" flood-opacity="0.4"/>
+        </filter>
+      </defs>
+      <path filter="url(#s)" fill="${fill}" stroke="#ffffff" stroke-width="2.5"
+        d="M20 2.5c-8.3 0-15 6.7-15 15 0 11.2 15 31.5 15 31.5S35 28.7 35 17.5c0-8.3-6.7-15-15-15z"/>
+      <circle cx="20" cy="17.5" r="9.5" fill="#ffffff"/>
+      <text x="20" y="21.5" text-anchor="middle" font-size="13" font-weight="700"
+        font-family="system-ui,Segoe UI,sans-serif" fill="${fill}">${markerLabel}</text>
+    </svg>
+  `.trim();
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
+const combinedDestinationIconCache = new Map<string, L.DivIcon>();
+
+function createCombinedDestinationMarkerIcon(
+  cacheKey: string,
+  markerLabel: string,
+  destinationName: string,
+  offsetX: number,
+  offsetY: number,
+): L.DivIcon {
+  const cached = combinedDestinationIconCache.get(cacheKey);
+  if (cached) return cached;
+
+  const idleSrc = buildPinSvgDataUrl(markerLabel, false);
+  const activeSrc = buildPinSvgDataUrl(markerLabel, true);
+  const icon = L.divIcon({
+    className: "destination-marker-icon",
+    html: `<div class="destination-marker"><div class="qpick-map-pin-icon"><img class="destination-marker__pin destination-marker__pin--idle" src="${idleSrc}" width="46" height="60" alt="" draggable="false" /><img class="destination-marker__pin destination-marker__pin--active" src="${activeSrc}" width="46" height="60" alt="" draggable="false" /></div><span class="tour-map-label" style="transform:translate(calc(-50% + ${offsetX}px), ${offsetY}px)">${destinationName}</span></div>`,
+    iconSize: [46, 60],
+    iconAnchor: [23, 60],
+  });
+  combinedDestinationIconCache.set(cacheKey, icon);
+  return icon;
+}
+
+function createLabelIcon(
+  label: string,
+  offsetX: number,
+  offsetY: number,
+  visible: boolean,
+  interactive: boolean,
+) {
+  const labelClass = visible
+    ? "tour-map-label tour-map-label--highlight"
+    : "tour-map-label";
+  const opacity = visible ? 1 : 0;
+  const pointerEvents = visible && interactive ? "auto" : "none";
   return L.divIcon({
     className: "tour-map-label-icon",
-    html: `<span class="tour-map-label" style="transform:translate(${offsetX}px,${offsetY}px)">${label}</span>`,
+    html: `<span class="${labelClass}" style="transform:translate(${offsetX}px,${offsetY}px);opacity:${opacity};pointer-events:${pointerEvents}">${label}</span>`,
     iconSize: [0, 0],
     iconAnchor: [0, 0],
   });
@@ -180,21 +245,73 @@ function computeLabelOffsets(
 function FitRoute({
   coordinates,
   resetToken,
+  resetOnly = false,
 }: {
   coordinates: [number, number][];
   resetToken: number;
+  resetOnly?: boolean;
 }) {
   const map = useMap();
+  const lastFitKeyRef = useRef("");
+
   useEffect(() => {
+    if (resetOnly) {
+      if (resetToken <= 0) return;
+      const fitKey = `reset-only|${resetToken}`;
+      if (fitKey === lastFitKeyRef.current) return;
+      lastFitKeyRef.current = fitKey;
+      map.fitBounds(SRI_LANKA_BOUNDS, { padding: [24, 24], animate: true });
+      return;
+    }
+
     const pts = filterValidLatLngTuples(coordinates);
+    const fitKey = `${resetToken}|${pts.map((p) => p.join(",")).join(";")}`;
+    if (fitKey === lastFitKeyRef.current) return;
+    lastFitKeyRef.current = fitKey;
+
     if (pts.length >= 2) {
       map.fitBounds(pts, { padding: [40, 40], maxZoom: 11, animate: true });
     } else if (pts.length === 1) {
-      map.setView(pts[0], 10, { animate: true });
-    } else {
-      map.fitBounds(SRI_LANKA_BOUNDS, { padding: [24, 24], animate: false });
+      map.setView(pts[0], DESTINATION_FOCUS_ZOOM, { animate: true });
+    } else if (resetToken > 0) {
+      map.fitBounds(SRI_LANKA_BOUNDS, { padding: [24, 24], animate: true });
     }
-  }, [map, coordinates, resetToken]);
+  }, [map, coordinates, resetToken, resetOnly]);
+
+  return null;
+}
+
+function FlyToDestination({
+  destination,
+  focusSlug,
+  resetToken,
+  disabled,
+}: {
+  destination: TourDestination | null;
+  focusSlug: string | null;
+  resetToken: number;
+  disabled?: boolean;
+}) {
+  const map = useMap();
+  const lastFlownSlugRef = useRef<string | null>(null);
+  const lastResetTokenRef = useRef(resetToken);
+
+  useEffect(() => {
+    if (lastResetTokenRef.current !== resetToken) {
+      lastResetTokenRef.current = resetToken;
+      lastFlownSlugRef.current = null;
+    }
+  }, [resetToken]);
+
+  useEffect(() => {
+    if (disabled || !destination || !focusSlug) return;
+    if (lastFlownSlugRef.current === focusSlug) return;
+    lastFlownSlugRef.current = focusSlug;
+    map.flyTo([destination.lat, destination.lng], DESTINATION_FOCUS_ZOOM, {
+      duration: 0.7,
+    });
+  }, [map, destination, focusSlug, resetToken, disabled]);
+
   return null;
 }
 
@@ -389,7 +506,7 @@ function ItineraryMarkers({
             key={stop.id}
             stop={stop}
             icon={icon}
-            labelIcon={createLabelIcon(stop.label, offset.x, offset.y)}
+            labelIcon={createLabelIcon(stop.label, offset.x, offset.y, true, false)}
             active={active}
             detail={stopDetails?.[stop.id]}
             interactive={interactive}
@@ -420,24 +537,33 @@ function MarkerWithLabel({
   onHoverStop?: (stopId: string | null) => void;
   onSelectStop?: (stopId: string) => void;
 }) {
+  const onHoverStopRef = useRef(onHoverStop);
+  const onSelectStopRef = useRef(onSelectStop);
+  onHoverStopRef.current = onHoverStop;
+  onSelectStopRef.current = onSelectStop;
+
+  const eventHandlers = useMemo(
+    () =>
+      interactive
+        ? {
+            mouseenter: () => onHoverStopRef.current?.(stop.id),
+            mouseleave: () => onHoverStopRef.current?.(null),
+            click: (e: L.LeafletMouseEvent) => {
+              L.DomEvent.stopPropagation(e.originalEvent);
+              onSelectStopRef.current?.(stop.id);
+            },
+          }
+        : undefined,
+    [interactive, stop.id],
+  );
+
   return (
     <>
       <Marker
         position={[stop.lat, stop.lng]}
         icon={icon}
         zIndexOffset={active ? 1200 : stop.kind === "airport" ? 200 : 400}
-        eventHandlers={
-          interactive
-            ? {
-                mouseover: () => onHoverStop?.(stop.id),
-                mouseout: () => onHoverStop?.(null),
-                click: (e) => {
-                  L.DomEvent.stopPropagation(e.originalEvent);
-                  onSelectStop?.(stop.id);
-                },
-              }
-            : undefined
-        }
+        eventHandlers={eventHandlers}
       />
       <Marker
         position={[stop.lat, stop.lng]}
@@ -518,71 +644,202 @@ function HoverCardLayer({
   );
 }
 
-function DestinationPins({
-  destinations,
-  hoveredSlug,
-  selectedSlug,
-  onHover,
-  onSelect,
-  interactive,
-}: {
-  destinations: TourDestination[];
-  hoveredSlug?: string | null;
-  selectedSlug?: string | null;
-  onHover?: (slug: string | null) => void;
-  onSelect?: (slug: string) => void;
-  interactive: boolean;
-}) {
-  const labelOffsets = useMemo(
-    () =>
-      computeLabelOffsets(
-        destinations.map((d) => ({
-          id: d.slug,
-          lat: d.lat,
-          lng: d.lng,
-          label: d.name,
-        })),
-      ),
-    [destinations],
-  );
+const DestinationPin = memo(
+  function DestinationPin({
+    dest,
+    icon,
+    isActive,
+    interactive,
+    onPointerEnter,
+    onPointerLeave,
+    onSelect,
+  }: {
+    dest: TourDestination;
+    icon: L.DivIcon;
+    isActive: boolean;
+    interactive: boolean;
+    onPointerEnter: (slug: string) => void;
+    onPointerLeave: () => void;
+    onSelect: (slug: string) => void;
+  }) {
+    const markerRef = useRef<L.Marker>(null);
+    const callbacksRef = useRef({
+      onPointerEnter,
+      onPointerLeave,
+      onSelect,
+    });
+    callbacksRef.current = { onPointerEnter, onPointerLeave, onSelect };
 
-  return (
-    <>
-      {destinations.map((dest, index) => {
-        const active = hoveredSlug === dest.slug || selectedSlug === dest.slug;
-        const icon = createQPickPinIcon(String(index + 1), "hub", active);
+    const slugRef = useRef(dest.slug);
+    slugRef.current = dest.slug;
+
+    useEffect(() => {
+      const root = markerRef.current
+        ?.getElement()
+        ?.querySelector(".destination-marker");
+      root?.classList.toggle("is-active", isActive);
+    }, [isActive]);
+
+    useEffect(() => {
+      if (!interactive) return undefined;
+      const marker = markerRef.current;
+      if (!marker) return undefined;
+
+      let unbind: (() => void) | undefined;
+
+      const bind = () => {
+        unbind?.();
+        const root = marker
+          .getElement()
+          ?.querySelector(".destination-marker") as HTMLElement | null;
+        if (!root) return;
+
+        const handleEnter = () => {
+          callbacksRef.current.onPointerEnter(slugRef.current);
+        };
+        const handleLeave = () => {
+          callbacksRef.current.onPointerLeave();
+        };
+
+        root.addEventListener("mouseenter", handleEnter);
+        root.addEventListener("mouseleave", handleLeave);
+        unbind = () => {
+          root.removeEventListener("mouseenter", handleEnter);
+          root.removeEventListener("mouseleave", handleLeave);
+        };
+      };
+
+      bind();
+      marker.on("add", bind);
+      return () => {
+        marker.off("add", bind);
+        unbind?.();
+      };
+    }, [interactive, dest.slug]);
+
+    const clickHandler = useMemo(
+      () =>
+        interactive
+          ? {
+              click: (e: L.LeafletMouseEvent) => {
+                L.DomEvent.stopPropagation(e.originalEvent);
+                callbacksRef.current.onSelect(slugRef.current);
+              },
+            }
+          : undefined,
+      [interactive],
+    );
+
+    return (
+      <Marker
+        ref={markerRef}
+        position={[dest.lat, dest.lng]}
+        icon={icon}
+        zIndexOffset={300}
+        eventHandlers={clickHandler}
+      />
+    );
+  },
+  (prev, next) =>
+    prev.dest.slug === next.dest.slug &&
+    prev.isActive === next.isActive &&
+    prev.interactive === next.interactive &&
+    prev.icon === next.icon,
+);
+
+const DestinationPins = memo(
+  function DestinationPins({
+    destinations,
+    activeDestinationSlug,
+    onHover,
+    onSelect,
+    interactive,
+  }: {
+    destinations: TourDestination[];
+    activeDestinationSlug?: string | null;
+    onHover?: (slug: string | null) => void;
+    onSelect?: (slug: string) => void;
+    interactive: boolean;
+  }) {
+    const onHoverRef = useRef(onHover);
+    const onSelectRef = useRef(onSelect);
+    onHoverRef.current = onHover;
+    onSelectRef.current = onSelect;
+
+    const onPointerEnter = useCallback((slug: string) => {
+      onHoverRef.current?.(slug);
+    }, []);
+
+    const onPointerLeave = useCallback(() => {
+      onHoverRef.current?.(null);
+    }, []);
+
+    const onSelectPin = useCallback((slug: string) => {
+      onSelectRef.current?.(slug);
+    }, []);
+
+    const labelOffsets = useMemo(
+      () =>
+        computeLabelOffsets(
+          destinations.map((d) => ({
+            id: d.slug,
+            lat: d.lat,
+            lng: d.lng,
+            label: d.name,
+          })),
+        ),
+      [destinations],
+    );
+
+    const markerIcons = useMemo(() => {
+      const icons = new Map<string, L.DivIcon>();
+      destinations.forEach((dest, index) => {
+        const markerLabel = String(index + 1);
         const offset = labelOffsets.get(dest.slug) ?? { x: 0, y: 10 };
-        return (
-          <Fragment key={dest.slug}>
-            <Marker
-              position={[dest.lat, dest.lng]}
-              icon={icon}
-              zIndexOffset={active ? 900 : 300}
-              eventHandlers={
-                interactive
-                  ? {
-                      mouseover: () => onHover?.(dest.slug),
-                      mouseout: () => onHover?.(null),
-                      click: (e) => {
-                        L.DomEvent.stopPropagation(e.originalEvent);
-                        onSelect?.(dest.slug);
-                      },
-                    }
-                  : undefined
-              }
-            />
-            <Marker
-              position={[dest.lat, dest.lng]}
-              icon={createLabelIcon(dest.name, offset.x, offset.y)}
-              interactive={false}
-              zIndexOffset={active ? 850 : 80}
-            />
-          </Fragment>
+        const cacheKey = `${dest.slug}|${offset.x}|${offset.y}`;
+        icons.set(
+          dest.slug,
+          createCombinedDestinationMarkerIcon(
+            cacheKey,
+            markerLabel,
+            dest.name,
+            offset.x,
+            offset.y,
+          ),
         );
-      })}
-    </>
-  );
-}
+      });
+      return icons;
+    }, [destinations, labelOffsets]);
+
+    return (
+      <>
+        {destinations.map((dest) => {
+          const isActive = activeDestinationSlug === dest.slug;
+          const icon = markerIcons.get(dest.slug);
+          if (!icon) return null;
+          return (
+            <DestinationPin
+              key={dest.slug}
+              dest={dest}
+              icon={icon}
+              isActive={isActive}
+              interactive={interactive}
+              onPointerEnter={onPointerEnter}
+              onPointerLeave={onPointerLeave}
+              onSelect={onSelectPin}
+            />
+          );
+        })}
+      </>
+    );
+  },
+  (prev, next) =>
+    prev.activeDestinationSlug === next.activeDestinationSlug &&
+    prev.interactive === next.interactive &&
+    prev.destinations === next.destinations &&
+    prev.onHover === next.onHover &&
+    prev.onSelect === next.onSelect,
+);
 
 export type SriLankaTourMapProps = {
   destinations?: TourDestination[];
@@ -593,12 +850,18 @@ export type SriLankaTourMapProps = {
   focusStopId?: string | null;
   focusToken?: number;
   resetToken?: number;
+  focusDestinationSlug?: string | null;
   animateRoute?: boolean;
+  activeDestinationSlug?: string | null;
+  /** @deprecated Use activeDestinationSlug */
   hoveredSlug?: string | null;
+  /** @deprecated Use activeDestinationSlug */
   selectedSlug?: string | null;
   stopDetails?: Record<string, TourMapStopDetail>;
   onHover?: (slug: string | null) => void;
   onSelect?: (slug: string) => void;
+  /** Keep destination explorer pins when an itinerary route is also shown. */
+  destinationExplorer?: boolean;
   onHoverStop?: (stopId: string | null) => void;
   onSelectStop?: (stopId: string) => void;
   onMapReady?: (map: L.Map) => void;
@@ -608,7 +871,7 @@ export type SriLankaTourMapProps = {
   interactive?: boolean;
 };
 
-export function SriLankaTourMap({
+export const SriLankaTourMap = memo(function SriLankaTourMap({
   destinations = [],
   itineraryRoute = null,
   roadRoute = null,
@@ -617,12 +880,15 @@ export function SriLankaTourMap({
   focusStopId = null,
   focusToken = 0,
   resetToken = 0,
+  focusDestinationSlug = null,
   animateRoute = true,
+  activeDestinationSlug = null,
   hoveredSlug = null,
   selectedSlug = null,
   stopDetails,
   onHover,
   onSelect,
+  destinationExplorer = false,
   onHoverStop,
   onSelectStop,
   onMapReady,
@@ -640,16 +906,32 @@ export function SriLankaTourMap({
       : "h-[min(68vh,560px)] w-full min-h-[320px]");
 
   const roadCoords = roadRoute?.coordinates ?? [];
-  const primaryCoords =
-    roadCoords.length >= 2
-      ? roadCoords
-      : (itineraryRoute?.coordinates ??
-        routes.find((r) => r.selected)?.coordinates ??
-        routes[0]?.coordinates ??
-        []);
+  const primaryCoords = useMemo(() => {
+    if (roadCoords.length >= 2) return roadCoords;
+    if (itineraryRoute?.coordinates && itineraryRoute.coordinates.length >= 2) {
+      return itineraryRoute.coordinates;
+    }
+    const routeCoords =
+      routes.find((r) => r.selected)?.coordinates ?? routes[0]?.coordinates;
+    if (routeCoords && routeCoords.length >= 2) return routeCoords;
+    return EMPTY_ROUTE_COORDS;
+  }, [roadCoords, itineraryRoute?.coordinates, routes]);
 
   const focusStop =
     itineraryRoute?.stops.find((s) => s.id === focusStopId) ?? null;
+
+  const focusDestination = useMemo(
+    () =>
+      focusDestinationSlug
+        ? (destinations.find((d) => d.slug === focusDestinationSlug) ?? null)
+        : null,
+    [destinations, focusDestinationSlug],
+  );
+
+  const showItineraryMarkers = Boolean(itineraryRoute) && !destinationExplorer;
+
+  const resolvedActiveSlug =
+    activeDestinationSlug ?? hoveredSlug ?? selectedSlug ?? null;
 
   return (
     <div
@@ -677,8 +959,18 @@ export function SriLankaTourMap({
         />
         {onMapReady ? <MapApiBridge onReady={onMapReady} /> : null}
         <VisibleObserver onVisible={setRouteVisible} />
-        <FitRoute coordinates={primaryCoords} resetToken={resetToken} />
+        <FitRoute
+          coordinates={primaryCoords}
+          resetToken={resetToken}
+          resetOnly={destinationExplorer}
+        />
         <FlyToStop stop={focusStop} focusToken={focusToken} />
+        <FlyToDestination
+          destination={focusDestination}
+          focusSlug={focusDestinationSlug}
+          resetToken={resetToken}
+          disabled={!destinationExplorer && primaryCoords.length >= 2}
+        />
 
         {primaryCoords.length >= 2 ? (
           <AnimatedRoadLine
@@ -688,11 +980,11 @@ export function SriLankaTourMap({
           />
         ) : null}
 
-        {itineraryRoute ? (
+        {showItineraryMarkers ? (
           <>
             <ItineraryMarkers
-              stops={itineraryRoute.stops}
-              destinationStops={itineraryRoute.destinationStops}
+              stops={itineraryRoute!.stops}
+              destinationStops={itineraryRoute!.destinationStops}
               activeStopId={activeStopId}
               stopDetails={stopDetails}
               onHoverStop={onHoverStop}
@@ -702,8 +994,8 @@ export function SriLankaTourMap({
             {activeStopId && stopDetails?.[activeStopId] ? (
               <HoverCardLayer
                 stop={
-                  itineraryRoute.stops.find((s) => s.id === activeStopId) ??
-                  itineraryRoute.stops[0]
+                  itineraryRoute!.stops.find((s) => s.id === activeStopId) ??
+                  itineraryRoute!.stops[0]
                 }
                 detail={stopDetails[activeStopId]!}
               />
@@ -714,6 +1006,11 @@ export function SriLankaTourMap({
             {routes.map((route) => {
               const coords = filterValidLatLngTuples(route.coordinates);
               if (coords.length < 2) return null;
+              const skipStaticLine =
+                animateRoute &&
+                route.selected &&
+                primaryCoords.length >= 2;
+              if (skipStaticLine) return null;
               return (
                 <Polyline
                   key={route.id}
@@ -735,8 +1032,7 @@ export function SriLankaTourMap({
             })}
             <DestinationPins
               destinations={destinations}
-              hoveredSlug={hoveredSlug}
-              selectedSlug={selectedSlug}
+              activeDestinationSlug={resolvedActiveSlug}
               onHover={onHover}
               onSelect={onSelect}
               interactive={interactive}
@@ -746,7 +1042,7 @@ export function SriLankaTourMap({
       </MapContainer>
     </div>
   );
-}
+});
 
 /** @deprecated Prefer getPackageItineraryRoute / buildItineraryRoute */
 export function buildPackageRouteCoordinates(

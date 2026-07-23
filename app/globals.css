@@ -1781,6 +1781,85 @@
   }
 }
 
+.destination-marker-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.destination-marker {
+  position: relative;
+  width: 46px;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.destination-marker .destination-marker__pin {
+  display: block;
+  width: 46px;
+  height: 60px;
+}
+
+.destination-marker .destination-marker__pin--active {
+  display: none;
+}
+
+.destination-marker .tour-map-label {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.destination-marker.is-active .destination-marker__pin--idle {
+  display: none;
+}
+
+.destination-marker.is-active .destination-marker__pin--active {
+  display: block;
+}
+
+.destination-marker.is-active .tour-map-label {
+  opacity: 1;
+  pointer-events: auto;
+  background: #0062fa;
+  color: #f4f7fa;
+  box-shadow: 0 8px 22px rgb(0 98 250 / 0.35);
+}
+
+.destination-marker.is-active .qpick-map-pin-icon {
+  animation: qpick-pin-pulse 1.8s ease-out infinite;
+}
+
+.destination-marker.is-active .qpick-map-pin-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  margin-top: -11px;
+  border-radius: 999px;
+  background: rgb(0 98 250 / 0.28);
+  animation: qpick-pin-ring 1.8s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-marker.is-active .qpick-map-pin-icon,
+  .destination-marker.is-active .qpick-map-pin-icon::after {
+    animation: none;
+  }
+}
+
+.destination-marker-icon:has(.destination-marker.is-active) {
+  z-index: 900 !important;
+}
+
 .tour-map-label-icon {
   background: transparent !important;
   border: none !important;
@@ -1802,6 +1881,59 @@
   text-overflow: ellipsis;
   box-shadow: 0 8px 20px rgb(10 22 32 / 0.22);
   pointer-events: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.tour-map-label--highlight {
+  background: #0062fa;
+  color: #f4f7fa;
+  box-shadow: 0 8px 22px rgb(0 98 250 / 0.35);
+}
+
+.tour-map-dest-tooltip {
+  position: absolute;
+  z-index: 1300;
+  min-width: 7.5rem;
+  max-width: 11rem;
+  padding: 0.45rem 0.75rem 0.5rem;
+  transform: translate(-50%, -100%);
+  border-radius: 0.75rem;
+  background: rgb(10 22 32 / 0.94);
+  color: #f4f7fa;
+  box-shadow: 0 12px 28px rgb(10 22 32 / 0.28);
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.tour-map-dest-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 52px;
+  height: 14px;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.tour-map-dest-tooltip__label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.tour-map-dest-tooltip__region {
+  display: block;
+  margin-top: 0.125rem;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(244 247 250 / 0.72);
 }
 
 .tour-map-direction-icon {

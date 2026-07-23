@@ -1962,7 +1962,110 @@
         "Jetwing",
         "Shangri-La",
         "Amangalla"
-      ]
+      ],
+      "hero": {
+        "badge": "Trusted by Sri Lanka's leading hospitality brands",
+        "scenes": {
+          "chauffeurAlt": "Professional Q Pick chauffeur greeting guests beside a premium vehicle",
+          "airportAlt": "Airport meet-and-greet transfer at Bandaranaike International Airport",
+          "hotelAlt": "Luxury coastal resort arrival with concierge handoff"
+        },
+        "stats": {
+          "rating": "4.9/5 Guest Rating",
+          "hotels": "150+ Hotel Partners",
+          "transfers": "24/7 Airport Transfers",
+          "coverage": "Island-wide Coverage",
+          "dispatch": "Avg. Dispatch <10 min"
+        }
+      },
+      "trusted": {
+        "eyebrow": "Trusted Partners",
+        "heading": "Hospitality brands that trust Q Pick",
+        "description": "From five-star hotels and boutique villas to travel agencies, corporate travel desks, and airline partners — one mobility standard for every guest handoff.",
+        "categories": {
+          "hotels": {
+            "title": "Premium Hotels",
+            "names": [
+              "Galle Face Hotel",
+              "Cinnamon",
+              "Shangri-La",
+              "Jetwing",
+              "Amangalla"
+            ]
+          },
+          "villas": {
+            "title": "Villas & Retreats",
+            "names": [
+              "Cape Weligama",
+              "Amanwella",
+              "Villa Hundira",
+              "Taru Villas",
+              "Teardrop Hotels"
+            ]
+          },
+          "agencies": {
+            "title": "Travel Agencies",
+            "names": [
+              "Jetwing Travels",
+              "Aitken Spence",
+              "Walkers Tours",
+              "Amaya Resorts",
+              "Blue Lanka"
+            ]
+          },
+          "corporate": {
+            "title": "Corporate Clients",
+            "names": [
+              "John Keells",
+              "MAS Holdings",
+              "Brandix",
+              "Dialog Axiata",
+              "Commercial Bank"
+            ]
+          },
+          "airlines": {
+            "title": "Airlines",
+            "names": [
+              "SriLankan Airlines",
+              "Emirates",
+              "Qatar Airways",
+              "Singapore Airlines",
+              "Cathay Pacific"
+            ]
+          }
+        }
+      },
+      "features": {
+        "eyebrow": "Partner Platform",
+        "heading": "Everything your team needs to move guests",
+        "description": "A hospitality-grade operations layer — not another messaging thread. Priority dispatch, live visibility, and reporting built for front desks and travel managers.",
+        "items": {
+          "accountManager": {
+            "title": "Dedicated account manager",
+            "body": "A named Q Pick partnerships lead for onboarding, escalations, and seasonal planning."
+          },
+          "priorityDispatch": {
+            "title": "Priority dispatch",
+            "body": "Partner bookings surface first — especially airport arrivals and VIP transfers."
+          },
+          "guestTracking": {
+            "title": "Real-time guest tracking",
+            "body": "Share live trip status with concierge, front desk, or family before the guest reaches the lobby."
+          },
+          "monthlyReporting": {
+            "title": "Monthly reporting",
+            "body": "Trip volumes, on-time performance, and spend summaries for finance and operations."
+          },
+          "corporateBilling": {
+            "title": "Corporate billing",
+            "body": "Consolidated invoicing, cost centres, and approval workflows for corporate travel desks."
+          },
+          "airportMeetGreet": {
+            "title": "Airport meet & greet",
+            "body": "Name-board arrivals, flight-aware buffers, and seamless hotel handoffs from CMB."
+          }
+        }
+      }
     },
     "about": {
       "meta": {
@@ -1983,12 +2086,237 @@
         "title": "Support",
         "description": "Contact Q Pick support for rides, transfers, tours, and partner enquiries."
       },
-      "title": "Support",
-      "description": "We're here for trip questions, partner enquiries, and moments that need a human.",
+      "title": "24/7 Customer Support",
+      "subtitle": "24/7 support for airport transfers, chauffeur bookings, tours and corporate partners.",
+      "description": "The Q Pick team is available 24/7 to assist passengers and drivers. Whether you need help with bookings, airport transfers, tour planning, payments, or emergencies, our support team is always ready to help.",
       "emailLabel": "Email",
       "phoneLabel": "Phone",
       "locationLabel": "Location",
-      "emergencyLabel": "Emergency line"
+      "emergencyLabel": "Emergency line",
+      "hero": {
+        "badge": "Always-on guest care",
+        "logoAlt": "Q Pick logo",
+        "cta": "Contact Support",
+        "scenes": {
+          "mainAlt": "Q Pick premium driver dashboard with live trip support and dispatch controls",
+          "chauffeurAlt": "Professional chauffeur greeting guests beside a premium vehicle",
+          "airportAlt": "Airport meet-and-greet transfer at Bandaranaike International Airport",
+          "chatAlt": "Q Pick passenger app account and messaging support screen"
+        },
+        "dashboardAria": "Premium guest support illustration showing live WhatsApp care, chauffeur tracking, and traveller updates",
+        "ops": {
+          "windowTitle": "Guest Support Center",
+          "liveCare": "Live guest care",
+          "whatsappLabel": "WhatsApp Support",
+          "read": "Read",
+          "agent": {
+            "name": "Sasha M.",
+            "online": "Online"
+          },
+          "guestMessage": "Can you confirm my airport pickup for UL225?",
+          "agentTyping": "Sasha is typing…",
+          "agentReply": "Absolutely — Nuwan is assigned. Meet at arrivals with your name board.",
+          "chat": {
+            "welcome": "Hello Amaya, welcome to Q Pick. I'm here for your arrival.",
+            "guestEarlier": "I land at CMB on UL225 this afternoon.",
+            "guestThanks": "Wonderful, thank you Sasha!",
+            "timeWelcome": "14:26",
+            "timeEarlier": "14:27",
+            "timeQuestion": "14:31",
+            "timeReply": "14:32",
+            "timeThanks": "14:38"
+          },
+          "mapAria": "Chauffeur approaching guest",
+          "mapTitle": "Chauffeur en route",
+          "etaMinutes": "{count} min",
+          "etaArrived": "Arrived",
+          "airportRoute": "CMB → Galle Face Hotel",
+          "airportMeta": "UL225 · Meet & greet",
+          "notifyAria": "Incoming support updates",
+          "notifyLabel": "Updates",
+          "notifications": {
+            "flightLanded": {
+              "title": "Flight landed",
+              "detail": "UL225 at CMB · Guest notified"
+            },
+            "driverArrived": {
+              "title": "Driver arrived",
+              "detail": "Nuwan at arrivals · Name board ready"
+            },
+            "hotelNotified": {
+              "title": "Hotel notified",
+              "detail": "Galle Face front desk expecting guest"
+            },
+            "callback": {
+              "title": "Callback requested",
+              "detail": "Guest called support · Agent returning call"
+            },
+            "payment": {
+              "title": "Payment confirmed",
+              "detail": "Airport transfer settled · Receipt sent"
+            },
+            "ticketResolved": {
+              "title": "Ticket resolved",
+              "detail": "Pickup point updated · Guest confirmed"
+            }
+          },
+          "journeyLabel": "Guest journey",
+          "journey": {
+            "booking": "Booking",
+            "driverAssigned": "Driver Assigned",
+            "flightLanded": "Flight Landed",
+            "pickedUp": "Guest Picked Up",
+            "hotelArrival": "Hotel Arrival",
+            "completed": "Completed"
+          },
+          "illustration": {
+            "rating": "4.9 Guest rating",
+            "pickupTitle": "Airport pickup confirmed",
+            "confirmed": "Confirmed",
+            "driverTitle": "Chauffeur arriving",
+            "timeline": {
+              "booked": "Booked",
+              "driver": "Driver",
+              "landed": "Landed",
+              "pickup": "Pickup",
+              "done": "Done"
+            }
+          }
+        },
+        "ribbonAria": "Q Pick support trust indicators",
+        "ribbon": {
+          "rating": "4.9 Customer Rating",
+          "trips": "50,000+ Trips",
+          "hotels": "150+ Hotel Partners",
+          "coverage": "Island-wide Coverage"
+        }
+      },
+      "contact": {
+        "eyebrow": "Contact",
+        "heading": "Reach our team anytime",
+        "cards": {
+          "email": {
+            "title": "Email",
+            "hint": "Partnership, billing and general enquiries"
+          },
+          "phone": {
+            "title": "Phone",
+            "hint": "General, office and mobile lines"
+          },
+          "whatsapp": {
+            "title": "WhatsApp",
+            "hint": "Fast replies for trip updates"
+          },
+          "emergency": {
+            "title": "Emergency Hotline",
+            "hint": "In-trip escalation and urgent assistance"
+          },
+          "location": {
+            "title": "Office Location",
+            "hint": "Quick Pick App (Pvt) Ltd — Negombo"
+          }
+        }
+      },
+      "quickActions": {
+        "eyebrow": "Quick actions",
+        "whatsapp": "Chat on WhatsApp",
+        "call": "Call Support",
+        "email": "Send Email",
+        "airport": "Book Airport Transfer"
+      },
+      "services": {
+        "eyebrow": "Support services",
+        "heading": "How we can help",
+        "description": "From airport arrivals to corporate accounts — one calm support desk for every Q Pick journey.",
+        "items": {
+          "airport": {
+            "title": "Airport Transfers",
+            "body": "Flight-aware pickups, meet & greet changes, and CMB coordination."
+          },
+          "tours": {
+            "title": "Tour Assistance",
+            "body": "Itinerary updates, chauffeur handoffs, and multi-day tour support."
+          },
+          "corporate": {
+            "title": "Corporate Support",
+            "body": "Partner accounts, guest manifests, and billing enquiries."
+          },
+          "lostFound": {
+            "title": "Lost & Found",
+            "body": "Items left in vehicles — we trace trips and reconnect you fast."
+          },
+          "driver": {
+            "title": "Driver Assistance",
+            "body": "On-road help for verified Q Pick chauffeurs and partners."
+          },
+          "billing": {
+            "title": "Billing & Payments",
+            "body": "Invoices, receipts, refunds, and corporate billing queries."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Frequently asked questions",
+        "sub": "Clear answers before you travel — booking, payments, and policies.",
+        "items": {
+          "book": {
+            "q": "How do I book a ride or transfer?",
+            "a": "Book via the Q Pick app, the Ride page for city trips, Airport Transfers for CMB pickups, or Tours for private journeys. You can also call, WhatsApp, or email our support desk 24/7."
+          },
+          "airport": {
+            "q": "How does airport pickup work?",
+            "a": "Share your flight details when booking. Your chauffeur tracks arrival timing, meets you with a name board when requested, and coordinates the hotel handoff."
+          },
+          "payment": {
+            "q": "What payment methods do you accept?",
+            "a": "Payment options depend on the booking type — card, cash, and corporate billing are supported where available. Support can confirm options for your specific trip."
+          },
+          "cancel": {
+            "q": "What is your cancellation policy?",
+            "a": "You can cancel from the app or via Support. Fees depend on how close you are to pickup and the booking category — our team will explain before any charge applies."
+          },
+          "refund": {
+            "q": "How do refunds work?",
+            "a": "Eligible refunds are processed after review. Contact Support with your booking reference — we respond quickly and keep you updated through resolution."
+          },
+          "corporate": {
+            "q": "How do I open a corporate or hotel partner account?",
+            "a": "Email partnerships or call our support line. We assign a dedicated account manager, set up billing preferences, and onboard your front desk or travel team."
+          }
+        }
+      },
+      "office": {
+        "eyebrow": "Visit us",
+        "heading": "Office location",
+        "hoursLabel": "Opening hours",
+        "hoursValue": "Monday – Sunday · 24/7 operations desk",
+        "parkingLabel": "Parking",
+        "parkingValue": "On-site visitor parking available",
+        "directions": "Get directions",
+        "mapTitle": "Q Pick office location on Google Maps"
+      },
+      "trust": {
+        "eyebrow": "Trust indicators",
+        "heading": "Support you can rely on",
+        "items": {
+          "response": {
+            "value": "<5 min",
+            "label": "Average response time"
+          },
+          "satisfaction": {
+            "value": "4.9★",
+            "label": "Customer satisfaction"
+          },
+          "experience": {
+            "value": "8+ yrs",
+            "label": "Hospitality mobility experience"
+          },
+          "languages": {
+            "value": "3+",
+            "label": "Support languages"
+          }
+        }
+      }
     },
     "destinations": {
       "meta": {

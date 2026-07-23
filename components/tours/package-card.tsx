@@ -14,6 +14,11 @@ import {
   getTourPricingConfig,
   getVehicleById,
 } from "@/lib/tours/repository";
+import {
+  TourCardActions,
+  TourCardBookButton,
+  TourCardDetailsButton,
+} from "@/components/tours/tour-card-buttons";
 
 type PackageCardProps = {
   package: TourPackage;
@@ -146,20 +151,20 @@ export function PackageCard({
             {pkg.startingPriceLkr == null ? pricing.quoteHint : "\u00A0"}
           </p>
         </div>
-        <div className="mt-auto flex flex-wrap gap-2.5 pt-5 sm:gap-3">
-          <Link
+        <TourCardActions className="mt-auto pt-5">
+          <TourCardDetailsButton
             href={detailHref}
-            className="tour-detail-btn tour-detail-btn--ghost min-h-11 flex-1 px-3 text-sm"
+            aria-label={`${t("toursHub.explorer.viewDetails")} — ${pkg.title}`}
           >
             {t("toursHub.explorer.viewDetails")}
-          </Link>
-          <Link
+          </TourCardDetailsButton>
+          <TourCardBookButton
             href={bookHref}
-            className="tour-detail-btn tour-detail-btn--primary min-h-11 flex-1 px-3 text-sm"
+            aria-label={`${t("toursHub.explorer.bookTour")} — ${pkg.title}`}
           >
             {t("toursHub.explorer.bookTour")}
-          </Link>
-        </div>
+          </TourCardBookButton>
+        </TourCardActions>
       </div>
     </article>
   );

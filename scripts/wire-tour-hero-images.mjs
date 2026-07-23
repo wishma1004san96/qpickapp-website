@@ -88,12 +88,15 @@ const TOUR_HERO_FILES = [
   {
     out: "delft-island-coral-beach.webp",
     asset: null,
-    input: path.join(root, "public/images/destinations/Trincomalee Beach.webp"),
+    input: path.join(root, "public/images/destinations/Delft Island.webp"),
   },
   {
     out: "nainativu-sacred-island.webp",
     asset: null,
-    input: path.join(root, "public/images/tours/anuradhapura-sacred-city.webp"),
+    input: path.join(
+      root,
+      "public/images/destinations/Nainativu Nagadeepa Temple.webp",
+    ),
   },
 ];
 

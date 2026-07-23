@@ -8,6 +8,7 @@ import {
   getGalleryImage,
   getPackageHref,
 } from "@/lib/tours/repository";
+import { TourCardBookButton } from "@/components/tours/tour-card-buttons";
 
 type PremiumTourCardProps = {
   package: TourPackage;
@@ -94,12 +95,13 @@ export function PremiumTourCard({
         </div>
 
         <div className="mt-auto pt-5">
-          <Link
+          <TourCardBookButton
             href={bookHref}
-            className="tour-detail-btn tour-detail-btn--primary inline-flex min-h-11 w-full items-center justify-center px-3 text-sm"
+            className="tour-card-btn--full"
+            aria-label={`Book Now — ${pkg.title}`}
           >
             Book Now
-          </Link>
+          </TourCardBookButton>
         </div>
       </div>
     </article>
