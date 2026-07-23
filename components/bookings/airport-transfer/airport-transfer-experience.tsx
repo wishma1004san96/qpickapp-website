@@ -29,6 +29,21 @@ import { getTransferVehicle } from "./vehicles";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/** Tailwind `lg` — matches side panel breakpoint. */
+const LG_MIN_WIDTH_PX = 1024;
+
+function useMinLgViewport(): boolean {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${LG_MIN_WIDTH_PX}px)`);
+    const sync = () => setMatches(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  return matches;
+}
+
 /** Full-bleed booking shell — ~1600px, not the marketing Container. */
 const SHELL =
   "mx-auto w-full min-w-0 max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10";
@@ -64,6 +79,7 @@ function initialPassenger(): PassengerInfo {
 
 export function AirportTransferExperience() {
   const router = useRouter();
+  const isLgViewport = useMinLgViewport();
   const reduceMotion = useReducedMotion() ?? false;
   const [step, setStep] = useState<BookingStep>("destination");
   const [draft, setDraft] = useState<AirportTransferDraft>({
@@ -385,21 +401,23 @@ export function AirportTransferExperience() {
             ) : null}
           </div>
 
-          {/* RIGHT — sticky summary (~35%) */}
-          <div className="relative hidden min-w-0 lg:block">
-            <div className="sticky top-[7.5rem]">
-              <BookingSidePanel
-                step={step}
-                destination={draft.destination}
-                vehicleId={draft.vehicleId}
-                arrival={draft.arrival}
-                passenger={draft.passenger}
-                canContinue={canContinue}
-                submitting={submitting}
-                onContinue={onPrimaryAction}
-              />
+          {/* RIGHT — sticky summary (~35%); mount only at lg+ so Leaflet never runs in a hidden mobile container */}
+          {isLgViewport ? (
+            <div className="relative min-w-0">
+              <div className="sticky top-[7.5rem]">
+                <BookingSidePanel
+                  step={step}
+                  destination={draft.destination}
+                  vehicleId={draft.vehicleId}
+                  arrival={draft.arrival}
+                  passenger={draft.passenger}
+                  canContinue={canContinue}
+                  submitting={submitting}
+                  onContinue={onPrimaryAction}
+                />
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
 
