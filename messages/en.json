@@ -2053,5 +2053,994 @@
       "titleTemplate": "%s · Q Pick",
       "description": "Premium mobility across Sri Lanka — airport transfers, city taxi, intercity rides, chauffeur service, and private tours under one trusted platform."
     }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "Private Sri Lanka Tours with Chauffeur | Q Pick",
+      "description": "Explore Sri Lanka with Q Pick — private chauffeurs, premium vehicles, and tailor-made journeys across cultural sites, hill country, beaches, and wildlife.",
+      "ogTitle": "Explore Sri Lanka with Q Pick Private Tours",
+      "twitterTitle": "Private Sri Lanka Tours | Q Pick",
+      "twitterDescription": "Tailor-made island journeys with private chauffeurs and premium vehicles."
+    },
+    "hero": {
+      "eyebrow": "Q Pick Private Tours",
+      "headline": "Explore Sri Lanka with Q Pick",
+      "subtitle": "Discover unforgettable journeys with private chauffeurs, premium vehicles and tailor-made experiences.",
+      "primaryCta": "Explore Collections",
+      "secondaryCta": "Plan My Tour"
+    },
+    "finalCta": {
+      "headline": "Your Sri Lanka Journey Starts Here",
+      "body": "Share your dates and destinations — we shape a private chauffeur itinerary and confirm a written quote.",
+      "ctaLabel": "Plan My Journey",
+      "secondaryLabel": "Speak With A Travel Expert"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "Private Chauffeurs",
+        "description": "Licensed drivers who know temple etiquette, highland roads, and calm airport arrivals."
+      },
+      "airport": {
+        "title": "Airport Pickup",
+        "description": "Bandaranaike International (CMB) meet-and-greet timed to your flight."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "A real Q Pick desk before departure and on the road — WhatsApp and phone, day and night."
+      },
+      "vehicles": {
+        "title": "Luxury Vehicles",
+        "description": "Sedans, SUVs, vans, and coaches — private cabin, air-conditioned, luggage-ready."
+      },
+      "pricing": {
+        "title": "Transparent Pricing",
+        "description": "Written quotes after review — no invented website prices or curb-side surprises."
+      },
+      "personal": {
+        "title": "Personalized Tours",
+        "description": "Every package is editable: destinations, days, pace, and vehicle class."
+      },
+      "rating": {
+        "title": "4.9 Guest Rating",
+        "description": "Consistently rated by private-tour guests for chauffeur care, pacing, and communication."
+      },
+      "licensed": {
+        "title": "Licensed Operator",
+        "description": "Quick Pick App (Pvt) Ltd — registered Sri Lankan operator with vetted chauffeurs and insured vehicles."
+      },
+      "secure": {
+        "title": "Secure Booking",
+        "description": "Written quotes, confirmed itineraries, and transparent inclusions before you travel."
+      }
+    },
+    "explorer": {
+      "eyebrow": "Curated collections",
+      "title": "Choose your journey",
+      "subtitle": "Premium private tours organised by travel style — open a category to explore its story, featured itineraries, and journey details right here.",
+      "searchPlaceholder": "Search destinations, experiences or tour names…",
+      "clearSearch": "Clear search",
+      "categoriesAria": "Tour categories",
+      "mapSelection": "Map selection",
+      "multiDay": "Multi-day journeys",
+      "premiumNorthern": "Premium private tours",
+      "sortAria": "Sort tour packages",
+      "filterAria": "Filter tour packages",
+      "allCategoriesTitle": "All Categories",
+      "allCategoriesIntro": "Browse every published private tour — reset and explore the full Q Pick collection.",
+      "viewAllCategories": "View all categories",
+      "destinationExperiences": "Destination experiences",
+      "destinationExperiencesSub": "Real places, seasons, and photography windows — not just labels on a card.",
+      "vehiclesTitle": "Travel in private comfort",
+      "vehiclesSub": "Sedan to mini coach — air conditioning, luggage space, and charging for the road.",
+      "trustTitle": "Why Travel With Q Pick",
+      "reviewsEmptyTitle": "Guest stories coming soon",
+      "reviewsEmptyBody": "Verified private-tour reviews will appear here as guests share their journeys.",
+      "faqEyebrow": "Frequently asked questions",
+      "faqLead": "Everything you need to know before planning your journey with Q Pick.",
+      "noResults": "No tours match your search. Try another keyword or reset filters.",
+      "noToursTitle": "No tours match your search",
+      "noToursBody": "Try a different keyword, or reset filters to browse the full collection.",
+      "planCustomTour": "Plan a custom tour",
+      "resetFilters": "Reset filters",
+      "sortBy": "Sort by",
+      "mapJourneysThrough": "Journeys through {name}",
+      "itineraryOne": "itinerary",
+      "itineraryMany": "itineraries",
+      "matchingQuery": "matching \"{query}\"",
+      "northernPeninsula": "Northern peninsula",
+      "premiumJaffna": "Premium Jaffna experiences",
+      "premiumJaffnaSub": "{count} {experiences} — heritage city walks, island ferries, and sacred boat journeys with private chauffeur support.",
+      "experienceOne": "experience",
+      "experienceMany": "experiences",
+      "reviewsEmptyDisclaimer": "Verified guest reviews will appear after published trips. We do not display invented testimonials, ratings, or awards.",
+      "trustBeforeTestimonials": "Trust before testimonials",
+      "faqTitle": "FAQ",
+      "defaultImageAlt": "Scenic Sri Lanka highland journey",
+      "openCategory": "Open {title}",
+      "countItineraries": "{count} itineraries",
+      "countPackages": "{count} packages",
+      "countPackage": "{count} package",
+      "cmbService": "CMB service",
+      "packagesFound": "{count} packages",
+      "dayTour": "Day tour",
+      "daysTour": "{count} days",
+      "fromPrice": "Price on request",
+      "viewDetails": "View details",
+      "bookTour": "Book this tour",
+      "idealFor": "Ideal for {value}",
+      "premiumNorthernHeading": "Northern Sri Lanka",
+      "premiumNorthernSub": "Heritage temples, remote islands, and Jaffna's cultural depth — three premium journeys with dedicated chauffeurs."
+    },
+    "filters": {
+      "all": "All",
+      "classic": "Classic",
+      "luxury": "Luxury",
+      "wildlife": "Wildlife",
+      "adventure": "Adventure",
+      "beach": "Beach",
+      "honeymoon": "Honeymoon",
+      "wellness": "Wellness",
+      "family": "Family",
+      "day-tours": "Day Tours"
+    },
+    "sort": {
+      "featured": "Featured",
+      "newest": "Newest",
+      "duration": "Duration",
+      "popular": "Popular"
+    },
+    "badges": {
+      "best-seller": "Best Seller",
+      "luxury": "Luxury",
+      "new": "New",
+      "family-friendly": "Family Friendly",
+      "eco": "Eco",
+      "adventure": "Adventure"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "tours": "Tours"
+    },
+    "jsonLd": {
+      "touristType": "Leisure travellers"
+    },
+    "reviewsMeta": {
+      "title": "Guest Reviews",
+      "emptyTitle": "Stories from the road",
+      "emptyBody": "Verified guest reviews will appear after published trips. We do not display invented testimonials, ratings, or awards."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 Days Ella Train Escape",
+        "idealFor": "Rail lovers with limited time",
+        "intro": "Scenic rail through tea valleys. This 4-day private chauffeur journey visits Kandy, Nuwara Eliya, Ella — rail lovers with limited time. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Train segment",
+          "Nine Arches",
+          "Tea stops"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Kandy",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Nuwara Eliya",
+            "description": "Explore Nuwara Eliya with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Ella",
+            "description": "Explore Ella with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5 Days Mirissa Whale Coast",
+        "idealFor": "Ocean wildlife enthusiasts",
+        "intro": "Whale season and fort heritage. This 5-day private chauffeur journey visits Galle, Mirissa, Bentota — ocean wildlife enthusiasts. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Mirissa coast",
+          "Whale watching",
+          "Galle Fort"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Galle",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Mirissa",
+            "description": "Explore Mirissa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Bentota",
+            "description": "Explore Bentota with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Bentota at leisure",
+            "description": "Explore Bentota with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 Days Luxury Honeymoon Coast",
+        "idealFor": "Coastal honeymooners",
+        "intro": "Fort romance and ocean villas. This 6-day private chauffeur journey visits Colombo, Galle, Bentota, Mirissa — coastal honeymooners. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Galle Fort",
+          "Bentota",
+          "Mirissa sunsets"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Colombo",
+            "description": "Explore Colombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Galle",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Bentota",
+            "description": "Explore Bentota with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Mirissa",
+            "description": "Explore Mirissa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Mirissa at leisure",
+            "description": "Explore Mirissa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6 Days Pilgrimage Triangle",
+        "idealFor": "Faith-led group travel",
+        "intro": "Sacred sites across the island. This 6-day private chauffeur journey visits Kandy, Anuradhapura, Dambulla, Polonnaruwa — faith-led group travel. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Temple of the Tooth",
+          "Anuradhapura",
+          "Dambulla caves"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Kandy",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Anuradhapura",
+            "description": "Explore Anuradhapura with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Dambulla",
+            "description": "Explore Dambulla with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Polonnaruwa",
+            "description": "Explore Polonnaruwa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Polonnaruwa at leisure",
+            "description": "Explore Polonnaruwa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 Days Festival Culture & Kandy",
+        "idealFor": "Festival season visitors",
+        "intro": "Perahera timing with heritage. This 8-day private chauffeur journey visits Colombo, Kandy, Dambulla, Sigiriya, Negombo — festival season visitors. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Kandy festivals",
+          "Temple visits",
+          "Triangle icons"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Colombo",
+            "description": "Explore Colombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Kandy",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Dambulla",
+            "description": "Explore Dambulla with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Sigiriya",
+            "description": "Explore Sigiriya with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Negombo",
+            "description": "Explore Negombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Negombo at leisure",
+            "description": "Explore Negombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Negombo at leisure",
+            "description": "Explore Negombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9 Days Honeymoon Paradise",
+        "idealFor": "Newlyweds and romantic escapes",
+        "intro": "Intimate pacing through mist and ocean. This 9-day private chauffeur journey visits Negombo, Kandy, Nuwara Eliya, Ella, Bentota, Galle — newlyweds and romantic escapes. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Tea country",
+          "Ella romance",
+          "Coastal sunsets"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Negombo",
+            "description": "Explore Negombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Kandy",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Nuwara Eliya",
+            "description": "Explore Nuwara Eliya with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Ella",
+            "description": "Explore Ella with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Bentota",
+            "description": "Explore Bentota with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Galle",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10 Days Ayurveda Wellness Journey",
+        "idealFor": "Wellness-focused travellers",
+        "intro": "Recovery chapters woven into private travel. This 10-day private chauffeur journey visits Negombo, Kandy, Bentota, Mirissa, Galle — wellness-focused travellers. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Wellness pacing",
+          "Coastal calm",
+          "Temple balance"
+        ],
+        "itinerary": [
+          {
+            "title": "Discover Negombo",
+            "description": "Explore Negombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Kandy",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Bentota",
+            "description": "Explore Bentota with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Mirissa",
+            "description": "Explore Mirissa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Discover Galle",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Galle at leisure",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          },
+          {
+            "title": "Departure & onward",
+            "description": "Private transfer toward Colombo or Bandaranaike International Airport — or continue your custom route with Q Pick."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "Colombo Capital Discovery Day",
+        "idealFor": "Layover guests and city lovers",
+        "intro": "Colombo skyline, colonial lanes, and Galle Face sunsets. This 1-day private chauffeur journey visits Colombo — layover guests and city lovers. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Lotus Tower viewpoints",
+          "Galle Face Green",
+          "Colombo dining stops"
+        ],
+        "itinerary": [
+          {
+            "title": "Colombo discovery",
+            "description": "Explore Colombo with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "Galle Fort Heritage Day",
+        "idealFor": "History enthusiasts on the south coast",
+        "intro": "Dutch ramparts and Indian Ocean light. This 1-day private chauffeur journey visits Galle — history enthusiasts on the south coast. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Galle Fort lighthouse",
+          "Rampart walk",
+          "Boutique streets"
+        ],
+        "itinerary": [
+          {
+            "title": "Galle discovery",
+            "description": "Explore Galle with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "Sigiriya Rock Sunrise Day",
+        "idealFor": "Early risers and photography guests",
+        "intro": "Lion Rock at first light. This 1-day private chauffeur journey visits Sigiriya — early risers and photography guests. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Sigiriya summit",
+          "Water gardens",
+          "Fresco gallery"
+        ],
+        "itinerary": [
+          {
+            "title": "Sigiriya discovery",
+            "description": "Explore Sigiriya with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "Kandy Sacred City Day",
+        "idealFor": "Spiritual travellers and families",
+        "intro": "Temple of the Tooth and lake calm. This 1-day private chauffeur journey visits Kandy — spiritual travellers and families. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Temple of the Tooth",
+          "Kandy Lake",
+          "Peradeniya option"
+        ],
+        "itinerary": [
+          {
+            "title": "Kandy discovery",
+            "description": "Explore Kandy with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "Ella Highland Views Day",
+        "idealFor": "Train stopovers and ridge walkers",
+        "intro": "Nine Arches and misty valleys. This 1-day private chauffeur journey visits Ella — train stopovers and ridge walkers. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Nine Arches Bridge",
+          "Little Adam's Peak",
+          "Tea valley cafés"
+        ],
+        "itinerary": [
+          {
+            "title": "Ella discovery",
+            "description": "Explore Ella with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "Yala Wildlife Safari Day",
+        "idealFor": "Safari enthusiasts with tight schedules",
+        "intro": "Leopard country at dawn. This 1-day private chauffeur journey visits Yala — safari enthusiasts with tight schedules. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Jeep safari window",
+          "Dry-zone lagoons",
+          "Birdlife"
+        ],
+        "itinerary": [
+          {
+            "title": "Yala discovery",
+            "description": "Explore Yala with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "Anuradhapura Sacred Trail Day",
+        "idealFor": "Buddhist heritage pilgrims",
+        "intro": "Ancient stupas and bodhi traditions. This 1-day private chauffeur journey visits Anuradhapura — buddhist heritage pilgrims. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Ruwanwelisaya",
+          "Sacred Bodhi tree",
+          "Monastery ruins"
+        ],
+        "itinerary": [
+          {
+            "title": "Anuradhapura discovery",
+            "description": "Explore Anuradhapura with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "Mirissa Southern Coast Day",
+        "idealFor": "Whale season visitors",
+        "intro": "Coconut coves and ocean horizons. This 1-day private chauffeur journey visits Mirissa — whale season visitors. Your dedicated driver handles the road while you focus on temples, viewpoints, wildlife windows, and unhurried coastal afternoons. Every Q Pick tour is refined after a written review of your dates, vehicle preference, and pace.",
+        "highlights": [
+          "Mirissa Beach",
+          "Coconut Hill",
+          "Whale watching season"
+        ],
+        "itinerary": [
+          {
+            "title": "Mirissa discovery",
+            "description": "Explore Mirissa with your dedicated chauffeur — timing flexes around weather, tickets, and your pace."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "Jaffna Heritage City Tour",
+        "idealFor": "Heritage travellers exploring the north",
+        "intro": "Discover Jaffna's Tamil heritage in a focused four-hour private tour. Your chauffeur guides you from Nallur Kovil's gopuram to Jaffna Fort ramparts, the historic Public Library, a colourful local market stop, and a classic Rio Ice Cream finish.",
+        "highlights": [
+          "Nallur Temple",
+          "Jaffna Fort",
+          "Public Library",
+          "Local Market",
+          "Rio Ice Cream"
+        ],
+        "itinerary": [
+          {
+            "title": "Jaffna heritage circuit",
+            "description": "Nallur Temple, Jaffna Fort, Public Library, market browsing, and Rio Ice Cream — paced around opening hours and your interests."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "Delft Island Adventure",
+        "idealFor": "Island explorers and photographers",
+        "intro": "Cross by ferry to remote Delft Island for a full-day adventure. Walk coral beaches, seek out the famous baobab tree and Queen's Tower ruins, watch wild horses on open plains, and return with your private chauffeur handling mainland transfers.",
+        "highlights": [
+          "Ferry Ride",
+          "Wild Horses",
+          "Baobab Tree",
+          "Queen's Tower",
+          "Coral Beach"
+        ],
+        "itinerary": [
+          {
+            "title": "Delft Island expedition",
+            "description": "Ferry crossing, wild horse plains, baobab tree, Queen's Tower, and coral beach time — with mainland transfers by private vehicle."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Nainativu Sacred Island Tour",
+        "idealFor": "Pilgrims and cultural travellers",
+        "intro": "Sail to Nainativu for a six-hour sacred island journey. Visit Nagadeepa Temple and Nagapooshani Amman Kovil, experience the boat crossing, and absorb the blended Buddhist and Hindu heritage of Sri Lanka's northern islands with private chauffeur support on shore.",
+        "highlights": [
+          "Nagadeepa Temple",
+          "Nagapooshani Amman Temple",
+          "Boat Ride",
+          "Cultural Experience",
+          "Sigiriya Rock Fortress timed for cooler light",
+          "Dambulla Cave Temple murals",
+          "Anuradhapura or Polonnaruwa sacred sites",
+          "Private Cultural Triangle chauffeur",
+          "Temple of the Tooth in Kandy",
+          "Tea plantations around Nuwara Eliya",
+          "Nine Arches Bridge in Ella",
+          "Optional scenic train segment",
+          "Cultural Triangle icons",
+          "Kandy and highland tea country",
+          "Ella scenic landmarks",
+          "Southern coast at Galle or Mirissa",
+          "Heritage warm-up in the Cultural Triangle",
+          "Highland tea country & Ella",
+          "Yala leopard safari window",
+          "Southern coast recovery days",
+          "Full Cultural Triangle depth",
+          "Hill country and southern safari",
+          "West and east coast options",
+          "Family-ready pacing",
+          "Full-island seasonal routing",
+          "Deep heritage and wildlife time",
+          "East and west coast beaches",
+          "Ultimate private chauffeur pace"
+        ],
+        "itinerary": [
+          {
+            "title": "Nainativu sacred circuit",
+            "description": "Boat ride to Nainativu, Nagadeepa Temple, Nagapooshani Amman Temple, and cultural time on the island before return."
+          },
+          {
+            "title": "Arrival corridor to the Triangle",
+            "description": "Meet your chauffeur near CMB or Negombo and journey inland. Settle near Sigiriya or Dambulla; evening at leisure."
+          },
+          {
+            "title": "Sigiriya & Dambulla",
+            "description": "Climb Sigiriya in softer light, then explore Dambulla Cave Temple. Optional seasonal safari nearby if requested."
+          },
+          {
+            "title": "Ancient city & onward",
+            "description": "Visit Anuradhapura or Polonnaruwa before returning toward Colombo/Negombo or continuing your custom route."
+          },
+          {
+            "title": "To Kandy",
+            "description": "Drive to Kandy via inland routes. Evening lake circuit and Temple of the Tooth timed around rituals."
+          },
+          {
+            "title": "Kandy heritage",
+            "description": "Peradeniya Botanical Gardens, craft streets, and free time for markets or a cultural performance."
+          },
+          {
+            "title": "Tea country",
+            "description": "Ascend to Nuwara Eliya for plantation visits, Gregory Lake, and cool-climate leisure."
+          },
+          {
+            "title": "Ella viewpoints",
+            "description": "Continue to Ella for Nine Arches Bridge, ridge walks, and highland cafés. Optional train segment."
+          },
+          {
+            "title": "Descent or coast link",
+            "description": "Depart toward Colombo, the southern coast, or your next custom destination with luggage handled by road."
+          },
+          {
+            "title": "Arrival",
+            "description": "Airport meet and transfer to Colombo or Negombo; briefing with your chauffeur."
+          },
+          {
+            "title": "Cultural Triangle",
+            "description": "Journey to Sigiriya / Dambulla for fortress or cave temple time."
+          },
+          {
+            "title": "Heritage to Kandy",
+            "description": "Complete Triangle highlights, then continue to Kandy."
+          },
+          {
+            "title": "Highlands",
+            "description": "Scenic drive into tea country toward Nuwara Eliya or Ella."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches Bridge, viewpoints, and café leisure."
+          },
+          {
+            "title": "Southern coast",
+            "description": "Descend to Galle Fort and Mirissa for sunset and seaside dining."
+          },
+          {
+            "title": "Departure",
+            "description": "Coastal morning at leisure and private transfer to CMB or Colombo."
+          },
+          {
+            "title": "Arrival",
+            "description": "CMB meet and city or Negombo settle-in."
+          },
+          {
+            "title": "Sigiriya region",
+            "description": "Rock fortress and Triangle immersion."
+          },
+          {
+            "title": "Kandy",
+            "description": "Temple of the Tooth and highland approach."
+          },
+          {
+            "title": "Tea country",
+            "description": "Nuwara Eliya plantations and cool climate."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches and ridge walks."
+          },
+          {
+            "title": "Toward Yala",
+            "description": "Scenic descent to the southeast wildlife belt."
+          },
+          {
+            "title": "Safari day",
+            "description": "Yala National Park jeep safari (park fees extra)."
+          },
+          {
+            "title": "Southern beaches",
+            "description": "Mirissa Coconut Tree Hill and coastal downtime."
+          },
+          {
+            "title": "Galle Fort",
+            "description": "Ramparts, lighthouse, and boutique exploration."
+          },
+          {
+            "title": "Departure",
+            "description": "Private transfer to CMB or Colombo."
+          },
+          {
+            "title": "Arrival Negombo",
+            "description": "CMB pickup and west-coast settle-in."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Sacred city stupas and archaeological park."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rock fortress and Triangle base."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Medieval capital and optional elephant park."
+          },
+          {
+            "title": "Dambulla to Kandy",
+            "description": "Cave temple and highland capital."
+          },
+          {
+            "title": "Kandy",
+            "description": "Temple of the Tooth and gardens."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Tea estates and cool climate."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches and viewpoints."
+          },
+          {
+            "title": "Yala approach",
+            "description": "Southeast wildlife belt transfer."
+          },
+          {
+            "title": "Safari",
+            "description": "Yala National Park jeep day."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Southern beach recovery day."
+          },
+          {
+            "title": "Galle",
+            "description": "Fort heritage and coast."
+          },
+          {
+            "title": "East or southwest",
+            "description": "Trincomalee season option or Bentota buffer."
+          },
+          {
+            "title": "Colombo departure",
+            "description": "City buffer and CMB transfer."
+          },
+          {
+            "title": "Arrival",
+            "description": "CMB to Negombo or Colombo."
+          },
+          {
+            "title": "West coast buffer",
+            "description": "Lagoon or city leisure."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Sacred city immersion."
+          },
+          {
+            "title": "Northwest option",
+            "description": "Optional wildlife or rest day."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rock fortress focus."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Medieval ruins and lakes."
+          },
+          {
+            "title": "Dambulla",
+            "description": "Cave temple and village culture."
+          },
+          {
+            "title": "Kandy",
+            "description": "Temple of the Tooth."
+          },
+          {
+            "title": "Kandy leisure",
+            "description": "Gardens and crafts."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Tea country."
+          },
+          {
+            "title": "Estates",
+            "description": "Optional plateau or plantation day."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches and ridges."
+          },
+          {
+            "title": "Ella leisure",
+            "description": "Cafés and short walks."
+          },
+          {
+            "title": "Yala",
+            "description": "Wildlife approach."
+          },
+          {
+            "title": "Safari",
+            "description": "Park jeep day."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Southern ocean."
+          },
+          {
+            "title": "Galle",
+            "description": "Fort heritage and coast."
+          },
+          {
+            "title": "Bentota",
+            "description": "Southwest resort pace."
+          },
+          {
+            "title": "East coast",
+            "description": "Trincomalee or Arugam Bay by season."
+          },
+          {
+            "title": "East leisure",
+            "description": "Beach and water time."
+          },
+          {
+            "title": "Return & depart",
+            "description": "Cross-island transfer to CMB."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Can I customise a Q Pick tour package?",
+        "answer": "Yes. Published packages are starting points. Choose destinations, days, vehicle, and preferences in the planner — our desk refines the route after you submit a request."
+      },
+      "hub-price": {
+        "question": "How does pricing work?",
+        "answer": "We show Pricing Available Upon Request until your itinerary is reviewed. After you submit a tour request, Q Pick confirms a written private-chauffeur quote. Entrance fees, safari jeeps, accommodation, and meals are typically separate unless stated in writing."
+      },
+      "hub-airport": {
+        "question": "Do you offer airport pickup with tours?",
+        "answer": "Yes. Bandaranaike International (CMB) pickup and drop-off can be arranged with your tour or via our dedicated airport transfer service."
+      },
+      "hub-group": {
+        "question": "Which vehicle should I choose?",
+        "answer": "Sedans suit couples; SUVs and vans fit families; luxury vans and mini coaches serve larger groups. Select capacity in the planner — we confirm the final vehicle after reviewing luggage and route."
+      },
+      "hub-payment": {
+        "question": "How do payments and confirmation work?",
+        "answer": "Submit a tour request online. Our team reviews availability, confirms an outline and quote, then shares next steps for payment and chauffeur assignment. You receive a reference code for tracking."
+      },
+      "pkg-3d-pace": {
+        "question": "Is three days enough for the Cultural Triangle?",
+        "answer": "Three days can cover Sigiriya, Dambulla, and either Anuradhapura or Polonnaruwa at a composed private pace. Longer stays allow Mihintale, safari add-ons, or a Kandy extension."
+      },
+      "pkg-5d-train": {
+        "question": "Can we include the Ella train?",
+        "answer": "Yes. Many guests ride a scenic rail segment while the chauffeur transfers luggage by road. Tell us your preference when requesting a quote."
+      },
+      "pkg-5d-weather": {
+        "question": "What is the weather like in the hill country?",
+        "answer": "Nuwara Eliya and Ella are cooler than the coast, with misty mornings and possible light rain. Pack layers; your private vehicle keeps transfers comfortable between viewpoints."
+      },
+      "pkg-7d-fitness": {
+        "question": "How much walking is involved on the 7-day tour?",
+        "answer": "Sigiriya and temple visits involve steps; Ella offers optional short walks. Your chauffeur times the day so strenuous segments can be shortened without losing the highlights."
+      },
+      "pkg-10d-safari": {
+        "question": "Is a Yala safari included in the wildlife adventure?",
+        "answer": "Safari jeep hire and park entry are arranged as add-ons with clear timing. Wildlife sightings are never guaranteed — we plan for the best seasonal window after your request."
+      },
+      "pkg-14d-pace": {
+        "question": "Is fourteen days too much driving?",
+        "answer": "With a private chauffeur and spaced overnight stops, daily driving stays manageable. We design rest beach days so the itinerary feels immersive, not rushed."
+      },
+      "pkg-21d-season": {
+        "question": "When is the best season for a grand island tour?",
+        "answer": "West and south coasts favour December–March; the east often shines around May–September. A 21-day plan can follow the drier shore — we advise based on your travel month."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "Step 1",
+        "title": "Where would you like to go?",
+        "subtitle": "Select destinations or describe your dream route — we refine the details together."
+      },
+      "dates": {
+        "kicker": "Step 2",
+        "title": "Select travel dates",
+        "subtitle": "Choose your start date and how many days you want on the road.",
+        "startDate": "Start date",
+        "numberOfDays": "Number of days",
+        "estimatedEnd": "Estimated end date:"
+      },
+      "vehicle": {
+        "kicker": "Step 3",
+        "title": "Choose your vehicle",
+        "subtitle": "Sedan to van — private, air-conditioned, luggage-ready."
+      },
+      "accommodation": {
+        "kicker": "Step 4",
+        "title": "Accommodation preference",
+        "subtitle": "Tell us your comfort level — we coordinate stays or you book your own."
+      },
+      "preferences": {
+        "kicker": "Step 5",
+        "title": "Travel preferences",
+        "subtitle": "Pace, interests, and special requests help us shape your itinerary."
+      },
+      "contact": {
+        "kicker": "Step 6",
+        "title": "Your contact details",
+        "subtitle": "We respond with a written quote and refined itinerary."
+      },
+      "requests": {
+        "kicker": "Step 7",
+        "title": "Special requests",
+        "subtitle": "Dietary needs, accessibility, celebrations — anything we should know."
+      },
+      "review": {
+        "kicker": "Review",
+        "title": "Review your tour request",
+        "subtitle": "Confirm details before submitting — no payment required at this stage.",
+        "submit": "Submit tour request",
+        "submitting": "Submitting…"
+      }
+    },
+    "common": {
+      "back": "Back",
+      "continue": "Continue",
+      "optional": "Optional",
+      "required": "Required"
+    }
   }
 }

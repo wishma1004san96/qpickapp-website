@@ -1,14 +1,14 @@
 import { cookies } from "next/headers";
 import {
-  defaultLocale,
+  defaultSelectorLocale,
   localeCookieName,
-  normalizeLocale,
-  type Locale,
+  normalizeSelectorLocale,
+  type SelectorLocale,
 } from "@/lib/i18n/config";
 
 /** Server-side locale from the persistent cookie (defaults to English). */
-export async function getLocale(): Promise<Locale> {
+export async function getLocale(): Promise<SelectorLocale> {
   const store = await cookies();
   const raw = store.get(localeCookieName)?.value;
-  return raw ? normalizeLocale(raw) : defaultLocale;
+  return raw ? normalizeSelectorLocale(raw) : defaultSelectorLocale;
 }

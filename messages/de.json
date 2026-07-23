@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "Zum Hauptinhalt springen",
+  "header": {
+    "homeAria": "Q Pick Zuhause",
+    "primaryNav": "Primär",
+    "mobileNav": "Mobile Navigation",
+    "mobilePrimary": "Mobile Grundschule",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "bookNow": "Buchen Sie jetzt"
+  },
+  "nav": {
+    "home": "Zuhause",
+    "ride": "Fahrt",
+    "airport": "Flughafen",
+    "tours": "Touren",
+    "safety": "Sicherheit",
+    "drive": "Fahren",
+    "partners": "Partner",
+    "support": "Unterstützung"
+  },
+  "language": {
+    "label": "Sprache",
+    "choose": "Sprache wählen"
+  },
+  "footer": {
+    "blurb": "Premium-Flughafentransfers, Stadtfahrten, Chauffeurservice und private Touren durch Sri Lanka.",
+    "call": "Rufen Sie jetzt an",
+    "whatsapp": "WhatsApp",
+    "emailCta": "Schicken Sie uns eine E-Mail",
+    "services": "Dienstleistungen",
+    "company": "Unternehmen",
+    "downloadApp": "App herunterladen",
+    "contact": {
+      "address": "Adresse",
+      "email": "E-Mail",
+      "phones": "Telefone",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "Flughafentransfers",
+      "tours": "Private Touren",
+      "chauffeur": "Chauffeurservice",
+      "cityRides": "Stadtfahrten",
+      "corporate": "Geschäftsreisen"
+    },
+    "companyLinks": {
+      "about": "Über",
+      "drive": "Werden Sie Fahrer",
+      "partners": "Partner",
+      "support": "Unterstützung",
+      "contact": "Kontakt"
+    },
+    "legal": {
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Allgemeine Geschäftsbedingungen",
+      "cookies": "Kekse"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick Einführung",
+    "scroll": "Scrollen",
+    "scrollAria": "Scrollen Sie zum Inhalt",
+    "posterAlt": "Malerische Fahrt durch neblige Sri Lankan Waldstraßen",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "Flughafentransfers. Stadtfahrten. Private Chauffeure.",
+        "description": "Premium-Mobilität im gesamten Sri Lanka – Abholung und Rückgabe vom Flughafen, Taxi- und Überlandfahrten, Chauffeurservice, Geschäftsreisen und private Touren auf einer vertrauenswürdigen Plattform.",
+        "primary": "Fahrt buchen",
+        "secondary": "Flughafentransfer"
+      },
+      {
+        "title": "Flughafentransfers",
+        "subtitle": "Mit Sicherheit ankommen und abreisen.",
+        "description": "Meet-and-Greet-Abholung und zeitgesteuerte Rückgabe. Ihr Chauffeur wartet, bevor Sie landen – keine Warteschlangen, keine Unsicherheit.",
+        "primary": "Flughafentransfer",
+        "secondary": "Fahrt buchen"
+      },
+      {
+        "title": "Stadt- und Überlandfahrten",
+        "subtitle": "Taxi und Chauffeur, auf Ihre Uhr.",
+        "description": "Von den Straßen von Colombo bis hin zu Küstenautobahnen – verifizierte Fahrer, transparente Tarife und luxuriöse Chauffeuroptionen, wenn Sie sie brauchen.",
+        "primary": "Fahrt buchen",
+        "secondary": "Entdecken Sie Touren"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "Planen Sie Ihre Reise",
+      "title": "Planen Sie Ihre Reise",
+      "subtitle": "Sagen Sie uns, wie Sie umziehen möchten. Den Rest regeln wir in aller Ruhe.",
+      "journeyTypeAria": "Reisetyp",
+      "continue": "Weiter",
+      "scheduleTitle": "Reiseplan",
+      "travelDate": "Reisedatum",
+      "pickupTime": "Abholzeit",
+      "intents": {
+        "arrive": "Ankommen",
+        "stay": "Bleib",
+        "explore": "Entdecken"
+      },
+      "arrive": {
+        "fromLabel": "Flughafen",
+        "fromDefault": "Flughafen Colombo (CMB)",
+        "toLabel": "Ziel",
+        "toDefault": "Galle Face Hotel",
+        "recommendation": "Treffen Sie sich bei der Ankunft. · Das Hotel wird auf dem Laufenden gehalten. · Der Fahrpreis wird vor der Bestätigung geklärt"
+      },
+      "stay": {
+        "fromLabel": "Abholung",
+        "fromDefault": "Ihr Hotel",
+        "toLabel": "Ziel",
+        "toDefault": "Galle Fort",
+        "recommendation": "Verifizierter Fahrer · Live-Updates, die Sie teilen können · Transparente Preise"
+      },
+      "explore": {
+        "fromLabel": "Abholung",
+        "fromDefault": "Colombo",
+        "toLabel": "Ziel",
+        "toDefault": "Ella und das Hochland",
+        "recommendation": "Tagestaugliches Fahrzeug · Fahrer, der die Straßen kennt · Eine ruhige Reiseroute"
+      }
+    },
+    "trust": {
+      "ariaLabel": "Warum Gäste Q Pick vertrauen",
+      "verifiedDrivers": "Verifizierte Treiber",
+      "pricing": "Transparente Preisgestaltung",
+      "islandwide": "Inselweite Abdeckung",
+      "support": "24/7-Support",
+      "trips": "Tausende Reisen"
+    }
+  },
+  "experience": {
+    "headingLine1": "Erfahrung",
+    "headingLine2": "Q Pick.",
+    "lines": [
+      "Ihr Flughafentransfer.",
+      "Ihre Stadtfahrt.",
+      "Ihr Sri Lanka."
+    ],
+    "screenLive": "Q Pick App-Bildschirm: {stepLabel}",
+    "previewAria": "Q Pick App-Vorschau mit {stepLabel}",
+    "story": {
+      "planLabel": "Fahrtbuchung",
+      "vehiclesLabel": "Fahrzeugauswahl",
+      "liveLabel": "Live-Reise",
+      "plan": {
+        "kicker": "Flughafen & Fahrten",
+        "title": "Planen Sie Ihre Reise",
+        "destinations": "Ziel",
+        "days": "Reisetage",
+        "daysUnit": "Tage",
+        "pickup": "Abholung",
+        "pickupValue": "Flughafen Bandaranaike",
+        "hotel": "Hotel",
+        "hotelValue": "Shangri-La Colombo",
+        "route": "Routenvorschau",
+        "stops": "stoppt",
+        "cta": "Weiter"
+      },
+      "vehicles": {
+        "route": "Flughafen → Sigiriya · Ella · Galle",
+        "title": "Wählen Sie Ihr Fahrzeug",
+        "budgetLabel": "Geschätztes Budget",
+        "budgetHint": "Bevor Sie bestätigen",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "Premium-Flotte",
+    "heading": "Wählen Sie die perfekte Fahrt.",
+    "sub": "Vom Tuk-Tuk bis zum Premium-Van ist jedes Fahrzeug geprüft, komfortabel und preislich transparent.",
+    "phoneAria": "Q Pick Fahrzeugliste in der App"
+  },
+  "insideQPickApp": {
+    "eyebrow": "Bewerbung",
+    "heading": "In der Q Pick App",
+    "sub": "Buchen Sie einen Flughafentransfer oder eine Fahrt in die Stadt, wählen Sie Ihr Fahrzeug zu einem klaren Tarif aus und folgen Sie dann Ihrem Chauffeur live – erstklassige Mobilität in Ihrer Tasche.",
+    "panelAria": "Q Pick App-Bildschirm: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "Buchen Sie Ihre Fahrt",
+        "body": "Abholung vom Flughafen, Stadttaxi oder Überlandfahrt – legen Sie Ziel und Zeitpunkt fest, bevor Sie losfahren."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "Fahrzeug und Fahrpreis",
+        "body": "Von der Limousine bis zum Premium-Van, mit transparenten Preisen vor Ihrer Bestätigung."
+      },
+      "live": {
+        "n": "03",
+        "label": "Live-Reise",
+        "body": "Fahrer zugewiesen, Live-GPS und voraussichtliche Ankunftszeit, Fahrt abgeschlossen, dann ein ruhiger Bewertungsablauf."
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "SO FUNKTIONIERT Q PICK",
+    "heading": "Von der Registrierung bis zu Ihrem Ziel",
+    "sub": "Ein ruhiger Weg von der Eröffnung bis zur Ankunft: Registrieren, überprüfen, einen Flughafentransfer oder eine Fahrt in die Stadt buchen und dann Ihren Chauffeur in Echtzeit verfolgen.",
+    "stepLabel": "Schritt {n}",
+    "prevAria": "Vorheriger Schritt",
+    "nextAria": "Nächster Schritt",
+    "dotsAria": "Reiseschritte",
+    "dotAria": "Gehen Sie zu Schritt {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "Willkommen",
+        "body": "Öffnen Sie die Q Pick-App und beginnen Sie Ihre Reise."
+      },
+      "register": {
+        "n": "02",
+        "title": "Registrieren",
+        "body": "Erstellen Sie Ihr Konto mit Ihrer Handynummer."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP-Verifizierung",
+        "body": "Verifizieren Sie Ihre Handynummer sicher."
+      },
+      "journey": {
+        "n": "04",
+        "title": "Wählen Sie, wie Sie sich bewegen",
+        "body": "Buchen Sie einen Flughafentransfer, ein Stadttaxi, eine Überlandfahrt oder einen Chauffeurservice – private Touren, wann immer Sie möchten."
+      },
+      "track": {
+        "n": "05",
+        "title": "Verfolgen Sie Ihren Fahrer",
+        "body": "Beobachten Sie die Ankunft Ihres Fahrers mit Live-GPS-Tracking und voraussichtlicher Ankunftszeit."
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Der Q Pick-Standard",
+    "heading": "Eine Reise. Ein vertrauenswürdiger Standard.",
+    "intro": "Kein Marktplatz. Keine Broschüre und kein WhatsApp-Thread. Ein privater Concierge für die Bewegungen von Sri Lanka – von der ersten Anlegestelle bis zur letzten Küstenstraße.",
+    "closingTitle": "Während der gesamten Reise herrscht die gleiche ruhige Gewissheit.",
+    "closingBody": "Uber und PickMe bringen Sie durch eine Stadt. Reiseveranstalter verkaufen pro Tag. Q Pick bietet die ganze Geschichte: Flughafen, Aufenthalt und Insel – unter einem vertrauenswürdigen Standard.",
+    "cta": "Planen Sie Ihre Reise",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "Ankommen",
+        "moment": "Die Insel beginnt am Tor.",
+        "scene": "Ihr Flug landet. Ein verifizierter Q Pick-Fahrer wartet bereits – kein Gedränge am Straßenrand, keine Nachrichtenkette. Ihr Hotel weiß, dass Sie unterwegs sind, bevor das Auto die Flughafenstraße verlässt.",
+        "outcome": "Eine Übergabe. Von der Ankunft bis zur Rezeption.",
+        "imageAlt": "Die Lichter der Küste und der Stadt von Colombo in der Abenddämmerung – die Reise nach der Landung"
+      },
+      "stay": {
+        "n": "02",
+        "title": "Bleib",
+        "moment": "Jede Bewegung bleibt ruhig und klar.",
+        "scene": "Ein Küstenlauf, eine Abendessenreservierung, ein Morgentreffen. Sie sehen den Fahrpreis, bevor Sie ihn bestätigen. Während Sie fahren, können die Menschen, die Ihnen wichtig sind, folgen – Familie, Gastgeber oder Villa-Manager –, ohne zweimal anrufen zu müssen.",
+        "outcome": "Transparente Preisgestaltung. Live-Status. Kein Marktlärm.",
+        "imageAlt": "Südliche Sri Lankan Küste mit klarem Wasser im Indischen Ozean"
+      },
+      "explore": {
+        "n": "03",
+        "title": "Entdecken",
+        "moment": "Die Insel öffnet sich reibungslos.",
+        "scene": "Teelandnebel. Festungsstädte. Ein Tag mit mehr als einem Stopp. Derselbe vertrauenswürdige Fahrer, das richtige Fahrzeug für die vor Ihnen liegenden Straßen und eine sorgfältig eingehaltene Reiseroute – damit es auf den Ort ankommt, nicht auf die Logistik.",
+        "outcome": "Mobilität und Entdeckung. Ein durchgängiger Standard.",
+        "imageAlt": "Die Felsenfestung Sigiriya erhebt sich aus dem Sri Lankan-Dschungel"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lankas Premium-Mobilitätsplattform",
+    "heading": "Deine Reise. Ihre Regeln.",
+    "manifesto": "Von der ersten Begrüßung am Flughafen bis zur letzten Hoteltür – ein kontinuierlicher Mobilitätsstandard, für den gewöhnliche Apps nie ausgelegt sind.",
+    "positioningLead": "Dies ist nicht nur eine weitere Taxi-App.",
+    "positioningRest": "Dies ist die Premium-Mobilitätsplattform von Sri Lanka.",
+    "trustEyebrow": "Unterstützt von Quick Pick App (Pvt) Ltd",
+    "trustBody": "Q Pick wird stolz von Quick Pick App (Pvt) Ltd entwickelt und betrieben und bietet Premium-Flughafentransfers, Chauffeurdienste, private Touren und vertrauenswürdige Mobilitätslösungen in ganz Sri Lanka mit einem starken Engagement für Qualität, Sicherheit und außergewöhnliches Kundenerlebnis.",
+    "continuumEyebrow": "Die Reise geht weiter",
+    "continuumBody": "Ein breiteres Ökosystem im Gastgewerbe nimmt still und leise Gestalt an – derselbe ruhige Standard, erweitert.",
+    "continuumComingSoon": "Kommt bald",
+    "continuumItems": [
+      "Essenslieferung",
+      "Paketzustellung",
+      "Geldwechsel",
+      "Lokale Erlebnisse",
+      "Concierge-Dienste"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "Ankunft",
+        "title": "Die Insel beginnt mit einer Begrüßung.",
+        "scene": "Ihr Flug landet. Ein verifizierter Q Pick Hotelfachmann wartet bereits – Namensschild bereit, Gepäck in der Hand, Hotelroute bestätigt. Kein Gedränge am Bordstein. Kein Marktplatzgebot. Einfach die stille Gewissheit, dass Ihre Sri Lanka-Reise mit Bedacht begonnen hat.",
+        "details": [
+          "Begrüßung am Flughafen durch einen professionellen Chauffeur – niemals ein zufälliger Fahrer",
+          "Der Hoteltransfer ist vor Ihrer Abreise geplant"
+        ],
+        "whisper": "Eine Übergabe. Vom Tor bis zur Lobby.",
+        "kicker": "Kapitel 01",
+        "mediaTitle": "Eine ruhige Ankunft",
+        "imageAlt": "Premium-Flughafenterminalkorridor im Morgengrauen – der Beginn einer ruhigen Ankunft"
+      },
+      "planning": {
+        "n": "02",
+        "label": "Komponieren",
+        "title": "Bewegen Sie sich frei – in der Stadt, am Flughafen oder auf der Insel.",
+        "scene": "Im Gegensatz zu gewöhnlichen Fahrdiensten deckt Q Pick Flughafentransfers, Stadt- und Überlandfahrten, Luxus-Chauffeurservice und Geschäftsreisen ab – mit privaten Touren und Tagesausflügen, wenn Sie die Gegend erkunden möchten. Wählen Sie Abholung, Ziel, Zeitpunkt und Fahrzeug. Sehen Sie sich einen klaren Fahrpreis an, bevor Sie bestätigen.",
+        "details": [
+          "Abholung und Rückgabe vom Flughafen abgestimmt auf Ihren Flug",
+          "Stadttaxi, Überlandfahrten und Chauffeuroptionen",
+          "Transparenter Tarif vor der Bestätigung – Klarheit ohne Dringlichkeit"
+        ],
+        "whisper": "Ihre Route. Dein Timing. Ihr Fahrpreis.",
+        "kicker": "Kapitel 02",
+        "mediaTitle": "Eine komponierte Reise",
+        "imageAlt": "Offene Berglandschaft zum Zusammenstellen einer privaten Sri Lanka Reiseroute"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "Unternehmen",
+        "title": "Keine Fahrer. Hotelfachleute.",
+        "scene": "Jeder Chauffeur von Q Pick ist ein geprüfter Hotelprofi – geschult für Diskretion, Inselstraßen und das ruhige Willkommensritual. Wenn Sie möchten, können Sie auch einen lokalen Führer zu Tempeln, Teeanbaugebieten, Wildtieren oder lebendigem Erbe anfordern – auf Englisch, Singhalesisch, Tamil oder anderen Sprachen, sofern verfügbar.",
+        "details": [
+          "Verifizierte professionelle Chauffeure – Gastfreundschaft steht immer an erster Stelle",
+          "Optional mehrsprachige lokale Reiseführer für Kultur und Geschichte",
+          "Gefährten, die aufgrund von Vertrauen ausgewählt wurden, nicht aufgrund der Nähe auf einer Karte"
+        ],
+        "whisper": "Der Unterschied besteht darin, wer vor der Tür steht.",
+        "kicker": "Kapitel 03",
+        "mediaTitle": "Ruhiges, professionelles Unternehmen",
+        "imageAlt": "Professioneller Chauffeur im dunklen Anzug, der die Tür eines Luxusfahrzeugs öffnet"
+      },
+      "explore": {
+        "n": "04",
+        "label": "Entdeckung",
+        "title": "Wo die Insel zur Geschichte wird.",
+        "scene": "Küstenstraßen. Hochlandnebel. Kulturerbestädte. Während Sie die Gegend erkunden, sorgt das Live-Reisemanagement dafür, dass jeder Transfer im Blick bleibt – und der Support rund um die Uhr bleibt auch dann verfügbar, wenn sich der Tag ändert. Gewöhnliche Apps enden, wenn die Fahrt endet. Q Pick begleitet die Reise.",
+        "details": [
+          "Live-Reisemanagement für den gesamten Reiseverlauf",
+          "Professionelle Unterstützung – ruhig, verfügbar, unaufdringlich"
+        ],
+        "whisper": "Die Logistik bleibt unsichtbar. Der Ort bleibt der Punkt.",
+        "kicker": "Kapitel 04",
+        "mediaTitle": "Die Insel, ununterbrochen",
+        "imageAlt": "Luftaufnahme der goldenen Stunde von Sigiriya, das sich über dem Sri Lankan-Dschungel erhebt"
+      },
+      "complete": {
+        "n": "05",
+        "label": "Rückkehr",
+        "title": "Die gleiche ruhige Gewissheit bis zur letzten Tür.",
+        "scene": "Der letzte Transfer zum Hotel schließt den Kreis – koordiniert über die App, zeitlich abgestimmt in Ihrer Lobby und mit der gleichen Gastfreundschaft, die Sie am Flughafen empfangen hat. Ein durchgängiger Standard. Von der ersten Begrüßung bis zum letzten Abschied – etwas, das gewöhnliche Mitfahrgelegenheiten nicht halten können.",
+        "details": [
+          "Die Abholung und Rückgabe vom Hotel erfolgt nach einem vertrauenswürdigen Standard",
+          "Eine komplette Sri Lanka Reiseplattform – kein Taxi-Marktplatz"
+        ],
+        "whisper": "Die Reise geht zu Ende. Der Standard bleibt bestehen.",
+        "kicker": "Kapitel 05",
+        "mediaTitle": "Reise abgeschlossen",
+        "imageAlt": "Ankunft im Luxusresort in der Abenddämmerung – der ruhige Abschluss einer Privatreise"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "Eine Plattform",
+    "heading": "Eine Plattform. Drei Erfahrungen.",
+    "sub": "Ganz gleich, ob Sie einen Flughafentransfer, eine Stadt- oder Chauffeurfahrt oder einen Ort benötigen, an dem Sie in Würde Geld verdienen können – Q Pick ist der gleiche vertrauenswürdige Mobilitätsstandard.",
+    "cards": {
+      "ride": {
+        "title": "Jetzt fahren",
+        "kicker": "Taxi & Chauffeur",
+        "description": "Verifizierte Chauffeure für Stadttaxi, Überlandfahrten und Luxustransporte – transparente Tarife, bevor Sie sie bestätigen.",
+        "points": [
+          "Stadt- und Überlandfahrten",
+          "Luxus-Chauffeur",
+          "Transparente Preisgestaltung"
+        ],
+        "cta": "Fahrt buchen",
+        "imageAlt": "Ein Gast steigt aus dem Heck einer schwarzen Oberklasselimousine vor einem Premium-Pickup"
+      },
+      "tours": {
+        "title": "Flughafentransfers",
+        "kicker": "Ankommen und abreisen",
+        "description": "Abholung und Rückgabe zu bestimmten Flugzeiten mit Meet-and-Greet-Service – sichere Sicherheit vom Gate bis zur Tür.",
+        "points": [
+          "Abholung vom Flughafen",
+          "Abgabe am Flughafen",
+          "Treffen und Begrüßen"
+        ],
+        "cta": "Flughafentransfer",
+        "imageAlt": "Professioneller Chauffeur, bereit für einen Premium-Flughafentransfer"
+      },
+      "drive": {
+        "title": "Fahren Sie mit Q Pick",
+        "kicker": "Fahrerplattform",
+        "description": "Eine professionelle Plattform für ernsthafte Fahrer – klare Verdienste, flexible Arbeitszeiten und menschenwürdige Arbeit.",
+        "points": [
+          "Flexibles Einkommen",
+          "Professionelle Plattform",
+          "Einfache Registrierung"
+        ],
+        "cta": "Werden Sie Fahrer",
+        "imageAlt": "Professioneller Chauffeur im dunklen Anzug öffnet die Hintertür eines schwarzen Luxusvans am Hoteleingang"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "Fahrdienste",
+    "intro": "Flughafentransfers, Stadttaxi, Überlandfahrten und Chauffeurservice – private Touren, wenn Sie die Gegend erkunden möchten. Ein Q Pick-Standard.",
+    "tablistAria": "Reiseabsicht",
+    "ride": {
+      "label": "Fahrt",
+      "title": "Stadttaxi und Überlandfahrten",
+      "body": "Fordern Sie einen verifizierten Chauffeur für die Straßen von Colombo oder die lange Küstenfahrt an. Transparente Tarife vor Ihrer Bestätigung.",
+      "cta": "Buchen Sie eine Fahrt",
+      "imageAlt": "Die Küste von Colombo in der Abenddämmerung – Städtereisen mit Sicherheit"
+    },
+    "airport": {
+      "label": "Flughafen",
+      "title": "Abholung und Rückgabe vom Flughafen",
+      "body": "Meet-and-Greet-Transfers, abgestimmt auf Ihren Flug. Hotels und Villen bleiben vom Tor bis zur Tür auf dem Laufenden.",
+      "cta": "Buchen Sie einen Flughafentransfer",
+      "imageAlt": "Küstenstraße in Richtung Süden Sri Lanka nach der Landung"
+    },
+    "tour": {
+      "label": "Rundgang",
+      "title": "Private Touren und Tagesausflüge",
+      "body": "Optionale Tagesausflüge und Fahrten mit mehreren Stopps mit Chauffeuren, die sich auf den Straßen der Insel auskennen – wenn die Erkundung das Ziel ist.",
+      "cta": "Entdecken Sie Touren",
+      "imageAlt": "Sigiriya und die Landschaften des Kulturdreiecks für Tagesausflüge"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Wohin Q Pick Sie führt",
+    "intro": "Beliebte Routen für Flughafentransfers, Stadtfahrten und Chauffeurfahrten – Ziele, die Sie bei Ihrer Fortbewegung unterstützen.",
+    "allDestinations": "Alle Ziele",
+    "travelTime": "Reisezeit",
+    "startingPrice": "Ab"
+  },
+  "stepTimeline": {
+    "heading": "Wie Gewissheit funktioniert",
+    "intro": "Drei ruhige Schritte zwischen Ihrem Standort und dem Standort, an dem Sie sein müssen.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "Anfrage",
+        "body": "Legen Sie Abholung, Ziel und Zeitpunkt fest. Sehen Sie sich den Fahrpreis an, bevor Sie sich verpflichten."
+      },
+      "match": {
+        "n": "02",
+        "title": "Spiel",
+        "body": "Ein verifizierter Q Pick Fahrer wird zugewiesen – bewertet, versichert und reisebereit."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "Ankommen",
+        "body": "Live-ETA, Fahrtenmitteilung und eine ruhige Übergabe an der Tür oder am Gate."
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "Colombo",
+      "region": "Westprovinz",
+      "summary": "Hafenlichter, Galle Face-Brise und der Puls der Hauptstadt – bewegt mit ruhiger Präzision.",
+      "imageAlt": "Colombo-Küstenufer in der Abenddämmerung",
+      "travelTime": "30–45 Minuten von CMB",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "Galle",
+      "region": "Südliche Provinz",
+      "summary": "Festungsmauern, Meereswind und die Südküste – vom Flughafen bis zur Stadtmauer ohne Unsicherheit.",
+      "imageAlt": "Südliche Sri Lankan Küste und klares Meerwasser",
+      "travelTime": "2–2,5 Stunden von CMB",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "Ella",
+      "region": "Provinz Uva",
+      "summary": "Nebel, Tee und Hochlandluft – Tagescharter, abgestimmt auf das Berglicht.",
+      "imageAlt": "Üppige Sri Lankan Hochland- und tropische Hügellandschaft",
+      "travelTime": "5–6 Stunden von Colombo",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "Sigiriya",
+      "region": "Zentralprovinz",
+      "summary": "Felsenfestungs- und Kulturdreiecksstraßen – geführt von Fahrern, die die Routen kennen.",
+      "imageAlt": "Luftaufnahme der Felsenfestung Sigiriya in Sri Lanka",
+      "travelTime": "3,5–4,5 Stunden von CMB",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "Vertrauen und Sicherheit",
+    "heading": "Ein Sicherheitsstandard",
+    "headingLine2": "du kannst fühlen.",
+    "intro": "Jede Q Pick-Fahrt wird durch verifizierte Fahrer, Echtzeitüberwachung, transparente Preise und engagierten Support unterstützt – so können Sie Sri Lanka mit vollem Vertrauen bereisen.",
+    "cta": "Entdecken Sie Sicherheit",
+    "trustLine": "Tausende von Reisenden vertrauen darauf",
+    "items": {
+      "verified": {
+        "title": "Verifizierte Treiber",
+        "body": "Jeder Chauffeur besteht die Identitäts- und Fahrzeugprüfung."
+      },
+      "pricing": {
+        "title": "Transparente Preisgestaltung",
+        "body": "Informieren Sie sich über Ihren Fahrpreis, bevor Sie jede Fahrt bestätigen."
+      },
+      "sharing": {
+        "title": "Live-Reise-Sharing",
+        "body": "Freunde und Familie können Ihre Reise verfolgen."
+      },
+      "support": {
+        "title": "Notfallunterstützung",
+        "body": "24/7-Unterstützung, wann immer Sie Hilfe benötigen."
+      },
+      "insured": {
+        "title": "Vollständig versicherte Reisen",
+        "body": "Jede Fahrt von Q Pick ist geschützt."
+      }
+    },
+    "proofs": [
+      "Verifizierte Fahrer mit Identitäts- und Fahrzeugkontrollen",
+      "Transparente Preisgestaltung vor Ihrer Bestätigung",
+      "Live-Reise-Sharing für Familie und Gastgeber",
+      "Unterstützung während der Reise und eine veröffentlichte Notfallnummer",
+      "Versicherungsschutz auf jeder Q Pick-Reise"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "PARTNER",
+      "heading": "Hotels, Villen und Unternehmen",
+      "body": "Gästetransfers nach einem gemeinsamen Standard – Übergabe mit weißen Handschuhen, der Ihre Rezeption vertrauen kann.",
+      "cta": "Partner mit Q Pick"
+    },
+    "drivers": {
+      "eyebrow": "TREIBER",
+      "heading": "Fahren Sie mit Würde",
+      "body": "Klare Einnahmen, fairer Versand und Werkzeuge, die für die Straßen entwickelt wurden, die Sie am besten kennen.",
+      "cta": "Werden Sie Fahrer"
+    }
+  },
+  "planTour": {
+    "eyebrow": "Private Touren",
+    "heading": "Planen Sie Ihre Sri Lanka-Tour",
+    "sub": "Erstellen Sie eine vollständig individuelle Privatreise – Tage, Ziele und Fahrzeug – mit einem sofortigen Kostenvoranschlag, bevor Sie sich verpflichten.",
+    "highlights": [
+      "Privater Chauffeur für Ihre gesamte Reiseroute",
+      "Mischen Sie Stopps an der Küste, im Hochland und im kulturellen Dreieck",
+      "Transparenter Kostenvoranschlag – Details mit Q Pick bestätigen"
+    ],
+    "trust": [
+      "Sofortige Schätzung",
+      "Keine Zahlung erforderlich",
+      "Kostenlose Beratung"
+    ],
+    "cardLabel": "Ihre Reiseroute",
+    "daysLabel": "Wählen Sie die Anzahl der Tage aus",
+    "daysOption": "{count} Tage",
+    "travelersLabel": "Reisende",
+    "travelersOption": "{count}",
+    "arrivalLabel": "Ankunftsdatum",
+    "pickupLabel": "Abholort",
+    "pickups": {
+      "cmb": "Bandaranaike (CMB)",
+      "colombo": "Colombo-Stadt",
+      "galle": "Galle",
+      "hotel": "Ihr Hotel"
+    },
+    "tourTypeLabel": "Tourtyp",
+    "tourTypes": {
+      "private": {
+        "label": "Privater Chauffeur",
+        "meta": "Flexibles Tempo · individuelle Stopps"
+      },
+      "honeymoon": {
+        "label": "Flitterwochen",
+        "meta": "Aufenthalte an der Küste und im ruhigen Hochland"
+      },
+      "family": {
+        "label": "Familie",
+        "meta": "Geräumige Fahrzeuge · einfache Tage"
+      },
+      "cultural": {
+        "label": "Kulturelles Dreieck",
+        "meta": "Kulturerbe-Routen · geführte Touren"
+      }
+    },
+    "destinationsLabel": "Ziele auswählen",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "Fahrzeugtyp auswählen",
+    "vehicles": {
+      "sedan": {
+        "label": "Limousine",
+        "meta": "1–3 Gäste · Klimaanlage"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 Gäste · Klimaanlage"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "1–9 Gäste · Klimaanlage"
+      }
+    },
+    "distanceLabel": "Geschätzte Entfernung",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "Voraussichtliche Fahrt",
+    "hoursValue": "~{hours} Std",
+    "breakdownLabel": "Preisaufschlüsselung",
+    "breakdownDaily": "Fahrzeug & Chauffeur",
+    "breakdownDestinations": "Zielhaltestellen",
+    "breakdownTravelers": "Zusätzliche Reisende",
+    "breakdownPickup": "Abholung vom Flughafen/Hotel",
+    "estimateLabel": "Sofort geschätzter Preis",
+    "estimateNote": "Nur Schätzung · abgeschlossen, wenn Sie mit Q Pick planen",
+    "cta": "Planen Sie meine Tour"
+  },
+  "privateToursPreview": {
+    "eyebrow": "Private Touren",
+    "heading": "Planen Sie Ihre Sri Lanka-Reise",
+    "sub": "Entdecken Sie Sri Lanka mit einem vollständig maßgeschneiderten privaten Chauffeur-Erlebnis.",
+    "points": [
+      "Flexible Reiserouten",
+      "Luxusfahrzeuge",
+      "Sofortige Schätzungen"
+    ],
+    "primary": "Planen Sie meine Tour",
+    "secondary": "Entdecken Sie Touren",
+    "cardLabel": "Beispielroute",
+    "cardTitle": "5 Tage · Von der Küste bis ins Hochland",
+    "previewStops": [
+      "Ankunft CMB → Colombo über Nacht",
+      "Galle Fort und Südküste",
+      "Ella-Teeland-Finale"
+    ],
+    "estimateLabel": "Von",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Passen Sie Ihre Touren individuell an"
+  },
+  "driveWithQPick": {
+    "eyebrow": "Für professionelle Chauffeure",
+    "heading": "Fahren Sie mit Zuversicht.",
+    "headingLine2": "Verdienen Sie mit Absicht.",
+    "sub": "Treten Sie der Premium-Chauffeur-Plattform von Sri Lanka bei. Akzeptieren Sie Flughafentransfers, Stadt- und Geschäftsfahrten, Geschäftsreisen und private Touren und verwalten Sie gleichzeitig Ihren eigenen Zeitplan mit der Fahrer-App Q Pick.",
+    "cta": "Werden Sie Fahrer",
+    "secondaryCta": "Erfahren Sie mehr",
+    "trust": {
+      "verified": "Verifizierte Treiber",
+      "payouts": "Wöchentliche Auszahlungen",
+      "support": "24/7-Support"
+    },
+    "trustAria": "Höhepunkte des Fahrervertrauens",
+    "floatCards": {
+      "rideTitle": "Neue Fahrtanfrage",
+      "rideBody": "Colombo Fort · 6 Min",
+      "airportTitle": "Flughafentransfer",
+      "airportBody": "CMB → Hilton · LKR 4.800",
+      "earningsTitle": "Das heutige Ergebnis",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "Treiber online",
+      "onlineBody": "Bereit für Premiumfahrten"
+    },
+    "phone": {
+      "greeting": "Hallo, Dilan",
+      "online": "Online",
+      "todayEarnings": "Das heutige Ergebnis",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "Live-Karte",
+      "upcoming": "Kommende Fahrt",
+      "route": "CMB → Colombo Fort",
+      "eta": "Abholung in 8 Min",
+      "fare": "LKR 4,800",
+      "accept": "Akzeptiere",
+      "weekly": "Wöchentlicher Verdienst"
+    },
+    "benefits": {
+      "rides": {
+        "title": "Anfragen zu Fahrten von Führungskräften",
+        "body": "Erhalten Sie Premium-Buchungen in ganz Sri Lanka."
+      },
+      "airport": {
+        "title": "Flughafentransfers",
+        "body": "Zuverlässige An- und Abreise."
+      },
+      "schedule": {
+        "title": "Flexibler Zeitplan",
+        "body": "Fahren Sie, wann immer es Ihnen passt."
+      },
+      "earnings": {
+        "title": "Wöchentliche Auszahlungen",
+        "body": "Transparente Einnahmen jede Woche."
+      },
+      "customers": {
+        "title": "Verifizierte Passagiere",
+        "body": "Reisen Sie mit vertrauenswürdigen Kunden."
+      },
+      "support": {
+        "title": "Fahrerunterstützung rund um die Uhr",
+        "body": "Echte Unterstützung, wann immer Sie sie brauchen."
+      }
+    },
+    "dashboard": {
+      "title": "Fahrer-Dashboard",
+      "online": "Online",
+      "earnings": "Diese Woche",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "Eingehende Anfrage",
+      "route": "CMB → Colombo Fort",
+      "eta": "Abholung in 8 Minuten · LKR 4.800",
+      "accept": "Reise annehmen"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Apps",
+    "heading": "Nehmen Sie Q Pick überall hin mit.",
+    "sub": "Buchen Sie jederzeit Fahrten, Flughafentransfers und private Sri Lanka-Touren mit der mobilen App Q Pick.",
+    "tablistAria": "Wählen Sie die App Q Pick",
+    "tabs": {
+      "passenger": "Passagier-App",
+      "driver": "Treiber-App"
+    },
+    "passenger": {
+      "title": "Alles, was Sie zum Reisen brauchen.",
+      "features": [
+        "Sofortige Fahrtbuchung",
+        "Flughafentransfers",
+        "Private Touren",
+        "Live-Fahrerverfolgung",
+        "Sichere Zahlungen",
+        "Reiseverlauf"
+      ],
+      "screenHome": "Q Pick Passagier-Startbildschirm",
+      "screenBooking": "Q Pick Fahrtbuchungsbildschirm",
+      "screenTracking": "Q Pick Live-Tracking-Bildschirm"
+    },
+    "driver": {
+      "title": "Verdienen Sie mehr mit Q Pick.",
+      "features": [
+        "Nehmen Sie Fahrtanfragen an",
+        "Flughafenbuchungen",
+        "Touranfragen",
+        "Wöchentliche Einnahmen",
+        "Navigation",
+        "Fahrer-Dashboard"
+      ],
+      "primary": "Werden Sie Fahrer",
+      "secondary": "Erfahren Sie mehr",
+      "screens": {
+        "dashboardTitle": "Fahrer-Dashboard",
+        "online": "Online",
+        "earningsLabel": "Diese Woche",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "Neue Reiseanfrage",
+        "route": "CMB → Colombo Fort",
+        "fare": "LKR 4.800 · 8 Minuten Abholung",
+        "accept": "Reise annehmen",
+        "earningsScreenTitle": "Ergebnis",
+        "weekLabel": "Diese Woche",
+        "tripsLabel": "Abgeschlossene Reisen",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "Passagier-App",
+      "driverPlay": "Fahrer-App"
+    }
+  },
+  "finalCta": {
+    "badge": "Beginnen Sie Ihre Reise",
+    "heading": "Ihre Sri Lanka-Reise beginnt hier.",
+    "body": "Buchen Sie einen Flughafentransfer, reservieren Sie eine Stadtfahrt, engagieren Sie einen Chauffeur oder erkunden Sie Sri Lanka mit einer privaten Tour – alles auf einer Premium-Plattform.",
+    "primary": "Fahrt buchen",
+    "secondary": "Flughafentransfer",
+    "download": "Entdecken Sie Touren",
+    "trustAria": "Warum Reisende Q Pick vertrauen",
+    "trust": {
+      "verified": "Verifizierte Treiber",
+      "pricing": "Transparente Preisgestaltung",
+      "support": "24/7-Support",
+      "coverage": "Inselweite Abdeckung"
+    }
+  },
+  "farePreview": {
+    "from": "Von",
+    "to": "Zu",
+    "note": "Kostenvoranschlag · in der App bestätigen"
+  },
+  "taxiFare": {
+    "eyebrow": "Kostenrechner für Taxifahrten",
+    "heading": "Schätzen Sie Ihren Taxipreis",
+    "sub": "Legen Sie Standorte fest, wählen Sie Ihre Fahrt aus, fügen Sie Buchungsdetails hinzu, überprüfen Sie dann den Fahrpreis und buchen Sie.",
+    "pickup": "Abholort",
+    "pickupPlaceholder": "Suchabholung – z.B. Colombo-Festung",
+    "destination": "Ziel",
+    "destinationPlaceholder": "Suchziel – z.B. Galle-Gesicht",
+    "distance": "Entfernung (automatisch)",
+    "waiting": "Wartezeit (Minuten)",
+    "waitingHint": "Erste {free} Minuten frei · LKR {rate}/Minuten danach",
+    "rideType": {
+      "title": "Fahrtyp",
+      "now": "Fahren Sie jetzt",
+      "schedule": "Abholung vereinbaren"
+    },
+    "vehicleType": "Fahrzeugtyp",
+    "vehicleSelection": {
+      "eyebrow": "Flotte",
+      "heading": "Wählen Sie Ihre Fahrt",
+      "sub": "Wählen Sie das perfekte Fahrzeug für Ihre Reise.",
+      "startingFrom": "Beginnend mit",
+      "from": "Von",
+      "after1Km": "Nach 1 KM",
+      "passengers": "Passagiere",
+      "luggage": "Gepäck",
+      "seats": "{count} Seats",
+      "bags": "{count} Bags",
+      "rating": "Bewertet mit {rating} von 5",
+      "ac": "Klimaanlage",
+      "availability": "Verfügbarkeit",
+      "available": "Verfügbar",
+      "unavailable": "Nicht verfügbar",
+      "yes": "Ja",
+      "no": "Nein",
+      "select": "Auswählen",
+      "selectRide": "Wählen Sie „Fahrt“.",
+      "selected": "Ausgewählt",
+      "prev": "Vorherige Fahrzeuge",
+      "next": "Nächste Fahrzeuge",
+      "day": "Day rate",
+      "night": "Night rate",
+      "eta": "Abholung in ~{minutes} Min",
+      "base": "Basis",
+      "perKm": "Pro km"
+    },
+    "mobileFareBar": {
+      "continue": "Weiter"
+    },
+    "steps": {
+      "locations": "Standorte",
+      "vehicle": "Fahrzeug",
+      "details": "Einzelheiten",
+      "summary": "Zusammenfassung",
+      "locationsTitle": "Wählen Sie Abholung und Zielort",
+      "vehicleTitle": "Choose Vehicle",
+      "detailsTitle": "Buchungsdetails",
+      "summaryTitle": "Fare Summary",
+      "continueVehicle": "Weiter zum Fahrzeug",
+      "continueDetails": "Weiter zu den Buchungsdetails",
+      "continueSummary": "Continue to fare summary"
+    },
+    "bookingDetails": {
+      "title": "Buchungsdetails",
+      "pickupDate": "Pickup Date",
+      "pickupTime": "Abholzeit",
+      "flightNumber": "Flugnummer",
+      "flightNumberOptional": "Optional",
+      "flightPlaceholder": "z.B. UL 226",
+      "passengerCount": "Passagierzahl",
+      "luggageCount": "Gepäckanzahl",
+      "specialNotes": "Besondere Hinweise",
+      "notesPlaceholder": "Kindersitz, Meet-and-Greet, bevorzugtes Gate …",
+      "passengerName": "Passagiername",
+      "phone": "Telefonnummer",
+      "driverNotes": "Hinweise für den Fahrer",
+      "paymentMethod": "Zahlungsart",
+      "cash": "Bargeld",
+      "card": "Karte",
+      "wallet": "Geldbörse",
+      "promoCode": "Promo-Code",
+      "promoPlaceholder": "Geben Sie den Aktionscode ein",
+      "airportPickup": "Abholung vom Flughafen",
+      "yes": "Ja",
+      "no": "Nein",
+      "requiredHint": "Wählen Sie ein gültiges Abholdatum und eine gültige Abholzeit aus, um fortzufahren.",
+      "requiredDetailsHint": "Geben Sie den Namen, die Telefonnummer und die Zahlungsmethode des Passagiers ein, um fortzufahren.",
+      "scheduleHint": "Wählen Sie ein zukünftiges Abholdatum und eine zukünftige Abholzeit."
+    },
+    "summaryLabel": "Tarifübersicht",
+    "summary": {
+      "bookingSummary": "Buchungsübersicht",
+      "pickup": "Abholung",
+      "destination": "Ziel",
+      "distance": "Entfernung",
+      "duration": "Zeit",
+      "vehicle": "Fahrzeug",
+      "baseFare": "Grundpreis",
+      "distanceCharge": "Entfernungsgebühr",
+      "waitingCharge": "Wartegebühr",
+      "bookingFee": "Buchungsgebühr",
+      "airportFee": "Flughafengebühr",
+      "toll": "Maut",
+      "parking": "Parken",
+      "surge": "Anstieg",
+      "discount": "Rabatt",
+      "total": "Geschätzte Gesamtsumme",
+      "estimatedFare": "Geschätzter Fahrpreis",
+      "finalFare": "Endgültiger Tarif",
+      "grandTotal": "Gesamtsumme",
+      "viewFareBreakdown": "Tarifaufschlüsselung anzeigen",
+      "payment": "Zahlung",
+      "promo": "Promo-Code",
+      "eta": "voraussichtliche Ankunftszeit",
+      "passengers": "Passagiere",
+      "luggage": "Gepäck"
+    },
+    "confirmErrors": {
+      "pickup": "Bitte legen Sie einen Abholort fest.",
+      "destination": "Bitte legen Sie ein Ziel fest.",
+      "vehicle": "Bitte wählen Sie ein Fahrzeug aus.",
+      "schedule": "Bitte wählen Sie ein gültiges Abholdatum und eine gültige Abholzeit aus.",
+      "payment": "Bitte wählen Sie eine Zahlungsmethode aus.",
+      "passengerName": "Bitte geben Sie den Passagiernamen ein.",
+      "phone": "Bitte geben Sie eine Telefonnummer ein.",
+      "fare": "Der Fahrpreis wird noch berechnet – bitte warten Sie einen Moment."
+    },
+    "estimateNote": "Nur Kostenvoranschlag · Bestätigen Sie den endgültigen Fahrpreis in der Q Pick-App. Nur Taxifahrten – nicht für Flughafentransfers oder Touren.",
+    "cta": "Buchen Sie diese Fahrt",
+    "bookNow": "Buchen Sie jetzt",
+    "scopeNote": "Preise für Taxifahrten · getrennt von Flughafen und Touren",
+    "vehicles": {
+      "bike": "Q-Fahrrad",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q-Limousine",
+      "miniVan": "Q Minivan",
+      "van": "Q Flachdach-Van",
+      "longVan": "Q Hochdach-Van",
+      "suv": "Q-SUV",
+      "miniBus": "Q Minibus",
+      "longBus": "Q-Bus"
+    },
+    "calculatingRoute": "Berechnung der Fahrstrecke und Reisezeit…",
+    "calculatingShort": "Berechnen…",
+    "routeReady": "Route bereit · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "Routen",
+      "heading": "Wählen Sie eine Route",
+      "recommended": "Empfohlen",
+      "alternative": "Alternative",
+      "roadHighway": "Autobahn",
+      "roadNormal": "Normal",
+      "tags": {
+        "fastest": "Schnellste Route",
+        "avoidHighway": "Vermeiden Sie die Autobahn",
+        "highway": "Autobahnroute",
+        "scenic": "Malerische Route",
+        "alternative": "Alternative Route"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "Abholung auf der Karte festlegen",
+      "setDestination": "Ziel auf der Karte festlegen",
+      "pickupTitle": "Bestätigen Sie die Abholung",
+      "destinationTitle": "Ziel bestätigen",
+      "pickupHint": "Suchen Sie, verwenden Sie Ihren Standort oder verschieben Sie die Karte",
+      "destinationHint": "Suchen oder verschieben Sie die Karte, um das Ziel festzulegen",
+      "pickupAddress": "Abholadresse",
+      "destinationAddress": "Zieladresse",
+      "latitude": "Breitengrad",
+      "longitude": "Längengrad",
+      "confirmPickup": "Bestätigen Sie die Abholung",
+      "confirmDestination": "Ziel bestätigen",
+      "resolving": "Adresse wird gesucht…",
+      "close": "Schließen",
+      "searchLabel": "Suchen",
+      "searchPickup": "Abholort suchen",
+      "searchDestination": "Ziel suchen",
+      "searching": "Suche...",
+      "noResults": "Keine Ergebnisse gefunden",
+      "useCurrentLocation": "Aktuellen Standort verwenden",
+      "selectOnMap": "Auf der Karte auswählen",
+      "locating": "Lokalisieren…",
+      "locationDenied": "Die Standortgenehmigung wurde verweigert. Aktivieren Sie es in den Browsereinstellungen oder wählen Sie es auf der Karte aus.",
+      "locationUnavailable": "Ihr aktueller Standort kann nicht ermittelt werden. Versuchen Sie es stattdessen mit der Suche oder der Karte."
+    },
+    "errors": {
+      "missingKey": "Der OpenRouteService-API-Schlüssel fehlt.",
+      "routeFailed": "Die Route kann nicht berechnet werden. Bitte versuchen Sie es erneut.",
+      "selectFromSuggestions": "Bitte wählen Sie Abholung und Ziel aus der Vorschlagsliste aus."
+    }
+  },
+  "driverTrust": {
+    "verified": "Verifizierter Q Pick-Treiber",
+    "trips": "{count} Fahrten"
+  },
+  "storeBadges": {
+    "comingSoon": "Kommt bald",
+    "getItOn": "Zieh es an",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "iosAria": "Im App Store herunterladen – bald verfügbar",
+    "androidAria": "Holen Sie es sich bei Google Play – bald verfügbar",
+    "downloadOnAppStore": "Im App Store herunterladen",
+    "getItOnGooglePlay": "Holen Sie es sich bei Google Play"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "Spritzer",
+      "login": "Anmelden / Willkommen",
+      "dashboard": "Armaturenbrett",
+      "account": "Konto",
+      "pickup": "Bestätigen Sie die Abholung",
+      "destination": "Ziel auswählen",
+      "vehicles": "Fahrzeug auswählen",
+      "booking": "Buchungsbestätigung",
+      "searching": "Suche nach Fahrern in der Nähe",
+      "accepted": "Fahrer akzeptiert",
+      "arriving": "Fahrer kommt an",
+      "pickedup": "Passagier abgeholt",
+      "riding": "Fahrt läuft",
+      "completed": "Reise abgeschlossen",
+      "rate": "Tariftreiber",
+      "submitted": "Bewertung abgegeben",
+      "home": "Armaturenbrett"
+    },
+    "shotAlt": "Q Pick Kunden-App – {label}",
+    "shotLabels": {
+      "login": "Anmelden",
+      "home": "Zuhause",
+      "account": "Konto"
+    },
+    "splash": {
+      "tagline": "Flughafen · Fahrt · Chauffeur"
+    },
+    "login": {
+      "welcome": "Willkommen",
+      "subtitle": "Melden Sie sich an, um Ihre Fahrt zu buchen",
+      "emailOrPhone": "E-Mail oder Telefon",
+      "password": "Passwort",
+      "continue": "Weiter"
+    },
+    "dashboard": {
+      "greeting": "Guten Tag",
+      "whereTo": "Wohin?",
+      "searchPlaceholder": "Galle Fort, Sri Lanka",
+      "chips": {
+        "airport": "Flughafen",
+        "home": "Zuhause",
+        "saved": "Gespeichert"
+      }
+    },
+    "pickup": {
+      "kicker": "Bestätigen Sie die Abholung",
+      "title": "Ist das Ihr Standort?",
+      "label": "Abholung",
+      "value": "Colombo-Festung",
+      "confirm": "Bestätigen Sie die Abholung"
+    },
+    "destination": {
+      "kicker": "Ziel auswählen",
+      "title": "Wohin gehst du?",
+      "pickupLabel": "Abholung",
+      "pickupValue": "Colombo-Festung",
+      "destinationLabel": "Ziel",
+      "destinationValue": "Galle Fort",
+      "continue": "Weiter"
+    },
+    "vehicles": {
+      "route": "Colombo-Festung → Galle-Festung",
+      "title": "Wählen Sie ein Fahrzeug",
+      "seats": "{count} Sitze",
+      "ac": "Klimaanlage",
+      "eta": "ETA {time}",
+      "categories": {
+        "tuk": "Tuk",
+        "mini": "Mini",
+        "sedan": "Limousine",
+        "suv": "SUV",
+        "van": "Van"
+      },
+      "models": {
+        "tuk": "Bajaj RE",
+        "mini": "Suzuki Alto",
+        "sedan": "Toyota Premio",
+        "suv": "Toyota Prado",
+        "van": "Toyota Hiace"
+      },
+      "etas": {
+        "tuk": "3 Min",
+        "mini": "4 Min",
+        "sedan": "4 Min",
+        "suv": "6 Min",
+        "van": "8 Min"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "Buchungsbestätigung",
+      "title": "Bestätigen Sie Ihre Fahrt",
+      "vehicleMeta": "Toyota Premio · 4 Sitze · Klimaanlage",
+      "route": "Route",
+      "routeValue": "Colombo-Festung → Galle-Festung",
+      "fare": "Fahrpreis",
+      "fareValue": "LKR 18,500",
+      "eta": "voraussichtliche Ankunftszeit",
+      "etaValue": "4 Min",
+      "payment": "Zahlung",
+      "paymentValue": "Visum ···· 4242",
+      "bookRide": "Fahrt buchen"
+    },
+    "searching": {
+      "title": "Suche nach Fahrern in der Nähe...",
+      "matching": "Passend zu einer Limousine in der Nähe von Colombo Fort",
+      "driverFound": "Treiber gefunden",
+      "sedanSelected": "Limousine ausgewählt",
+      "selectedMeta": "Toyota Premio · voraussichtliche Ankunftszeit 3 Min"
+    },
+    "accepted": {
+      "badge": "Fahrer akzeptiert",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "voraussichtliche Ankunftszeit: 3 Min",
+      "track": "Streckenfahrer"
+    },
+    "live": {
+      "statusArriving": "Ankunft des Fahrers • 3 Min",
+      "statusRiding": "Auf dem Weg nach Galle",
+      "driverVehicle": "Kasun · Toyota Premio",
+      "enRoute": "Auf dem Weg zur Abholung · Colombo Fort",
+      "route": "Colombo-Festung → Galle-Festung",
+      "minutesUnit": "min",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9",
+      "call": "Rufen Sie den Fahrer an",
+      "chat": "Nachrichtentreiber"
+    },
+    "pickedUp": {
+      "title": "Du bist an Bord",
+      "subtitle": "Mit Kasun geht es zum Galle Fort"
+    },
+    "completed": {
+      "title": "Reise abgeschlossen",
+      "route": "Colombo-Festung → Galle-Festung",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "Bewerten Sie Ihren Fahrer",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "prompt": "Wie war deine Fahrt heute?",
+      "reviewPlaceholder": "Schreiben Sie eine kurze Rezension...",
+      "submit": "Bewertung abgeben"
+    },
+    "submitted": {
+      "title": "Danke für die Bewertung",
+      "subtitle": "Ihr Feedback hilft den Fahrern, sich zu verbessern",
+      "backHome": "Zurück nach Hause"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "Fahrt",
+        "description": "Buchen Sie eine Premium-Stadt- oder Überlandfahrt in Sri Lanka – transparente Tarife, verifizierte Fahrer, Live-Tracking."
+      },
+      "title": "Buchen Sie eine Fahrt",
+      "description": "Buchen Sie eine Fahrt überall in Sri Lanka mit transparenten Preisen und verifizierten Fahrern.",
+      "primaryCta": "Geschätzter Fahrpreis",
+      "secondaryCta": "Sicherheitsstandards",
+      "intro": {
+        "badge": "Fahrt",
+        "title": "Buchen Sie eine Fahrt",
+        "subtitle": "Buchen Sie eine Fahrt überall in Sri Lanka mit transparenten Preisen und verifizierten Fahrern.",
+        "nav": {
+          "live": "Lebe",
+          "tracking": "Intelligente Navigation",
+          "route": "Aktive Route",
+          "corridor": "Colombo → Galle-Gesicht",
+          "eta": "voraussichtliche Ankunftszeit",
+          "etaValue": "12 Min",
+          "distance": "Dist",
+          "distanceValue": "4,8 km",
+          "driverNearby": "Fahrer in der Nähe · Abholung nähert sich"
+        }
+      },
+      "booking": {
+        "title": "Buchen Sie Ihre Fahrt",
+        "trust": {
+          "pricing": "Transparente Preisgestaltung.",
+          "drivers": "Verifizierte Treiber.",
+          "tracking": "Live-Tracking."
+        }
+      },
+      "why": {
+        "eyebrow": "Warum Q Pick",
+        "heading": "Warum mit Q Pick fahren?",
+        "items": {
+          "pricing": {
+            "title": "Transparente Preisgestaltung",
+            "body": "Sehen Sie sich den vollständigen Kostenvoranschlag an, bevor Sie ihn bestätigen – keine überraschenden Aufschläge."
+          },
+          "drivers": {
+            "title": "Verifizierte Treiber",
+            "body": "Hintergrundgeprüfte Chauffeure. Bewertet, versichert, reisebereit."
+          },
+          "tracking": {
+            "title": "Live-Tracking",
+            "body": "Verfolgen Sie jede Minute von der Abholung bis zur Tür mit gemeinsam nutzbaren voraussichtlichen Ankunftszeiten."
+          },
+          "support": {
+            "title": "24/7-Support",
+            "body": "Erreichbare Hilfe, wann immer Sie sie brauchen – Tag und Nacht."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Flotte",
+        "heading": "Wählen Sie Ihre Fahrt",
+        "sub": "Vom Fahrrad bis zum Bus – wählen Sie, was zu Ihrer Reise passt.",
+        "mini": "Mini",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Q-Fahrrad",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Schnelle Stadtfahrten"
+          },
+          "tuk": {
+            "name": "Q Tuk",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Günstige Kurztrips"
+          },
+          "flex": {
+            "name": "Q Flex",
+            "passengers": "3 Passagiere",
+            "luggage": "2 Gepäck",
+            "blurb": "Kompaktes Fließheck für Stadtreisen"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "4 Passagiere",
+            "luggage": "2 Gepäck",
+            "blurb": "Geräumigerer Wagon R für Stadtreisen"
+          },
+          "sedan": {
+            "name": "Q-Limousine",
+            "passengers": "4 Passagiere",
+            "luggage": "2 Gepäck",
+            "blurb": "Komfort für Geschäftsreisen"
+          },
+          "minivan": {
+            "name": "Q Minivan",
+            "passengers": "6 Passagiere",
+            "luggage": "4 Gepäck",
+            "blurb": "Platz für Familienausflüge"
+          },
+          "frVan": {
+            "name": "Q Flachdach-Van",
+            "passengers": "8 Passagiere",
+            "luggage": "6 Gepäck",
+            "blurb": "Bequemer Gruppen-Flughafentransfer"
+          },
+          "highRoofVan": {
+            "name": "Q Hochdach-Van",
+            "passengers": "10 Passagiere",
+            "luggage": "8 Gepäck",
+            "blurb": "Mehr Platz für Touren und Transfers"
+          },
+          "suv": {
+            "name": "Q-SUV",
+            "passengers": "5 Passagiere",
+            "luggage": "4 Gepäck",
+            "blurb": "Ideal für Familien"
+          },
+          "miniBus": {
+            "name": "Q Minibus",
+            "passengers": "12 Passagiere",
+            "luggage": "8 Gepäck",
+            "blurb": "Reisen in kleinen Gruppen"
+          },
+          "bus": {
+            "name": "Q-Bus",
+            "passengers": "20 Passagiere",
+            "luggage": "12 Gepäck",
+            "blurb": "Große Gruppentransfers"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "Sicherheit",
+        "heading": "Reisen Sie mit Zuversicht.",
+        "body": "Jede Q Pick-Fahrt ist durch verifizierte Fahrer, Fahrtenfreigabe in Echtzeit, Notfallhilfe und engagierten Kundensupport geschützt.",
+        "cta": "Erfahren Sie mehr über Sicherheit",
+        "pillars": {
+          "verified": {
+            "title": "Verifizierte Flotte",
+            "body": "Identitäts- und Fahrzeugkontrollen, bevor jeder Fahrer dem Netzwerk beitritt."
+          },
+          "sharing": {
+            "title": "Reise-Sharing",
+            "body": "Teilen Sie den Live-Reisestatus mit Familie, Freunden oder Ihrem Hotel."
+          },
+          "support": {
+            "title": "24/7-Support",
+            "body": "Erreichbare Hilfe, wann immer Sie sie brauchen – Tag und Nacht."
+          },
+          "emergency": {
+            "title": "Notfallhilfe",
+            "body": "Eskalationspfade während der Fahrt, wenn unterwegs etwas nicht stimmt."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Häufig gestellte Fragen",
+        "sub": "Klare Antworten, bevor Sie buchen – Fahrten, Flughafentransfers und Touren.",
+        "items": {
+          "fareCalc": {
+            "q": "Wie wird der Fahrpreis berechnet?",
+            "a": "Taxitarife kombinieren Grundpreis, Entfernung, Wartezeit und Tageszeittarife. Vor der Bestätigung sehen Sie im Buchungsablauf einen Live-Kostenvoranschlag."
+          },
+          "airport": {
+            "q": "Kann ich einen Flughafentransfer im Voraus buchen?",
+            "a": "Ja. Nutzen Sie Flughafentransfers, um eine zeitgesteuerte Abholung für Bandaranaike (CMB) anzufordern, mit flugbewussten Puffern, wenn Sie sie brauchen."
+          },
+          "tour": {
+            "q": "Kann ich meine Sri Lanka-Tour individuell anpassen?",
+            "a": "Ja. Private Touren basieren auf Ihren Tagen, Stopps und Ihrem Fahrzeug – verfeinern Sie den Plan vor Reiseantritt mit Q Pick."
+          },
+          "vehicle": {
+            "q": "Kann ich meine Fahrzeugkategorie wählen?",
+            "a": "Ja. Wählen Sie im Buchungskarussell oder im Flottenbereich von Q Bike bis Q Bus die Kategorie aus, die zu Passagieren und Gepäck passt."
+          },
+          "drivers": {
+            "q": "Sind alle Treiber verifiziert?",
+            "a": "Ja. Q Pick Fahrer führen Identitäts-, Fahrzeug- und Hintergrundüberprüfungen durch, bevor sie dem Netzwerk beitreten."
+          },
+          "share": {
+            "q": "Kann ich meine Reise mit der Familie teilen?",
+            "a": "Ja. Teilen Sie den Reisestatus live mit, damit Familie, Freunde oder Ihr Hotel die Reise verfolgen können."
+          },
+          "cancel": {
+            "q": "Kann ich meine Buchung stornieren?",
+            "a": "Ja. Kündigen Sie über die App oder mit dem Support. Der Zeitpunkt und etwaige Gebühren hängen von der Buchungsart und davon ab, wie nah Sie an der Abholung sind."
+          },
+          "contact": {
+            "q": "Wie kann ich den Support kontaktieren?",
+            "a": "Sie erreichen uns jederzeit über die Support-Seite – telefonisch, unter WhatsApp oder per E-Mail. Unser Team steht Ihnen rund um die Uhr zur Verfügung."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "Sie haben noch Fragen?",
+        "sub": "Unser Team steht Ihnen rund um die Uhr zur Verfügung, um Ihnen bei der Planung Ihrer Fahrt oder Ihrer Sri Lanka-Reise zu helfen.",
+        "primary": "Buchen Sie Ihre Fahrt",
+        "secondary": "Kontaktieren Sie den Support"
+      },
+      "driverTrust": {
+        "name": "Nuwan P.",
+        "trips": "2,1k",
+        "rating": "4.97",
+        "verifiedLabel": "Verifizierter Q Pick-Treiber",
+        "tripsLabel": "{count} Fahrten"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "Flughafentransfers",
+        "description": "Premium-Flughafentransfers in Bandaranaike (CMB) mit Flugverfolgung, Meet & Greet, professionellen Chauffeuren und transparenten Festpreisen."
+      },
+      "hero": {
+        "eyebrow": "Flughafentransfers",
+        "titleLine1": "Flughafentransfers,",
+        "titleLine2": "Perfekt getimt.",
+        "description": "Vom Flughafen Bandaranaike International (CMB) zu jedem beliebigen Ort in Sri Lanka mit professionellen Chauffeuren, Live-Flugverfolgung, Meet & Greet und transparenten Preisen.",
+        "primaryCta": "Buchen Sie einen Flughafentransfer",
+        "secondaryCta": "Entdecken Sie Fahrzeuge",
+        "imageAlt": "Q Pick Chauffeur begrüßt Reisende am Flughafen Bandaranaike International mit einem Premium-Transferfahrzeug",
+        "trust": {
+          "tracking": "Flugverfolgung",
+          "greet": "Treffen und Begrüßen",
+          "pricing": "Festpreise",
+          "support": "24/7-Support"
+        },
+        "cards": {
+          "flight": {
+            "label": "Flug",
+            "code": "UL225",
+            "status": "Pünktlich"
+          },
+          "driver": {
+            "label": "Fahrer",
+            "status": "Ankunft in 6 Min",
+            "eta": "Live-ETA"
+          },
+          "meetGreet": "Meet & Greet inklusive"
+        }
+      },
+      "rates": {
+        "eyebrow": "Offizielle Preise",
+        "heading": "Preise für Flughafentransfers",
+        "sub": "Suchen Sie nach einem beliebigen Ziel und sehen Sie sich den offiziellen Tarif für den klimatisierten Transfer vom Flughafen Bandaranaike International (CMB) an.",
+        "popular": "Beliebte Reiseziele",
+        "searchLabel": "Ziel suchen",
+        "searchPlaceholder": "Ziel oder Code suchen – z.B. Kandy, Kan, K015",
+        "searching": "Suche...",
+        "noResults": "Zu dieser Suche passen keine Ziele. Versuchen Sie es mit einem anderen Namen oder Code.",
+        "emptyTitle": "Finden Sie Ihren Tarif",
+        "emptyBody": "Suchen Sie nach einem beliebigen Ziel, um sofort den offiziellen Flughafentransferpreis anzuzeigen.",
+        "disclaimer": "Die angezeigten Tarife basieren auf der offiziellen Flughafentransfer-Tarifliste. Für Wartezeiten, zusätzliche Stopps, Mautgebühren oder Sonderwünsche können zusätzliche Gebühren anfallen.",
+        "card": {
+          "destination": "Ziel",
+          "fare": "Offizieller Flughafentransfer-Tarif",
+          "airport": "Flughafen",
+          "status": "Status",
+          "statusValue": "Offizieller Flughafentarif",
+          "code": "Code",
+          "bookCta": "Buchen Sie einen Flughafentransfer"
+        }
+      },
+      "booking": {
+        "eyebrow": "Privater Chauffeur",
+        "heading": "Buchen Sie Ihren Flughafentransfer.",
+        "sub": "Vom Flughafen Bandaranaike International zu jedem beliebigen Ort in Sri Lanka – offizielle Tarife, abgestimmt auf Ihre Reise.",
+        "title": "Flughafentransfer",
+        "from": "Von",
+        "to": "Zu",
+        "toPlaceholder": "Ziel suchen",
+        "searching": "Suche...",
+        "noResults": "Es stimmen keine Ziele überein. Versuchen Sie es mit einem anderen Namen oder Code.",
+        "date": "Reisedatum",
+        "time": "Abholzeit",
+        "passengers": "Passagiere",
+        "adult": "Erwachsener",
+        "luggage": "Gepäck",
+        "luggageOptions": {
+          "cabin": "Kabine",
+          "medium": "Mittel",
+          "large": "Groß"
+        },
+        "vehicle": "Fahrzeugtyp",
+        "vehicleOptions": {
+          "mini": "Mini",
+          "sedan": "Limousine",
+          "van": "Van",
+          "suv": "SUV"
+        },
+        "nationality": "Nationalität",
+        "nationalityPlaceholder": "Nationalität auswählen",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "Indisch",
+          "uk": "Britisch",
+          "us": "Amerikaner",
+          "de": "Deutsch",
+          "au": "Australisch",
+          "cn": "Chinesisch",
+          "other": "Andere"
+        },
+        "special": "Sonderwunsch",
+        "specialPlaceholder": "Optional – Kindersitz, Meet & Greet-Notizen, Hotelname …",
+        "distance": "Geschätzte Entfernung",
+        "duration": "Geschätzte Dauer",
+        "officialPrice": "Offizieller Flughafentransfer-Tarif",
+        "cta": "Buchen Sie Ihre Fahrt",
+        "ctaLoading": "Eröffnungsbuchung…",
+        "summaryTitle": "Reisezusammenfassung",
+        "route": "Route",
+        "destinationPending": "Wählen Sie ein Ziel aus"
+      },
+      "features": {
+        "eyebrow": "Warum Q Pick Flughafen",
+        "heading": "Sicherheit von Tor zu Tür.",
+        "items": {
+          "tracking": {
+            "title": "Flugverfolgung",
+            "body": "Überwachen Sie Ihre Ankunft automatisch."
+          },
+          "greet": {
+            "title": "Treffen und Begrüßen",
+            "body": "Ihr Fahrer wartet im Ankunftsbereich."
+          },
+          "pricing": {
+            "title": "Transparente Preisgestaltung",
+            "body": "Informieren Sie sich vor der Buchung über Ihren Tarif."
+          },
+          "support": {
+            "title": "24/7-Support",
+            "body": "Immer verfügbar."
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "Touren",
+        "description": "Planen Sie eine private Sri Lanka-Tour mit Chauffeuren, die die Insel kennen – sofortige Kostenvoranschläge, flexible Reiserouten, Luxusfahrzeuge."
+      },
+      "eyebrow": "Private Touren",
+      "title": "Auf die Insel zugeschnittene Touren",
+      "description": "Tagesausflüge und Fahrten mit mehreren Stopps – Teeland, Festungsstädte, kulturelles Dreieck – mit Fahrern, die sich mit Timing, Gelände und Gästekomfort auskennen.",
+      "primaryCta": "Plane meine Tour",
+      "secondaryCta": "Pakete ansehen",
+      "why": {
+        "heading": "Warum eine private Tour wählen?",
+        "sub": "Ihr Tempo, Ihre Stopps, ein vertrauenswürdiger Chauffeur – kein Bus mit Fremden auf einer festen Schleife.",
+        "items": [
+          {
+            "title": "Vollständig anpassbar",
+            "body": "Tage, Reiseziele und Fahrzeug – abgestimmt auf Ihre tatsächliche Reise."
+          },
+          {
+            "title": "Überall derselbe Chauffeur",
+            "body": "Kontinuität vom Flughafen bis ins Hochland, ohne die Präferenzen erneut zu erklären."
+          },
+          {
+            "title": "Transparente Kostenvoranschläge",
+            "body": "Sehen Sie sich ein klares Sortiment an, bevor Sie nachfragen – verfeinern Sie die Details mit Q Pick."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "Beliebte Reisepakete",
+        "sub": "Startpunkte, die Sie anpassen können – oder als Inspiration im Planer verwenden.",
+        "coastal": {
+          "days": "4–5 Tage",
+          "title": "Südküste",
+          "body": "CMB Ankunft, Colombo-Einstieg, Galle Fort, Mirissa oder Unawatuna-Tempo.",
+          "price": "Ab LKR 78.000"
+        },
+        "triangle": {
+          "days": "5–6 Tage",
+          "title": "Kulturelles Dreieck",
+          "body": "Straßen Sigiriya, Dambulla, Polonnaruwa mit integrierter Hotelkoordination.",
+          "price": "Ab LKR 112.000"
+        },
+        "highland": {
+          "days": "5–7 Tage",
+          "title": "Teeland",
+          "body": "Kandy nach Ella mit Hochlandflug, Zugfahrplan optional, malerische Abfahrten.",
+          "price": "Ab LKR 124.000"
+        }
+      },
+      "itineraries": {
+        "heading": "Vorgeschlagene Reiserouten",
+        "sub": "Leichte Umrisse – erweitern oder komprimieren Sie sie im Planer.",
+        "south": {
+          "title": "Südküste zurückgesetzt",
+          "stops": [
+            "Tag 1 – CMB → Colombo",
+            "Tag 2–3 – Galle und Küstenstädte",
+            "Tag 4 – Rückkehr oder Verlängerung nach Ella"
+          ]
+        },
+        "culture": {
+          "title": "Kulturerbe-Rundgang",
+          "stops": [
+            "Tag 1 – CMB → Region Sigiriya",
+            "Tag 2 – Stätten des Kulturdreiecks",
+            "Tag 3–4 – Kandy und Abreiselogistik"
+          ]
+        },
+        "tea": {
+          "title": "Hochlandschleife",
+          "stops": [
+            "Tag 1 – Colombo → Kandy",
+            "Tag 2–3 – Nuwara Eliya / Ella",
+            "Tag 4 – Malerische Rückkehr nach Süden oder CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "Fahrzeugvergleich",
+        "sub": "Wählen Sie Komfort für Ihre Gruppengröße – alles mit Klimaanlage und geprüften Chauffeuren.",
+        "colVehicle": "Fahrzeug",
+        "colGuests": "Gäste",
+        "colBest": "Am besten für",
+        "colFrom": "Von / Tag",
+        "rows": {
+          "sedan": {
+            "name": "Limousine",
+            "guests": "1–3",
+            "best": "Paare und leichtes Gepäck",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Familien und Hochlandstraßen",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Gruppen und Multi-Stopp-Sets",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Warum mit Q Pick reisen",
+        "items": {
+          "chauffeur": {
+            "title": "Verifizierte Chauffeure",
+            "body": "Identitäts- und Fahrzeugkontrollen bei jeder Fahrt."
+          },
+          "pacing": {
+            "title": "Inseltempo",
+            "body": "Die Routen sind auf Komfort ausgelegt, nicht auf überstürzte Busfahrpläne."
+          },
+          "estimate": {
+            "title": "Klare Schätzungen",
+            "body": "Informieren Sie sich über die Reichweite, bevor Sie mit dem Team sprechen."
+          },
+          "support": {
+            "title": "Erreichbarer Support",
+            "body": "Reiseänderungen und Hilfe unterwegs, wenn Sie sie brauchen."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Häufig gestellte Fragen",
+        "items": {
+          "customize": {
+            "q": "Kann ich die Reiseroute vollständig anpassen?",
+            "a": "Ja. Verwenden Sie den Planer für eine erste Schätzung und verfeinern Sie dann Stopps, Tempo und Hotels mit Q Pick."
+          },
+          "payment": {
+            "q": "Muss ich bezahlen, wenn ich einen Kostenvoranschlag erhalte?",
+            "a": "Nein. Der Planer dient nur zur Orientierung – für die Erkundung oder Erkundigung ist keine Zahlung erforderlich."
+          },
+          "hotels": {
+            "q": "Buchen Sie auch Hotels?",
+            "a": "Wir koordinieren die Bewegungen rund um Ihren Aufenthalt. Hotelbuchungen können fallweise mit Partnern vereinbart werden."
+          },
+          "changes": {
+            "q": "Was passiert, wenn sich die Pläne mitten auf der Tour ändern?",
+            "a": "Ihr Chauffeur und Ihr Support-Service passen das tägliche Tempo an, wenn sich Straßen, Wetter oder Vorlieben ändern."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "Sind Sie bereit, Ihre Reise zu gestalten?",
+        "sub": "Teilen Sie Daten und Vorlieben mit – wir verfeinern den Kostenvoranschlag in einen klaren privaten Tourplan.",
+        "primary": "Senden Sie eine Anfrage",
+        "secondary": "Zurück zum Planer",
+        "destinations": "Durchsuchen Sie Ziele"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "Tagescharter",
+          "body": "Routen von Sonnenaufgang bis Sonnenuntergang mit flexiblen Stopps und einem übersichtlichen All-in-Tarif."
+        },
+        "multiDay": {
+          "title": "Mehrtägig",
+          "body": "Fahren Sie entlang Ihrer gesamten Reiseroute mit demselben vertrauenswürdigen Fahrer ins Hochland."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "Sicherheit",
+        "description": "Q Pick Sicherheit – verifizierte Fahrer, versicherte Fahrzeuge, Live-GPS-Tracking und Support rund um die Uhr in ganz Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Vertrauen und Sicherheit",
+        "headline": "Reisen Sri Lanka",
+        "headlineLine2": "mit absolutem Vertrauen.",
+        "description": "Jede Q Pick-Reise wird von verifizierten Chauffeuren, versicherten Fahrzeugen, Live-Tracking und engagiertem Support begleitet – so können Sie die Insel beruhigt erkunden.",
+        "primaryCta": "Buchen Sie eine Fahrt",
+        "secondaryCta": "Kontaktieren Sie den Support",
+        "imageAlt": "Q Pick privater Chauffeur neben einem Premiumfahrzeug in Sri Lanka"
+      },
+      "standards": {
+        "eyebrow": "Unser Standard",
+        "heading": "Sicherheit ist in jede Reise integriert",
+        "description": "Von den Colombo-Korridoren bis zu den Haarnadelkurven im Hochland hält Q Pick auf jeder Fahrt den gleichen Verifizierungs-, Überwachungs- und Supportstandard ein.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "Verifizierte Treiber",
+            "body": "Identitäts-, Hintergrund- und Führerscheinprüfungen, bevor ein Chauffeur dem Q Pick-Netzwerk beitritt."
+          },
+          "verifiedVehicles": {
+            "title": "Verifizierte Fahrzeuge",
+            "body": "Regelmäßige Inspektionen, Versicherungsvalidierung und Standards für klimatisierte Flotten in allen Kategorien."
+          },
+          "gpsTracking": {
+            "title": "GPS-Tracking",
+            "body": "Live-Reisetransparenz für Sie, Ihre Gastgeber und unseren Operations Desk während der gesamten Reise."
+          },
+          "support247": {
+            "title": "24/7-Support",
+            "body": "Unterstützung während der Fahrt und eine veröffentlichte Notrufnummer für Situationen, in denen sofortige menschliche Hilfe erforderlich ist."
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "Reiseschutz",
+        "heading": "Geschützt von der Buchung bis zur Ankunft",
+        "steps": {
+          "book": {
+            "title": "Buch",
+            "body": "Bestätigen Sie Ihre Fahrt, Ihren Transfer oder Ihre Tour mit transparenten Preisen und einem speziellen Chauffeurauftrag."
+          },
+          "verification": {
+            "title": "Überprüfung",
+            "body": "Fahrer- und Fahrzeugdaten werden vor dem Versand anhand des Q Pick-Sicherheitsstandards überprüft."
+          },
+          "pickup": {
+            "title": "Abholung",
+            "body": "Ihr Chauffeur kommt mit geteilten Fahrzeugdaten an – Abholung am Flughafen, Hotel oder in der Villa."
+          },
+          "tracking": {
+            "title": "Live-Tracking",
+            "body": "Verfolgen Sie Ihre Reise in Echtzeit und teilen Sie den Live-Status mit Ihrer Familie oder Ihrer Hotelrezeption."
+          },
+          "arrival": {
+            "title": "Sichere Ankunft",
+            "body": "Erreichen Sie Ihr Ziel mit Unterstützung in Bereitschaft, bis Ihre Reise beendet ist."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "Immer erreichbar",
+        "heading": "Notfallhilfe",
+        "description": "Wenn unterwegs etwas nicht stimmt, ist unser Team nur einen Anruf oder eine Nachricht entfernt – Tag und Nacht, überall auf der Insel.",
+        "hotline": {
+          "label": "Notfall-Hotline",
+          "hint": "Für dringende Situationen während der Reise, die sofortige Hilfe erfordern."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "Senden Sie eine Nachricht an unseren Support für eine schnelle Koordination und Reiseaktualisierungen."
+        },
+        "email": {
+          "label": "E-Mail",
+          "hint": "Für nicht dringende Anfragen, Partneranfragen und Buchungsnachverfolgungen."
+        }
+      },
+      "stats": {
+        "eyebrow": "Anhand der Zahlen",
+        "heading": "Ein Standard-Reisevertrauen",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Verifizierte Treiber"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "Versicherte Reisen"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "Support-Abdeckung"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "Kundenzufriedenheit"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "Ihre Reise erwartet Sie",
+        "heading": "Reisen Sie mit Zuversicht",
+        "description": "Buchen Sie einen privaten Chauffeur, einen Flughafentransfer oder eine Inselrundfahrt – unterstützt durch den Q Pick-Sicherheitsstandard von der ersten bis zur letzten Meile.",
+        "primaryCta": "Buchen Sie eine Fahrt",
+        "secondaryCta": "Planen Sie eine Tour",
+        "imageAlt": "Die Felsenfestung Sigiriya erhebt sich über dem tropischen Wald in Sri Lanka"
+      },
+      "faqHeading": "Häufige Fragen",
+      "faqs": [
+        {
+          "q": "Sind Q Pick-Treiber verifiziert?",
+          "a": "Ja. Fahrer führen Identitäts-, Fahrzeug- und Hintergrundüberprüfungen durch, bevor sie dem Netzwerk beitreten."
+        },
+        {
+          "q": "Kann ich meine Reise teilen?",
+          "a": "Ja. Mit der Live-Reisefreigabe können Familie, Gastgeber oder Hotelrezeptionen Ihre Reise verfolgen."
+        },
+        {
+          "q": "Was ist, wenn ich während einer Fahrt Hilfe benötige?",
+          "a": "Für kritische Momente stehen Unterstützung während der Reise und eine veröffentlichte Notrufnummer zur Verfügung."
+        },
+        {
+          "q": "Gibt es eine Reiseversicherung?",
+          "a": "Der Versicherungsschutz gilt für jede Fahrt gemäß dem Q Pick-Standard."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Fahren Sie mit Q Pick",
+        "description": "Treten Sie Q Pick als professioneller Chauffeur bei – Premium-Kunden, faire Einnahmen, flexible Zeitpläne und Fahrerunterstützung rund um die Uhr in ganz Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Chauffeur-Rekrutierung",
+        "headline": "Fahren Sie Sri Lanka",
+        "headlineLine2": "Premium-Reisen.",
+        "description": "Treten Sie einem kuratierten Netzwerk professioneller Chauffeure bei, die Touristen, Hotels und Geschäftsreisende bedienen – mit transparenten Einnahmen, würdevoller Abfertigung und Unterstützung speziell für die Straßen, die Sie kennen.",
+        "primaryCta": "Bewerben Sie sich jetzt",
+        "secondaryCta": "Siehe Anforderungen",
+        "imageAlt": "Q Pick professioneller Chauffeur neben einem Premiumfahrzeug in Sri Lanka"
+      },
+      "whyJoin": {
+        "eyebrow": "Warum Q Pick beitreten?",
+        "heading": "Gebaut für Fahrer, die stolz auf die Straße sind",
+        "description": "Q Pick ist keine generische Ride-Hail-App. Wir verbinden verifizierte Chauffeure mit Premium-Nachfrage – Flughafentransfers, private Touren und Geschäftsreisen.",
+        "cards": {
+          "earnings": {
+            "title": "Höhere Erträge",
+            "body": "Greifen Sie auf Premium-Flughafen-, Tour- und Chauffeur-Tarife zu – nicht auf einen Wettlauf nach unten."
+          },
+          "schedule": {
+            "title": "Flexibler Zeitplan",
+            "body": "Wählen Sie, wann Sie online gehen. Kombinieren Sie Flughafenfahrten, Tagesmieten und Mehrtagestouren zu Ihren Konditionen."
+          },
+          "clients": {
+            "title": "Premium-Touristen und Firmenkunden",
+            "body": "Bedienen Sie Hotelgäste, Geschäftsreisende und kuratierte Reisekunden, die Professionalität erwarten."
+          },
+          "support": {
+            "title": "Fahrerunterstützung rund um die Uhr",
+            "body": "Einsatzschalter und Notrufnummer, wenn Sie unterwegs Hilfe benötigen – Tag und Nacht."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Flottenkategorien",
+        "heading": "Fahren Sie das Fahrzeug, das Sie bedienen",
+        "description": "Q Pick unterstützt ein komplettes Spektrum privater Chauffeurkategorien – von kompakten Stadtautos bis hin zu Hochdach-Vans und Reisebussen."
+      },
+      "journey": {
+        "eyebrow": "Ihr Weg zur Anerkennung",
+        "heading": "Von der Bewerbung bis zur ersten Premium-Reise",
+        "steps": {
+          "apply": {
+            "title": "Bewerben",
+            "body": "Füllen Sie die Online-Registrierung mit Ihren persönlichen Daten, Fahrzeug- und Dokumentendaten aus."
+          },
+          "verify": {
+            "title": "Dokumente überprüfen",
+            "body": "Unser Team überprüft Ihre NIC, Lizenz, Versicherung und Fahrzeugregistrierung."
+          },
+          "inspection": {
+            "title": "Fahrzeuginspektion",
+            "body": "Eine Normprüfung bestätigt, dass Ihr Fahrzeug die Sicherheits- und Komfortanforderungen von Q Pick erfüllt."
+          },
+          "training": {
+            "title": "Ausbildung",
+            "body": "Kurze Einführung in die Servicestandards von Q Pick, App-Nutzung und Gastfreundschaft."
+          },
+          "approved": {
+            "title": "Genehmigt",
+            "body": "Sobald Ihr Profil verifiziert ist, wird es online geschaltet. Sie können jedoch erst dann online gehen, wenn es vollständig genehmigt wurde."
+          },
+          "start": {
+            "title": "Beginnen Sie mit dem Fahren",
+            "body": "Akzeptieren Sie Premium-Reisen, Flughafentransfers und Touraufträge auf der ganzen Insel."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "Fahrerstimmen",
+        "heading": "Chauffeure, die sich für Q Pick entschieden haben",
+        "items": [
+          {
+            "name": "Kasun Perera",
+            "role": "Limousinen-Chauffeur · Colombo",
+            "quote": "Flughafentransfers und Hotelabholungen sind konsistent. Ich kenne den Fahrpreis, bevor ich ihn akzeptiere, und unterstütze die Antworten, wenn ich anrufe."
+          },
+          {
+            "name": "Nimal Fernando",
+            "role": "Hochdach-Van · Kandy",
+            "quote": "Reisegruppen- und Familientransfers zahlen besser als zufällige Fahrten in die Stadt. Q Pick Kunden erwarten Qualität – und geben dementsprechend Trinkgeld."
+          },
+          {
+            "name": "Ruwan Silva",
+            "role": "SUV-Chauffeur · Galle",
+            "quote": "Das Onboarding war gründlich, aber fair. Nach der Genehmigung machte es das App- und Betriebsteam einfach, während der Saison beschäftigt zu bleiben."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "Qualifikationen",
+        "heading": "Fahreranforderungen",
+        "description": "Wir halten die Messlatte hoch, um Gäste und Chauffeure gleichermaßen zu schützen. Bitte stellen Sie sicher, dass Sie diese erfüllen, bevor Sie sich bewerben.",
+        "items": [
+          "Gültiger Sri Lankan Führerschein mit mindestens 3 Jahren Erfahrung",
+          "Nationaler Personalausweis (NIC) und eine eindeutige Hintergrundüberprüfung",
+          "Registriertes, versichertes Fahrzeug in gutem technischen Zustand",
+          "Gültige Steuerlizenz und umfassende Versicherungsunterlagen",
+          "Smartphone mit mobilen Daten für die Q Pick Driver App",
+          "Professionelles Auftreten und zuvorkommende Gästekommunikation",
+          "Fließende Sprachkenntnisse in mindestens Singhalesisch, Englisch oder Tamilisch",
+          "Bereitschaft, Flughafen-, Stadt- und Intercity-Premiumfahrten anzubieten"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "Illustrativer Verdienst",
+        "heading": "Beispielverdienst",
+        "description": "Die folgenden Zahlen dienen lediglich der Veranschaulichung und stellen kein garantiertes Einkommen dar. Der tatsächliche Verdienst hängt von den Stunden, der Saison, der Fahrzeugkategorie und der Art der Fahrt ab.",
+        "disclaimer": "Nur zur Veranschaulichung. Keine Einkommensgarantie. Vorbehaltlich der Provision, der Nachfrage und der individuellen Leistung von Q Pick.",
+        "examples": [
+          {
+            "label": "Flughafentransfer (CMB → Colombo)",
+            "amount": "LKR 8.500 – 12.000",
+            "note": "Limousine · Einwegverkehr · außerhalb der Hauptverkehrszeiten"
+          },
+          {
+            "label": "Ganztägige Chauffeurvermietung",
+            "amount": "LKR 18.000 – 28.000",
+            "note": "SUV oder Van · 8–10 Stunden · Treibstoff ausgenommen"
+          },
+          {
+            "label": "Mehrtagestour (pro Tag)",
+            "amount": "LKR 22.000 – 35.000",
+            "note": "Hochdach-Van · Kulturdreieck-Route"
+          },
+          {
+            "label": "Stadtfahrt (Colombo)",
+            "amount": "LKR 2.500 – 5.500",
+            "note": "Mini oder Limousine · Fahrpreis nach Taxameter"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "Bereit mitzumachen?",
+        "heading": "Werden Sie Q Pick Chauffeur",
+        "description": "Beginnen Sie noch heute mit Ihrer Bewerbung. Führen Sie die Registrierung in Ihrem eigenen Tempo durch – unser Team begleitet Sie durch die Verifizierung und Genehmigung.",
+        "primaryCta": "Bewerben Sie sich jetzt",
+        "secondaryCta": "Anforderungen anzeigen",
+        "imageAlt": "Q Pick Chauffeurkarte und Reise-Dashboard auf Mobilgeräten"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "Partner",
+        "description": "Arbeiten Sie mit Q Pick für Hotel-, Villen- und Firmengästetransfers nach einem vertrauenswürdigen Standard zusammen."
+      },
+      "title": "Partner, die Gäste gut bewegen",
+      "description": "Hotels, Villen und Unternehmen – erstklassige Transfers, denen Ihre Rezeption vertrauen kann, nach einem gemeinsamen Q Pick-Standard.",
+      "primaryCta": "Sprechen Sie mit Partnerschaften",
+      "secondaryCta": "Flughafenprodukt",
+      "body": "Links zur Ankunft der Gäste, geplante Transfers und betriebliche Transparenz – so konzipiert, dass Hospitality-Teams weniger Zeit mit der Koordinierung der WhatsApp-Flotten und mehr Zeit mit der Bewirtung verbringen.",
+      "logoRowEyebrow": "Gebaut für Gastfreundschaft",
+      "logoRowAriaLabel": "Hospitality-Partner",
+      "partnerNames": [
+        "Galle Face Hotel",
+        "Zimt",
+        "Jetwing",
+        "Shangri-La",
+        "Amangalla"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "Über",
+        "description": "Quick Pick App (Pvt) Ltd baut Q Pick auf – die vertrauenswürdige private Bewegungsebene in Sri Lanka: Fahrten, Flughafentransfers und Inselfahrten."
+      },
+      "title": "Entwickelt für die Bewegungen von Sri Lanka",
+      "description": "Q Pick wird von Quick Pick App (Pvt) Ltd entwickelt und betrieben – der vertrauenswürdigen privaten Bewegungsebene auf der ganzen Insel, mit der Ruhe eines Luxus-Concierges und der Zuverlässigkeit eines modernen Mobilitätsnetzwerks.",
+      "primaryCta": "Buchen Sie eine Fahrt",
+      "secondaryCta": "Fahren Sie mit uns",
+      "paragraphs": [
+        "Wir existieren, weil fragmentierten WhatsApp-Flotten und allgemeinen globalen Apps beides fehlt, was Reisende und Bewohner tatsächlich brauchen: Sicherheit, Gastfreundschaft und Respekt vor dem Ort.",
+        "Quick Pick App (Pvt) Ltd entwirft Passagier-, Fahrer- und Betriebsoberflächen in einer Sprache – leise Technologie für menschliche Reisen durch Sri Lanka."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "Unterstützung",
+        "description": "Wenden Sie sich für Fahrten, Transfers, Touren und Partneranfragen an den Support von Q Pick."
+      },
+      "title": "Unterstützung",
+      "description": "Wir sind für Reisefragen, Partneranfragen und Momente da, die einen Menschen brauchen.",
+      "emailLabel": "E-Mail",
+      "phoneLabel": "Telefon",
+      "locationLabel": "Standort",
+      "emergencyLabel": "Notrufnummer"
+    },
+    "destinations": {
+      "meta": {
+        "title": "Reiseziele",
+        "description": "Entdecken Sie Q Pick Reiseziele in Sri Lanka – Colombo, Galle, Ella, Sigiriya und mehr."
+      },
+      "title": "Reiseziele",
+      "description": "Orte, die zu Ihrer Reise passen – Hafenstraßen, Festungsmauern, Hochlandnebel und das kulturelle Dreieck."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "Ziel",
+      "primaryCta": "Buchen Sie eine Fahrt",
+      "secondaryCta": "Entdecken Sie Touren"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "Privatsphäre",
+          "description": "Q Pick Datenschutzrichtlinie – wie wir Ihre Daten erfassen, verwenden und schützen."
+        },
+        "title": "Privatsphäre",
+        "description": "Wir erfassen nur das, was wir für Ihre sichere Beförderung benötigen – und gehen sorgfältig mit den Reisedaten um.",
+        "body": "Diese Seite ist eine Phase-1-Shell. Die vollständige rechtliche Kopie deckt Kontodaten, Standort während aktiver Reisen, Zahlungsabwickler, Aufbewahrungsfristen und Ihre Rechte gemäß geltendem Sri Lankan und internationalem Datenschutzrecht ab.",
+        "questionsPrefix": "Fragen:",
+        "supportEmail": "support@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "Bedingungen",
+          "description": "Q Pick Nutzungsbedingungen für Passagiere, Partner und Fahrer."
+        },
+        "title": "Nutzungsbedingungen",
+        "description": "Die Vereinbarung, die die Nutzung der Q Pick-Dienste für Fahrten, Transfers und Touren regelt.",
+        "body": "Diese Seite ist eine Phase-1-Shell. In den vollständigen Bedingungen werden die Pflichten von Fahrgästen und Fahrern, Stornierungen, Haftungsbeschränkungen, akzeptable Nutzung und Streitbeilegung festgelegt.",
+        "questionsPrefix": "Fragen:",
+        "supportEmail": "support@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Seite nicht gefunden",
+      "description": "Die von Ihnen angeforderte Route ist noch nicht Teil der Q Pick-Karte.",
+      "primaryCta": "Zurück zu Hause",
+      "secondaryCta": "Unterstützung",
+      "continue": "Oder fahren Sie mit {ride}, {airport} oder {tours} fort.",
+      "links": {
+        "ride": "Fahrt",
+        "airport": "Flughafen",
+        "tours": "Touren"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, mit Sicherheit bewegt.",
+        "description": "Premium-Mobilität im gesamten Sri Lanka – Flughafentransfers, Stadttaxi, Überlandfahrten, Chauffeurservice, Geschäftsreisen und private Touren auf einer vertrauenswürdigen Plattform."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Premium-Mobilität in Sri Lanka",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Premium-Mobilität im gesamten Sri Lanka – Flughafentransfers, Stadttaxi, Überlandfahrten, Chauffeurservice und private Touren auf einer vertrauenswürdigen Plattform."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "Private Sri Lanka Touren mit Chauffeur | Q Pick",
+      "description": "Entdecken Sie Sri Lanka mit Q Pick – private Chauffeure, Premiumfahrzeuge und maßgeschneiderte Reisen durch kulturelle Stätten, Hügellandschaften, Strände und Wildtiere.",
+      "ogTitle": "Entdecken Sie Sri Lanka mit Q Pick Private Tours",
+      "twitterTitle": "Private Sri Lanka Touren | Q Pick",
+      "twitterDescription": "Maßgeschneiderte Inselreisen mit privaten Chauffeuren und Premiumfahrzeugen."
+    },
+    "hero": {
+      "eyebrow": "Q Pick Private Touren",
+      "headline": "Entdecken Sie Sri Lanka mit Q Pick",
+      "subtitle": "Entdecken Sie unvergessliche Reisen mit privaten Chauffeuren, Premiumfahrzeugen und maßgeschneiderten Erlebnissen.",
+      "primaryCta": "Entdecken Sie Sammlungen",
+      "secondaryCta": "Planen Sie meine Tour"
+    },
+    "finalCta": {
+      "headline": "Ihre Sri Lanka-Reise beginnt hier",
+      "body": "Teilen Sie Ihre Daten und Ziele mit – wir erstellen eine private Chauffeur-Route und bestätigen ein schriftliches Angebot.",
+      "ctaLabel": "Plane meine Reise",
+      "secondaryLabel": "Sprechen Sie mit einem Reiseexperten"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "Private Chauffeure",
+        "description": "Lizenzierte Fahrer, die sich mit Tempeletikette, Hochlandstraßen und ruhigen Ankunftszeiten am Flughafen auskennen."
+      },
+      "airport": {
+        "title": "Abholung vom Flughafen",
+        "description": "Bandaranaike International (CMB) Meet-and-Greet, abgestimmt auf Ihren Flug."
+      },
+      "support": {
+        "title": "24/7-Support",
+        "description": "Ein echter Q Pick-Schalter vor der Abreise und unterwegs – WhatsApp und Telefon, Tag und Nacht."
+      },
+      "vehicles": {
+        "title": "Luxusfahrzeuge",
+        "description": "Limousinen, SUVs, Vans und Reisebusse – private Kabine, klimatisiert, gepäckbereit."
+      },
+      "pricing": {
+        "title": "Transparente Preisgestaltung",
+        "description": "Schriftliche Angebote nach Überprüfung – keine erfundenen Website-Preise oder Überraschungen am Straßenrand."
+      },
+      "personal": {
+        "title": "Personalisierte Touren",
+        "description": "Jedes Paket ist editierbar: Ziele, Tage, Tempo und Fahrzeugklasse."
+      },
+      "rating": {
+        "title": "4,9 Gästebewertung",
+        "description": "Von Privattourgästen regelmäßig für die Betreuung, das Tempo und die Kommunikation des Chauffeurs bewertet."
+      },
+      "licensed": {
+        "title": "Lizenzierter Betreiber",
+        "description": "Quick Pick App (Pvt) Ltd – registrierter Sri Lankan Betreiber mit geprüften Chauffeuren und versicherten Fahrzeugen."
+      },
+      "secure": {
+        "title": "Sichere Buchung",
+        "description": "Schriftliche Angebote, bestätigte Reisepläne und transparente Inklusivleistungen vor Ihrer Reise."
+      }
+    },
+    "explorer": {
+      "eyebrow": "Kuratierte Sammlungen",
+      "title": "Wählen Sie Ihre Reise",
+      "subtitle": "Premium-Privattouren, geordnet nach Reisestil – öffnen Sie hier eine Kategorie, um deren Geschichte, vorgestellte Reiserouten und Reisedetails zu erkunden.",
+      "searchPlaceholder": "Suchen Sie nach Zielen, Erlebnissen oder Tournamen ...",
+      "clearSearch": "Suche löschen",
+      "categoriesAria": "Tourkategorien",
+      "mapSelection": "Kartenauswahl",
+      "multiDay": "Mehrtägige Reisen",
+      "premiumNorthern": "Premium-Privattouren",
+      "sortAria": "Reisepakete sortieren",
+      "filterAria": "Reisepakete filtern",
+      "allCategoriesTitle": "Alle Kategorien",
+      "allCategoriesIntro": "Durchsuchen Sie jede veröffentlichte private Tour – setzen Sie sie zurück und erkunden Sie die gesamte Q Pick-Sammlung.",
+      "viewAllCategories": "Alle Kategorien anzeigen",
+      "destinationExperiences": "Reiseziel-Erlebnisse",
+      "destinationExperiencesSub": "Echte Orte, Jahreszeiten und Fotofenster – nicht nur Etiketten auf einer Karte.",
+      "vehiclesTitle": "Reisen Sie mit privatem Komfort",
+      "vehiclesSub": "Von der Limousine bis zum Minibus – Klimaanlage, Gepäckraum und Aufladen für unterwegs.",
+      "trustTitle": "Warum mit Q Pick reisen",
+      "reviewsEmptyTitle": "Gastgeschichten folgen in Kürze",
+      "reviewsEmptyBody": "Verifizierte Bewertungen privater Touren werden hier angezeigt, wenn Gäste ihre Reisen teilen.",
+      "faqEyebrow": "Häufig gestellte Fragen",
+      "faqLead": "Alles, was Sie wissen müssen, bevor Sie Ihre Reise mit Q Pick planen.",
+      "noResults": "Keine Touren entsprechen Ihrer Suche. Versuchen Sie es mit einem anderen Schlüsselwort oder setzen Sie die Filter zurück.",
+      "noToursTitle": "Keine Touren entsprechen Ihrer Suche",
+      "noToursBody": "Versuchen Sie es mit einem anderen Schlüsselwort oder setzen Sie die Filter zurück, um die gesamte Sammlung zu durchsuchen.",
+      "planCustomTour": "Planen Sie eine individuelle Tour",
+      "resetFilters": "Filter zurücksetzen",
+      "sortBy": "Sortieren nach",
+      "mapJourneysThrough": "Reisen durch {name}",
+      "itineraryOne": "Reiseroute",
+      "itineraryMany": "Reiserouten",
+      "matchingQuery": "passend zu „{query}“",
+      "northernPeninsula": "Nördliche Halbinsel",
+      "premiumJaffna": "Premium-Jaffna-Erlebnisse",
+      "premiumJaffnaSub": "{count} {experiences} – historische Stadtrundgänge, Inselfähren und heilige Bootsfahrten mit privater Chauffeurunterstützung.",
+      "experienceOne": "Erfahrung",
+      "experienceMany": "Erfahrungen",
+      "reviewsEmptyDisclaimer": "Verifizierte Gästebewertungen werden nach veröffentlichten Reisen angezeigt. Wir zeigen keine erfundenen Erfahrungsberichte, Bewertungen oder Auszeichnungen an.",
+      "trustBeforeTestimonials": "Vertrauen geht vor Erfahrungsberichten",
+      "faqTitle": "FAQ",
+      "defaultImageAlt": "Malerische Sri Lanka Hochlandreise",
+      "openCategory": "Öffnen Sie {title}",
+      "countItineraries": "{count} Reiserouten",
+      "countPackages": "{count} Pakete",
+      "countPackage": "{count} Paket",
+      "cmbService": "CMB-Dienst",
+      "packagesFound": "{count} Pakete",
+      "dayTour": "Tagestour",
+      "daysTour": "{count} Tage",
+      "fromPrice": "Preis auf Anfrage",
+      "viewDetails": "Details anzeigen",
+      "bookTour": "Buchen Sie diese Tour",
+      "idealFor": "Ideal für {value}",
+      "premiumNorthernHeading": "Nördliches Sri Lanka",
+      "premiumNorthernSub": "Historische Tempel, abgelegene Inseln und die kulturelle Vielfalt Jaffnas – drei Premium-Reisen mit engagierten Chauffeuren."
+    },
+    "filters": {
+      "all": "Alle",
+      "classic": "Klassisch",
+      "luxury": "Luxus",
+      "wildlife": "Tierwelt",
+      "adventure": "Abenteuer",
+      "beach": "Strand",
+      "honeymoon": "Flitterwochen",
+      "wellness": "Wellness",
+      "family": "Familie",
+      "day-tours": "Tagestouren"
+    },
+    "sort": {
+      "featured": "Hervorgehoben",
+      "newest": "Neueste",
+      "duration": "Dauer",
+      "popular": "Beliebt"
+    },
+    "badges": {
+      "best-seller": "Bestseller",
+      "luxury": "Luxus",
+      "new": "Neu",
+      "family-friendly": "Familienfreundlich",
+      "eco": "Öko",
+      "adventure": "Abenteuer"
+    },
+    "breadcrumbs": {
+      "home": "Zuhause",
+      "tours": "Touren"
+    },
+    "jsonLd": {
+      "touristType": "Freizeitreisende"
+    },
+    "reviewsMeta": {
+      "title": "Gästebewertungen",
+      "emptyTitle": "Geschichten von unterwegs",
+      "emptyBody": "Verifizierte Gästebewertungen werden nach veröffentlichten Reisen angezeigt. Wir zeigen keine erfundenen Erfahrungsberichte, Bewertungen oder Auszeichnungen an."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 Tage Ella-Zugflucht",
+        "idealFor": "Eisenbahnliebhaber mit begrenzter Zeit",
+        "intro": "Malerische Eisenbahn durch Teetäler. Diese 4-tägige private Chauffeurreise besucht Kandy, Nuwara Eliya und Ella – Bahnliebhaber mit begrenzter Zeit. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Zugsegment",
+          "Neun Bögen",
+          "Tee hört auf"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Kandy",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Nuwara Eliya",
+            "description": "Erkunden Sie Nuwara Eliya mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Ella",
+            "description": "Erkunden Sie Ella mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5 Tage Mirissa Walküste",
+        "idealFor": "Liebhaber der Meerestierwelt",
+        "intro": "Walsaison und Festungserbe. Diese 5-tägige private Chauffeurreise besucht Galle, Mirissa und Bentota – Liebhaber der Meerestierwelt. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Küste von Mirissa",
+          "Walbeobachtung",
+          "Galle Fort"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Galle",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Mirissa",
+            "description": "Erkunden Sie Mirissa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Bentota",
+            "description": "Erkunden Sie Bentota mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Bentota zur freien Verfügung",
+            "description": "Erkunden Sie Bentota mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 Tage Luxus-Flitterwochen an der Küste",
+        "idealFor": "Hochzeitsreisende an der Küste",
+        "intro": "Festungsromantik und Villen am Meer. Diese 6-tägige private Chauffeurreise besucht Colombo, Galle, Bentota und Mirissa – Hochzeitsreisende an der Küste. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Galle Fort",
+          "Bentota",
+          "Sonnenuntergänge in Mirissa"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Colombo",
+            "description": "Erkunden Sie Colombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Galle",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Bentota",
+            "description": "Erkunden Sie Bentota mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Mirissa",
+            "description": "Erkunden Sie Mirissa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Mirissa hat Freizeit",
+            "description": "Erkunden Sie Mirissa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6 Tage Pilgerdreieck",
+        "idealFor": "Vom Glauben geleitete Gruppenreise",
+        "intro": "Heilige Stätten auf der ganzen Insel. Diese 6-tägige private Chauffeurreise besucht Kandy, Anuradhapura, Dambulla und Polonnaruwa – eine vom Glauben geleitete Gruppenreise. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Tempel des Zahns",
+          "Anuradhapura",
+          "Dambulla-Höhlen"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Kandy",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Anuradhapura",
+            "description": "Erkunden Sie Anuradhapura mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Dambulla",
+            "description": "Erkunden Sie Dambulla mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Polonnaruwa",
+            "description": "Erkunden Sie Polonnaruwa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Polonnaruwa zur freien Verfügung",
+            "description": "Erkunden Sie Polonnaruwa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 Tage Festivalkultur & Kandy",
+        "idealFor": "Besucher der Festivalsaison",
+        "intro": "Perahera-Timing mit Erbe. Diese 8-tägige private Chauffeurreise besucht Colombo, Kandy, Dambulla, Sigiriya und Negombo – Besucher der Festivalsaison. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Kandy-Feste",
+          "Tempelbesuche",
+          "Dreieckssymbole"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Colombo",
+            "description": "Erkunden Sie Colombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Kandy",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Dambulla",
+            "description": "Erkunden Sie Dambulla mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Sigiriya",
+            "description": "Erkunden Sie Sigiriya mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Negombo",
+            "description": "Erkunden Sie Negombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Negombo zur freien Verfügung",
+            "description": "Erkunden Sie Negombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Negombo zur freien Verfügung",
+            "description": "Erkunden Sie Negombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9 Tage Flitterwochen-Paradies",
+        "idealFor": "Frischvermählte und romantische Ausflüge",
+        "intro": "Intimes Tempo durch Nebel und Meer. Diese 9-tägige private Chauffeurreise besucht Negombo, Kandy, Nuwara Eliya, Ella, Bentota, Galle – Frischvermählte und romantische Kurzurlaube. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Teeland",
+          "Ella-Romanze",
+          "Sonnenuntergänge an der Küste"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Negombo",
+            "description": "Erkunden Sie Negombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Kandy",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Nuwara Eliya",
+            "description": "Erkunden Sie Nuwara Eliya mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Ella",
+            "description": "Erkunden Sie Ella mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Bentota",
+            "description": "Erkunden Sie Bentota mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Galle",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10 Tage Ayurveda-Wellness-Reise",
+        "idealFor": "Wellnessorientierte Reisende",
+        "intro": "Genesungskapitel, eingewoben in Privatreisen. Diese 10-tägige private Chauffeurreise besucht Negombo, Kandy, Bentota, Mirissa und Galle – Reisende mit Wellness-Fokus. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Wellness-Tempo",
+          "Küstenstille",
+          "Tempelbalance"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdecken Sie Negombo",
+            "description": "Erkunden Sie Negombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Kandy",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Bentota",
+            "description": "Erkunden Sie Bentota mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Mirissa",
+            "description": "Erkunden Sie Mirissa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Entdecken Sie Galle",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Galle zur freien Verfügung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          },
+          {
+            "title": "Abreise & Weiterreise",
+            "description": "Privater Transfer zum Flughafen Colombo oder Bandaranaike International – oder setzen Sie Ihre individuelle Route mit Q Pick fort."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "Tag der Entdeckung der Hauptstadt Colombo",
+        "idealFor": "Zwischenstopp-Gäste und Stadtliebhaber",
+        "intro": "Skyline von Colombo, koloniale Gassen und Sonnenuntergänge am Galle Face. Diese eintägige private Chauffeurfahrt besucht Colombo – Zwischenstopp-Gäste und Stadtliebhaber. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Aussichtspunkte des Lotusturms",
+          "Galle Gesicht grün",
+          "Essensstopps in Colombo"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdeckung von Colombo",
+            "description": "Erkunden Sie Colombo mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "Galle Fort Heritage Day",
+        "idealFor": "Geschichtsinteressierte an der Südküste",
+        "intro": "Niederländische Stadtmauern und das Licht des Indischen Ozeans. Diese eintägige private Chauffeurreise besucht Galle – Geschichtsliebhaber an der Südküste. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Leuchtturm von Galle Fort",
+          "Wall-Spaziergang",
+          "Boutique-Straßen"
+        ],
+        "itinerary": [
+          {
+            "title": "Galle-Entdeckung",
+            "description": "Erkunden Sie Galle mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "Sigiriya-Felsen-Sonnenaufgangstag",
+        "idealFor": "Frühaufsteher und Fotogäste",
+        "intro": "Lion Rock im ersten Licht. Diese eintägige private Chauffeurreise besucht Sigiriya – Frühaufsteher und Fotogäste. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Sigiriya-Gipfel",
+          "Wassergärten",
+          "Freskengalerie"
+        ],
+        "itinerary": [
+          {
+            "title": "Sigiriya-Entdeckung",
+            "description": "Erkunden Sie Sigiriya mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "Tag der Heiligen Stadt Kandy",
+        "idealFor": "Spirituelle Reisende und Familien",
+        "intro": "Der Zahntempel und der See sind ruhig. Diese eintägige private Chauffeurreise besucht Kandy – spirituelle Reisende und Familien. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Tempel des Zahns",
+          "Kandy-See",
+          "Peradeniya-Option"
+        ],
+        "itinerary": [
+          {
+            "title": "Kandy-Entdeckung",
+            "description": "Erkunden Sie Kandy mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "Ella Highland Views Day",
+        "idealFor": "Zugstopps und Gratwanderer",
+        "intro": "Neun Bögen und neblige Täler. Diese eintägige private Chauffeurreise besucht Ella – Zugstopps und Gratwanderer. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Neun-Bögen-Brücke",
+          "Little Adam's Peak",
+          "Cafés im Tea Valley"
+        ],
+        "itinerary": [
+          {
+            "title": "Ella-Entdeckung",
+            "description": "Erkunden Sie Ella mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "Yala Wildlife Safari Day",
+        "idealFor": "Safari-Enthusiasten mit engen Zeitplänen",
+        "intro": "Leopardenland im Morgengrauen. Diese eintägige private Chauffeurfahrt besucht Yala – Safari-Enthusiasten mit engen Zeitplänen. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Jeep-Safari-Fenster",
+          "Lagunen in der Trockenzone",
+          "Vogelwelt"
+        ],
+        "itinerary": [
+          {
+            "title": "Yala-Entdeckung",
+            "description": "Erkunden Sie Yala mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "Anuradhapura Sacred Trail Day",
+        "idealFor": "Pilger des buddhistischen Erbes",
+        "intro": "Alte Stupas und Bodhi-Traditionen. Diese eintägige private Chauffeurreise besucht Anuradhapura – Pilger des buddhistischen Erbes. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Ruwanwelisaya",
+          "Heiliger Bodhi-Baum",
+          "Klosterruinen"
+        ],
+        "itinerary": [
+          {
+            "title": "Entdeckung von Anuradhapura",
+            "description": "Erkunden Sie Anuradhapura mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "Tag der Südküste von Mirissa",
+        "idealFor": "Besucher der Walsaison",
+        "intro": "Kokosnussbuchten und Meereshorizonte. Diese eintägige private Chauffeurfahrt besucht Mirissa – Besucher der Walsaison. Ihr engagierter Fahrer kümmert sich um die Straße, während Sie sich auf Tempel, Aussichtspunkte, Wildtierbeobachtungen und entspannte Küstennachmittage konzentrieren. Jede Q Pick-Tour wird nach einer schriftlichen Überprüfung Ihrer Daten, Fahrzeugpräferenz und Geschwindigkeit verfeinert.",
+        "highlights": [
+          "Mirissa-Strand",
+          "Kokosnusshügel",
+          "Walbeobachtungssaison"
+        ],
+        "itinerary": [
+          {
+            "title": "Mirissa-Entdeckung",
+            "description": "Erkunden Sie Mirissa mit Ihrem engagierten Chauffeur – das Timing hängt vom Wetter, den Tickets und Ihrem Tempo ab."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "Jaffna Heritage City Tour",
+        "idealFor": "Kulturreisende erkunden den Norden",
+        "intro": "Entdecken Sie Jaffnas tamilisches Erbe auf einer gezielten vierstündigen Privattour. Ihr Chauffeur führt Sie von Nallur Kovils Gopuram zu den Stadtmauern des Jaffna-Forts, zur historischen öffentlichen Bibliothek, zu einem farbenfrohen lokalen Markt und einem klassischen Rio-Eiscreme-Abschluss.",
+        "highlights": [
+          "Nallur-Tempel",
+          "Jaffna-Festung",
+          "Öffentliche Bibliothek",
+          "Lokaler Markt",
+          "Rio-Eis"
+        ],
+        "itinerary": [
+          {
+            "title": "Jaffna Heritage Circuit",
+            "description": "Nallur-Tempel, Jaffna-Festung, öffentliche Bibliothek, Marktbummel und Rio-Eiscreme – je nach Öffnungszeiten und Ihren Interessen."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "Delfter Inselabenteuer",
+        "idealFor": "Inselforscher und Fotografen",
+        "intro": "Übersetzen Sie mit der Fähre die abgelegene Insel Delft und erleben Sie ein ganztägiges Abenteuer. Spazieren Sie an Korallenstränden entlang, machen Sie sich auf die Suche nach dem berühmten Affenbrotbaum und den Ruinen des Queen's Tower, beobachten Sie wilde Pferde auf offenen Ebenen und kehren Sie mit Ihrem privaten Chauffeur zurück, der den Transfer zum Festland übernimmt.",
+        "highlights": [
+          "Fahrt mit der Fähre",
+          "Wilde Pferde",
+          "Baobab-Baum",
+          "Turm der Königin",
+          "Korallenstrand"
+        ],
+        "itinerary": [
+          {
+            "title": "Delfter Inselexpedition",
+            "description": "Fährüberfahrt, Wildpferdeebenen, Baobab-Baum, Queen's Tower und Zeit am Korallenstrand – mit Festlandtransfers im Privatfahrzeug."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Tour zur Heiligen Insel Nainativu",
+        "idealFor": "Pilger und Kulturreisende",
+        "intro": "Segeln Sie nach Nainativu für eine sechsstündige Reise zur heiligen Insel. Besuchen Sie den Nagadeepa-Tempel und Nagapooshani Amman Kovil, erleben Sie die Bootsüberfahrt und genießen Sie die Mischung aus buddhistischem und hinduistischem Erbe der nördlichen Inseln von Sri Lanka mit privater Chauffeurunterstützung an Land.",
+        "highlights": [
+          "Nagadeepa-Tempel",
+          "Nagapooshani Amman-Tempel",
+          "Bootsfahrt",
+          "Kulturelle Erfahrung",
+          "Die Felsenfestung Sigiriya ist auf kühleres Licht eingestellt",
+          "Wandgemälde des Höhlentempels von Dambulla",
+          "Heilige Stätten von Anuradhapura oder Polonnaruwa",
+          "Privater Chauffeur für das Kulturdreieck",
+          "Zahntempel in Kandy",
+          "Teeplantagen rund um Nuwara Eliya",
+          "Neun-Bögen-Brücke in Ella",
+          "Optionaler malerischer Zugabschnitt",
+          "Symbole des Kulturdreiecks",
+          "Kandy und Hochland-Tee-Land",
+          "Malerische Wahrzeichen von Ella",
+          "Südküste bei Galle oder Mirissa",
+          "Aufwärmen zum Kulturerbe im Kulturdreieck",
+          "Hochland-Teeland & Ella",
+          "Yala-Leoparden-Safari-Fenster",
+          "Erholungstage an der Südküste",
+          "Volle Tiefe des Kulturdreiecks",
+          "Hügelland und Südsafari",
+          "Optionen an der West- und Ostküste",
+          "Familiengerechtes Tempo",
+          "Saisonale Routenführung auf der gesamten Insel",
+          "Zeit für tiefes Kulturerbe und Wildtiere",
+          "Strände an der Ost- und Westküste",
+          "Ultimatives Privatchauffeur-Tempo"
+        ],
+        "itinerary": [
+          {
+            "title": "Heiliger Rundgang von Nainativu",
+            "description": "Bootsfahrt nach Nainativu, Nagadeepa-Tempel, Nagapooshani-Amman-Tempel und kulturelle Zeit auf der Insel vor der Rückkehr."
+          },
+          {
+            "title": "Ankunftskorridor zum Dreieck",
+            "description": "Treffen Sie Ihren Chauffeur in der Nähe von CMB oder Negombo und fahren Sie ins Landesinnere. Lassen Sie sich in der Nähe von Sigiriya oder Dambulla nieder. Abend zur freien Verfügung."
+          },
+          {
+            "title": "Sigiriya und Dambulla",
+            "description": "Erklimmen Sie Sigiriya bei sanfterem Licht und erkunden Sie anschließend den Höhlentempel von Dambulla. Optionale saisonale Safari in der Nähe, falls gewünscht."
+          },
+          {
+            "title": "Antike Stadt und weiter",
+            "description": "Besuchen Sie Anuradhapura oder Polonnaruwa, bevor Sie nach Colombo/Negombo zurückkehren oder Ihre individuelle Route fortsetzen."
+          },
+          {
+            "title": "Nach Kandy",
+            "description": "Fahren Sie über Inlandsrouten nach Kandy. Abendlicher Seerundgang und Zahntempel rund um Rituale."
+          },
+          {
+            "title": "Kandy-Erbe",
+            "description": "Botanischer Garten Peradeniya, Kunsthandwerksstraßen und Freizeit für Märkte oder eine kulturelle Aufführung."
+          },
+          {
+            "title": "Teeland",
+            "description": "Steigen Sie nach Nuwara Eliya auf, um Plantagen zu besichtigen, den Gregory Lake zu besuchen und Freizeitaktivitäten in kühlem Klima zu unternehmen."
+          },
+          {
+            "title": "Ella-Standpunkte",
+            "description": "Fahren Sie weiter nach Ella zur Nine Arches Bridge, zu Bergrückenwanderungen und zu Hochlandcafés. Optionaler Zugabschnitt."
+          },
+          {
+            "title": "Abstieg oder Küstenverbindung",
+            "description": "Fahren Sie Richtung Colombo, an die Südküste oder zu Ihrem nächsten individuellen Ziel, wobei das Gepäck auf der Straße abgefertigt wird."
+          },
+          {
+            "title": "Ankunft",
+            "description": "Abholung vom Flughafen und Transfer nach Colombo oder Negombo; Briefing mit Ihrem Chauffeur."
+          },
+          {
+            "title": "Kulturelles Dreieck",
+            "description": "Reise nach Sigiriya / Dambulla, um dort eine Festung oder einen Höhlentempel zu besichtigen."
+          },
+          {
+            "title": "Erbe von Kandy",
+            "description": "Erledigen Sie die Highlights des Dreiecks und fahren Sie dann weiter nach Kandy."
+          },
+          {
+            "title": "Hochland",
+            "description": "Malerische Fahrt ins Teeland in Richtung Nuwara Eliya oder Ella."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches Bridge, Aussichtspunkte und Café-Freizeit."
+          },
+          {
+            "title": "Südküste",
+            "description": "Steigen Sie zum Galle Fort und nach Mirissa ab, um den Sonnenuntergang zu genießen und am Meer zu speisen."
+          },
+          {
+            "title": "Abreise",
+            "description": "Vormittag an der Küste zur freien Verfügung und privater Transfer nach CMB oder Colombo."
+          },
+          {
+            "title": "Ankunft",
+            "description": "CMB Treffen und Einleben in der Stadt oder in Negombo."
+          },
+          {
+            "title": "Sigiriya-Region",
+            "description": "Felsenfestung und Eintauchen in das Dreieck."
+          },
+          {
+            "title": "Kandy",
+            "description": "Anfahrt zum Zahntempel und zum Hochland."
+          },
+          {
+            "title": "Teeland",
+            "description": "Nuwara Eliya-Plantagen und kühles Klima."
+          },
+          {
+            "title": "Ella",
+            "description": "Neun Bögen und Gratwanderungen."
+          },
+          {
+            "title": "Richtung Yala",
+            "description": "Malerische Abfahrt zum südöstlichen Wildtiergürtel."
+          },
+          {
+            "title": "Safari-Tag",
+            "description": "Jeep-Safari im Yala-Nationalpark (Parkgebühren extra)."
+          },
+          {
+            "title": "Südliche Strände",
+            "description": "Mirissa Coconut Tree Hill und Ausfallzeit an der Küste."
+          },
+          {
+            "title": "Galle Fort",
+            "description": "Stadtmauer, Leuchtturm und Boutique-Erkundung."
+          },
+          {
+            "title": "Abreise",
+            "description": "Privater Transfer nach CMB oder Colombo."
+          },
+          {
+            "title": "Ankunft Negombo",
+            "description": "CMB Abholung und Eingewöhnung an die Westküste."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Stupas der heiligen Stadt und archäologischer Park."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Felsenfestung und Dreiecksbasis."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Mittelalterliche Hauptstadt und optionaler Elefantenpark."
+          },
+          {
+            "title": "Dambulla nach Kandy",
+            "description": "Höhlentempel und Hochlandhauptstadt."
+          },
+          {
+            "title": "Kandy",
+            "description": "Zahntempel und Gärten."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Teeplantagen und kühles Klima."
+          },
+          {
+            "title": "Ella",
+            "description": "Neun Bögen und Aussichtspunkte."
+          },
+          {
+            "title": "Yala-Ansatz",
+            "description": "Transfer zum südöstlichen Wildtiergürtel."
+          },
+          {
+            "title": "Safari",
+            "description": "Jeep-Tag im Yala-Nationalpark."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Erholungstag am Südstrand."
+          },
+          {
+            "title": "Galle",
+            "description": "Festungserbe und Küste."
+          },
+          {
+            "title": "Osten oder Südwesten",
+            "description": "Trincomalee-Saisonoption oder Bentota-Puffer."
+          },
+          {
+            "title": "Abreise nach Colombo",
+            "description": "Stadtpuffer und CMB-Übertragung."
+          },
+          {
+            "title": "Ankunft",
+            "description": "CMB nach Negombo oder Colombo."
+          },
+          {
+            "title": "Westküstenpuffer",
+            "description": "Freizeitaktivitäten in der Lagune oder in der Stadt."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Eintauchen in die heilige Stadt."
+          },
+          {
+            "title": "Nordwestoption",
+            "description": "Optionaler Wildtier- oder Ruhetag."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Fokus der Felsenfestung."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Mittelalterliche Ruinen und Seen."
+          },
+          {
+            "title": "Dambulla",
+            "description": "Höhlentempel und Dorfkultur."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tempel des Zahns."
+          },
+          {
+            "title": "Kandy Freizeit",
+            "description": "Gärten und Kunsthandwerk."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Teeland."
+          },
+          {
+            "title": "Stände",
+            "description": "Optionaler Plateau- oder Plantagentag."
+          },
+          {
+            "title": "Ella",
+            "description": "Neun Bögen und Grate."
+          },
+          {
+            "title": "Ella Freizeit",
+            "description": "Cafés und kurze Spaziergänge."
+          },
+          {
+            "title": "Yala",
+            "description": "Wildlife-Ansatz."
+          },
+          {
+            "title": "Safari",
+            "description": "Park-Jeep-Tag."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Südlicher Ozean."
+          },
+          {
+            "title": "Galle",
+            "description": "Festungserbe und Küste."
+          },
+          {
+            "title": "Bentota",
+            "description": "Tempo im Südwest-Resort."
+          },
+          {
+            "title": "Ostküste",
+            "description": "Trincomalee oder Arugam Bay je nach Saison."
+          },
+          {
+            "title": "Osten Freizeit",
+            "description": "Strand- und Wasserzeit."
+          },
+          {
+            "title": "Rückkehr und Abreise",
+            "description": "Inselübergreifender Transfer zu CMB."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Kann ich ein Q Pick Tourpaket individuell anpassen?",
+        "answer": "Ja. Veröffentlichte Pakete sind Ausgangspunkte. Wählen Sie Ziele, Tage, Fahrzeug und Präferenzen im Planer aus – unser Schreibtisch verfeinert die Route, nachdem Sie eine Anfrage eingereicht haben."
+      },
+      "hub-price": {
+        "question": "Wie funktioniert die Preisgestaltung?",
+        "answer": "Wir zeigen die auf Anfrage verfügbaren Preise an, bis Ihr Reiseplan überprüft wurde. Nachdem Sie eine Touranfrage eingereicht haben, bestätigt Q Pick ein schriftliches Angebot für einen privaten Chauffeur. Eintrittsgelder, Safari-Jeeps, Unterkunft und Mahlzeiten sind in der Regel separat, sofern nicht schriftlich angegeben."
+      },
+      "hub-airport": {
+        "question": "Bieten Sie einen Abholservice vom Flughafen mit Touren an?",
+        "answer": "Ja. Bandaranaike International (CMB) Abholung und Rücktransfer können zusammen mit Ihrer Tour oder über unseren speziellen Flughafentransferservice arrangiert werden."
+      },
+      "hub-group": {
+        "question": "Welches Fahrzeug soll ich wählen?",
+        "answer": "Limousinen passen zu Paaren; SUVs und Vans eignen sich für Familien; Luxus-Vans und Minibusse bedienen größere Gruppen. Wählen Sie die Kapazität im Planer aus – wir bestätigen das endgültige Fahrzeug nach Prüfung von Gepäck und Route."
+      },
+      "hub-payment": {
+        "question": "Wie funktionieren Zahlungen und Bestätigung?",
+        "answer": "Senden Sie online eine Touranfrage. Unser Team prüft die Verfügbarkeit, bestätigt einen Überblick und ein Angebot und teilt dann die nächsten Schritte für die Zahlung und die Zuweisung des Chauffeurs mit. Sie erhalten einen Referenzcode zur Nachverfolgung."
+      },
+      "pkg-3d-pace": {
+        "question": "Reichen drei Tage für das Kulturdreieck?",
+        "answer": "Drei Tage können Sigiriya, Dambulla und entweder Anuradhapura oder Polonnaruwa in einem ruhigen, privaten Tempo abdecken. Bei längeren Aufenthalten sind Mihintale, Safari-Zusätze oder eine Kandy-Verlängerung möglich."
+      },
+      "pkg-5d-train": {
+        "question": "Können wir den Ella-Zug einbeziehen?",
+        "answer": "Ja. Viele Gäste fahren mit der malerischen Bahnstrecke, während der Chauffeur ihr Gepäck auf der Straße transportiert. Teilen Sie uns Ihre Präferenz mit, wenn Sie ein Angebot anfordern."
+      },
+      "pkg-5d-weather": {
+        "question": "Wie ist das Wetter im Bergland?",
+        "answer": "In Nuwara Eliya und Ella ist es kühler als an der Küste, mit nebligen Morgen und möglicherweise leichtem Regen. Packschichten; Ihr Privatfahrzeug sorgt für einen komfortablen Transfer zwischen den Aussichtspunkten."
+      },
+      "pkg-7d-fitness": {
+        "question": "Wie viel Fußmarsch ist bei der 7-Tages-Tour erforderlich?",
+        "answer": "Sigiriya- und Tempelbesuche erfordern Schritte; Ella bietet optionale kurze Spaziergänge an. Ihr Chauffeur legt den Tag so fest, dass anstrengende Abschnitte verkürzt werden können, ohne dass die Highlights verloren gehen."
+      },
+      "pkg-10d-safari": {
+        "question": "Ist eine Yala-Safari im Wildtierabenteuer enthalten?",
+        "answer": "Die Anmietung eines Safari-Jeeps und der Eintritt in den Park werden als Add-Ons mit klarem Zeitplan arrangiert. Wildtiersichtungen können nie garantiert werden – wir planen nach Ihrer Anfrage das beste saisonale Fenster."
+      },
+      "pkg-14d-pace": {
+        "question": "Sind vierzehn Tage zu viel Autofahren?",
+        "answer": "Mit einem privaten Chauffeur und verteilten Übernachtungsstopps bleiben die täglichen Autofahrten überschaubar. Wir gestalten Ruhetage am Strand so, dass sich die Reiseroute intensiv und nicht überstürzt anfühlt."
+      },
+      "pkg-21d-season": {
+        "question": "Wann ist die beste Jahreszeit für eine große Inselrundfahrt?",
+        "answer": "Die West- und Südküste bevorzugt Dezember–März; Der Osten scheint oft von Mai bis September. An trockeneren Ufern kann ein 21-Tage-Plan folgen – wir empfehlen Ihnen basierend auf Ihrem Reisemonat."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "Schritt 1",
+        "title": "Wohin möchtest du gehen?",
+        "subtitle": "Wählen Sie Ziele aus oder beschreiben Sie Ihre Traumroute – gemeinsam verfeinern wir die Details."
+      },
+      "dates": {
+        "kicker": "Schritt 2",
+        "title": "Reisedaten auswählen",
+        "subtitle": "Wählen Sie Ihr Startdatum und wie viele Tage Sie unterwegs sein möchten.",
+        "startDate": "Startdatum",
+        "numberOfDays": "Anzahl der Tage",
+        "estimatedEnd": "Voraussichtliches Enddatum:"
+      },
+      "vehicle": {
+        "kicker": "Schritt 3",
+        "title": "Wählen Sie Ihr Fahrzeug",
+        "subtitle": "Von der Limousine zum Van – privat, klimatisiert, gepäckbereit."
+      },
+      "accommodation": {
+        "kicker": "Schritt 4",
+        "title": "Unterkunftspräferenz",
+        "subtitle": "Teilen Sie uns Ihr Komfortniveau mit – wir koordinieren Aufenthalte oder Sie buchen Ihren eigenen."
+      },
+      "preferences": {
+        "kicker": "Schritt 5",
+        "title": "Reisepräferenzen",
+        "subtitle": "Tempo, Interessen und Sonderwünsche helfen uns bei der Gestaltung Ihrer Reiseroute."
+      },
+      "contact": {
+        "kicker": "Schritt 6",
+        "title": "Ihre Kontaktdaten",
+        "subtitle": "Wir antworten mit einem schriftlichen Angebot und einem detaillierten Reiseplan."
+      },
+      "requests": {
+        "kicker": "Schritt 7",
+        "title": "Sonderwünsche",
+        "subtitle": "Ernährungsbedürfnisse, Zugänglichkeit, Feiern – alles, was wir wissen sollten."
+      },
+      "review": {
+        "kicker": "Rezension",
+        "title": "Überprüfen Sie Ihre Touranfrage",
+        "subtitle": "Bestätigen Sie die Angaben vor dem Absenden – zu diesem Zeitpunkt ist keine Zahlung erforderlich.",
+        "submit": "Touranfrage absenden",
+        "submitting": "Einreichen…"
+      }
+    },
+    "common": {
+      "back": "Zurück",
+      "continue": "Weiter",
+      "optional": "Optional",
+      "required": "Erforderlich"
+    }
+  }
+}

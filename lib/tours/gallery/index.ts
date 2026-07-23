@@ -1,5 +1,6 @@
 import type { TourGalleryImage } from "../types";
 import { getGalleryHeroImageSrc } from "@/lib/destination-image-catalog";
+import { TOUR_HERO_IMAGES } from "../tour-hero-images";
 
 function hero(
   id: string,
@@ -13,8 +14,40 @@ function hero(
   return { id, src, alt, tags };
 }
 
+function tourHero(
+  id: keyof typeof TOUR_HERO_IMAGES,
+  tags: string[],
+): TourGalleryImage {
+  const { src, alt } = TOUR_HERO_IMAGES[id];
+  return { id, src, alt, tags };
+}
+
 /** Central image registry — components must not hardcode paths. */
 export const TOUR_GALLERY: TourGalleryImage[] = [
+  tourHero("hero-cultural-triangle", ["polonnaruwa", "cultural", "hero", "tour"]),
+  tourHero("hero-hill-country-escape", ["ella", "hill-country", "hero", "tour"]),
+  tourHero("hero-best-of-sri-lanka", ["galle", "beach", "hero", "tour"]),
+  tourHero("hero-wildlife-adventure", ["yala", "wildlife", "hero", "tour"]),
+  tourHero("hero-complete-sri-lanka", ["sigiriya", "cultural", "hero", "tour"]),
+  tourHero("hero-grand-explorer", ["jaffna", "cultural", "hero", "tour"]),
+  tourHero("hero-ella-train-escape", ["ella", "train-journeys", "hero", "tour"]),
+  tourHero("hero-mirissa-whale-coast", ["mirissa", "beach", "wildlife", "hero", "tour"]),
+  tourHero("hero-luxury-honeymoon-coast", ["bentota", "honeymoon", "beach", "hero", "tour"]),
+  tourHero("hero-pilgrimage-triangle", ["anuradhapura", "pilgrimage", "hero", "tour"]),
+  tourHero("hero-festival-culture-kandy", ["kandy", "festival", "cultural", "hero", "tour"]),
+  tourHero("hero-honeymoon-paradise", ["nuwara-eliya", "hill-country", "honeymoon", "hero", "tour"]),
+  tourHero("hero-ayurveda-wellness", ["ayurveda", "wellness", "hero", "tour"]),
+  tourHero("hero-day-colombo", ["colombo", "day-tour", "hero"]),
+  tourHero("hero-day-galle", ["galle", "day-tour", "hero"]),
+  tourHero("hero-day-sigiriya", ["sigiriya", "day-tour", "hero"]),
+  tourHero("hero-day-kandy", ["kandy", "day-tour", "hero"]),
+  tourHero("hero-day-ella", ["ella", "day-tour", "hero"]),
+  tourHero("hero-day-yala", ["yala", "day-tour", "hero"]),
+  tourHero("hero-day-anuradhapura", ["anuradhapura", "day-tour", "hero"]),
+  tourHero("hero-day-mirissa", ["mirissa", "day-tour", "hero"]),
+  tourHero("hero-jaffna-heritage-city", ["jaffna", "cultural", "premium", "hero", "tour"]),
+  tourHero("hero-delft-island-adventure", ["jaffna", "adventure", "premium", "hero", "tour"]),
+  tourHero("hero-nainativu-sacred-island", ["jaffna", "pilgrimage", "premium", "hero", "tour"]),
   hero("sigiriya-hero", "Sigiriya Rock Fortress rising above tropical forest in Sri Lanka", [
     "sigiriya",
     "cultural",

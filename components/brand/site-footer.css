@@ -83,20 +83,20 @@
     margin-top: 0.25rem !important;
   }
 
-  .site-footer .site-footer-contact .flex {
-    gap: 0.375rem !important;
+  .site-footer .site-footer-contact-row {
+    column-gap: 0.75rem !important;
   }
 
-  .site-footer .site-footer-contact [class*="mt-0.5"],
-  .site-footer .site-footer-contact ul {
+  .site-footer .site-footer-contact-row [class*="mt-0.5"],
+  .site-footer .site-footer-contact-row ul {
     margin-top: 0.0625rem !important;
   }
 
-  .site-footer .site-footer-contact ul > * + * {
+  .site-footer .site-footer-contact-row ul > * + * {
     margin-top: 0 !important;
   }
 
-  .site-footer .site-footer-contact .text-sm {
+  .site-footer .site-footer-contact-row .text-sm {
     line-height: 1.35;
   }
 

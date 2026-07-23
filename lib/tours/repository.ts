@@ -36,6 +36,7 @@ import type {
   TourPackage,
   TourReview,
   TourSeoMeta,
+  TourSortId,
   TourSuggestedStay,
   TourVehicle,
   TourVehicleId,
@@ -93,6 +94,47 @@ export function getPackagesForDestination(destinationSlug: string): TourPackage[
 
 export function getPopularPackages(): TourPackage[] {
   return getAllPackages().filter((p) => p.popular);
+}
+
+export function sortTourPackages(
+  packages: TourPackage[],
+  sort: TourSortId,
+): TourPackage[] {
+  const list = [...packages];
+  switch (sort) {
+    case "newest":
+      return list.sort((a, b) => {
+        const aDate = a.publishedAt ?? "";
+        const bDate = b.publishedAt ?? "";
+        return bDate.localeCompare(aDate);
+      });
+    case "duration":
+      return list.sort((a, b) => a.durationDays - b.durationDays);
+    case "popular":
+      return list.sort((a, b) => {
+        if (a.popular !== b.popular) return a.popular ? -1 : 1;
+        return (a.featuredRank ?? 999) - (b.featuredRank ?? 999);
+      });
+    case "featured":
+    default:
+      return list.sort((a, b) => {
+        const aRank = a.featuredRank ?? (a.popular ? 50 : 999);
+        const bRank = b.featuredRank ?? (b.popular ? 50 : 999);
+        if (aRank !== bRank) return aRank - bRank;
+        if (a.popular !== b.popular) return a.popular ? -1 : 1;
+        return a.durationDays - b.durationDays;
+      });
+  }
+}
+
+export function filterPackagesByCatalogFilter(
+  packages: TourPackage[],
+  categoryIds: TourCategoryId[] | null,
+): TourPackage[] {
+  if (!categoryIds?.length) return packages;
+  return packages.filter((p) =>
+    categoryIds.some((id) => p.categoryIds.includes(id)),
+  );
 }
 
 export function getAllDestinations(): TourDestination[] {

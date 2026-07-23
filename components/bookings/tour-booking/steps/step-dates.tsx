@@ -1,6 +1,7 @@
 "use client";
 
 import { addDaysISO } from "@/lib/tours/mappers";
+import { useTranslations } from "@/components/i18n/locale-provider";
 
 type StepDatesProps = {
   startDate: string;
@@ -9,26 +10,27 @@ type StepDatesProps = {
 };
 
 export function StepDates({ startDate, numberOfDays, onChange }: StepDatesProps) {
+  const t = useTranslations();
   const endDate = addDaysISO(startDate, numberOfDays);
 
   return (
     <div className="space-y-6">
       <header>
         <p className="font-mono text-[0.6875rem] tracking-[0.2em] text-brand uppercase">
-          Step 2
+          {t("tourBooking.steps.dates.kicker")}
         </p>
         <h2 className="mt-1 font-display text-[clamp(1.5rem,3vw,2.1rem)] font-semibold text-ink">
-          Select travel dates
+          {t("tourBooking.steps.dates.title")}
         </h2>
         <p className="mt-2 text-sm text-ink/55">
-          Choose your start date and how many days you want on the road.
+          {t("tourBooking.steps.dates.subtitle")}
         </p>
       </header>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="text-xs font-medium tracking-wide text-ink/50 uppercase">
-            Start date
+            {t("tourBooking.steps.dates.startDate")}
           </span>
           <input
             type="date"
@@ -39,7 +41,7 @@ export function StepDates({ startDate, numberOfDays, onChange }: StepDatesProps)
         </label>
         <label className="block">
           <span className="text-xs font-medium tracking-wide text-ink/50 uppercase">
-            Number of days
+            {t("tourBooking.steps.dates.numberOfDays")}
           </span>
           <input
             type="number"
@@ -60,7 +62,7 @@ export function StepDates({ startDate, numberOfDays, onChange }: StepDatesProps)
       </div>
 
       <p className="rounded-[1.15rem] border border-ink/8 bg-foam px-4 py-3 text-sm text-ink/60">
-        Estimated end date:{" "}
+        {t("tourBooking.steps.dates.estimatedEnd")}{" "}
         <span className="font-semibold text-ink">{endDate || "—"}</span>
       </p>
     </div>

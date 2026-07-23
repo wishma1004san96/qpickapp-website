@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   Binoculars,
   Calendar,
+  Camera,
   Car,
   Clock,
   Compass,
@@ -17,7 +18,9 @@ import {
   MapPin,
   Mountain,
   Plane,
+  Ship,
   Sparkles,
+  Sun,
   Train,
   Umbrella,
   Users,
@@ -26,13 +29,16 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { TourCategory, TourCategoryId } from "@/lib/tours/types";
+import { useTranslations } from "@/components/i18n/locale-provider";
 
 export const CATEGORY_ICONS: Record<TourCategoryId, LucideIcon> = {
   popular: Sparkles,
+  "classic-sri-lanka": Sun,
   "cultural-heritage": Landmark,
   "wildlife-safari": Binoculars,
   "beach-holidays": Umbrella,
   "hill-country-tea": Mountain,
+  "tea-country": Mountain,
   adventure: Zap,
   "train-journeys": Train,
   honeymoon: Heart,
@@ -41,6 +47,12 @@ export const CATEGORY_ICONS: Record<TourCategoryId, LucideIcon> = {
   "ayurveda-wellness": Leaf,
   food: Utensils,
   festival: Calendar,
+  "photography-tours": Camera,
+  "bird-watching": Binoculars,
+  pilgrimage: Landmark,
+  "cruise-excursions": Ship,
+  "day-tours": Clock,
+  "private-chauffeur": Car,
   "airport-transfers": Plane,
   "custom-private": Compass,
 };
@@ -120,20 +132,25 @@ export function AllCategoriesCard({
   onSelect,
   className = "",
 }: AllCategoriesCardProps) {
+  const t = useTranslations();
   return (
     <motion.button
       type="button"
       onClick={onSelect}
-      aria-label="View all categories"
+      aria-label={t("toursHub.explorer.viewAllCategories")}
       className={`${frameBase} ${dimmed ? "opacity-45 saturate-[0.85]" : "opacity-100"} ${className}`}
       whileTap={{ scale: 0.99 }}
       transition={{ duration: 0.35 }}
     >
       <CollapsedCardBody
         icon={Grid3X3}
-        countLabel={`${packageCount} ${packageCount === 1 ? "itinerary" : "itineraries"}`}
-        title="All Categories"
-        intro="Browse every published private tour — reset and explore the full Q Pick collection."
+        countLabel={
+          packageCount === 1
+            ? `${packageCount} ${t("toursHub.explorer.itineraryOne")}`
+            : `${packageCount} ${t("toursHub.explorer.itineraryMany")}`
+        }
+        title={t("toursHub.explorer.allCategoriesTitle")}
+        intro={t("toursHub.explorer.allCategoriesIntro")}
       />
     </motion.button>
   );
@@ -146,13 +163,16 @@ export function CategoryCard({
   onSelect,
   className = "",
 }: CategoryCardProps) {
+  const t = useTranslations();
   const Icon = CATEGORY_ICONS[category.id] ?? Sparkles;
   const countLabel =
     category.id === "airport-transfers"
-      ? "CMB service"
+      ? t("toursHub.explorer.cmbService")
       : category.id === "custom-private"
-        ? `${packageCount} itineraries`
-        : `${packageCount} ${packageCount === 1 ? "package" : "packages"}`;
+        ? t("toursHub.explorer.countItineraries", { count: packageCount })
+        : packageCount === 1
+          ? t("toursHub.explorer.countPackage", { count: packageCount })
+          : t("toursHub.explorer.countPackages", { count: packageCount });
 
   const frameClass = `${frameBase} ${dimmed ? "opacity-45 saturate-[0.85]" : "opacity-100"} ${className}`;
 
@@ -173,7 +193,7 @@ export function CategoryCard({
         type="button"
         onClick={onSelect}
         aria-expanded={false}
-        aria-label={`Open ${category.title}`}
+        aria-label={t("toursHub.explorer.openCategory", { title: category.title })}
         className={frameClass}
         whileTap={{ scale: 0.99 }}
         transition={{ duration: 0.35 }}

@@ -4,10 +4,12 @@ import type { QPickVehicleIconId } from "@/components/icons/vehicles/types";
 
 export type TourCategoryId =
   | "popular"
+  | "classic-sri-lanka"
   | "cultural-heritage"
   | "wildlife-safari"
   | "beach-holidays"
   | "hill-country-tea"
+  | "tea-country"
   | "adventure"
   | "train-journeys"
   | "honeymoon"
@@ -16,8 +18,24 @@ export type TourCategoryId =
   | "ayurveda-wellness"
   | "food"
   | "festival"
+  | "photography-tours"
+  | "bird-watching"
+  | "pilgrimage"
+  | "cruise-excursions"
+  | "day-tours"
+  | "private-chauffeur"
   | "airport-transfers"
   | "custom-private";
+
+export type TourBadgeId =
+  | "best-seller"
+  | "luxury"
+  | "new"
+  | "family-friendly"
+  | "eco"
+  | "adventure";
+
+export type TourSortId = "featured" | "newest" | "duration" | "popular";
 
 export type TourVehicleId =
   | "sedan"
@@ -34,6 +52,7 @@ export type TourSeoMeta = {
   ogTitle?: string;
   twitterTitle?: string;
   twitterDescription?: string;
+  keywords?: string[];
 };
 
 export type TourItineraryDay = {
@@ -52,15 +71,21 @@ export type TourExperienceFeature = {
   description: string;
 };
 
+export type TourCatalogSection = "premium-northern";
+
 export type TourPackage = {
   slug: string;
   title: string;
   durationDays: number;
+  /** Overrides the default "{durationDays} days" badge on catalogue cards */
+  durationLabel?: string;
   destinationSlugs: string[];
   categoryIds: TourCategoryId[];
   vehicleId: TourVehicleId;
   /** null = show quote label from pricing config */
   startingPriceLkr: number | null;
+  /** Shown on premium catalogue cards as "From USD …" */
+  startingPriceUsd?: number;
   highlights: string[];
   travelTips: string[];
   packingTips?: string[];
@@ -79,6 +104,18 @@ export type TourPackage = {
   relatedPackageSlugs: string[];
   popular: boolean;
   published: boolean;
+  /** Marketing badge on catalogue cards */
+  badge?: TourBadgeId;
+  /** Short audience line for catalogue and detail */
+  idealFor?: string;
+  /** Vehicle classes suggested on written quote */
+  suggestedVehicleIds?: TourVehicleId[];
+  /** ISO date for newest sort */
+  publishedAt?: string;
+  /** Lower values surface first in featured sort */
+  featuredRank?: number;
+  /** Dedicated catalogue section — excluded from standard day-tour grids */
+  catalogSection?: TourCatalogSection;
 };
 
 export type TourDestination = {

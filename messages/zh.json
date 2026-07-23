@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "跳至主要内容",
+  "header": {
+    "homeAria": "Q Pick 主页",
+    "primaryNav": "小学",
+    "mobileNav": "手机导航",
+    "mobilePrimary": "移动初级",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "bookNow": "立即预订"
+  },
+  "nav": {
+    "home": "首页",
+    "ride": "骑行",
+    "airport": "机场",
+    "tours": "旅游",
+    "safety": "安全",
+    "drive": "驱动器",
+    "partners": "合作伙伴",
+    "support": "支持"
+  },
+  "language": {
+    "label": "语言",
+    "choose": "选择语言"
+  },
+  "footer": {
+    "blurb": "优质机场接送、城市骑行、司机服务和 Sri Lanka 各地的私人旅游。",
+    "call": "立即致电",
+    "whatsapp": "WhatsApp",
+    "emailCta": "给我们发电子邮件",
+    "services": "服务",
+    "company": "公司简介",
+    "downloadApp": "下载应用程序",
+    "contact": {
+      "address": "地址",
+      "email": "电子邮件",
+      "phones": "电话",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "机场接送",
+      "tours": "私人旅游",
+      "chauffeur": "司机服务",
+      "cityRides": "城市游乐设施",
+      "corporate": "商务旅行"
+    },
+    "companyLinks": {
+      "about": "关于",
+      "drive": "成为一名司机",
+      "partners": "合作伙伴",
+      "support": "支持",
+      "contact": "联系方式"
+    },
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "条款及条件",
+      "cookies": "饼干"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick介绍",
+    "scroll": "滚动",
+    "scrollAria": "滚动到内容",
+    "posterAlt": "驾车穿过雾蒙蒙的Sri Lankan森林道路，风景如画",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "机场接送。城市骑行。私人司机。",
+        "description": "在 Sri Lanka 范围内提供优质出行服务 — 在一个值得信赖的平台上提供机场接送、出租车和城际乘车、司机服务、商务旅行和私人旅游。",
+        "primary": "预订乘车",
+        "secondary": "机场接送"
+      },
+      {
+        "title": "机场接送",
+        "subtitle": "确定地到达和离开。",
+        "description": "见面接机和定时送机。您的司机会在您着陆前等候 — 无需排队，也没有不确定性。",
+        "primary": "机场接送",
+        "secondary": "预订乘车"
+      },
+      {
+        "title": "城市和城际游乐设施",
+        "subtitle": "出租车和司机，按您的时间安排。",
+        "description": "科伦坡街道到沿海高速公路——经过验证的司机、透明的票价以及您需要时的豪华司机选择。",
+        "primary": "预订乘车",
+        "secondary": "探索旅游团"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "计划你的旅程",
+      "title": "计划你的旅程",
+      "subtitle": "告诉我们您希望如何搬家。我们会安静地安排剩下的事情。",
+      "journeyTypeAria": "旅程类型",
+      "continue": "继续",
+      "scheduleTitle": "行程安排",
+      "travelDate": "旅行日期",
+      "pickupTime": "接载时间",
+      "intents": {
+        "arrive": "到达",
+        "stay": "住宿",
+        "explore": "探索"
+      },
+      "arrive": {
+        "fromLabel": "机场",
+        "fromDefault": "科伦坡机场 (CMB)",
+        "toLabel": "目的地",
+        "toDefault": "加勒菲斯酒店",
+        "recommendation": "抵达时集合 · 随时通知酒店 · 确认前清楚票价"
+      },
+      "stay": {
+        "fromLabel": "皮卡",
+        "fromDefault": "您的酒店",
+        "toLabel": "目的地",
+        "toDefault": "加勒堡",
+        "recommendation": "经过验证的驱动程序 · 您可以分享的实时更新 · 透明的定价"
+      },
+      "explore": {
+        "fromLabel": "皮卡",
+        "fromDefault": "科伦坡",
+        "toLabel": "目的地",
+        "toDefault": "艾拉和高地",
+        "recommendation": "全天候车辆 · 熟悉道路的司机 · 平静的行程"
+      }
+    },
+    "trust": {
+      "ariaLabel": "为什么客人信任Q Pick",
+      "verifiedDrivers": "经过验证的驱动程序",
+      "pricing": "透明定价",
+      "islandwide": "全岛覆盖",
+      "support": "24/7 支持",
+      "trips": "数千次旅行"
+    }
+  },
+  "experience": {
+    "headingLine1": "经验",
+    "headingLine2": "__QP_品牌__。",
+    "lines": [
+      "您的机场接送服务。",
+      "你的城市骑行。",
+      "您的 Sri Lanka。"
+    ],
+    "screenLive": "Q Pick 应用程序屏幕：{stepLabel}",
+    "previewAria": "Q Pick 应用预览显示 {stepLabel}",
+    "story": {
+      "planLabel": "乘车预订",
+      "vehiclesLabel": "车辆选择",
+      "liveLabel": "直播旅程",
+      "plan": {
+        "kicker": "机场和游乐设施",
+        "title": "计划你的旅程",
+        "destinations": "目的地",
+        "days": "旅行天数",
+        "daysUnit": "天",
+        "pickup": "皮卡",
+        "pickupValue": "班达拉奈克机场",
+        "hotel": "酒店",
+        "hotelValue": "科伦坡香格里拉酒店",
+        "route": "路线预览",
+        "stops": "停止",
+        "cta": "继续"
+      },
+      "vehicles": {
+        "route": "机场 → 锡吉里亚·埃拉·加勒",
+        "title": "选择您的车辆",
+        "budgetLabel": "预计预算",
+        "budgetHint": "在您确认之前",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "高级机队",
+    "heading": "选择完美的骑行。",
+    "sub": "从嘟嘟车到高级货车，每辆车都经过验证、舒适且价格透明。",
+    "phoneAria": "应用程序上的 Q Pick 车辆列表"
+  },
+  "insideQPickApp": {
+    "eyebrow": "应用",
+    "heading": "Q Pick 应用程序内部",
+    "sub": "预订机场接送或城市乘车，以明确的票价选择您的车辆，然后实时跟随您的司机——将优质的移动性装在您的口袋里。",
+    "panelAria": "Q Pick 应用程序屏幕：{label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "预订您的行程",
+        "body": "机场接机、城市出租车或城际乘车 - 在出发前设定目的地和时间。"
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "车辆及票价",
+        "body": "从轿车到高级货车，在您确认之前价格透明。"
+      },
+      "live": {
+        "n": "03",
+        "label": "现场旅程",
+        "body": "分配司机、实时 GPS 和预计到达时间、行程完成，然后是平静的评级流程。"
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "Q PICK 如何运作",
+    "heading": "从登记到目的地",
+    "sub": "从开放到抵达的一条平静路径：注册、验证、预订机场接送或城市乘车，然后实时跟踪您的司机。",
+    "stepLabel": "步骤 {n}",
+    "prevAria": "上一步",
+    "nextAria": "下一步",
+    "dotsAria": "旅程步骤",
+    "dotAria": "转到步骤 {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "欢迎",
+        "body": "打开 Q Pick 应用程序并开始您的旅程。"
+      },
+      "register": {
+        "n": "02",
+        "title": "注册",
+        "body": "使用您的手机号码创建您的帐户。"
+      },
+      "otp": {
+        "n": "03",
+        "title": "一次性密码验证",
+        "body": "安全地验证您的手机号码。"
+      },
+      "journey": {
+        "n": "04",
+        "title": "选择您的移动方式",
+        "body": "预订机场接送、城市出租车、城际乘车或司机服务 - 当您需要时私人旅游。"
+      },
+      "track": {
+        "n": "05",
+        "title": "追踪您的司机",
+        "body": "观看您的司机通过实时 GPS 跟踪和预计到达时间到达。"
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Q Pick 标准",
+    "heading": "一趟旅程。一项值得信赖的标准。",
+    "intro": "不是市场。不是小册子和 WhatsApp 线程。私人礼宾服务，了解 Sri Lanka 如何移动——从第一个平台到最后一条沿海道路。",
+    "closingTitle": "在整个旅程中——同样平静的确定性。",
+    "closingBody": "Uber 和 PickMe 可带您穿越城市。旅行社出售一日游。 Q Pick 在一个值得信赖的标准下掌控整个故事：机场、住宿和岛屿。",
+    "cta": "计划你的旅程",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "到达",
+        "moment": "岛屿从大门开始。",
+        "scene": "您的航班降落。经过验证的 Q Pick 司机已经在等待——不是在路边争先恐后，也不是一连串的消息。在汽车离开机场道路之前，您的酒店就知道您正在路上。",
+        "outcome": "一次交接。从抵达大厅到前台。",
+        "imageAlt": "科伦坡海岸和黄昏的城市灯光——着陆后的旅程"
+      },
+      "stay": {
+        "n": "02",
+        "title": "住宿",
+        "moment": "一举一动都安静而清晰。",
+        "scene": "海岸跑步、晚餐预订、晨会。您在确认之前会看到票价。当您骑行时，重要的人（家人、房东或别墅经理）可以跟随您，无需拨打两次电话。",
+        "outcome": "透明的定价。实时状态。没有市场噪音。",
+        "imageAlt": "Sri Lankan 南部海岸线，拥有清澈的印度洋海水"
+      },
+      "explore": {
+        "n": "03",
+        "title": "探索",
+        "moment": "岛屿打开时没有摩擦。",
+        "scene": "茶乡雾气。堡垒城镇。一天不止一站。同样值得信赖的司机、适合前方道路的车辆以及精心安排的行程——因此，地点才是重点，而不是物流。",
+        "outcome": "流动性和发现。一个连续的标准。",
+        "imageAlt": "锡吉里耶岩石堡垒从 Sri Lankan 丛林中拔地而起"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lanka 的优质移动平台",
+    "heading": "你的旅程。你的规则。",
+    "manifesto": "从第一个机场的欢迎到最后的酒店大门——普通应用程序永远无法容纳连续的移动标准。",
+    "positioningLead": "这不仅仅是另一个出租车应用程序。",
+    "positioningRest": "这是 Sri Lanka 的优质移动平台。",
+    "trustEyebrow": "由 Quick Pick App (Pvt) Ltd 提供支持",
+    "trustBody": "Q Pick 由 Quick Pick App (Pvt) Ltd 自豪地开发和运营，在 Sri Lanka 提供优质机场接送、司机服务、私人旅游和值得信赖的移动解决方案，并坚定地致力于质量、安全和卓越的客户体验。",
+    "continuumEyebrow": "旅程仍在继续",
+    "continuumBody": "更广泛的酒店生态系统正在悄然形成——同样的冷静标准，得到扩展。",
+    "continuumComingSoon": "即将推出",
+    "continuumItems": [
+      "食品配送",
+      "包裹递送",
+      "货币兑换",
+      "当地体验",
+      "礼宾服务"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "到达",
+        "title": "岛上的活动从欢迎仪式开始。",
+        "scene": "您的航班降落。经过验证的 Q Pick 酒店专业人士已经在等待 - 名牌已准备好，行李已在手，酒店路线已确认。不是在路边争抢。不是市场出价。只是安静地确定您的 Sri Lanka 之旅已经小心翼翼地开始了。",
+        "details": [
+          "由专业司机提供机场接机服务——绝非随机司机",
+          "出发前计划好酒店接送服务"
+        ],
+        "whisper": "一次交接。从大门到大厅。",
+        "kicker": "第01章",
+        "mediaTitle": "平静的到来",
+        "imageAlt": "黎明时分的高级机场航站楼走廊 — 平静抵达的开始"
+      },
+      "planning": {
+        "n": "02",
+        "label": "撰写",
+        "title": "随心所欲地移动——城市、机场或岛屿。",
+        "scene": "与普通的乘车服务不同，Q Pick 涵盖机场接送、城市和城际乘车、豪华司机服务和商务旅行——如果您想探索，还可以提供私人旅游和一日游。选择接送、目的地、时间和车辆。确认前请查看明确的票价。",
+        "details": [
+          "根据您的航班安排机场接机和送机服务",
+          "城市出租车、城际乘车和司机选项",
+          "确认前透明票价 — 清晰而不紧迫"
+        ],
+        "whisper": "你的路线。你的时机。你的车费。",
+        "kicker": "第02章",
+        "mediaTitle": "组成的旅程",
+        "imageAlt": "开阔的山地景观，适合撰写私人 Sri Lanka 行程"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "公司简介",
+        "title": "不是司机。酒店专业人士。",
+        "scene": "每一位 Q Pick 司机都是经过认证的酒店专业人士 - 接受过谨慎、岛屿道路和安静欢迎仪式的培训。如果您愿意，您还可以要求提供有关寺庙、茶乡、野生动物或活态遗产的当地导游——提供英语、僧伽罗语、泰米尔语或其他语言（如果有）。",
+        "details": [
+          "经过验证的专业司机——始终热情好客",
+          "可选的多语言当地文化和历史指南",
+          "选择同伴是为了信任，而不是地图上的接近度"
+        ],
+        "whisper": "区别在于谁站在门口。",
+        "kicker": "第03章",
+        "mediaTitle": "安静的专业公司",
+        "imageAlt": "身穿深色西装的专业司机打开豪华车的门"
+      },
+      "explore": {
+        "n": "04",
+        "label": "发现",
+        "title": "岛屿成为故事的地方。",
+        "scene": "沿海道路。高地薄雾。遗产城市。当您探索时，实时行程管理可确保每次转乘一目了然 - 如果日间轮班，24/7 的支持仍然可以安静地提供。普通应用程序会在行程结束时结束。 Q Pick 陪伴您的旅程。",
+        "details": [
+          "全程旅行的实时旅行管理",
+          "专业支持——冷静、可用、不打扰"
+        ],
+        "whisper": "物流仍然是隐形的。地点仍然是重点。",
+        "kicker": "第04章",
+        "mediaTitle": "岛屿连绵不绝",
+        "imageAlt": "锡吉里亚黄金时段鸟瞰 Sri Lankan 丛林上方"
+      },
+      "complete": {
+        "n": "05",
+        "label": "返回",
+        "title": "同样平静的确定性，直到最后一扇门。",
+        "scene": "最后的酒店接送服务形成了一个闭环——通过应用程序进行协调，定时到达您的大堂，并以与您在机场迎接您相同的热情好客的方式提供服务。一个连续的标准。从第一次欢迎到最后告别——这是普通网约车无法做到的。",
+        "details": [
+          "酒店接送服务遵循一项值得信赖的标准",
+          "一个完整的 Sri Lanka 旅游平台——不是出租车市场"
+        ],
+        "whisper": "旅程安定下来。标准依然存在。",
+        "kicker": "第05章",
+        "mediaTitle": "旅程圆满结束",
+        "imageAlt": "黄昏时分抵达豪华度假村——私人旅程的平静结束"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "一个平台",
+    "heading": "一个平台。三个经历。",
+    "sub": "无论您需要机场接送、城市或司机接送，还是有尊严地赚钱的地方 - Q Pick 都是同样值得信赖的出行标准。",
+    "cards": {
+      "ride": {
+        "title": "立即骑行",
+        "kicker": "出租车及司机",
+        "description": "经过验证的城市出租车、城际游乐设施和豪华交通的司机 — 在您确认之前透明的票价。",
+        "points": [
+          "城市和城际游乐设施",
+          "豪华司机",
+          "透明定价"
+        ],
+        "cta": "预订乘车",
+        "imageAlt": "客人从一辆高级皮卡的黑色行政轿车后部走出来"
+      },
+      "tours": {
+        "title": "机场接送",
+        "kicker": "到达和离开",
+        "description": "航班定时接送服务以及迎接服务——从登机口到门口的平静确定。",
+        "points": [
+          "机场接机",
+          "机场送机",
+          "见面打招呼"
+        ],
+        "cta": "机场接送",
+        "imageAlt": "专业司机准备好优质机场接送服务"
+      },
+      "drive": {
+        "title": "使用 Q Pick 驾驶",
+        "kicker": "司机平台",
+        "description": "专为认真司机打造的专业平台——清晰的收入、灵活的工作时间和有尊严的工作。",
+        "points": [
+          "灵活的收入",
+          "专业平台",
+          "轻松注册"
+        ],
+        "cta": "成为一名司机",
+        "imageAlt": "身穿深色西装的专业司机在酒店入口处打开黑色豪华货车的后门"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "乘车服务",
+    "intro": "机场接送、城市出租车、城际乘车和司机服务——当您想要探索时的私人旅游。一个 Q Pick 标准。",
+    "tablistAria": "出行意向",
+    "ride": {
+      "label": "骑行",
+      "title": "城市出租车和城际游乐设施",
+      "body": "为科伦坡街道或长海岸跑道请求经过验证的司机。在您确认之前透明票价。",
+      "cta": "预订乘车",
+      "imageAlt": "黄昏时分的科伦坡海岸 — 充满确定性的城市之旅"
+    },
+    "airport": {
+      "label": "机场",
+      "title": "机场接送",
+      "body": "根据您的航班安排接机服务。酒店和别墅从门口到门口都处于循环状态。",
+      "cta": "预订机场接送服务",
+      "imageAlt": "着陆后通往Sri Lanka南部的沿海道路"
+    },
+    "tour": {
+      "label": "游览",
+      "title": "私人旅游和一日游",
+      "body": "当您的目标是探索时，可选的一日游和多站旅程，由熟悉岛屿道路的司机提供。",
+      "cta": "探索旅游团",
+      "imageAlt": "适合一日游的锡吉里耶和文化三角景观"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Q Pick 带您去往何处",
+    "intro": "机场接送、城市骑行和司机之旅的热门路线——为您的出行方式提供支持的目的地。",
+    "allDestinations": "所有目的地",
+    "travelTime": "出行时间",
+    "startingPrice": "开始于"
+  },
+  "stepTimeline": {
+    "heading": "确定性如何发挥作用",
+    "intro": "从您所在位置到您需要到达的位置之间只需安静的三步。",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "请求",
+        "body": "设置接送、目的地和时间。预订前请查看票价。"
+      },
+      "match": {
+        "n": "02",
+        "title": "比赛",
+        "body": "已分配经过验证的 Q Pick 驾驶员 — 已评级、已投保且已做好出行准备。"
+      },
+      "arrive": {
+        "n": "03",
+        "title": "到达",
+        "body": "实时预计到达时间、行程共享以及在门口或登机口平静地交接。"
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "科伦坡",
+      "region": "西部省",
+      "summary": "港口的灯光、加勒菲斯的微风和首都的脉搏——安静而精确地移动着。",
+      "imageAlt": "黄昏的科伦坡沿海江边",
+      "travelTime": "距离 CMB 30–45 分钟",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "加勒",
+      "region": "南部省",
+      "summary": "堡垒城墙、海风和南部海岸——从机场到城墙，毫无不确定性。",
+      "imageAlt": "Sri Lankan 南部海岸线和清澈的海水",
+      "travelTime": "距离 CMB 2–2.5 小时",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "艾拉",
+      "region": "乌沃省",
+      "summary": "薄雾、茶和高原空气——日间包机根据山光而定。",
+      "imageAlt": "郁郁葱葱的 Sri Lankan 高原和热带山坡景观",
+      "travelTime": "距科伦坡 5–6 小时",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "锡吉里亚",
+      "region": "中部省",
+      "summary": "岩石堡垒和文化三角路——由熟悉路线的司机引导。",
+      "imageAlt": "Sri Lanka 锡吉里亚岩石堡垒的鸟瞰图",
+      "travelTime": "距 CMB 3.5–4.5 小时",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "信任与安全",
+    "heading": "安全标准",
+    "headingLine2": "你可以感觉到。",
+    "intro": "每次 Q Pick 行程均由经过验证的司机、实时监控、透明的定价和专门支持提供支持，因此您可以完全放心地在 Sri Lanka 旅行。",
+    "cta": "探索安全",
+    "trustLine": "受到成千上万旅客的信赖",
+    "items": {
+      "verified": {
+        "title": "经过验证的驱动程序",
+        "body": "每位司机都通过身份和车辆验证。"
+      },
+      "pricing": {
+        "title": "透明定价",
+        "body": "在确认每次行程之前了解您的票价。"
+      },
+      "sharing": {
+        "title": "实时旅行分享",
+        "body": "朋友和家人可以关注您的旅程。"
+      },
+      "support": {
+        "title": "紧急支援",
+        "body": "每当您需要帮助时，我们都会提供 24/7 的帮助。"
+      },
+      "insured": {
+        "title": "全程保险旅行",
+        "body": "每个 Q Pick 骑行都受到保护。"
+      }
+    },
+    "proofs": [
+      "通过身份和车辆检查验证驾驶员",
+      "确认前透明定价",
+      "为家人和房东提供实时旅行分享",
+      "旅途中的支持和公布的紧急热线",
+      "每次 Q Pick 旅程的保险范围"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "合作伙伴",
+      "heading": "酒店、别墅、企业",
+      "body": "客人接送服务遵循共同标准——前台可以信赖的白手套交接。",
+      "cta": "与 Q Pick 合作"
+    },
+    "drivers": {
+      "eyebrow": "驱动程序",
+      "heading": "有尊严地驾驶",
+      "body": "清晰的收入、公平的调度以及专为您最熟悉的道路打造的工具。",
+      "cta": "成为一名司机"
+    }
+  },
+  "planTour": {
+    "eyebrow": "私人旅游",
+    "heading": "规划您的 Sri Lanka 之旅",
+    "sub": "构建完全定制的私人旅程——天数、目的地和车辆——在您做出承诺之前立即进行估算。",
+    "highlights": [
+      "私人司机为您安排完整行程",
+      "混合海岸、高地和文化三角站点",
+      "透明估算 — 通过 Q Pick 确认详细信息"
+    ],
+    "trust": [
+      "即时估价",
+      "无需付款",
+      "免费咨询"
+    ],
+    "cardLabel": "您的行程",
+    "daysLabel": "选择天数",
+    "daysOption": "{count} 天",
+    "travelersLabel": "旅行者",
+    "travelersOption": "{count}",
+    "arrivalLabel": "抵达日期",
+    "pickupLabel": "上车地点",
+    "pickups": {
+      "cmb": "班达拉奈克 (CMB)",
+      "colombo": "科伦坡市",
+      "galle": "加勒",
+      "hotel": "您的酒店"
+    },
+    "tourTypeLabel": "旅游类型",
+    "tourTypes": {
+      "private": {
+        "label": "私人司机",
+        "meta": "灵活的节奏·自定义停靠点"
+      },
+      "honeymoon": {
+        "label": "蜜月",
+        "meta": "海岸和安静的高原住宿"
+      },
+      "family": {
+        "label": "家庭",
+        "meta": "宽敞的车辆·轻松的日子"
+      },
+      "cultural": {
+        "label": "文化三角",
+        "meta": "遗产路线 · 引导步调"
+      }
+    },
+    "destinationsLabel": "选择目的地",
+    "destinations": {
+      "colombo": "科伦坡",
+      "galle": "加勒",
+      "ella": "艾拉",
+      "sigiriya": "锡吉里亚",
+      "kandy": "康提"
+    },
+    "vehicleLabel": "选择车辆类型",
+    "vehicles": {
+      "sedan": {
+        "label": "轿车",
+        "meta": "1–3 位客人 · 空调"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 位客人 · 空调"
+      },
+      "van": {
+        "label": "货车",
+        "meta": "1–9 位客人 · 空调"
+      }
+    },
+    "distanceLabel": "预计距离",
+    "distanceValue": "~{km} 公里",
+    "hoursLabel": "预计行驶时间",
+    "hoursValue": "~{hours} 小时",
+    "breakdownLabel": "价格细目",
+    "breakdownDaily": "车辆及司机",
+    "breakdownDestinations": "目的地站点",
+    "breakdownTravelers": "额外旅客",
+    "breakdownPickup": "机场/酒店接送",
+    "estimateLabel": "即时预估价格",
+    "estimateNote": "仅估算 · 当您与 Q Pick 计划时最终确定",
+    "cta": "计划我的旅行"
+  },
+  "privateToursPreview": {
+    "eyebrow": "私人旅游",
+    "heading": "规划您的 Sri Lanka 旅程",
+    "sub": "通过完全定制的私人司机体验探索 Sri Lanka。",
+    "points": [
+      "灵活的行程",
+      "豪华车",
+      "即时估算"
+    ],
+    "primary": "计划我的旅行",
+    "secondary": "探索旅游团",
+    "cardLabel": "行程示例",
+    "cardTitle": "5天·海岸到高原",
+    "previewStops": [
+      "抵达CMB → 科伦坡过夜",
+      "加勒堡和南海岸",
+      "艾拉茶乡大结局"
+    ],
+    "estimateLabel": "来自",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "定制旅游"
+  },
+  "driveWithQPick": {
+    "eyebrow": "对于专业司机",
+    "heading": "充满信心地驾驶。",
+    "headingLine2": "有目的地赚钱。",
+    "sub": "加入Sri Lanka的优质司机平台。接受机场接送、城市和行政行程、商务旅行和私人旅游，同时使用 Q Pick 司机应用程序管理您自己的日程安排。",
+    "cta": "成为一名司机",
+    "secondaryCta": "了解更多",
+    "trust": {
+      "verified": "经过验证的驱动程序",
+      "payouts": "每周支出",
+      "support": "24/7 支持"
+    },
+    "trustAria": "驾驶员信任亮点",
+    "floatCards": {
+      "rideTitle": "新乘车请求",
+      "rideBody": "科伦坡堡 · 6 分钟",
+      "airportTitle": "机场接送",
+      "airportBody": "CMB → 希尔顿·LKR 4,800",
+      "earningsTitle": "今日收益",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "司机在线",
+      "onlineBody": "准备好享受高级游乐设施"
+    },
+    "phone": {
+      "greeting": "你好，迪兰",
+      "online": "在线",
+      "todayEarnings": "今日收益",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "实时地图",
+      "upcoming": "即将到来的旅程",
+      "route": "CMB → 科伦坡堡",
+      "eta": "8 分钟内接载",
+      "fare": "LKR 4,800",
+      "accept": "接受",
+      "weekly": "每周收入"
+    },
+    "benefits": {
+      "rides": {
+        "title": "行政乘车请求",
+        "body": "在 Sri Lanka 接收优质预订。"
+      },
+      "airport": {
+        "title": "机场接送",
+        "body": "可靠的到达和出发。"
+      },
+      "schedule": {
+        "title": "灵活的时间表",
+        "body": "只要您适合就开车。"
+      },
+      "earnings": {
+        "title": "每周支出",
+        "body": "每周收入透明。"
+      },
+      "customers": {
+        "title": "已验证乘客",
+        "body": "与值得信赖的客户一起旅行。"
+      },
+      "support": {
+        "title": "24/7 司机支持",
+        "body": "当您需要时提供真正的支持。"
+      }
+    },
+    "dashboard": {
+      "title": "驾驶员仪表板",
+      "online": "在线",
+      "earnings": "本周",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "传入请求",
+      "route": "CMB → 科伦坡堡",
+      "eta": "8 分钟内接载 · LKR 4,800",
+      "accept": "接受行程"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick 应用程序",
+    "heading": "随身携带 Q Pick。",
+    "sub": "使用 Q Pick 移动应用程序随时预订乘车、机场接送和私人 Sri Lanka 旅游。",
+    "tablistAria": "选择 Q Pick 应用程序",
+    "tabs": {
+      "passenger": "乘客应用程序",
+      "driver": "司机应用程序"
+    },
+    "passenger": {
+      "title": "旅行所需的一切。",
+      "features": [
+        "即时乘车预订",
+        "机场接送",
+        "私人旅游",
+        "实时驾驶员追踪",
+        "安全支付",
+        "旅行历史"
+      ],
+      "screenHome": "Q Pick 乘客主屏幕",
+      "screenBooking": "Q Pick 乘车预订屏幕",
+      "screenTracking": "Q Pick 实时跟踪屏幕"
+    },
+    "driver": {
+      "title": "通过 Q Pick 赚取更多收益。",
+      "features": [
+        "接受乘车请求",
+        "机场预订",
+        "旅游要求",
+        "每周收入",
+        "导航",
+        "驾驶员仪表板"
+      ],
+      "primary": "成为一名司机",
+      "secondary": "了解更多",
+      "screens": {
+        "dashboardTitle": "驾驶员仪表板",
+        "online": "在线",
+        "earningsLabel": "本周",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "新的旅行请求",
+        "route": "CMB → 科伦坡堡",
+        "fare": "LKR 4,800 · 8 分钟接送",
+        "accept": "接受行程",
+        "earningsScreenTitle": "收益",
+        "weekLabel": "本周",
+        "tripsLabel": "已完成行程",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "客运应用程序",
+      "driverPlay": "司机应用程序"
+    }
+  },
+  "finalCta": {
+    "badge": "开始你的旅程",
+    "heading": "您的 Sri Lanka 旅程从这里开始。",
+    "body": "预订机场接送、预订城市行程、雇用司机或通过私人旅游探索 Sri Lanka — 一切尽在一个高级平台。",
+    "primary": "预订乘车",
+    "secondary": "机场接送",
+    "download": "探索旅游团",
+    "trustAria": "为什么旅行者信任Q Pick",
+    "trust": {
+      "verified": "经过验证的驱动程序",
+      "pricing": "透明定价",
+      "support": "24/7 支持",
+      "coverage": "全岛覆盖"
+    }
+  },
+  "farePreview": {
+    "from": "来自",
+    "to": "至",
+    "note": "估价 · 在应用程序中确认"
+  },
+  "taxiFare": {
+    "eyebrow": "出租车费用估算器",
+    "heading": "估算您的出租车费用",
+    "sub": "设置地点、选择行程、添加预订详细信息，然后查看票价并预订。",
+    "pickup": "上车地点",
+    "pickupPlaceholder": "搜索取货 - 例如科伦坡堡",
+    "destination": "目的地",
+    "destinationPlaceholder": "搜索目的地 - 例如加勒菲斯",
+    "distance": "距离（自动）",
+    "waiting": "等待时间（分钟）",
+    "waitingHint": "首先 {free} 分钟空闲 · LKR {rate}/min 之后",
+    "rideType": {
+      "title": "乘坐类型",
+      "now": "立即骑行",
+      "schedule": "安排取件"
+    },
+    "vehicleType": "车辆类型",
+    "vehicleSelection": {
+      "eyebrow": "舰队",
+      "heading": "选择您的行程",
+      "sub": "选择最适合您旅程的车辆。",
+      "startingFrom": "开始于",
+      "from": "来自",
+      "after1Km": "1公里后",
+      "passengers": "乘客",
+      "luggage": "行李",
+      "seats": "{count} 席位",
+      "bags": "{count} 袋子",
+      "rating": "评分为 {rating}（满分 5 分）",
+      "ac": "空调",
+      "availability": "可用性",
+      "available": "可用",
+      "unavailable": "不可用",
+      "yes": "是的",
+      "no": "否",
+      "select": "选择",
+      "selectRide": "选择行程",
+      "selected": "已选择",
+      "prev": "以前的车辆",
+      "next": "下一辆车",
+      "day": "日费率",
+      "night": "夜间费用",
+      "eta": "~{minutes} 分钟内接载",
+      "base": "基地",
+      "perKm": "每公里"
+    },
+    "mobileFareBar": {
+      "continue": "继续"
+    },
+    "steps": {
+      "locations": "地点",
+      "vehicle": "车辆",
+      "details": "详情",
+      "summary": "总结",
+      "locationsTitle": "选择接送和目的地",
+      "vehicleTitle": "选择车辆",
+      "detailsTitle": "预订详情",
+      "summaryTitle": "票价汇总",
+      "continueVehicle": "继续前往车辆",
+      "continueDetails": "继续查看预订详情",
+      "continueSummary": "继续票价汇总"
+    },
+    "bookingDetails": {
+      "title": "预订详情",
+      "pickupDate": "取货日期",
+      "pickupTime": "接载时间",
+      "flightNumber": "航班号",
+      "flightNumberOptional": "可选",
+      "flightPlaceholder": "例如UL 226",
+      "passengerCount": "乘客人数",
+      "luggageCount": "行李数量",
+      "specialNotes": "特别说明",
+      "notesPlaceholder": "儿童座椅、见面会、登机口偏好……",
+      "passengerName": "乘客姓名",
+      "phone": "电话号码",
+      "driverNotes": "司机须知",
+      "paymentMethod": "付款方式",
+      "cash": "现金",
+      "card": "卡",
+      "wallet": "钱包",
+      "promoCode": "促销代码",
+      "promoPlaceholder": "输入促销代码",
+      "airportPickup": "机场接机",
+      "yes": "是的",
+      "no": "否",
+      "requiredHint": "选择有效的取件日期和时间以继续。",
+      "requiredDetailsHint": "输入乘客姓名、电话和付款方式以继续。",
+      "scheduleHint": "选择未来的取件日期和时间。"
+    },
+    "summaryLabel": "票价汇总",
+    "summary": {
+      "bookingSummary": "预订摘要",
+      "pickup": "皮卡",
+      "destination": "目的地",
+      "distance": "距离",
+      "duration": "时间",
+      "vehicle": "车辆",
+      "baseFare": "基本票价",
+      "distanceCharge": "距离收费",
+      "waitingCharge": "等候费",
+      "bookingFee": "预订费",
+      "airportFee": "机场费",
+      "toll": "收费站",
+      "parking": "停车",
+      "surge": "浪涌",
+      "discount": "折扣",
+      "total": "预计总数",
+      "estimatedFare": "预计票价",
+      "finalFare": "最终票价",
+      "grandTotal": "总计",
+      "viewFareBreakdown": "查看票价明细",
+      "payment": "付款方式",
+      "promo": "促销代码",
+      "eta": "预计到达时间",
+      "passengers": "乘客",
+      "luggage": "行李"
+    },
+    "confirmErrors": {
+      "pickup": "请设置上车地点。",
+      "destination": "请设定目的地。",
+      "vehicle": "请选择车辆。",
+      "schedule": "请选择有效的取件日期和时间。",
+      "payment": "请选择付款方式。",
+      "passengerName": "请输入乘客姓名。",
+      "phone": "请输入电话号码。",
+      "fare": "票价仍在计算中，请稍等。"
+    },
+    "estimateNote": "仅估算 · 在 Q Pick 应用程序中确认最终票价。仅限出租车 — 不适用于机场接送或旅游。",
+    "cta": "预订此行程",
+    "bookNow": "立即预订",
+    "scopeNote": "出租车费用·与机场和旅游分开",
+    "vehicles": {
+      "bike": "Q自行车",
+      "tuk": "Q笃",
+      "miniCar": "Q 弹性",
+      "wagon": "Q迷你",
+      "sedan": "Q轿车",
+      "miniVan": "Q 小型货车",
+      "van": "Q 平顶货车",
+      "longVan": "Q 高顶货车",
+      "suv": "Q型SUV",
+      "miniBus": "Q小巴士",
+      "longBus": "Q巴士"
+    },
+    "calculatingRoute": "计算行驶距离和行驶时间...",
+    "calculatingShort": "正在计算...",
+    "routeReady": "路线就绪 · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "路线",
+      "heading": "选择路线",
+      "recommended": "推荐",
+      "alternative": "另类",
+      "roadHighway": "高速公路",
+      "roadNormal": "正常",
+      "tags": {
+        "fastest": "最快路线",
+        "avoidHighway": "避开高速公路",
+        "highway": "高速公路路线",
+        "scenic": "风景路线",
+        "alternative": "替代路线"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "在地图上设置接送",
+      "setDestination": "在地图上设置目的地",
+      "pickupTitle": "确认取货",
+      "destinationTitle": "确认目的地",
+      "pickupHint": "搜索、使用您的位置或移动地图",
+      "destinationHint": "搜索或移动地图以设置目的地",
+      "pickupAddress": "取货地址",
+      "destinationAddress": "目的地地址",
+      "latitude": "纬度",
+      "longitude": "经度",
+      "confirmPickup": "确认取货",
+      "confirmDestination": "确认目的地",
+      "resolving": "寻找地址...",
+      "close": "关闭",
+      "searchLabel": "搜索",
+      "searchPickup": "搜索上车地点",
+      "searchDestination": "搜索目的地",
+      "searching": "正在寻找...",
+      "noResults": "没有找到结果",
+      "useCurrentLocation": "使用当前位置",
+      "selectOnMap": "在地图上选择",
+      "locating": "正在定位…",
+      "locationDenied": "位置权限被拒绝。在浏览器设置中启用它，或在地图上选择。",
+      "locationUnavailable": "无法获取您当前的位置。尝试搜索或地图。"
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API 密钥丢失。",
+      "routeFailed": "无法计算路线。请再试一次。",
+      "selectFromSuggestions": "请从建议列表中选择接送和目的地。"
+    }
+  },
+  "driverTrust": {
+    "verified": "已验证 Q Pick 驱动程序",
+    "trips": "{count} 行程"
+  },
+  "storeBadges": {
+    "comingSoon": "即将推出",
+    "getItOn": "穿上它",
+    "appStore": "应用商店",
+    "googlePlay": "谷歌游戏",
+    "iosAria": "在 App Store 上下载 — 即将推出",
+    "androidAria": "在 Google Play 上获取 — 即将推出",
+    "downloadOnAppStore": "在应用商店下载",
+    "getItOnGooglePlay": "在 Google Play 上获取"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "飞溅",
+      "login": "登录/欢迎",
+      "dashboard": "仪表板",
+      "account": "账户",
+      "pickup": "确认取货",
+      "destination": "选择目的地",
+      "vehicles": "选择车辆",
+      "booking": "预订确认",
+      "searching": "搜索附近的司机",
+      "accepted": "接受司机",
+      "arriving": "司机到达",
+      "pickedup": "乘客已接载",
+      "riding": "骑行进行中",
+      "completed": "行程完成",
+      "rate": "费率驱动因素",
+      "submitted": "已提交评级",
+      "home": "仪表板"
+    },
+    "shotAlt": "Q Pick 客户应用程序 — {label}",
+    "shotLabels": {
+      "login": "登录",
+      "home": "首页",
+      "account": "账户"
+    },
+    "splash": {
+      "tagline": "机场·乘车·司机"
+    },
+    "login": {
+      "welcome": "欢迎",
+      "subtitle": "登录以预订行程",
+      "emailOrPhone": "电子邮件或电话",
+      "password": "密码",
+      "continue": "继续"
+    },
+    "dashboard": {
+      "greeting": "下午好",
+      "whereTo": "去哪儿？",
+      "searchPlaceholder": "加勒堡，Sri Lanka",
+      "chips": {
+        "airport": "机场",
+        "home": "首页",
+        "saved": "已保存"
+      }
+    },
+    "pickup": {
+      "kicker": "确认取货",
+      "title": "这是你的位置吗？",
+      "label": "皮卡",
+      "value": "科伦坡堡",
+      "confirm": "确认取货"
+    },
+    "destination": {
+      "kicker": "选择目的地",
+      "title": "你要去哪里？",
+      "pickupLabel": "皮卡",
+      "pickupValue": "科伦坡堡",
+      "destinationLabel": "目的地",
+      "destinationValue": "加勒堡",
+      "continue": "继续"
+    },
+    "vehicles": {
+      "route": "科伦坡堡 → 加勒堡",
+      "title": "选择车辆",
+      "seats": "{count} 席位",
+      "ac": "空调",
+      "eta": "预计到达时间{time}",
+      "categories": {
+        "tuk": "嘟嘟车",
+        "mini": "迷你型",
+        "sedan": "轿车",
+        "suv": "SUV",
+        "van": "货车"
+      },
+      "models": {
+        "tuk": "巴贾吉RE",
+        "mini": "铃木奥拓",
+        "sedan": "丰田Premio",
+        "suv": "丰田普拉多",
+        "van": "丰田海狮"
+      },
+      "etas": {
+        "tuk": "3分钟",
+        "mini": "4分钟",
+        "sedan": "4分钟",
+        "suv": "6分钟",
+        "van": "8分钟"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "预订确认",
+      "title": "确认您的行程",
+      "vehicleMeta": "丰田 Premio · 4 座 · 空调",
+      "route": "路线",
+      "routeValue": "科伦坡堡 → 加勒堡",
+      "fare": "票价",
+      "fareValue": "LKR 18,500",
+      "eta": "预计到达时间",
+      "etaValue": "4分钟",
+      "payment": "付款方式",
+      "paymentValue": "签证····4242",
+      "bookRide": "预订乘车"
+    },
+    "searching": {
+      "title": "正在搜索附近的司机...",
+      "matching": "在科伦坡堡附近匹配一辆轿车",
+      "driverFound": "找到司机",
+      "sedanSelected": "已选轿车",
+      "selectedMeta": "丰田 Premio · 预计到达时间 3 分钟"
+    },
+    "accepted": {
+      "badge": "接受司机",
+      "driverName": "卡松·佩雷拉",
+      "vehicle": "丰田Premio",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "预计到达时间 3 分钟",
+      "track": "履带司机"
+    },
+    "live": {
+      "statusArriving": "司机到达 • 3 分钟",
+      "statusRiding": "前往加勒",
+      "driverVehicle": "卡顺·丰田Premio",
+      "enRoute": "前往接载途中 · 科伦坡堡",
+      "route": "科伦坡堡 → 加勒堡",
+      "minutesUnit": "分钟",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9",
+      "call": "呼叫司机",
+      "chat": "消息驱动"
+    },
+    "pickedUp": {
+      "title": "你已经上船了",
+      "subtitle": "与卡松一起前往加勒堡"
+    },
+    "completed": {
+      "title": "行程完成",
+      "route": "科伦坡堡 → 加勒堡",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "评价您的司机",
+      "driverName": "卡松·佩雷拉",
+      "vehicle": "丰田Premio",
+      "prompt": "今天的行程怎么样？",
+      "reviewPlaceholder": "写一篇简短的评论...",
+      "submit": "提交评级"
+    },
+    "submitted": {
+      "title": "感谢您的评价",
+      "subtitle": "您的反馈有助于驾驶员改进",
+      "backHome": "回到家"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "骑行",
+        "description": "在 Sri Lanka 预订优质城市或城际行程 — 透明的票价、经过验证的司机、实时跟踪。"
+      },
+      "title": "预订乘车",
+      "description": "通过透明的价格和经过验证的司机在 Sri Lanka 的任何地方预订乘车服务。",
+      "primaryCta": "预估票价",
+      "secondaryCta": "安全标准",
+      "intro": {
+        "badge": "骑行",
+        "title": "预订乘车",
+        "subtitle": "通过透明的价格和经过验证的司机在 Sri Lanka 的任何地方预订乘车服务。",
+        "nav": {
+          "live": "直播",
+          "tracking": "智能导航",
+          "route": "活动路线",
+          "corridor": "科伦坡 → 加勒菲斯",
+          "eta": "预计到达时间",
+          "etaValue": "12分钟",
+          "distance": "距离",
+          "distanceValue": "4.8公里",
+          "driverNearby": "司机在附近·接近皮卡车"
+        }
+      },
+      "booking": {
+        "title": "预订您的行程",
+        "trust": {
+          "pricing": "透明的定价。",
+          "drivers": "经过验证的驱动程序。",
+          "tracking": "实时跟踪。"
+        }
+      },
+      "why": {
+        "eyebrow": "为什么 Q Pick",
+        "heading": "为什么选择 Q Pick 骑行",
+        "items": {
+          "pricing": {
+            "title": "透明定价",
+            "body": "在确认之前请先查看完整的估价——没有意外的加价。"
+          },
+          "drivers": {
+            "title": "经过验证的驱动程序",
+            "body": "对司机进行背景调查。评级、保险、旅行就绪。"
+          },
+          "tracking": {
+            "title": "实时追踪",
+            "body": "通过可共享的预计到达时间跟踪从取货到送门的每一分钟。"
+          },
+          "support": {
+            "title": "24/7 支持",
+            "body": "无论白天还是晚上，只要您需要，即可获得帮助。"
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "舰队",
+        "heading": "选择您的行程",
+        "sub": "从自行车到公共汽车——选择适合您旅程的方式。",
+        "mini": "迷你型",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Q自行车",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "快速城市骑行"
+          },
+          "tuk": {
+            "name": "Q笃",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "经济实惠的短途旅行"
+          },
+          "flex": {
+            "name": "Q 弹性",
+            "passengers": "3 名乘客",
+            "luggage": "2 行李",
+            "blurb": "适合城市旅行的紧凑型掀背车"
+          },
+          "mini": {
+            "name": "Q迷你",
+            "passengers": "4 名乘客",
+            "luggage": "2 行李",
+            "blurb": "适合城市旅行的 Roomier Wagon R"
+          },
+          "sedan": {
+            "name": "Q轿车",
+            "passengers": "4 名乘客",
+            "luggage": "2 行李",
+            "blurb": "商务出行的舒适度"
+          },
+          "minivan": {
+            "name": "Q 小型货车",
+            "passengers": "6 名乘客",
+            "luggage": "4 行李",
+            "blurb": "适合家庭旅行的空间"
+          },
+          "frVan": {
+            "name": "Q 平顶货车",
+            "passengers": "8 名乘客",
+            "luggage": "6 行李",
+            "blurb": "舒适的团体机场接送服务"
+          },
+          "highRoofVan": {
+            "name": "Q 高顶货车",
+            "passengers": "10 名乘客",
+            "luggage": "8 行李",
+            "blurb": "更多的旅游和转乘空间"
+          },
+          "suv": {
+            "name": "Q型SUV",
+            "passengers": "5 名乘客",
+            "luggage": "4 行李",
+            "blurb": "非常适合家庭入住"
+          },
+          "miniBus": {
+            "name": "Q小巴士",
+            "passengers": "12 名乘客",
+            "luggage": "8 行李",
+            "blurb": "小团体旅行"
+          },
+          "bus": {
+            "name": "Q巴士",
+            "passengers": "20 名乘客",
+            "luggage": "12 行李",
+            "blurb": "大型团体接送"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "安全",
+        "heading": "充满信心地旅行。",
+        "body": "每一次 Q Pick 旅程都受到经过验证的司机、实时行程共享、紧急援助和专门客户支持的保护。",
+        "cta": "了解安全知识",
+        "pillars": {
+          "verified": {
+            "title": "验证机队",
+            "body": "每个司机加入网络之前都会进行身份和车辆检查。"
+          },
+          "sharing": {
+            "title": "旅行分享",
+            "body": "与家人、朋友或您的酒店分享实时旅行状态。"
+          },
+          "support": {
+            "title": "24/7 支持",
+            "body": "无论白天还是晚上，只要您需要，即可获得帮助。"
+          },
+          "emergency": {
+            "title": "紧急援助",
+            "body": "当路上感觉有问题时，旅途中的升级路径。"
+          }
+        }
+      },
+      "faq": {
+        "heading": "常见问题",
+        "sub": "预订前明确答案 — 乘车、机场接送和旅游。",
+        "items": {
+          "fareCalc": {
+            "q": "票价是如何计算的？",
+            "a": "出租车费用结合了基本票价、距离、等待时间和时段费率。在确认之前，您会在预订流程中看到实时估算。"
+          },
+          "airport": {
+            "q": "我可以提前预订机场接送服务吗？",
+            "a": "是的。使用机场接送服务请求前往班达拉奈克 (CMB) 的定时接载，并在需要时提供航班感知缓冲区。"
+          },
+          "tour": {
+            "q": "我可以定制我的 Sri Lanka 旅游吗？",
+            "a": "是的。私人旅游是根据您的日期、停靠点和车辆而设计的 - 在旅行前通过 Q Pick 完善计划。"
+          },
+          "vehicle": {
+            "q": "我可以选择我的车辆类别吗？",
+            "a": "是的。从 Q Bike 到 Q Bus，在预订转盘或车队部分选择适合乘客和行李的类别。"
+          },
+          "drivers": {
+            "q": "所有司机都经过验证吗？",
+            "a": "是的。 Q Pick 司机在加入网络之前完成身份、车辆和背景检查。"
+          },
+          "share": {
+            "q": "我可以与家人分享我的旅行吗？",
+            "a": "是的。分享实时旅行状态，以便家人、朋友或您的酒店可以跟踪旅程。"
+          },
+          "cancel": {
+            "q": "我可以取消预订吗？",
+            "a": "是的。从应用程序或通过支持取消。时间和任何费用取决于预订类型以及您距离取货的时间。"
+          },
+          "contact": {
+            "q": "我如何联系支持人员？",
+            "a": "您可以随时通过支持页面联系我们——电话、WhatsApp 或电子邮件。我们的团队 24/7 随时待命。"
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "还有疑问吗？",
+        "sub": "我们的团队 24/7 全天候为您服务，帮助您规划您的行程或 Sri Lanka 旅程。",
+        "primary": "预订您的行程",
+        "secondary": "联系支持人员"
+      },
+      "driverTrust": {
+        "name": "努万·P.",
+        "trips": "2.1k",
+        "rating": "4.97",
+        "verifiedLabel": "已验证 Q Pick 驱动程序",
+        "tripsLabel": "{count} 行程"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "机场接送",
+        "description": "高级班达拉奈克 (CMB) 机场接送服务，提供航班跟踪、见面和问候、专业司机和透明的固定价格。"
+      },
+      "hero": {
+        "eyebrow": "机场接送",
+        "titleLine1": "机场接送,",
+        "titleLine2": "时机完美。",
+        "description": "从 Bandaranaike International 机场 (CMB) 到 Sri Lanka 的任何地方，提供专业司机、实时航班跟踪、见面和问候以及透明的定价。",
+        "primaryCta": "预订机场接送服务",
+        "secondaryCta": "探索车辆",
+        "imageAlt": "Q Pick 司机使用高级接送车辆在 Bandaranaike International 机场迎接旅客",
+        "trust": {
+          "tracking": "航班追踪",
+          "greet": "见面会",
+          "pricing": "固定定价",
+          "support": "24/7 支持"
+        },
+        "cards": {
+          "flight": {
+            "label": "航班",
+            "code": "UL225",
+            "status": "准时"
+          },
+          "driver": {
+            "label": "司机",
+            "status": "6 分钟后到达",
+            "eta": "实时预计到达时间"
+          },
+          "meetGreet": "包含见面会和问候语"
+        }
+      },
+      "rates": {
+        "eyebrow": "官方价格",
+        "heading": "机场接送费率",
+        "sub": "搜索任何目的地并查看从 Bandaranaike International 机场 (CMB) 出发的官方空调接送票价。",
+        "popular": "热门目的地",
+        "searchLabel": "搜索目的地",
+        "searchPlaceholder": "搜索目的地或代码 - 例如康提, 坎, K015",
+        "searching": "正在寻找...",
+        "noResults": "没有与该搜索匹配的目的地。尝试其他名称或代码。",
+        "emptyTitle": "查找您的票价",
+        "emptyBody": "搜索任何目的地即可立即查看官方机场接送票价。",
+        "disclaimer": "显示的票价基于官方机场接送费率表。等待时间、额外停靠站、通行费或特殊要求可能会收取额外费用。",
+        "card": {
+          "destination": "目的地",
+          "fare": "官方机场接送票价",
+          "airport": "机场",
+          "status": "状态",
+          "statusValue": "官方机场价格",
+          "code": "代码",
+          "bookCta": "预订机场接送服务"
+        }
+      },
+      "booking": {
+        "eyebrow": "私人司机",
+        "heading": "预订机场接送服务。",
+        "sub": "从 Bandaranaike International 机场到 Sri Lanka 的任何地方 — 官方票价，根据您的旅程安排。",
+        "title": "机场接送",
+        "from": "来自",
+        "to": "至",
+        "toPlaceholder": "搜索目的地",
+        "searching": "正在寻找...",
+        "noResults": "没有匹配的目的地。尝试其他名称或代码。",
+        "date": "旅程日期",
+        "time": "接载时间",
+        "passengers": "乘客",
+        "adult": "成人",
+        "luggage": "行李",
+        "luggageOptions": {
+          "cabin": "客舱",
+          "medium": "中等",
+          "large": "大号"
+        },
+        "vehicle": "车辆类型",
+        "vehicleOptions": {
+          "mini": "迷你型",
+          "sedan": "轿车",
+          "van": "货车",
+          "suv": "SUV"
+        },
+        "nationality": "国籍",
+        "nationalityPlaceholder": "选择国籍",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "印度人",
+          "uk": "英国人",
+          "us": "美国",
+          "de": "德语",
+          "au": "澳大利亚",
+          "cn": "中文",
+          "other": "其他"
+        },
+        "special": "特别要求",
+        "specialPlaceholder": "可选 — 儿童座椅、见面和问候笔记、酒店名称……",
+        "distance": "预计距离",
+        "duration": "预计持续时间",
+        "officialPrice": "官方机场接送票价",
+        "cta": "预订您的行程",
+        "ctaLoading": "开放预订…",
+        "summaryTitle": "行程总结",
+        "route": "路线",
+        "destinationPending": "选择目的地"
+      },
+      "features": {
+        "eyebrow": "为什么选择 Q Pick 机场",
+        "heading": "从门到门的确定性。",
+        "items": {
+          "tracking": {
+            "title": "航班追踪",
+            "body": "自动监控您的到达。"
+          },
+          "greet": {
+            "title": "见面会",
+            "body": "您的司机在到达大厅内等候。"
+          },
+          "pricing": {
+            "title": "透明定价",
+            "body": "预订前了解您的票价。"
+          },
+          "support": {
+            "title": "24/7 支持",
+            "body": "随时可用。"
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "旅游",
+        "description": "与了解该岛的司机一起计划一次私人 Sri Lanka 之旅——即时估价、灵活的行程、豪华车辆。"
+      },
+      "eyebrow": "私人旅游",
+      "title": "专为岛屿设计的旅游",
+      "description": "一日游和多站旅程——茶乡、堡垒城镇、文化三角——司机了解时间、地形和客人的舒适度。",
+      "primaryCta": "计划我的旅行",
+      "secondaryCta": "查看套餐",
+      "why": {
+        "heading": "为什么选择私人旅游",
+        "sub": "您的步调、您的停靠点、一位值得信赖的司机——而不是一列固定循环的陌生人教练。",
+        "items": [
+          {
+            "title": "完全可定制",
+            "body": "日期、目的地和车辆 - 围绕您的实际旅行方式构建。"
+          },
+          {
+            "title": "全程同一个司机",
+            "body": "从机场到高地的连续性，无需重新解释偏好。"
+          },
+          {
+            "title": "透明的估算",
+            "body": "在询问之前查看清晰的范围 - 使用 Q Pick 完善详细信息。"
+          }
+        ]
+      },
+      "packages": {
+        "heading": "热门旅游套餐",
+        "sub": "您可以自定义起点，或将其用作规划器中的灵感。",
+        "coastal": {
+          "days": "4–5 天",
+          "title": "南部海岸",
+          "body": "CMB 抵达，科伦坡缓进，加勒堡，美蕊沙或乌纳瓦图纳步伐。",
+          "price": "从 LKR 78,000 起"
+        },
+        "triangle": {
+          "days": "5–6 天",
+          "title": "文化三角",
+          "body": "锡吉里耶、丹布拉、波隆纳鲁沃道路均内置酒店协调中心。",
+          "price": "从LKR 112,000起"
+        },
+        "highland": {
+          "days": "5–7 天",
+          "title": "茶乡",
+          "body": "康提到埃拉，乘坐高原航空，可选择火车时刻表，下山风景优美。",
+          "price": "从LKR 124,000起"
+        }
+      },
+      "itineraries": {
+        "heading": "建议行程",
+        "sub": "轻量级轮廓 - 在规划器中扩展或压缩它们。",
+        "south": {
+          "title": "南海岸重置",
+          "stops": [
+            "第一天 — CMB → 科伦坡",
+            "第 2-3 天 — 加勒和沿海城镇",
+            "第 4 天 — 返回或延长至埃拉"
+          ]
+        },
+        "culture": {
+          "title": "遗产赛道",
+          "stops": [
+            "第一天 — CMB → 锡吉里耶地区",
+            "第 2 天 — 文化三角遗址",
+            "第 3-4 天 — 康提和出发物流"
+          ]
+        },
+        "tea": {
+          "title": "高地环路",
+          "stops": [
+            "第一天 — 科伦坡 → 康提",
+            "第 2-3 天 — 努沃勒埃利耶/埃拉",
+            "第 4 天 — 风景区返回南部或 CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "车辆对比",
+        "sub": "选择适合您聚会规模的舒适设施 - 全部配有空调和经过认证的司机。",
+        "colVehicle": "车辆",
+        "colGuests": "嘉宾",
+        "colBest": "最适合",
+        "colFrom": "从 / 天",
+        "rows": {
+          "sedan": {
+            "name": "轿车",
+            "guests": "1–3",
+            "best": "情侣及轻型行李",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "家庭和高原道路",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "货车",
+            "guests": "1–9",
+            "best": "团体和多站套件",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "为什么选择 Q Pick 旅行",
+        "items": {
+          "chauffeur": {
+            "title": "经过验证的司机",
+            "body": "每次旅程都会检查身份和车辆。"
+          },
+          "pacing": {
+            "title": "岛屿踱步",
+            "body": "路线的时间安排是为了舒适，而不是匆忙的教练时间表。"
+          },
+          "estimate": {
+            "title": "明确的估计",
+            "body": "在与团队交谈之前了解范围。"
+          },
+          "support": {
+            "title": "可获得的支持",
+            "body": "当您需要时，行程变更和道路帮助。"
+          }
+        }
+      },
+      "faq": {
+        "heading": "常见问题",
+        "items": {
+          "customize": {
+            "q": "我可以完全定制行程吗？",
+            "a": "是的。使用规划器进行初步估算，然后使用 Q Pick 细化停靠点、节奏和酒店。"
+          },
+          "payment": {
+            "q": "当我得到估价后我需要付款吗？",
+            "a": "不需要。规划师仅供迎新之用——探索或询问无需付费。"
+          },
+          "hotels": {
+            "q": "你也订酒店吗？",
+            "a": "我们会协调您住宿期间的活动。酒店预订可以根据具体情况与合作伙伴一起安排。"
+          },
+          "changes": {
+            "q": "如果计划中途改变怎么办？",
+            "a": "当道路、天气或偏好发生变化时，您的司机和支持热线会调整每日节奏。"
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "准备好塑造您的旅程了吗？",
+        "sub": "分享日期和偏好——我们会将估算细化为清晰的私人旅游计划。",
+        "primary": "发送询问",
+        "secondary": "返回计划表",
+        "destinations": "浏览目的地"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "日间包机",
+          "body": "日出至日落路线，停靠点灵活，全包票价清晰。"
+        },
+        "multiDay": {
+          "title": "多日",
+          "body": "在您的行程中，与同一位值得信赖的司机一起滑行至高地。"
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "安全",
+        "description": "Q Pick 安全 — 经过验证的驾驶员、投保车辆、实时 GPS 跟踪以及整个 Sri Lanka 的 24/7 支持。"
+      },
+      "hero": {
+        "eyebrow": "信任与安全",
+        "headline": "旅行Sri Lanka",
+        "headlineLine2": "绝对有信心。",
+        "description": "每一次 Q Pick 旅程都有经过验证的司机、投保车辆、实时跟踪和专门支持 — 因此您可以安心地探索岛屿。",
+        "primaryCta": "预订乘车",
+        "secondaryCta": "联系支持人员",
+        "imageAlt": "Q Pick 私人司机在 Sri Lanka 的高级车辆旁"
+      },
+      "standards": {
+        "eyebrow": "我们的标准",
+        "heading": "安全融入每一次旅程",
+        "description": "从科伦坡走廊到高原发夹弯，Q Pick 在每次行程中都保持相同的验证、监控和支持标准。",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "经过验证的驱动程序",
+            "body": "在任何司机加入 Q Pick 网络之前进行身份、背景和执照检查。"
+          },
+          "verifiedVehicles": {
+            "title": "已验证车辆",
+            "body": "每个类别的定期检查、保险验证和空调车队标准。"
+          },
+          "gpsTracking": {
+            "title": "GPS追踪",
+            "body": "在整个旅程中，为您、您的房东和我们的运营服务台提供实时旅程可视性。"
+          },
+          "support247": {
+            "title": "24/7 支持",
+            "body": "旅途中的帮助和发布的紧急热线，以应对需要立即人工帮助的时刻。"
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "旅途保障",
+        "heading": "从预订到抵达均受到保护",
+        "steps": {
+          "book": {
+            "title": "预订",
+            "body": "通过透明的价格和专门的司机分配来确认您的乘车、接送或旅游。"
+          },
+          "verification": {
+            "title": "验证",
+            "body": "发货前，驾驶员和车辆详细信息将根据 Q Pick 安全标准进行验证。"
+          },
+          "pickup": {
+            "title": "皮卡",
+            "body": "您的司机抵达时会分享车辆详细信息 - 机场、酒店或别墅集合。"
+          },
+          "tracking": {
+            "title": "实时追踪",
+            "body": "实时跟踪您的旅程，并与家人或酒店前台分享实时状态。"
+          },
+          "arrival": {
+            "title": "安全抵达",
+            "body": "在随时待命的支持下到达目的地，直到您的旅程完成。"
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "始终可达",
+        "heading": "紧急援助",
+        "description": "如果路上感觉有什么问题，无论白天还是晚上，无论在岛上的任何地方，只需一个电话或一条消息，我们的团队就可以为您服务。",
+        "hotline": {
+          "label": "紧急热线",
+          "hint": "对于需要立即援助的紧急旅行情况。"
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "向我们的支持台发送消息以进行快速协调和行程更新。"
+        },
+        "email": {
+          "label": "电子邮件",
+          "hint": "用于非紧急查询、合作伙伴请求和预订跟进。"
+        }
+      },
+      "stats": {
+        "eyebrow": "从数字来看",
+        "heading": "旅行者信赖的标准",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "经过验证的驱动程序"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "保险旅程"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "支持范围"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "客户满意度"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "你的旅程等待着",
+        "heading": "充满信心地旅行",
+        "description": "预订私人司机、机场接送或海岛旅游 — 从第一英里到最后一英里均受到 Q Pick 安全标准的支持。",
+        "primaryCta": "预订乘车",
+        "secondaryCta": "计划一次旅行",
+        "imageAlt": "锡吉里耶岩石堡垒矗立在 Sri Lanka 的热带森林之上"
+      },
+      "faqHeading": "常见问题",
+      "faqs": [
+        {
+          "q": "Q Pick 驱动程序是否经过验证？",
+          "a": "是的。司机在加入网络之前完成身份、车辆和背景检查。"
+        },
+        {
+          "q": "我可以分享我的旅行吗？",
+          "a": "是的。实时旅行共享让家人、房东或酒店前台可以跟踪您的旅程。"
+        },
+        {
+          "q": "如果我在骑行过程中需要帮助怎么办？",
+          "a": "在关键时刻可提供旅途中的支持和公开的紧急热线。"
+        },
+        {
+          "q": "旅途中有保险吗？",
+          "a": "承保范围适用于 Q Pick 标准下的每次旅程。"
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "使用 Q Pick 驾驶",
+        "description": "加入 Q Pick 作为专业司机 — 优质客户、公平收入、灵活的时间表以及遍布 Sri Lanka 的 24/7 司机支持。"
+      },
+      "hero": {
+        "eyebrow": "司机招聘",
+        "headline": "驾驶 Sri Lanka 的",
+        "headlineLine2": "优质旅程。",
+        "description": "加入精心策划的专业司机网络，为游客、酒店和商务旅客提供服务，为您所熟悉的道路提供透明的收入、有尊严的调度和支持。",
+        "primaryCta": "立即申请",
+        "secondaryCta": "查看要求",
+        "imageAlt": "Q Pick 专业司机在 Sri Lanka 的高级车辆旁"
+      },
+      "whyJoin": {
+        "eyebrow": "为什么加入Q Pick",
+        "heading": "专为以道路为荣的驾驶员打造",
+        "description": "Q Pick 不是通用的叫车应用程序。我们将经过验证的司机与高端需求联系起来——机场接送、私人旅游和商务旅行。",
+        "cards": {
+          "earnings": {
+            "title": "更高的收入",
+            "body": "享受优质机场票价、旅游票价和司机票价，而不是逐底定价。"
+          },
+          "schedule": {
+            "title": "灵活的时间表",
+            "body": "选择何时上网。根据您的条件平衡机场运营、日租和多日游。"
+          },
+          "clients": {
+            "title": "优质游客和企业客户",
+            "body": "为期望专业服务的酒店客人、商务旅客和策划旅游客户提供服务。"
+          },
+          "support": {
+            "title": "24/7 司机支持",
+            "body": "当您无论白天还是晚上在路上需要帮助时，都有操作台和紧急热线。"
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "机队类别",
+        "heading": "驾驶您操作的车辆",
+        "description": "Q Pick 支持各种私人司机类别——从紧凑型城市汽车到高顶货车和客车。"
+      },
+      "journey": {
+        "eyebrow": "您获得批准的途径",
+        "heading": "从申请到您的第一次优质旅行",
+        "steps": {
+          "apply": {
+            "title": "申请",
+            "body": "使用您的个人、车辆和文件详细信息完成在线注册。"
+          },
+          "verify": {
+            "title": "验证文件",
+            "body": "我们的团队会审核您的 NIC、驾照、保险和车辆登记。"
+          },
+          "inspection": {
+            "title": "车辆检验",
+            "body": "标准检查确认您的车辆符合 Q Pick 安全和舒适要求。"
+          },
+          "training": {
+            "title": "培训",
+            "body": "简要介绍 Q Pick 服务标准、应用程序使用情况和宾客接待。"
+          },
+          "approved": {
+            "title": "已批准",
+            "body": "一旦经过验证，您的个人资料就会上线，但在获得完全批准之前您无法上线。"
+          },
+          "start": {
+            "title": "开始驾驶",
+            "body": "接受优质旅行、机场接送和全岛旅游任务。"
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "司机的声音",
+        "heading": "选择Q Pick的司机",
+        "items": [
+          {
+            "name": "卡松·佩雷拉",
+            "role": "轿车司机 · 科伦坡",
+            "quote": "机场接送和酒店接送是一致的。在接受之前我就知道票价，并且在我打电话时支持答复。"
+          },
+          {
+            "name": "尼马尔·费尔南多",
+            "role": "高顶货车 · 康提",
+            "quote": "旅游团和家庭接送比随机的城市游乐项目更划算。 Q Pick 客户期望质量——并相应地给小费。"
+          },
+          {
+            "name": "鲁万·席尔瓦",
+            "role": "SUV司机·加勒",
+            "quote": "入职是彻底但公平的。一旦获得批准，应用程序和运营团队就可以轻松地在旺季保持忙碌。"
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "资质",
+        "heading": "驾驶员要求",
+        "description": "我们保持较高的标准来保护客人和司机。申请前请确保您满足这些条件。",
+        "items": [
+          "有效的 Sri Lankan 驾驶执照，具有至少 3 年的驾驶经验",
+          "国民身份证 (NIC) 和清晰的背景调查",
+          "已注册、已投保的车辆机械状况良好",
+          "有效的收入许可证和全面的保险文件",
+          "具有 Q Pick 驱动程序应用程序移动数据的智能手机",
+          "专业的外表和礼貌的宾客沟通",
+          "至少精通僧伽罗语、英语或泰米尔语之一",
+          "愿意服务机场、城市、城际优质出行"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "说明性收益",
+        "heading": "收入示例",
+        "description": "下图仅是说明性示例——不保证收入。实际收入取决于时间、季节、车辆类别和旅行类型。",
+        "disclaimer": "仅作说明。不是收入的保证。受 Q Pick 佣金、需求和个人表现的约束。",
+        "examples": [
+          {
+            "label": "机场接送（CMB → 科伦坡）",
+            "amount": "LKR 8,500 – 12,000",
+            "note": "轿车·单程·非高峰期"
+          },
+          {
+            "label": "全日制司机租赁",
+            "amount": "LKR 18,000 – 28,000",
+            "note": "SUV 或面包车 · 8–10 小时 · 不含燃油"
+          },
+          {
+            "label": "多日游（每天）",
+            "amount": "LKR 22,000 – 35,000",
+            "note": "高顶面包车·文化三角路线"
+          },
+          {
+            "label": "城市骑行（科伦坡）",
+            "amount": "LKR 2,500 – 5,500",
+            "note": "迷你或轿车·计价"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "准备好加入了吗？",
+        "heading": "成为 Q Pick 司机",
+        "description": "今天开始您的申请。按照您自己的节奏完成注册——我们的团队将指导您完成验证和批准。",
+        "primaryCta": "立即申请",
+        "secondaryCta": "查看要求",
+        "imageAlt": "Q Pick 移动设备上的司机地图和行程仪表板"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "合作伙伴",
+        "description": "与 Q Pick 合作，按照一种值得信赖的标准提供酒店、别墅和企业宾客接送服务。"
+      },
+      "title": "能够很好地感动客人的合作伙伴",
+      "description": "酒店、别墅和企业 — 根据共享的 Q Pick 标准，您的前台可以信赖的白手套接送服务。",
+      "primaryCta": "与合作伙伴交谈",
+      "secondaryCta": "机场产品",
+      "body": "宾客到达链接、预定接送服务和运营可视性 — 旨在让酒店团队花更少的时间协调 WhatsApp 车队，而将更多的时间用于接待。",
+      "logoRowEyebrow": "专为热情好客而打造",
+      "logoRowAriaLabel": "酒店合作伙伴",
+      "partnerNames": [
+        "加勒菲斯酒店",
+        "肉桂",
+        "杰特威",
+        "香格里拉",
+        "阿曼加拉"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "关于",
+        "description": "Quick Pick App (Pvt) Ltd 打造 Q Pick — Sri Lanka 内值得信赖的私人移动层：乘车、机场接送和岛屿旅行。"
+      },
+      "title": "专为 Sri Lanka 的移动方式而设计",
+      "description": "Q Pick 由 Quick Pick App (Pvt) Ltd 开发和运营，该公司是全岛值得信赖的私人移动层，拥有豪华礼宾服务的平静和现代移动网络的可靠性。",
+      "primaryCta": "预订乘车",
+      "secondaryCta": "和我们一起开车",
+      "paragraphs": [
+        "我们之所以存在，是因为支离破碎的 WhatsApp 车队和通用的全球应用程序都忽略了旅行者和居民真正需要的东西：确定性、热情好客和对地方的尊重。",
+        "Quick Pick App (Pvt) Ltd 使用一种语言设计乘客、驾驶员和操作界面 - 为人类在 Sri Lanka 旅行提供安静的技术。"
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "支持",
+        "description": "请联系 Q Pick 支持人员了解乘车、接送、旅游和合作伙伴查询。"
+      },
+      "title": "支持",
+      "description": "我们随时为您解答旅行问题、合作伙伴咨询以及需要人工帮助的时刻。",
+      "emailLabel": "电子邮件",
+      "phoneLabel": "电话",
+      "locationLabel": "地点",
+      "emergencyLabel": "紧急专线"
+    },
+    "destinations": {
+      "meta": {
+        "title": "目的地",
+        "description": "探索 Sri Lanka 的 Q Pick 目的地 — 科伦坡、加勒、埃拉、锡吉里亚等。"
+      },
+      "title": "目的地",
+      "description": "为您的旅行方式而设计的地方——港口道路、堡垒城墙、高地薄雾和文化三角区。"
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "目的地",
+      "primaryCta": "预订乘车",
+      "secondaryCta": "探索旅游"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "隐私",
+          "description": "Q Pick 隐私政策 — 我们如何收集、使用和保护您的信息。"
+        },
+        "title": "隐私",
+        "description": "我们仅收集安全运送您所需的信息，并且我们会谨慎对待行程数据。",
+        "body": "此页面是第一阶段 shell。完整的合法副本将涵盖帐户数据、有效旅行期间的位置、付款处理机构、保留期以及您根据适用的 Sri Lankan 和国际隐私法所享有的权利。",
+        "questionsPrefix": "问题：",
+        "supportEmail": "支持@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "条款",
+          "description": "Q Pick 乘客、合作伙伴和司机的服务条款。"
+        },
+        "title": "服务条款",
+        "description": "该协议管理跨乘车、接送和旅游的 Q Pick 服务的使用。",
+        "body": "此页面是第一阶段 shell。完整条款将定义乘客和司机的义务、取消、责任限制、可接受的使用和争议解决。",
+        "questionsPrefix": "问题：",
+        "supportEmail": "支持@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "找不到页面",
+      "description": "您请求的路线还不是 Q Pick 地图的一部分。",
+      "primaryCta": "回到家",
+      "secondaryCta": "支持",
+      "continue": "或者继续 {ride}、{airport} 或 {tours}。",
+      "links": {
+        "ride": "骑行",
+        "airport": "机场",
+        "tours": "旅游"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka，坚定地感动。",
+        "description": "Sri Lanka 的优质出行服务 — 在一个值得信赖的平台下提供机场接送、城市出租车、城际乘车、司机服务、商务旅行和私人旅游。"
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Sri Lanka 的高级流动性",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Sri Lanka 的优质出行服务 — 机场接送、城市出租车、城际乘车、司机服务和私人旅游均在一个值得信赖的平台上进行。"
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "带司机的私人Sri Lanka旅游| __QP_品牌__",
+      "description": "与 Q Pick 一起探索 Sri Lanka — 私人司机、高档车辆以及跨越文化遗址、山区、海滩和野生动物的定制旅程。",
+      "ogTitle": "通过 Q Pick 私人旅游探索 Sri Lanka",
+      "twitterTitle": "Sri Lanka 私人旅游| __QP_品牌__",
+      "twitterDescription": "配备私人司机和高档车辆的定制岛屿之旅。"
+    },
+    "hero": {
+      "eyebrow": "Q Pick 私人旅游",
+      "headline": "与 Q Pick 一起探索 Sri Lanka",
+      "subtitle": "与私人司机、高档车辆和量身定制的体验一起探索难忘的旅程。",
+      "primaryCta": "探索系列",
+      "secondaryCta": "计划我的旅行"
+    },
+    "finalCta": {
+      "headline": "您的 Sri Lanka 旅程从这里开始",
+      "body": "分享您的日期和目的地——我们制定私人司机行程并确认书面报价。",
+      "ctaLabel": "计划我的旅程",
+      "secondaryLabel": "与旅行专家交谈"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "私人司机",
+        "description": "持有执照的司机了解寺庙礼仪、高原道路和平静的机场抵达。"
+      },
+      "airport": {
+        "title": "机场接机",
+        "description": "Bandaranaike International (CMB) 见面会时间安排在您的航班上。"
+      },
+      "support": {
+        "title": "24/7 支持",
+        "description": "出发前和路上都有一张真正的 Q Pick 办公桌 — WhatsApp 和电话，无论白天黑夜。"
+      },
+      "vehicles": {
+        "title": "豪华车",
+        "description": "轿车、SUV、面包车和客车 — 私人客舱，配备空调，可存放行李。"
+      },
+      "pricing": {
+        "title": "透明定价",
+        "description": "审查后的书面报价——没有发明的网站价格或路边惊喜。"
+      },
+      "personal": {
+        "title": "个性化旅游",
+        "description": "每个包裹都是可编辑的：目的地、天数、配速和车辆类别。"
+      },
+      "rating": {
+        "title": "4.9 宾客评级",
+        "description": "私人旅游客人在司机服务、节奏和沟通方面一直受到好评。"
+      },
+      "licensed": {
+        "title": "持牌经营者",
+        "description": "Quick Pick App (Pvt) Ltd — 在 Sri Lankan 注册的运营商，拥有经过审查的司机和投保的车辆。"
+      },
+      "secure": {
+        "title": "安全预订",
+        "description": "旅行前的书面报价、确认的行程和透明的包含内容。"
+      }
+    },
+    "explorer": {
+      "eyebrow": "精选系列",
+      "title": "选择您的旅程",
+      "subtitle": "按旅行风格组织的高级私人旅游 - 在这里打开一个类别来探索其故事、特色行程和旅程详细信息。",
+      "searchPlaceholder": "搜索目的地、体验或旅游名称...",
+      "clearSearch": "清除搜索",
+      "categoriesAria": "旅游类别",
+      "mapSelection": "地图选择",
+      "multiDay": "多日旅程",
+      "premiumNorthern": "优质私人旅游",
+      "sortAria": "对旅游套餐进行排序",
+      "filterAria": "筛选旅游套餐",
+      "allCategoriesTitle": "所有类别",
+      "allCategoriesIntro": "浏览每一个已发布的私人旅游 - 重置并探索完整的 Q Pick 系列。",
+      "viewAllCategories": "查看所有类别",
+      "destinationExperiences": "目的地体验",
+      "destinationExperiencesSub": "真实的地点、季节和摄影窗口——而不仅仅是卡片上的标签。",
+      "vehiclesTitle": "私人舒适的旅行",
+      "vehiclesSub": "轿车到小型客车——空调、行李空间和公路充电。",
+      "trustTitle": "为什么选择 Q Pick 旅行",
+      "reviewsEmptyTitle": "客座故事即将推出",
+      "reviewsEmptyBody": "当客人分享他们的旅程时，经过验证的私人旅游评论将显示在此处。",
+      "faqEyebrow": "常见问题",
+      "faqLead": "在使用 Q Pick 计划旅程之前您需要了解的一切。",
+      "noResults": "没有符合您搜索条件的游览。尝试其他关键字或重置过滤器。",
+      "noToursTitle": "没有符合您搜索条件的旅行团",
+      "noToursBody": "尝试不同的关键字，或重置过滤器以浏览完整的集合。",
+      "planCustomTour": "规划定制之旅",
+      "resetFilters": "重置过滤器",
+      "sortBy": "排序依据",
+      "mapJourneysThrough": "{name} 的旅程",
+      "itineraryOne": "行程",
+      "itineraryMany": "行程",
+      "matchingQuery": "匹配“{query}”",
+      "northernPeninsula": "北部半岛",
+      "premiumJaffna": "优质贾夫纳体验",
+      "premiumJaffnaSub": "{count} {experiences} — 遗产城市漫步、岛屿渡轮和带私人司机支持的圣船之旅。",
+      "experienceOne": "经验",
+      "experienceMany": "经历",
+      "reviewsEmptyDisclaimer": "经过验证的客人评论将在旅行发布后出现。我们不会展示虚构的推荐、评级或奖项。",
+      "trustBeforeTestimonials": "先信任后评价",
+      "faqTitle": "常见问题解答",
+      "defaultImageAlt": "风景优美的Sri Lanka高原之旅",
+      "openCategory": "打开{title}",
+      "countItineraries": "{count} 行程",
+      "countPackages": "{count} 包",
+      "countPackage": "{count} 包",
+      "cmbService": "CMB服务",
+      "packagesFound": "{count} 包",
+      "dayTour": "一日游",
+      "daysTour": "{count} 天",
+      "fromPrice": "价格请咨询",
+      "viewDetails": "查看详情",
+      "bookTour": "预订此行程",
+      "idealFor": "{value} 的理想选择",
+      "premiumNorthernHeading": "北部 Sri Lanka",
+      "premiumNorthernSub": "文化遗产寺庙、偏远岛屿和贾夫纳的文化深度——三段配有专职司机的优质旅程。"
+    },
+    "filters": {
+      "all": "全部",
+      "classic": "经典",
+      "luxury": "奢华",
+      "wildlife": "野生动物",
+      "adventure": "冒险",
+      "beach": "海滩",
+      "honeymoon": "蜜月",
+      "wellness": "健康",
+      "family": "家庭",
+      "day-tours": "一日游"
+    },
+    "sort": {
+      "featured": "精选",
+      "newest": "最新",
+      "duration": "持续时间",
+      "popular": "热门"
+    },
+    "badges": {
+      "best-seller": "畅销书",
+      "luxury": "奢华",
+      "new": "新",
+      "family-friendly": "适合家庭入住",
+      "eco": "生态",
+      "adventure": "冒险"
+    },
+    "breadcrumbs": {
+      "home": "首页",
+      "tours": "旅游"
+    },
+    "jsonLd": {
+      "touristType": "休闲旅客"
+    },
+    "reviewsMeta": {
+      "title": "宾客评论",
+      "emptyTitle": "路上的故事",
+      "emptyBody": "经过验证的客人评论将在旅行发布后出现。我们不会展示虚构的推荐、评级或奖项。"
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 日 埃拉火车逃脱",
+        "idealFor": "时间有限的铁路爱好者",
+        "intro": "穿过茶谷的观光铁路。这个为期 4 天的私人司机之旅将参观康提、努沃勒埃利耶、埃拉——时间有限的铁路爱好者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "火车段",
+          "九拱门",
+          "茶歇"
+        ],
+        "itinerary": [
+          {
+            "title": "探索康提",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索努沃勒埃利耶",
+            "description": "与您的专属司机一起探索努沃勒埃利耶 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索艾拉",
+            "description": "与您的专属司机一起探索埃拉 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5 日 米瑞莎鲸鱼海岸",
+        "idealFor": "海洋野生动物爱好者",
+        "intro": "鲸鱼季节和堡垒遗产。这个为期 5 天的私人司机之旅将参观加勒、米瑞莎、本托塔——海洋野生动物爱好者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "美蕊沙海岸",
+          "观鲸",
+          "加勒堡"
+        ],
+        "itinerary": [
+          {
+            "title": "探索加勒",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索美瑞莎",
+            "description": "与您的专属司机一起探索美蕊沙 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索本托塔",
+            "description": "与您的专属司机一起探索本托塔 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "本托塔休闲",
+            "description": "与您的专属司机一起探索本托塔 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 日 豪华蜜月海岸",
+        "idealFor": "沿海蜜月者",
+        "intro": "堡垒浪漫和海洋别墅。这个为期 6 天的私人司机之旅将参观科伦坡、加勒、本托塔、米瑞莎——沿海蜜月胜地。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "加勒堡",
+          "本托塔",
+          "美蕊沙日落"
+        ],
+        "itinerary": [
+          {
+            "title": "探索科伦坡",
+            "description": "与您的专属司机一起探索科伦坡 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索加勒",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索本托塔",
+            "description": "与您的专属司机一起探索本托塔 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索美瑞莎",
+            "description": "与您的专属司机一起探索美蕊沙 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "米瑞莎闲暇时",
+            "description": "与您的专属司机一起探索美蕊沙 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6天朝圣三角",
+        "idealFor": "以信仰为主导的团体旅游",
+        "intro": "岛上遍布圣地。这个为期 6 天的私人司机之旅将参观康提、阿努拉德普勒、丹布勒、波隆纳鲁沃 — 以信仰为主导的团体旅行。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "佛牙寺",
+          "阿努拉德普勒",
+          "丹布拉石窟"
+        ],
+        "itinerary": [
+          {
+            "title": "探索康提",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索阿努拉德普勒",
+            "description": "与您的专属司机一起探索阿努拉德普勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索丹布拉",
+            "description": "与您的专属司机一起探索丹布勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索波隆纳鲁沃",
+            "description": "与您的专属司机一起探索波隆纳鲁沃 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "波隆纳鲁沃休闲",
+            "description": "与您的专属司机一起探索波隆纳鲁沃 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 天节日文化和康提",
+        "idealFor": "节日期间游客",
+        "intro": "Perahera 计时与传统。这个为期 8 天的私人司机之旅将参观科伦坡、康提、丹布勒、锡吉里亚、尼甘布 - 节日季节的游客。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "康提节日",
+          "参观寺庙",
+          "三角形图标"
+        ],
+        "itinerary": [
+          {
+            "title": "探索科伦坡",
+            "description": "与您的专属司机一起探索科伦坡 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索康提",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索丹布拉",
+            "description": "与您的专属司机一起探索丹布勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索锡吉里亚",
+            "description": "与您的专属司机一起探索锡吉里耶 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索尼甘布",
+            "description": "与您的专属司机一起探索尼甘布 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "尼甘布休闲",
+            "description": "与您的专属司机一起探索尼甘布 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "尼甘布休闲",
+            "description": "与您的专属司机一起探索尼甘布 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9 日 蜜月天堂",
+        "idealFor": "新婚夫妇和浪漫之旅",
+        "intro": "在薄雾和海洋中亲密地踱步。这个为期 9 天的私人司机之旅将参观尼甘布、康提、努沃勒埃利耶、埃拉、本托塔、加勒——新婚夫妇和浪漫之旅。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "茶乡",
+          "艾拉浪漫",
+          "海岸日落"
+        ],
+        "itinerary": [
+          {
+            "title": "探索尼甘布",
+            "description": "与您的专属司机一起探索尼甘布 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索康提",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索努沃勒埃利耶",
+            "description": "与您的专属司机一起探索努沃勒埃利耶 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索艾拉",
+            "description": "与您的专属司机一起探索埃拉 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索本托塔",
+            "description": "与您的专属司机一起探索本托塔 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索加勒",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10 天阿育吠陀健康之旅",
+        "idealFor": "注重健康的旅行者",
+        "intro": "恢复章节融入私人旅行。这个为期 10 天的私人司机之旅将参观尼甘布、康提、本托塔、美蕊沙、加勒——注重健康的旅行者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "健康节奏",
+          "海岸平静",
+          "神庙平衡"
+        ],
+        "itinerary": [
+          {
+            "title": "探索尼甘布",
+            "description": "与您的专属司机一起探索尼甘布 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索康提",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索本托塔",
+            "description": "与您的专属司机一起探索本托塔 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索美瑞莎",
+            "description": "与您的专属司机一起探索美蕊沙 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "探索加勒",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "加勒休闲",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          },
+          {
+            "title": "出发及继续行程",
+            "description": "前往科伦坡或 Bandaranaike International 机场的私人接送服务 — 或继续您的定制路线 Q Pick。"
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "科伦坡首都发现日",
+        "idealFor": "中途停留的客人和城市爱好者",
+        "intro": "科伦坡的天际线、殖民时期的小巷和加勒菲斯的日落。这个为期 1 天的私人司机之旅参观科伦坡 - 中途停留的客人和城市爱好者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "莲花塔观景台",
+          "加勒面绿",
+          "科伦坡餐饮站"
+        ],
+        "itinerary": [
+          {
+            "title": "科伦坡发现",
+            "description": "与您的专属司机一起探索科伦坡 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "加勒堡遗产日",
+        "idealFor": "南海岸的历史爱好者",
+        "intro": "荷兰城墙和印度洋的灯光。这个为期 1 天的私人司机之旅将参观南海岸的历史爱好者加勒。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "加勒堡灯塔",
+          "城墙步行",
+          "精品街"
+        ],
+        "itinerary": [
+          {
+            "title": "加勒发现",
+            "description": "与您的专属司机一起探索加勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "锡吉里耶岩日出日",
+        "idealFor": "早起者和摄影嘉宾",
+        "intro": "黎明时分的狮子山。这个为期 1 天的私人司机之旅参观锡吉里耶 - 早起者和摄影客人。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "锡吉里亚峰会",
+          "水上花园",
+          "壁画画廊"
+        ],
+        "itinerary": [
+          {
+            "title": "锡吉里耶发现",
+            "description": "与您的专属司机一起探索锡吉里耶 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "康提圣城日",
+        "idealFor": "精神旅行者和家庭",
+        "intro": "佛牙寺和平静的湖水。这个为期 1 天的私人司机之旅参观康提 - 精神旅行者和家庭。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "佛牙寺",
+          "康提湖",
+          "佩拉德尼亚选项"
+        ],
+        "itinerary": [
+          {
+            "title": "康提发现",
+            "description": "与您的专属司机一起探索康提 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "埃拉高地景观日",
+        "idealFor": "火车中途停留和山脊步行者",
+        "intro": "九个拱门和迷雾笼罩的山谷。这个为期 1 天的私人司机之旅参观埃拉 - 火车中途停留和山脊步行者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "九孔桥",
+          "小亚当峰",
+          "茶谷咖啡馆"
+        ],
+        "itinerary": [
+          {
+            "title": "艾拉发现",
+            "description": "与您的专属司机一起探索埃拉 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "雅拉野生动物狩猎日",
+        "idealFor": "行程紧张的 Safari 爱好者",
+        "intro": "黎明时分的豹国。这个为期 1 天的私人司机之旅访问雅拉 - 行程紧凑的狩猎爱好者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "吉普车野生动物园窗口",
+          "干区泻湖",
+          "鸟类保护协会"
+        ],
+        "itinerary": [
+          {
+            "title": "雅拉发现",
+            "description": "与您的专属司机一起探索雅拉 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "阿努拉德普勒圣道日",
+        "idealFor": "佛教遗产朝圣者",
+        "intro": "古老的佛塔和菩提传统。这个为期 1 天的私人司机之旅参观阿努拉德普勒 - 佛教遗产朝圣者。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "鲁万韦利萨亚",
+          "菩提圣树",
+          "修道院遗址"
+        ],
+        "itinerary": [
+          {
+            "title": "阿努拉德普勒发现",
+            "description": "与您的专属司机一起探索阿努拉德普勒 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "美蕊沙南部海岸日",
+        "idealFor": "观鲸季游客",
+        "intro": "椰子湾和海洋地平线。这个为期 1 天的私人司机之旅将参观米瑞莎（鲸鱼季节的游客）。您的专职司机负责驾驶道路，而您则可以专注于寺庙、观景台、野生动物窗户和悠闲的沿海下午。每次 Q Pick 旅行都会在对您的日期、车辆偏好和节奏进行书面审核后进行完善。",
+        "highlights": [
+          "美蕊沙海滩",
+          "椰子山",
+          "赏鲸季节"
+        ],
+        "itinerary": [
+          {
+            "title": "米瑞莎发现",
+            "description": "与您的专属司机一起探索美蕊沙 - 时间可根据天气、门票和您的节奏灵活调整。"
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "贾夫纳遗产城市之旅",
+        "idealFor": "探索北部的遗产旅行者",
+        "intro": "在四小时的私人旅游中探索贾夫纳的泰米尔遗产。您的司机会带您从纳鲁尔科维尔 (Nallur Kovil) 的古普拉姆 (gopuram) 前往贾夫纳堡 (Jaffna Fort) 城墙、历史悠久的公共图书馆、色彩缤纷的当地市场站以及经典的里约冰淇淋。",
+        "highlights": [
+          "纳鲁尔神庙",
+          "贾夫纳堡",
+          "公共图书馆",
+          "当地市场",
+          "里约冰淇淋"
+        ],
+        "itinerary": [
+          {
+            "title": "贾夫纳遗产赛道",
+            "description": "纳鲁尔神庙、贾夫纳堡、公共图书馆、市场浏览和里约冰淇淋 - 根据开放时间和您的兴趣而定。"
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "代尔夫特岛探险",
+        "idealFor": "岛屿探险家和摄影师",
+        "intro": "乘坐渡轮前往偏远的代尔夫特岛，进行全日冒险。漫步珊瑚海滩，寻找著名的猴面包树和女王塔遗址，在开阔的平原上观看野马，然后在负责大陆接送的私人司机的陪同下返回。",
+        "highlights": [
+          "乘坐渡轮",
+          "野马",
+          "猴面包树",
+          "皇后塔",
+          "珊瑚海滩"
+        ],
+        "itinerary": [
+          {
+            "title": "代尔夫特岛探险",
+            "description": "渡轮穿越、野马平原、猴面包树、女王塔和珊瑚海滩时光 - 乘坐私家车前往大陆。"
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "奈纳提武圣岛之旅",
+        "idealFor": "朝圣者和文化旅行者",
+        "intro": "航行至奈纳蒂武 (Nainativu)，开始 6 小时的神圣岛屿之旅。参观 Nagadeepa 寺庙和 Nagapooshani Amman Kovil，体验渡船，并在岸上私人司机的支持下吸收 Sri Lanka 北部岛屿的佛教和印度教遗产。",
+        "highlights": [
+          "那加迪帕寺",
+          "纳加普沙尼安曼寺",
+          "乘船游览",
+          "文化体验",
+          "锡吉里耶岩石堡垒的灯光更凉爽",
+          "丹布拉石窟寺壁画",
+          "阿努拉德普勒或波隆纳鲁沃圣地",
+          "私人文化三角司机",
+          "康提的佛牙寺",
+          "努沃勒埃利耶周围的茶园",
+          "埃拉九拱桥",
+          "可选观光火车段",
+          "文化三角图标",
+          "康提和高地茶乡",
+          "埃拉风景名胜",
+          "加勒或米瑞莎的南部海岸",
+          "文化三角遗产预热",
+          "高地茶乡和埃拉",
+          "雅拉豹狩猎窗口",
+          "南部海岸恢复日",
+          "完整的文化三角深度",
+          "山区和南部野生动物园",
+          "西海岸和东海岸选项",
+          "适合家庭的节奏",
+          "全岛季节性航线",
+          "深厚的遗产和野生动物时间",
+          "东海岸和西海岸的海滩",
+          "终极私人司机步伐"
+        ],
+        "itinerary": [
+          {
+            "title": "奈纳提武神圣电路",
+            "description": "乘船前往 Nainativu、Nagadeepa 寺、Nagapooshani 安曼寺，并在返回前在岛上享受文化活动。"
+          },
+          {
+            "title": "到达三角区的走廊",
+            "description": "在 CMB 或尼甘布附近与您的司机会面，然后前往内陆。在锡吉里亚或丹布拉附近定居；晚上闲暇。"
+          },
+          {
+            "title": "锡吉里亚和丹布拉",
+            "description": "在柔和的光线下攀登锡吉里耶，然后探索丹布拉石窟寺。如果需要，可以选择附近的季节性野生动物游览。"
+          },
+          {
+            "title": "古城及后续",
+            "description": "参观阿努拉德普勒或波隆纳鲁沃，然后返回科伦坡/尼甘布或继续您的自定义路线。"
+          },
+          {
+            "title": "前往康提",
+            "description": "经内陆路线开车前往康提。晚上环湖游览和佛牙寺围绕仪式进行。"
+          },
+          {
+            "title": "康提遗产",
+            "description": "佩拉德尼亚植物园、手工艺街，以及市场或文化表演的自由时间。"
+          },
+          {
+            "title": "茶乡",
+            "description": "登上努沃勒埃利耶 (Nuwara Eliya) 参观种植园、格雷戈里湖 (Gregory Lake) 并享受凉爽气候的休闲活动。"
+          },
+          {
+            "title": "艾拉观点",
+            "description": "继续前往埃拉，参观九拱桥、山脊步道和高地咖啡馆。可选火车段。"
+          },
+          {
+            "title": "下降或海岸连接",
+            "description": "出发前往科伦坡、南部海岸或您的下一个定制目的地，并通过公路处理行李。"
+          },
+          {
+            "title": "到达",
+            "description": "机场接机并接送至科伦坡或尼甘布；与您的司机进行简报。"
+          },
+          {
+            "title": "文化三角",
+            "description": "前往锡吉里耶/丹布拉的堡垒或石窟寺之旅。"
+          },
+          {
+            "title": "康提遗产",
+            "description": "完成三角亮点，然后继续前往康提。"
+          },
+          {
+            "title": "高地",
+            "description": "驱车前往茶乡，前往努沃勒埃利耶或埃拉，风景优美。"
+          },
+          {
+            "title": "艾拉",
+            "description": "九拱桥、观景台和咖啡馆休闲。"
+          },
+          {
+            "title": "南部海岸",
+            "description": "下降到加勒堡和米瑞莎欣赏日落和海边用餐。"
+          },
+          {
+            "title": "出发",
+            "description": "沿海早晨休闲活动并私人接送至 CMB 或科伦坡。"
+          },
+          {
+            "title": "到达",
+            "description": "CMB 见面并在城市或尼甘布安顿下来。"
+          },
+          {
+            "title": "锡吉里亚地区",
+            "description": "岩石堡垒和三角沉浸。"
+          },
+          {
+            "title": "康提",
+            "description": "牙寺和高地途径。"
+          },
+          {
+            "title": "茶乡",
+            "description": "努沃勒埃利耶种植园和凉爽的气候。"
+          },
+          {
+            "title": "艾拉",
+            "description": "九个拱门和山脊步道。"
+          },
+          {
+            "title": "前往雅拉",
+            "description": "沿风景秀丽的下坡路前往东南野生动物带。"
+          },
+          {
+            "title": "狩猎日",
+            "description": "雅拉国家公园吉普车野生动物园（公园费用另计）。"
+          },
+          {
+            "title": "南部海滩",
+            "description": "美蕊沙椰子树山和沿海停工。"
+          },
+          {
+            "title": "加勒堡",
+            "description": "城墙、灯塔和精品店探索。"
+          },
+          {
+            "title": "出发",
+            "description": "私人接送至 CMB 或科伦坡。"
+          },
+          {
+            "title": "抵达尼甘布",
+            "description": "CMB 接送和西海岸安顿。"
+          },
+          {
+            "title": "阿努拉德普勒",
+            "description": "圣城佛塔和考古公园。"
+          },
+          {
+            "title": "锡吉里亚",
+            "description": "岩石堡垒和三角基地。"
+          },
+          {
+            "title": "波隆纳鲁沃",
+            "description": "中世纪首都和可选的大象公园。"
+          },
+          {
+            "title": "丹布拉飞往 康提",
+            "description": "石窟寺和高原首府。"
+          },
+          {
+            "title": "康提",
+            "description": "佛牙寺和花园。"
+          },
+          {
+            "title": "努沃勒埃利耶",
+            "description": "茶园和凉爽的气候。"
+          },
+          {
+            "title": "艾拉",
+            "description": "九个拱门和观点。"
+          },
+          {
+            "title": "雅拉方法",
+            "description": "东南野生动物带转移。"
+          },
+          {
+            "title": "狩猎之旅",
+            "description": "雅拉国家公园吉普车日。"
+          },
+          {
+            "title": "米瑞莎",
+            "description": "南部海滩恢复日。"
+          },
+          {
+            "title": "加勒",
+            "description": "堡垒遗产和海岸。"
+          },
+          {
+            "title": "东部或西南",
+            "description": "亭可马里季节选择或本托塔缓冲。"
+          },
+          {
+            "title": "科伦坡出发",
+            "description": "城市缓冲区和 CMB 传输。"
+          },
+          {
+            "title": "到达",
+            "description": "CMB 飞往尼甘布或科伦坡。"
+          },
+          {
+            "title": "西海岸缓冲区",
+            "description": "泻湖或城市休闲。"
+          },
+          {
+            "title": "阿努拉德普勒",
+            "description": "沉浸在神圣的城市中。"
+          },
+          {
+            "title": "西北选项",
+            "description": "可选野生动物或休息日。"
+          },
+          {
+            "title": "锡吉里亚",
+            "description": "岩石堡垒焦点。"
+          },
+          {
+            "title": "波隆纳鲁沃",
+            "description": "中世纪遗址和湖泊。"
+          },
+          {
+            "title": "丹布拉",
+            "description": "石窟寺和乡村文化。"
+          },
+          {
+            "title": "康提",
+            "description": "佛牙寺。"
+          },
+          {
+            "title": "康提休闲",
+            "description": "花园和工艺品。"
+          },
+          {
+            "title": "努沃勒埃利耶",
+            "description": "茶国。"
+          },
+          {
+            "title": "庄园",
+            "description": "可选高原日或种植园日。"
+          },
+          {
+            "title": "艾拉",
+            "description": "九个拱门和山脊。"
+          },
+          {
+            "title": "艾拉休闲",
+            "description": "咖啡馆和短距离步行。"
+          },
+          {
+            "title": "雅拉",
+            "description": "野生动物的方法。"
+          },
+          {
+            "title": "狩猎之旅",
+            "description": "公园吉普车日。"
+          },
+          {
+            "title": "米瑞莎",
+            "description": "南大洋。"
+          },
+          {
+            "title": "加勒",
+            "description": "堡垒遗产和海岸。"
+          },
+          {
+            "title": "本托塔",
+            "description": "西南度假村的步伐。"
+          },
+          {
+            "title": "东海岸",
+            "description": "按季节划分的亭可马里或阿鲁甘湾。"
+          },
+          {
+            "title": "东方休闲",
+            "description": "海滩和水上时间。"
+          },
+          {
+            "title": "返程及出发",
+            "description": "跨岛接送至CMB。"
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "我可以定制 Q Pick 旅游套餐吗？",
+        "answer": "是的。已发布的包是起点。在规划器中选择目的地、日期、车辆和偏好 - 我们的服务台会在您提交请求后完善路线。"
+      },
+      "hub-price": {
+        "question": "定价如何运作？",
+        "answer": "在审核您的行程之前，我们会根据要求显示可提供的定价。在您提交旅游请求后，Q Pick 会确认书面的私人司机报价。除非有书面说明，入场费、野生动物吉普车、住宿和膳食通常是分开的。"
+      },
+      "hub-airport": {
+        "question": "你们提供旅游团的机场接机服务吗？",
+        "answer": "是的。 Bandaranaike International (CMB) 接送服务可以在您的旅行中安排，也可以通过我们的专用机场接送服务安排。"
+      },
+      "hub-group": {
+        "question": "我应该选择哪辆车？",
+        "answer": "轿车适合情侣； SUV 和面包车适合家庭；豪华面包车和小型客车为较大的团体提供服务。在规划器中选择容量——我们在检查行李和路线后确认最终车辆。"
+      },
+      "hub-payment": {
+        "question": "付款和确认如何进行？",
+        "answer": "在线提交旅游请求。我们的团队会审查可用性，确认大纲和报价，然后分享付款和司机分配的后续步骤。您会收到一个用于跟踪的参考代码。"
+      },
+      "pkg-3d-pace": {
+        "question": "文化三角三天够吗？",
+        "answer": "三天时间可以以平静的私人节奏游览锡吉里耶、丹布勒以及阿努拉德普勒或波隆纳鲁沃。更长的停留时间允许米欣塔莱 (Mihintale)、游猎附加项目或康提 (Kandy) 延期。"
+      },
+      "pkg-5d-train": {
+        "question": "我们可以包括埃拉火车吗？",
+        "answer": "是的。许多客人乘坐风景优美的铁路，而司机则通过公路转运行李。请求报价时请告诉我们您的偏好。"
+      },
+      "pkg-5d-weather": {
+        "question": "山区的天气怎么样？",
+        "answer": "努瓦拉埃利耶和埃拉比海岸凉爽，早晨有薄雾，可能有小雨。层层包装；您的私家车可让您在各个景点之间保持舒适的交通。"
+      },
+      "pkg-7d-fitness": {
+        "question": "7天的行程需要步行多少路？",
+        "answer": "锡吉里耶和寺庙参观需要台阶；艾拉提供可选的短途步行活动。您的司机会安排一天的时间，这样可以缩短费力的部分，而不会失去亮点。"
+      },
+      "pkg-10d-safari": {
+        "question": "野生动物探险包括亚拉野生动物探险吗？",
+        "answer": "狩猎吉普车租赁和公园门票作为附加项目安排，并有明确的时间安排。我们无法保证一定能看到野生动物——我们会根据您的要求安排最佳的季节性时段。"
+      },
+      "pkg-14d-pace": {
+        "question": "十四天的车程是否太多？",
+        "answer": "有了私人司机和间隔的过夜停靠站，日常驾驶保持可控。我们设计了海滩休息日，让行程感觉身临其境，而不是匆忙。"
+      },
+      "pkg-21d-season": {
+        "question": "大岛旅游的最佳季节是什么时候？",
+        "answer": "西海岸和南海岸适宜 12 月至 3 月；东方通常在 5 月至 9 月左右阳光明媚。 21 天的计划可以沿着干燥的海岸进行——我们根据您的旅行月份建议。"
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "步骤1",
+        "title": "您想去哪里？",
+        "subtitle": "选择目的地或描述您的梦想路线——我们一起完善细节。"
+      },
+      "dates": {
+        "kicker": "步骤2",
+        "title": "选择旅行日期",
+        "subtitle": "选择您的开始日期以及您想要在路上行驶的天数。",
+        "startDate": "开始日期",
+        "numberOfDays": "天数",
+        "estimatedEnd": "预计结束日期："
+      },
+      "vehicle": {
+        "kicker": "步骤3",
+        "title": "选择您的车辆",
+        "subtitle": "轿车到面包车 — 私人、空调、可存放行李。"
+      },
+      "accommodation": {
+        "kicker": "步骤4",
+        "title": "住宿偏好",
+        "subtitle": "告诉我们您的舒适度——我们协调住宿或您自己预订。"
+      },
+      "preferences": {
+        "kicker": "步骤5",
+        "title": "旅行偏好",
+        "subtitle": "节奏、兴趣和特殊要求帮助我们制定您的行程。"
+      },
+      "contact": {
+        "kicker": "步骤6",
+        "title": "您的联系方式",
+        "subtitle": "我们会以书面报价和完善的行程进行回复。"
+      },
+      "requests": {
+        "kicker": "步骤7",
+        "title": "特殊要求",
+        "subtitle": "饮食需求、可及性、庆祝活动——我们应该知道的一切。"
+      },
+      "review": {
+        "kicker": "评论",
+        "title": "查看您的旅行请求",
+        "subtitle": "提交前确认详细信息 - 此阶段无需付款。",
+        "submit": "提交旅游请求",
+        "submitting": "正在提交..."
+      }
+    },
+    "common": {
+      "back": "返回",
+      "continue": "继续",
+      "optional": "可选",
+      "required": "必填"
+    }
+  }
+}

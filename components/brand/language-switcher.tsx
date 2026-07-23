@@ -2,14 +2,15 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import {
-  locales,
   localeLabels,
-  type Locale,
+  normalizeSelectorLocale,
+  selectorLocales,
+  type SelectorLocale,
 } from "@/lib/i18n/config";
 import { useLocale, useTranslations } from "@/components/i18n/locale-provider";
 
 /**
- * Premium header language dropdown — en / si / ta with persistent preference.
+ * Premium header language dropdown — English, Sinhala, Tamil with persistent preference.
  */
 export function LanguageSwitcher({
   className = "",
@@ -27,6 +28,7 @@ export function LanguageSwitcher({
   const rootRef = useRef<HTMLDivElement>(null);
   const listId = useId();
   const onDark = tone === "onDark";
+  const activeLocale = normalizeSelectorLocale(locale);
 
   useEffect(() => {
     if (!open) return;
@@ -48,13 +50,13 @@ export function LanguageSwitcher({
     };
   }, [open]);
 
-  const selectLocale = (next: Locale) => {
+  const selectLocale = (next: SelectorLocale) => {
     setLocale(next);
     setOpen(false);
   };
 
   return (
-    <div ref={rootRef} className={`relative inline-flex ${className}`}>
+    <div ref={rootRef} className={`relative inline-flex shrink-0 ${className}`}>
       <button
         type="button"
         aria-haspopup="listbox"
@@ -76,7 +78,7 @@ export function LanguageSwitcher({
         <span aria-hidden="true" className="text-[0.95rem] leading-none">
           🌐
         </span>
-        <span>{localeLabels[locale].short}</span>
+        <span>{localeLabels[activeLocale].short}</span>
         <span
           aria-hidden="true"
           className={[
@@ -102,8 +104,8 @@ export function LanguageSwitcher({
               : "border-mist/80 bg-paper/95 text-ink",
           ].join(" ")}
         >
-          {locales.map((code) => {
-            const active = code === locale;
+          {selectorLocales.map((code) => {
+            const active = code === activeLocale;
             return (
               <li key={code} role="option" aria-selected={active}>
                 <button

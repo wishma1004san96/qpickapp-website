@@ -1,23 +1,11 @@
 import type { TourPackage } from "../types";
-import { getDestinationImageSrc } from "@/lib/destination-image-catalog";
+import { getTourHeroImageSrc } from "../tour-hero-images";
+import { sharedExcluded, sharedIncluded } from "./shared";
+import { CATALOG_PACKAGES } from "./catalog";
 
-const sharedIncluded = [
-  "Private air-conditioned vehicle for the listed days",
-  "Professional chauffeur",
-  "Fuel and parking for the agreed route",
-  "Bottled water on travel days",
-  "Journey support from the Q Pick desk",
-];
+export { sharedIncluded, sharedExcluded } from "./shared";
 
-const sharedExcluded = [
-  "Entrance tickets and activity fees",
-  "Safari jeep hire and park fees",
-  "Accommodation and meals",
-  "Personal expenses and tips",
-  "Train or domestic flight tickets unless arranged separately",
-];
-
-export const TOUR_PACKAGES: TourPackage[] = [
+export const LEGACY_TOUR_PACKAGES: TourPackage[] = [
   {
     slug: "3-days-cultural-triangle",
     title: "3 Days Cultural Triangle",
@@ -39,14 +27,14 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "December to April generally offers drier Cultural Triangle weather. May to September can bring afternoon storms — flexible private pacing helps.",
-    heroGalleryId: "sigiriya-hero",
-    galleryIds: ["sigiriya-hero", "dambulla-hero", "anuradhapura-hero", "polonnaruwa-hero"],
+    heroGalleryId: "hero-cultural-triangle",
+    galleryIds: ["hero-cultural-triangle", "sigiriya-hero", "dambulla-hero", "anuradhapura-hero", "polonnaruwa-hero"],
     seo: {
       title: "3 Days Cultural Triangle Private Tour Sri Lanka | Q Pick",
       description:
         "A 3-day private chauffeur tour of Sri Lanka’s Cultural Triangle — Sigiriya, Dambulla, and Anuradhapura or Polonnaruwa with Q Pick.",
       canonicalPath: "/tours/3-days-cultural-triangle",
-      ogImage: getDestinationImageSrc("sigiriya"),
+      ogImage: getTourHeroImageSrc("hero-cultural-triangle"),
       ogTitle: "3 Days Cultural Triangle | Q Pick Private Tours",
       twitterTitle: "3 Days Cultural Triangle Private Tour",
       twitterDescription:
@@ -105,14 +93,14 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "January to April is popular for clearer highland views. The southwest monsoon can bring mist and showers mid-year — still beautiful with flexible photography stops.",
-    heroGalleryId: "ella-hero",
-    galleryIds: ["kandy-hero", "nuwara-eliya-hero", "ella-hero"],
+    heroGalleryId: "hero-hill-country-escape",
+    galleryIds: ["hero-hill-country-escape", "kandy-hero", "nuwara-eliya-hero", "ella-hero"],
     seo: {
       title: "5 Days Hill Country Escape Private Tour | Ella & Tea Country",
       description:
         "Private 5-day hill country tour through Kandy, Nuwara Eliya tea estates and Ella’s Nine Arches Bridge with Q Pick.",
       canonicalPath: "/tours/5-days-hill-country-escape",
-      ogImage: getDestinationImageSrc("ella"),
+      ogImage: getTourHeroImageSrc("hero-hill-country-escape"),
       ogTitle: "5 Days Hill Country Escape | Q Pick",
       twitterTitle: "Hill Country Escape Private Tour",
       twitterDescription: "Kandy, tea country and Ella with a private chauffeur.",
@@ -184,14 +172,14 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "December to March suits west and south coasts plus highland travel. For east-coast add-ons, consider May to September and ask us to adjust the finish.",
-    heroGalleryId: "galle-hero",
-    galleryIds: ["sigiriya-hero", "kandy-hero", "ella-hero", "galle-hero", "mirissa-hero"],
+    heroGalleryId: "hero-best-of-sri-lanka",
+    galleryIds: ["hero-best-of-sri-lanka", "sigiriya-hero", "kandy-hero", "ella-hero", "galle-hero", "mirissa-hero"],
     seo: {
       title: "7 Days Best of Sri Lanka Private Tour Package | Q Pick",
       description:
         "See Sigiriya, Kandy, Ella and the southern coast on Q Pick’s 7-day Best of Sri Lanka private chauffeur tour.",
       canonicalPath: "/tours/7-days-best-of-sri-lanka",
-      ogImage: getDestinationImageSrc("galle"),
+      ogImage: getTourHeroImageSrc("hero-best-of-sri-lanka"),
       ogTitle: "7 Days Best of Sri Lanka | Q Pick",
       twitterTitle: "Best of Sri Lanka 7-Day Private Tour",
       twitterDescription: "Culture, highlands and coast with a private chauffeur.",
@@ -242,14 +230,14 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "February to July is often strong for Yala wildlife viewing, while coastal finishes remain pleasant in the first quarter. We refine park choice to season when you request a quote.",
-    heroGalleryId: "yala-hero",
-    galleryIds: ["sigiriya-hero", "ella-hero", "yala-hero", "mirissa-hero", "galle-hero"],
+    heroGalleryId: "hero-wildlife-adventure",
+    galleryIds: ["hero-wildlife-adventure", "sigiriya-hero", "ella-hero", "yala-hero", "mirissa-hero", "galle-hero"],
     seo: {
       title: "10 Days Wildlife Adventure Private Tour Sri Lanka | Q Pick",
       description:
         "A 10-day private Sri Lanka wildlife adventure — Cultural Triangle, hill country, Yala safari logistics and southern beaches with Q Pick.",
       canonicalPath: "/tours/10-days-wildlife-adventure",
-      ogImage: getDestinationImageSrc("yala"),
+      ogImage: getTourHeroImageSrc("hero-wildlife-adventure"),
       ogTitle: "10 Days Wildlife Adventure | Q Pick",
       twitterTitle: "Wildlife Adventure Private Tour",
       twitterDescription: "Yala safari window with heritage and coast, privately chauffeured.",
@@ -321,8 +309,9 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "Shoulder months and December–March work well for west/south focus. For Nilaveli or other east finishes, May–September is often kinder — we route accordingly.",
-    heroGalleryId: "anuradhapura-hero",
+    heroGalleryId: "hero-complete-sri-lanka",
     galleryIds: [
+      "hero-complete-sri-lanka",
       "anuradhapura-hero",
       "sigiriya-hero",
       "ella-hero",
@@ -335,7 +324,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "A complete 14-day private Sri Lanka tour covering Cultural Triangle, tea country, Yala, southern beaches and seasonal east-coast options.",
       canonicalPath: "/tours/14-days-complete-sri-lanka",
-      ogImage: getDestinationImageSrc("anuradhapura"),
+      ogImage: getTourHeroImageSrc("hero-complete-sri-lanka"),
       ogTitle: "14 Days Complete Sri Lanka | Q Pick",
       twitterTitle: "Complete Sri Lanka 14-Day Private Tour",
       twitterDescription: "Heritage, highlands, wildlife and coast with private chauffeur.",
@@ -431,8 +420,9 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     bestTimeToVisit:
       "A grand circuit can chase dry weather: west/south in December–March, east around May–September. We confirm the sequence when you share travel months.",
-    heroGalleryId: "colombo-hero",
+    heroGalleryId: "hero-grand-explorer",
     galleryIds: [
+      "hero-grand-explorer",
       "sigiriya-hero",
       "ella-hero",
       "yala-hero",
@@ -445,7 +435,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
       description:
         "The 21-day Grand Explorer private tour of Sri Lanka — heritage, highlands, wildlife, and both coasts with a dedicated Q Pick chauffeur.",
       canonicalPath: "/tours/21-days-grand-explorer",
-      ogImage: getDestinationImageSrc("colombo"),
+      ogImage: getTourHeroImageSrc("hero-grand-explorer"),
       ogTitle: "21 Days Grand Explorer | Q Pick",
       twitterTitle: "Grand Explorer 21-Day Private Tour",
       twitterDescription: "Full-island private chauffeur journey across Sri Lanka.",
@@ -507,4 +497,9 @@ export const TOUR_PACKAGES: TourPackage[] = [
     popular: true,
     published: true,
   },
+];
+
+export const TOUR_PACKAGES: TourPackage[] = [
+  ...LEGACY_TOUR_PACKAGES,
+  ...CATALOG_PACKAGES,
 ];

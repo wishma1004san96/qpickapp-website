@@ -86,7 +86,7 @@ export function TrustChipMarquee({
       <ul className="trust-chip-marquee-track">
         {slides.map((label, index) => (
           <li
-            key={`${label}-${index}`}
+            key={index}
             className="trust-chip-marquee-item"
             aria-hidden={index >= labels.length ? true : undefined}
           >

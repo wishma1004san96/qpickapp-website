@@ -27,6 +27,15 @@ export const CATEGORY_EXPANDED_CONTENT: Record<
     recommendedVehicle: "SUV or Van",
     popularDestinations: "Sigiriya • Galle • Ella",
   },
+  "classic-sri-lanka": {
+    emotionalHeading: "The island's greatest hits",
+    description:
+      "Triangle kingdoms, misty highlands, leopard country, and fort coasts — the essential Sri Lanka circuit paced for international first visits.",
+    bestSeason: "Dec – Apr",
+    duration: "4–14 days",
+    recommendedVehicle: "SUV or Van",
+    popularDestinations: "Sigiriya • Kandy • Galle",
+  },
   "cultural-heritage": {
     emotionalHeading: "Walk through ancient kingdoms",
     description:
@@ -60,6 +69,15 @@ export const CATEGORY_EXPANDED_CONTENT: Record<
       "Cool highland mornings, plantation verandas, and ridge roads that unfurl through clouds — the Sri Lanka of postcards, paced for slow sipping and deep breaths.",
     bestSeason: "Jan – Apr",
     duration: "4–10 days",
+    recommendedVehicle: "SUV or Van",
+    popularDestinations: "Nuwara Eliya • Ella • Kandy",
+  },
+  "tea-country": {
+    emotionalHeading: "From leaf to cup",
+    description:
+      "Estate floors, factory aromas, and terrace views — tea country days with a chauffeur who knows when to pause for the perfect photograph.",
+    bestSeason: "Jan – Apr",
+    duration: "3–10 days",
     recommendedVehicle: "SUV or Van",
     popularDestinations: "Nuwara Eliya • Ella • Kandy",
   },
@@ -135,6 +153,60 @@ export const CATEGORY_EXPANDED_CONTENT: Record<
     recommendedVehicle: "SUV or Van",
     popularDestinations: "Kandy • Dambulla • Colombo",
   },
+  "photography-tours": {
+    emotionalHeading: "Chase the light",
+    description:
+      "Dawn at stupas, mist on tea ridges, and blue hour on fort ramparts — routing built around golden hours, not coach timetables.",
+    bestSeason: "Year-round",
+    duration: "5–16 days",
+    recommendedVehicle: "SUV or Van",
+    popularDestinations: "Sigiriya • Ella • Galle",
+  },
+  "bird-watching": {
+    emotionalHeading: "Wings across the island",
+    description:
+      "Lagoons at dawn, dry-zone waterholes, and coastal migrants — patient private pacing for list-builders and casual birders alike.",
+    bestSeason: "Nov – Apr",
+    duration: "5–12 days",
+    recommendedVehicle: "SUV or Van",
+    popularDestinations: "Negombo • Yala • Sinharaja corridor",
+  },
+  pilgrimage: {
+    emotionalHeading: "Sacred ground, quiet roads",
+    description:
+      "Stupas, bodhi trees, and cave temples visited with respect — devotional journeys supported by a chauffeur who understands temple etiquette.",
+    bestSeason: "Year-round",
+    duration: "3–10 days",
+    recommendedVehicle: "SUV or Van",
+    popularDestinations: "Anuradhapura • Kandy • Dambulla",
+  },
+  "cruise-excursions": {
+    emotionalHeading: "Shore days, confidently timed",
+    description:
+      "Port pickups, city highlights, and fort walks — shore excursions that respect ship departure clocks without feeling rushed.",
+    bestSeason: "Year-round",
+    duration: "1 day",
+    recommendedVehicle: "Van or Mini Coach",
+    popularDestinations: "Colombo • Galle",
+  },
+  "day-tours": {
+    emotionalHeading: "One perfect day",
+    description:
+      "Focused private days for layovers, cruise calls, or a single-region deep dive — maximum impact in minimum time.",
+    bestSeason: "Year-round",
+    duration: "1 day",
+    recommendedVehicle: "Sedan or SUV",
+    popularDestinations: "Colombo • Sigiriya • Galle",
+  },
+  "private-chauffeur": {
+    emotionalHeading: "Your driver, your rhythm",
+    description:
+      "Extended circuits with one dedicated chauffeur — premium vehicle class, flexible daily mileage, and planner support throughout.",
+    bestSeason: "Year-round",
+    duration: "7–21 days",
+    recommendedVehicle: "Luxury Van or Van",
+    popularDestinations: "Island-wide",
+  },
   "airport-transfers": {
     emotionalHeading: "Seamless from touchdown",
     description:
@@ -163,6 +235,10 @@ export const CATEGORY_CARD_EXPERIENCE: Record<
     tagline: "Hand-picked escapes",
     chips: ["Editor's choice", "Private chauffeur", "Island highlights", "Curated pacing"],
   },
+  "classic-sri-lanka": {
+    tagline: "Essential island",
+    chips: ["First visits", "Triangle • Coast", "Private chauffeur", "Iconic routes"],
+  },
   "cultural-heritage": {
     tagline: "UNESCO Wonders",
     chips: ["Sigiriya • Kandy", "Ancient Kingdoms", "Timeless Sri Lanka", "Temple trails"],
@@ -178,6 +254,10 @@ export const CATEGORY_CARD_EXPERIENCE: Record<
   "hill-country-tea": {
     tagline: "Tea Trails",
     chips: ["Scenic Train", "Cool Climate", "Nuwara Eliya", "Misty viewpoints"],
+  },
+  "tea-country": {
+    tagline: "Plantation life",
+    chips: ["Tea factories", "Estate visits", "Cool mornings", "Nuwara Eliya"],
   },
   adventure: {
     tagline: "Thrills & Heights",
@@ -210,6 +290,30 @@ export const CATEGORY_CARD_EXPERIENCE: Record<
   festival: {
     tagline: "Living traditions",
     chips: ["Kandy Perahera", "Temple festivals", "Cultural calendar", "Evening processions"],
+  },
+  "photography-tours": {
+    tagline: "Golden hour",
+    chips: ["Dawn shoots", "Wildlife lenses", "Nine Arches", "Fort blue hour"],
+  },
+  "bird-watching": {
+    tagline: "Wings & wetlands",
+    chips: ["Dawn hides", "Migrants", "Yala birds", "Patient pacing"],
+  },
+  pilgrimage: {
+    tagline: "Sacred paths",
+    chips: ["Anuradhapura", "Temple etiquette", "Bodhi tree", "Cave temples"],
+  },
+  "cruise-excursions": {
+    tagline: "Shore confidence",
+    chips: ["Port pickup", "Timed return", "Colombo • Galle", "Group friendly"],
+  },
+  "day-tours": {
+    tagline: "One-day escapes",
+    chips: ["Layovers", "Cruise days", "Focused routes", "Quick discovery"],
+  },
+  "private-chauffeur": {
+    tagline: "Dedicated driver",
+    chips: ["Extended tours", "Premium class", "Flexible pace", "Island-wide"],
   },
   "airport-transfers": {
     tagline: "Seamless arrivals",

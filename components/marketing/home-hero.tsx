@@ -273,7 +273,7 @@ function HeroContent({
       */}
       <AnimatePresence initial={false} mode="wait">
         <motion.div
-          key={`slide-${index}-${slide.title}`}
+          key={`slide-${index}`}
           className="flex w-full min-w-0 flex-col gap-3.5 sm:gap-6"
           initial={slideMotion}
           animate={{ opacity: 1, y: 0 }}

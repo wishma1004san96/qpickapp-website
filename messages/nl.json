@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "Ga naar de hoofdinhoud",
+  "header": {
+    "homeAria": "Q Pick thuis",
+    "primaryNav": "Primair",
+    "mobileNav": "Mobiele navigatie",
+    "mobilePrimary": "Mobiel primair",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "bookNow": "Boek nu"
+  },
+  "nav": {
+    "home": "Thuis",
+    "ride": "Rijden",
+    "airport": "Luchthaven",
+    "tours": "Rondleidingen",
+    "safety": "Veiligheid",
+    "drive": "Rijd",
+    "partners": "Partners",
+    "support": "Ondersteuning"
+  },
+  "language": {
+    "label": "Taal",
+    "choose": "Kies taal"
+  },
+  "footer": {
+    "blurb": "Premium luchthaventransfers, stadsritten, chauffeursdienst en privérondleidingen door Sri Lanka.",
+    "call": "Bel nu",
+    "whatsapp": "WhatsApp",
+    "emailCta": "E-mail ons",
+    "services": "Diensten",
+    "company": "Bedrijf",
+    "downloadApp": "App downloaden",
+    "contact": {
+      "address": "Adres",
+      "email": "E-mail",
+      "phones": "Telefoons",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "Luchthaventransfers",
+      "tours": "Privérondleidingen",
+      "chauffeur": "Chauffeursdienst",
+      "cityRides": "Stadsritten",
+      "corporate": "Zakelijke reizen"
+    },
+    "companyLinks": {
+      "about": "Over",
+      "drive": "Word een chauffeur",
+      "partners": "Partners",
+      "support": "Ondersteuning",
+      "contact": "Contacteer"
+    },
+    "legal": {
+      "privacy": "Privacybeleid",
+      "terms": "Algemene voorwaarden",
+      "cookies": "Koekjes"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick introductie",
+    "scroll": "Blader",
+    "scrollAria": "Scroll naar inhoud",
+    "posterAlt": "Schilderachtige rit door mistige Sri Lankan boswegen",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "Luchthaventransfers. Stadsritten. Privéchauffeurs.",
+        "description": "Premium mobiliteit in Sri Lanka: ophalen en wegbrengen van luchthavens, taxi- en intercityritten, chauffeursdienst, zakenreizen en privérondleidingen onder één vertrouwd platform.",
+        "primary": "Boek rit",
+        "secondary": "Luchthaventransfer"
+      },
+      {
+        "title": "Luchthaventransfers",
+        "subtitle": "Aankomst en vertrek met zekerheid.",
+        "description": "Meet-and-greet pick-ups en getimede drop-offs. Uw chauffeur wacht voordat u landt: geen wachtrijen, geen onzekerheid.",
+        "primary": "Luchthaventransfer",
+        "secondary": "Boek rit"
+      },
+      {
+        "title": "Stads- en intercityritten",
+        "subtitle": "Taxi en chauffeur, op uw klok.",
+        "description": "Van de straten van Colombo tot snelwegen langs de kust: geverifieerde chauffeurs, transparante tarieven en luxe chauffeursopties wanneer je ze nodig hebt.",
+        "primary": "Boek rit",
+        "secondary": "Ontdek Rondleidingen"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "Plan uw reis",
+      "title": "Plan uw reis",
+      "subtitle": "Vertel ons hoe u wilt verhuizen. De rest regelen wij met stille zorg.",
+      "journeyTypeAria": "Soort reis",
+      "continue": "Ga door",
+      "scheduleTitle": "Reisschema",
+      "travelDate": "Reisdatum",
+      "pickupTime": "Ophaaltijd",
+      "intents": {
+        "arrive": "Aankomst",
+        "stay": "Blijf",
+        "explore": "Ontdek"
+      },
+      "arrive": {
+        "fromLabel": "Luchthaven",
+        "fromDefault": "Luchthaven Colombo (CMB)",
+        "toLabel": "Bestemming",
+        "toDefault": "Galle Face Hotel",
+        "recommendation": "Ontmoet elkaar bij aankomst · Hotel wordt op de hoogte gehouden · Tarief duidelijk voordat u bevestigt"
+      },
+      "stay": {
+        "fromLabel": "Ophalen",
+        "fromDefault": "Jouw hotel",
+        "toLabel": "Bestemming",
+        "toDefault": "Galle-fort",
+        "recommendation": "Geverifieerde bestuurder · Live updates die u kunt delen · Transparante prijzen"
+      },
+      "explore": {
+        "fromLabel": "Ophalen",
+        "fromDefault": "Colombo",
+        "toLabel": "Bestemming",
+        "toDefault": "Ella en de hooglanden",
+        "recommendation": "Dagklaar voertuig · Chauffeur die de wegen kent · Eén rustig traject"
+      }
+    },
+    "trust": {
+      "ariaLabel": "Waarom gasten Q Pick vertrouwen",
+      "verifiedDrivers": "Geverifieerde stuurprogramma's",
+      "pricing": "Transparante prijzen",
+      "islandwide": "Eilandbrede dekking",
+      "support": "24/7 ondersteuning",
+      "trips": "Duizenden reizen"
+    }
+  },
+  "experience": {
+    "headingLine1": "Ervaring",
+    "headingLine2": "__QP_MERK__.",
+    "lines": [
+      "Uw luchthaventransfer.",
+      "Jouw stadsrit.",
+      "Jouw Sri Lanka."
+    ],
+    "screenLive": "Q Pick app-scherm: {stepLabel}",
+    "previewAria": "Q Pick app-voorbeeld met {stepLabel}",
+    "story": {
+      "planLabel": "Rit boeken",
+      "vehiclesLabel": "Voertuigselectie",
+      "liveLabel": "Leef reis",
+      "plan": {
+        "kicker": "Luchthaven en ritten",
+        "title": "Plan uw reis",
+        "destinations": "Bestemming",
+        "days": "Reisdagen",
+        "daysUnit": "dagen",
+        "pickup": "Ophalen",
+        "pickupValue": "Bandaranaike luchthaven",
+        "hotel": "Hotel",
+        "hotelValue": "Shangri-La Colombo",
+        "route": "Routevoorbeeld",
+        "stops": "stopt",
+        "cta": "Ga door"
+      },
+      "vehicles": {
+        "route": "Luchthaven → Sigiriya · Ella · Galle",
+        "title": "Kies uw voertuig",
+        "budgetLabel": "Geschatte begroting",
+        "budgetHint": "Voordat u bevestigt",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "Premium vloot",
+    "heading": "Kies de perfecte rit.",
+    "sub": "Van tuk-tuks tot premium busjes, elk voertuig is geverifieerd, comfortabel en transparant geprijsd.",
+    "phoneAria": "Q Pick voertuiglijst in de app"
+  },
+  "insideQPickApp": {
+    "eyebrow": "Toepassing",
+    "heading": "In de Q Pick-app",
+    "sub": "Boek een luchthaventransfer of stadsrit, kies uw voertuig met een duidelijk tarief en volg uw chauffeur live – premium mobiliteit op zak.",
+    "panelAria": "Q Pick app-scherm: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "Boek uw rit",
+        "body": "Ophaalservice vanaf de luchthaven, stadstaxi of intercityrit: stel de bestemming en het tijdstip in voordat u vertrekt."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "Voertuig & tarief",
+        "body": "Van sedan tot premium bestelwagen, met transparante prijzen voordat u bevestigt."
+      },
+      "live": {
+        "n": "03",
+        "label": "Leef reis",
+        "body": "Bestuurder toegewezen, live GPS en verwachte aankomsttijd, rit voltooid, daarna een rustige beoordelingsstroom."
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "HOE Q PICK WERKT",
+    "heading": "Van registratie tot uw bestemming",
+    "sub": "Eén rustig traject van open tot aankomst: registreren, verifiëren, boeken van een luchthaventransfer of stadsrit en vervolgens uw chauffeur in realtime volgen.",
+    "stepLabel": "Stap {n}",
+    "prevAria": "Vorige stap",
+    "nextAria": "Volgende stap",
+    "dotsAria": "Reis stappen",
+    "dotAria": "Ga naar stap {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "Welkom",
+        "body": "Open de Q Pick app en begin uw reis."
+      },
+      "register": {
+        "n": "02",
+        "title": "Registreren",
+        "body": "Maak uw account aan met uw mobiele nummer."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP-verificatie",
+        "body": "Verifieer veilig uw mobiele nummer."
+      },
+      "journey": {
+        "n": "04",
+        "title": "Kies hoe u beweegt",
+        "body": "Boek een luchthaventransfer, stadstaxi, intercityrit of chauffeursdienst – privérondleidingen wanneer u maar wilt."
+      },
+      "track": {
+        "n": "05",
+        "title": "Volg uw chauffeur",
+        "body": "Zie hoe uw chauffeur arriveert met live GPS-tracking en verwachte aankomsttijd."
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "De Q Pick standaard",
+    "heading": "Eén reis. Eén vertrouwde standaard.",
+    "intro": "Geen marktplaats. Geen brochure en een WhatsApp draadje. Een privéconciërge voor hoe Sri Lanka zich verplaatst – van de eerste landing tot de laatste kustweg.",
+    "closingTitle": "Gedurende de hele reis – dezelfde kalme zekerheid.",
+    "closingBody": "Uber en PickMe verplaatsen je door een stad. Touroperators verkopen een dag. Q Pick bevat het hele verhaal: luchthaven, verblijf en eiland – onder één vertrouwde standaard.",
+    "cta": "Plan uw reis",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "Aankomst",
+        "moment": "Het eiland begint bij de poort.",
+        "scene": "Je vlucht landt. Een geverifieerde Q Pick-chauffeur staat al te wachten - geen gedrang op de stoep, geen reeks berichten. Uw hotel weet dat u onderweg bent voordat de auto de luchthavenweg verlaat.",
+        "outcome": "Eén overdracht. Van aankomst tot aan de receptie.",
+        "imageAlt": "Kust- en stadslichten van Colombo in de schemering - de reis na de landing"
+      },
+      "stay": {
+        "n": "02",
+        "title": "Blijf",
+        "moment": "Elke beweging blijft stil en helder.",
+        "scene": "Een kustwandeling, een dinerreservering, een ochtendvergadering. U ziet het tarief voordat u bevestigt. Terwijl u rijdt, kunnen de mensen die er toe doen u volgen (familie, gastheer of villamanager) zonder twee keer te hoeven bellen.",
+        "outcome": "Transparante prijzen. Live-status. Geen marktlawaai.",
+        "imageAlt": "Zuidelijke kustlijn van Sri Lankan met helder water in de Indische Oceaan"
+      },
+      "explore": {
+        "n": "03",
+        "title": "Ontdek",
+        "moment": "Het eiland opent zonder wrijving.",
+        "scene": "Theelandmist. Fort steden. Een dag met meer dan één stop. Dezelfde vertrouwde chauffeur, het juiste voertuig voor de wegen die voor ons liggen, en een zorgvuldig samengestelde reisroute – zodat de plaats centraal blijft staan, niet de logistiek.",
+        "outcome": "Mobiliteit en ontdekking. Eén doorlopende standaard.",
+        "imageAlt": "Sigiriya-rotsfort rijst op uit de jungle van Sri Lankan"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Het premium mobiliteitsplatform van Sri Lanka",
+    "heading": "Jouw reis. Jouw regels.",
+    "manifesto": "Vanaf het eerste welkom op de luchthaven tot aan de laatste hoteldeur: een standaard voor continue mobiliteit waar gewone apps nooit voor zijn gebouwd.",
+    "positioningLead": "Dit is niet zomaar een taxi-app.",
+    "positioningRest": "Dit is het premium mobiliteitsplatform van Sri Lanka.",
+    "trustEyebrow": "Mogelijk gemaakt door Quick Pick App (Pvt) Ltd",
+    "trustBody": "Q Pick wordt met trots ontwikkeld en beheerd door Quick Pick App (Pvt) Ltd, en biedt premium luchthaventransfers, chauffeursdiensten, privérondleidingen en vertrouwde mobiliteitsoplossingen in Sri Lanka met een sterke toewijding aan kwaliteit, veiligheid en uitzonderlijke klantervaring.",
+    "continuumEyebrow": "De reis gaat verder",
+    "continuumBody": "Een breder horeca-ecosysteem krijgt stilletjes vorm – dezelfde rustige standaard, uitgebreid.",
+    "continuumComingSoon": "Binnenkort beschikbaar",
+    "continuumItems": [
+      "Voedselbezorging",
+      "Pakketbezorging",
+      "Valutawissel",
+      "Lokale ervaringen",
+      "Conciërgediensten"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "Aankomst",
+        "title": "Het eiland begint met een welkom.",
+        "scene": "Je vlucht landt. Een geverifieerde Q Pick hospitality professional staat al te wachten: naambord klaar, bagage in de hand, hotelroute bevestigd. Geen gedoe op de stoep. Geen bod op marktplaats. Gewoon de stille zekerheid dat uw reis naar Sri Lanka met zorg is begonnen.",
+        "details": [
+          "Airport Meet & Greet door een professionele chauffeur – nooit een willekeurige chauffeur",
+          "Hoteltransfer gepland voordat u vertrekt"
+        ],
+        "whisper": "Eén overdracht. Van poort tot lobby.",
+        "kicker": "Hoofdstuk 01",
+        "mediaTitle": "Een rustige aankomst",
+        "imageAlt": "Premium luchthaventerminalgang bij zonsopgang – het begin van een rustige aankomst"
+      },
+      "planning": {
+        "n": "02",
+        "label": "Componeren",
+        "title": "Beweeg uw kant op: stad, luchthaven of eiland.",
+        "scene": "In tegenstelling tot gewone ritten omvat Q Pick luchthaventransfers, stads- en intercityritten, luxe chauffeursdiensten en zakenreizen - met privérondleidingen en dagtochten wanneer u de omgeving wilt verkennen. Kies ophalen, bestemming, timing en voertuig. Bekijk een duidelijk tarief voordat u bevestigt.",
+        "details": [
+          "Ophalen en afleveren van de luchthaven op tijd voor uw vlucht",
+          "Stadstaxi, intercityritten en chauffeursopties",
+          "Transparant tarief voordat u bevestigt: duidelijkheid zonder urgentie"
+        ],
+        "whisper": "Jouw traject. Jouw timing. Jouw tarief.",
+        "kicker": "Hoofdstuk 02",
+        "mediaTitle": "Een reis samengesteld",
+        "imageAlt": "Open berglandschap voor het samenstellen van een privé Sri Lanka route"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "Bedrijf",
+        "title": "Niet chauffeurs. Horecaprofessionals.",
+        "scene": "Elke chauffeur van Q Pick is een geverifieerde horecaprofessional – getraind in discretie, eilandwegen en het rustige welkomsritueel. Als u wilt, kunt u ook een lokale gids aanvragen voor tempels, theeland, dieren in het wild of levend erfgoed – in het Engels, Singalees, Tamil of andere talen, indien beschikbaar.",
+        "details": [
+          "Geverifieerde professionele chauffeurs – gastvrijheid staat altijd voorop",
+          "Optionele meertalige lokale gidsen voor cultuur en geschiedenis",
+          "Metgezellen gekozen op basis van vertrouwen, niet op basis van nabijheid op een kaart"
+        ],
+        "whisper": "Het verschil is wie er aan de deur staat.",
+        "kicker": "Hoofdstuk 03",
+        "mediaTitle": "Rustig professioneel bedrijf",
+        "imageAlt": "Professionele chauffeur in een donker pak die de deur van een luxe voertuig opent"
+      },
+      "explore": {
+        "n": "04",
+        "label": "Ontdekking",
+        "title": "Waar het eiland het verhaal wordt.",
+        "scene": "Kustwegen. Hoogland mist. Erfgoed steden. Terwijl u op ontdekkingstocht gaat, houdt live reisbeheer elke overdracht duidelijk – en 24/7 ondersteuning blijft stilletjes beschikbaar als de dag verschuift. Gewone apps eindigen wanneer de rit eindigt. Q Pick blijft bij de reis.",
+        "details": [
+          "Live reisbeheer voor het volledige reistraject",
+          "Professionele ondersteuning: kalm, beschikbaar, niet opdringerig"
+        ],
+        "whisper": "Logistiek blijft onzichtbaar. Plaats blijft het punt.",
+        "kicker": "Hoofdstuk 04",
+        "mediaTitle": "Het eiland, ononderbroken",
+        "imageAlt": "Luchtfoto tijdens het gouden uur van Sigiriya die boven de jungle van Sri Lankan uitsteekt"
+      },
+      "complete": {
+        "n": "05",
+        "label": "Keer terug",
+        "title": "Dezelfde rustige zekerheid, tot aan de laatste deur.",
+        "scene": "De laatste hotelafgifte maakt de cirkel rond – gecoördineerd vanuit de app, getimed naar uw lobby, geleverd met dezelfde gastvrijheid die u op de luchthaven ontmoette. Eén doorlopende standaard. Van het eerste welkom tot het laatste afscheid: iets wat gewone ritjes niet kunnen volhouden.",
+        "details": [
+          "Ophalen en afzetten bij uw hotel volgens één vertrouwde standaard",
+          "Een compleet Sri Lanka reisplatform – geen taximarktplaats"
+        ],
+        "whisper": "De reis komt tot rust. De standaard blijft.",
+        "kicker": "Hoofdstuk 05",
+        "mediaTitle": "Reis voltooid",
+        "imageAlt": "Aankomst in een luxe resort in de schemering: het rustige einde van een privéreis"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "Eén platform",
+    "heading": "Eén platform. Drie ervaringen.",
+    "sub": "Of u nu een luchthaventransfer nodig heeft, een ritje in de stad of met een chauffeur, of een plek waar u waardig geld kunt verdienen: Q Pick is dezelfde vertrouwde mobiliteitsstandaard.",
+    "cards": {
+      "ride": {
+        "title": "Rijd nu",
+        "kicker": "Taxi & chauffeur",
+        "description": "Geverifieerde chauffeurs voor stadstaxi, intercityritten en luxe transport – transparante tarieven voordat u bevestigt.",
+        "points": [
+          "Stads- en intercityritten",
+          "Luxe chauffeur",
+          "Transparante prijzen"
+        ],
+        "cta": "Boek rit",
+        "imageAlt": "Gast stapt uit de achterkant van een zwarte executive sedan bij een premium pick-up"
+      },
+      "tours": {
+        "title": "Luchthaventransfers",
+        "kicker": "Aankomst & vertrek",
+        "description": "Ophaal- en terugbrengdiensten op het tijdstip van de vlucht met meet-and-greet-service - kalme zekerheid van poort tot deur.",
+        "points": [
+          "Ophaalservice vanaf de luchthaven",
+          "Afleveren op de luchthaven",
+          "Ontmoet & begroet"
+        ],
+        "cta": "Luchthaventransfer",
+        "imageAlt": "Professionele chauffeur klaar voor een premium luchthaventransfer"
+      },
+      "drive": {
+        "title": "Rijd met Q Pick",
+        "kicker": "Bestuurdersplatform",
+        "description": "Een professioneel platform voor serieuze chauffeurs: duidelijke verdiensten, flexibele uren en waardig werk.",
+        "points": [
+          "Flexibele verdiensten",
+          "Professioneel platform",
+          "Gemakkelijke registratie"
+        ],
+        "cta": "Word een chauffeur",
+        "imageAlt": "Professionele chauffeur in een donker pak die de achterdeur van een zwart luxe busje opent bij de ingang van een hotel"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "Ritdiensten",
+    "intro": "Luchthaventransfers, stadstaxi, intercityritten en chauffeursdienst - privérondleidingen wanneer u de omgeving wilt verkennen. Eén Q Pick standaard.",
+    "tablistAria": "Reisdoel",
+    "ride": {
+      "label": "Rijden",
+      "title": "Stadstaxi en intercityritten",
+      "body": "Vraag een geverifieerde chauffeur aan voor de straten van Colombo of de lange kustroute. Transparante tarieven voordat u bevestigt.",
+      "cta": "Boek een rit",
+      "imageAlt": "Kust van Colombo in de schemering – stadsreizen met zekerheid"
+    },
+    "airport": {
+      "label": "Luchthaven",
+      "title": "Ophalen en wegbrengen van de luchthaven",
+      "body": "Meet-and-greet-transfers afgestemd op uw vlucht. Hotels en villa's blijven van poort tot deur op de hoogte.",
+      "cta": "Boek luchthaventransfer",
+      "imageAlt": "Kustweg richting het zuiden van Sri Lanka na de landing"
+    },
+    "tour": {
+      "label": "Rondleiding",
+      "title": "Privérondleidingen en dagtochten",
+      "body": "Optionele dagtochten en reizen met meerdere tussenstops met chauffeurs die de eilandwegen kennen - wanneer verkenning het doel is.",
+      "cta": "Ontdek Rondleidingen",
+      "imageAlt": "Sigiriya en culturele driehoekslandschappen voor dagtochten"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Waar Q Pick je naartoe brengt",
+    "intro": "Populaire routes voor luchthaventransfers, stadsritten en chauffeursritten: bestemmingen die ondersteunen hoe u zich verplaatst.",
+    "allDestinations": "Alle bestemmingen",
+    "travelTime": "Reistijd",
+    "startingPrice": "Vanaf"
+  },
+  "stepTimeline": {
+    "heading": "Hoe zekerheid werkt",
+    "intro": "Drie rustige stappen tussen waar je bent en waar je moet zijn.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "Verzoek",
+        "body": "Stel het ophalen, de bestemming en de timing in. Bekijk het tarief voordat u zich vastlegt."
+      },
+      "match": {
+        "n": "02",
+        "title": "Overeenkomen",
+        "body": "Er wordt een geverifieerde Q Pick-chauffeur toegewezen: gecertificeerd, verzekerd en reisklaar."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "Aankomst",
+        "body": "Live verwachte aankomsttijd, delen van reizen en een rustige overdracht bij de deur of poort."
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "Colombo",
+      "region": "Westelijke provincie",
+      "summary": "Havenlichten, Galle Face-briesje en de hartslag van de hoofdstad – bewogen met stille precisie.",
+      "imageAlt": "De kustwaterkant van Colombo in de schemering",
+      "travelTime": "30–45 minuten vanaf CMB",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "Galle",
+      "region": "Zuidelijke provincie",
+      "summary": "Fortmuren, oceaanwind en de zuidkust – luchthaven tot wallen zonder onzekerheid.",
+      "imageAlt": "Zuidelijke Sri Lankan kustlijn en helder oceaanwater",
+      "travelTime": "2–2,5 uur vanaf CMB",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "Ella",
+      "region": "Provincie Uva",
+      "summary": "Mist, thee en hooglandlucht: dagcharters afgestemd op het berglicht.",
+      "imageAlt": "Weelderig Sri Lankan hoogland- en tropisch heuvellandschap",
+      "travelTime": "5-6 uur van Colombo",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "Sigiriya",
+      "region": "Centrale Provincie",
+      "summary": "Rotsfort en culturele driehoekswegen – begeleid door chauffeurs die de routes kennen.",
+      "imageAlt": "Luchtfoto van het Sigiriya-rotsfort in Sri Lanka",
+      "travelTime": "3,5–4,5 uur vanaf CMB",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "Vertrouwen en veiligheid",
+    "heading": "Een veiligheidsnorm",
+    "headingLine2": "je kunt voelen.",
+    "intro": "Elke rit van Q Pick wordt ondersteund door geverifieerde chauffeurs, realtime monitoring, transparante prijzen en toegewijde ondersteuning, zodat u met volledig vertrouwen door Sri Lanka kunt reizen.",
+    "cta": "Ontdek veiligheid",
+    "trustLine": "Vertrouwd door duizenden reizigers",
+    "items": {
+      "verified": {
+        "title": "Geverifieerde stuurprogramma's",
+        "body": "Elke chauffeur passeert de identiteits- en voertuigverificatie."
+      },
+      "pricing": {
+        "title": "Transparante prijzen",
+        "body": "Ken uw tarief voordat u elke rit bevestigt."
+      },
+      "sharing": {
+        "title": "Live reis delen",
+        "body": "Vrienden en familie kunnen uw reis volgen."
+      },
+      "support": {
+        "title": "Noodhulp",
+        "body": "24/7 hulp wanneer u hulp nodig heeft."
+      },
+      "insured": {
+        "title": "Volledig verzekerde reizen",
+        "body": "Elke rit van Q Pick is beschermd."
+      }
+    },
+    "proofs": [
+      "Geverifieerde chauffeurs met identiteits- en voertuigcontroles",
+      "Transparante prijzen voordat u bevestigt",
+      "Live delen van reizen voor familie en hosts",
+      "Ondersteuning tijdens de reis en een gepubliceerde noodlijn",
+      "Verzekeringsdekking voor elke Q Pick reis"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "PARTNERS",
+      "heading": "Hotels, villa's en bedrijven",
+      "body": "Gastentransfers volgens een gedeelde standaard: overdrachten met witte handschoenen waar uw receptie op kan vertrouwen.",
+      "cta": "Partner van Q Pick"
+    },
+    "drivers": {
+      "eyebrow": "BESTUURDERS",
+      "heading": "Rijd met waardigheid",
+      "body": "Duidelijke inkomsten, eerlijke verzending en tools die zijn gebouwd voor de wegen die u het beste kent.",
+      "cta": "Word chauffeur"
+    }
+  },
+  "planTour": {
+    "eyebrow": "Privérondleidingen",
+    "heading": "Plan uw Sri Lanka-rondleiding",
+    "sub": "Stel een volledig op maat gemaakte privéreis samen (dagen, bestemmingen en voertuig) met een directe schatting voordat u zich vastlegt.",
+    "highlights": [
+      "Privéchauffeur voor uw volledige reisroute",
+      "Mix kust-, hooglanden- en culturele driehoekstops",
+      "Transparante schatting — bevestig details met Q Pick"
+    ],
+    "trust": [
+      "Directe schatting",
+      "Geen betaling vereist",
+      "Gratis consultatie"
+    ],
+    "cardLabel": "Jouw route",
+    "daysLabel": "Selecteer aantal dagen",
+    "daysOption": "{count} dagen",
+    "travelersLabel": "Reizigers",
+    "travelersOption": "{count}",
+    "arrivalLabel": "Aankomstdatum",
+    "pickupLabel": "Ophaallocatie",
+    "pickups": {
+      "cmb": "Bandaranaike (CMB)",
+      "colombo": "Colombo-stad",
+      "galle": "Galle",
+      "hotel": "Jouw hotel"
+    },
+    "tourTypeLabel": "Soort tour",
+    "tourTypes": {
+      "private": {
+        "label": "Privéchauffeur",
+        "meta": "Flexibel tempo · aangepaste stops"
+      },
+      "honeymoon": {
+        "label": "Huwelijksreis",
+        "meta": "Kust- en rustige hooglandverblijven"
+      },
+      "family": {
+        "label": "Familie",
+        "meta": "Ruime voertuigen · gemakkelijke dagen"
+      },
+      "cultural": {
+        "label": "Culturele driehoek",
+        "meta": "Erfgoedroutes · begeleid tempo"
+      }
+    },
+    "destinationsLabel": "Selecteer bestemmingen",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "Selecteer voertuigtype",
+    "vehicles": {
+      "sedan": {
+        "label": "Sedan",
+        "meta": "1–3 gasten · Airco"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 gasten · Airco"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "1–9 gasten · Airco"
+      }
+    },
+    "distanceLabel": "Geschatte afstand",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "Geschat rijgedrag",
+    "hoursValue": "~{hours} uur",
+    "breakdownLabel": "Prijsverdeling",
+    "breakdownDaily": "Voertuig & chauffeur",
+    "breakdownDestinations": "Bestemming stopt",
+    "breakdownTravelers": "Extra reizigers",
+    "breakdownPickup": "Ophalen van luchthaven / hotel",
+    "estimateLabel": "Direct geschatte prijs",
+    "estimateNote": "Alleen schatting · definitief wanneer u plant met Q Pick",
+    "cta": "Plan mijn rondleiding"
+  },
+  "privateToursPreview": {
+    "eyebrow": "Privérondleidingen",
+    "heading": "Plan uw Sri Lanka reis",
+    "sub": "Ontdek Sri Lanka met een volledig op maat gemaakte privéchauffeurervaring.",
+    "points": [
+      "Flexibele routes",
+      "Luxe voertuigen",
+      "Directe schattingen"
+    ],
+    "primary": "Plan mijn rondleiding",
+    "secondary": "Ontdek Rondleidingen",
+    "cardLabel": "Voorbeeldtraject",
+    "cardTitle": "5 dagen · Kust naar hooglanden",
+    "previewStops": [
+      "Aankomst CMB → Colombo 's nachts",
+      "Galle Fort en zuidkust",
+      "Finale Ella Tea Country"
+    ],
+    "estimateLabel": "Van",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Aanpassen op Tours"
+  },
+  "driveWithQPick": {
+    "eyebrow": "Voor professionele chauffeurs",
+    "heading": "Rijd met vertrouwen.",
+    "headingLine2": "Verdien met een doel.",
+    "sub": "Sluit u aan bij het premium chauffeursplatform van Sri Lanka. Accepteer luchthaventransfers, stads- en directieritten, zakenreizen en privérondleidingen terwijl u uw eigen planning beheert met de Q Pick Driver App.",
+    "cta": "Word een chauffeur",
+    "secondaryCta": "Meer informatie",
+    "trust": {
+      "verified": "Geverifieerde stuurprogramma's",
+      "payouts": "Wekelijkse uitbetalingen",
+      "support": "24/7 ondersteuning"
+    },
+    "trustAria": "Hoogtepunten van het vertrouwen van chauffeurs",
+    "floatCards": {
+      "rideTitle": "Nieuw ritverzoek",
+      "rideBody": "Colombo-fort · 6 min",
+      "airportTitle": "Luchthaventransfer",
+      "airportBody": "CMB → Hilton · LKR 4.800",
+      "earningsTitle": "De winst van vandaag",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "Chauffeur online",
+      "onlineBody": "Klaar voor premium ritten"
+    },
+    "phone": {
+      "greeting": "Hallo, Dilan",
+      "online": "Online",
+      "todayEarnings": "De winst van vandaag",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "Live-kaart",
+      "upcoming": "Aankomende rit",
+      "route": "CMB → Colombo-fort",
+      "eta": "Ophalen binnen 8 minuten",
+      "fare": "LKR 4,800",
+      "accept": "Accepteer",
+      "weekly": "Wekelijkse inkomsten"
+    },
+    "benefits": {
+      "rides": {
+        "title": "Executive ritverzoeken",
+        "body": "Ontvang premiumboekingen in Sri Lanka."
+      },
+      "airport": {
+        "title": "Luchthaventransfers",
+        "body": "Betrouwbare aankomst en vertrek."
+      },
+      "schedule": {
+        "title": "Flexibel schema",
+        "body": "Rijd wanneer het u uitkomt."
+      },
+      "earnings": {
+        "title": "Wekelijkse uitbetalingen",
+        "body": "Elke week transparante verdiensten."
+      },
+      "customers": {
+        "title": "Geverifieerde passagiers",
+        "body": "Reis met vertrouwde klanten."
+      },
+      "support": {
+        "title": "24/7 chauffeursondersteuning",
+        "body": "Echte ondersteuning wanneer u die nodig heeft."
+      }
+    },
+    "dashboard": {
+      "title": "Bestuurdersdashboard",
+      "online": "Online",
+      "earnings": "Deze week",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "Binnenkomend verzoek",
+      "route": "CMB → Colombo-fort",
+      "eta": "Ophalen binnen 8 minuten · LKR 4.800",
+      "accept": "Reis accepteren"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Apps",
+    "heading": "Neem Q Pick overal mee naartoe.",
+    "sub": "Boek op elk gewenst moment ritten, luchthaventransfers en privérondleidingen door Sri Lanka met de mobiele app Q Pick.",
+    "tablistAria": "Kies de Q Pick-app",
+    "tabs": {
+      "passenger": "Passagiersapp",
+      "driver": "Bestuurder-app"
+    },
+    "passenger": {
+      "title": "Alles wat je nodig hebt om te reizen.",
+      "features": [
+        "Directe ritboeking",
+        "Luchthaventransfers",
+        "Privérondleidingen",
+        "Live volgen van chauffeurs",
+        "Veilige betalingen",
+        "Reisgeschiedenis"
+      ],
+      "screenHome": "Q Pick startscherm voor passagiers",
+      "screenBooking": "Q Pick ritboekingsscherm",
+      "screenTracking": "Q Pick live volgscherm"
+    },
+    "driver": {
+      "title": "Verdien meer met Q Pick.",
+      "features": [
+        "Accepteer ritverzoeken",
+        "Luchthavenboekingen",
+        "Rondleidingverzoeken",
+        "Wekelijkse inkomsten",
+        "Navigatie",
+        "Bestuurdersdashboard"
+      ],
+      "primary": "Word een chauffeur",
+      "secondary": "Meer informatie",
+      "screens": {
+        "dashboardTitle": "Bestuurdersdashboard",
+        "online": "Online",
+        "earningsLabel": "Deze week",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "Nieuwe reisaanvraag",
+        "route": "CMB → Colombo-fort",
+        "fare": "LKR 4.800 · 8 min. ophalen",
+        "accept": "Reis accepteren",
+        "earningsScreenTitle": "Inkomsten",
+        "weekLabel": "Deze week",
+        "tripsLabel": "Voltooide reizen",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "Passagiers-app",
+      "driverPlay": "Bestuurdersapp"
+    }
+  },
+  "finalCta": {
+    "badge": "Begin je reis",
+    "heading": "Uw Sri Lanka reis begint hier.",
+    "body": "Boek een luchthaventransfer, reserveer een stadsrit, huur een chauffeur in of verken Sri Lanka met een privétour - alles op één premium platform.",
+    "primary": "Boek rit",
+    "secondary": "Luchthaventransfer",
+    "download": "Ontdek Rondleidingen",
+    "trustAria": "Waarom reizigers Q Pick vertrouwen",
+    "trust": {
+      "verified": "Geverifieerde stuurprogramma's",
+      "pricing": "Transparante prijzen",
+      "support": "24/7 ondersteuning",
+      "coverage": "Eilandbrede dekking"
+    }
+  },
+  "farePreview": {
+    "from": "Van",
+    "to": "Aan",
+    "note": "Schatting · bevestig in app"
+  },
+  "taxiFare": {
+    "eyebrow": "Schatting van taxikosten",
+    "heading": "Bereken uw taxitarief",
+    "sub": "Stel locaties in, kies uw rit, voeg boekingsgegevens toe, bekijk vervolgens het tarief en boek.",
+    "pickup": "Ophaallocatie",
+    "pickupPlaceholder": "Zoekopdracht ophalen — bijv. Het Colombo-fort",
+    "destination": "Bestemming",
+    "destinationPlaceholder": "Bestemming zoeken — b.v. Galle-gezicht",
+    "distance": "Afstand (automatisch)",
+    "waiting": "Wachttijd (minuten)",
+    "waitingHint": "Eerste {free} min gratis · LKR {rate}/min daarna",
+    "rideType": {
+      "title": "Rittype",
+      "now": "Rijd nu",
+      "schedule": "Plan het ophalen"
+    },
+    "vehicleType": "Voertuigtype",
+    "vehicleSelection": {
+      "eyebrow": "Vloot",
+      "heading": "Kies uw rit",
+      "sub": "Selecteer het perfecte voertuig voor uw reis.",
+      "startingFrom": "Vanaf",
+      "from": "Van",
+      "after1Km": "Na 1 km",
+      "passengers": "Passagiers",
+      "luggage": "Bagage",
+      "seats": "{count} Zitplaatsen",
+      "bags": "{count} Zakken",
+      "rating": "Waardering {rating} uit 5",
+      "ac": "Airconditioning",
+      "availability": "Beschikbaarheid",
+      "available": "Beschikbaar",
+      "unavailable": "Niet beschikbaar",
+      "yes": "Ja",
+      "no": "Nee",
+      "select": "Selecteer",
+      "selectRide": "Selecteer Rit",
+      "selected": "Geselecteerd",
+      "prev": "Vorige voertuigen",
+      "next": "Volgende voertuigen",
+      "day": "Dagtarief",
+      "night": "Nachttarief",
+      "eta": "Ophalen over ~{minutes} min",
+      "base": "Basis",
+      "perKm": "Per km"
+    },
+    "mobileFareBar": {
+      "continue": "Ga door"
+    },
+    "steps": {
+      "locations": "Locaties",
+      "vehicle": "Voertuig",
+      "details": "Details",
+      "summary": "Samenvatting",
+      "locationsTitle": "Kies Ophalen en bestemming",
+      "vehicleTitle": "Kies Voertuig",
+      "detailsTitle": "Boekingsgegevens",
+      "summaryTitle": "Tariefsamenvatting",
+      "continueVehicle": "Ga verder naar het voertuig",
+      "continueDetails": "Ga verder naar boekingsdetails",
+      "continueSummary": "Ga verder naar het tariefoverzicht"
+    },
+    "bookingDetails": {
+      "title": "Boekingsgegevens",
+      "pickupDate": "Ophaaldatum",
+      "pickupTime": "Ophaaltijd",
+      "flightNumber": "Vluchtnummer",
+      "flightNumberOptional": "Optioneel",
+      "flightPlaceholder": "bijv. UL 226",
+      "passengerCount": "Aantal passagiers",
+      "luggageCount": "Aantal bagage",
+      "specialNotes": "Speciale opmerkingen",
+      "notesPlaceholder": "Kinderzitje, meet-and-greet, poortvoorkeur…",
+      "passengerName": "Naam passagier",
+      "phone": "Telefoonnummer",
+      "driverNotes": "Opmerkingen voor chauffeur",
+      "paymentMethod": "Betaalmethode",
+      "cash": "Contant geld",
+      "card": "Kaart",
+      "wallet": "Portemonnee",
+      "promoCode": "Promotiecode",
+      "promoPlaceholder": "Voer promotiecode in",
+      "airportPickup": "Ophaalservice vanaf de luchthaven",
+      "yes": "Ja",
+      "no": "Nee",
+      "requiredHint": "Selecteer een geldige ophaaldatum en -tijd om door te gaan.",
+      "requiredDetailsHint": "Voer de naam van de passagier, het telefoonnummer en de betaalmethode in om door te gaan.",
+      "scheduleHint": "Kies een toekomstige ophaaldatum en -tijd."
+    },
+    "summaryLabel": "Tariefoverzicht",
+    "summary": {
+      "bookingSummary": "Boekingsoverzicht",
+      "pickup": "Ophalen",
+      "destination": "Bestemming",
+      "distance": "Afstand",
+      "duration": "Tijd",
+      "vehicle": "Voertuig",
+      "baseFare": "Basistarief",
+      "distanceCharge": "Afstandskosten",
+      "waitingCharge": "Wachtende lading",
+      "bookingFee": "Boekingskosten",
+      "airportFee": "Luchthaventoeslag",
+      "toll": "Tol",
+      "parking": "Parkeren",
+      "surge": "Schommeling",
+      "discount": "Korting",
+      "total": "Geschat totaal",
+      "estimatedFare": "Geschat tarief",
+      "finalFare": "Laatste tarief",
+      "grandTotal": "Totaal totaal",
+      "viewFareBreakdown": "Bekijk de tariefverdeling",
+      "payment": "Betaling",
+      "promo": "Promotiecode",
+      "eta": "verwachte aankomsttijd",
+      "passengers": "Passagiers",
+      "luggage": "Bagage"
+    },
+    "confirmErrors": {
+      "pickup": "Stel een ophaallocatie in.",
+      "destination": "Stel een bestemming in.",
+      "vehicle": "Kies een voertuig.",
+      "schedule": "Selecteer een geldige ophaaldatum en -tijd.",
+      "payment": "Selecteer een betaalmethode.",
+      "passengerName": "Voer de naam van de passagier in.",
+      "phone": "Voer een telefoonnummer in.",
+      "fare": "Het tarief wordt nog berekend. Een moment geduld alstublieft."
+    },
+    "estimateNote": "Alleen een schatting · bevestig het definitieve tarief in de Q Pick app. Alleen taxiritten - niet voor luchthaventransfers of rondleidingen.",
+    "cta": "Boek deze rit",
+    "bookNow": "Boek nu",
+    "scopeNote": "Prijzen voor taxiritten · gescheiden van luchthaven en rondleidingen",
+    "vehicles": {
+      "bike": "Q Fiets",
+      "tuk": "Q Toek",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q minivan",
+      "van": "Q Bestelwagen met plat dak",
+      "longVan": "Q Bestelwagen met hoog dak",
+      "suv": "Q-SUV",
+      "miniBus": "Q Minibus",
+      "longBus": "Q Bus"
+    },
+    "calculatingRoute": "Rijafstand en reistijd berekenen…",
+    "calculatingShort": "Berekenen…",
+    "routeReady": "Route gereed · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "Routes",
+      "heading": "Kies een route",
+      "recommended": "Aanbevolen",
+      "alternative": "Alternatief",
+      "roadHighway": "Snelweg",
+      "roadNormal": "Normaal",
+      "tags": {
+        "fastest": "Snelste route",
+        "avoidHighway": "Vermijd snelweg",
+        "highway": "Snelweg route",
+        "scenic": "Schilderachtige route",
+        "alternative": "Alternatieve route"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "Zet ophalen op de kaart",
+      "setDestination": "Bestemming op de kaart instellen",
+      "pickupTitle": "Bevestig het ophalen",
+      "destinationTitle": "Bevestig bestemming",
+      "pickupHint": "Zoek, gebruik uw locatie of verplaats de kaart",
+      "destinationHint": "Zoek of verplaats de kaart om de bestemming in te stellen",
+      "pickupAddress": "Ophaaladres",
+      "destinationAddress": "Bestemmingsadres",
+      "latitude": "Breedtegraad",
+      "longitude": "Lengtegraad",
+      "confirmPickup": "Bevestig het ophalen",
+      "confirmDestination": "Bevestig bestemming",
+      "resolving": "Adres zoeken…",
+      "close": "Sluiten",
+      "searchLabel": "Zoeken",
+      "searchPickup": "Zoek ophaallocatie",
+      "searchDestination": "Zoek bestemming",
+      "searching": "Zoeken…",
+      "noResults": "Geen resultaten gevonden",
+      "useCurrentLocation": "Gebruik huidige locatie",
+      "selectOnMap": "Selecteer op de kaart",
+      "locating": "Lokaliseren...",
+      "locationDenied": "Locatietoestemming is geweigerd. Schakel het in in de browserinstellingen of kies op de kaart.",
+      "locationUnavailable": "Kan uw huidige locatie niet ophalen. Probeer in plaats daarvan de zoekfunctie of de kaart."
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API-sleutel ontbreekt.",
+      "routeFailed": "Kan de route niet berekenen. Probeer het opnieuw.",
+      "selectFromSuggestions": "Kies het ophalen en de bestemming uit de lijst met suggesties."
+    }
+  },
+  "driverTrust": {
+    "verified": "Geverifieerd Q Pick stuurprogramma",
+    "trips": "{count} ritten"
+  },
+  "storeBadges": {
+    "comingSoon": "Binnenkort beschikbaar",
+    "getItOn": "Zet het aan",
+    "appStore": "App Store",
+    "googlePlay": "Google Spelen",
+    "iosAria": "Downloaden in de App Store – binnenkort beschikbaar",
+    "androidAria": "Download het op Google Play – binnenkort beschikbaar",
+    "downloadOnAppStore": "Downloaden in de App Store",
+    "getItOnGooglePlay": "Download het op Google Play"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "Plons",
+      "login": "Inloggen / Welkom",
+      "dashboard": "Dashboard",
+      "account": "Rekening",
+      "pickup": "Bevestig het ophalen",
+      "destination": "Selecteer bestemming",
+      "vehicles": "Kies voertuig",
+      "booking": "Boekingsbevestiging",
+      "searching": "Zoeken naar chauffeurs in de buurt",
+      "accepted": "Bestuurder geaccepteerd",
+      "arriving": "Chauffeur arriveert",
+      "pickedup": "Passagier opgehaald",
+      "riding": "Rit bezig",
+      "completed": "Reis voltooid",
+      "rate": "Beoordeel bestuurder",
+      "submitted": "Beoordeling ingediend",
+      "home": "Dashboard"
+    },
+    "shotAlt": "Q Pick Klant-app — {label}",
+    "shotLabels": {
+      "login": "Inloggen",
+      "home": "Thuis",
+      "account": "Rekening"
+    },
+    "splash": {
+      "tagline": "Luchthaven · Rit · Chauffeur"
+    },
+    "login": {
+      "welcome": "Welkom",
+      "subtitle": "Log in om uw rit te boeken",
+      "emailOrPhone": "E-mail of telefoon",
+      "password": "Wachtwoord",
+      "continue": "Ga door"
+    },
+    "dashboard": {
+      "greeting": "Goedemiddag",
+      "whereTo": "Waarheen?",
+      "searchPlaceholder": "Galle-fort, Sri Lanka",
+      "chips": {
+        "airport": "Luchthaven",
+        "home": "Thuis",
+        "saved": "Opgeslagen"
+      }
+    },
+    "pickup": {
+      "kicker": "Bevestig het ophalen",
+      "title": "Is dit uw locatie?",
+      "label": "Ophalen",
+      "value": "Het Colombo-fort",
+      "confirm": "Bevestig het ophalen"
+    },
+    "destination": {
+      "kicker": "Selecteer bestemming",
+      "title": "Waar ga je heen?",
+      "pickupLabel": "Ophalen",
+      "pickupValue": "Het Colombo-fort",
+      "destinationLabel": "Bestemming",
+      "destinationValue": "Galle-fort",
+      "continue": "Ga door"
+    },
+    "vehicles": {
+      "route": "Colombofort → Gallefort",
+      "title": "Kies een voertuig",
+      "seats": "{count} zetels",
+      "ac": "airconditioning",
+      "eta": "verwachte aankomsttijd {time}",
+      "categories": {
+        "tuk": "Toek",
+        "mini": "Mini",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "van": "Van"
+      },
+      "models": {
+        "tuk": "Bajaj RE",
+        "mini": "Suzuki Alt",
+        "sedan": "Toyota Premie",
+        "suv": "Toyota Prado",
+        "van": "Toyota Hiace"
+      },
+      "etas": {
+        "tuk": "3 minuten",
+        "mini": "4 minuten",
+        "sedan": "4 minuten",
+        "suv": "6 min",
+        "van": "8 minuten"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "Boekingsbevestiging",
+      "title": "Bevestig uw rit",
+      "vehicleMeta": "Toyota Premio · 4 zitplaatsen · Airco",
+      "route": "Route",
+      "routeValue": "Colombofort → Gallefort",
+      "fare": "Tarief",
+      "fareValue": "LKR 18,500",
+      "eta": "verwachte aankomsttijd",
+      "etaValue": "4 minuten",
+      "payment": "Betaling",
+      "paymentValue": "Visum ···· 4242",
+      "bookRide": "Boek rit"
+    },
+    "searching": {
+      "title": "Zoeken naar chauffeurs in de buurt...",
+      "matching": "Passend bij een Sedan bij Fort Colombo",
+      "driverFound": "Bestuurder gevonden",
+      "sedanSelected": "Sedan geselecteerd",
+      "selectedMeta": "Toyota Premio · verwachte aankomsttijd 3 minuten"
+    },
+    "accepted": {
+      "badge": "Bestuurder geaccepteerd",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premie",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "Verwachte aankomsttijd 3 minuten",
+      "track": "Volg bestuurder"
+    },
+    "live": {
+      "statusArriving": "Aankomst chauffeur • 3 min",
+      "statusRiding": "Op weg naar Galle",
+      "driverVehicle": "Kasun · Toyota Premio",
+      "enRoute": "Op weg naar de pick-up · Colombo Fort",
+      "route": "Colombofort → Gallefort",
+      "minutesUnit": "min",
+      "plate": "CAB-4821",
+      "rating": "★ 4,9",
+      "call": "Bel chauffeur",
+      "chat": "Stuurprogramma voor berichten"
+    },
+    "pickedUp": {
+      "title": "Je bent aan boord",
+      "subtitle": "Op weg naar Galle Fort met Kasun"
+    },
+    "completed": {
+      "title": "Reis voltooid",
+      "route": "Colombofort → Gallefort",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "Beoordeel uw chauffeur",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premie",
+      "prompt": "Hoe was jouw rit vandaag?",
+      "reviewPlaceholder": "Schrijf een korte recensie...",
+      "submit": "Beoordeling indienen"
+    },
+    "submitted": {
+      "title": "Bedankt voor uw beoordeling",
+      "subtitle": "Uw feedback helpt chauffeurs zich te verbeteren",
+      "backHome": "Terug naar huis"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "Rijden",
+        "description": "Boek een premium stads- of intercityrit in Sri Lanka — transparante tarieven, geverifieerde chauffeurs, live volgen."
+      },
+      "title": "Boek een rit",
+      "description": "Boek een rit overal in Sri Lanka met transparante prijzen en geverifieerde chauffeurs.",
+      "primaryCta": "Schat het tarief",
+      "secondaryCta": "Veiligheidsnormen",
+      "intro": {
+        "badge": "Rijden",
+        "title": "Boek een rit",
+        "subtitle": "Boek een rit overal in Sri Lanka met transparante prijzen en geverifieerde chauffeurs.",
+        "nav": {
+          "live": "Leef",
+          "tracking": "Slimme navigatie",
+          "route": "Actief traject",
+          "corridor": "Colombo → Galle-gezicht",
+          "eta": "verwachte aankomsttijd",
+          "etaValue": "12 minuten",
+          "distance": "Afst",
+          "distanceValue": "4,8 kilometer",
+          "driverNearby": "Chauffeur in de buurt · nadert pick-up"
+        }
+      },
+      "booking": {
+        "title": "Boek uw rit",
+        "trust": {
+          "pricing": "Transparante prijzen.",
+          "drivers": "Geverifieerde chauffeurs.",
+          "tracking": "Live volgen."
+        }
+      },
+      "why": {
+        "eyebrow": "Waarom Q Pick",
+        "heading": "Waarom rijden met Q Pick",
+        "items": {
+          "pricing": {
+            "title": "Transparante prijzen",
+            "body": "Bekijk de volledige schatting voordat u deze bevestigt: geen verrassingstoeslagen."
+          },
+          "drivers": {
+            "title": "Geverifieerde stuurprogramma's",
+            "body": "Chauffeurs met achtergrondcontrole. Beoordeeld, verzekerd, reisklaar."
+          },
+          "tracking": {
+            "title": "Live volgen",
+            "body": "Volg elke minuut vanaf het ophalen tot aan de deur met deelbare verwachte aankomsttijden."
+          },
+          "support": {
+            "title": "24/7 ondersteuning",
+            "body": "Bereikbare hulp wanneer u die nodig heeft, dag en nacht."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Vloot",
+        "heading": "Kies uw rit",
+        "sub": "Van fiets tot bus: kies wat bij jouw reis past.",
+        "mini": "Mini",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Q Fiets",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Snelle stadsritten"
+          },
+          "tuk": {
+            "name": "Q Toek",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Betaalbare korte reizen"
+          },
+          "flex": {
+            "name": "Q Flex",
+            "passengers": "3 Passagiers",
+            "luggage": "2 bagage",
+            "blurb": "Compacte hatchback voor stadsreizen"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "4 Passagiers",
+            "luggage": "2 bagage",
+            "blurb": "Ruimere Wagon R voor stadsreizen"
+          },
+          "sedan": {
+            "name": "Q Sedan",
+            "passengers": "4 Passagiers",
+            "luggage": "2 bagage",
+            "blurb": "Comfort voor zakenreizen"
+          },
+          "minivan": {
+            "name": "Q minivan",
+            "passengers": "6 passagiers",
+            "luggage": "4 Bagage",
+            "blurb": "Ruimte voor familie-uitjes"
+          },
+          "frVan": {
+            "name": "Q Bestelwagen met plat dak",
+            "passengers": "8 passagiers",
+            "luggage": "6 Bagage",
+            "blurb": "Comfortabele groepsluchthaventransfers"
+          },
+          "highRoofVan": {
+            "name": "Q Bestelwagen met hoog dak",
+            "passengers": "10 passagiers",
+            "luggage": "8 Bagage",
+            "blurb": "Meer ruimte voor rondleidingen en transfers"
+          },
+          "suv": {
+            "name": "Q-SUV",
+            "passengers": "5 Passagiers",
+            "luggage": "4 Bagage",
+            "blurb": "Ideaal voor gezinnen"
+          },
+          "miniBus": {
+            "name": "Q Minibus",
+            "passengers": "12 passagiers",
+            "luggage": "8 Bagage",
+            "blurb": "Kleine groepsreizen"
+          },
+          "bus": {
+            "name": "Q Bus",
+            "passengers": "20 passagiers",
+            "luggage": "12 Bagage",
+            "blurb": "Grote groepstransfers"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "Veiligheid",
+        "heading": "Reis met vertrouwen.",
+        "body": "Elke Q Pick-reis is beveiligd met geverifieerde chauffeurs, realtime delen van ritten, noodhulp en toegewijde klantenondersteuning.",
+        "cta": "Meer informatie over veiligheid",
+        "pillars": {
+          "verified": {
+            "title": "Geverifieerde vloot",
+            "body": "Identiteits- en voertuigcontroles voordat elke bestuurder zich bij het netwerk aansluit."
+          },
+          "sharing": {
+            "title": "Reis delen",
+            "body": "Deel live reisstatus met familie, vrienden of uw hotel."
+          },
+          "support": {
+            "title": "24/7 ondersteuning",
+            "body": "Bereikbare hulp wanneer u die nodig heeft, dag en nacht."
+          },
+          "emergency": {
+            "title": "Noodhulp",
+            "body": "Escalatiepaden tijdens de rit wanneer er iets mis lijkt te zijn onderweg."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Veelgestelde vragen",
+        "sub": "Duidelijke antwoorden voordat u boekt: ritten, luchthaventransfers en rondleidingen.",
+        "items": {
+          "fareCalc": {
+            "q": "Hoe wordt het tarief berekend?",
+            "a": "Taxitarieven combineren basistarief, afstand, wachttijd en tijd van de dag. U ziet een live schatting in het boekingsproces voordat u bevestigt."
+          },
+          "airport": {
+            "q": "Kan ik vooraf een luchthaventransfer boeken?",
+            "a": "Ja. Gebruik luchthaventransfers om een ​​getimede ophaalservice voor Bandaranaike (CMB) aan te vragen, met vluchtbewuste buffers wanneer u deze nodig heeft."
+          },
+          "tour": {
+            "q": "Kan ik mijn Sri Lanka tour aanpassen?",
+            "a": "Ja. Privérondleidingen zijn opgebouwd rond uw dagen, tussenstops en voertuig. Verfijn het plan met Q Pick voordat u op reis gaat."
+          },
+          "vehicle": {
+            "q": "Kan ik mijn voertuigcategorie kiezen?",
+            "a": "Ja. Van Q Bike tot Q Bus, kies de categorie die past bij passagiers en bagage in de boekingscarrousel of Fleet-sectie."
+          },
+          "drivers": {
+            "q": "Zijn alle chauffeurs geverifieerd?",
+            "a": "Ja. Q Pick-chauffeurs voltooien identiteits-, voertuig- en antecedentenonderzoek voordat ze zich bij het netwerk aansluiten."
+          },
+          "share": {
+            "q": "Kan ik mijn reis delen met familie?",
+            "a": "Ja. Deel de live reisstatus zodat familie, vrienden of uw hotel de reis kunnen volgen."
+          },
+          "cancel": {
+            "q": "Kan ik mijn boeking annuleren?",
+            "a": "Ja. Annuleer via de app of via Support. De timing en eventuele kosten zijn afhankelijk van het boekingstype en hoe dicht u bij het ophalen bent."
+          },
+          "contact": {
+            "q": "Hoe kan ik contact opnemen met ondersteuning?",
+            "a": "U kunt ons op elk gewenst moment bereiken via de ondersteuningspagina: telefoon, WhatsApp of e-mail. Ons team staat 24/7 voor u klaar."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "Heeft u nog vragen?",
+        "sub": "Ons team is 24/7 beschikbaar om u te helpen bij het plannen van uw rit of uw Sri Lanka reis.",
+        "primary": "Boek uw rit",
+        "secondary": "Neem contact op met ondersteuning"
+      },
+      "driverTrust": {
+        "name": "Nuwan P.",
+        "trips": "2,1k",
+        "rating": "4.97",
+        "verifiedLabel": "Geverifieerd Q Pick stuurprogramma",
+        "tripsLabel": "{count} ritten"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "Luchthaventransfers",
+        "description": "Premium Bandaranaike (CMB) luchthaventransfers met vluchttracking, meet & greet, professionele chauffeurs en transparante vaste prijzen."
+      },
+      "hero": {
+        "eyebrow": "Luchthaventransfers",
+        "titleLine1": "Luchthaventransfers,",
+        "titleLine2": "Perfect getimed.",
+        "description": "Van Bandaranaike International Airport (CMB) tot waar dan ook in Sri Lanka met professionele chauffeurs, live vlucht volgen, meet & greet en transparante prijzen.",
+        "primaryCta": "Boek luchthaventransfer",
+        "secondaryCta": "Ontdek voertuigen",
+        "imageAlt": "Q Pick chauffeur verwelkomt reizigers op Bandaranaike International Airport met een premium transfervoertuig",
+        "trust": {
+          "tracking": "Vlucht volgen",
+          "greet": "Ontmoet & begroet",
+          "pricing": "Vaste prijzen",
+          "support": "24/7 ondersteuning"
+        },
+        "cards": {
+          "flight": {
+            "label": "Vlucht",
+            "code": "UL225",
+            "status": "Op tijd"
+          },
+          "driver": {
+            "label": "Bestuurder",
+            "status": "Aankomst in 6 minuten",
+            "eta": "Live verwachte aankomsttijd"
+          },
+          "meetGreet": "Meet & Greet inbegrepen"
+        }
+      },
+      "rates": {
+        "eyebrow": "Officiële tarieven",
+        "heading": "Luchthaventransfertarieven",
+        "sub": "Zoek een bestemming en bekijk het officiële transfertarief met airconditioning vanaf de luchthaven Bandaranaike International (CMB).",
+        "popular": "Populaire bestemmingen",
+        "searchLabel": "Zoek bestemming",
+        "searchPlaceholder": "Bestemming of code zoeken — b.v. Kandy, Kan, K015",
+        "searching": "Zoeken…",
+        "noResults": "Er komen geen bestemmingen overeen met die zoekopdracht. Probeer een andere naam of code.",
+        "emptyTitle": "Vind uw tarief",
+        "emptyBody": "Zoek een bestemming om direct het officiële luchthaventarief te bekijken.",
+        "disclaimer": "De weergegeven tarieven zijn gebaseerd op de officiële tarievenlijst voor luchthaventransfers. Er kunnen extra kosten van toepassing zijn voor wachttijden, extra stops, tolgelden of speciale verzoeken.",
+        "card": {
+          "destination": "Bestemming",
+          "fare": "Officieel luchthaventransfertarief",
+          "airport": "Luchthaven",
+          "status": "Status",
+          "statusValue": "Officieel luchthaventarief",
+          "code": "Codeer",
+          "bookCta": "Boek luchthaventransfer"
+        }
+      },
+      "booking": {
+        "eyebrow": "Privéchauffeur",
+        "heading": "Boek uw luchthaventransfer.",
+        "sub": "Van Bandaranaike International Airport naar waar dan ook in Sri Lanka: officiële tarieven, afgestemd op uw reis.",
+        "title": "Luchthaventransfer",
+        "from": "Van",
+        "to": "Aan",
+        "toPlaceholder": "Zoek bestemming",
+        "searching": "Zoeken…",
+        "noResults": "Er komen geen bestemmingen overeen. Probeer een andere naam of code.",
+        "date": "Reisdatum",
+        "time": "Ophaaltijd",
+        "passengers": "Passagiers",
+        "adult": "Volwassene",
+        "luggage": "Bagage",
+        "luggageOptions": {
+          "cabin": "Cabine",
+          "medium": "Middelmatig",
+          "large": "Groot"
+        },
+        "vehicle": "Voertuigtype",
+        "vehicleOptions": {
+          "mini": "Mini",
+          "sedan": "Sedan",
+          "van": "Van",
+          "suv": "SUV"
+        },
+        "nationality": "Nationaliteit",
+        "nationalityPlaceholder": "Selecteer nationaliteit",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "Indiaas",
+          "uk": "Brits",
+          "us": "Amerikaans",
+          "de": "Duits",
+          "au": "Australisch",
+          "cn": "Chinees",
+          "other": "Anders"
+        },
+        "special": "Speciaal verzoek",
+        "specialPlaceholder": "Optioneel: kinderzitje, meet & greet-notities, hotelnaam...",
+        "distance": "Geschatte afstand",
+        "duration": "Geschatte duur",
+        "officialPrice": "Officieel luchthaventransfertarief",
+        "cta": "Boek uw rit",
+        "ctaLoading": "Boeking openen…",
+        "summaryTitle": "Reissamenvatting",
+        "route": "Route",
+        "destinationPending": "Selecteer een bestemming"
+      },
+      "features": {
+        "eyebrow": "Waarom Q Pick Luchthaven",
+        "heading": "Zekerheid van poort tot deur.",
+        "items": {
+          "tracking": {
+            "title": "Vlucht volgen",
+            "body": "Houd uw aankomst automatisch bij."
+          },
+          "greet": {
+            "title": "Ontmoet & begroet",
+            "body": "Uw chauffeur wacht bij de aankomsthal."
+          },
+          "pricing": {
+            "title": "Transparante prijzen",
+            "body": "Ken uw tarief voordat u boekt."
+          },
+          "support": {
+            "title": "24/7 ondersteuning",
+            "body": "Altijd beschikbaar."
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "Rondleidingen",
+        "description": "Plan een privétour door Sri Lanka met chauffeurs die het eiland kennen - directe schattingen, flexibele routes, luxe voertuigen."
+      },
+      "eyebrow": "Privérondleidingen",
+      "title": "Tours gevormd voor het eiland",
+      "description": "Dagtochten en reizen met meerdere tussenstops – theeland, fortsteden, culturele driehoek – met chauffeurs die de timing, het terrein en het comfort van de gasten kennen.",
+      "primaryCta": "Plan mijn tour",
+      "secondaryCta": "Bekijk pakketten",
+      "why": {
+        "heading": "Waarom kiezen voor een privétour",
+        "sub": "Jouw tempo, jouw stops, één vertrouwde chauffeur – niet een coach van vreemden op een vaste lus.",
+        "items": [
+          {
+            "title": "Volledig aanpasbaar",
+            "body": "Dagen, bestemmingen en voertuig: opgebouwd rond hoe u daadwerkelijk reist."
+          },
+          {
+            "title": "Overal dezelfde chauffeur",
+            "body": "Continuïteit van luchthaven naar hooglanden zonder voorkeuren opnieuw uit te leggen."
+          },
+          {
+            "title": "Transparante schattingen",
+            "body": "Bekijk een duidelijk assortiment voordat u navraag doet: verfijn de details met Q Pick."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "Populaire rondreispakketten",
+        "sub": "Uitgangspunten die je kunt aanpassen – of als inspiratie kunt gebruiken in de planner.",
+        "coastal": {
+          "days": "4–5 dagen",
+          "title": "Zuidelijke kust",
+          "body": "CMB aankomst, gemak in Colombo, Galle Fort, Mirissa of Unawatuna tempo.",
+          "price": "Vanaf LKR 78.000"
+        },
+        "triangle": {
+          "days": "5–6 dagen",
+          "title": "Culturele driehoek",
+          "body": "Wegen Sigiriya, Dambulla en Polonnaruwa met ingebouwde hotelcoördinatie.",
+          "price": "Vanaf LKR 112.000"
+        },
+        "highland": {
+          "days": "5–7 dagen",
+          "title": "Thee land",
+          "body": "Kandy naar Ella met hooglandlucht, treintiming optioneel, mooie afdalingen.",
+          "price": "Vanaf LKR 124.000"
+        }
+      },
+      "itineraries": {
+        "heading": "Voorgestelde routes",
+        "sub": "Lichtgewicht contouren: breid ze uit of comprimeer ze in de planner.",
+        "south": {
+          "title": "Zuidkust gereset",
+          "stops": [
+            "Dag 1 — CMB → Colombo",
+            "Dag 2–3 — Galle en kustplaatsen",
+            "Dag 4 – Keer terug of verleng naar Ella"
+          ]
+        },
+        "culture": {
+          "title": "Erfgoedcircuit",
+          "stops": [
+            "Dag 1 — CMB → Sigiriya-gebied",
+            "Dag 2 – Culturele driehoekslocaties",
+            "Dag 3–4 — Kandy en vertreklogistiek"
+          ]
+        },
+        "tea": {
+          "title": "Hoogland lus",
+          "stops": [
+            "Dag 1 — Colombo → Kandy",
+            "Dag 2–3 — Nuwara Eliya / Ella",
+            "Dag 4 — Schilderachtige terugkeer naar het zuiden of CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "Voertuigvergelijking",
+        "sub": "Kies het comfort voor uw gezelschap — allemaal met airconditioning en geverifieerde chauffeurs.",
+        "colVehicle": "Voertuig",
+        "colGuests": "Gasten",
+        "colBest": "Beste voor",
+        "colFrom": "Vanaf / dag",
+        "rows": {
+          "sedan": {
+            "name": "Sedan",
+            "guests": "1–3",
+            "best": "Koppels en lichte bagage",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Gezinnen en hooglandwegen",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Groepen en multi-stopkits",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Waarom reizen met Q Pick",
+        "items": {
+          "chauffeur": {
+            "title": "Geverifieerde chauffeurs",
+            "body": "Identiteits- en voertuigcontroles bij elke rit."
+          },
+          "pacing": {
+            "title": "Eilandtempo",
+            "body": "Routes getimed voor comfort, geen gehaaste busschema's."
+          },
+          "estimate": {
+            "title": "Duidelijke schattingen",
+            "body": "Ken het bereik voordat u met het team spreekt."
+          },
+          "support": {
+            "title": "Bereikbare ondersteuning",
+            "body": "Reiswijzigingen en hulp onderweg wanneer u die nodig heeft."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Veelgestelde vragen",
+        "items": {
+          "customize": {
+            "q": "Kan ik het reisschema volledig aanpassen?",
+            "a": "Ja. Gebruik de planner voor een startschatting en verfijn vervolgens de tussenstops, het tempo en de hotels met Q Pick."
+          },
+          "payment": {
+            "q": "Moet ik betalen als ik een schatting krijg?",
+            "a": "Nee. De planner is alleen ter oriëntatie; er is geen betaling vereist om te verkennen of te informeren."
+          },
+          "hotels": {
+            "q": "Boeken jullie ook hotels?",
+            "a": "Wij coördineren de bewegingen rond uw verblijf. Hotelboekingen kunnen geval per geval worden geregeld met partners."
+          },
+          "changes": {
+            "q": "Wat als de plannen halverwege de tour veranderen?",
+            "a": "Uw chauffeur en ondersteuningslijn passen het dagelijkse tempo aan wanneer wegen, weersomstandigheden of voorkeuren veranderen."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "Klaar om jouw reis vorm te geven?",
+        "sub": "Deel data en voorkeuren - we verfijnen de schatting tot een duidelijk privétourplan.",
+        "primary": "Stuur een aanvraag",
+        "secondary": "Terug naar planner",
+        "destinations": "Blader door bestemmingen"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "Dag charters",
+          "body": "Routes van zonsopgang tot zonsondergang met flexibele stops en een duidelijk all-in tarief."
+        },
+        "multiDay": {
+          "title": "Meerdaags",
+          "body": "Kust naar de hooglanden met dezelfde vertrouwde chauffeur tijdens uw hele reisroute."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "Veiligheid",
+        "description": "Q Pick veiligheid: geverifieerde chauffeurs, verzekerde voertuigen, live GPS-tracking en 24/7 ondersteuning in Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Vertrouwen en veiligheid",
+        "headline": "Reizen Sri Lanka",
+        "headlineLine2": "met absoluut vertrouwen.",
+        "description": "Elke reis van Q Pick wordt ondersteund door geverifieerde chauffeurs, verzekerde voertuigen, live volgen en toegewijde ondersteuning, zodat u het eiland met een gerust hart kunt verkennen.",
+        "primaryCta": "Boek een rit",
+        "secondaryCta": "Neem contact op met ondersteuning",
+        "imageAlt": "Q Pick privéchauffeur naast een premium voertuig in Sri Lanka"
+      },
+      "standards": {
+        "eyebrow": "Onze standaard",
+        "heading": "Veiligheid ingebouwd in elke reis",
+        "description": "Van de corridors in Colombo tot de haarspeldbochten in de hooglanden: Q Pick handhaaft bij elke reis dezelfde verificatie-, monitoring- en ondersteuningsstandaard.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "Geverifieerde stuurprogramma's",
+            "body": "Identiteits-, achtergrond- en licentiecontroles voordat een chauffeur lid wordt van het Q Pick netwerk."
+          },
+          "verifiedVehicles": {
+            "title": "Geverifieerde voertuigen",
+            "body": "Regelmatige inspecties, verzekeringsvalidatie en vlootnormen met airconditioning in elke categorie."
+          },
+          "gpsTracking": {
+            "title": "GPS-tracking",
+            "body": "Live reiszichtbaarheid voor u, uw gastheren en onze operationele balie gedurende de hele reis."
+          },
+          "support247": {
+            "title": "24/7 ondersteuning",
+            "body": "Hulp tijdens de reis en een gepubliceerde noodlijn voor momenten waarop onmiddellijke menselijke hulp nodig is."
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "Reisbescherming",
+        "heading": "Beschermd van boeking tot aankomst",
+        "steps": {
+          "book": {
+            "title": "Boek",
+            "body": "Bevestig uw rit, transfer of tour met transparante prijzen en een speciale chauffeursopdracht."
+          },
+          "verification": {
+            "title": "Verificatie",
+            "body": "De gegevens van de bestuurder en het voertuig worden vóór verzending gecontroleerd aan de hand van de Q Pick veiligheidsnorm."
+          },
+          "pickup": {
+            "title": "Ophalen",
+            "body": "Uw chauffeur arriveert met gedeelde voertuiggegevens: luchthaven-, hotel- of villacollectie."
+          },
+          "tracking": {
+            "title": "Live volgen",
+            "body": "Volg uw reis in realtime en deel de livestatus met familie of uw hotelreceptie."
+          },
+          "arrival": {
+            "title": "Veilige aankomst",
+            "body": "Bereik uw bestemming met ondersteuning die stand-by staat totdat uw reis is voltooid."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "Altijd bereikbaar",
+        "heading": "Noodhulp",
+        "description": "Als er onderweg iets niet in orde is, is ons team één telefoontje of bericht verwijderd – dag en nacht, waar dan ook op het eiland.",
+        "hotline": {
+          "label": "Noodlijn",
+          "hint": "Voor dringende situaties tijdens de reis die onmiddellijke hulp vereisen."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "Stuur een bericht naar onze supportdesk voor snelle coördinatie en reisupdates."
+        },
+        "email": {
+          "label": "E-mail",
+          "hint": "Voor niet-dringende vragen, partnerverzoeken en vervolgacties voor boekingen."
+        }
+      },
+      "stats": {
+        "eyebrow": "Door de cijfers",
+        "heading": "Een standaard waar reizigers op vertrouwen",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Geverifieerde stuurprogramma's"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "Verzekerde reizen"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "Ondersteuningsdekking"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "Klanttevredenheid"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "Je reis wacht",
+        "heading": "Reis met vertrouwen",
+        "description": "Boek een privéchauffeur, luchthaventransfer of eilandtour - ondersteund door de Q Pick veiligheidsnorm van de eerste tot de laatste kilometer.",
+        "primaryCta": "Boek een rit",
+        "secondaryCta": "Plan een rondleiding",
+        "imageAlt": "Sigiriya-rotsfort dat boven het tropische bos uitsteekt in Sri Lanka"
+      },
+      "faqHeading": "Veelgestelde vragen",
+      "faqs": [
+        {
+          "q": "Zijn Q Pick stuurprogramma's geverifieerd?",
+          "a": "Ja. Chauffeurs voltooien identiteits-, voertuig- en antecedentencontroles voordat ze zich bij het netwerk aansluiten."
+        },
+        {
+          "q": "Kan ik mijn reis delen?",
+          "a": "Ja. Met het live delen van ritten kunnen familie, hosts of hotelrecepties uw reis volgen."
+        },
+        {
+          "q": "Wat moet ik doen als ik hulp nodig heb tijdens een rit?",
+          "a": "Ondersteuning tijdens de reis en een gepubliceerde noodlijn zijn beschikbaar voor kritieke momenten."
+        },
+        {
+          "q": "Is er een verzekering op reizen?",
+          "a": "Dekking is van toepassing op elke reis onder de Q Pick standaard."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Rijd met Q Pick",
+        "description": "Sluit je aan bij Q Pick als professionele chauffeur: premiumklanten, eerlijke verdiensten, flexibele schema's en 24/7 chauffeursondersteuning in Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Werving van chauffeurs",
+        "headline": "Rijd in Sri Lanka",
+        "headlineLine2": "premium reizen.",
+        "description": "Sluit u aan bij een samengesteld netwerk van professionele chauffeurs die toeristen, hotels en zakenreizigers bedienen - met transparante inkomsten, waardige verzending en ondersteuning gebouwd voor de wegen die u kent.",
+        "primaryCta": "Solliciteer nu",
+        "secondaryCta": "Zie vereisten",
+        "imageAlt": "Q Pick professionele chauffeur naast een premium voertuig in Sri Lanka"
+      },
+      "whyJoin": {
+        "eyebrow": "Waarom lid worden van Q Pick",
+        "heading": "Gebouwd voor bestuurders die trots zijn op de weg",
+        "description": "Q Pick is geen generieke ride-hail-app. We verbinden geverifieerde chauffeurs met premiumvraag: luchthaventransfers, privérondleidingen en zakenreizen.",
+        "cards": {
+          "earnings": {
+            "title": "Hogere inkomsten",
+            "body": "Krijg toegang tot premium luchthaven-, tour- en chauffeurstarieven, geen race-to-the-bottom-prijzen."
+          },
+          "schedule": {
+            "title": "Flexibel schema",
+            "body": "Kies wanneer u online gaat. Balanceer luchthavenvluchten, dagverhuur en meerdaagse tours op jouw voorwaarden."
+          },
+          "clients": {
+            "title": "Premium toeristen en zakelijke klanten",
+            "body": "Bedien hotelgasten, zakenreizigers en samengestelde tourklanten die professionaliteit verwachten."
+          },
+          "support": {
+            "title": "24/7 chauffeursondersteuning",
+            "body": "Operationele balie en noodlijn wanneer u onderweg hulp nodig heeft, dag en nacht."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Vlootcategorieën",
+        "heading": "Bestuur het voertuig dat u bestuurt",
+        "description": "Q Pick ondersteunt een volledig spectrum aan categorieën privéchauffeurs – van compacte stadsauto's tot bestelwagens en touringcars met een hoog dak."
+      },
+      "journey": {
+        "eyebrow": "Jouw pad naar goedkeuring",
+        "heading": "Van aanvraag tot uw eerste premium reis",
+        "steps": {
+          "apply": {
+            "title": "Toepassen",
+            "body": "Voltooi de online registratie met uw persoonlijke, voertuig- en documentgegevens."
+          },
+          "verify": {
+            "title": "Documenten verifiëren",
+            "body": "Ons team beoordeelt uw NIC, rijbewijs, verzekering en voertuigregistratie."
+          },
+          "inspection": {
+            "title": "Voertuiginspectie",
+            "body": "Een standaardcontrole bevestigt dat uw voertuig voldoet aan de veiligheids- en comfortvereisten van Q Pick."
+          },
+          "training": {
+            "title": "Opleiding",
+            "body": "Korte introductie over de servicestandaarden van Q Pick, app-gebruik en gastvrijheid voor gasten."
+          },
+          "approved": {
+            "title": "Goedgekeurd",
+            "body": "Eenmaal geverifieerd, gaat uw profiel live, maar u kunt pas online gaan nadat het volledig is goedgekeurd."
+          },
+          "start": {
+            "title": "Begin met rijden",
+            "body": "Accepteer premiumreizen, luchthaventransfers en touropdrachten over het hele eiland."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "Stemmen van chauffeurs",
+        "heading": "Chauffeurs die voor Q Pick hebben gekozen",
+        "items": [
+          {
+            "name": "Kasun Perera",
+            "role": "Sedanchauffeur · Colombo",
+            "quote": "Luchthaventransfers en hotelovernames zijn consistent. Ik ken het tarief voordat ik het accepteer, en ondersteun antwoorden als ik bel."
+          },
+          {
+            "name": "Nimal Fernando",
+            "role": "Bestelwagen met hoog dak · Kandy",
+            "quote": "Tourgroepen en familietransfers betalen beter dan willekeurige stadsritten. Q Pick-klanten verwachten kwaliteit en geven dienovereenkomstig fooien."
+          },
+          {
+            "name": "Ruwan Silva",
+            "role": "SUV-chauffeur · Galle",
+            "quote": "De onboarding was grondig maar eerlijk. Na goedkeuring maakten de app en het operationele team het gemakkelijk om tijdens het seizoen bezig te blijven."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "Kwalificaties",
+        "heading": "Vereisten voor chauffeurs",
+        "description": "We leggen de lat hoog om zowel gasten als chauffeurs te beschermen. Zorg ervoor dat u hieraan voldoet voordat u solliciteert.",
+        "items": [
+          "Geldig Sri Lankan rijbewijs met minimaal 3 jaar ervaring",
+          "Nationale identiteitskaart (NIC) en een duidelijk antecedentenonderzoek",
+          "Geregistreerd, verzekerd voertuig in goede mechanische staat",
+          "Geldige omzetlicentie en uitgebreide verzekeringsdocumenten",
+          "Smartphone met mobiele data voor de Q Pick Driver-app",
+          "Professionele uitstraling en hoffelijke communicatie met gasten",
+          "Vloeiend in ten minste één van de volgende talen: Singalees, Engels of Tamil",
+          "Bereidheid om premium reizen naar luchthavens, steden en intercity's te verzorgen"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "Illustratieve inkomsten",
+        "heading": "Voorbeeld inkomsten",
+        "description": "De onderstaande cijfers zijn slechts illustratieve voorbeelden en geen gegarandeerd inkomen. De werkelijke inkomsten zijn afhankelijk van uren, seizoen, voertuigcategorie en reistype.",
+        "disclaimer": "Alleen ter illustratie. Geen garantie op inkomen. Onder voorbehoud van Q Pick commissie, vraag en individuele prestaties.",
+        "examples": [
+          {
+            "label": "Luchthaventransfer (CMB → Colombo)",
+            "amount": "LKR 8.500 – 12.000",
+            "note": "Sedan · enkele reis · daluren"
+          },
+          {
+            "label": "Chauffeurshuur voor een hele dag",
+            "amount": "LKR 18.000 – 28.000",
+            "note": "SUV of bestelwagen · 8–10 uur · exclusief brandstof"
+          },
+          {
+            "label": "Meerdaagse tour (per dag)",
+            "amount": "LKR 22.000 – 35.000",
+            "note": "Busje met hoog dak · Culturele driehoeksroute"
+          },
+          {
+            "label": "Stadsrit (Colombo)",
+            "amount": "LKR 2.500 – 5.500",
+            "note": "Mini of sedan · tarief op meterbasis"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "Klaar om mee te doen?",
+        "heading": "Word een Q Pick chauffeur",
+        "description": "Start vandaag nog met uw aanvraag. Voltooi de registratie in uw eigen tempo. Ons team begeleidt u bij de verificatie en goedkeuring.",
+        "primaryCta": "Solliciteer nu",
+        "secondaryCta": "Bekijk vereisten",
+        "imageAlt": "Q Pick chauffeurskaart en ritdashboard op mobiel"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "Partners",
+        "description": "Werk samen met Q Pick voor hotel-, villa- en zakelijke gasttransfers onder één vertrouwde standaard."
+      },
+      "title": "Partners die gasten goed vervoeren",
+      "description": "Hotels, villa's en bedrijven: transfers waar uw receptie op kan vertrouwen, onder een gedeelde Q Pick-standaard.",
+      "primaryCta": "Praat met partnerschappen",
+      "secondaryCta": "Luchthavenproduct",
+      "body": "Links naar aankomst van gasten, geplande transfers en operationeel inzicht – ontworpen zodat hospitality-teams minder tijd besteden aan het coördineren van WhatsApp-parken en meer tijd aan hosting.",
+      "logoRowEyebrow": "Gebouwd voor gastvrijheid",
+      "logoRowAriaLabel": "Horecapartners",
+      "partnerNames": [
+        "Galle Face Hotel",
+        "Kaneel",
+        "Jetvleugel",
+        "Shangri-La",
+        "Amangalla"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "Over",
+        "description": "Quick Pick App (Pvt) Ltd bouwt Q Pick: de vertrouwde privé-bewegingslaag in Sri Lanka: ritten, luchthaventransfers en eilandreizen."
+      },
+      "title": "Gebouwd voor hoe Sri Lanka beweegt",
+      "description": "Q Pick wordt ontwikkeld en beheerd door Quick Pick App (Pvt) Ltd – de vertrouwde privélaag voor beweging over het eiland, met de rust van een luxe conciërge en de betrouwbaarheid van een modern mobiliteitsnetwerk.",
+      "primaryCta": "Boek een rit",
+      "secondaryCta": "Rijd met ons mee",
+      "paragraphs": [
+        "We bestaan omdat gefragmenteerde WhatsApp-vloten en generieke mondiale apps beide missen wat reizigers en bewoners eigenlijk nodig hebben: zekerheid, gastvrijheid en respect voor de plek.",
+        "Quick Pick App (Pvt) Ltd ontwerpt passagiers-, chauffeurs- en operationele oppervlakken in één taal: stille technologie voor menselijke reizen door Sri Lanka."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "Ondersteuning",
+        "description": "Neem contact op met de ondersteuning van Q Pick voor ritten, transfers, rondleidingen en partnervragen."
+      },
+      "title": "Ondersteuning",
+      "description": "We zijn er voor reisvragen, partnervragen en momenten waarop een mens nodig is.",
+      "emailLabel": "E-mail",
+      "phoneLabel": "Telefoon",
+      "locationLabel": "Locatie",
+      "emergencyLabel": "Noodlijn"
+    },
+    "destinations": {
+      "meta": {
+        "title": "Bestemmingen",
+        "description": "Verken Q Pick bestemmingen in Sri Lanka: Colombo, Galle, Ella, Sigiriya en meer."
+      },
+      "title": "Bestemmingen",
+      "description": "Plaatsen die zijn afgestemd op hoe u reist: havenwegen, fortmuren, hooglandmist en de culturele driehoek."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "Bestemming",
+      "primaryCta": "Boek een rit",
+      "secondaryCta": "Ontdek rondleidingen"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "Privacy",
+          "description": "Q Pick privacybeleid – hoe we uw informatie verzamelen, gebruiken en beschermen."
+        },
+        "title": "Privacy",
+        "description": "We verzamelen alleen wat we nodig hebben om u veilig te vervoeren – en we behandelen reisgegevens met zorg.",
+        "body": "Deze pagina is een fase 1-shell. De volledige juridische kopie heeft betrekking op accountgegevens, locatie tijdens actieve reizen, betalingsverwerkers, bewaartermijnen en uw rechten onder de toepasselijke Sri Lankan en internationale privacywetgeving.",
+        "questionsPrefix": "Vragen:",
+        "supportEmail": "ondersteuning@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "Voorwaarden",
+          "description": "Q Pick servicevoorwaarden voor passagiers, partners en chauffeurs."
+        },
+        "title": "Servicevoorwaarden",
+        "description": "De overeenkomst die het gebruik van Q Pick-services voor ritten, transfers en rondleidingen regelt.",
+        "body": "Deze pagina is een fase 1-shell. De volledige voorwaarden bepalen de verplichtingen voor passagiers en chauffeurs, annuleringen, aansprakelijkheidslimieten, acceptabel gebruik en geschillenbeslechting.",
+        "questionsPrefix": "Vragen:",
+        "supportEmail": "ondersteuning@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Pagina niet gevonden",
+      "description": "De door u aangevraagde route maakt nog geen deel uit van de Q Pick kaart.",
+      "primaryCta": "Terug naar huis",
+      "secondaryCta": "Ondersteuning",
+      "continue": "Of ga verder naar {ride}, {airport} of {tours}.",
+      "links": {
+        "ride": "Rijden",
+        "airport": "Luchthaven",
+        "tours": "Rondleidingen"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, met zekerheid verplaatst.",
+        "description": "Premium mobiliteit in Sri Lanka — luchthaventransfers, stadstaxi, intercityritten, chauffeursdienst, zakenreizen en privérondleidingen onder één vertrouwd platform."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Premiummobiliteit in Sri Lanka",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Premium mobiliteit in Sri Lanka: luchthaventransfers, stadstaxi, intercityritten, chauffeursdienst en privérondleidingen onder één vertrouwd platform."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "Privé Sri Lanka Rondleidingen met chauffeur | Q Pick",
+      "description": "Verken Sri Lanka met Q Pick: privéchauffeurs, premium voertuigen en reizen op maat langs culturele bezienswaardigheden, heuvelland, stranden en dieren in het wild.",
+      "ogTitle": "Verken Sri Lanka met Q Pick privérondleidingen",
+      "twitterTitle": "Privé Sri Lanka Rondleidingen | Q Pick",
+      "twitterDescription": "Op maat gemaakte eilandreizen met privéchauffeurs en premium voertuigen."
+    },
+    "hero": {
+      "eyebrow": "Q Pick Privérondleidingen",
+      "headline": "Ontdek Sri Lanka met Q Pick",
+      "subtitle": "Ontdek onvergetelijke reizen met privéchauffeurs, premium voertuigen en ervaringen op maat.",
+      "primaryCta": "Ontdek collecties",
+      "secondaryCta": "Plan mijn rondleiding"
+    },
+    "finalCta": {
+      "headline": "Uw Sri Lanka reis begint hier",
+      "body": "Deel uw data en bestemmingen - wij stellen een privéchauffeursroute op en bevestigen een schriftelijke offerte.",
+      "ctaLabel": "Plan mijn reis",
+      "secondaryLabel": "Praat met een reisexpert"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "Privéchauffeurs",
+        "description": "Chauffeurs met licentie die tempeletiquette, hooglandwegen en rustige aankomst op de luchthaven kennen."
+      },
+      "airport": {
+        "title": "Ophalen van de luchthaven",
+        "description": "Bandaranaike International (CMB) meet-and-greet op het tijdstip van uw vlucht."
+      },
+      "support": {
+        "title": "24/7 ondersteuning",
+        "description": "Een echt Q Pick bureau voor vertrek en onderweg — WhatsApp en telefoon, dag en nacht."
+      },
+      "vehicles": {
+        "title": "Luxe voertuigen",
+        "description": "Sedans, SUV's, bestelwagens en touringcars - privécabine, airconditioning, klaar voor bagage."
+      },
+      "pricing": {
+        "title": "Transparante prijzen",
+        "description": "Schriftelijke offertes na beoordeling – geen verzonnen websiteprijzen of verrassingen achteraf."
+      },
+      "personal": {
+        "title": "Gepersonaliseerde rondleidingen",
+        "description": "Elk pakket is bewerkbaar: bestemmingen, dagen, tempo en voertuigklasse."
+      },
+      "rating": {
+        "title": "4.9 Gastenbeoordeling",
+        "description": "Consequent beoordeeld door gasten van privétours op het gebied van chauffeurszorg, tempo en communicatie."
+      },
+      "licensed": {
+        "title": "Gelicentieerde exploitant",
+        "description": "Quick Pick App (Pvt) Ltd — geregistreerde Sri Lankan operator met doorgelichte chauffeurs en verzekerde voertuigen."
+      },
+      "secure": {
+        "title": "Veilige boeking",
+        "description": "Schriftelijke offertes, bevestigde reisroutes en transparante insluitsels voordat u op reis gaat."
+      }
+    },
+    "explorer": {
+      "eyebrow": "Samengestelde collecties",
+      "title": "Kies uw reis",
+      "subtitle": "Premium privérondleidingen georganiseerd op reisstijl: open hier een categorie om het verhaal, de aanbevolen reisroutes en reisdetails te ontdekken.",
+      "searchPlaceholder": "Zoek bestemmingen, ervaringen of tournamen…",
+      "clearSearch": "Duidelijke zoekopdracht",
+      "categoriesAria": "Tourcategorieën",
+      "mapSelection": "Kaart selectie",
+      "multiDay": "Meerdaagse reizen",
+      "premiumNorthern": "Premium privérondleidingen",
+      "sortAria": "Sorteer reispakketten",
+      "filterAria": "Tourpakketten filteren",
+      "allCategoriesTitle": "Alle categorieën",
+      "allCategoriesIntro": "Blader door elke gepubliceerde privétour, reset en verken de volledige Q Pick collectie.",
+      "viewAllCategories": "Bekijk alle categorieën",
+      "destinationExperiences": "Bestemmingservaringen",
+      "destinationExperiencesSub": "Echte plaatsen, seizoenen en fotografievensters – niet alleen labels op een kaart.",
+      "vehiclesTitle": "Reis in privécomfort",
+      "vehiclesSub": "Van sedan tot minibus: airconditioning, bagageruimte en opladen voor onderweg.",
+      "trustTitle": "Waarom reizen met Q Pick",
+      "reviewsEmptyTitle": "Gastverhalen volgen binnenkort",
+      "reviewsEmptyBody": "Geverifieerde beoordelingen van privétours verschijnen hier terwijl gasten hun reizen delen.",
+      "faqEyebrow": "Veelgestelde vragen",
+      "faqLead": "Alles wat u moet weten voordat u uw reis plant met Q Pick.",
+      "noResults": "Er zijn geen tours die overeenkomen met uw zoekopdracht. Probeer een ander zoekwoord of reset filters.",
+      "noToursTitle": "Er zijn geen tours die overeenkomen met uw zoekopdracht",
+      "noToursBody": "Probeer een ander zoekwoord of reset de filters om door de volledige collectie te bladeren.",
+      "planCustomTour": "Plan een rondleiding op maat",
+      "resetFilters": "Filters opnieuw instellen",
+      "sortBy": "Sorteer op",
+      "mapJourneysThrough": "Reizen door {name}",
+      "itineraryOne": "reisroute",
+      "itineraryMany": "routes",
+      "matchingQuery": "overeenkomend met \"{query}\"",
+      "northernPeninsula": "Noordelijk schiereiland",
+      "premiumJaffna": "Premium Jaffna-ervaringen",
+      "premiumJaffnaSub": "{count} {experiences} — historische stadswandelingen, eilandveerboten en heilige boottochten met ondersteuning van een privéchauffeur.",
+      "experienceOne": "ervaring",
+      "experienceMany": "ervaringen",
+      "reviewsEmptyDisclaimer": "Geverifieerde gastbeoordelingen verschijnen na gepubliceerde reizen. We tonen geen verzonnen getuigenissen, beoordelingen of onderscheidingen.",
+      "trustBeforeTestimonials": "Vertrouw vóór getuigenissen",
+      "faqTitle": "Veelgestelde vragen",
+      "defaultImageAlt": "Schilderachtige Sri Lanka hooglandreis",
+      "openCategory": "Open {title}",
+      "countItineraries": "{count} routes",
+      "countPackages": "{count} pakketten",
+      "countPackage": "{count} pakket",
+      "cmbService": "CMB-service",
+      "packagesFound": "{count} pakketten",
+      "dayTour": "Dagtocht",
+      "daysTour": "{count} dagen",
+      "fromPrice": "Prijs op aanvraag",
+      "viewDetails": "Bekijk details",
+      "bookTour": "Boek deze tour",
+      "idealFor": "Ideaal voor {value}",
+      "premiumNorthernHeading": "Noordelijk Sri Lanka",
+      "premiumNorthernSub": "Erfgoedtempels, afgelegen eilanden en de culturele diepgang van Jaffna: drie premiumreizen met toegewijde chauffeurs."
+    },
+    "filters": {
+      "all": "Allemaal",
+      "classic": "Klassiek",
+      "luxury": "Luxe",
+      "wildlife": "Dieren in het wild",
+      "adventure": "Avontuur",
+      "beach": "Strand",
+      "honeymoon": "Huwelijksreis",
+      "wellness": "Welzijn",
+      "family": "Familie",
+      "day-tours": "Dagtochten"
+    },
+    "sort": {
+      "featured": "Uitgelicht",
+      "newest": "Nieuwste",
+      "duration": "Duur",
+      "popular": "Populair"
+    },
+    "badges": {
+      "best-seller": "Bestseller",
+      "luxury": "Luxe",
+      "new": "Nieuw",
+      "family-friendly": "Gezinsvriendelijk",
+      "eco": "Eco",
+      "adventure": "Avontuur"
+    },
+    "breadcrumbs": {
+      "home": "Thuis",
+      "tours": "Rondleidingen"
+    },
+    "jsonLd": {
+      "touristType": "Vrijetijdsreizigers"
+    },
+    "reviewsMeta": {
+      "title": "Gastrecensies",
+      "emptyTitle": "Verhalen van onderweg",
+      "emptyBody": "Geverifieerde gastbeoordelingen verschijnen na gepubliceerde reizen. We tonen geen verzonnen getuigenissen, beoordelingen of onderscheidingen."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 dagen Ella-treinontsnapping",
+        "idealFor": "Treinliefhebbers met beperkte tijd",
+        "intro": "Schilderachtige treinreis door theevalleien. Deze 4-daagse privéchauffeursreis bezoekt Kandy, Nuwara Eliya, Ella - treinliefhebbers met beperkte tijd. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Treinsegment",
+          "Negen Bogen",
+          "Thee stopt"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Kandy",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Nuwara Eliya",
+            "description": "Verken Nuwara Eliya met je toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Ella",
+            "description": "Verken Ella met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5-daagse walviskust van Mirissa",
+        "idealFor": "Liefhebbers van oceaandieren",
+        "intro": "Walvisseizoen en forterfgoed. Deze 5-daagse privéchauffeursreis bezoekt Galle, Mirissa, Bentota - liefhebbers van oceaandieren. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Mirissa-kust",
+          "Walvissen kijken",
+          "Galle-fort"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Galle",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Mirissa",
+            "description": "Verken Mirissa met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Bentota",
+            "description": "Verken Bentota met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Bentota op zijn gemak",
+            "description": "Verken Bentota met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6-daagse luxe huwelijksreiskust",
+        "idealFor": "Kusthuwelijksreizigers",
+        "intro": "Fortromantiek en oceaanvilla's. Deze 6-daagse privéchauffeursreis bezoekt Colombo, Galle, Bentota, Mirissa - pasgetrouwden aan de kust. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Galle-fort",
+          "Bentota",
+          "Mirissa-zonsondergangen"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Colombo",
+            "description": "Verken Colombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Galle",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Bentota",
+            "description": "Verken Bentota met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Mirissa",
+            "description": "Verken Mirissa met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Mirissa op haar gemak",
+            "description": "Verken Mirissa met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6-daagse pelgrimsdriehoek",
+        "idealFor": "Door geloof geleide groepsreizen",
+        "intro": "Heilige plaatsen op het hele eiland. Deze 6-daagse privéchauffeursreis bezoekt Kandy, Anuradhapura, Dambulla, Polonnaruwa - door geloof geleide groepsreizen. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Tempel van de Tand",
+          "Anuradhapura",
+          "Dambulla-grotten"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Kandy",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Anuradhapura",
+            "description": "Verken Anuradhapura met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Dambulla",
+            "description": "Verken Dambulla met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Polonnaruwa",
+            "description": "Verken Polonnaruwa met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Polonnaruwa op zijn gemak",
+            "description": "Verken Polonnaruwa met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 Dagen Festivalcultuur & Kandy",
+        "idealFor": "Bezoekers van het festivalseizoen",
+        "intro": "Perahera-timing met erfgoed. Deze 8-daagse privéchauffeursreis bezoekt Colombo, Kandy, Dambulla, Sigiriya, Negombo - bezoekers van het festivalseizoen. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Kandy-festivals",
+          "Tempelbezoeken",
+          "Driehoek iconen"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Colombo",
+            "description": "Verken Colombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Kandy",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Dambulla",
+            "description": "Verken Dambulla met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Sigiriya",
+            "description": "Verken Sigiriya met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Negombo",
+            "description": "Verken Negombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Negombo ter vrije besteding",
+            "description": "Verken Negombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Negombo ter vrije besteding",
+            "description": "Verken Negombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9-daagse huwelijksreisparadijs",
+        "idealFor": "Pasgetrouwden en romantische ontsnappingen",
+        "intro": "Intiem ijsberen door mist en oceaan. Deze 9-daagse privéchauffeursreis bezoekt Negombo, Kandy, Nuwara Eliya, Ella, Bentota, Galle - pasgetrouwden en romantische ontsnappingen. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Thee land",
+          "Ella romantiek",
+          "Zonsondergangen aan de kust"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Negombo",
+            "description": "Verken Negombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Kandy",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Nuwara Eliya",
+            "description": "Verken Nuwara Eliya met je toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Ella",
+            "description": "Verken Ella met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Bentota",
+            "description": "Verken Bentota met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Galle",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10-daagse Ayurveda-wellnessreis",
+        "idealFor": "Wellnessgerichte reizigers",
+        "intro": "Herstelhoofdstukken verweven met privéreizen. Deze 10-daagse privéchauffeursreis bezoekt Negombo, Kandy, Bentota, Mirissa, Galle - op wellness gerichte reizigers. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Wellness-tempo",
+          "Kust kalm",
+          "Tempelevenwicht"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdek Negombo",
+            "description": "Verken Negombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Kandy",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Bentota",
+            "description": "Verken Bentota met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Ontdek Mirissa",
+            "description": "Verken Mirissa met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          },
+          {
+            "title": "Ontdek Galle",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Galle op zijn gemak",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          },
+          {
+            "title": "Vertrek & verder",
+            "description": "Privétransfer naar Colombo of Bandaranaike International Airport - of vervolg uw aangepaste route met Q Pick."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "Ontdekkingsdag van de hoofdstad van Colombo",
+        "idealFor": "Tussenstopgasten en stadsliefhebbers",
+        "intro": "Skyline van Colombo, koloniale straatjes en zonsondergangen in Galle Face. Deze eendaagse privéchauffeursreis bezoekt Colombo - tussenstopgasten en stadsliefhebbers. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Uitzichtpunten van de Lotus Tower",
+          "Galle Gezicht Groen",
+          "Dineren in Colombo stopt"
+        ],
+        "itinerary": [
+          {
+            "title": "Ontdekking van Colombo",
+            "description": "Verken Colombo met uw toegewijde chauffeur - de timing is afhankelijk van het weer, tickets en uw tempo."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "Erfgoeddag van het Galle Fort",
+        "idealFor": "Liefhebbers van geschiedenis aan de zuidkust",
+        "intro": "Nederlandse wallen en licht uit de Indische Oceaan. Deze eendaagse privéchauffeursreis bezoekt Galle - liefhebbers van geschiedenis aan de zuidkust. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Galle Fort-vuurtoren",
+          "Walwandeling",
+          "Boetiekstraten"
+        ],
+        "itinerary": [
+          {
+            "title": "Galle-ontdekking",
+            "description": "Verken Galle met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "Zonsopkomstdag op de Sigiriya-rots",
+        "idealFor": "Vroege vogels en fotografiegasten",
+        "intro": "Lion Rock bij het eerste licht. Deze eendaagse privéchauffeursreis bezoekt Sigiriya - vroege vogels en fotografiegasten. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Sigiriya-top",
+          "Watertuinen",
+          "Fresco-galerij"
+        ],
+        "itinerary": [
+          {
+            "title": "Sigiriya-ontdekking",
+            "description": "Verken Sigiriya met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "Kandy heilige stadsdag",
+        "idealFor": "Spirituele reizigers en gezinnen",
+        "intro": "Tempel van de Tand en kalm meer. Deze eendaagse privéchauffeursreis bezoekt Kandy - spirituele reizigers en gezinnen. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Tempel van de Tand",
+          "Kandy-meer",
+          "Peradeniya-optie"
+        ],
+        "itinerary": [
+          {
+            "title": "Kandy-ontdekking",
+            "description": "Verken Kandy met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "Dag met uitzicht op Ella Highland",
+        "idealFor": "Treintussenstops en bergwandelaars",
+        "intro": "Negen Bogen en mistige valleien. Deze eendaagse privéchauffeursreis bezoekt Ella - treintussenstops en bergwandelaars. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Negen Bogenbrug",
+          "Kleine Adam's Peak",
+          "Cafés in de theevallei"
+        ],
+        "itinerary": [
+          {
+            "title": "Ella-ontdekking",
+            "description": "Verken Ella met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "Yala Wildlife Safari-dag",
+        "idealFor": "Safariliefhebbers met strakke schema's",
+        "intro": "Luipaardland bij zonsopgang. Deze eendaagse privéchauffeursreis bezoekt Yala - safariliefhebbers met strakke schema's. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Jeepsafari-venster",
+          "Lagunes in de droge zone",
+          "Vogelleven"
+        ],
+        "itinerary": [
+          {
+            "title": "Yala-ontdekking",
+            "description": "Verken Yala met uw toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en uw tempo."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "Anuradhapura Heilige Trail-dag",
+        "idealFor": "Boeddhistische erfgoedpelgrims",
+        "intro": "Oude stoepa's en bodhi-tradities. Deze eendaagse privéchauffeursreis bezoekt Anuradhapura - boeddhistische erfgoedpelgrims. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Ruwanwelisaya",
+          "Heilige Bodhiboom",
+          "Klooster ruïnes"
+        ],
+        "itinerary": [
+          {
+            "title": "Anuradhapura-ontdekking",
+            "description": "Verken Anuradhapura met uw toegewijde chauffeur - de timing is afhankelijk van het weer, de tickets en uw tempo."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "Dag van de zuidkust van Mirissa",
+        "idealFor": "Bezoekers van het walvisseizoen",
+        "intro": "Kokosbaaien en oceaanhorizons. Deze eendaagse privéchauffeursreis bezoekt Mirissa – bezoekers van het walvisseizoen. Uw toegewijde chauffeur zorgt voor de weg terwijl u zich concentreert op tempels, uitkijkpunten, natuurramen en ongehaaste kustmiddagen. Elke Q Pick-tour wordt verfijnd na een schriftelijke beoordeling van uw data, voertuigvoorkeur en tempo.",
+        "highlights": [
+          "Mirissa-strand",
+          "Kokos Heuvel",
+          "Seizoen om walvissen te spotten"
+        ],
+        "itinerary": [
+          {
+            "title": "Mirissa-ontdekking",
+            "description": "Verken Mirissa met je toegewijde chauffeur: de timing is afhankelijk van het weer, de tickets en je tempo."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "Erfgoedrondleiding door Jaffna",
+        "idealFor": "Erfgoedreizigers verkennen het noorden",
+        "intro": "Ontdek het Tamil-erfgoed van Jaffna tijdens een gerichte privétour van vier uur. Je chauffeur begeleidt je van de gopuram van Nallur Kovil naar de wallen van het Jaffna Fort, de historische openbare bibliotheek, een kleurrijke lokale marktstop en een klassieke Rio Ice Cream-finish.",
+        "highlights": [
+          "Nallur-tempel",
+          "Het Jaffna-fort",
+          "Openbare Bibliotheek",
+          "Lokale markt",
+          "Rio-ijs"
+        ],
+        "itinerary": [
+          {
+            "title": "Erfgoedcircuit van Jaffna",
+            "description": "Nallur-tempel, Jaffna Fort, openbare bibliotheek, marktbezoek en Rio Ice Cream - afgestemd op de openingstijden en uw interesses."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "Delfts eilandavontuur",
+        "idealFor": "Eilandverkenners en fotografen",
+        "intro": "Steek per veerboot over naar het afgelegen eiland Delft voor een avontuur van een hele dag. Wandel over koraalstranden, ga op zoek naar de beroemde baobabboom en de ruïnes van de Queen's Tower, bekijk wilde paarden op open vlaktes en keer terug met uw privéchauffeur die de transfers naar het vasteland verzorgt.",
+        "highlights": [
+          "Veerboot rit",
+          "Wilde paarden",
+          "Baobabboom",
+          "Koninginnetoren",
+          "Koraal strand"
+        ],
+        "itinerary": [
+          {
+            "title": "Expeditie op het Delftse Eiland",
+            "description": "Overtocht met de veerboot, wilde paardenvlaktes, baobabboom, Queen's Tower en tijd op het koraalstrand - met transfers naar het vasteland per privévoertuig."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Nainativu heilige eilandtour",
+        "idealFor": "Pelgrims en culturele reizigers",
+        "intro": "Vaar naar Nainativu voor een zes uur durende heilige eilandreis. Bezoek de Nagadeepa-tempel en Nagapooshani Amman Kovil, ervaar de overtocht met de boot en absorbeer het gemengde boeddhistische en hindoeïstische erfgoed van de noordelijke eilanden van Sri Lanka met ondersteuning van een privéchauffeur aan wal.",
+        "highlights": [
+          "Nagadeepa-tempel",
+          "Nagapooshani Amman-tempel",
+          "Boottocht",
+          "Culturele ervaring",
+          "Sigiriya Rock Fortress getimed voor koeler licht",
+          "Muurschilderingen van de Dambulla-grottempel",
+          "Anuradhapura of Polonnaruwa heilige plaatsen",
+          "Privéchauffeur Culturele Driehoek",
+          "Tempel van de Tand in Kandy",
+          "Theeplantages rond Nuwara Eliya",
+          "Negen Bogenbrug in Ella",
+          "Optioneel toeristisch treinsegment",
+          "Culturele driehoek iconen",
+          "Kandy en hooglandtheeland",
+          "Schilderachtige bezienswaardigheden van Ella",
+          "Zuidkust bij Galle of Mirissa",
+          "Erfgoedopwarming in de Culturele Driehoek",
+          "Hooglandtheeland en Ella",
+          "Yala luipaard safarivenster",
+          "Hersteldagen aan de zuidkust",
+          "Volledige diepte van de Culturele Driehoek",
+          "Heuvelland en zuidelijke safari",
+          "Opties voor de west- en oostkust",
+          "Geschikt voor het hele gezin",
+          "Seizoensroutes over het hele eiland",
+          "Diepe erfgoed- en natuurtijd",
+          "Stranden aan de oost- en westkust",
+          "Ultiem privéchauffeurstempo"
+        ],
+        "itinerary": [
+          {
+            "title": "Nainativu heilig circuit",
+            "description": "Boottocht naar Nainativu, de Nagadeepa-tempel, de Nagapooshani Amman-tempel en culturele tijd op het eiland voordat u terugkeert."
+          },
+          {
+            "title": "Aankomstgang naar de Driehoek",
+            "description": "Ontmoet uw chauffeur in de buurt van CMB of Negombo en reis landinwaarts. Vestig je in de buurt van Sigiriya of Dambulla; avond ter vrije besteding."
+          },
+          {
+            "title": "Sigiriya en Dambulla",
+            "description": "Beklim Sigiriya in zachter licht en verken vervolgens de Dambulla-grottempel. Optionele seizoenssafari in de buurt, indien gewenst."
+          },
+          {
+            "title": "Oude stad en verder",
+            "description": "Bezoek Anuradhapura of Polonnaruwa voordat je terugkeert naar Colombo/Negombo of je aangepaste route voortzet."
+          },
+          {
+            "title": "Naar Kandy",
+            "description": "Rijd via binnenlandse routes naar Kandy. Avondmeercircuit en Tempel van de Tand, getimed rond rituelen."
+          },
+          {
+            "title": "Kandy-erfgoed",
+            "description": "Botanische tuinen van Peradeniya, ambachtsstraten en vrije tijd voor markten of een cultureel optreden."
+          },
+          {
+            "title": "Thee land",
+            "description": "Stijg op naar Nuwara Eliya voor plantagebezoeken, Gregory Lake en vrije tijd in een koel klimaat."
+          },
+          {
+            "title": "Ella-standpunten",
+            "description": "Ga verder naar Ella voor de Nine Arches Bridge, bergwandelingen en hooglandcafés. Optioneel treinsegment."
+          },
+          {
+            "title": "Afdaling of kustverbinding",
+            "description": "Vertrek richting Colombo, de zuidkust of uw volgende aangepaste bestemming met bagage die over de weg wordt afgehandeld."
+          },
+          {
+            "title": "Aankomst",
+            "description": "Ontmoeting op de luchthaven en transfer naar Colombo of Negombo; briefing met uw chauffeur."
+          },
+          {
+            "title": "Culturele Driehoek",
+            "description": "Reis naar Sigiriya / Dambulla voor fort- of grottempeltijd."
+          },
+          {
+            "title": "Erfgoed voor Kandy",
+            "description": "Voltooi de Triangle-hoogtepunten en ga dan verder naar Kandy."
+          },
+          {
+            "title": "Hooglanden",
+            "description": "Schilderachtige rit naar het theeland richting Nuwara Eliya of Ella."
+          },
+          {
+            "title": "Ella",
+            "description": "Brug met Negen Bogen, uitkijkpunten en café-vrije tijd."
+          },
+          {
+            "title": "Zuidelijke kust",
+            "description": "Daal af naar Galle Fort en Mirissa voor zonsondergang en dineren aan zee."
+          },
+          {
+            "title": "Vertrek",
+            "description": "Kustochtend ter vrije besteding en privétransfer naar CMB of Colombo."
+          },
+          {
+            "title": "Aankomst",
+            "description": "CMB ontmoeten elkaar en vestigen zich in de stad of Negombo."
+          },
+          {
+            "title": "Sigiriya-regio",
+            "description": "Rotsfort en onderdompeling in de Driehoek."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tempel van de Tand en toegang tot het hoogland."
+          },
+          {
+            "title": "Thee land",
+            "description": "Nuwara Eliya-plantages en koel klimaat."
+          },
+          {
+            "title": "Ella",
+            "description": "Negen Bogen en bergkamwandelingen."
+          },
+          {
+            "title": "In de richting van Yala",
+            "description": "Schilderachtige afdaling naar de zuidoostelijke natuurgordel."
+          },
+          {
+            "title": "Safari-dag",
+            "description": "Yala National Park jeepsafari (parkkosten extra)."
+          },
+          {
+            "title": "Zuidelijke stranden",
+            "description": "Mirissa Coconut Tree Hill en stilstand aan de kust."
+          },
+          {
+            "title": "Galle-fort",
+            "description": "Wallen, vuurtoren en boetiekverkenning."
+          },
+          {
+            "title": "Vertrek",
+            "description": "Privétransfer naar CMB of Colombo."
+          },
+          {
+            "title": "Aankomst Negombo",
+            "description": "CMB ophalen en inchecken aan de westkust."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Heilige stadsstoepa's en archeologisch park."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rotsfort en driehoekige basis."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Middeleeuwse hoofdstad en optioneel olifantenpark."
+          },
+          {
+            "title": "Dambulla naar Kandy",
+            "description": "Grottempel en hoofdstad van het hoogland."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tempel van de Tand en tuinen."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Theeplantages en koel klimaat."
+          },
+          {
+            "title": "Ella",
+            "description": "Negen Bogen en gezichtspunten."
+          },
+          {
+            "title": "Yala-aanpak",
+            "description": "Overdracht van wilde dieren in het zuidoosten."
+          },
+          {
+            "title": "Safari",
+            "description": "Jeepdag in Yala National Park."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Hersteldag op het zuidelijke strand."
+          },
+          {
+            "title": "Galle",
+            "description": "Forterfgoed en kust."
+          },
+          {
+            "title": "Oost of Zuidwest",
+            "description": "Trincomalee-seizoensoptie of Bentota-buffer."
+          },
+          {
+            "title": "Colombo vertrek",
+            "description": "Stadsbuffer en CMB overdracht."
+          },
+          {
+            "title": "Aankomst",
+            "description": "CMB naar Negombo of Colombo."
+          },
+          {
+            "title": "Buffer aan de westkust",
+            "description": "Lagune of stadsrecreatie."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Heilige stadsonderdompeling."
+          },
+          {
+            "title": "Noordwestelijke optie",
+            "description": "Optionele wildlife- of rustdag."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rotsfort focus."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Middeleeuwse ruïnes en meren."
+          },
+          {
+            "title": "Dambulla",
+            "description": "Grottempel en dorpscultuur."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tempel van de Tand."
+          },
+          {
+            "title": "Kandy-vrije tijd",
+            "description": "Tuinen en ambachten."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Thee land."
+          },
+          {
+            "title": "Landgoederen",
+            "description": "Optionele plateau- of plantdag."
+          },
+          {
+            "title": "Ella",
+            "description": "Negen Bogen en bergkammen."
+          },
+          {
+            "title": "Ella vrije tijd",
+            "description": "Cafés en korte wandelingen."
+          },
+          {
+            "title": "Jala",
+            "description": "Wildlife-benadering."
+          },
+          {
+            "title": "Safari",
+            "description": "Dagje parkjeep."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Zuidelijke oceaan."
+          },
+          {
+            "title": "Galle",
+            "description": "Forterfgoed en kust."
+          },
+          {
+            "title": "Bentota",
+            "description": "Zuidwestelijke resorttempo."
+          },
+          {
+            "title": "Oostkust",
+            "description": "Trincomalee of Arugam Bay per seizoen."
+          },
+          {
+            "title": "Oosten vrije tijd",
+            "description": "Strand- en watertijd."
+          },
+          {
+            "title": "Terugkeren en vertrekken",
+            "description": "Transfer tussen eilanden naar CMB."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Kan ik een Q Pick tourpakket aanpassen?",
+        "answer": "Ja. Gepubliceerde pakketten zijn uitgangspunten. Kies bestemmingen, dagen, voertuig en voorkeuren in de planner – onze balie verfijnt de route nadat u een aanvraag heeft ingediend."
+      },
+      "hub-price": {
+        "question": "Hoe werkt prijsbepaling?",
+        "answer": "We tonen prijzen die op aanvraag beschikbaar zijn totdat uw reisschema is beoordeeld. Nadat u een rondleidingaanvraag heeft ingediend, bevestigt Q Pick een schriftelijke offerte voor een privéchauffeur. Entreegelden, safari-jeeps, accommodatie en maaltijden zijn doorgaans gescheiden, tenzij schriftelijk anders vermeld."
+      },
+      "hub-airport": {
+        "question": "Biedt u vervoer vanaf de luchthaven met rondleidingen aan?",
+        "answer": "Ja. Ophalen en afzetten van Bandaranaike International (CMB) kan worden geregeld tijdens uw tour of via onze speciale luchthaventransferservice."
+      },
+      "hub-group": {
+        "question": "Welk voertuig moet ik kiezen?",
+        "answer": "Sedans zijn geschikt voor koppels; SUV's en bestelwagens passen bij gezinnen; luxe busjes en minitouringcars bedienen grotere groepen. Selecteer capaciteit in de planner – we bevestigen het definitieve voertuig na beoordeling van bagage en route."
+      },
+      "hub-payment": {
+        "question": "Hoe werken betalingen en bevestigingen?",
+        "answer": "Dien online een rondleidingaanvraag in. Ons team beoordeelt de beschikbaarheid, bevestigt een schets en offerte en deelt vervolgens de volgende stappen voor betaling en chauffeurstoewijzing. U ontvangt een referentiecode voor tracking."
+      },
+      "pkg-3d-pace": {
+        "question": "Is drie dagen genoeg voor de Culturele Driehoek?",
+        "answer": "Drie dagen kunnen Sigiriya, Dambulla en Anuradhapura of Polonnaruwa bestrijken in een rustig privétempo. Bij een langer verblijf zijn Mihintale, safari-add-ons of een Kandy-extensie mogelijk."
+      },
+      "pkg-5d-train": {
+        "question": "Kunnen we de Ella-trein meenemen?",
+        "answer": "Ja. Veel gasten rijden op een schilderachtig spoorgedeelte terwijl de chauffeur bagage over de weg vervoert. Vertel ons uw voorkeur bij het aanvragen van een offerte."
+      },
+      "pkg-5d-weather": {
+        "question": "Hoe is het weer in het heuvelland?",
+        "answer": "Nuwara Eliya en Ella zijn koeler dan de kust, met mistige ochtenden en mogelijk lichte regen. Verpak lagen; uw privévoertuig houdt transfers tussen gezichtspunten comfortabel."
+      },
+      "pkg-7d-fitness": {
+        "question": "Hoeveel wandelen is er nodig tijdens de 7-daagse tour?",
+        "answer": "Sigiriya- en tempelbezoeken omvatten stappen; Ella biedt optionele korte wandelingen aan. Uw chauffeur verdeelt de dag zodat inspannende segmenten kunnen worden ingekort zonder de highlights te verliezen."
+      },
+      "pkg-10d-safari": {
+        "question": "Is een Yala-safari inbegrepen in het wildlife-avontuur?",
+        "answer": "Safari-jeepverhuur en toegang tot het park worden als add-ons geregeld met een duidelijke timing. Waarnemingen van dieren in het wild zijn nooit gegarandeerd; na uw verzoek plannen we het beste seizoensvenster."
+      },
+      "pkg-14d-pace": {
+        "question": "Is veertien dagen te veel rijden?",
+        "answer": "Met een privéchauffeur en verspreide overnachtingsplaatsen blijft het dagelijkse rijden beheersbaar. We ontwerpen ruststranddagen zodat de reisroute meeslepend aanvoelt en niet gehaast."
+      },
+      "pkg-21d-season": {
+        "question": "Wanneer is het beste seizoen voor een Grand Island-tour?",
+        "answer": "De west- en zuidkust geven de voorkeur aan december-maart; het oosten schijnt vaak rond mei-september. Een 21-dagenplan kan de drogere kust volgen – wij adviseren op basis van uw reismaand."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "Stap 1",
+        "title": "Waar zou je heen willen?",
+        "subtitle": "Selecteer bestemmingen of beschrijf uw droomroute – samen verfijnen we de details."
+      },
+      "dates": {
+        "kicker": "Stap 2",
+        "title": "Selecteer reisdata",
+        "subtitle": "Kies uw startdatum en hoeveel dagen u onderweg wilt zijn.",
+        "startDate": "Startdatum",
+        "numberOfDays": "Aantal dagen",
+        "estimatedEnd": "Geschatte einddatum:"
+      },
+      "vehicle": {
+        "kicker": "Stap 3",
+        "title": "Kies uw voertuig",
+        "subtitle": "Van sedan tot busje: privé, voorzien van airconditioning, klaar voor bagage."
+      },
+      "accommodation": {
+        "kicker": "Stap 4",
+        "title": "Voorkeur voor accommodatie",
+        "subtitle": "Vertel ons uw comfortniveau: wij coördineren uw verblijf of u boekt uw eigen verblijf."
+      },
+      "preferences": {
+        "kicker": "Stap 5",
+        "title": "Reisvoorkeuren",
+        "subtitle": "Tempo, interesses en speciale verzoeken helpen ons uw reisschema vorm te geven."
+      },
+      "contact": {
+        "kicker": "Stap 6",
+        "title": "Uw contactgegevens",
+        "subtitle": "Wij reageren met een schriftelijke offerte en een verfijnd reisschema."
+      },
+      "requests": {
+        "kicker": "Stap 7",
+        "title": "Speciale verzoeken",
+        "subtitle": "Dieetwensen, toegankelijkheid, feesten – alles wat we moeten weten."
+      },
+      "review": {
+        "kicker": "Beoordeling",
+        "title": "Controleer uw touraanvraag",
+        "subtitle": "Bevestig de details voordat u deze verzendt. In dit stadium is geen betaling vereist.",
+        "submit": "Rondleidingsaanvraag indienen",
+        "submitting": "Verzenden…"
+      }
+    },
+    "common": {
+      "back": "Terug",
+      "continue": "Ga door",
+      "optional": "Optioneel",
+      "required": "Vereist"
+    }
+  }
+}

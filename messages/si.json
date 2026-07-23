@@ -101,7 +101,7 @@
       },
       "arrive": {
         "fromLabel": "ගුවන්තොටුපොළ",
-        "fromDefault": "Colombo Airport (CMB)",
+        "fromDefault": "කොළඹ ගුවන් තොටුපළ (CMB)",
         "toLabel": "ගමනාන්තය",
         "toDefault": "Galle Face Hotel",
         "recommendation": "පැමිණීමේදී හමුවීම · හෝටලයට දැනුම්දීම · ගාස්තුව පැහැදිලිව"
@@ -110,12 +110,12 @@
         "fromLabel": "පික්අප්",
         "fromDefault": "ඔබේ හෝටලය",
         "toLabel": "ගමනාන්තය",
-        "toDefault": "Galle Fort",
+        "toDefault": "ගාලු කොටුව",
         "recommendation": "තහවුරු කළ රියදුරු · බෙදාගත හැකි සජීවී තත්ත්වය · විනිවිද පෙනෙන මිල"
       },
       "explore": {
         "fromLabel": "පික්අප්",
-        "fromDefault": "Colombo",
+        "fromDefault": "කොළඹ",
         "toLabel": "ගමනාන්තය",
         "toDefault": "Ella සහ කඳුකරය",
         "recommendation": "දිනයට සුදුසු වාහනය · මාර්ග දන්නා රියදුරු · එක සන්සුන් සැලැස්මක්"
@@ -153,7 +153,7 @@
         "pickup": "පික්අප්",
         "pickupValue": "බණ්ඩාරනායක ගුවන්තොටුපොළ",
         "hotel": "හෝටලය",
-        "hotelValue": "Shangri-La Colombo",
+        "hotelValue": "ෂැංග්‍රි-ලා කොළඹ",
         "route": "මාර්ග පෙරදසුන",
         "stops": "නැවතුම්",
         "cta": "ඉදිරියට"
@@ -459,7 +459,7 @@
   },
   "destinations": {
     "colombo": {
-      "name": "Colombo",
+      "name": "කොළඹ",
       "region": "බස්නාහිර පළාත",
       "summary": "වරාය ආලෝක, Galle Face සුළඟ සහ අගනුවරේ ස්පන්දනය — සන්සුන් නිරවද්‍යතාවයෙන්.",
       "imageAlt": "සන්ධ්‍යාවේ Colombo වෙරළ ඉදිරිපස",
@@ -467,7 +467,7 @@
       "startingPrice": "LKR 4,500"
     },
     "galle": {
-      "name": "Galle",
+      "name": "ගාල්ල",
       "region": "දකුණු පළාත",
       "summary": "කොටු බිත්ති, සාගර සුළං සහ දකුණු වෙරළ — ගුවන්තොටුපොළේ සිට රැම්පාර්ට් දක්වා අවිනිශ්චිතතාවයකින් තොරව.",
       "imageAlt": "පැහැදිලි සාගරය සහිත දකුණු ශ්‍රී ලංකා වෙරළ",
@@ -475,7 +475,7 @@
       "startingPrice": "LKR 18,500"
     },
     "ella": {
-      "name": "Ella",
+      "name": "ඇල්ල",
       "region": "ඌව පළාත",
       "summary": "මීදුම, තේ සහ කඳුකර වාතය — කඳු ආලෝකයට කාලානුරූප දින චාර්ටර්.",
       "imageAlt": "සශ්‍රීක ශ්‍රී ලංකා කඳුකර සහ නිවර්තන කඳු බෑවුම්",
@@ -483,7 +483,7 @@
       "startingPrice": "LKR 32,000"
     },
     "sigiriya": {
-      "name": "Sigiriya",
+      "name": "සීගිරිය",
       "region": "මධ්‍යම පළාත",
       "summary": "ගල් බලකොටුව සහ සංස්කෘතික ත්‍රිකෝණ මාර්ග — මාර්ග දන්නා රියදුරන් සමඟ.",
       "imageAlt": "ශ්‍රී ලංකාවේ Sigiriya Rock Fortress හි වායු දසුන",
@@ -566,7 +566,7 @@
     "pickups": {
       "cmb": "බන්ඩාරනායක (CMB)",
       "colombo": "Colombo නගරය",
-      "galle": "Galle",
+      "galle": "ගාල්ල",
       "hotel": "ඔබේ හෝටලය"
     },
     "tourTypeLabel": "සංචාර වර්ගය",
@@ -590,16 +590,16 @@
     },
     "destinationsLabel": "ගමනාන්ත තෝරන්න",
     "destinations": {
-      "colombo": "Colombo",
-      "galle": "Galle",
-      "ella": "Ella",
-      "sigiriya": "Sigiriya",
-      "kandy": "Kandy"
+      "colombo": "කොළඹ",
+      "galle": "ගාල්ල",
+      "ella": "ඇල්ල",
+      "sigiriya": "සීගිරිය",
+      "kandy": "මහනුවර"
     },
     "vehicleLabel": "වාහන වර්ගය තෝරන්න",
     "vehicles": {
       "sedan": {
-        "label": "Sedan",
+        "label": "සෙඩාන්",
         "meta": "අමුත්තන් 1–3 · A/C"
       },
       "suv": {
@@ -607,12 +607,12 @@
         "meta": "අමුත්තන් 1–5 · A/C"
       },
       "van": {
-        "label": "Van",
+        "label": "වෑන්",
         "meta": "අමුත්තන් 1–9 · A/C"
       }
     },
     "distanceLabel": "ඇස්තමේන්තු දුර",
-    "distanceValue": "~{km} km",
+    "distanceValue": "~{km} කි.මී",
     "hoursLabel": "ඇස්තමේන්තු රියදුරු කාලය",
     "hoursValue": "~පැය {hours}",
     "breakdownLabel": "මිල විස්තරය",
@@ -663,7 +663,7 @@
       "rideTitle": "නව ගමන් ඉල්ලීම",
       "rideBody": "Colombo Fort · මිනි 6",
       "airportTitle": "ගුවන්තොටුපොළ මාරුවීම",
-      "airportBody": "CMB → Hilton · LKR 4,800",
+      "airportBody": "CMB → හිල්ටන් · LKR 4,800",
       "earningsTitle": "අද ආදායම්",
       "earningsBody": "LKR 12,450",
       "onlineTitle": "රියදුරු සබැඳි",
@@ -676,7 +676,7 @@
       "earningsValue": "LKR 12,450",
       "liveMap": "සජීවී සිතියම",
       "upcoming": "ඉදිරි ගමන",
-      "route": "CMB → Colombo Fort",
+      "route": "CMB → කොළඹ කොටුව",
       "eta": "මිනි 8 කින් එක්ක",
       "fare": "LKR 4,800",
       "accept": "පිළිගන්න",
@@ -714,13 +714,13 @@
       "earnings": "මේ සතිය",
       "earningsValue": "LKR 86,400",
       "nextTrip": "ලැබෙන ඉල්ලීම",
-      "route": "CMB → Colombo Fort",
+      "route": "CMB → කොළඹ කොටුව",
       "eta": "මිනි 8 කින් එක්ක · LKR 4,800",
       "accept": "ගමන පිළිගන්න"
     }
   },
   "downloadApps": {
-    "eyebrow": "Q Pick Apps",
+    "eyebrow": "Q Pick යෙදුම්",
     "heading": "Q Pick සැමතැනට ගෙන යන්න.",
     "sub": "Q Pick ජංගම යෙදුමෙන් ඕනෑම වේලාවක ගමන්, ගුවන්තොටුපොළ මාරුවීම් සහ පෞද්ගලික ශ්‍රී ලංකා සංචාර වෙන්කරවා ගන්න.",
     "tablistAria": "Q Pick යෙදුම තෝරන්න",
@@ -760,7 +760,7 @@
         "earningsLabel": "මේ සතිය",
         "earningsValue": "LKR 86,400",
         "requestTitle": "නව ගමන් ඉල්ලීම",
-        "route": "CMB → Colombo Fort",
+        "route": "CMB → කොළඹ කොටුව",
         "fare": "LKR 4,800 · මිනි 8 කින් එක්ක",
         "accept": "ගමන පිළිගන්න",
         "earningsScreenTitle": "ආදායම්",
@@ -804,11 +804,11 @@
     "destinationPlaceholder": "ගමනාන්තය සොයන්න — උදා. Galle Face",
     "distance": "දුර (ස්වයං)",
     "waiting": "රැඳී වේලාව (මිනිත්තු)",
-    "waitingHint": "First {free} min free · LKR {rate}/min after",
+    "waitingHint": "පළමු {free} min නොමිලේ · LKR {rate}/min පසුව",
     "rideType": {
-      "title": "Ride type",
-      "now": "Ride now",
-      "schedule": "Schedule pickup"
+      "title": "ධාවන වර්ගය",
+      "now": "දැන් පදින්න",
+      "schedule": "උපලේඛන පිකප්"
     },
     "vehicleType": "වාහන වර්ගය",
     "vehicleSelection": {
@@ -834,14 +834,14 @@
       "selected": "තෝරා ඇත",
       "prev": "පෙර වාහන",
       "next": "ඊළඟ වාහන",
-      "day": "Day rate",
-      "night": "Night rate",
-      "eta": "Pickup in ~{minutes} min",
-      "base": "Base",
-      "perKm": "Per km"
+      "day": "දින අනුපාතය",
+      "night": "රාත්රී අනුපාතය",
+      "eta": "විනාඩි ~{minutes} කින් පිකප්",
+      "base": "පදනම",
+      "perKm": "කි.මී"
     },
     "mobileFareBar": {
-      "continue": "Continue"
+      "continue": "දිගටම කරගෙන යන්න"
     },
     "steps": {
       "locations": "ස්ථාන",
@@ -867,25 +867,25 @@
       "luggageCount": "බඩු ගණන",
       "specialNotes": "විශේෂ සටහන්",
       "notesPlaceholder": "ළමා ආසනය, හමුවීම, ගේට්ටුව…",
-      "passengerName": "Passenger name",
-      "phone": "Phone number",
-      "driverNotes": "Notes for driver",
-      "paymentMethod": "Payment method",
-      "cash": "Cash",
-      "card": "Card",
-      "wallet": "Wallet",
-      "promoCode": "Promo code",
-      "promoPlaceholder": "Enter promo code",
-      "airportPickup": "Airport pickup",
-      "yes": "Yes",
-      "no": "No",
-      "requiredHint": "Select a valid pickup date and time to continue.",
-      "requiredDetailsHint": "Enter passenger name, phone, and payment method to continue.",
-      "scheduleHint": "Choose a future pickup date and time."
+      "passengerName": "මගියාගේ නම",
+      "phone": "දුරකථන අංකය",
+      "driverNotes": "රියදුරු සඳහා සටහන්",
+      "paymentMethod": "ගෙවීම් ක්රමය",
+      "cash": "මුදල්",
+      "card": "කාඩ්පත",
+      "wallet": "පසුම්බිය",
+      "promoCode": "ප්රවර්ධන කේතය",
+      "promoPlaceholder": "ප්‍රවර්ධන කේතය ඇතුලත් කරන්න",
+      "airportPickup": "ගුවන් තොටුපළ පිකප්",
+      "yes": "ඔව්",
+      "no": "නැත",
+      "requiredHint": "ඉදිරියට යාමට වලංගු පිකප් දිනයක් සහ වේලාවක් තෝරන්න.",
+      "requiredDetailsHint": "ඉදිරියට යාමට මගී නම, දුරකථනය සහ ගෙවීම් ක්‍රමය ඇතුළු කරන්න.",
+      "scheduleHint": "අනාගත පිකප් දිනයක් සහ වේලාවක් තෝරන්න."
     },
     "summaryLabel": "ගාස්තු සාරාංශය",
     "summary": {
-      "bookingSummary": "Booking Summary",
+      "bookingSummary": "වෙන්කිරීමේ සාරාංශය",
       "pickup": "පික්අප්",
       "destination": "ගමනාන්තය",
       "distance": "දුර",
@@ -903,40 +903,40 @@
       "total": "ඇස්තමේන්තු මුළු",
       "estimatedFare": "ඇස්තමේන්තු ගාස්තුව",
       "finalFare": "අවසන් ගාස්තුව",
-      "grandTotal": "Grand total",
-      "viewFareBreakdown": "View Fare Breakdown",
-      "payment": "Payment",
-      "promo": "Promo code",
+      "grandTotal": "විශාල එකතුව",
+      "viewFareBreakdown": "ගාස්තු බිඳවැටීම බලන්න",
+      "payment": "ගෙවීම",
+      "promo": "ප්රවර්ධන කේතය",
       "eta": "ETA",
-      "passengers": "Passengers",
-      "luggage": "Luggage"
+      "passengers": "මගීන්",
+      "luggage": "ගමන් මලු"
     },
     "confirmErrors": {
-      "pickup": "Please set a pickup location.",
-      "destination": "Please set a destination.",
-      "vehicle": "Please choose a vehicle.",
-      "schedule": "Please select a valid pickup date and time.",
-      "payment": "Please select a payment method.",
-      "passengerName": "Please enter the passenger name.",
-      "phone": "Please enter a phone number.",
-      "fare": "Fare is still calculating — please wait a moment."
+      "pickup": "කරුණාකර පිකප් ස්ථානයක් සකසන්න.",
+      "destination": "කරුණාකර ගමනාන්තයක් සකසන්න.",
+      "vehicle": "කරුණාකර වාහනයක් තෝරන්න.",
+      "schedule": "කරුණාකර වලංගු පිකප් දිනයක් සහ වේලාවක් තෝරන්න.",
+      "payment": "කරුණාකර ගෙවීම් ක්‍රමයක් තෝරන්න.",
+      "passengerName": "කරුණාකර මගී නම ඇතුලත් කරන්න.",
+      "phone": "කරුණාකර දුරකථන අංකයක් ඇතුළු කරන්න.",
+      "fare": "ගාස්තුව තවමත් ගණනය කරමින් පවතී - කරුණාකර මොහොතක් රැඳී සිටින්න."
     },
     "estimateNote": "ඇස්තමේන්තුව පමණි · අවසන් ගාස්තුව Q Pick යෙදුමේ තහවුරු කරන්න. ටැක්සි ගමන් පමණි — ගුවන්තොටුපොළ හෝ සංචාර සඳහා නොවේ.",
     "cta": "මෙම ගමන වෙන්කරවා ගන්න",
     "bookNow": "දැන් වෙන්කරවන්න",
     "scopeNote": "ටැක්සි ගමන් මිලකරණය · ගුවන්තොටුපොළ සහ සංචාර වලින් වෙනස්",
     "vehicles": {
-      "bike": "Q Bike",
+      "bike": "Q බයිසිකලය",
       "tuk": "Q Tuk",
       "miniCar": "Q Flex",
-      "wagon": "Q Mini",
-      "sedan": "Q Sedan",
+      "wagon": "Q මිනි",
+      "sedan": "Q සෙඩාන්",
       "miniVan": "Q Minivan",
-      "van": "Q Flat Roof Van",
-      "longVan": "Q High Roof Van",
+      "van": "Q පැතලි වහල වෑන්",
+      "longVan": "Q ඉහළ වහල වෑන්",
       "suv": "Q SUV",
-      "miniBus": "Q Mini Bus",
-      "longBus": "Q Bus"
+      "miniBus": "Q මිනි බස්",
+      "longBus": "Q බස්"
     },
     "calculatingRoute": "ධාවන දුර සහ ගමන් කාලය ගණනය කරමින්…",
     "calculatingShort": "ගණනය කරමින්…",
@@ -983,8 +983,8 @@
       "locationUnavailable": "ඔබේ වත්මන් ස්ථානය ලබාගත නොහැකි විය. සෙවීම හෝ සිතියම භාවිතා කරන්න."
     },
     "errors": {
-      "missingKey": "OpenRouteService API Key is missing.",
-      "routeFailed": "Unable to calculate the route. Please try again.",
+      "missingKey": "OpenRouteService API යතුර අස්ථානගත වී ඇත.",
+      "routeFailed": "මාර්ගය ගණනය කළ නොහැක. කරුණාකර නැවත උත්සාහ කරන්න.",
       "selectFromSuggestions": "කරුණාකර යෝජනා ලැයිස්තුවෙන් පික්අප් සහ ගමනාන්තය තෝරන්න."
     }
   },
@@ -995,7 +995,7 @@
   "storeBadges": {
     "comingSoon": "ඉක්මනින්",
     "getItOn": "ලබා ගන්න",
-    "appStore": "App Store",
+    "appStore": "යෙදුම් වෙළඳසැල",
     "googlePlay": "Google Play",
     "iosAria": "App Store වෙතින් බාගන්න — ඉක්මනින්",
     "androidAria": "Google Play වෙතින් ලබා ගන්න — ඉක්මනින්",
@@ -1041,7 +1041,7 @@
     "dashboard": {
       "greeting": "සුභ දහවලක්",
       "whereTo": "කොහේටද?",
-      "searchPlaceholder": "Galle Fort, Sri Lanka",
+      "searchPlaceholder": "ගාලු කොටුව, Sri Lanka",
       "chips": {
         "airport": "ගුවන්තොටුපොළ",
         "home": "නිවස",
@@ -1052,44 +1052,44 @@
       "kicker": "ග්‍රහණය තහවුරු කරන්න",
       "title": "මෙය ඔබේ ස්ථානයද?",
       "label": "ග්‍රහණය",
-      "value": "Colombo Fort",
+      "value": "කොළඹ කොටුව",
       "confirm": "ග්‍රහණය තහවුරු කරන්න"
     },
     "destination": {
       "kicker": "ගමනාන්තය තෝරන්න",
       "title": "ඔබ කොහේ යනවාද?",
       "pickupLabel": "ග්‍රහණය",
-      "pickupValue": "Colombo Fort",
+      "pickupValue": "කොළඹ කොටුව",
       "destinationLabel": "ගමනාන්තය",
-      "destinationValue": "Galle Fort",
+      "destinationValue": "ගාලු කොටුව",
       "continue": "ඉදිරියට"
     },
     "vehicles": {
-      "route": "Colombo Fort → Galle Fort",
+      "route": "කොළඹ කොටුව → ගාලු කොටුව",
       "title": "වාහනයක් තෝරන්න",
       "seats": "ආසන {count}",
       "ac": "A/C",
       "eta": "ETA {time}",
       "categories": {
-        "tuk": "Tuk",
-        "mini": "Mini",
-        "sedan": "Sedan",
+        "tuk": "ටුක්",
+        "mini": "මිනි",
+        "sedan": "සෙඩාන්",
         "suv": "SUV",
-        "van": "Van"
+        "van": "වෑන්"
       },
       "models": {
-        "tuk": "Bajaj RE",
-        "mini": "Suzuki Alto",
+        "tuk": "බජාජ් ආර්.ඊ",
+        "mini": "සුසුකි ඇල්ටෝ",
         "sedan": "Toyota Premio",
         "suv": "Toyota Prado",
         "van": "Toyota Hiace"
       },
       "etas": {
-        "tuk": "3 min",
-        "mini": "4 min",
-        "sedan": "4 min",
-        "suv": "6 min",
-        "van": "8 min"
+        "tuk": "මිනිත්තු 3",
+        "mini": "විනාඩි 4",
+        "sedan": "විනාඩි 4",
+        "suv": "විනාඩි 6",
+        "van": "විනාඩි 8"
       },
       "prices": {
         "tuk": "LKR 2,400",
@@ -1104,13 +1104,13 @@
       "title": "ඔබේ ගමන තහවුරු කරන්න",
       "vehicleMeta": "Toyota Premio · ආසන 4 · A/C",
       "route": "මාර්ගය",
-      "routeValue": "Colombo Fort → Galle Fort",
+      "routeValue": "කොළඹ කොටුව → ගාලු කොටුව",
       "fare": "ගාස්තුව",
       "fareValue": "LKR 18,500",
       "eta": "ETA",
-      "etaValue": "4 min",
+      "etaValue": "විනාඩි 4",
       "payment": "ගෙවීම",
-      "paymentValue": "Visa ···· 4242",
+      "paymentValue": "වීසා ···· 4242",
       "bookRide": "ගමන වෙන්කරවන්න"
     },
     "searching": {
@@ -1118,24 +1118,24 @@
       "matching": "Colombo Fort අවට Sedan ගළපමින්",
       "driverFound": "රියදුරු හමුවිය",
       "sedanSelected": "Sedan තෝරා ඇත",
-      "selectedMeta": "Toyota Premio · ETA 3 min"
+      "selectedMeta": "Toyota Premio · ETA 3 විනාඩි"
     },
     "accepted": {
       "badge": "රියදුරු පිළිගත්තේය",
-      "driverName": "Kasun Perera",
+      "driverName": "කසුන් පෙරේරා",
       "vehicle": "Toyota Premio",
       "rating": "⭐ 4.9",
       "plate": "CAB-4821",
-      "eta": "ETA 3 min",
+      "eta": "ETA විනාඩි 3",
       "track": "රියදුරු අනුගමනය කරන්න"
     },
     "live": {
       "statusArriving": "රියදුරු පැමිණෙමින් • 3 min",
       "statusRiding": "Galle දෙසට",
-      "driverVehicle": "Kasun · Toyota Premio",
+      "driverVehicle": "කසුන් · Toyota Premio",
       "enRoute": "ග්‍රහණයට යමින් · Colombo Fort",
-      "route": "Colombo Fort → Galle Fort",
-      "minutesUnit": "min",
+      "route": "කොළඹ කොටුව → ගාලු කොටුව",
+      "minutesUnit": "මිනි",
       "plate": "CAB-4821",
       "rating": "★ 4.9",
       "call": "රියදුරුට අමතන්න",
@@ -1147,12 +1147,12 @@
     },
     "completed": {
       "title": "ගමන සම්පූර්ණයි",
-      "route": "Colombo Fort → Galle Fort",
+      "route": "කොළඹ කොටුව → ගාලු කොටුව",
       "fare": "LKR 18,500"
     },
     "rate": {
       "title": "ඔබේ රියදුරු අගයන්න",
-      "driverName": "Kasun Perera",
+      "driverName": "කසුන් පෙරේරා",
       "vehicle": "Toyota Premio",
       "prompt": "අද ඔබේ ගමන කෙසේද?",
       "reviewPlaceholder": "කෙටි සමාලෝචනයක් ලියන්න...",
@@ -1170,65 +1170,65 @@
         "title": "ගමන",
         "description": "තහවුරු කළ රියදුරන් සහ විනිවිද පෙනෙන ගාස්තු සමඟ ශ්‍රී ලංකාව පුරා උසස් නගර සහ අන්තර් නගර ගමන්."
       },
-      "title": "Book a Ride",
-      "description": "Book a ride anywhere in Sri Lanka with transparent pricing and verified drivers.",
-      "primaryCta": "Estimate Fare",
-      "secondaryCta": "Safety Standards",
+      "title": "සවාරියක් වෙන්කරවා ගන්න",
+      "description": "විනිවිද පෙනෙන මිල ගණන් සහ සත්‍යාපිත රියදුරන් සමඟ Sri Lanka හි ඕනෑම තැනක ගමනක් වෙන්කරවා ගන්න.",
+      "primaryCta": "ඇස්තමේන්තු ගාස්තු",
+      "secondaryCta": "ආරක්ෂිත ප්රමිති",
       "intro": {
-        "badge": "Ride",
-        "title": "Book a Ride",
-        "subtitle": "Book a ride anywhere in Sri Lanka with transparent pricing and verified drivers.",
+        "badge": "පදින්න",
+        "title": "සවාරියක් වෙන්කරවා ගන්න",
+        "subtitle": "විනිවිද පෙනෙන මිල ගණන් සහ සත්‍යාපිත රියදුරන් සමඟ Sri Lanka හි ඕනෑම තැනක ගමනක් වෙන්කරවා ගන්න.",
         "nav": {
-          "live": "Live",
-          "tracking": "Smart navigation",
-          "route": "Active route",
-          "corridor": "Colombo → Galle Face",
+          "live": "සජීවීව",
+          "tracking": "ස්මාර්ට් සංචලනය",
+          "route": "ක්රියාකාරී මාර්ගය",
+          "corridor": "කොළඹ → ගාලු මුවදොර",
           "eta": "ETA",
-          "etaValue": "12 min",
-          "distance": "Dist",
-          "distanceValue": "4.8 km",
-          "driverNearby": "Driver nearby · approaching pickup"
+          "etaValue": "විනාඩි 12",
+          "distance": "දිස්ත්රික්කය",
+          "distanceValue": "4.8 කි.මී",
+          "driverNearby": "අසල රියදුරු · පිකප් වෙත ළඟා වෙමින් සිටී"
         }
       },
       "booking": {
-        "title": "Book Your Ride",
+        "title": "ඔබේ සවාරිය වෙන්කරවා ගන්න",
         "trust": {
-          "pricing": "Transparent pricing.",
-          "drivers": "Verified drivers.",
-          "tracking": "Live tracking."
+          "pricing": "විනිවිද පෙනෙන මිලකරණය.",
+          "drivers": "සත්යාපිත රියදුරන්.",
+          "tracking": "සජීවී ලුහුබැඳීම."
         }
       },
       "why": {
-        "eyebrow": "Why Q Pick",
-        "heading": "Why ride with Q Pick",
+        "eyebrow": "ඇයි Q Pick",
+        "heading": "Q Pick සමඟ පදින්නේ ඇයි?",
         "items": {
           "pricing": {
-            "title": "Transparent Pricing",
-            "body": "See the full estimate before you confirm — no surprise markups."
+            "title": "විනිවිද පෙනෙන මිලකරණය",
+            "body": "ඔබ තහවුරු කිරීමට පෙර සම්පූර්ණ ඇස්තමේන්තුව බලන්න - පුදුම ලකුණු නොමැත."
           },
           "drivers": {
-            "title": "Verified Drivers",
-            "body": "Background-checked chauffeurs. Rated, insured, trip-ready."
+            "title": "තහවුරු කළ රියදුරන්",
+            "body": "පසුබිම් පරීක්ෂා කළ රියදුරන්. ශ්‍රේණිගත කරන ලද, රක්‍ෂිත, සංචාරයට සූදානම්."
           },
           "tracking": {
-            "title": "Live Tracking",
-            "body": "Follow every minute from pickup to door with shareable ETAs."
+            "title": "සජීවී ලුහුබැඳීම",
+            "body": "බෙදාගත හැකි ETA සමඟ පිකප් එකේ සිට දොරට සෑම මිනිත්තුවක්ම අනුගමනය කරන්න."
           },
           "support": {
-            "title": "24/7 Support",
-            "body": "Reachable help whenever you need it — day or night."
+            "title": "24/7 සහාය",
+            "body": "ඔබට අවශ්‍ය ඕනෑම අවස්ථාවක උපකාර ලබා ගත හැක - දිවා හෝ රාත්‍රී."
           }
         }
       },
       "fleet": {
-        "eyebrow": "Fleet",
-        "heading": "Choose your ride",
-        "sub": "From bike to bus — pick what fits your journey.",
-        "mini": "Mini",
+        "eyebrow": "බලඇණිය",
+        "heading": "ඔබේ සවාරිය තෝරන්න",
+        "sub": "බයිසිකලයේ සිට බස් රථය දක්වා - ඔබේ ගමනට ගැලපෙන දේ තෝරන්න.",
+        "mini": "මිනි",
         "suv": "SUV",
         "vehicles": {
           "bike": {
-            "name": "Q Bike",
+            "name": "Q බයිසිකලය",
             "passengers": "",
             "luggage": "",
             "blurb": "ඉක්මන් නගර ගමන්"
@@ -1246,13 +1246,13 @@
             "blurb": "නගරයට කුඩා හැච්බැක්"
           },
           "mini": {
-            "name": "Q Mini",
+            "name": "Q මිනි",
             "passengers": "මගීන් 4",
             "luggage": "බඩු 2",
             "blurb": "නගරයට වඩා ඉඩකඩ සහිත Wagon R"
           },
           "sedan": {
-            "name": "Q Sedan",
+            "name": "Q සෙඩාන්",
             "passengers": "මගීන් 4",
             "luggage": "බඩු 2",
             "blurb": "ව්‍යාපාරික ගමනට සුවපහසුව"
@@ -1264,13 +1264,13 @@
             "blurb": "පවුලේ ගමන් සඳහා ඉඩ"
           },
           "frVan": {
-            "name": "Q Flat Roof Van",
+            "name": "Q පැතලි වහල වෑන්",
             "passengers": "මගීන් 8",
             "luggage": "බඩු 6",
             "blurb": "කණ්ඩායම් ගුවන්තොටුපළ මාරු"
           },
           "highRoofVan": {
-            "name": "Q High Roof Van",
+            "name": "Q ඉහළ වහල වෑන්",
             "passengers": "මගීන් 10",
             "luggage": "බඩු 8",
             "blurb": "සංචාර හා මාරු සඳහා වැඩි ඉඩ"
@@ -1282,13 +1282,13 @@
             "blurb": "පවුල් සඳහා සුදුසු"
           },
           "miniBus": {
-            "name": "Q Mini Bus",
+            "name": "Q මිනි බස්",
             "passengers": "මගීන් 12",
             "luggage": "බඩු 8",
             "blurb": "කුඩා කණ්ඩායම් ගමන්"
           },
           "bus": {
-            "name": "Q Bus",
+            "name": "Q බස්",
             "passengers": "මගීන් 20",
             "luggage": "බඩු 12",
             "blurb": "විශාල කණ්ඩායම් මාරු"
@@ -1302,19 +1302,19 @@
         "cta": "ආරක්ෂාව ගැන දැනගන්න",
         "pillars": {
           "verified": {
-            "title": "Verified Fleet",
+            "title": "සත්‍යාපිත බලඇණිය",
             "body": "සෑම රියදුරෙකුම ජාලයට එකතු වීමට පෙර අනන්‍යතාව සහ වාහන පරීක්ෂා."
           },
           "sharing": {
-            "title": "Trip Sharing",
+            "title": "චාරිකා බෙදාගැනීම",
             "body": "පවුල, මිතුරන් හෝ හෝටලය සමඟ සජීවී ගමන් තත්ත්වය බෙදාගන්න."
           },
           "support": {
-            "title": "24/7 Support",
+            "title": "24/7 සහාය",
             "body": "ඔබට අවශ්‍ය විට උදව් — දහවල් හෝ රාත්‍රිය."
           },
           "emergency": {
-            "title": "Emergency Assistance",
+            "title": "හදිසි ආධාර",
             "body": "මාර්ගයේ යමක් වැරදි බවක් දැනුණු විට ගමන තුළ උත්සන්න කිරීමේ මාර්ග."
           }
         }
@@ -1364,7 +1364,7 @@
         "secondary": "සහාය අමතන්න"
       },
       "driverTrust": {
-        "name": "Nuwan P.",
+        "name": "නුවන් පී.",
         "trips": "2.1k",
         "rating": "4.97",
         "verifiedLabel": "තහවුරු කළ Q Pick රියදුරු",
@@ -1448,9 +1448,9 @@
         },
         "vehicle": "වාහන වර්ගය",
         "vehicleOptions": {
-          "mini": "Mini",
-          "sedan": "Sedan",
-          "van": "Van",
+          "mini": "මිනි",
+          "sedan": "සෙඩාන්",
+          "van": "වෑන්",
           "suv": "SUV"
         },
         "nationality": "ජාතිකත්වය",
@@ -1586,7 +1586,7 @@
         "colFrom": "දිනකට සිට",
         "rows": {
           "sedan": {
-            "name": "Sedan",
+            "name": "සෙඩාන්",
             "guests": "1–3",
             "best": "දෙදෙනා සහ සැහැල්ලු බඩු",
             "from": "LKR 18,500"
@@ -1598,7 +1598,7 @@
             "from": "LKR 24,500"
           },
           "van": {
-            "name": "Van",
+            "name": "වෑන්",
             "guests": "1–9",
             "best": "කණ්ඩායම් සහ බහු-නැවතුම්",
             "from": "LKR 32,000"
@@ -1671,131 +1671,131 @@
         "description": "Q Pick ආරක්ෂාව — තහවුරු කළ රියදුරන්, රක්ෂිත වාහන, සජීවී GPS නිරීක්ෂණය සහ ශ්‍රී ලංකාව පුරා 24/7 සහාය."
       },
       "hero": {
-        "eyebrow": "Trust & Safety",
-        "headline": "Travel Sri Lanka",
-        "headlineLine2": "with absolute confidence.",
-        "description": "Every Q Pick journey is backed by verified chauffeurs, insured vehicles, live tracking, and dedicated support — so you can explore the island with peace of mind.",
-        "primaryCta": "Book a ride",
-        "secondaryCta": "Contact support",
-        "imageAlt": "Q Pick private chauffeur beside a premium vehicle in Sri Lanka"
+        "eyebrow": "විශ්වාසය සහ ආරක්ෂාව",
+        "headline": "සංචාරය Sri Lanka",
+        "headlineLine2": "පරම විශ්වාසය ඇතිව.",
+        "description": "සෑම Q Pick ගමනකටම සත්‍යාපිත රියදුරන්, රක්‍ෂිත වාහන, සජීවී ලුහුබැඳීම් සහ කැපවූ සහාය මගින් පිටුබලය ලැබේ — එබැවින් ඔබට මනසේ සාමයෙන් දිවයින ගවේෂණය කළ හැකිය.",
+        "primaryCta": "සවාරියක් වෙන්කරවා ගන්න",
+        "secondaryCta": "සහාය අමතන්න",
+        "imageAlt": "Q Pick Sri Lanka හි වාරික වාහනයක් අසල පුද්ගලික රියදුරු"
       },
       "standards": {
-        "eyebrow": "Our standard",
-        "heading": "Safety built into every journey",
-        "description": "From Colombo corridors to highland hairpins, Q Pick maintains the same verification, monitoring, and support standard on every trip.",
+        "eyebrow": "අපේ සම්මතය",
+        "heading": "සෑම ගමනකදීම ආරක්ෂාව ගොඩනගා ඇත",
+        "description": "කොළඹ කොරිඩෝවේ සිට උස්බිම් හෙයාර්පින් දක්වා, Q Pick සෑම සංචාරයකදීම එකම සත්‍යාපනය, අධීක්ෂණය සහ සහාය ප්‍රමිතියක් පවත්වාගෙන යයි.",
         "cards": {
           "verifiedDrivers": {
-            "title": "Verified Drivers",
-            "body": "Identity, background, and licence checks before any chauffeur joins the Q Pick network."
+            "title": "තහවුරු කළ රියදුරන්",
+            "body": "ඕනෑම රියදුරෙකු Q Pick ජාලයට සම්බන්ධ වීමට පෙර අනන්‍යතාවය, පසුබිම සහ බලපත්‍ර පරීක්ෂා කිරීම."
           },
           "verifiedVehicles": {
-            "title": "Verified Vehicles",
-            "body": "Regular inspections, insurance validation, and air-conditioned fleet standards across every category."
+            "title": "සත්‍යාපනය කළ වාහන",
+            "body": "සෑම කාණ්ඩයකම නිතිපතා පරීක්ෂා කිරීම්, රක්ෂණ වලංගුකරණය සහ වායු සමීකරණය කළ ගුවන් යානා ප්‍රමිතීන්."
           },
           "gpsTracking": {
-            "title": "GPS Tracking",
-            "body": "Live journey visibility for you, your hosts, and our operations desk throughout the trip."
+            "title": "GPS ලුහුබැඳීම",
+            "body": "සංචාරය පුරාවට ඔබ, ඔබේ සත්කාරකයන් සහ අපගේ මෙහෙයුම් මේසය සඳහා සජීවී ගමන් දෘශ්‍යතාව."
           },
           "support247": {
-            "title": "24/7 Support",
-            "body": "In-trip assistance and a published emergency line for moments that need immediate human help."
+            "title": "24/7 සහාය",
+            "body": "ක්ෂණික මානව උපකාර අවශ්‍ය වන අවස්ථා සඳහා චාරිකා සහය සහ ප්‍රකාශිත හදිසි ඇමතුම් මාර්ගයක්."
           }
         }
       },
       "timeline": {
-        "eyebrow": "Journey protection",
-        "heading": "Protected from booking to arrival",
+        "eyebrow": "ගමන් ආරක්ෂාව",
+        "heading": "වෙන්කරවා ගැනීමේ සිට පැමිණීම දක්වා ආරක්ෂා කර ඇත",
         "steps": {
           "book": {
-            "title": "Book",
-            "body": "Confirm your ride, transfer, or tour with transparent pricing and a dedicated chauffeur assignment."
+            "title": "පොත",
+            "body": "විනිවිද පෙනෙන මිල ගණන් සහ කැපවූ රියදුරු පැවරුමක් සමඟින් ඔබේ ගමන, මාරු කිරීම හෝ සංචාරය තහවුරු කරන්න."
           },
           "verification": {
-            "title": "Verification",
-            "body": "Driver and vehicle details are verified against the Q Pick safety standard before dispatch."
+            "title": "සත්යාපනය",
+            "body": "රියදුරු සහ වාහන විස්තර යැවීමට පෙර Q Pick ආරක්ෂක ප්‍රමිතියට එරෙහිව සත්‍යාපනය කර ඇත."
           },
           "pickup": {
-            "title": "Pickup",
-            "body": "Your chauffeur arrives with vehicle details shared — airport, hotel, or villa collection."
+            "title": "පිකප්",
+            "body": "ගුවන් තොටුපළ, හෝටල්, හෝ විලා එකතුව - බෙදාගත් වාහන විස්තර සමඟ ඔබේ රියදුරු පැමිණේ."
           },
           "tracking": {
-            "title": "Live Tracking",
-            "body": "Follow your journey in real time and share live status with family or your hotel front desk."
+            "title": "සජීවී ලුහුබැඳීම",
+            "body": "ඔබගේ ගමන තථ්‍ය කාලීනව අනුගමනය කර පවුලේ අය හෝ ඔබේ හෝටල් ඉදිරිපස මේසය සමඟ සජීවී තත්ත්වය බෙදා ගන්න."
           },
           "arrival": {
-            "title": "Safe Arrival",
-            "body": "Reach your destination with support on standby until your journey is complete."
+            "title": "ආරක්ෂිත පැමිණීම",
+            "body": "ඔබගේ ගමන අවසන් වන තුරු පොරොත්තුවෙන් සහාය ඇතිව ඔබගේ ගමනාන්තය වෙත ළඟා වන්න."
           }
         }
       },
       "emergency": {
-        "eyebrow": "Always reachable",
-        "heading": "Emergency assistance",
-        "description": "If something feels wrong on the road, our team is one call or message away — day or night, anywhere on the island.",
+        "eyebrow": "සෑම විටම ළඟා විය හැකිය",
+        "heading": "හදිසි ආධාර",
+        "description": "මාර්ගයේ යමක් වැරදී ඇති බවක් හැඟේ නම්, අපගේ කණ්ඩායම එක් ඇමතුමක් හෝ පණිවිඩයක් ඇත - දිවා රෑ, දිවයිනේ ඕනෑම තැනක.",
         "hotline": {
-          "label": "Emergency Hotline",
-          "hint": "For urgent in-trip situations requiring immediate assistance."
+          "label": "හදිසි ඇමතුම් අංකය",
+          "hint": "හදිසි සහය අවශ්‍ය වන හදිසි චාරිකා අවස්ථා සඳහා."
         },
         "whatsapp": {
           "label": "WhatsApp",
-          "hint": "Message our support desk for fast coordination and trip updates."
+          "hint": "වේගවත් සම්බන්ධීකරණය සහ චාරිකා යාවත්කාලීන කිරීම් සඳහා අපගේ සහායක මේසයට පණිවිඩයක් එවන්න."
         },
         "email": {
-          "label": "Email",
-          "hint": "For non-urgent enquiries, partner requests, and booking follow-ups."
+          "label": "ඊමේල් කරන්න",
+          "hint": "හදිසි නොවන විමසීම්, හවුල්කාර ඉල්ලීම් සහ පසු විපරම් වෙන්කරවා ගැනීම් සඳහා."
         }
       },
       "stats": {
-        "eyebrow": "By the numbers",
-        "heading": "A standard travellers trust",
+        "eyebrow": "සංඛ්යා අනුව",
+        "heading": "සම්මත සංචාරක විශ්වාසයක්",
         "items": {
           "verifiedDrivers": {
             "value": 2400,
             "suffix": "+",
-            "label": "Verified Drivers"
+            "label": "තහවුරු කළ රියදුරන්"
           },
           "insuredJourneys": {
             "value": 98,
             "suffix": "%",
-            "label": "Insured Journeys"
+            "label": "රක්ෂිත ගමන්"
           },
           "support247": {
             "value": 24,
             "suffix": "/7",
-            "label": "Support Coverage"
+            "label": "ආධාරක ආවරණය"
           },
           "satisfaction": {
             "value": 97,
             "suffix": "%",
-            "label": "Customer Satisfaction"
+            "label": "පාරිභෝගික තෘප්තිය"
           }
         }
       },
       "finalCta": {
-        "eyebrow": "Your journey awaits",
-        "heading": "Travel With Confidence",
-        "description": "Book a private chauffeur, airport transfer, or island tour — backed by the Q Pick safety standard from first mile to last.",
-        "primaryCta": "Book a ride",
-        "secondaryCta": "Plan a tour",
-        "imageAlt": "Sigiriya Rock Fortress rising above tropical forest in Sri Lanka"
+        "eyebrow": "ඔබේ ගමන බලා සිටී",
+        "heading": "විශ්වාසයෙන් ගමන් කරන්න",
+        "description": "පළමු සැතපුමේ සිට අවසාන සැතපුම දක්වා Q Pick ආරක්ෂක ප්‍රමිතියෙන් පිටුබලය ලබන - පුද්ගලික රියදුරෙකු, ගුවන් තොටුපල මාරු කිරීම හෝ දූපත් සංචාරයක් වෙන්කරවා ගන්න.",
+        "primaryCta": "සවාරියක් වෙන්කරවා ගන්න",
+        "secondaryCta": "සංචාරයක් සැලසුම් කරන්න",
+        "imageAlt": "Sri Lanka හි නිවර්තන වනාන්තරයට ඉහළින් නැගී එන සීගිරිය පාෂාණ බලකොටුව"
       },
-      "faqHeading": "Common questions",
+      "faqHeading": "පොදු ප්රශ්න",
       "faqs": [
         {
-          "q": "Are Q Pick drivers verified?",
-          "a": "Yes. Drivers complete identity, vehicle, and background checks before joining the network."
+          "q": "Q Pick ධාවක සත්‍යාපනය කර තිබේද?",
+          "a": "ඔව්. රියදුරන් ජාලයට සම්බන්ධ වීමට පෙර අනන්‍යතාවය, වාහන සහ පසුබිම් පරීක්ෂාවන් සම්පූර්ණ කරයි."
         },
         {
-          "q": "Can I share my trip?",
-          "a": "Yes. Live trip sharing lets family, hosts, or hotel front desks follow your journey."
+          "q": "මට මගේ සංචාරය බෙදා ගත හැකිද?",
+          "a": "ඔව්. සජීවී චාරිකා බෙදාගැනීම පවුලේ අයට, සත්කාරකයන්ට හෝ හෝටල් ඉදිරිපස මේසවලට ඔබේ ගමන අනුගමනය කිරීමට ඉඩ සලසයි."
         },
         {
-          "q": "What if I need help during a ride?",
-          "a": "In-trip support and a published emergency line are available for critical moments."
+          "q": "ගමනක් අතරතුර මට උදව් අවශ්‍ය නම් කුමක් කළ යුතුද?",
+          "a": "තීරණාත්මක අවස්ථාවන් සඳහා සංචාරය තුළ සහාය සහ ප්‍රකාශිත හදිසි මාර්ගයක් තිබේ."
         },
         {
-          "q": "Is there insurance on journeys?",
-          "a": "Coverage applies on every journey under the Q Pick standard."
+          "q": "සංචාර සඳහා රක්ෂණයක් තිබේද?",
+          "a": "Q Pick ප්‍රමිතිය යටතේ සෑම ගමනකදීම ආවරණය අදාළ වේ."
         }
       ]
     },
@@ -1805,143 +1805,143 @@
         "description": "Q Pick සමඟ රියදවන්න — පැහැදිලි ආදායම්, සාධාරණ යෙදවීම් සහ ශ්‍රී ලංකාවේ මාර්ග සඳහා ගොඩනැගූ මෙවලම්."
       },
       "hero": {
-        "eyebrow": "Chauffeur recruitment",
+        "eyebrow": "රියදුරු බඳවා ගැනීම",
         "headline": "Drive Sri Lanka's",
-        "headlineLine2": "premium journeys.",
-        "description": "Join a curated network of professional chauffeurs serving tourists, hotels, and corporate travellers — with transparent earnings, dignified dispatch, and support built for the roads you know.",
-        "primaryCta": "Apply now",
-        "secondaryCta": "See requirements",
-        "imageAlt": "Q Pick professional chauffeur beside a premium vehicle in Sri Lanka"
+        "headlineLine2": "වාරික ගමන්.",
+        "description": "විනිවිද පෙනෙන ඉපැයීම්, ගෞරවාන්විත යැවීම සහ ඔබ දන්නා මාර්ග සඳහා ගොඩනගා ඇති සහාය සමඟ - සංචාරකයින්, හෝටල් සහ ආයතනික සංචාරකයින්ට සේවය කරන වෘත්තීය රියදුරන්ගේ ජාලයකට සම්බන්ධ වන්න.",
+        "primaryCta": "දැන්ම අයදුම් කරන්න",
+        "secondaryCta": "අවශ්යතා බලන්න",
+        "imageAlt": "Q Pick Sri Lanka හි වාරික වාහනයක් අසල වෘත්තීය රියදුරු"
       },
       "whyJoin": {
-        "eyebrow": "Why join Q Pick",
-        "heading": "Built for drivers who take pride in the road",
-        "description": "Q Pick is not a generic ride-hail app. We connect verified chauffeurs with premium demand — airport transfers, private tours, and corporate travel.",
+        "eyebrow": "Q Pick හා සම්බන්ධ වන්නේ ඇයි?",
+        "heading": "පාරේ ආඩම්බර වන රියදුරන් සඳහා ඉදිකර ඇත",
+        "description": "Q Pick සාමාන්‍ය සවාරිය-හිල් යෙදුමක් නොවේ. අපි සහතික කළ රියදුරන් වාරික ඉල්ලුම සමඟ සම්බන්ධ කරමු - ගුවන් තොටුපල මාරුවීම්, පුද්ගලික සංචාර සහ ආයතනික සංචාර.",
         "cards": {
           "earnings": {
-            "title": "Higher Earnings",
-            "body": "Access premium airport, tour, and chauffeur fares — not race-to-the-bottom pricing."
+            "title": "ඉහළ ඉපැයීම්",
+            "body": "වාරික ගුවන් තොටුපළ, සංචාරය, සහ රියදුරු ගාස්තු ප්‍රවේශ කරන්න - තරඟයෙන් පහළට මිල ගණන් නොවේ."
           },
           "schedule": {
-            "title": "Flexible Schedule",
-            "body": "Choose when you go online. Balance airport runs, day hires, and multi-day tours on your terms."
+            "title": "නම්යශීලී කාලසටහන",
+            "body": "ඔබ සබැඳිව යන විට තෝරන්න. ඔබගේ නියමයන් මත ගුවන් තොටුපල ධාවන, දින කුලියට සහ බහු-දින සංචාර සමතුලිත කරන්න."
           },
           "clients": {
-            "title": "Premium Tourists & Corporate Clients",
-            "body": "Serve hotel guests, business travellers, and curated tour clients who expect professionalism."
+            "title": "වාරික සංචාරකයින් සහ ආයතනික ගනුදෙනුකරුවන්",
+            "body": "වෘත්තීයභාවය අපේක්ෂා කරන හෝටල් අමුත්තන්ට, ව්‍යාපාරික සංචාරකයින්ට සහ සංචාර සේවාලාභීන්ට සේවය කරන්න."
           },
           "support": {
-            "title": "24/7 Driver Support",
-            "body": "Operations desk and emergency line when you need help on the road — day or night."
+            "title": "24/7 රියදුරු සහාය",
+            "body": "ඔබට මාර්ගයේ උදව් අවශ්‍ය වූ විට මෙහෙයුම් මේසය සහ හදිසි ඇමතුම් මාර්ගය - දිවා හෝ රාත්‍රී."
           }
         }
       },
       "fleet": {
-        "eyebrow": "Fleet categories",
-        "heading": "Drive the vehicle you operate",
-        "description": "Q Pick supports a full spectrum of private chauffeur categories — from compact city cars to high-roof vans and coaches."
+        "eyebrow": "බලඇණි කාණ්ඩ",
+        "heading": "ඔබ ධාවනය කරන වාහනය පදවන්න",
+        "description": "Q Pick පුද්ගලික රියදුරු කාණ්ඩවල සම්පූර්ණ වර්ණාවලියකට සහය දක්වයි - සංයුක්ත නගර මෝටර් රථවල සිට ඉහළ වහළ සහිත වෑන් රථ සහ පුහුණුකරුවන් දක්වා."
       },
       "journey": {
-        "eyebrow": "Your path to approval",
-        "heading": "From application to your first premium trip",
+        "eyebrow": "අනුමැතිය සඳහා ඔබේ මාර්ගය",
+        "heading": "යෙදුමේ සිට ඔබේ පළමු වාරික සංචාරය දක්වා",
         "steps": {
           "apply": {
-            "title": "Apply",
-            "body": "Complete the online registration with your personal, vehicle, and document details."
+            "title": "අයදුම් කරන්න",
+            "body": "ඔබගේ පුද්ගලික, වාහන සහ ලේඛන විස්තර සමඟ මාර්ගගත ලියාපදිංචිය සම්පූර්ණ කරන්න."
           },
           "verify": {
-            "title": "Verify Documents",
-            "body": "Our team reviews your NIC, licence, insurance, and vehicle registration."
+            "title": "ලේඛන තහවුරු කරන්න",
+            "body": "අපගේ කණ්ඩායම ඔබගේ ජාතික හැඳුනුම්පත, බලපත්‍රය, රක්ෂණය සහ වාහන ලියාපදිංචිය සමාලෝචනය කරයි."
           },
           "inspection": {
-            "title": "Vehicle Inspection",
-            "body": "A standards check confirms your vehicle meets Q Pick safety and comfort requirements."
+            "title": "වාහන පරීක්ෂාව",
+            "body": "ඔබේ වාහනය Q Pick ආරක්ෂාව සහ සුවපහසුව අවශ්‍යතා සපුරාලන බව ප්‍රමිති පරීක්ෂාවකින් තහවුරු කරයි."
           },
           "training": {
-            "title": "Training",
-            "body": "Brief onboarding on Q Pick service standards, app usage, and guest hospitality."
+            "title": "පුහුණු කිරීම",
+            "body": "Q Pick සේවා ප්‍රමිතීන්, යෙදුම් භාවිතය සහ අමුත්තන්ගේ ආගන්තුක සත්කාරය පිළිබඳ කෙටි ඇතුල්වීම."
           },
           "approved": {
-            "title": "Approved",
-            "body": "Once verified, your profile goes live — but you cannot go online until fully approved."
+            "title": "අනුමත කළා",
+            "body": "සත්‍යාපනය කළ පසු, ඔබේ පැතිකඩ සජීවී වේ — නමුත් සම්පූර්ණයෙන් අනුමත වන තුරු ඔබට සබැඳිව යා නොහැක."
           },
           "start": {
-            "title": "Start Driving",
-            "body": "Accept premium trips, airport transfers, and tour assignments across the island."
+            "title": "රිය පැදවීම ආරම්භ කරන්න",
+            "body": "දිවයින පුරා වාරික සංචාර, ගුවන් තොටුපල මාරු කිරීම් සහ චාරිකා පැවරුම් පිළිගන්න."
           }
         }
       },
       "testimonials": {
-        "eyebrow": "Driver voices",
-        "heading": "Chauffeurs who chose Q Pick",
+        "eyebrow": "රියදුරු හඬ",
+        "heading": "Q Pick තෝරාගත් රියදුරන්",
         "items": [
           {
-            "name": "Kasun Perera",
-            "role": "Sedan chauffeur · Colombo",
-            "quote": "Airport transfers and hotel pickups are consistent. I know the fare before I accept, and support answers when I call."
+            "name": "කසුන් පෙරේරා",
+            "role": "සෙඩාන් රියදුරු · කොළඹ",
+            "quote": "ගුවන් තොටුපල මාරු කිරීම් සහ හෝටල් පිකප් ස්ථාවර වේ. මම පිළිගැනීමට පෙර ගාස්තුව දනිමි, මා ඇමතූ විට පිළිතුරු සඳහා සහාය වන්න."
           },
           {
-            "name": "Nimal Fernando",
-            "role": "High-roof van · Kandy",
-            "quote": "Tour groups and family transfers pay better than random city rides. Q Pick clients expect quality — and tip accordingly."
+            "name": "නිමල් ප්‍රනාන්දු",
+            "role": "ඉහළ වහළ සහිත වෑන් රථය · මහනුවර",
+            "quote": "චාරිකා කණ්ඩායම් සහ පවුලේ මාරුවීම් අහඹු නගර සවාරිවලට වඩා හොඳින් ගෙවයි. Q Pick සේවාලාභීන් ගුණාත්මකභාවය අපේක්ෂා කරයි — සහ ඒ අනුව ඉඟි."
           },
           {
-            "name": "Ruwan Silva",
-            "role": "SUV chauffeur · Galle",
-            "quote": "The onboarding was thorough but fair. Once approved, the app and operations team made it easy to stay busy during season."
+            "name": "රුවන් සිල්වා",
+            "role": "SUV රියදුරු · ගාල්ල",
+            "quote": "ඇතුල්වීම සවිස්තරාත්මක නමුත් සාධාරණ විය. අනුමත වූ පසු, යෙදුම සහ මෙහෙයුම් කණ්ඩායම වාරය තුළ කාර්යබහුල වීම පහසු කර ඇත."
           }
         ]
       },
       "requirements": {
-        "eyebrow": "Qualifications",
-        "heading": "Driver requirements",
-        "description": "We maintain a high bar to protect guests and chauffeurs alike. Please ensure you meet these before applying.",
+        "eyebrow": "සුදුසුකම්",
+        "heading": "රියදුරු අවශ්යතා",
+        "description": "අමුත්තන් සහ රියදුරන් එකසේ ආරක්ෂා කිරීම සඳහා අපි ඉහළ තීරුවක් පවත්වාගෙන යන්නෙමු. අයදුම් කිරීමට පෙර ඔබ මේවා සපුරා ඇති බවට සහතික වන්න.",
         "items": [
-          "Valid Sri Lankan driving licence with at least 3 years of experience",
-          "National Identity Card (NIC) and a clear background check",
-          "Registered, insured vehicle in good mechanical condition",
-          "Valid revenue licence and comprehensive insurance documents",
-          "Smartphone with mobile data for the Q Pick Driver app",
-          "Professional appearance and courteous guest communication",
-          "Fluency in at least one of Sinhala, English, or Tamil",
-          "Willingness to serve airport, city, and inter-city premium trips"
+          "අවම වශයෙන් වසර 3 ක පළපුරුද්දක් සහිත වලංගු Sri Lankan රියදුරු බලපත්‍රය",
+          "ජාතික හැඳුනුම්පත (NIC) සහ පැහැදිලි පසුබිම් පරීක්ෂාවක්",
+          "හොඳ යාන්ත්‍රික තත්ත්වයේ ලියාපදිංචි, රක්ෂණය කර ඇති වාහනය",
+          "වලංගු ආදායම් බලපත්‍රය සහ විස්තීර්ණ රක්ෂණ ලේඛන",
+          "Q Pick Driver යෙදුම සඳහා ජංගම දත්ත සහිත ස්මාර්ට්ෆෝන්",
+          "වෘත්තීය පෙනුම සහ ආචාරශීලී ආගන්තුක සන්නිවේදනය",
+          "අඩුම තරමින් සිංහල, ඉංග්‍රීසි හෝ දෙමළ භාෂාවෙන් චතුර ලෙස කතා කිරීම",
+          "ගුවන් තොටුපළ, නගරය සහ නගරාන්තර වාරික සංචාර සඳහා සේවය කිරීමට ඇති කැමැත්ත"
         ]
       },
       "earnings": {
-        "eyebrow": "Illustrative earnings",
-        "heading": "Example earnings",
-        "description": "The figures below are illustrative examples only — not guaranteed income. Actual earnings depend on hours, season, vehicle category, and trip type.",
-        "disclaimer": "Illustrative only. Not a guarantee of income. Subject to Q Pick commission, demand, and individual performance.",
+        "eyebrow": "නිදර්ශන ඉපැයීම්",
+        "heading": "උදාහරණ ඉපැයීම්",
+        "description": "පහත සංඛ්‍යා නිදර්ශන උදාහරණ පමණි - සහතික කළ ආදායම නොවේ. සැබෑ ඉපැයීම් පැය, වාරය, වාහන කාණ්ඩය සහ චාරිකා වර්ගය මත රඳා පවතී.",
+        "disclaimer": "නිදර්ශන පමණි. ආදායම් සහතිකයක් නොවේ. Q Pick කොමිස්, ඉල්ලුම සහ පුද්ගල කාර්ය සාධනයට යටත් වේ.",
         "examples": [
           {
-            "label": "Airport transfer (CMB → Colombo)",
-            "amount": "LKR 8,500 – 12,000",
-            "note": "Sedan · one-way · off-peak"
+            "label": "ගුවන් තොටුපළ මාරු කිරීම (CMB → කොළඹ)",
+            "amount": "LKR 8,500 - 12,000",
+            "note": "සෙඩාන් · එක් මාර්ගයක් · Off-peak"
           },
           {
-            "label": "Full-day chauffeur hire",
-            "amount": "LKR 18,000 – 28,000",
-            "note": "SUV or van · 8–10 hours · fuel excluded"
+            "label": "සම්පූර්ණ දින රියදුරු කුලියට",
+            "amount": "LKR 18,000 - 28,000",
+            "note": "SUV හෝ වෑන් රථය · පැය 8-10 · ඉන්ධන බැහැර කර ඇත"
           },
           {
-            "label": "Multi-day tour (per day)",
-            "amount": "LKR 22,000 – 35,000",
-            "note": "High-roof van · cultural triangle route"
+            "label": "බහු දින සංචාරය (දිනකට)",
+            "amount": "LKR 22,000 - 35,000",
+            "note": "ඉහළ වහල වෑන් · සංස්කෘතික ත්රිකෝණ මාර්ගය"
           },
           {
-            "label": "City ride (Colombo)",
-            "amount": "LKR 2,500 – 5,500",
-            "note": "Mini or sedan · metered fare"
+            "label": "නගර සවාරිය (කොළඹ)",
+            "amount": "LKR 2,500 - 5,500",
+            "note": "කුඩා හෝ සෙඩාන් · මීටර ගාස්තු"
           }
         ]
       },
       "finalCta": {
-        "eyebrow": "Ready to join?",
-        "heading": "Become a Q Pick Chauffeur",
-        "description": "Start your application today. Complete registration at your own pace — our team will guide you through verification and approval.",
-        "primaryCta": "Apply now",
-        "secondaryCta": "View requirements",
-        "imageAlt": "Q Pick chauffeur map and trip dashboard on mobile"
+        "eyebrow": "සම්බන්ධ වීමට සූදානම්ද?",
+        "heading": "Q Pick රියදුරෙකු වන්න",
+        "description": "ඔබගේ අයදුම්පත අදම ආරම්භ කරන්න. ඔබේම වේගයෙන් ලියාපදිංචිය සම්පූර්ණ කරන්න - අපගේ කණ්ඩායම සත්‍යාපනය සහ අනුමැතිය හරහා ඔබට මග පෙන්වනු ඇත.",
+        "primaryCta": "දැන්ම අයදුම් කරන්න",
+        "secondaryCta": "අවශ්යතා බලන්න",
+        "imageAlt": "ජංගම දුරකථනයේ Q Pick රියදුරු සිතියම සහ චාරිකා උපකරණ පුවරුව"
       }
     },
     "partners": {
@@ -1958,10 +1958,10 @@
       "logoRowAriaLabel": "ආගන්තුක සත්කාර හවුල්කරුවන්",
       "partnerNames": [
         "Galle Face Hotel",
-        "Cinnamon",
-        "Jetwing",
-        "Shangri-La",
-        "Amangalla"
+        "කුරුඳු",
+        "ජෙට්වින්ග්",
+        "ෂැංග්‍රි-ලා",
+        "අමංගල්ල"
       ]
     },
     "about": {
@@ -2052,6 +2052,992 @@
       "titleDefault": "Q Pick · ශ්‍රී ලංකාවේ ප්‍රිමියම් ජංගමතාව",
       "titleTemplate": "%s · Q Pick",
       "description": "ශ්‍රී ලංකාව පුරා ප්‍රිමියම් ජංගමතාව — ගුවන්තොටුපොළ ප්‍රවාහන, නගර ටැක්සි, අන්තර් නගර ගමන්, රියදුරු සේවා සහ පුද්ගලික සංචාර එක විශ්වාසනීය වේදිකාවකින්."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "රියදුරු සමඟ පුද්ගලික Sri Lanka චාරිකා | Q Pick",
+      "description": "Q Pick සමග Sri Lanka ගවේෂණය කරන්න — පුද්ගලික රියදුරන්, වාරික වාහන, සහ සංස්කෘතික ස්ථාන, කඳුකරය, වෙරළ තීරයන් සහ වනජීවී හරහා සකස් කළ සංචාර.",
+      "ogTitle": "Q Pick පුද්ගලික සංචාර සමඟ Sri Lanka ගවේෂණය කරන්න",
+      "twitterTitle": "පුද්ගලික Sri Lanka සංචාර | Q Pick",
+      "twitterDescription": "පුද්ගලික රියදුරන් සහ වාරික වාහන සමඟ ගැලපෙන පරිදි සාදන ලද දූපත් ගමන්."
+    },
+    "hero": {
+      "eyebrow": "Q Pick පුද්ගලික සංචාර",
+      "headline": "Q Pick සමඟ Sri Lanka ගවේෂණය කරන්න",
+      "subtitle": "පුද්ගලික රියදුරන්, වාරික වාහන සහ ගැලපෙන පරිදි සාදන ලද අත්දැකීම් සමඟ අමතක නොවන ගමන් සොයා ගන්න.",
+      "primaryCta": "එකතු කිරීම් ගවේෂණය කරන්න",
+      "secondaryCta": "මගේ සංචාරය සැලසුම් කරන්න"
+    },
+    "finalCta": {
+      "headline": "ඔබේ Sri Lanka ගමන මෙතැනින් ආරම්භ වේ",
+      "body": "ඔබගේ දිනයන් සහ ගමනාන්ත බෙදා ගන්න - අපි පුද්ගලික රියදුරු ගමන් විස්තරයක් සකස් කර ලිඛිත උපුටා දැක්වීමක් තහවුරු කරමු.",
+      "ctaLabel": "මගේ ගමන සැලසුම් කරන්න",
+      "secondaryLabel": "සංචාරක විශේෂඥයෙකු සමඟ කතා කරන්න"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "පුද්ගලික රියදුරන්",
+        "description": "පන්සල් ආචාර විධි, උස්බිම් මාර්ග සහ සන්සුන් ගුවන් තොටුපල පැමිණීම දන්නා බලපත්‍රලාභී රියදුරන්."
+      },
+      "airport": {
+        "title": "ගුවන් තොටුපළ පිකප්",
+        "description": "Bandaranaike International (CMB) හමුවීම සහ සුබපැතුම් ඔබේ පියාසැරියට නියමිත වේලාවට."
+      },
+      "support": {
+        "title": "24/7 සහාය",
+        "description": "පිටත්වීමට පෙර සහ මාර්ගයේ සැබෑ Q Pick මේසයක් — WhatsApp සහ දුරකථනය, දිවා රෑ."
+      },
+      "vehicles": {
+        "title": "සුඛෝපභෝගී වාහන",
+        "description": "සෙඩාන්, SUV, වෑන් සහ පුහුණුකරුවන් - පුද්ගලික කුටි, වායුසමීකරණය, ගමන් මලු සූදානම්."
+      },
+      "pricing": {
+        "title": "විනිවිද පෙනෙන මිලකරණය",
+        "description": "සමාලෝචනයෙන් පසු ලිඛිත උපුටා දැක්වීම් - නව නිපැයුම් වෙබ් අඩවි මිල හෝ කර්බ්-සයිඩ් විස්මයන් නොමැත."
+      },
+      "personal": {
+        "title": "පුද්ගලීකරණය කළ සංචාර",
+        "description": "සෑම පැකේජයක්ම සංස්කරණය කළ හැකිය: ගමනාන්ත, දින, වේගය සහ වාහන පන්තිය."
+      },
+      "rating": {
+        "title": "4.9 ආගන්තුක ශ්‍රේණිගත කිරීම",
+        "description": "රියදුරු රැකවරණය, ගමන් කිරීම සහ සන්නිවේදනය සඳහා පුද්ගලික-සංචාර අමුත්තන් විසින් අඛණ්ඩව ශ්‍රේණිගත කර ඇත."
+      },
+      "licensed": {
+        "title": "බලපත්රලාභී ක්රියාකරු",
+        "description": "Quick Pick App (Pvt) Ltd — ලියාපදිංචි Sri Lankan ක්‍රියාකරු පරීක්ෂා කළ රියදුරන් සහ රක්‍ෂිත වාහන සමඟ."
+      },
+      "secure": {
+        "title": "ආරක්ෂිත වෙන්කරවා ගැනීම",
+        "description": "ඔබ සංචාරය කිරීමට පෙර ලිඛිත උපුටා දැක්වීම්, තහවුරු කළ ගමන් විස්තර සහ විනිවිද පෙනෙන ඇතුළත් කිරීම්."
+      }
+    },
+    "explorer": {
+      "eyebrow": "සංවෘත එකතු කිරීම්",
+      "title": "ඔබේ ගමන තෝරන්න",
+      "subtitle": "සංචාරක විලාසය මගින් සංවිධානය කරන ලද වාරික පුද්ගලික සංචාර - එහි කතාව, විශේෂාංගගත ගමන් විස්තර සහ ගමන් විස්තර ගවේෂණය කිරීමට ප්‍රවර්ගයක් මෙතැනින් විවෘත කරන්න.",
+      "searchPlaceholder": "ගමනාන්ත, අත්දැකීම් හෝ සංචාර නම් සොයන්න...",
+      "clearSearch": "සෙවීම පැහැදිලි කරන්න",
+      "categoriesAria": "සංචාර කාණ්ඩ",
+      "mapSelection": "සිතියම් තේරීම",
+      "multiDay": "බහු දින චාරිකා",
+      "premiumNorthern": "වාරික පුද්ගලික සංචාර",
+      "sortAria": "සංචාර පැකේජ වර්ග කරන්න",
+      "filterAria": "සංචාර පැකේජ පෙරහන් කරන්න",
+      "allCategoriesTitle": "සියලුම වර්ග",
+      "allCategoriesIntro": "ප්‍රකාශිත සෑම පුද්ගලික චාරිකාවක්ම බ්‍රවුස් කරන්න — සම්පූර්ණ Q Pick එකතුව නැවත සකස් කර ගවේෂණය කරන්න.",
+      "viewAllCategories": "සියලුම කාණ්ඩ බලන්න",
+      "destinationExperiences": "ගමනාන්ත අත්දැකීම්",
+      "destinationExperiencesSub": "සැබෑ ස්ථාන, වාර, සහ ඡායාරූප කවුළු - කාඩ්පතක ලේබල් පමණක් නොවේ.",
+      "vehiclesTitle": "පුද්ගලික සුවපහසුවකින් ගමන් කරන්න",
+      "vehiclesSub": "සෙඩාන් සිට කුඩා කෝච් දක්වා - වායු සමීකරණය, ගමන් මලු ඉඩ සහ මාර්ගය සඳහා අයකිරීම.",
+      "trustTitle": "Q Pick සමඟ ගමන් කරන්නේ ඇයි?",
+      "reviewsEmptyTitle": "අමුත්තන්ගේ කථා ළඟදීම",
+      "reviewsEmptyBody": "අමුත්තන් ඔවුන්ගේ ගමන් බෙදා ගන්නා බැවින් සත්‍යාපිත පුද්ගලික-සංචාර සමාලෝචන මෙහි දිස් වනු ඇත.",
+      "faqEyebrow": "නිතර අසන ප්රශ්න",
+      "faqLead": "Q Pick සමඟ ඔබේ ගමන සැලසුම් කිරීමට පෙර ඔබ දැනගත යුතු සියල්ල.",
+      "noResults": "ඔබගේ සෙවුමට ගැලපෙන සංචාර නොමැත. වෙනත් මූල පදයක් උත්සාහ කරන්න හෝ පෙරහන් යළි පිහිටුවන්න.",
+      "noToursTitle": "ඔබගේ සෙවුමට ගැලපෙන සංචාර නොමැත",
+      "noToursBody": "සම්පූර්ණ එකතුව බ්‍රවුස් කිරීමට වෙනත් මූල පදයක් උත්සාහ කරන්න, නැතහොත් පෙරහන් යළි පිහිටුවන්න.",
+      "planCustomTour": "අභිරුචි සංචාරයක් සැලසුම් කරන්න",
+      "resetFilters": "පෙරහන් නැවත සකසන්න",
+      "sortBy": "අනුව වර්ග කරන්න",
+      "mapJourneysThrough": "{name} හරහා ගමන්",
+      "itineraryOne": "ගමන් විස්තර",
+      "itineraryMany": "ගමන් මාර්ග",
+      "matchingQuery": "ගැලපෙන \"{query}\"",
+      "northernPeninsula": "උතුරු අර්ධද්වීපය",
+      "premiumJaffna": "වාරික යාපනය අත්දැකීම්",
+      "premiumJaffnaSub": "{count} {experiences} — පුද්ගලික රියදුරන්ගේ සහාය ඇතිව උරුම නගර ඇවිදීම, දූපත් පාරු සහ පූජනීය බෝට්ටු ගමන්.",
+      "experienceOne": "අත්දැකීම්",
+      "experienceMany": "අත්දැකීම්",
+      "reviewsEmptyDisclaimer": "ප්‍රකාශිත සංචාරවලින් පසුව සත්‍යාපිත ආගන්තුක සමාලෝචන දිස් වනු ඇත. අපි නව නිපැයුම් සහතික, ශ්‍රේණිගත කිරීම් හෝ සම්මාන ප්‍රදර්ශනය නොකරමු.",
+      "trustBeforeTestimonials": "සාක්ෂි වලට පෙර විශ්වාස කරන්න",
+      "faqTitle": "නිතර අසන පැන",
+      "defaultImageAlt": "දර්ශනීය Sri Lanka උස්බිම් ගමන",
+      "openCategory": "{title} විවෘත කරන්න",
+      "countItineraries": "{count} ගමන් විස්තර",
+      "countPackages": "{count} පැකේජ",
+      "countPackage": "{count} පැකේජය",
+      "cmbService": "CMB සේවාව",
+      "packagesFound": "{count} පැකේජ",
+      "dayTour": "දින සංචාරය",
+      "daysTour": "{count} දින",
+      "fromPrice": "ඉල්ලීම මත මිල",
+      "viewDetails": "විස්තර බලන්න",
+      "bookTour": "මෙම සංචාරය වෙන්කරවා ගන්න",
+      "idealFor": "{value} සඳහා වඩාත් සුදුසුය",
+      "premiumNorthernHeading": "උතුරු Sri Lanka",
+      "premiumNorthernSub": "උරුම විහාරස්ථාන, දුරස්ථ දූපත්, සහ යාපනයේ සංස්කෘතික ගැඹුර - කැපවූ රියදුරන් සමඟ ප්‍රිමියම් චාරිකා තුනක්."
+    },
+    "filters": {
+      "all": "සියල්ල",
+      "classic": "සම්භාව්ය",
+      "luxury": "සුඛෝපභෝගී",
+      "wildlife": "වනජීවී",
+      "adventure": "වික්රමය",
+      "beach": "වෙරළ",
+      "honeymoon": "මධුසමය",
+      "wellness": "සුවය",
+      "family": "පවුල",
+      "day-tours": "දින චාරිකා"
+    },
+    "sort": {
+      "featured": "විශේෂාංගගත",
+      "newest": "අලුත්ම",
+      "duration": "කාලසීමාව",
+      "popular": "ජනප්‍රියයි"
+    },
+    "badges": {
+      "best-seller": "හොඳම විකුණුම්කරු",
+      "luxury": "සුඛෝපභෝගී",
+      "new": "අලුත්",
+      "family-friendly": "පවුල් හිතකාමී",
+      "eco": "පරිසර",
+      "adventure": "වික්රමය"
+    },
+    "breadcrumbs": {
+      "home": "නිවස",
+      "tours": "සංචාර"
+    },
+    "jsonLd": {
+      "touristType": "විවේක සංචාරකයින්"
+    },
+    "reviewsMeta": {
+      "title": "ආගන්තුක සමාලෝචන",
+      "emptyTitle": "පාරේ සිට කථා",
+      "emptyBody": "ප්‍රකාශිත සංචාරවලින් පසුව සත්‍යාපිත ආගන්තුක සමාලෝචන දිස් වනු ඇත. අපි නව නිපැයුම් සහතික, ශ්‍රේණිගත කිරීම් හෝ සම්මාන ප්‍රදර්ශනය නොකරමු."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "දින 4 ඇල්ල දුම්රිය ගැලවීම",
+        "idealFor": "සීමිත කාලයක් සහිත දුම්රිය ලෝලීන්",
+        "intro": "තේ නිම්න හරහා දර්ශනීය දුම්රිය. මෙම දින 4ක පෞද්ගලික රියදුරු ගමන මහනුවර, නුවරඑළිය, ඇල්ල - දුම්රිය ලෝලීන් වෙත සීමිත කාලයකින් පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "දුම්රිය කොටස",
+          "ආරුක්කු නවයක්",
+          "තේ නතර වෙනවා"
+        ],
+        "itinerary": [
+          {
+            "title": "මහනුවර සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "නුවරඑළිය සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ නුවරඑළිය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "ඇල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ඇල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර, සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "දින 5 මිරිස්ස තල්මසුන් වෙරළ",
+        "idealFor": "සාගර වනජීවී ලෝලීන්",
+        "intro": "තල්මසුන් සමය සහ බලකොටු උරුමය. මෙම දින 5ක පෞද්ගලික රියදුරු ගමන ගාල්ල, මිරිස්ස, බෙන්තොට - සාගර වනජීවී ලෝලීන් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "මිරිස්ස වෙරළ තීරය",
+          "තල්මසුන් නැරඹීම",
+          "ගාලු කොටුව"
+        ],
+        "itinerary": [
+          {
+            "title": "ගාල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මිරිස්ස සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මිරිස්ස ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "බෙන්තොට සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ බෙන්තොට ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී බෙන්තොට",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ බෙන්තොට ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 දින සුඛෝපභෝගී මධුසමය වෙරළ",
+        "idealFor": "වෙරළබඩ මධුසමය ගත කරන්නන්",
+        "intro": "බලකොටුව ආදර සහ සාගර විලාස්. මෙම දින 6ක පෞද්ගලික රියදුරු ගමන කොළඹ, ගාල්ල, බෙන්තොට, මිරිස්ස - වෙරළබඩ මධුසමය ගත කරන්නන් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "ගාලු කොටුව",
+          "බෙන්තොට",
+          "මිරිස්ස හිරු බැස යෑම"
+        ],
+        "itinerary": [
+          {
+            "title": "කොළඹ සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ කොළඹ ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "ගාල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "බෙන්තොට සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ බෙන්තොට ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මිරිස්ස සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මිරිස්ස ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මිරිස්ස විවේකයේදී",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මිරිස්ස ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "දින 6 වන්දනා ත්‍රිකෝණය",
+        "idealFor": "ඇදහිල්ල මූලික කරගත් කණ්ඩායම් සංචාරය",
+        "intro": "දිවයින පුරා පිහිටි පුදබිම්. මෙම දින 6 ක පෞද්ගලික රියදුරු ගමන මහනුවර, අනුරාධපුරය, දඹුල්ල, පොළොන්නරුව - ඇදහිල්ල මූලික කරගත් කණ්ඩායම් සංචාරයට පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "දළදා මාලිගාව",
+          "අනුරාධපුරය",
+          "දඹුල්ල ලෙන්"
+        ],
+        "itinerary": [
+          {
+            "title": "මහනුවර සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "අනුරාධපුරය සොයා ගන්න",
+            "description": "ඔබගේ කැපවූ රියදුරු සමඟ අනුරාධපුරය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "දඹුල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ දඹුල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පොළොන්නරුව සොයා ගන්න",
+            "description": "කාලගුණය, ප්‍රවේශපත්‍ර, සහ ඔබේ වේගය පිළිබඳ කාල නම්‍ය - ඔබේ කැපවූ රියදුරු සමඟ පොළොන්නරුව ගවේෂණය කරන්න."
+          },
+          {
+            "title": "පොළොන්නරුව විවේකයේදී",
+            "description": "කාලගුණය, ප්‍රවේශපත්‍ර, සහ ඔබේ වේගය පිළිබඳ කාල නම්‍ය - ඔබේ කැපවූ රියදුරු සමඟ පොළොන්නරුව ගවේෂණය කරන්න."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "දින 8 උත්සව සංස්කෘතිය සහ මහනුවර",
+        "idealFor": "උත්සව සමයේ අමුත්තන්",
+        "intro": "උරුමයන් සහිත පෙරහැර කාලය. මෙම දින 8ක පෞද්ගලික රියදුරු ගමන කොළඹ, නුවර, දඹුල්ල, සීගිරිය, මීගමුව - උත්සව සමයේ නරඹන්නන් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "මහනුවර උත්සව",
+          "පන්සල් යනවා",
+          "ත්රිකෝණ අයිකන"
+        ],
+        "itinerary": [
+          {
+            "title": "කොළඹ සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ කොළඹ ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මහනුවර සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "දඹුල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ දඹුල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "සීගිරිය සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ සීගිරිය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මීගමුව සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මීගමුව ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මීගමුව විවේකයෙන්",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මීගමුව ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මීගමුව විවේකයෙන්",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මීගමුව ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "දින 9 මධුසමය පාරාදීසය",
+        "idealFor": "අලුත විවාහ වූවන් සහ ආදර ගැලපීම්",
+        "intro": "මීදුම සහ සාගරය හරහා සමීප ගමන් කිරීම. මෙම දින 9 ක පෞද්ගලික රියදුරු ගමන මීගමුව, මහනුවර, නුවරඑළිය, ඇල්ල, බෙන්තොට, ගාල්ල - අලුත විවාහ වූවන් සහ ආදර ගැලීම් සංචාරය කරයි. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "තේ රට",
+          "ඇල්ල ආදර කතාව",
+          "වෙරළ හිරු බැස යෑම"
+        ],
+        "itinerary": [
+          {
+            "title": "මීගමුව සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මීගමුව ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මහනුවර සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "නුවරඑළිය සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ නුවරඑළිය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "ඇල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ඇල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර, සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "බෙන්තොට සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ බෙන්තොට ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "ගාල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "දින 10ක ආයුර්වේද සුවතා ගමන",
+        "idealFor": "සුවය කේන්ද්‍ර කරගත් සංචාරකයින්",
+        "intro": "පුද්ගලික සංචාර සඳහා වියන ලද ප්‍රතිසාධන පරිච්ඡේද. මෙම දින 10ක පෞද්ගලික රියදුරු ගමන මීගමුව, මහනුවර, බෙන්තොට, මිරිස්ස, ගාල්ල - සුවතා කේන්ද්‍ර කරගත් සංචාරකයින් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "සුවතා වේගය",
+          "වෙරළ සන්සුන්",
+          "පන්සල් ශේෂය"
+        ],
+        "itinerary": [
+          {
+            "title": "මීගමුව සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මීගමුව ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මහනුවර සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "බෙන්තොට සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ බෙන්තොට ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "මිරිස්ස සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මිරිස්ස ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "ගාල්ල සොයා ගන්න",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "විවේකයේදී ගාල්ල",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          },
+          {
+            "title": "පිටත්වීම සහ ඉදිරියට",
+            "description": "කොළඹ හෝ Bandaranaike International ගුවන්තොටුපළ දෙසට පුද්ගලික මාරු කිරීම — නැතහොත් Q Pick සමඟ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යන්න."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "කොළඹ අගනුවර සොයාගැනීමේ දිනය",
+        "idealFor": "නිවාඩු ගත කරන අමුත්තන් සහ නගර ආදරය කරන්නන්",
+        "intro": "කොළඹ අහස, යටත් විජිත මංතීරු සහ ගාලු මුවදොර හිරු බැස යෑම. මෙම 1-දින පෞද්ගලික රියදුරු ගමන කොළඹට පැමිණේ - නිවාඩු ගත කරන අමුත්තන් සහ නගර ලෝලීන්. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "නෙළුම් කුළුණේ දසුන්",
+          "ගාලු මුවදොර පිටිය",
+          "කොළඹ කෑම නතර කරයි"
+        ],
+        "itinerary": [
+          {
+            "title": "කොළඹ සොයාගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ කොළඹ ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "ගාලු කොටුව උරුම දිනය",
+        "idealFor": "දකුණු වෙරළ තීරයේ ඉතිහාස ලෝලීන්",
+        "intro": "ලන්දේසි බලකොටු සහ ඉන්දියන් සාගර ආලෝකය. මෙම 1-දින පෞද්ගලික රියදුරු ගමන ගාල්ලට පැමිණේ - දකුණු වෙරළ තීරයේ ඉතිහාස ලෝලීන්. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "ගාලු කොටුව ප්‍රදීපාගාරය",
+          "රැම්පාට් ඇවිදීම",
+          "බුටික් වීදි"
+        ],
+        "itinerary": [
+          {
+            "title": "ගාලු සොයාගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ගාල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "සීගිරි පර්වතයේ හිරු උදාවන දිනය",
+        "idealFor": "කලින් නැගිටින්නන් සහ ඡායාරූප අමුත්තන්",
+        "intro": "පළමු ආලෝකයේ ලයන් රොක්. මෙම 1-දින පෞද්ගලික රියදුරු ගමන සීගිරියට පැමිණේ - කලින් නැඟී එන අය සහ ඡායාරූප අමුත්තන්. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "සීගිරි සමුළුව",
+          "ජල උද්යාන",
+          "බිතුසිතුවම් ගැලරිය"
+        ],
+        "itinerary": [
+          {
+            "title": "සීගිරිය සොයා ගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ සීගිරිය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "මහනුවර පූජා නගර දිනය",
+        "idealFor": "ආත්මික සංචාරකයින් සහ පවුල්",
+        "intro": "දළදා මාලිගාව සහ වැව සන්සුන්. මෙම 1-දින පෞද්ගලික රියදුරු ගමන මහනුවර - අධ්‍යාත්මික සංචාරකයින් සහ පවුල් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "දළදා මාලිගාව",
+          "නුවර වැව",
+          "පේරාදෙණිය විකල්පය"
+        ],
+        "itinerary": [
+          {
+            "title": "මහනුවර සොයා ගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මහනුවර ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "ඇල්ල හයිලන්ඩ් දර්ශන දිනය",
+        "idealFor": "දුම්රිය නැවතුම් ස්ථාන සහ රිජ් ඇවිදින්නන්",
+        "intro": "ආරුක්කු නවයක් සහ මීදුම් නිම්න. මෙම දින 1ක පෞද්ගලික රියදුරු ගමන ඇල්ල - දුම්රිය නැවතුම් ස්ථාන සහ රිජ් ඇවිදින්නන් වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "ආරුක්කු නවය පාලම",
+          "කුඩා ආදම්ගේ කඳු මුදුන",
+          "තේ නිම්න කැෆේ"
+        ],
+        "itinerary": [
+          {
+            "title": "ඇල්ල සොයාගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ ඇල්ල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර, සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "යාල වනජීවී සෆාරි දිනය",
+        "idealFor": "දැඩි කාලසටහන් සහිත Safari උද්යෝගිමත්",
+        "intro": "අලුයම කොටි රට. මෙම දින 1ක පුද්ගලික රියදුරු ගමන යාල - සෆාරි ලෝලීන්ට දැඩි කාලසටහන් සමඟ පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "ජීප් සෆාරි කවුළුව",
+          "වියළි කලාපීය කලපු",
+          "කුරුලු ජීවීන්"
+        ],
+        "itinerary": [
+          {
+            "title": "යාල සොයාගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ යාල ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "අනුරාධපුර පූජා මංපෙත් දිනය",
+        "idealFor": "බෞද්ධ උරුම වන්දනාකරුවන්",
+        "intro": "පුරාණ ස්තූප සහ බෝධි සම්ප්රදායන්. මෙම 1-දින පෞද්ගලික රියදුරු ගමන අනුරාධපුරයට - බෞද්ධ උරුම වන්දනාකරුවන්ට පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "රුවන්වැලිසෑය",
+          "පූජනීය බෝධිය",
+          "ආරාම නටබුන්"
+        ],
+        "itinerary": [
+          {
+            "title": "අනුරාධපුර සොයාගැනීම",
+            "description": "ඔබගේ කැපවූ රියදුරු සමඟ අනුරාධපුරය ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "මිරිස්ස දකුණු වෙරළ දිනය",
+        "idealFor": "තල්මසුන් වාරයේ අමුත්තන්",
+        "intro": "පොල් කොපු සහ සාගර ක්ෂිතිජය. මෙම 1-දින පෞද්ගලික රියදුරු ගමන තල්මසුන් කන්නයේ අමුත්තන් - මිරිස්ස වෙත පැමිණේ. ඔබ පන්සල්, දර්ශන ස්ථාන, වනජීවී කවුළු සහ නොසන්සුන් වෙරළබඩ දහවල් කෙරෙහි අවධානය යොමු කරන අතරතුර ඔබේ කැපවූ රියදුරු මාර්ගය හසුරුවයි. සෑම Q Pick සංචාරයක්ම ඔබේ දිනයන්, වාහන මනාපය සහ වේගය පිළිබඳ ලිඛිත සමාලෝචනයකින් පසුව පිරිපහදු කරනු ලැබේ.",
+        "highlights": [
+          "මිරිස්ස වෙරළ",
+          "පොල් කන්ද",
+          "තල්මසුන් නැරඹීමේ සමය"
+        ],
+        "itinerary": [
+          {
+            "title": "මිරිස්ස සොයා ගැනීම",
+            "description": "ඔබේ කැපවූ රියදුරු සමඟ මිරිස්ස ගවේෂණය කරන්න - කාලගුණය, ප්‍රවේශපත්‍ර සහ ඔබේ වේගය වටා කාල නියමයන්."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "යාපනය උරුම නගර සංචාරය",
+        "idealFor": "උතුරේ ගවේෂණය කරන උරුම සංචාරකයින්",
+        "intro": "අවධානය යොමු කළ පැය හතරක පෞද්ගලික සංචාරයකින් යාපනයේ දෙමළ උරුමය සොයා ගන්න. ඔබේ රියදුරු නල්ලූර් කෝවිලේ ගෝපුරයේ සිට යාපනය කොටුවේ බැම්ම, ඓතිහාසික මහජන පුස්තකාලය, වර්ණවත් දේශීය වෙළඳපොළ නැවතුමක් සහ සම්භාව්‍ය රියෝ අයිස්ක්‍රීම් නිමාව දක්වා ඔබට මඟ පෙන්වයි.",
+        "highlights": [
+          "නල්ලූර් පන්සල",
+          "යාපනය කොටුව",
+          "මහජන පුස්තකාලය",
+          "දේශීය වෙළෙඳපොළ",
+          "රියෝ අයිස්ක්‍රීම්"
+        ],
+        "itinerary": [
+          {
+            "title": "යාපනය උරුම පරිපථය",
+            "description": "නල්ලූර් පන්සල, යාපනය කොටුව, මහජන පුස්තකාලය, වෙළඳපල ගවේෂණය සහ රියෝ අයිස්ක්‍රීම් - විවෘත වේලාවන් සහ ඔබේ රුචිකත්වයන් වටා ගමන් කරයි."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "ඩෙල්ෆ්ට් අයිලන්ඩ් ඇඩ්වෙන්චර්",
+        "idealFor": "දූපත් ගවේෂකයින් සහ ඡායාරූප ශිල්පීන්",
+        "intro": "සම්පූර්ණ දින ත්‍රාසජනක ගමනක් සඳහා දුරස්ථ ඩෙල්ෆ්ට් දූපතට තොටුපළ හරහා යන්න. කොරල් වෙරළේ ඇවිදින්න, සුප්‍රසිද්ධ බයෝබැබ් ගස සහ රැජිනගේ කුළුණේ නටබුන් සොයන්න, විවෘත තැනිතලාවල වල් අශ්වයන් බලන්න, සහ ප්‍රධාන ගොඩබිම් මාරු කිරීම් හසුරුවන ඔබේ පුද්ගලික රියදුරු සමඟ ආපසු එන්න.",
+        "highlights": [
+          "පාරු සවාරිය",
+          "වල් අශ්වයන්",
+          "බයෝබැබ් ගස",
+          "රැජිනගේ කුළුණ",
+          "කොරල් වෙරළ"
+        ],
+        "itinerary": [
+          {
+            "title": "ඩෙල්ෆ්ට් දූපත් ගවේෂණය",
+            "description": "තොටුපළ හරස් කිරීම, වල් අශ්ව තැනිතලා, බයෝබැබ් ගස, ක්වීන්ස් කුළුණ සහ කොරල් වෙරළ වේලාව - පුද්ගලික වාහනයකින් ප්‍රධාන ගොඩබිම් මාරු කිරීම් සමඟ."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "නයිනතිව් පුජා දිවයින චාරිකාව",
+        "idealFor": "වන්දනාකරුවන් සහ සංස්කෘතික සංචාරකයින්",
+        "intro": "පැය හයක පූජනීය දූපත් ගමනක් සඳහා නයිනතිව් වෙත යාත්‍රා කරන්න. නාගදීප විහාරස්ථානයට සහ නාගපූෂානි අම්මාන් කෝවිලට පැමිණ, බෝට්ටු තරණය අත්විඳින්න, වෙරළේ පුද්ගලික රියදුරන්ගේ සහාය ඇතිව Sri Lanka උතුරු දූපත් වල සම්මිශ්‍රිත බෞද්ධ හා හින්දු උරුමයන් උකහා ගන්න.",
+        "highlights": [
+          "නාගදීප විහාරය",
+          "නාගපූෂානි අම්මාන් පන්සල",
+          "බෝට්ටු සවාරිය",
+          "සංස්කෘතික අත්දැකීම්",
+          "සීගිරි පර්වත බලකොටුව සිසිල් ආලෝකය සඳහා කාලය ගත විය",
+          "දඹුල්ල ලෙන් විහාර බිතු සිතුවම්",
+          "අනුරාධපුර හෝ පොළොන්නරුව පුදබිම්",
+          "පුද්ගලික සංස්කෘතික ත්‍රිකෝණ රියදුරු",
+          "මහනුවර දළදා මාලිගාව",
+          "නුවරඑළිය අවට තේ වතු",
+          "ඇල්ලේ ආරුක්කු නවය පාලම",
+          "විකල්ප දර්ශනීය දුම්රිය කොටස",
+          "සංස්කෘතික ත්රිකෝණ අයිකන",
+          "මහනුවර සහ කඳුකර තේ රට",
+          "ඇල්ල දර්ශනීය බිම් සලකුණු",
+          "දකුණු වෙරළ තීරය ගාල්ල හෝ මිරිස්ස",
+          "සංස්කෘතික ත්රිකෝණයේ උරුම උණුසුම",
+          "කඳුකර තේ රට සහ ඇල්ල",
+          "යාල දිවියා සෆාරි කවුළුව",
+          "දකුණු වෙරළ ප්‍රතිසාධන දින",
+          "සම්පූර්ණ සංස්කෘතික ත්රිකෝණ ගැඹුර",
+          "කඳුකරය සහ දකුණු සෆාරි",
+          "බටහිර සහ නැගෙනහිර වෙරළ විකල්ප",
+          "පවුලේ සූදානම් වේගය",
+          "පූර්ණ-දිවයින සෘතුමය මාර්ගගත කිරීම",
+          "ගැඹුරු උරුමය සහ වනජීවී කාලය",
+          "නැගෙනහිර සහ බටහිර වෙරළ තීරය",
+          "අවසාන පුද්ගලික රියදුරු වේගය"
+        ],
+        "itinerary": [
+          {
+            "title": "නයිනතිව් පුදබිම",
+            "description": "නයිනතිව්, නාගදීප විහාරය, නාගපූෂානි අම්මාන් විහාරස්ථානය වෙත බෝට්ටු සවාරිය සහ ආපසු පැමිණීමට පෙර දිවයිනේ සංස්කෘතික කාලය."
+          },
+          {
+            "title": "ත්රිකෝණයට පැමිණීමේ කොරිඩෝව",
+            "description": "CMB හෝ මීගමුව අසල ඔබේ රියදුරු හමුවී රට අභ්‍යන්තරයට යන්න. සීගිරිය හෝ දඹුල්ල අසල පදිංචි වන්න; විවේකයේදී සවස."
+          },
+          {
+            "title": "සීගිරිය සහ දඹුල්ල",
+            "description": "මෘදු ආලෝකයෙන් සීගිරියට නගින්න, ඉන්පසු දඹුල්ල ලෙන් විහාරය ගවේෂණය කරන්න. අවශ්‍ය නම් අසල විකල්ප සෘතුමය සෆාරි."
+          },
+          {
+            "title": "පුරාණ නගරය සහ ඉදිරියට",
+            "description": "කොළඹ/මීගමුව දෙසට ආපසු යාමට හෝ ඔබේ අභිරුචි මාර්ගය දිගටම කරගෙන යාමට පෙර අනුරාධපුරයට හෝ පොළොන්නරුවට පිවිසෙන්න."
+          },
+          {
+            "title": "මහනුවරට",
+            "description": "අභ්‍යන්තර මාර්ග හරහා මහනුවරට ධාවනය කරන්න. සන්ධ්‍යා වැව චාරිකාව සහ දළදා මාලිගාව චාරිත්‍ර වාරිත්‍ර වටා කාලය ගත විය."
+          },
+          {
+            "title": "මහනුවර උරුමය",
+            "description": "පේරාදෙණිය උද්භිද උද්‍යාන, යාත්‍රා වීදි සහ වෙළඳපල සඳහා නිදහස් කාලය හෝ සංස්කෘතික ප්‍රසංගයක්."
+          },
+          {
+            "title": "තේ රට",
+            "description": "වැවිලි සංචාර, ග්‍රෙගරි වැව සහ සිසිල් දේශගුණික විවේකය සඳහා නුවරඑළියට නැඟෙන්න."
+          },
+          {
+            "title": "ඇල්ල දසුන්",
+            "description": "ආරුක්කු නවය පාලම, රිජ් ඇවිදීම සහ උස්බිම් ආපනශාලා සඳහා ඇල්ල වෙත යන්න. විකල්ප දුම්රිය කොටස."
+          },
+          {
+            "title": "බැසයාම හෝ වෙරළ සම්බන්ධකය",
+            "description": "මාර්ගයෙන් හසුරුවන ගමන් මලු සමඟ කොළඹ, දකුණු වෙරළ තීරය හෝ ඔබේ මීළඟ අභිරුචි ගමනාන්තය දෙසට පිටත් වන්න."
+          },
+          {
+            "title": "පැමිණීම",
+            "description": "ගුවන්තොටුපල හමුවීම සහ කොළඹට හෝ මීගමුවට මාරු කිරීම; ඔබේ රියදුරු සමඟ දැනුවත් කිරීම."
+          },
+          {
+            "title": "සංස්කෘතික ත්රිකෝණය",
+            "description": "බලකොටුව හෝ ලෙන් විහාර වේලාව සඳහා සීගිරිය / දඹුල්ල වෙත ගමන."
+          },
+          {
+            "title": "මහනුවරට උරුමය",
+            "description": "සම්පූර්ණ ත්‍රිකෝණ උද්දීපනය කරන්න, ඉන්පසු මහනුවරට යන්න."
+          },
+          {
+            "title": "උස්බිම්",
+            "description": "නුවරඑළිය හෝ ඇල්ල දෙසට තේ රට තුළට දර්ශනීය ධාවනය."
+          },
+          {
+            "title": "ඇල්ල",
+            "description": "ආරුක්කු නවයක් පාලම, දර්ශන ස්ථාන සහ කැෆේ විවේකය."
+          },
+          {
+            "title": "දකුණු වෙරළ තීරය",
+            "description": "හිරු බැස යෑමට සහ මුහුදු වෙරළේ ආහාර ගැනීම සඳහා ගාලු කොටුවට සහ මිරිස්සට බැස යන්න."
+          },
+          {
+            "title": "පිටත්වීම",
+            "description": "වෙරළබඩ උදෑසන විවේකයේදී සහ CMB හෝ කොළඹ වෙත පුද්ගලික මාරු කිරීම."
+          },
+          {
+            "title": "පැමිණීම",
+            "description": "CMB හමුවීම සහ නගරය හෝ මීගමුව පදිංචි වීම."
+          },
+          {
+            "title": "සීගිරිය කලාපය",
+            "description": "පාෂාණ බලකොටුව සහ ත්රිකෝණය ගිල්වීම."
+          },
+          {
+            "title": "මහනුවර",
+            "description": "දළදා මාලිගාව සහ උස්බිම් ප්‍රවේශය."
+          },
+          {
+            "title": "තේ රට",
+            "description": "නුවරඑළිය වතුකරය සහ සිසිල් දේශගුණය."
+          },
+          {
+            "title": "ඇල්ල",
+            "description": "ආරුක්කු නවයක් සහ රිජ් ඇවිදීම."
+          },
+          {
+            "title": "යාල දෙසට",
+            "description": "ගිනිකොන දිග වනජීවී තීරයට දර්ශනීය බැසීම."
+          },
+          {
+            "title": "සෆාරි දිනය",
+            "description": "යාල ජාතික වනෝද්‍යානයේ ජීප් සෆාරි (උද්‍යාන ගාස්තු අමතර)."
+          },
+          {
+            "title": "දකුණු වෙරළ තීරයන්",
+            "description": "මිරිස්ස පොල් ගස් කන්ද සහ වෙරළබඩ අක්‍රීය කාලය."
+          },
+          {
+            "title": "ගාලු කොටුව",
+            "description": "බලකොටු, ප්‍රදීපාගාරය සහ බුටික් ගවේෂණය."
+          },
+          {
+            "title": "පිටත්වීම",
+            "description": "CMB හෝ කොළඹ වෙත පුද්ගලික මාරු කිරීම."
+          },
+          {
+            "title": "මීගමුව පැමිණීම",
+            "description": "CMB පිකප් සහ බටහිර-වෙරළ පදිංචිය."
+          },
+          {
+            "title": "අනුරාධපුරය",
+            "description": "පූජනීය නගර ස්ථූප සහ පුරාවිද්‍යා උද්‍යානය."
+          },
+          {
+            "title": "සීගිරිය",
+            "description": "පාෂාණ බලකොටුව සහ ත්රිකෝණ පදනම."
+          },
+          {
+            "title": "පොලොන්නරුව",
+            "description": "මධ්යකාලීන අගනුවර සහ විකල්ප අලි උද්යානය."
+          },
+          {
+            "title": "දඹුල්ල සිට මහනුවර දක්වා",
+            "description": "ලෙන් විහාරය සහ උස්බිම් අගනුවර."
+          },
+          {
+            "title": "මහනුවර",
+            "description": "දළදා මාලිගාව සහ උද්යාන."
+          },
+          {
+            "title": "නුවරඑළිය",
+            "description": "තේ වතු සහ සිසිල් දේශගුණය."
+          },
+          {
+            "title": "ඇල්ල",
+            "description": "ආරුක්කු නවයක් සහ දසුන්."
+          },
+          {
+            "title": "යාල ප්රවේශය",
+            "description": "අග්නිදිග වනජීවී තීරය මාරු කිරීම."
+          },
+          {
+            "title": "සෆාරි",
+            "description": "යාල ජාතික වනෝද්‍යානයේ ජීප් දිනය."
+          },
+          {
+            "title": "මිරිස්ස",
+            "description": "දකුණු වෙරළ ප්‍රතිසාධන දිනය."
+          },
+          {
+            "title": "ගාල්ල",
+            "description": "බලකොටුව උරුමය සහ වෙරළ."
+          },
+          {
+            "title": "නැගෙනහිර හෝ නිරිත දෙසින්",
+            "description": "ත්‍රිකුණාමල වාර විකල්පය හෝ බෙන්තොට බෆරය."
+          },
+          {
+            "title": "කොළඹ පිටත්වීම",
+            "description": "නගර බෆරය සහ CMB මාරු කිරීම."
+          },
+          {
+            "title": "පැමිණීම",
+            "description": "CMB මීගමුවට හෝ කොළඹට."
+          },
+          {
+            "title": "බටහිර වෙරළ බෆරය",
+            "description": "කලපුව හෝ නගර විවේකය."
+          },
+          {
+            "title": "අනුරාධපුරය",
+            "description": "පූජනීය නගරය ගිල්වීම."
+          },
+          {
+            "title": "වයඹ විකල්පය",
+            "description": "විකල්ප වනජීවී හෝ විවේක දිනය."
+          },
+          {
+            "title": "සීගිරිය",
+            "description": "ගල් බලකොටුව අවධානය යොමු කිරීම."
+          },
+          {
+            "title": "පොලොන්නරුව",
+            "description": "මධ්යකාලීන නටබුන් සහ විල්."
+          },
+          {
+            "title": "දඹුල්ල",
+            "description": "ලෙන් විහාරය සහ ගැමි සංස්කෘතිය."
+          },
+          {
+            "title": "මහනුවර",
+            "description": "දළදා මාලිගාව."
+          },
+          {
+            "title": "මහනුවර විවේකය",
+            "description": "උද්යාන සහ අත්කම්."
+          },
+          {
+            "title": "නුවරඑළිය",
+            "description": "තේ රට."
+          },
+          {
+            "title": "වතු",
+            "description": "විකල්ප සානුව හෝ වැවිලි දිනය."
+          },
+          {
+            "title": "ඇල්ල",
+            "description": "ආරුක්කු සහ කඳු වැටි නවයක්."
+          },
+          {
+            "title": "ඇල්ල විවේකය",
+            "description": "කැෆේ සහ කෙටි ඇවිදීම."
+          },
+          {
+            "title": "යාල",
+            "description": "වනජීවී ප්රවේශය."
+          },
+          {
+            "title": "සෆාරි",
+            "description": "ජීප් රථ ගාල් කරන දිනය."
+          },
+          {
+            "title": "මිරිස්ස",
+            "description": "දකුණු සාගරය."
+          },
+          {
+            "title": "ගාල්ල",
+            "description": "බලකොටුව උරුමය සහ වෙරළ."
+          },
+          {
+            "title": "බෙන්තොට",
+            "description": "නිරිතදිග නිවාඩු නිකේතනයේ වේගය."
+          },
+          {
+            "title": "නැගෙනහිර වෙරළ",
+            "description": "වාරය අනුව ත්‍රිකුණාමලය හෝ ආරුගම් බොක්ක."
+          },
+          {
+            "title": "නැගෙනහිර විවේකය",
+            "description": "වෙරළ සහ ජල කාලය."
+          },
+          {
+            "title": "ආපසු පැමිණීම සහ පිටවීම",
+            "description": "CMB වෙත දිවයින හරහා මාරු කිරීම."
+          }
+        ]
+      }
+    },
+    "faqs": {
+      "hub-customize": {
+        "question": "මට Q Pick සංචාර පැකේජයක් අභිරුචිකරණය කළ හැකිද?",
+        "answer": "ඔව්. ප්‍රකාශිත පැකේජ ආරම්භක ස්ථාන වේ. සැලසුම්කරු තුළ ගමනාන්ත, දින, වාහනය සහ මනාප තෝරන්න - ඔබ ඉල්ලීමක් ඉදිරිපත් කිරීමෙන් පසු අපගේ මේසය මාර්ගය පිරිපහදු කරයි."
+      },
+      "hub-price": {
+        "question": "මිලකරණය ක්රියා කරන්නේ කෙසේද?",
+        "answer": "ඔබගේ ගමන් විස්තරය සමාලෝචනය කරන තෙක් අපි ඉල්ලීම මත මිල ගණන් පෙන්වමු. ඔබ සංචාර ඉල්ලීමක් ඉදිරිපත් කිරීමෙන් පසුව, Q Pick ලිඛිත පුද්ගලික රියදුරු උපුටා දැක්වීමක් තහවුරු කරයි. ඇතුල්වීමේ ගාස්තු, සෆාරි ජීප් රථ, නවාතැන්, සහ ආහාර ලිඛිතව ප්‍රකාශ කර නොමැති නම් සාමාන්‍යයෙන් වෙන වෙනම වේ."
+      },
+      "hub-airport": {
+        "question": "ඔබ සංචාර සමඟ ගුවන් තොටුපළ පිකප් ලබා දෙනවාද?",
+        "answer": "ඔව්. Bandaranaike International (CMB) පිකප් සහ ඩ්‍රොප්-ඕෆ් ඔබගේ සංචාරය සමඟ හෝ අපගේ කැපවූ ගුවන් තොටුපල හුවමාරු සේවාව හරහා සංවිධානය කළ හැක."
+      },
+      "hub-group": {
+        "question": "මා තෝරාගත යුත්තේ කුමන වාහනයද?",
+        "answer": "සෙඩාන් සූට් ජෝඩු; SUV සහ වෑන් රථ පවුල්වලට ගැලපේ; සුඛෝපභෝගී වෑන් සහ කුඩා පුහුණුකරුවන් විශාල කණ්ඩායම් සඳහා සේවය කරයි. සැලසුම්කරු තුළ ධාරිතාව තෝරන්න - ගමන් මලු සහ මාර්ගය සමාලෝචනය කිරීමෙන් පසු අපි අවසන් වාහනය තහවුරු කරමු."
+      },
+      "hub-payment": {
+        "question": "ගෙවීම් සහ තහවුරු කිරීම වැඩ කරන්නේ කෙසේද?",
+        "answer": "සංචාර ඉල්ලීමක් මාර්ගගතව ඉදිරිපත් කරන්න. අපගේ කණ්ඩායම ලබා ගත හැකි බව සමාලෝචනය කරයි, දළ සටහනක් සහ උපුටා දැක්වීමක් තහවුරු කරයි, පසුව ගෙවීම් සහ රියදුරු පැවරීම සඳහා ඊළඟ පියවර බෙදා ගනී. ලුහුබැඳීම සඳහා ඔබට යොමු කේතයක් ලැබේ."
+      },
+      "pkg-3d-pace": {
+        "question": "සංස්කෘතික ත්‍රිකෝණයට දින තුනක් ප්‍රමාණවත්ද?",
+        "answer": "සීගිරිය, දඹුල්ල සහ අනුරාධපුරය හෝ පොළොන්නරුව යන ප්‍රදේශවලින් දින තුනක් ආවරණය කළ හැකිය. දිගු රැඳී සිටීම මිහින්තලේ, සෆාරි ඇඩෝන හෝ මහනුවර දිගුවකට ඉඩ දෙයි."
+      },
+      "pkg-5d-train": {
+        "question": "අපට ඇල්ල දුම්රිය ඇතුළත් කළ හැකිද?",
+        "answer": "ඔව්. බොහෝ අමුත්තන් දර්ශනීය දුම්රිය කොටසක ගමන් කරන අතර රියදුරු මාර්ගයෙන් ගමන් මලු මාරු කරයි. මිල කැඳවීමක් ඉල්ලන විට ඔබේ මනාපය අපට කියන්න."
+      },
+      "pkg-5d-weather": {
+        "question": "කඳුකරයේ කාලගුණය කෙබඳුද?",
+        "answer": "නුවරඑළිය සහ ඇල්ල වෙරළ තීරයට වඩා සිසිල් වන අතර, උදෑසන මීදුම සහිත සහ සිහින් වැසි ඇති විය හැක. ඇසුරුම් ස්ථර; ඔබේ පුද්ගලික වාහනය දසුන් අතර මාරුවීම් පහසු කරයි."
+      },
+      "pkg-7d-fitness": {
+        "question": "දින 7ක සංචාරය සඳහා කොපමණ ඇවිදීම සම්බන්ධ වේද?",
+        "answer": "සීගිරිය සහ විහාරස්ථාන නැරඹීමට පියවර ඇතුළත් වේ; ඇල්ල විකල්ප කෙටි ඇවිදීම් ඉදිරිපත් කරයි. ඔබේ රියදුරු දවසේ වේලාවන් නිසා වෙහෙසකර කොටස් උද්දීපනය අහිමි නොවී කෙටි කළ හැක."
+      },
+      "pkg-10d-safari": {
+        "question": "වනජීවී වික්‍රමයට යාල සෆාරි ඇතුළත්ද?",
+        "answer": "සෆාරි ජීප් කුලියට ගැනීම සහ උද්‍යාන ප්‍රවේශය පැහැදිලි වේලාවන් සමඟ ඇඩෝන ලෙස සකසා ඇත. වනජීවී දර්ශන කිසිවිටෙක සහතික නොවේ - ඔබගේ ඉල්ලීමෙන් පසු හොඳම සෘතුමය කවුළුව අපි සැලසුම් කරමු."
+      },
+      "pkg-14d-pace": {
+        "question": "දින දාහතරක් රිය පැදවීම වැඩිද?",
+        "answer": "පුද්ගලික රියදුරෙකු සහ රාත්‍රී නැවතුම් අතර, දෛනික රිය පැදවීම කළමනාකරණය කළ හැකිය. අපි විවේක වෙරළ දින සැලසුම් කරමු, එවිට ගමන් මාර්ගය ගිලී යන බවක් දැනෙනවා මිස ඉක්මන් නොවේ."
+      },
+      "pkg-21d-season": {
+        "question": "මහා දූපත් සංචාරයක් සඳහා හොඳම කාලය කවදාද?",
+        "answer": "බටහිර සහ දකුණු වෙරළ දෙසැම්බර්-මාර්තු වලට හිතකරය; නැගෙනහිර බොහෝ විට මැයි-සැප්තැම්බර් පමණ දිදුලයි. දින 21 සැලැස්මක් වියළි වෙරළ අනුගමනය කළ හැක - අපි ඔබගේ සංචාරක මාසය මත පදනම්ව උපදෙස් දෙන්නෙමු."
+      }
+    }
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "පියවර 1",
+        "title": "ඔබ යාමට කැමති කොහිද?",
+        "subtitle": "ගමනාන්ත තෝරන්න හෝ ඔබේ සිහින මාර්ගය විස්තර කරන්න - අපි එකට විස්තර පිරිපහදු කරන්නෙමු."
+      },
+      "dates": {
+        "kicker": "පියවර 2",
+        "title": "ගමන් දින තෝරන්න",
+        "subtitle": "ඔබේ ආරම්භක දිනය සහ ඔබට මාර්ගයේ කොපමණ දිනක් අවශ්‍යද යන්න තෝරන්න.",
+        "startDate": "ආරම්භක දිනය",
+        "numberOfDays": "දින ගණන",
+        "estimatedEnd": "ඇස්තමේන්තුගත අවසන් දිනය:"
+      },
+      "vehicle": {
+        "kicker": "පියවර 3",
+        "title": "ඔබේ වාහනය තෝරන්න",
+        "subtitle": "සෙඩාන් සිට වෑන් රථය දක්වා - පුද්ගලික, වායුසමනය කළ, ගමන් මලු සූදානම්."
+      },
+      "accommodation": {
+        "kicker": "පියවර 4",
+        "title": "නවාතැන් මනාපය",
+        "subtitle": "ඔබේ සුවපහසුව මට්ටම අපට කියන්න - අපි රැඳී සිටීම සම්බන්ධීකරණය කරන්න හෝ ඔබ ඔබේම වෙන්කරවා ගන්න."
+      },
+      "preferences": {
+        "kicker": "පියවර 5",
+        "title": "සංචාරක මනාප",
+        "subtitle": "වේගය, රුචිකත්වයන් සහ විශේෂ ඉල්ලීම් ඔබගේ ගමන් විස්තරය හැඩගස්වා ගැනීමට අපට උදවු කරයි."
+      },
+      "contact": {
+        "kicker": "පියවර 6",
+        "title": "ඔබගේ සම්බන්ධතා විස්තර",
+        "subtitle": "අපි ලිඛිත උපුටා දැක්වීමක් සහ පිරිපහදු කළ ගමන් විස්තරයකින් ප්‍රතිචාර දක්වමු."
+      },
+      "requests": {
+        "kicker": "පියවර 7",
+        "title": "විශේෂ ඉල්ලීම්",
+        "subtitle": "ආහාර අවශ්‍යතා, ප්‍රවේශ්‍යතාව, සැමරුම් - අප දැනගත යුතු ඕනෑම දෙයක්."
+      },
+      "review": {
+        "kicker": "සමාලෝචනය කරන්න",
+        "title": "ඔබගේ සංචාර ඉල්ලීම සමාලෝචනය කරන්න",
+        "subtitle": "ඉදිරිපත් කිරීමට පෙර විස්තර තහවුරු කරන්න - මෙම අදියරේදී ගෙවීමක් අවශ්‍ය නොවේ.",
+        "submit": "සංචාර ඉල්ලීම ඉදිරිපත් කරන්න",
+        "submitting": "ඉදිරිපත් කරමින්..."
+      }
+    },
+    "common": {
+      "back": "ආපසු",
+      "continue": "දිගටම කරගෙන යන්න",
+      "optional": "විකල්ප",
+      "required": "අවශ්යයි"
     }
   }
 }

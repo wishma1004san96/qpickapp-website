@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ContactInfoRow } from "@/components/brand/contact-info-row";
 import { BrandLockup } from "@/components/brand/wordmark";
 import { LanguageSwitcher } from "@/components/brand/language-switcher";
 import { useTranslations } from "@/components/i18n/locale-provider";
@@ -61,89 +62,63 @@ export function SiteFooter() {
               </p>
 
               {/* Contact — compact */}
-              <div className="site-footer-contact mt-3 w-full min-w-0 space-y-2 text-center md:text-left">
-                <div className="flex justify-center gap-2 md:justify-start">
-                  <span className="mt-0.5 shrink-0 text-[0.85rem] leading-none" aria-hidden="true">
-                    📍
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[0.625rem] font-medium tracking-[0.12em] text-foam/50 uppercase">
-                      {t("footer.contact.address")}
-                    </p>
-                    <p className="mt-0.5 text-sm leading-snug break-words text-foam/80">
-                      {siteConfig.addressLines.map((line) => (
-                        <span key={line} className="block">
-                          {line}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-                </div>
+              <div className="site-footer-contact mt-3 w-full min-w-0 self-stretch space-y-2 text-left">
+                <ContactInfoRow
+                  icon="📍"
+                  label={t("footer.contact.address")}
+                >
+                  <p className="text-sm leading-snug break-words text-foam/80">
+                    {siteConfig.addressLines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </p>
+                </ContactInfoRow>
 
-                <div className="flex justify-center gap-2 md:justify-start">
-                  <span className="mt-0.5 shrink-0 text-[0.85rem] leading-none" aria-hidden="true">
-                    ✉
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[0.625rem] font-medium tracking-[0.12em] text-foam/50 uppercase">
-                      {t("footer.contact.email")}
-                    </p>
-                    <a
-                      href={`mailto:${siteConfig.supportEmail}`}
-                      className="mt-0.5 block text-sm break-all text-foam/85 transition-colors hover:text-foam focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
-                    >
-                      {siteConfig.supportEmail}
-                    </a>
-                  </div>
-                </div>
+                <ContactInfoRow icon="✉" label={t("footer.contact.email")}>
+                  <a
+                    href={`mailto:${siteConfig.supportEmail}`}
+                    className="block text-sm break-all text-foam/85 transition-colors hover:text-foam focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+                  >
+                    {siteConfig.supportEmail}
+                  </a>
+                </ContactInfoRow>
 
-                <div className="flex justify-center gap-2 md:justify-start">
-                  <span className="mt-0.5 shrink-0 text-[0.85rem] leading-none" aria-hidden="true">
-                    ☎
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[0.625rem] font-medium tracking-[0.12em] text-foam/50 uppercase">
-                      {t("footer.contact.phones")}
-                    </p>
-                    <ul className="mt-0.5 space-y-0.5">
-                      {(
-                        [
-                          siteConfig.phones.general,
-                          siteConfig.phones.office,
-                          siteConfig.phones.mobile,
-                        ] as const
-                      ).map((phone) => (
-                        <li key={phone}>
-                          <a
-                            href={tel(phone)}
-                            className="block text-sm leading-snug text-foam/85 transition-colors hover:text-foam focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
-                          >
-                            {phone}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <ContactInfoRow icon="☎" label={t("footer.contact.phones")}>
+                  <ul className="space-y-0.5">
+                    {(
+                      [
+                        siteConfig.phones.general,
+                        siteConfig.phones.office,
+                        siteConfig.phones.mobile,
+                      ] as const
+                    ).map((phone) => (
+                      <li key={phone}>
+                        <a
+                          href={tel(phone)}
+                          className="block text-sm leading-snug text-foam/85 transition-colors hover:text-foam focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+                        >
+                          {phone}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </ContactInfoRow>
 
-                <div className="flex justify-center gap-2 md:justify-start">
-                  <span className="mt-0.5 shrink-0 text-[0.85rem] leading-none" aria-hidden="true">
-                    💬
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[0.625rem] font-medium tracking-[0.12em] text-foam/50 uppercase">
-                      {t("footer.contact.whatsapp")}
-                    </p>
-                    <a
-                      href={whatsappLink.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-0.5 block text-sm text-[#9AF0B8] transition-colors hover:text-[#b8f5cc] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/45"
-                    >
-                      {siteConfig.phones.whatsapp}
-                    </a>
-                  </div>
-                </div>
+                <ContactInfoRow
+                  icon="💬"
+                  label={t("footer.contact.whatsapp")}
+                >
+                  <a
+                    href={whatsappLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-sm text-[#9AF0B8] transition-colors hover:text-[#b8f5cc] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/45"
+                  >
+                    {siteConfig.phones.whatsapp}
+                  </a>
+                </ContactInfoRow>
               </div>
 
               {/* CTAs: stacked mobile · horizontal row from md up */}

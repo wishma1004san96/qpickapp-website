@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "Gå til hovedinnhold",
+  "header": {
+    "homeAria": "Q Pick hjemme",
+    "primaryNav": "Primær",
+    "mobileNav": "Mobil navigasjon",
+    "mobilePrimary": "Mobil primær",
+    "openMenu": "Åpne menyen",
+    "closeMenu": "Lukk menyen",
+    "bookNow": "Bestill nå"
+  },
+  "nav": {
+    "home": "Hjem",
+    "ride": "Ride",
+    "airport": "Flyplass",
+    "tours": "Turer",
+    "safety": "Sikkerhet",
+    "drive": "Kjør",
+    "partners": "Partnere",
+    "support": "Støtte"
+  },
+  "language": {
+    "label": "Språk",
+    "choose": "Velg språk"
+  },
+  "footer": {
+    "blurb": "Premium flyplasstransport, byturer, sjåførservice og private turer over Sri Lanka.",
+    "call": "Ring nå",
+    "whatsapp": "WhatsApp",
+    "emailCta": "Send oss en e-post",
+    "services": "Tjenester",
+    "company": "Selskapet",
+    "downloadApp": "Last ned appen",
+    "contact": {
+      "address": "Adresse",
+      "email": "E-post",
+      "phones": "Telefoner",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "Flyplasstransport",
+      "tours": "Private turer",
+      "chauffeur": "Sjåførservice",
+      "cityRides": "Byturer",
+      "corporate": "Bedriftsreiser"
+    },
+    "companyLinks": {
+      "about": "Om",
+      "drive": "Bli en sjåfør",
+      "partners": "Partnere",
+      "support": "Støtte",
+      "contact": "Kontakt"
+    },
+    "legal": {
+      "privacy": "Personvernerklæring",
+      "terms": "Vilkår og betingelser",
+      "cookies": "Informasjonskapsler"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick introduksjon",
+    "scroll": "Rull",
+    "scrollAria": "Bla til innhold",
+    "posterAlt": "Naturskjønn kjøretur gjennom tåkete Sri Lankan skogsveier",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "Flyplasstransport. Byturer. Private sjåfører.",
+        "description": "Førsteklasses mobilitet på tvers av Sri Lanka — henting og avlevering på flyplasser, taxi- og intercityturer, sjåførservice, bedriftsreiser og private turer under én pålitelig plattform.",
+        "primary": "Bestill tur",
+        "secondary": "Flyplasstransport"
+      },
+      {
+        "title": "Flyplasstransport",
+        "subtitle": "Ankommer og drar med sikkerhet.",
+        "description": "Møt-og-hils henting og tidsbestemte avleveringer. Sjåføren din venter før du lander – ingen køer, ingen usikkerhet.",
+        "primary": "Flyplasstransport",
+        "secondary": "Bestill tur"
+      },
+      {
+        "title": "By- og intercityturer",
+        "subtitle": "Taxi og sjåfør, på klokken din.",
+        "description": "Colombo-gater til kystmotorveier – verifiserte sjåfører, transparente priser og luksuriøse sjåføralternativer når du trenger dem.",
+        "primary": "Bestill tur",
+        "secondary": "Utforsk turer"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "Planlegg reisen din",
+      "title": "Planlegg reisen din",
+      "subtitle": "Fortell oss hvordan du ønsker å flytte. Vi ordner resten med stille omsorg.",
+      "journeyTypeAria": "Type reise",
+      "continue": "Fortsett",
+      "scheduleTitle": "Reiseplan",
+      "travelDate": "Reisedato",
+      "pickupTime": "Hentetid",
+      "intents": {
+        "arrive": "Ankommer",
+        "stay": "Bli",
+        "explore": "Utforsk"
+      },
+      "arrive": {
+        "fromLabel": "Flyplass",
+        "fromDefault": "Colombo flyplass (CMB)",
+        "toLabel": "Destinasjon",
+        "toDefault": "Galle Face Hotel",
+        "recommendation": "Møt ved ankomster · Hotellet holder seg orientert · Vær klar før du bekrefter"
+      },
+      "stay": {
+        "fromLabel": "Henting",
+        "fromDefault": "Hotellet ditt",
+        "toLabel": "Destinasjon",
+        "toDefault": "Galle Fort",
+        "recommendation": "Verifisert driver · Live-oppdateringer du kan dele · Gjennomsiktig prissetting"
+      },
+      "explore": {
+        "fromLabel": "Henting",
+        "fromDefault": "Colombo",
+        "toLabel": "Destinasjon",
+        "toDefault": "Ella og høylandet",
+        "recommendation": "Dagsklar kjøretøy · Sjåfør som kjenner veiene · Én rolig reiserute"
+      }
+    },
+    "trust": {
+      "ariaLabel": "Hvorfor gjester stoler på Q Pick",
+      "verifiedDrivers": "Verifiserte drivere",
+      "pricing": "Gjennomsiktig prissetting",
+      "islandwide": "Øydekkende dekning",
+      "support": "24/7 support",
+      "trips": "Tusenvis av turer"
+    }
+  },
+  "experience": {
+    "headingLine1": "Erfaring",
+    "headingLine2": "Q Pick.",
+    "lines": [
+      "Din flyplasstransport.",
+      "Byturen din.",
+      "Ditt Sri Lanka."
+    ],
+    "screenLive": "Q Pick appskjermbilde: {stepLabel}",
+    "previewAria": "Q Pick app forhåndsvisning som viser {stepLabel}",
+    "story": {
+      "planLabel": "Bestilling av tur",
+      "vehiclesLabel": "Valg av kjøretøy",
+      "liveLabel": "Live reise",
+      "plan": {
+        "kicker": "Flyplass og turer",
+        "title": "Planlegg reisen din",
+        "destinations": "Destinasjon",
+        "days": "Reisedager",
+        "daysUnit": "dager",
+        "pickup": "Henting",
+        "pickupValue": "Bandaranaike flyplass",
+        "hotel": "Hotell",
+        "hotelValue": "Shangri-La Colombo",
+        "route": "Rute forhåndsvisning",
+        "stops": "stopper",
+        "cta": "Fortsett"
+      },
+      "vehicles": {
+        "route": "Flyplass → Sigiriya · Ella · Galle",
+        "title": "Velg ditt kjøretøy",
+        "budgetLabel": "Estimert budsjett",
+        "budgetHint": "Før du bekrefter",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "Premium flåte",
+    "heading": "Velg den perfekte turen.",
+    "sub": "Fra tuk-tuk til premium varebiler, hvert kjøretøy er verifisert, komfortabelt og transparent priset.",
+    "phoneAria": "Q Pick kjøretøyliste på appen"
+  },
+  "insideQPickApp": {
+    "eyebrow": "Søknad",
+    "heading": "Inne i Q Pick-appen",
+    "sub": "Bestill flyplasstransport eller bytur, velg kjøretøyet ditt med en klar billettpris, og følg deretter sjåføren din live - førsteklasses mobilitet i lommen.",
+    "panelAria": "Q Pick appskjermbilde: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "Bestill turen",
+        "body": "Henting på flyplassen, bytaxi eller tur mellom byer – angi reisemål og tidspunkt før du drar."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "Kjøretøy og billettpris",
+        "body": "Fra sedan til premium varebil, med transparente priser før du bekrefter."
+      },
+      "live": {
+        "n": "03",
+        "label": "Live reise",
+        "body": "Sjåfør tildelt, live GPS og ETA, tur fullført, deretter en rolig vurderingsflyt."
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "HVORDAN Q PICK FUNGERER",
+    "heading": "Fra registrering til din destinasjon",
+    "sub": "Én rolig vei fra åpen til ankomst: Registrer deg, verifiser, bestill flyplasstransport eller bytur, og følg deretter sjåføren din i sanntid.",
+    "stepLabel": "Trinn {n}",
+    "prevAria": "Forrige trinn",
+    "nextAria": "Neste trinn",
+    "dotsAria": "Reisetrinn",
+    "dotAria": "Gå til trinn {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "Velkommen",
+        "body": "Åpne Q Pick-appen og begynn reisen."
+      },
+      "register": {
+        "n": "02",
+        "title": "Registrer deg",
+        "body": "Opprett din konto ved å bruke mobilnummeret ditt."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP-verifisering",
+        "body": "Bekreft mobilnummeret ditt på en sikker måte."
+      },
+      "journey": {
+        "n": "04",
+        "title": "Velg hvordan du beveger deg",
+        "body": "Bestill flyplasstransport, bytaxi, intercity-tur eller sjåførtjeneste - private turer når du vil ha det."
+      },
+      "track": {
+        "n": "05",
+        "title": "Spor sjåføren din",
+        "body": "Se sjåføren din ankomme med live GPS-sporing og ETA."
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Q Pick-standarden",
+    "heading": "En reise. En pålitelig standard.",
+    "intro": "Ikke en markedsplass. Ikke en brosjyre og en WhatsApp-tråd. En privat concierge for hvordan Sri Lanka beveger seg — fra første landing til siste kystvei.",
+    "closingTitle": "På tvers av hele reisen – den samme rolige vissheten.",
+    "closingBody": "Uber og PickMe flytter deg over en by. Turoperatører selger en dag. Q Pick har hele historien: flyplass, opphold og øy - under én pålitelig standard.",
+    "cta": "Planlegg reisen din",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "Ankommer",
+        "moment": "Øya begynner ved porten.",
+        "scene": "Flyet ditt lander. En verifisert Q Pick-sjåfør venter allerede - ikke en skravling på fortauskanten, ikke en kjede av meldinger. Hotellet ditt vet at du er på vei før bilen forlater flyplassen.",
+        "outcome": "En overlevering. Fra ankomster til resepsjonen.",
+        "imageAlt": "Colombo-kysten og byens lys i skumringen - reisen etter landing"
+      },
+      "stay": {
+        "n": "02",
+        "title": "Bli",
+        "moment": "Hver bevegelse forblir stille og tydelig.",
+        "scene": "Et kystløp, en middagsreservasjon, et morgenmøte. Du ser prisen før du bekrefter. Mens du sykler kan de som betyr noe, følge med – familie, vert eller villasjef – uten å ringe to ganger.",
+        "outcome": "Gjennomsiktig prissetting. Live status. Ingen markedsplassstøy.",
+        "imageAlt": "Sørlige Sri Lankan kystlinje med klart vann i Indiahavet"
+      },
+      "explore": {
+        "n": "03",
+        "title": "Utforsk",
+        "moment": "Øya åpner seg uten friksjon.",
+        "scene": "Tea country mist. Fortbyer. En dag med mer enn ett stopp. Den samme betrodde sjåføren, det riktige kjøretøyet for veiene foran, og en reiserute holdt med omhu - så stedet forblir poenget, ikke logistikken.",
+        "outcome": "Mobilitet og oppdagelse. Én kontinuerlig standard.",
+        "imageAlt": "Sigiriya Rock Fortress reiser seg fra Sri Lankan-jungelen"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lankas førsteklasses mobilitetsplattform",
+    "heading": "Din reise. Dine regler.",
+    "manifesto": "Fra den første flyplassen velkommen til den siste hotelldøren - en standard apper for kontinuerlig mobilitet ble aldri bygget for å holde.",
+    "positioningLead": "Dette er ikke bare en taxi-app.",
+    "positioningRest": "Dette er Sri Lankas premium mobilitetsplattform.",
+    "trustEyebrow": "Drevet av Quick Pick App (Pvt) Ltd",
+    "trustBody": "Q Pick er stolt utviklet og drevet av Quick Pick App (Pvt) Ltd, og tilbyr premium flyplasstransport, sjåførtjenester, private turer og pålitelige mobilitetsløsninger over hele Sri Lanka med en sterk forpliktelse til kvalitet, sikkerhet og eksepsjonell kundeopplevelse.",
+    "continuumEyebrow": "Reisen fortsetter",
+    "continuumBody": "Et bredere gjestfrihetsøkosystem tar stille og rolig form – den samme rolige standarden, utvidet.",
+    "continuumComingSoon": "Kommer snart",
+    "continuumItems": [
+      "Matlevering",
+      "Pakkelevering",
+      "Valutaveksling",
+      "Lokale opplevelser",
+      "Concierge-tjenester"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "Ankomst",
+        "title": "Øya begynner med en velkomst.",
+        "scene": "Flyet ditt lander. En verifisert Q Pick gjestfrihetsproff venter allerede – navneskiltet er klart, bagasjen i hånden, hotellruten bekreftet. Ikke et rykk på fortauskanten. Ikke et markedsplassbud. Bare den stille vissheten om at reisen din til Sri Lanka har begynt med omhu.",
+        "details": [
+          "Airport Meet & Greet av en profesjonell sjåfør - aldri en tilfeldig sjåfør",
+          "Hotelltransport planlegges før du forlater ankomster"
+        ],
+        "whisper": "En overlevering. Fra port til lobby.",
+        "kicker": "Kapittel 01",
+        "mediaTitle": "En rolig ankomst",
+        "imageAlt": "Førsteklasses flyplassterminalkorridor ved daggry — starten på en rolig ankomst"
+      },
+      "planning": {
+        "n": "02",
+        "label": "Skriv",
+        "title": "Beveg deg – by, flyplass eller øy.",
+        "scene": "I motsetning til vanlig turprat, dekker Q Pick flyplasstransport, by- og intercityturer, luksuriøs sjåførservice og bedriftsreiser – med private turer og dagsturer når du vil utforske. Velg henting, destinasjon, tidspunkt og kjøretøy. Se en klar pris før du bekrefter.",
+        "details": [
+          "Henting og avlevering fra flyplassen er tidsbestemt til flyet ditt",
+          "Bytaxi, intercity-turer og sjåføralternativer",
+          "Gjennomsiktig pris før du bekrefter - klarhet uten at det haster"
+        ],
+        "whisper": "Din rute. Timingen din. Din billettpris.",
+        "kicker": "Kapittel 02",
+        "mediaTitle": "En komponert reise",
+        "imageAlt": "Åpent fjellandskap for å lage en privat Sri Lanka reiserute"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "Selskapet",
+        "title": "Ikke sjåfører. Gjestfrihetsfagfolk.",
+        "scene": "Hver Q Pick sjåfør er en bekreftet gjestfrihetsprofesjonell – opplært for diskresjon, øyveier og det stille velkomstritualet. Når du ønsker det, kan du også be om en lokal guide for templer, teland, dyreliv eller levende arv - på engelsk, singalesisk, tamil eller andre språk der det er tilgjengelig.",
+        "details": [
+          "Verifiserte profesjonelle sjåfører - gjestfrihet først, alltid",
+          "Valgfrie flerspråklige lokale guider for kultur og historie",
+          "Ledsager valgt for tillit, ikke nærhet på et kart"
+        ],
+        "whisper": "Forskjellen er hvem som står ved døren.",
+        "kicker": "Kapittel 03",
+        "mediaTitle": "Stille profesjonelt selskap",
+        "imageAlt": "Profesjonell sjåfør i mørk dress som åpner døren til et luksuskjøretøy"
+      },
+      "explore": {
+        "n": "04",
+        "label": "Oppdagelse",
+        "title": "Hvor øya blir historien.",
+        "scene": "Kystveier. Høylandståke. Arvbyer. Mens du utforsker, holder direkte turstyring hver overføring klar – og 24/7-støtte forblir stille tilgjengelig hvis dagen skifter. Vanlige apper slutter når turen avsluttes. Q Pick blir med på reisen.",
+        "details": [
+          "Direkte turstyring for hele reisens bue",
+          "Profesjonell støtte – rolig, tilgjengelig, lite påtrengende"
+        ],
+        "whisper": "Logistikk forblir usynlig. Stedet er fortsatt poenget.",
+        "kicker": "Kapittel 04",
+        "mediaTitle": "Øya, uavbrutt",
+        "imageAlt": "Gylden-timers luftfoto av Sigiriya som reiser seg over Sri Lankan jungel"
+      },
+      "complete": {
+        "n": "05",
+        "label": "Retur",
+        "title": "Den samme rolige vissheten, til siste dør.",
+        "scene": "Den siste hotellslippen lukker sløyfen – koordinert fra appen, tidsbestemt til lobbyen din, levert med samme gjestfrihet som møtte deg på flyplassen. Én kontinuerlig standard. Fra første velkomst til siste farvel - noe vanlig kjøretur ikke kan holde.",
+        "details": [
+          "Hotellhenting og avreise holdt til en pålitelig standard",
+          "En komplett Sri Lanka reiseplattform – ikke en taximarkedsplass"
+        ],
+        "whisper": "Reisen ordner seg. Standarden består.",
+        "kicker": "Kapittel 05",
+        "mediaTitle": "Reisen holdt fullført",
+        "imageAlt": "Luksus resort ankomst i skumringen - den rolige slutten av en privat reise"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "Én plattform",
+    "heading": "Én plattform. Tre opplevelser.",
+    "sub": "Enten du trenger flyplasstransport, by- eller sjåførtur, eller et sted å tjene med verdighet – Q Pick er den samme pålitelige mobilitetsstandarden.",
+    "cards": {
+      "ride": {
+        "title": "Kjør nå",
+        "kicker": "Taxi og sjåfør",
+        "description": "Verifiserte sjåfører for bytaxi, intercity-turer og luksustransport – gjennomsiktige priser før du bekrefter.",
+        "points": [
+          "By- og intercityturer",
+          "Luksussjåfør",
+          "Gjennomsiktig prissetting"
+        ],
+        "cta": "Bestill tur",
+        "imageAlt": "Gjesten går fra baksiden av en svart executive-sedan på en premium pickup"
+      },
+      "tours": {
+        "title": "Flyplasstransport",
+        "kicker": "Ankomst og avreise",
+        "description": "Flytidsbestemt henting og avlevering med møte-og-hilsen-tjeneste – rolig sikkerhet fra gate til dør.",
+        "points": [
+          "Henting på flyplassen",
+          "Flyplasser",
+          "Møt og hilse"
+        ],
+        "cta": "Flyplasstransport",
+        "imageAlt": "Profesjonell sjåfør klar for en førsteklasses flyplasstransport"
+      },
+      "drive": {
+        "title": "Kjør med Q Pick",
+        "kicker": "Driverplattform",
+        "description": "En profesjonell plattform for seriøse sjåfører - klar inntjening, fleksible timer og verdig arbeid.",
+        "points": [
+          "Fleksibel inntjening",
+          "Profesjonell plattform",
+          "Enkel registrering"
+        ],
+        "cta": "Bli en sjåfør",
+        "imageAlt": "Profesjonell sjåfør i mørk dress som åpner bakdøren på en svart luksusbil ved en hotellinngang"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "Ridetjenester",
+    "intro": "Flyplasstransport, bytaxi, intercity-turer og sjåførservice - private turer når du vil utforske. En Q Pick standard.",
+    "tablistAria": "Turens hensikt",
+    "ride": {
+      "label": "Ride",
+      "title": "Bytaxi og intercityturer",
+      "body": "Be om en verifisert sjåfør for Colombo-gatene eller den lange kystturen. Gjennomsiktige priser før du bekrefter.",
+      "cta": "Bestill en tur",
+      "imageAlt": "Colombo-kysten i skumringen — byreiser med sikkerhet"
+    },
+    "airport": {
+      "label": "Flyplass",
+      "title": "Henting og avlevering på flyplassen",
+      "body": "Møt-og-hils-overføringer tidsbestemt til flyet ditt. Hoteller og villaer holder seg i løkken fra gate til dør.",
+      "cta": "Bestill flyplasstransport",
+      "imageAlt": "Kystvei mot sørlige Sri Lanka etter landing"
+    },
+    "tour": {
+      "label": "Omvisning",
+      "title": "Private turer og dagsturer",
+      "body": "Valgfrie dagsturer og reiser med flere stopp med sjåfører som kan øyveier - når utforskning er målet.",
+      "cta": "Utforsk turer",
+      "imageAlt": "Sigiriya og kulturelle trekantlandskap for dagsturer"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Hvor Q Pick tar deg",
+    "intro": "Populære ruter for flyplasstransport, byturer og sjåførturer – destinasjoner som støtter hvordan du beveger deg.",
+    "allDestinations": "Alle destinasjoner",
+    "travelTime": "Reisetid",
+    "startingPrice": "Starter fra"
+  },
+  "stepTimeline": {
+    "heading": "Hvordan sikkerhet fungerer",
+    "intro": "Tre rolige steg mellom der du er og hvor du trenger å være.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "Forespørsel",
+        "body": "Angi henting, destinasjon og tidspunkt. Se prisen før du forplikter deg."
+      },
+      "match": {
+        "n": "02",
+        "title": "Match",
+        "body": "En verifisert Q Pick-sjåfør er tildelt - vurdert, forsikret og turklar."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "Ankommer",
+        "body": "Live ETA, turdeling og en rolig overlevering ved døren eller porten."
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "Colombo",
+      "region": "Den vestlige provinsen",
+      "summary": "Havnelys, Galle Face-bris og hovedstadens puls – beveget seg med stille presisjon.",
+      "imageAlt": "Colombo-kysten ved sjøen i skumringen",
+      "travelTime": "30–45 minutter fra CMB",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "Galle",
+      "region": "Sør-provinsen",
+      "summary": "Fortmurer, havvind og sørkysten - flyplass til vollene uten usikkerhet.",
+      "imageAlt": "Sørlige Sri Lankan kystlinje og klart havvann",
+      "travelTime": "2–2,5 timer fra CMB",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "Ella",
+      "region": "Uva-provinsen",
+      "summary": "Tåke, te og høylandsluft - dagscharter tidsbestemt til fjelllyset.",
+      "imageAlt": "Frodig Sri Lankan høyland og tropisk åssidelandskap",
+      "travelTime": "5–6 timer fra Colombo",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "Sigiriya",
+      "region": "Sentralprovinsen",
+      "summary": "Steinfestning og kulturelle trekantveier — guidet av sjåfører som kjenner rutene.",
+      "imageAlt": "Luftfoto av Sigiriya Rock Fortress i Sri Lanka",
+      "travelTime": "3,5–4,5 timer fra CMB",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "Tillit og sikkerhet",
+    "heading": "En sikkerhetsstandard",
+    "headingLine2": "du kan føle.",
+    "intro": "Hver tur med Q Pick støttes av verifiserte sjåfører, sanntidsovervåking, transparente priser og dedikert støtte – slik at du kan reise Sri Lanka med full tillit.",
+    "cta": "Utforsk sikkerhet",
+    "trustLine": "Stolt på av tusenvis av reisende",
+    "items": {
+      "verified": {
+        "title": "Verifiserte drivere",
+        "body": "Hver sjåfør passerer identitets- og kjøretøyverifisering."
+      },
+      "pricing": {
+        "title": "Gjennomsiktig prissetting",
+        "body": "Kjenn billettprisen din før du bekrefter hver tur."
+      },
+      "sharing": {
+        "title": "Live turdeling",
+        "body": "Venner og familie kan følge reisen din."
+      },
+      "support": {
+        "title": "Nødstøtte",
+        "body": "24/7 assistanse når du trenger hjelp."
+      },
+      "insured": {
+        "title": "Fullt forsikrede reiser",
+        "body": "Hver tur med Q Pick er beskyttet."
+      }
+    },
+    "proofs": [
+      "Verifiserte sjåfører med identitets- og kjøretøykontroll",
+      "Gjennomsiktig prising før du bekrefter",
+      "Live turdeling for familie og verter",
+      "In-trip support og en publisert nødtelefon",
+      "Forsikringsdekning på hver Q Pick reise"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "PARTNERE",
+      "heading": "Hoteller, villaer og bedrifter",
+      "body": "Gjesteoverføringer under en delt standard – overleveringer med hvite hansker som resepsjonen din kan stole på.",
+      "cta": "Partner med Q Pick"
+    },
+    "drivers": {
+      "eyebrow": "SJÅFØRER",
+      "heading": "Kjør med verdighet",
+      "body": "Klar inntjening, rettferdig sending og verktøy bygget for veiene du kjenner best.",
+      "cta": "Bli sjåfør"
+    }
+  },
+  "planTour": {
+    "eyebrow": "Private turer",
+    "heading": "Planlegg Sri Lanka-turen din",
+    "sub": "Bygg en fullstendig tilpasset privat reise - dager, destinasjoner og kjøretøy - med et umiddelbar estimat før du forplikter deg.",
+    "highlights": [
+      "Privat sjåfør for hele reiseruten din",
+      "Bland kyst, høyland og kulturelle triangelstopp",
+      "Gjennomsiktig estimat – bekreft detaljer med Q Pick"
+    ],
+    "trust": [
+      "Øyeblikkelig estimat",
+      "Ingen betaling kreves",
+      "Gratis konsultasjon"
+    ],
+    "cardLabel": "Din reiserute",
+    "daysLabel": "Velg antall dager",
+    "daysOption": "{count} dager",
+    "travelersLabel": "Reisende",
+    "travelersOption": "{count}",
+    "arrivalLabel": "Ankomstdato",
+    "pickupLabel": "Hentested",
+    "pickups": {
+      "cmb": "Bandaranaike (CMB)",
+      "colombo": "Colombo by",
+      "galle": "Galle",
+      "hotel": "Hotellet ditt"
+    },
+    "tourTypeLabel": "Type tur",
+    "tourTypes": {
+      "private": {
+        "label": "Privat sjåfør",
+        "meta": "Fleksibelt tempo · tilpassede stopp"
+      },
+      "honeymoon": {
+        "label": "Bryllupsreise",
+        "meta": "Kyst og stille høylandsopphold"
+      },
+      "family": {
+        "label": "Familie",
+        "meta": "Romslige kjøretøy · lette dager"
+      },
+      "cultural": {
+        "label": "Kulturelt trekant",
+        "meta": "Heritage ruter · guidet pacing"
+      }
+    },
+    "destinationsLabel": "Velg destinasjoner",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "Velg kjøretøytype",
+    "vehicles": {
+      "sedan": {
+        "label": "Sedan",
+        "meta": "1–3 gjester · A/C"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 gjester · A/C"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "1–9 gjester · A/C"
+      }
+    },
+    "distanceLabel": "Beregnet avstand",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "Beregnet kjøring",
+    "hoursValue": "~{hours} timer",
+    "breakdownLabel": "Prisfordeling",
+    "breakdownDaily": "Kjøretøy og sjåfør",
+    "breakdownDestinations": "Destinasjonen stopper",
+    "breakdownTravelers": "Ekstra reisende",
+    "breakdownPickup": "Henting fra flyplass/hotell",
+    "estimateLabel": "Umiddelbar estimert pris",
+    "estimateNote": "Kun estimat · ferdigstilt når du planlegger med Q Pick",
+    "cta": "Planlegg min tur"
+  },
+  "privateToursPreview": {
+    "eyebrow": "Private turer",
+    "heading": "Planlegg din Sri Lanka-reise",
+    "sub": "Oppdag Sri Lanka med en fullstendig tilpasset privat sjåføropplevelse.",
+    "points": [
+      "Fleksible reiseruter",
+      "Luksusbiler",
+      "Umiddelbare estimater"
+    ],
+    "primary": "Planlegg min tur",
+    "secondary": "Utforsk turer",
+    "cardLabel": "Eksempel på reiserute",
+    "cardTitle": "5 dager · Kyst til høylandet",
+    "previewStops": [
+      "Ankomst CMB → Colombo over natten",
+      "Galle Fort og sørkysten",
+      "Ella te country finale"
+    ],
+    "estimateLabel": "Fra",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Tilpass på turer"
+  },
+  "driveWithQPick": {
+    "eyebrow": "For profesjonelle sjåfører",
+    "heading": "Kjør med selvtillit.",
+    "headingLine2": "Tjen med hensikt.",
+    "sub": "Bli med Sri Lankas førsteklasses sjåførplattform. Godta flyplasstransport, by- og lederturer, bedriftsreiser og private turer mens du administrerer din egen timeplan med Q Pick Driver-appen.",
+    "cta": "Bli en sjåfør",
+    "secondaryCta": "Lær mer",
+    "trust": {
+      "verified": "Verifiserte drivere",
+      "payouts": "Ukentlige utbetalinger",
+      "support": "24/7 support"
+    },
+    "trustAria": "Høydepunkter for sjåførtillit",
+    "floatCards": {
+      "rideTitle": "Ny turforespørsel",
+      "rideBody": "Colombo Fort · 6 min",
+      "airportTitle": "Flyplasstransport",
+      "airportBody": "CMB → Hilton · LKR 4800",
+      "earningsTitle": "Dagens inntekter",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "Driver online",
+      "onlineBody": "Klar for premium-turer"
+    },
+    "phone": {
+      "greeting": "Hei, Dilan",
+      "online": "Online",
+      "todayEarnings": "Dagens inntekter",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "Live kart",
+      "upcoming": "Kommende tur",
+      "route": "CMB → Colombo Fort",
+      "eta": "Henting om 8 min",
+      "fare": "LKR 4,800",
+      "accept": "Godta",
+      "weekly": "Ukentlig inntekt"
+    },
+    "benefits": {
+      "rides": {
+        "title": "Executive Ride Forespørsler",
+        "body": "Motta premium-bestillinger over Sri Lanka."
+      },
+      "airport": {
+        "title": "Flyplasstransport",
+        "body": "Pålitelige ankomster og avganger."
+      },
+      "schedule": {
+        "title": "Fleksibel timeplan",
+        "body": "Kjør når det passer deg."
+      },
+      "earnings": {
+        "title": "Ukentlige utbetalinger",
+        "body": "Transparent inntjening hver uke."
+      },
+      "customers": {
+        "title": "Verifiserte passasjerer",
+        "body": "Reis med pålitelige kunder."
+      },
+      "support": {
+        "title": "24/7 driverstøtte",
+        "body": "Virkelig støtte når du trenger det."
+      }
+    },
+    "dashboard": {
+      "title": "Driver Dashboard",
+      "online": "Online",
+      "earnings": "Denne uken",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "Innkommende forespørsel",
+      "route": "CMB → Colombo Fort",
+      "eta": "Henting om 8 min · LKR 4800",
+      "accept": "Godta turen"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Apper",
+    "heading": "Ta med Q Pick overalt.",
+    "sub": "Bestill turer, flyplasstransport og private Sri Lanka-turer når som helst med Q Pick-mobilappen.",
+    "tablistAria": "Velg Q Pick app",
+    "tabs": {
+      "passenger": "Passasjer-app",
+      "driver": "Driver-app"
+    },
+    "passenger": {
+      "title": "Alt du trenger for å reise.",
+      "features": [
+        "Instant Ride Booking",
+        "Flyplasstransport",
+        "Private turer",
+        "Live driversporing",
+        "Sikre betalinger",
+        "Turhistorie"
+      ],
+      "screenHome": "Q Pick passasjers startskjerm",
+      "screenBooking": "Q Pick turbestillingsskjerm",
+      "screenTracking": "Q Pick live sporingsskjerm"
+    },
+    "driver": {
+      "title": "Tjen mer med Q Pick.",
+      "features": [
+        "Godta kjøreforespørsler",
+        "Flyplassbestillinger",
+        "Turforespørsler",
+        "Ukentlig inntekt",
+        "Navigasjon",
+        "Driver Dashboard"
+      ],
+      "primary": "Bli en sjåfør",
+      "secondary": "Lær mer",
+      "screens": {
+        "dashboardTitle": "Driver Dashboard",
+        "online": "Online",
+        "earningsLabel": "Denne uken",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "Ny turforespørsel",
+        "route": "CMB → Colombo Fort",
+        "fare": "LKR 4800 · 8 min henting",
+        "accept": "Godta turen",
+        "earningsScreenTitle": "Inntekter",
+        "weekLabel": "Denne uken",
+        "tripsLabel": "Gjennomførte turer",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "Passasjer-app",
+      "driverPlay": "Driver app"
+    }
+  },
+  "finalCta": {
+    "badge": "Start reisen din",
+    "heading": "Reisen din til Sri Lanka starter her.",
+    "body": "Bestill flyplasstransport, bestill en bytur, lei en sjåfør, eller utforsk Sri Lanka med en privat tur - alt i en førsteklasses plattform.",
+    "primary": "Bestill tur",
+    "secondary": "Flyplasstransport",
+    "download": "Utforsk turer",
+    "trustAria": "Hvorfor reisende stoler på Q Pick",
+    "trust": {
+      "verified": "Verifiserte drivere",
+      "pricing": "Gjennomsiktig prissetting",
+      "support": "24/7 support",
+      "coverage": "Øydekkende dekning"
+    }
+  },
+  "farePreview": {
+    "from": "Fra",
+    "to": "Til",
+    "note": "Estimat · bekreft i app"
+  },
+  "taxiFare": {
+    "eyebrow": "Taxi takst estimator",
+    "heading": "Beregn taxiprisen din",
+    "sub": "Angi steder, velg turen din, legg til bestillingsdetaljer, se gjennom prisen og bestill.",
+    "pickup": "Hentested",
+    "pickupPlaceholder": "Søk henting — f.eks. Colombo festning",
+    "destination": "Destinasjon",
+    "destinationPlaceholder": "Søk etter reisemål — f.eks. Galle Face",
+    "distance": "Avstand (auto)",
+    "waiting": "Ventetid (minutter)",
+    "waitingHint": "Første {free} min ledig · LKR {rate}/min etter",
+    "rideType": {
+      "title": "Type tur",
+      "now": "Kjør nå",
+      "schedule": "Planlegg henting"
+    },
+    "vehicleType": "Kjøretøytype",
+    "vehicleSelection": {
+      "eyebrow": "Flåte",
+      "heading": "Velg din tur",
+      "sub": "Velg det perfekte kjøretøyet for reisen din.",
+      "startingFrom": "Starter fra",
+      "from": "Fra",
+      "after1Km": "Etter 1 km",
+      "passengers": "Passasjerer",
+      "luggage": "Bagasje",
+      "seats": "{count} Seter",
+      "bags": "{count} poser",
+      "rating": "Vurdert {rating} av 5",
+      "ac": "Aircondition",
+      "availability": "Tilgjengelighet",
+      "available": "Tilgjengelig",
+      "unavailable": "Utilgjengelig",
+      "yes": "Ja",
+      "no": "Nei",
+      "select": "Velg",
+      "selectRide": "Velg Ride",
+      "selected": "Valgt",
+      "prev": "Tidligere kjøretøy",
+      "next": "Neste kjøretøy",
+      "day": "Dagspris",
+      "night": "Nattpris",
+      "eta": "Henting om ~{minutes} min",
+      "base": "Base",
+      "perKm": "Per km"
+    },
+    "mobileFareBar": {
+      "continue": "Fortsett"
+    },
+    "steps": {
+      "locations": "Steder",
+      "vehicle": "Kjøretøy",
+      "details": "Detaljer",
+      "summary": "Sammendrag",
+      "locationsTitle": "Velg Henting og destinasjon",
+      "vehicleTitle": "Velg Kjøretøy",
+      "detailsTitle": "Bestillingsdetaljer",
+      "summaryTitle": "Prissammendrag",
+      "continueVehicle": "Fortsett til kjøretøyet",
+      "continueDetails": "Fortsett til bestillingsdetaljer",
+      "continueSummary": "Fortsett til prissammendrag"
+    },
+    "bookingDetails": {
+      "title": "Bestillingsdetaljer",
+      "pickupDate": "Hentingsdato",
+      "pickupTime": "Hentetid",
+      "flightNumber": "Flynummer",
+      "flightNumberOptional": "Valgfritt",
+      "flightPlaceholder": "f.eks. UL 226",
+      "passengerCount": "Antall passasjerer",
+      "luggageCount": "Antall bagasje",
+      "specialNotes": "Spesielle merknader",
+      "notesPlaceholder": "Barnesete, møte-og-hils, portpreferanse...",
+      "passengerName": "Passasjernavn",
+      "phone": "Telefonnummer",
+      "driverNotes": "Merknader for sjåføren",
+      "paymentMethod": "Betalingsmåte",
+      "cash": "Kontanter",
+      "card": "Kort",
+      "wallet": "Lommebok",
+      "promoCode": "Kampanjekode",
+      "promoPlaceholder": "Skriv inn kampanjekode",
+      "airportPickup": "Henting på flyplassen",
+      "yes": "Ja",
+      "no": "Nei",
+      "requiredHint": "Velg en gyldig hentedato og -klokkeslett for å fortsette.",
+      "requiredDetailsHint": "Skriv inn passasjernavn, telefon og betalingsmåte for å fortsette.",
+      "scheduleHint": "Velg en fremtidig hentedato og -klokkeslett."
+    },
+    "summaryLabel": "Prissammendrag",
+    "summary": {
+      "bookingSummary": "Bestillingssammendrag",
+      "pickup": "Henting",
+      "destination": "Destinasjon",
+      "distance": "Avstand",
+      "duration": "Tid",
+      "vehicle": "Kjøretøy",
+      "baseFare": "Grunnpris",
+      "distanceCharge": "Avstandslading",
+      "waitingCharge": "Ventende belastning",
+      "bookingFee": "Bestillingsgebyr",
+      "airportFee": "Flyplassavgift",
+      "toll": "Bompenger",
+      "parking": "Parkering",
+      "surge": "Surge",
+      "discount": "Rabatt",
+      "total": "Estimert total",
+      "estimatedFare": "Beregnet pris",
+      "finalFare": "Endelig pris",
+      "grandTotal": "Totalsum",
+      "viewFareBreakdown": "Se prisoversikt",
+      "payment": "Betaling",
+      "promo": "Kampanjekode",
+      "eta": "ETA",
+      "passengers": "Passasjerer",
+      "luggage": "Bagasje"
+    },
+    "confirmErrors": {
+      "pickup": "Vennligst angi et hentested.",
+      "destination": "Vennligst angi en destinasjon.",
+      "vehicle": "Vennligst velg et kjøretøy.",
+      "schedule": "Vennligst velg en gyldig hentedato og -klokkeslett.",
+      "payment": "Vennligst velg en betalingsmetode.",
+      "passengerName": "Vennligst skriv inn passasjernavnet.",
+      "phone": "Vennligst skriv inn et telefonnummer.",
+      "fare": "Prisen beregnes fortsatt - vennligst vent et øyeblikk."
+    },
+    "estimateNote": "Kun estimat · bekreft endelig pris i Q Pick-appen. Bare drosjeturer - ikke for flyplasstransport eller turer.",
+    "cta": "Bestill denne turen",
+    "bookNow": "Bestill nå",
+    "scopeNote": "Taxi Ride-priser · atskilt fra Airport & Tours",
+    "vehicles": {
+      "bike": "Q sykkel",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q minivan",
+      "van": "Q Varebil med flatt tak",
+      "longVan": "Q Varebil med høyt tak",
+      "suv": "Q SUV",
+      "miniBus": "Q minibuss",
+      "longBus": "Q buss"
+    },
+    "calculatingRoute": "Beregner kjøreavstand og reisetid …",
+    "calculatingShort": "Beregner …",
+    "routeReady": "Rute klar · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "Ruter",
+      "heading": "Velg en rute",
+      "recommended": "Anbefalt",
+      "alternative": "Alternativ",
+      "roadHighway": "Motorvei",
+      "roadNormal": "Normal",
+      "tags": {
+        "fastest": "Raskeste rute",
+        "avoidHighway": "Unngå motorveien",
+        "highway": "Motorvei rute",
+        "scenic": "Naturskjønn rute",
+        "alternative": "Alternativ rute"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "Sett henting på kartet",
+      "setDestination": "Angi destinasjon på kartet",
+      "pickupTitle": "Bekreft henting",
+      "destinationTitle": "Bekreft destinasjon",
+      "pickupHint": "Søk, bruk posisjonen din eller flytt kartet",
+      "destinationHint": "Søk eller flytt kartet for å angi reisemål",
+      "pickupAddress": "Henteadresse",
+      "destinationAddress": "Destinasjonsadresse",
+      "latitude": "Breddegrad",
+      "longitude": "Lengdegrad",
+      "confirmPickup": "Bekreft henting",
+      "confirmDestination": "Bekreft destinasjon",
+      "resolving": "Finner adressen …",
+      "close": "Lukk",
+      "searchLabel": "Søk",
+      "searchPickup": "Søk hentested",
+      "searchDestination": "Søk reisemål",
+      "searching": "Søker …",
+      "noResults": "Ingen resultater funnet",
+      "useCurrentLocation": "Bruk gjeldende plassering",
+      "selectOnMap": "Velg på kartet",
+      "locating": "Finner …",
+      "locationDenied": "Plasseringstillatelse ble nektet. Aktiver det i nettleserinnstillingene, eller velg på kartet.",
+      "locationUnavailable": "Kan ikke finne din nåværende posisjon. Prøv søk eller kartet i stedet."
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API-nøkkel mangler.",
+      "routeFailed": "Kan ikke beregne ruten. Vennligst prøv igjen.",
+      "selectFromSuggestions": "Vennligst velg henting og destinasjon fra forslagslisten."
+    }
+  },
+  "driverTrust": {
+    "verified": "Verifisert Q Pick driver",
+    "trips": "{count} turer"
+  },
+  "storeBadges": {
+    "comingSoon": "Kommer snart",
+    "getItOn": "Få den på",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "iosAria": "Last ned på App Store – kommer snart",
+    "androidAria": "Få den på Google Play – kommer snart",
+    "downloadOnAppStore": "Last ned på App Store",
+    "getItOnGooglePlay": "Få den på Google Play"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "Splash",
+      "login": "Logg inn / Velkommen",
+      "dashboard": "Dashbord",
+      "account": "Konto",
+      "pickup": "Bekreft henting",
+      "destination": "Velg destinasjon",
+      "vehicles": "Velg kjøretøy",
+      "booking": "Bestillingsbekreftelse",
+      "searching": "Søker etter sjåfører i nærheten",
+      "accepted": "Sjåfør akseptert",
+      "arriving": "Sjåfør ankommer",
+      "pickedup": "Passasjer hentet",
+      "riding": "Kjøring pågår",
+      "completed": "Turen fullført",
+      "rate": "Vurder sjåfør",
+      "submitted": "Vurdering sendt inn",
+      "home": "Dashbord"
+    },
+    "shotAlt": "Q Pick kundeapp — {label}",
+    "shotLabels": {
+      "login": "Logg inn",
+      "home": "Hjem",
+      "account": "Konto"
+    },
+    "splash": {
+      "tagline": "Flyplass · Ride · Sjåfør"
+    },
+    "login": {
+      "welcome": "Velkommen",
+      "subtitle": "Logg på for å bestille turen",
+      "emailOrPhone": "E-post eller telefon",
+      "password": "Passord",
+      "continue": "Fortsett"
+    },
+    "dashboard": {
+      "greeting": "God ettermiddag",
+      "whereTo": "Hvor skal du?",
+      "searchPlaceholder": "Galle Fort, Sri Lanka",
+      "chips": {
+        "airport": "Flyplass",
+        "home": "Hjem",
+        "saved": "Lagret"
+      }
+    },
+    "pickup": {
+      "kicker": "Bekreft henting",
+      "title": "Er dette stedet ditt?",
+      "label": "Henting",
+      "value": "Colombo festning",
+      "confirm": "Bekreft henting"
+    },
+    "destination": {
+      "kicker": "Velg destinasjon",
+      "title": "Hvor skal du?",
+      "pickupLabel": "Henting",
+      "pickupValue": "Colombo festning",
+      "destinationLabel": "Destinasjon",
+      "destinationValue": "Galle Fort",
+      "continue": "Fortsett"
+    },
+    "vehicles": {
+      "route": "Colombo Fort → Galle Fort",
+      "title": "Velg et kjøretøy",
+      "seats": "{count} seter",
+      "ac": "A/C",
+      "eta": "ETA {time}",
+      "categories": {
+        "tuk": "Tuk",
+        "mini": "Mini",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "van": "Van"
+      },
+      "models": {
+        "tuk": "Bajaj RE",
+        "mini": "Suzuki Alto",
+        "sedan": "Toyota Premium",
+        "suv": "Toyota Prado",
+        "van": "Toyota Hiace"
+      },
+      "etas": {
+        "tuk": "3 min",
+        "mini": "4 min",
+        "sedan": "4 min",
+        "suv": "6 min",
+        "van": "8 min"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "Bestillingsbekreftelse",
+      "title": "Bekreft turen",
+      "vehicleMeta": "Toyota Premio · 4 seter · A/C",
+      "route": "Rute",
+      "routeValue": "Colombo Fort → Galle Fort",
+      "fare": "Fare",
+      "fareValue": "LKR 18,500",
+      "eta": "ETA",
+      "etaValue": "4 min",
+      "payment": "Betaling",
+      "paymentValue": "Visum ···· 4242",
+      "bookRide": "Bestill tur"
+    },
+    "searching": {
+      "title": "Søker etter sjåfører i nærheten...",
+      "matching": "Matche en sedan nær Colombo Fort",
+      "driverFound": "Driver funnet",
+      "sedanSelected": "Sedan valgt",
+      "selectedMeta": "Toyota Premio · ETA 3 min"
+    },
+    "accepted": {
+      "badge": "Sjåfør akseptert",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premium",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "ETA 3 min",
+      "track": "Sporfører"
+    },
+    "live": {
+      "statusArriving": "Sjåfør ankommer • 3 min",
+      "statusRiding": "På vei til Galle",
+      "driverVehicle": "Kasun · Toyota Premio",
+      "enRoute": "På vei til henting · Colombo Fort",
+      "route": "Colombo Fort → Galle Fort",
+      "minutesUnit": "min",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9",
+      "call": "Ring sjåføren",
+      "chat": "Meldingsdriver"
+    },
+    "pickedUp": {
+      "title": "Du er om bord",
+      "subtitle": "På vei til Galle Fort med Kasun"
+    },
+    "completed": {
+      "title": "Turen fullført",
+      "route": "Colombo Fort → Galle Fort",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "Vurder sjåføren din",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premium",
+      "prompt": "Hvordan var turen din i dag?",
+      "reviewPlaceholder": "Skriv en kort anmeldelse...",
+      "submit": "Send inn vurdering"
+    },
+    "submitted": {
+      "title": "Takk for vurdering",
+      "subtitle": "Tilbakemeldingen din hjelper sjåfører med å forbedre seg",
+      "backHome": "Tilbake til hjemmet"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "Ride",
+        "description": "Bestill en premium by- eller intercity-tur i Sri Lanka — gjennomsiktige priser, verifiserte sjåfører, live sporing."
+      },
+      "title": "Bestill en tur",
+      "description": "Bestill en tur hvor som helst i Sri Lanka med transparente priser og bekreftede sjåfører.",
+      "primaryCta": "Estimert pris",
+      "secondaryCta": "Sikkerhetsstandarder",
+      "intro": {
+        "badge": "Ride",
+        "title": "Bestill en tur",
+        "subtitle": "Bestill en tur hvor som helst i Sri Lanka med transparente priser og bekreftede sjåfører.",
+        "nav": {
+          "live": "Live",
+          "tracking": "Smart navigering",
+          "route": "Aktiv rute",
+          "corridor": "Colombo → Galle Face",
+          "eta": "ETA",
+          "etaValue": "12 min",
+          "distance": "Dist",
+          "distanceValue": "4,8 km",
+          "driverNearby": "Sjåfør i nærheten · nærmer seg henting"
+        }
+      },
+      "booking": {
+        "title": "Bestill turen",
+        "trust": {
+          "pricing": "Gjennomsiktig prissetting.",
+          "drivers": "Verifiserte drivere.",
+          "tracking": "Live sporing."
+        }
+      },
+      "why": {
+        "eyebrow": "Hvorfor Q Pick",
+        "heading": "Hvorfor sykle med Q Pick",
+        "items": {
+          "pricing": {
+            "title": "Gjennomsiktig prissetting",
+            "body": "Se hele anslaget før du bekrefter - ingen overraskelsesmerkinger."
+          },
+          "drivers": {
+            "title": "Verifiserte drivere",
+            "body": "Bakgrunnssjekkede sjåfører. Vurdert, forsikret, turklar."
+          },
+          "tracking": {
+            "title": "Live sporing",
+            "body": "Følg hvert minutt fra henting til dør med delbare ETAer."
+          },
+          "support": {
+            "title": "24/7 support",
+            "body": "Tilgjengelig hjelp når du trenger det – dag eller natt."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Flåte",
+        "heading": "Velg din tur",
+        "sub": "Fra sykkel til buss – velg det som passer din reise.",
+        "mini": "Mini",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Q sykkel",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Raske byturer"
+          },
+          "tuk": {
+            "name": "Q Tuk",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Rimelige korte turer"
+          },
+          "flex": {
+            "name": "Q Flex",
+            "passengers": "3 passasjerer",
+            "luggage": "2 Bagasje",
+            "blurb": "Kompakt kombi for byreiser"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "4 passasjerer",
+            "luggage": "2 Bagasje",
+            "blurb": "Romsligere Wagon R for byreiser"
+          },
+          "sedan": {
+            "name": "Q Sedan",
+            "passengers": "4 passasjerer",
+            "luggage": "2 Bagasje",
+            "blurb": "Komfort for forretningsreiser"
+          },
+          "minivan": {
+            "name": "Q minivan",
+            "passengers": "6 passasjerer",
+            "luggage": "4 Bagasje",
+            "blurb": "Plass til familieturer"
+          },
+          "frVan": {
+            "name": "Q Varebil med flatt tak",
+            "passengers": "8 passasjerer",
+            "luggage": "6 Bagasje",
+            "blurb": "Komfortabel gruppetransport til flyplassen"
+          },
+          "highRoofVan": {
+            "name": "Q Varebil med høyt tak",
+            "passengers": "10 passasjerer",
+            "luggage": "8 Bagasje",
+            "blurb": "Mer plass for turer og overføringer"
+          },
+          "suv": {
+            "name": "Q SUV",
+            "passengers": "5 passasjerer",
+            "luggage": "4 Bagasje",
+            "blurb": "Ideell for familier"
+          },
+          "miniBus": {
+            "name": "Q minibuss",
+            "passengers": "12 passasjerer",
+            "luggage": "8 Bagasje",
+            "blurb": "Liten gruppereise"
+          },
+          "bus": {
+            "name": "Q buss",
+            "passengers": "20 passasjerer",
+            "luggage": "12 Bagasje",
+            "blurb": "Store gruppeoverføringer"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "Sikkerhet",
+        "heading": "Reis med selvtillit.",
+        "body": "Hver Q Pick-reise er beskyttet med verifiserte sjåfører, deling av reiser i sanntid, nødhjelp og dedikert kundestøtte.",
+        "cta": "Lær om sikkerhet",
+        "pillars": {
+          "verified": {
+            "title": "Verifisert flåte",
+            "body": "Identitets- og kjøretøykontroller før hver sjåfør blir med i nettverket."
+          },
+          "sharing": {
+            "title": "Turdeling",
+            "body": "Del live turstatus med familie, venner eller hotellet ditt."
+          },
+          "support": {
+            "title": "24/7 support",
+            "body": "Tilgjengelig hjelp når du trenger det – dag eller natt."
+          },
+          "emergency": {
+            "title": "Nødhjelp",
+            "body": "Opptrappingsstier på tur når noe føles galt på veien."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Ofte stilte spørsmål",
+        "sub": "Klare svar før du bestiller – turer, flyplasstransport og turer.",
+        "items": {
+          "fareCalc": {
+            "q": "Hvordan beregnes prisen?",
+            "a": "Taxipriser kombinerer grunnpris, distanse, ventetid og dagspriser. Du ser et liveestimat i bookingflyten før du bekrefter."
+          },
+          "airport": {
+            "q": "Kan jeg forhåndsbestille flyplasstransport?",
+            "a": "Ja. Bruk flyplasstransport for å be om en tidsbestemt henting for Bandaranaike (CMB), med flybevisste buffere når du trenger dem."
+          },
+          "tour": {
+            "q": "Kan jeg tilpasse Sri Lanka-turen min?",
+            "a": "Ja. Private turer er bygget rundt dagene, holdeplassene og kjøretøyet – avgrens planen med Q Pick før du reiser."
+          },
+          "vehicle": {
+            "q": "Kan jeg velge min kjøretøykategori?",
+            "a": "Ja. Fra Q Bike til Q Bus, velg kategorien som passer passasjerer og bagasje i bestillingskarusellen eller Fleet-delen."
+          },
+          "drivers": {
+            "q": "Er alle drivere verifisert?",
+            "a": "Ja. Q Pick sjåfører fullfører identitets-, kjøretøy- og bakgrunnssjekker før de blir med i nettverket."
+          },
+          "share": {
+            "q": "Kan jeg dele turen min med familien?",
+            "a": "Ja. Del live turstatus slik at familie, venner eller hotellet ditt kan følge reisen."
+          },
+          "cancel": {
+            "q": "Kan jeg kansellere bestillingen min?",
+            "a": "Ja. Avbryt fra appen eller med støtte. Tidspunkt og eventuelle gebyrer avhenger av bestillingstype og hvor nærme du er henting."
+          },
+          "contact": {
+            "q": "Hvordan kan jeg kontakte support?",
+            "a": "Nå oss når som helst via støttesiden – telefon, WhatsApp eller e-post. Teamet vårt er tilgjengelig 24/7."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "Har du fortsatt spørsmål?",
+        "sub": "Teamet vårt er tilgjengelig 24/7 for å hjelpe deg med å planlegge turen eller reisen Sri Lanka.",
+        "primary": "Bestill turen",
+        "secondary": "Kontakt kundestøtte"
+      },
+      "driverTrust": {
+        "name": "Nuwan P.",
+        "trips": "2,1k",
+        "rating": "4.97",
+        "verifiedLabel": "Verifisert Q Pick driver",
+        "tripsLabel": "{count} turer"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "Flyplasstransport",
+        "description": "Premium Bandaranaike (CMB) flyplasstransport med flysporing, møte og hilse, profesjonelle sjåfører og gjennomsiktige faste priser."
+      },
+      "hero": {
+        "eyebrow": "Flyplasstransport",
+        "titleLine1": "Flyplasstransport,",
+        "titleLine2": "Perfekt timet.",
+        "description": "Fra Bandaranaike International flyplass (CMB) til hvor som helst i Sri Lanka med profesjonelle sjåfører, live flysporing, meet & greet og transparente priser.",
+        "primaryCta": "Bestill flyplasstransport",
+        "secondaryCta": "Utforsk kjøretøy",
+        "imageAlt": "Q Pick sjåfør tar imot reisende på Bandaranaike International flyplass med et premium transportkjøretøy",
+        "trust": {
+          "tracking": "Flysporing",
+          "greet": "Meet & Greet",
+          "pricing": "Fast pris",
+          "support": "24/7 support"
+        },
+        "cards": {
+          "flight": {
+            "label": "Flyvning",
+            "code": "UL225",
+            "status": "På tide"
+          },
+          "driver": {
+            "label": "Sjåfør",
+            "status": "Ankommer om 6 min",
+            "eta": "Live ETA"
+          },
+          "meetGreet": "Meet & Greet inkludert"
+        }
+      },
+      "rates": {
+        "eyebrow": "Offisielle priser",
+        "heading": "Priser for flyplasstransport",
+        "sub": "Søk hvilken som helst destinasjon og se den offisielle luftkondisjonerte transportprisen fra Bandaranaike International flyplass (CMB).",
+        "popular": "Populære reisemål",
+        "searchLabel": "Søk reisemål",
+        "searchPlaceholder": "Søk etter reisemål eller kode — f.eks. Kandy, Kan, K015",
+        "searching": "Søker …",
+        "noResults": "Ingen destinasjoner samsvarer med det søket. Prøv et annet navn eller kode.",
+        "emptyTitle": "Finn din billettpris",
+        "emptyBody": "Søk etter hvilken som helst destinasjon for å umiddelbart se den offisielle prisen for flyplasstransport.",
+        "disclaimer": "De viste prisene er basert på den offisielle prisen for flyplasstransport. Ekstra kostnader kan påløpe for ventetid, ekstra stopp, bompenger eller spesielle forespørsler.",
+        "card": {
+          "destination": "Destinasjon",
+          "fare": "Offisiell flyplasstransportpris",
+          "airport": "Flyplass",
+          "status": "Status",
+          "statusValue": "Offisiell flyplasspris",
+          "code": "Kode",
+          "bookCta": "Bestill flyplasstransport"
+        }
+      },
+      "booking": {
+        "eyebrow": "Privat sjåfør",
+        "heading": "Bestill flyplasstransport.",
+        "sub": "Fra Bandaranaike International flyplass til hvor som helst i Sri Lanka — offisielle priser, tidsbestemt til reisen din.",
+        "title": "Flyplasstransport",
+        "from": "Fra",
+        "to": "Til",
+        "toPlaceholder": "Søk reisemål",
+        "searching": "Søker …",
+        "noResults": "Ingen destinasjoner samsvarer. Prøv et annet navn eller kode.",
+        "date": "Reisedato",
+        "time": "Hentetid",
+        "passengers": "Passasjerer",
+        "adult": "Voksen",
+        "luggage": "Bagasje",
+        "luggageOptions": {
+          "cabin": "Hytte",
+          "medium": "Middels",
+          "large": "Stor"
+        },
+        "vehicle": "Type kjøretøy",
+        "vehicleOptions": {
+          "mini": "Mini",
+          "sedan": "Sedan",
+          "van": "Van",
+          "suv": "SUV"
+        },
+        "nationality": "Nasjonalitet",
+        "nationalityPlaceholder": "Velg nasjonalitet",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "indisk",
+          "uk": "britisk",
+          "us": "amerikansk",
+          "de": "tysk",
+          "au": "australsk",
+          "cn": "kinesisk",
+          "other": "Annet"
+        },
+        "special": "Spesiell forespørsel",
+        "specialPlaceholder": "Valgfritt – barnesete, møte- og hilsennotater, hotellnavn...",
+        "distance": "Beregnet avstand",
+        "duration": "Estimert varighet",
+        "officialPrice": "Offisiell flyplasstransportpris",
+        "cta": "Bestill turen",
+        "ctaLoading": "Åpner bestillingen …",
+        "summaryTitle": "Tursammendrag",
+        "route": "Rute",
+        "destinationPending": "Velg en destinasjon"
+      },
+      "features": {
+        "eyebrow": "Hvorfor Q Pick flyplass",
+        "heading": "Sikkerhet fra port til dør.",
+        "items": {
+          "tracking": {
+            "title": "Flysporing",
+            "body": "Overvåk ankomsten din automatisk."
+          },
+          "greet": {
+            "title": "Meet & Greet",
+            "body": "Sjåføren din venter på ankomster."
+          },
+          "pricing": {
+            "title": "Gjennomsiktig prissetting",
+            "body": "Kjenn din billettpris før du bestiller."
+          },
+          "support": {
+            "title": "24/7 support",
+            "body": "Alltid tilgjengelig."
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "Turer",
+        "description": "Planlegg en privat Sri Lanka-tur med sjåfører som kjenner øya - umiddelbare estimater, fleksible reiseruter, luksuskjøretøyer."
+      },
+      "eyebrow": "Private turer",
+      "title": "Turer formet for øya",
+      "description": "Dagsturer og reiser med flere stopp - teland, festningsbyer, kulturtriangel - med sjåfører som kjenner timing, terreng og gjestekomfort.",
+      "primaryCta": "Planlegg turen min",
+      "secondaryCta": "Se pakker",
+      "why": {
+        "heading": "Hvorfor velge en privat tur",
+        "sub": "Tempoet ditt, stoppestedene dine, en pålitelig sjåfør – ikke en trener av fremmede på en fast sløyfe.",
+        "items": [
+          {
+            "title": "Fullt tilpassbar",
+            "body": "Dager, destinasjoner og kjøretøy – bygget rundt hvordan du faktisk reiser."
+          },
+          {
+            "title": "Samme sjåfør hele veien",
+            "body": "Kontinuitet fra flyplassen til høylandet uten å gjenforklare preferanser."
+          },
+          {
+            "title": "Transparente estimater",
+            "body": "Se en klar rekkevidde før du spør – avgrens detaljene med Q Pick."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "Populære turpakker",
+        "sub": "Utgangspunkter du kan tilpasse — eller bruke som inspirasjon i planleggeren.",
+        "coastal": {
+          "days": "4–5 dager",
+          "title": "Sørkysten",
+          "body": "CMB ankomst, Colombo ease-in, Galle Fort, Mirissa eller Unawatuna tempo.",
+          "price": "Fra LKR 78 000"
+        },
+        "triangle": {
+          "days": "5–6 dager",
+          "title": "Kulturelt trekant",
+          "body": "Sigiriya, Dambulla, Polonnaruwa veier med hotellkoordinering innebygd.",
+          "price": "Fra LKR 112 000"
+        },
+        "highland": {
+          "days": "5–7 dager",
+          "title": "Te-land",
+          "body": "Kandy til Ella med luft fra høylandet, togtidspunkt valgfritt, naturskjønne utforkjøringer.",
+          "price": "Fra LKR 124 000"
+        }
+      },
+      "itineraries": {
+        "heading": "Foreslåtte reiseruter",
+        "sub": "Lette konturer – utvid eller komprimer dem i planleggeren.",
+        "south": {
+          "title": "Tilbakestilling av sørkysten",
+          "stops": [
+            "Dag 1 — CMB → Colombo",
+            "Dag 2–3 – Galle og kystbyer",
+            "Dag 4 - Retur eller forleng til Ella"
+          ]
+        },
+        "culture": {
+          "title": "Heritage krets",
+          "stops": [
+            "Dag 1 — CMB → Sigiriya-området",
+            "Dag 2 — Kulturtriangelsteder",
+            "Dag 3–4 — Kandy & avreiselogistikk"
+          ]
+        },
+        "tea": {
+          "title": "Høylandsløkke",
+          "stops": [
+            "Dag 1 - Colombo → Kandy",
+            "Dag 2–3 – Nuwara Eliya / Ella",
+            "Dag 4 – Naturskjønn retur sørover eller CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "Sammenligning av kjøretøy",
+        "sub": "Velg komfort for feststørrelsen din - alt med klimaanlegg og verifiserte sjåfører.",
+        "colVehicle": "Kjøretøy",
+        "colGuests": "Gjester",
+        "colBest": "Best for",
+        "colFrom": "Fra / dag",
+        "rows": {
+          "sedan": {
+            "name": "Sedan",
+            "guests": "1–3",
+            "best": "Par og lett bagasje",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Familier og høylandsveier",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Grupper og multistoppsett",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Hvorfor reise med Q Pick",
+        "items": {
+          "chauffeur": {
+            "title": "Verifiserte sjåfører",
+            "body": "Identitets- og kjøretøykontroller på hver reise."
+          },
+          "pacing": {
+            "title": "Øy tempo",
+            "body": "Ruter tidsbestemt for komfort, ikke forhastede rutetider."
+          },
+          "estimate": {
+            "title": "Klare estimater",
+            "body": "Kjenn rekkevidden før du snakker med teamet."
+          },
+          "support": {
+            "title": "Tilgjengelig støtte",
+            "body": "Turbytter og veihjelp når du trenger det."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Ofte stilte spørsmål",
+        "items": {
+          "customize": {
+            "q": "Kan jeg tilpasse reiseruten fullstendig?",
+            "a": "Ja. Bruk planleggeren for et startanslag, og avgrens deretter stopp, tempo og hoteller med Q Pick."
+          },
+          "payment": {
+            "q": "Betaler jeg når jeg får et estimat?",
+            "a": "Nei. Planleggeren er kun for orientering - ingen betaling kreves for å utforske eller spørre."
+          },
+          "hotels": {
+            "q": "Bestiller du hotell også?",
+            "a": "Vi koordinerer bevegelser rundt oppholdet ditt. Hotellbestilling kan ordnes fra sak til sak med partnere."
+          },
+          "changes": {
+            "q": "Hva om planene endres midt på turen?",
+            "a": "Sjåføren og støttelinjen justerer daglig tempo når veier, vær eller preferanser skifter."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "Klar til å forme reisen din?",
+        "sub": "Del datoer og preferanser - vi avgrenser estimatet til en tydelig privat turplan.",
+        "primary": "Send en forespørsel",
+        "secondary": "Tilbake til planleggeren",
+        "destinations": "Bla gjennom reisemål"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "Dagcharter",
+          "body": "Ruter fra soloppgang til solnedgang med fleksible stopp og en klar all-in-pris."
+        },
+        "multiDay": {
+          "title": "Flerdagers",
+          "body": "Kyst til høylandet med den samme pålitelige sjåføren på tvers av reiseruten din."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "Sikkerhet",
+        "description": "Q Pick sikkerhet — verifiserte sjåfører, forsikrede kjøretøy, live GPS-sporing og 24/7 support over hele Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Tillit og sikkerhet",
+        "headline": "Reis Sri Lanka",
+        "headlineLine2": "med absolutt selvtillit.",
+        "description": "Hver Q Pick-reise støttes av verifiserte sjåfører, forsikrede kjøretøy, live sporing og dedikert støtte - slik at du kan utforske øya med ro i sinnet.",
+        "primaryCta": "Bestill tur",
+        "secondaryCta": "Kontakt support",
+        "imageAlt": "Q Pick privat sjåfør ved siden av et premium kjøretøy i Sri Lanka"
+      },
+      "standards": {
+        "eyebrow": "Vår standard",
+        "heading": "Sikkerhet innebygd i hver reise",
+        "description": "Fra Colombo-korridorer til høylandshårnåler, opprettholder Q Pick samme verifikasjons-, overvåkings- og støttestandard på hver tur.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "Verifiserte drivere",
+            "body": "Identitets-, bakgrunns- og lisenssjekker før en sjåfør blir med i Q Pick-nettverket."
+          },
+          "verifiedVehicles": {
+            "title": "Verifiserte kjøretøy",
+            "body": "Regelmessige inspeksjoner, forsikringsvalidering og luftkondisjonerte flåtestandarder i alle kategorier."
+          },
+          "gpsTracking": {
+            "title": "GPS-sporing",
+            "body": "Live-reisesynlighet for deg, vertene dine og vår driftsavdeling under hele turen."
+          },
+          "support247": {
+            "title": "24/7 support",
+            "body": "In-trip assistanse og en publisert nødtelefon for øyeblikk som trenger øyeblikkelig menneskelig hjelp."
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "Reisebeskyttelse",
+        "heading": "Beskyttet fra bestilling til ankomst",
+        "steps": {
+          "book": {
+            "title": "Bok",
+            "body": "Bekreft turen, overføringen eller turen med gjennomsiktige priser og en dedikert sjåføroppdrag."
+          },
+          "verification": {
+            "title": "Verifikasjon",
+            "body": "Fører- og kjøretøydetaljer verifiseres mot sikkerhetsstandarden Q Pick før utsendelse."
+          },
+          "pickup": {
+            "title": "Henting",
+            "body": "Sjåføren din ankommer med delte kjøretøydetaljer – flyplass-, hotell- eller villasamling."
+          },
+          "tracking": {
+            "title": "Live sporing",
+            "body": "Følg reisen din i sanntid og del live-status med familien eller hotellresepsjonen."
+          },
+          "arrival": {
+            "title": "Trygg ankomst",
+            "body": "Nå destinasjonen din med støtte i standby til reisen er fullført."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "Alltid tilgjengelig",
+        "heading": "Nødhjelp",
+        "description": "Hvis noe føles galt på veien, er teamet vårt ett anrop eller en melding unna – dag eller natt, hvor som helst på øya.",
+        "hotline": {
+          "label": "Nødtelefon",
+          "hint": "For presserende situasjoner på tur som krever øyeblikkelig hjelp."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "Send en melding til vår kundestøtte for rask koordinering og turoppdateringer."
+        },
+        "email": {
+          "label": "E-post",
+          "hint": "For ikke-hastende henvendelser, partnerforespørsler og bookingoppfølging."
+        }
+      },
+      "stats": {
+        "eyebrow": "Etter tallene",
+        "heading": "En standard reisende stoler på",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Verifiserte drivere"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "Forsikrede reiser"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "Støttedekning"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "Kundetilfredshet"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "Reisen din venter",
+        "heading": "Reis med selvtillit",
+        "description": "Bestill en privat sjåfør, flyplasstransport eller øytur - støttet av sikkerhetsstandarden Q Pick fra første mil til siste.",
+        "primaryCta": "Bestill tur",
+        "secondaryCta": "Planlegg en tur",
+        "imageAlt": "Sigiriya Rock Fortress hever seg over tropisk skog i Sri Lanka"
+      },
+      "faqHeading": "Vanlige spørsmål",
+      "faqs": [
+        {
+          "q": "Er Q Pick-drivere verifisert?",
+          "a": "Ja. Sjåfører fullfører identitets-, kjøretøy- og bakgrunnssjekker før de blir med i nettverket."
+        },
+        {
+          "q": "Kan jeg dele turen min?",
+          "a": "Ja. Live turdeling lar familie, verter eller hotellresepsjoner følge reisen din."
+        },
+        {
+          "q": "Hva om jeg trenger hjelp under en tur?",
+          "a": "Støtte på tur og en publisert nødtelefon er tilgjengelig for kritiske øyeblikk."
+        },
+        {
+          "q": "Er det forsikring på reiser?",
+          "a": "Dekning gjelder på hver reise under Q Pick-standarden."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Kjør med Q Pick",
+        "description": "Bli med Q Pick som en profesjonell sjåfør - førsteklasses kunder, rimelige inntekter, fleksible tidsplaner og 24/7 sjåførstøtte over hele Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Sjåførrekruttering",
+        "headline": "Kjør Sri Lanka sine",
+        "headlineLine2": "premium reiser.",
+        "description": "Bli med i et kuratert nettverk av profesjonelle sjåfører som betjener turister, hoteller og forretningsreisende – med transparente inntekter, verdig utsendelse og støtte bygget for veiene du kjenner.",
+        "primaryCta": "Søk nå",
+        "secondaryCta": "Se krav",
+        "imageAlt": "Q Pick profesjonell sjåfør ved siden av et premium kjøretøy i Sri Lanka"
+      },
+      "whyJoin": {
+        "eyebrow": "Hvorfor bli med i Q Pick",
+        "heading": "Bygget for sjåfører som er stolte av veien",
+        "description": "Q Pick er ikke en generisk ride-hail-app. Vi kobler sammen verifiserte sjåfører med førsteklasses etterspørsel - flyplasstransport, private turer og bedriftsreiser.",
+        "cards": {
+          "earnings": {
+            "title": "Høyere inntekter",
+            "body": "Få tilgang til førsteklasses flyplass-, tur- og sjåførpriser – ikke løp til bunns-priser."
+          },
+          "schedule": {
+            "title": "Fleksibel timeplan",
+            "body": "Velg når du går på nett. Balanser flyplasskjøringer, dagsutleie og flerdagersturer på dine premisser."
+          },
+          "clients": {
+            "title": "Premium turister og bedriftskunder",
+            "body": "Betjen hotellgjester, forretningsreisende og kuraterte turkunder som forventer profesjonalitet."
+          },
+          "support": {
+            "title": "24/7 driverstøtte",
+            "body": "Driftsskranke og nødtelefon når du trenger hjelp på veien – dag eller natt."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Flåtekategorier",
+        "heading": "Kjør kjøretøyet du bruker",
+        "description": "Q Pick støtter et fullt spekter av privatsjåførkategorier – fra kompakte bybiler til varebiler og busser med høyt tak."
+      },
+      "journey": {
+        "eyebrow": "Din vei til godkjenning",
+        "heading": "Fra søknad til din første premium-reise",
+        "steps": {
+          "apply": {
+            "title": "Søk",
+            "body": "Fullfør den elektroniske registreringen med dine personlige, kjøretøy- og dokumentdetaljer."
+          },
+          "verify": {
+            "title": "Bekreft dokumenter",
+            "body": "Teamet vårt vurderer ditt NIC, lisens, forsikring og kjøretøyregistrering."
+          },
+          "inspection": {
+            "title": "Inspeksjon av kjøretøy",
+            "body": "En standardsjekk bekrefter at kjøretøyet ditt oppfyller Q Pick sikkerhets- og komfortkrav."
+          },
+          "training": {
+            "title": "Trening",
+            "body": "Kort ombordstigning på Q Pick servicestandarder, appbruk og gjestfrihet."
+          },
+          "approved": {
+            "title": "Godkjent",
+            "body": "Når den er bekreftet, går profilen din live - men du kan ikke gå på nettet før den er fullstendig godkjent."
+          },
+          "start": {
+            "title": "Begynn å kjøre",
+            "body": "Godta premium-turer, flyplasstransport og turoppdrag over hele øya."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "Førerstemmer",
+        "heading": "Sjåfører som valgte Q Pick",
+        "items": [
+          {
+            "name": "Kasun Perera",
+            "role": "Sedansjåfør · Colombo",
+            "quote": "Flyplasstransport og hotellhenting er konsekvente. Jeg vet prisen før jeg godtar, og støtter svar når jeg ringer."
+          },
+          {
+            "name": "Nimal Fernando",
+            "role": "Varebil med høyt tak · Kandy",
+            "quote": "Turgrupper og familieoverføringer betaler bedre enn tilfeldige byturer. Q Pick-kunder forventer kvalitet – og gir tips deretter."
+          },
+          {
+            "name": "Ruwan Silva",
+            "role": "SUV-sjåfør · Galle",
+            "quote": "Onboardingen var grundig, men rettferdig. Når app- og driftsteamet ble godkjent, gjorde det enkelt å holde seg opptatt i sesongen."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "Kvalifikasjoner",
+        "heading": "Driverkrav",
+        "description": "Vi holder en høy bar for å beskytte både gjester og sjåfører. Sørg for at du oppfyller disse før du søker.",
+        "items": [
+          "Gyldig Sri Lankan førerkort med minst 3 års erfaring",
+          "National Identity Card (NIC) og en tydelig bakgrunnssjekk",
+          "Registrert, forsikret bil i god mekanisk stand",
+          "Gyldig inntektslisens og omfattende forsikringsdokumenter",
+          "Smarttelefon med mobildata for Q Pick Driver-appen",
+          "Profesjonell fremtoning og høflig gjestekommunikasjon",
+          "Flytende i minst en av singalesiske, engelske eller tamilske",
+          "Vilje til å betjene premium-turer til flyplasser, byer og mellom byer"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "Illustrerende inntjening",
+        "heading": "Eksempel på inntekter",
+        "description": "Figurene nedenfor er kun illustrative eksempler - ikke garantert inntekt. Faktisk inntekt avhenger av timer, sesong, kjøretøykategori og reisetype.",
+        "disclaimer": "Kun illustrerende. Ikke en garanti for inntekt. Med forbehold om Q Pick provisjon, etterspørsel og individuell ytelse.",
+        "examples": [
+          {
+            "label": "Flyplasstransport (CMB → Colombo)",
+            "amount": "LKR 8 500 – 12 000",
+            "note": "Sedan · enveis · off-peak"
+          },
+          {
+            "label": "Heldagssjåførutleie",
+            "amount": "LKR 18 000 – 28 000",
+            "note": "SUV eller varebil · 8–10 timer · drivstoff ekskludert"
+          },
+          {
+            "label": "Flerdagerstur (per dag)",
+            "amount": "LKR 22 000 – 35 000",
+            "note": "Høytaks varebil · kulturell trekantrute"
+          },
+          {
+            "label": "Bytur (Colombo)",
+            "amount": "LKR 2500 – 5500",
+            "note": "Mini eller sedan · målt pris"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "Klar til å bli med?",
+        "heading": "Bli en Q Pick sjåfør",
+        "description": "Start søknaden din i dag. Fullfør registreringen i ditt eget tempo - teamet vårt vil veilede deg gjennom bekreftelse og godkjenning.",
+        "primaryCta": "Søk nå",
+        "secondaryCta": "Se krav",
+        "imageAlt": "Q Pick sjåførkart og turdashbord på mobil"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "Partnere",
+        "description": "Partner med Q Pick for hotell-, villa- og bedriftsgjesteoverføringer under én pålitelig standard."
+      },
+      "title": "Partnere som beveger gjester godt",
+      "description": "Hoteller, villaer og bedrifter – overføringer med hvite hansker som resepsjonen din kan stole på, under en delt Q Pick-standard.",
+      "primaryCta": "Snakk med partnerskap",
+      "secondaryCta": "Flyplassprodukt",
+      "body": "Ankomstkoblinger for gjester, planlagte transporter og operativ synlighet – designet slik at gjestfrihetsteam bruker mindre tid på å koordinere WhatsApp-flåter og mer tid på å være vertskap.",
+      "logoRowEyebrow": "Bygget for gjestfrihet",
+      "logoRowAriaLabel": "Gjestfrihetspartnere",
+      "partnerNames": [
+        "Galle Face Hotel",
+        "Kanel",
+        "Jetwing",
+        "Shangri-La",
+        "Amangalla"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "Om",
+        "description": "Quick Pick App (Pvt) Ltd bygger Q Pick — det pålitelige private bevegelseslaget over Sri Lanka: turer, flyplasstransport og øyturer."
+      },
+      "title": "Bygget for hvordan Sri Lanka beveger seg",
+      "description": "Q Pick er utviklet og drevet av Quick Pick App (Pvt) Ltd - det pålitelige private bevegelseslaget over hele øya, med roen til en luksuriøs concierge og påliteligheten til et moderne mobilitetsnettverk.",
+      "primaryCta": "Bestill tur",
+      "secondaryCta": "Kjør med oss",
+      "paragraphs": [
+        "Vi eksisterer fordi fragmenterte WhatsApp-flåter og generiske globale apper både savner det reisende og innbyggere faktisk trenger: sikkerhet, gjestfrihet og respekt for stedet.",
+        "Quick Pick App (Pvt) Ltd designer passasjer-, sjåfør- og operasjonsflater under ett språk – stillegående teknologi for menneskelige reiser over Sri Lanka."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "Støtte",
+        "description": "Kontakt Q Pick brukerstøtte for turer, overføringer, turer og partnerhenvendelser."
+      },
+      "title": "Støtte",
+      "description": "Vi er her for reisespørsmål, partnerhenvendelser og øyeblikk som trenger et menneske.",
+      "emailLabel": "E-post",
+      "phoneLabel": "Telefon",
+      "locationLabel": "Beliggenhet",
+      "emergencyLabel": "Nødlinje"
+    },
+    "destinations": {
+      "meta": {
+        "title": "Destinasjoner",
+        "description": "Utforsk Q Pick-destinasjoner over hele Sri Lanka — Colombo, Galle, Ella, Sigiriya og mer."
+      },
+      "title": "Destinasjoner",
+      "description": "Steder innrammet for hvordan du reiser – havneveier, fortmurer, høylandståke og det kulturelle trekanten."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "Destinasjon",
+      "primaryCta": "Bestill tur",
+      "secondaryCta": "Utforsk turer"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "Personvern",
+          "description": "Q Pick personvernerklæring — hvordan vi samler inn, bruker og beskytter informasjonen din."
+        },
+        "title": "Personvern",
+        "description": "Vi samler bare inn det vi trenger for å flytte deg trygt – og vi behandler reisedata med forsiktighet.",
+        "body": "Denne siden er et fase 1-skall. Full juridisk kopi vil dekke kontodata, plassering under aktive turer, betalingsbehandlere, oppbevaringsperioder og dine rettigheter i henhold til gjeldende Sri Lankan og internasjonal personvernlovgivning.",
+        "questionsPrefix": "Spørsmål:",
+        "supportEmail": "support@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "Vilkår",
+          "description": "Q Pick vilkår for bruk for passasjerer, partnere og sjåfører."
+        },
+        "title": "Vilkår for bruk",
+        "description": "Avtalen som regulerer bruk av Q Pick-tjenester på tvers av turer, overføringer og turer.",
+        "body": "Denne siden er et fase 1-skall. Fullstendige vilkår vil definere passasjer- og sjåførforpliktelser, kanselleringer, ansvarsgrenser, akseptabel bruk og tvisteløsning.",
+        "questionsPrefix": "Spørsmål:",
+        "supportEmail": "support@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Siden ikke funnet",
+      "description": "Ruten du ba om er ikke en del av Q Pick-kartet — ennå.",
+      "primaryCta": "Hjemme igjen",
+      "secondaryCta": "Støtte",
+      "continue": "Eller fortsett til {ride}, {airport} eller {tours}.",
+      "links": {
+        "ride": "Ride",
+        "airport": "Flyplass",
+        "tours": "Turer"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, flyttet med sikkerhet.",
+        "description": "Førsteklasses mobilitet på tvers av Sri Lanka — flyplasstransport, bytaxi, intercity-turer, sjåførservice, bedriftsreiser og private turer under én pålitelig plattform."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Premium mobilitet i Sri Lanka",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Førsteklasses mobilitet på tvers av Sri Lanka — flyplasstransport, bytaxi, intercity-turer, sjåførservice og private turer under én pålitelig plattform."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "Private Sri Lanka turer med sjåfør | Q Pick",
+      "description": "Utforsk Sri Lanka med Q Pick — private sjåfører, førsteklasses kjøretøy og skreddersydde reiser på tvers av kultursteder, åser, strender og dyreliv.",
+      "ogTitle": "Utforsk Sri Lanka med Q Pick Private Tours",
+      "twitterTitle": "Private Sri Lanka turer | Q Pick",
+      "twitterDescription": "Skreddersydde øyturer med private sjåfører og førsteklasses kjøretøy."
+    },
+    "hero": {
+      "eyebrow": "Q Pick Private turer",
+      "headline": "Utforsk Sri Lanka med Q Pick",
+      "subtitle": "Oppdag uforglemmelige reiser med private sjåfører, førsteklasses kjøretøy og skreddersydde opplevelser.",
+      "primaryCta": "Utforsk samlinger",
+      "secondaryCta": "Planlegg min tur"
+    },
+    "finalCta": {
+      "headline": "Din Sri Lanka-reise starter her",
+      "body": "Del dine datoer og destinasjoner - vi former en privat sjåfør reiserute og bekrefter et skriftlig tilbud.",
+      "ctaLabel": "Planlegg min reise",
+      "secondaryLabel": "Snakk med en reiseekspert"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "Private sjåfører",
+        "description": "Lisensierte sjåfører som kjenner tempeletiketten, veier i høylandet og rolige ankomster på flyplassen."
+      },
+      "airport": {
+        "title": "Henting på flyplassen",
+        "description": "Bandaranaike International (CMB) møte-og-hilsen tidsbestemt til flyet ditt."
+      },
+      "support": {
+        "title": "24/7 support",
+        "description": "Et ekte Q Pick skrivebord før avgang og på veien — WhatsApp og telefon, dag og natt."
+      },
+      "vehicles": {
+        "title": "Luksus kjøretøy",
+        "description": "Sedaner, SUV-er, varebiler og busser – privat kabin, med klimaanlegg, bagasjeklar."
+      },
+      "pricing": {
+        "title": "Gjennomsiktig prissetting",
+        "description": "Skriftlige sitater etter gjennomgang - ingen oppfunne nettsidepriser eller overraskelser på kanten."
+      },
+      "personal": {
+        "title": "Personlige turer",
+        "description": "Hver pakke er redigerbar: destinasjoner, dager, tempo og kjøretøyklasse."
+      },
+      "rating": {
+        "title": "4.9 Gjestevurdering",
+        "description": "Konsekvent vurdert av private turgjester for sjåførpleie, tempo og kommunikasjon."
+      },
+      "licensed": {
+        "title": "Lisensiert operatør",
+        "description": "Quick Pick App (Pvt) Ltd — registrert Sri Lankan operatør med kontrollerte sjåfører og forsikrede kjøretøy."
+      },
+      "secure": {
+        "title": "Sikker bestilling",
+        "description": "Skriftlige sitater, bekreftede reiseruter og gjennomsiktige inkluderinger før du reiser."
+      }
+    },
+    "explorer": {
+      "eyebrow": "Kuraterte samlinger",
+      "title": "Velg din reise",
+      "subtitle": "Premium private turer organisert etter reisestil – åpne en kategori for å utforske historien, fremhevede reiseruter og reisedetaljer her.",
+      "searchPlaceholder": "Søk etter reisemål, opplevelser eller turnavn...",
+      "clearSearch": "Tøm søk",
+      "categoriesAria": "Turkategorier",
+      "mapSelection": "Kartvalg",
+      "multiDay": "Flerdagers reiser",
+      "premiumNorthern": "Premium private turer",
+      "sortAria": "Sorter turpakker",
+      "filterAria": "Filtrer turpakker",
+      "allCategoriesTitle": "Alle kategorier",
+      "allCategoriesIntro": "Bla gjennom hver publiserte private tur – tilbakestill og utforsk hele Q Pick-samlingen.",
+      "viewAllCategories": "Se alle kategorier",
+      "destinationExperiences": "Destinasjonsopplevelser",
+      "destinationExperiencesSub": "Ekte steder, årstider og fotograferingsvinduer – ikke bare etiketter på et kort.",
+      "vehiclesTitle": "Reis i privat komfort",
+      "vehiclesSub": "Sedan til minibuss - klimaanlegg, bagasjeplass og lading for veien.",
+      "trustTitle": "Hvorfor reise med Q Pick",
+      "reviewsEmptyTitle": "Gjestehistorier kommer snart",
+      "reviewsEmptyBody": "Verifiserte anmeldelser av private omvisninger vises her når gjestene deler reisene sine.",
+      "faqEyebrow": "Ofte stilte spørsmål",
+      "faqLead": "Alt du trenger å vite før du planlegger reisen din med Q Pick.",
+      "noResults": "Ingen turer samsvarer med søket ditt. Prøv et annet søkeord eller tilbakestill filtre.",
+      "noToursTitle": "Ingen turer samsvarer med søket ditt",
+      "noToursBody": "Prøv et annet søkeord, eller tilbakestill filtrene for å bla gjennom hele samlingen.",
+      "planCustomTour": "Planlegg en tilpasset tur",
+      "resetFilters": "Tilbakestill filtre",
+      "sortBy": "Sorter etter",
+      "mapJourneysThrough": "Reiser gjennom {name}",
+      "itineraryOne": "reiserute",
+      "itineraryMany": "reiseruter",
+      "matchingQuery": "samsvarer med \"{query}\"",
+      "northernPeninsula": "Nordlige halvøy",
+      "premiumJaffna": "Premium Jaffna-opplevelser",
+      "premiumJaffnaSub": "{count} {experiences} — historiske byvandringer, øyferger og hellige båtturer med privat sjåførstøtte.",
+      "experienceOne": "erfaring",
+      "experienceMany": "opplevelser",
+      "reviewsEmptyDisclaimer": "Verifiserte gjesteanmeldelser vil vises etter publiserte turer. Vi viser ikke oppfunne attester, vurderinger eller priser.",
+      "trustBeforeTestimonials": "Stol på før attester",
+      "faqTitle": "FAQ",
+      "defaultImageAlt": "Naturskjønn Sri Lanka høylandsreise",
+      "openCategory": "Åpne {title}",
+      "countItineraries": "{count} reiseruter",
+      "countPackages": "{count} pakker",
+      "countPackage": "{count} pakke",
+      "cmbService": "CMB tjeneste",
+      "packagesFound": "{count} pakker",
+      "dayTour": "Dagstur",
+      "daysTour": "{count} dager",
+      "fromPrice": "Pris på forespørsel",
+      "viewDetails": "Se detaljer",
+      "bookTour": "Bestill denne turen",
+      "idealFor": "Ideell for {value}",
+      "premiumNorthernHeading": "Nordlige Sri Lanka",
+      "premiumNorthernSub": "Historiske templer, avsidesliggende øyer og Jaffnas kulturelle dybde – tre førsteklasses reiser med dedikerte sjåfører."
+    },
+    "filters": {
+      "all": "Alle",
+      "classic": "Klassisk",
+      "luxury": "Luksus",
+      "wildlife": "Dyreliv",
+      "adventure": "Eventyr",
+      "beach": "Strand",
+      "honeymoon": "Bryllupsreise",
+      "wellness": "Velvære",
+      "family": "Familie",
+      "day-tours": "Dagsturer"
+    },
+    "sort": {
+      "featured": "Utvalgte",
+      "newest": "Nyeste",
+      "duration": "Varighet",
+      "popular": "Populært"
+    },
+    "badges": {
+      "best-seller": "Bestselger",
+      "luxury": "Luksus",
+      "new": "Nytt",
+      "family-friendly": "Familievennlig",
+      "eco": "Øko",
+      "adventure": "Eventyr"
+    },
+    "breadcrumbs": {
+      "home": "Hjem",
+      "tours": "Turer"
+    },
+    "jsonLd": {
+      "touristType": "Fritidsreisende"
+    },
+    "reviewsMeta": {
+      "title": "Gjesteanmeldelser",
+      "emptyTitle": "Historier fra veien",
+      "emptyBody": "Verifiserte gjesteanmeldelser vil vises etter publiserte turer. Vi viser ikke oppfunne attester, vurderinger eller priser."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 dager Ella Train Escape",
+        "idealFor": "Jernbaneelskere med begrenset tid",
+        "intro": "Naturskjønn jernbane gjennom tedaler. Denne 4-dagers private sjåførreisen besøker Kandy, Nuwara Eliya, Ella - jernbaneelskere med begrenset tid. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Togsegment",
+          "Ni buer",
+          "Te stopper"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Kandy",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Nuwara Eliya",
+            "description": "Utforsk Nuwara Eliya med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Ella",
+            "description": "Utforsk Ella med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5 dager Mirissa Whale Coast",
+        "idealFor": "Havdyrentusiaster",
+        "intro": "Hvalsesong og fortsarv. Denne 5-dagers private sjåførreisen besøker Galle, Mirissa, Bentota - havdyrentusiaster. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Mirissa-kysten",
+          "Hvalsafari",
+          "Galle Fort"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Galle",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Mirissa",
+            "description": "Utforsk Mirissa med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Bentota",
+            "description": "Utforsk Bentota med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Bentota på fritiden",
+            "description": "Utforsk Bentota med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 dagers luksus bryllupsreise kyst",
+        "idealFor": "Bryllupsreisende ved kysten",
+        "intro": "Fort romantikk og havvillaer. Denne 6-dagers private sjåførreisen besøker Colombo, Galle, Bentota, Mirissa - bryllupsreise langs kysten. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Galle Fort",
+          "Bentota",
+          "Mirissa solnedganger"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Colombo",
+            "description": "Utforsk Colombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Galle",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Bentota",
+            "description": "Utforsk Bentota med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Mirissa",
+            "description": "Utforsk Mirissa med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Mirissa på fritiden",
+            "description": "Utforsk Mirissa med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6 dagers pilegrimstriangel",
+        "idealFor": "Trosledet gruppereise",
+        "intro": "Hellige steder over hele øya. Denne 6-dagers private sjåførreisen besøker Kandy, Anuradhapura, Dambulla, Polonnaruwa - trosledede gruppereiser. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Tannens tempel",
+          "Anuradhapura",
+          "Dambulla-grottene"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Kandy",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Anuradhapura",
+            "description": "Utforsk Anuradhapura med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Dambulla",
+            "description": "Utforsk Dambulla med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Polonnaruwa",
+            "description": "Utforsk Polonnaruwa med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Polonnaruwa på fritiden",
+            "description": "Utforsk Polonnaruwa med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 Days Festival Culture & Kandy",
+        "idealFor": "Festivalsesongens besøkende",
+        "intro": "Perahera timing med arv. Denne 8-dagers private sjåførreisen besøker Colombo, Kandy, Dambulla, Sigiriya, Negombo – besøkende på festivalsesongen. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Kandy-festivaler",
+          "Tempelbesøk",
+          "Trekantikoner"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Colombo",
+            "description": "Utforsk Colombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Kandy",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Dambulla",
+            "description": "Utforsk Dambulla med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Sigiriya",
+            "description": "Utforsk Sigiriya med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Negombo",
+            "description": "Utforsk Negombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Negombo på fritiden",
+            "description": "Utforsk Negombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Negombo på fritiden",
+            "description": "Utforsk Negombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9 dagers bryllupsreiseparadis",
+        "idealFor": "Nygifte og romantiske rømminger",
+        "intro": "Intim tempo gjennom tåke og hav. Denne 9-dagers private sjåførreisen besøker Negombo, Kandy, Nuwara Eliya, Ella, Bentota, Galle - nygifte og romantiske rømminger. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Te-land",
+          "Ella romantikk",
+          "Kystsolnedganger"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Negombo",
+            "description": "Utforsk Negombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Kandy",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Nuwara Eliya",
+            "description": "Utforsk Nuwara Eliya med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Ella",
+            "description": "Utforsk Ella med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Bentota",
+            "description": "Utforsk Bentota med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Galle",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10 dagers Ayurveda-velværereise",
+        "idealFor": "Velværefokuserte reisende",
+        "intro": "Gjenopprettingskapitler vevd inn i private reiser. Denne 10-dagers private sjåførreisen besøker Negombo, Kandy, Bentota, Mirissa, Galle - velværefokuserte reisende. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Velværetempo",
+          "Kystro",
+          "Tempelbalanse"
+        ],
+        "itinerary": [
+          {
+            "title": "Oppdag Negombo",
+            "description": "Utforsk Negombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Kandy",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          },
+          {
+            "title": "Oppdag Bentota",
+            "description": "Utforsk Bentota med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Mirissa",
+            "description": "Utforsk Mirissa med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Oppdag Galle",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Galle på fritiden",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          },
+          {
+            "title": "Avreise og videre",
+            "description": "Privat transport mot Colombo eller Bandaranaike International flyplass - eller fortsett din egendefinerte rute med Q Pick."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "Colombo Capital Discovery Day",
+        "idealFor": "Overnattingsgjester og byelskere",
+        "intro": "Colombo skyline, koloniale baner og Galle Face-solnedganger. Denne 1-dagers private sjåførreisen besøker Colombo – oppholdsgjester og byelskere. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Utsiktspunkter fra Lotus Tower",
+          "Galle Face Green",
+          "Colombo servering stopper"
+        ],
+        "itinerary": [
+          {
+            "title": "Colombo oppdagelse",
+            "description": "Utforsk Colombo med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "Galle Fort Heritage Day",
+        "idealFor": "Historieentusiaster på sørkysten",
+        "intro": "Hollandske voller og lys i Indiahavet. Denne 1-dagers private sjåførreisen besøker Galle - historieentusiaster på sørkysten. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Galle Fort fyrtårn",
+          "Voldvandring",
+          "Boutique gater"
+        ],
+        "itinerary": [
+          {
+            "title": "Galle oppdagelse",
+            "description": "Utforsk Galle med din dedikerte sjåfør – timingen avhenger av været, billetter og tempoet ditt."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "Sigiriya Rock Sunrise Day",
+        "idealFor": "Morgen og fotografigjester",
+        "intro": "Lion Rock ved første lys. Denne 1-dagers private sjåførreisen besøker Sigiriya - tidlig oppegående og fotograferingsgjester. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Sigiriya-toppmøtet",
+          "Vann hager",
+          "Fresco galleri"
+        ],
+        "itinerary": [
+          {
+            "title": "Sigiriya oppdagelse",
+            "description": "Utforsk Sigiriya med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "Kandy Sacred City Day",
+        "idealFor": "Åndelige reisende og familier",
+        "intro": "Tannens tempel og rolig innsjø. Denne 1-dagers private sjåførreisen besøker Kandy - åndelige reisende og familier. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Tannens tempel",
+          "Kandy Lake",
+          "Peradeniya-alternativet"
+        ],
+        "itinerary": [
+          {
+            "title": "Kandy oppdagelse",
+            "description": "Utforsk Kandy med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "Ella Highland Views Day",
+        "idealFor": "Togstopp og mønevandrere",
+        "intro": "Ni buer og tåkete daler. Denne 1-dagers private sjåførreisen besøker Ella – togstopp og fjellrygger. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Broen med ni buer",
+          "Lille Adams Peak",
+          "Tea Valley kafeer"
+        ],
+        "itinerary": [
+          {
+            "title": "Ella oppdagelse",
+            "description": "Utforsk Ella med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "Yala Wildlife Safari Day",
+        "idealFor": "Safari-entusiaster med stramme tidsplaner",
+        "intro": "Leopardland ved daggry. Denne 1-dagers private sjåførreisen besøker Yala - safari-entusiaster med stramme tidsplaner. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Jeep safari vindu",
+          "Tørrsone laguner",
+          "Fugleliv"
+        ],
+        "itinerary": [
+          {
+            "title": "Yala oppdagelse",
+            "description": "Utforsk Yala med din dedikerte sjåfør – timingen avhenger av været, billetter og ditt tempo."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "Anuradhapura Sacred Trail Day",
+        "idealFor": "Pilegrimer fra buddhistisk arv",
+        "intro": "Gamle stupaer og bodhi-tradisjoner. Denne 1-dagers private sjåførreisen besøker Anuradhapura – buddhistiske pilegrimer. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Ruwanwelisaya",
+          "Hellig Bodhi-tre",
+          "Klosterruiner"
+        ],
+        "itinerary": [
+          {
+            "title": "Anuradhapura oppdagelse",
+            "description": "Utforsk Anuradhapura med din dedikerte sjåfør - timingen avhenger av været, billetter og ditt tempo."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "Mirissa sørkystens dag",
+        "idealFor": "Besøkende av hvalsesongen",
+        "intro": "Kokosnøttbukter og havhorisonter. Denne 1-dagers private sjåførreisen besøker Mirissa – besøkende på hvalsesongen. Din dedikerte sjåfør håndterer veien mens du fokuserer på templer, utsiktspunkter, dyrelivsvinduer og rolige kystettermiddager. Hver Q Pick-tur er raffinert etter en skriftlig gjennomgang av dine datoer, kjøretøypreferanser og tempo.",
+        "highlights": [
+          "Mirissa strand",
+          "Coconut Hill",
+          "Hvalsafari sesongen"
+        ],
+        "itinerary": [
+          {
+            "title": "Mirissa oppdagelse",
+            "description": "Utforsk Mirissa med din dedikerte sjåfør - timingen avhenger av været, billetter og tempoet ditt."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "Jaffna Heritage City Tour",
+        "idealFor": "Kulturarvreisende som utforsker nord",
+        "intro": "Oppdag Jaffnas tamilske arv i en fokusert fire timers privat tur. Sjåføren din guider deg fra Nallur Kovils gopuram til Jaffna Fort-vollene, det historiske offentlige biblioteket, et fargerikt lokalt markedsstopp og en klassisk Rio Ice Cream-finish.",
+        "highlights": [
+          "Nallur tempel",
+          "Jaffna Fort",
+          "Offentlig bibliotek",
+          "Lokalt marked",
+          "Rio iskrem"
+        ],
+        "itinerary": [
+          {
+            "title": "Jaffna arv krets",
+            "description": "Nallur Temple, Jaffna Fort, Public Library, markedssurfing og Rio Ice Cream - tempoet rundt åpningstider og dine interesser."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "Delft Island Adventure",
+        "idealFor": "Øyoppdagere og fotografer",
+        "intro": "Kryss med ferge til den avsidesliggende øya Delft for et heldagseventyr. Gå på korallstrender, oppsøk det berømte baobabtreet og ruinene av Queen's Tower, se ville hester på åpne sletter, og kom tilbake med din private sjåfør som håndterer transport til fastlandet.",
+        "highlights": [
+          "Fergetur",
+          "Villhester",
+          "Baobab-tre",
+          "Dronningens tårn",
+          "Coral Beach"
+        ],
+        "itinerary": [
+          {
+            "title": "Delft Island ekspedisjon",
+            "description": "Fergeoverfart, villhestesletter, baobabtre, Queen's Tower og korallstrandtid - med transport til fastlandet med privat kjøretøy."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Nainativu Sacred Island Tour",
+        "idealFor": "Pilegrimer og kulturreisende",
+        "intro": "Seil til Nainativu for en seks timers hellig øyreise. Besøk Nagadeepa-tempelet og Nagapooshani Amman Kovil, opplev båtoverfarten og absorber den blandede buddhistiske og hinduistiske arven til Sri Lankas nordlige øyer med privat sjåførstøtte på land.",
+        "highlights": [
+          "Nagadeepa-tempelet",
+          "Nagapooshani Amman-tempelet",
+          "Båttur",
+          "Kulturopplevelse",
+          "Sigiriya Rock Fortress timet for kjøligere lys",
+          "Dambulla Cave Temple veggmalerier",
+          "Anuradhapura eller Polonnaruwa hellige steder",
+          "Privat Cultural Triangle-sjåfør",
+          "Tannens tempel i Kandy",
+          "Teplantasjer rundt Nuwara Eliya",
+          "Nine Arches Bridge i Ella",
+          "Valgfritt scenisk togsegment",
+          "Kulturelt trekantikoner",
+          "Kandy og høylandet teland",
+          "Ella naturskjønne landemerker",
+          "Sørkysten ved Galle eller Mirissa",
+          "Arvoppvarming i Kulturtriangelet",
+          "Highland tea country & Ella",
+          "Yala leopard safarivindu",
+          "Restitusjonsdager på sørkysten",
+          "Full Cultural Triangle-dybde",
+          "Hill country og sørlige safari",
+          "Vest- og østkystalternativer",
+          "Familieklar tempo",
+          "Sesongbasert ruting på hele øya",
+          "Dyp arv og dyrelivstid",
+          "Øst- og vestkystens strender",
+          "Ultimate privat sjåfør tempo"
+        ],
+        "itinerary": [
+          {
+            "title": "Nainativu hellige krets",
+            "description": "Båttur til Nainativu, Nagadeepa-tempelet, Nagapooshani Amman-tempelet og kulturell tid på øya før retur."
+          },
+          {
+            "title": "Ankomstkorridor til trekanten",
+            "description": "Møt sjåføren din nær CMB eller Negombo og reis innover i landet. Slå deg ned i nærheten av Sigiriya eller Dambulla; kveld på fritiden."
+          },
+          {
+            "title": "Sigiriya og Dambulla",
+            "description": "Klatre opp Sigiriya i mykere lys, og utforsk deretter Dambulla Cave Temple. Valgfri sesongsafari i nærheten hvis forespurt."
+          },
+          {
+            "title": "Gammel by og videre",
+            "description": "Besøk Anuradhapura eller Polonnaruwa før du går tilbake mot Colombo/Negombo eller fortsetter din egendefinerte rute."
+          },
+          {
+            "title": "Til Kandy",
+            "description": "Kjør til Kandy via innlandsruter. Kveldssjøkrets og Tanntemplet var tidsbestemt rundt ritualer."
+          },
+          {
+            "title": "Kandy arv",
+            "description": "Peradeniya botaniske hage, håndverksgater og fritid for markeder eller en kulturell forestilling."
+          },
+          {
+            "title": "Te-land",
+            "description": "Stig opp til Nuwara Eliya for plantasjebesøk, Gregory Lake og kjølig klima."
+          },
+          {
+            "title": "Ella utsiktspunkter",
+            "description": "Fortsett til Ella for Nine Arches Bridge, fjellrygger og høylandskafeer. Valgfritt togsegment."
+          },
+          {
+            "title": "Nedstigning eller kystforbindelse",
+            "description": "Avreise mot Colombo, den sørlige kysten, eller din neste spesialdestinasjon med bagasje håndtert på vei."
+          },
+          {
+            "title": "Ankomst",
+            "description": "Flyplassmøte og overføring til Colombo eller Negombo; briefing med sjåføren din."
+          },
+          {
+            "title": "Kulturelt trekant",
+            "description": "Reis til Sigiriya / Dambulla for festning eller huletempel."
+          },
+          {
+            "title": "Arv til Kandy",
+            "description": "Fullfør Triangle-høydepunkter, fortsett deretter til Kandy."
+          },
+          {
+            "title": "Høylandet",
+            "description": "Naturskjønn kjøretur inn i telandet mot Nuwara Eliya eller Ella."
+          },
+          {
+            "title": "Ella",
+            "description": "Nine Arches Bridge, utsiktspunkter og kaféfritid."
+          },
+          {
+            "title": "Sørkysten",
+            "description": "Gå ned til Galle Fort og Mirissa for solnedgang og bespisning ved sjøen."
+          },
+          {
+            "title": "Avreise",
+            "description": "Kystmorgen på fritiden og privat transport til CMB eller Colombo."
+          },
+          {
+            "title": "Ankomst",
+            "description": "CMB møtes og by eller Negombo slår seg ned."
+          },
+          {
+            "title": "Sigiriya-regionen",
+            "description": "Rock festning og triangel nedsenking."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tannens tempel og tilnærming til høylandet."
+          },
+          {
+            "title": "Te-land",
+            "description": "Nuwara Eliya plantasjer og kjølig klima."
+          },
+          {
+            "title": "Ella",
+            "description": "Ni buer og fjellrygger."
+          },
+          {
+            "title": "Mot Yala",
+            "description": "Naturskjønn nedstigning til det sørøstlige dyrelivsbeltet."
+          },
+          {
+            "title": "Safari dag",
+            "description": "Yala nasjonalpark jeep safari (parkavgifter ekstra)."
+          },
+          {
+            "title": "Sørlige strender",
+            "description": "Mirissa Coconut Tree Hill og nedetid ved kysten."
+          },
+          {
+            "title": "Galle Fort",
+            "description": "Volder, fyrtårn og boutique-utforskning."
+          },
+          {
+            "title": "Avreise",
+            "description": "Privat overføring til CMB eller Colombo."
+          },
+          {
+            "title": "Ankomst Negombo",
+            "description": "CMB henting og bosetting ved vestkysten."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Hellige bystupaer og arkeologisk park."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Bergfestning og trekantbase."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Middelalderhovedstad og valgfri elefantpark."
+          },
+          {
+            "title": "Dambulla til Kandy",
+            "description": "Huletempel og høylandshovedstad."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tannens tempel og hager."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Tegods og kjølig klima."
+          },
+          {
+            "title": "Ella",
+            "description": "Ni buer og utsiktspunkter."
+          },
+          {
+            "title": "Yala nærmer seg",
+            "description": "Sørøst dyrelivsbelteoverføring."
+          },
+          {
+            "title": "Safari",
+            "description": "Yala nasjonalpark jeep dag."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Southern Beach restitusjonsdag."
+          },
+          {
+            "title": "Galle",
+            "description": "Fort arv og kyst."
+          },
+          {
+            "title": "Øst eller sørvest",
+            "description": "Trincomalee sesong alternativ eller Bentota buffer."
+          },
+          {
+            "title": "Colombo avgang",
+            "description": "Bybuffer og CMB overføring."
+          },
+          {
+            "title": "Ankomst",
+            "description": "CMB til Negombo eller Colombo."
+          },
+          {
+            "title": "Vestkystbuffer",
+            "description": "Lagune eller by fritid."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Hellig by fordypning."
+          },
+          {
+            "title": "Nordvest alternativ",
+            "description": "Valgfri dyreliv eller hviledag."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rock festningsfokus."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Middelalderruiner og innsjøer."
+          },
+          {
+            "title": "Dambulla",
+            "description": "Huletempel og landsbykultur."
+          },
+          {
+            "title": "Kandy",
+            "description": "Tannens tempel."
+          },
+          {
+            "title": "Kandy fritid",
+            "description": "Hager og håndverk."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Te-land."
+          },
+          {
+            "title": "Gods",
+            "description": "Valgfri platå eller plantasjedag."
+          },
+          {
+            "title": "Ella",
+            "description": "Ni buer og rygger."
+          },
+          {
+            "title": "Ella fritid",
+            "description": "Kafeer og korte turer."
+          },
+          {
+            "title": "Yala",
+            "description": "Wildlife tilnærming."
+          },
+          {
+            "title": "Safari",
+            "description": "Park jeep dag."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Sørishavet."
+          },
+          {
+            "title": "Galle",
+            "description": "Fort arv og kyst."
+          },
+          {
+            "title": "Bentota",
+            "description": "Southwest resort tempo."
+          },
+          {
+            "title": "Østkysten",
+            "description": "Trincomalee eller Arugam Bay etter sesong."
+          },
+          {
+            "title": "Øst fritid",
+            "description": "Strand og vann tid."
+          },
+          {
+            "title": "Retur og avreise",
+            "description": "Overføring over øya til CMB."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Kan jeg tilpasse en Q Pick turpakke?",
+        "answer": "Ja. Publiserte pakker er utgangspunkt. Velg destinasjoner, dager, kjøretøy og preferanser i planleggeren – skrivebordet vårt avgrenser ruten etter at du har sendt inn en forespørsel."
+      },
+      "hub-price": {
+        "question": "Hvordan fungerer prissetting?",
+        "answer": "Vi viser priser tilgjengelig på forespørsel til reiseruten din er gjennomgått. Etter at du har sendt inn en turforespørsel, bekrefter Q Pick et skriftlig privatsjåførtilbud. Inngangsavgifter, safarijeeper, overnatting og måltider er vanligvis separate med mindre det er oppgitt skriftlig."
+      },
+      "hub-airport": {
+        "question": "Tilbyr du henting på flyplassen med turer?",
+        "answer": "Ja. Bandaranaike International (CMB) henting og avreise kan ordnes med turen eller via vår dedikerte flyplasstransporttjeneste."
+      },
+      "hub-group": {
+        "question": "Hvilket kjøretøy bør jeg velge?",
+        "answer": "Sedaner passer par; SUVer og varebiler passer familier; luksusbiler og minibusser betjener større grupper. Velg kapasitet i planleggeren – vi bekrefter det endelige kjøretøyet etter gjennomgang av bagasje og rute."
+      },
+      "hub-payment": {
+        "question": "Hvordan fungerer betalinger og bekreftelse?",
+        "answer": "Send inn en turforespørsel online. Teamet vårt vurderer tilgjengeligheten, bekrefter en disposisjon og et tilbud, og deler deretter de neste trinnene for betaling og sjåføroppdrag. Du mottar en referansekode for sporing."
+      },
+      "pkg-3d-pace": {
+        "question": "Er tre dager nok for Kulturtriangelet?",
+        "answer": "Tre dager kan dekke Sigiriya, Dambulla og enten Anuradhapura eller Polonnaruwa i et sammensatt privat tempo. Lengre opphold tillater Mihintale, safari-tillegg eller en Kandy-utvidelse."
+      },
+      "pkg-5d-train": {
+        "question": "Kan vi inkludere Ella-toget?",
+        "answer": "Ja. Mange gjester kjører et naturskjønt togsegment mens sjåføren overfører bagasjen på veien. Fortell oss dine preferanser når du ber om et tilbud."
+      },
+      "pkg-5d-weather": {
+        "question": "Hvordan er været i åslandet?",
+        "answer": "Nuwara Eliya og Ella er kjøligere enn kysten, med tåkete morgener og mulig lett regn. Pakk lag; ditt private kjøretøy holder overføringene komfortable mellom utsiktspunkter."
+      },
+      "pkg-7d-fitness": {
+        "question": "Hvor mye gåing er involvert på den 7-dagers turen?",
+        "answer": "Sigiriya og tempelbesøk involverer trinn; Ella tilbyr valgfrie korte turer. Sjåføren din bruker dagen slik at anstrengende segmenter kan forkortes uten å miste høydepunktene."
+      },
+      "pkg-10d-safari": {
+        "question": "Er en Yala-safari inkludert i dyreeventyret?",
+        "answer": "Leie av safarijeep og adgang til parken er tilrettelagt som tillegg med tydelig timing. Dyrelivsobservasjoner er aldri garantert - vi planlegger for det beste sesongvinduet etter din forespørsel."
+      },
+      "pkg-14d-pace": {
+        "question": "Er fjorten dager for mye kjøring?",
+        "answer": "Med en privat sjåfør og mellomrom over natten forblir daglig kjøring overkommelig. Vi designer hvilestranddager slik at reiseruten føles oppslukende, ikke forhastet."
+      },
+      "pkg-21d-season": {
+        "question": "Når er den beste sesongen for en storslått øytur?",
+        "answer": "Vest- og sørkysten favoriserer desember–mars; østen skinner ofte rundt mai–september. En 21-dagers plan kan følge den tørrere kysten - vi gir råd basert på reisemåneden din."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "Trinn 1",
+        "title": "Hvor vil du reise?",
+        "subtitle": "Velg destinasjoner eller beskriv drømmeruten din – vi avgrenser detaljene sammen."
+      },
+      "dates": {
+        "kicker": "Trinn 2",
+        "title": "Velg reisedatoer",
+        "subtitle": "Velg startdato og hvor mange dager du ønsker på veien.",
+        "startDate": "Startdato",
+        "numberOfDays": "Antall dager",
+        "estimatedEnd": "Beregnet sluttdato:"
+      },
+      "vehicle": {
+        "kicker": "Trinn 3",
+        "title": "Velg ditt kjøretøy",
+        "subtitle": "Sedan til varebil - privat, luftkondisjonert, bagasjeklar."
+      },
+      "accommodation": {
+        "kicker": "Trinn 4",
+        "title": "Preferanse for overnatting",
+        "subtitle": "Fortell oss ditt komfortnivå - vi koordinerer opphold eller du bestiller ditt eget."
+      },
+      "preferences": {
+        "kicker": "Trinn 5",
+        "title": "Reisepreferanser",
+        "subtitle": "Tempo, interesser og spesielle forespørsler hjelper oss med å forme reiseruten din."
+      },
+      "contact": {
+        "kicker": "Trinn 6",
+        "title": "Dine kontaktopplysninger",
+        "subtitle": "Vi svarer med et skriftlig tilbud og raffinert reiserute."
+      },
+      "requests": {
+        "kicker": "Trinn 7",
+        "title": "Spesielle ønsker",
+        "subtitle": "Kostholdsbehov, tilgjengelighet, feiringer - alt vi bør vite."
+      },
+      "review": {
+        "kicker": "Gjennomgå",
+        "title": "Se gjennom turforespørselen din",
+        "subtitle": "Bekreft detaljene før du sender inn – ingen betaling kreves på dette stadiet.",
+        "submit": "Send inn turforespørsel",
+        "submitting": "Sender inn …"
+      }
+    },
+    "common": {
+      "back": "Tilbake",
+      "continue": "Fortsett",
+      "optional": "Valgfritt",
+      "required": "Obligatorisk"
+    }
+  }
+}

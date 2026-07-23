@@ -16,6 +16,16 @@ export const TOUR_CATEGORIES: TourCategory[] = [
     imageAlt: "Sigiriya Rock Fortress at golden hour",
   },
   {
+    id: "classic-sri-lanka",
+    hash: "classic-sri-lanka",
+    title: "Classic Sri Lanka",
+    intro:
+      "The routes every visitor recognises — Cultural Triangle icons, tea country, wildlife, and southern coast chapters composed for first-time discovery.",
+    keywords: ["classic Sri Lanka tour", "best of Sri Lanka private chauffeur"],
+    imageSrc: getDestinationImageSrc("sigiriya"),
+    imageAlt: "Sigiriya Rock Fortress — classic Sri Lanka",
+  },
+  {
     id: "cultural-heritage",
     hash: "cultural-heritage",
     title: "Cultural & Heritage",
@@ -48,12 +58,22 @@ export const TOUR_CATEGORIES: TourCategory[] = [
   {
     id: "hill-country-tea",
     hash: "hill-country-tea",
-    title: "Hill Country & Tea Trails",
+    title: "Hill Country",
     intro:
       "Cool mist, plantation visits, and ridge viewpoints from Kandy through Nuwara Eliya to Ella.",
     keywords: ["Nuwara Eliya tea tour", "hill country private chauffeur"],
     imageSrc: getDestinationImageSrc("nuwara-eliya"),
     imageAlt: "Nuwara Eliya tea estates in the highlands",
+  },
+  {
+    id: "tea-country",
+    hash: "tea-country",
+    title: "Tea Country",
+    intro:
+      "Factory floors, estate verandas, and misty valleys — Sri Lanka's tea belt at a pace that respects every cup.",
+    keywords: ["Ceylon tea tour", "plantation private chauffeur"],
+    imageSrc: getDestinationImageSrc("nuwara-eliya"),
+    imageAlt: "Terraced tea plantations in Sri Lanka",
   },
   {
     id: "adventure",
@@ -134,6 +154,66 @@ export const TOUR_CATEGORIES: TourCategory[] = [
     keywords: ["Kandy festival tour", "Esala Perahera chauffeur"],
     imageSrc: getDestinationImageSrc("kandy"),
     imageAlt: "Temple of the Tooth in Kandy",
+  },
+  {
+    id: "photography-tours",
+    hash: "photography-tours",
+    title: "Photography Tours",
+    intro:
+      "Golden-hour routing, wildlife windows, and ridge viewpoints — private chauffeur timing built for serious lenses.",
+    keywords: ["Sri Lanka photography tour", "private photo chauffeur"],
+    imageSrc: getDestinationImageSrc("ella"),
+    imageAlt: "Nine Arches Bridge near Ella",
+  },
+  {
+    id: "bird-watching",
+    hash: "bird-watching",
+    title: "Bird Watching",
+    intro:
+      "Wetland dawn choruses, dry-zone hides, and coastal migrants — specialist pacing for birders across the island.",
+    keywords: ["Sri Lanka birding tour", "birdwatching chauffeur"],
+    imageSrc: getDestinationImageSrc("yala"),
+    imageAlt: "Birdlife in Sri Lankan national parks",
+  },
+  {
+    id: "pilgrimage",
+    hash: "pilgrimage",
+    title: "Pilgrimage",
+    intro:
+      "Sacred stupas, cave temples, and devotional cities — respectful private travel for faith-led journeys.",
+    keywords: ["Buddhist pilgrimage Sri Lanka", "sacred sites tour"],
+    imageSrc: getDestinationImageSrc("anuradhapura"),
+    imageAlt: "Ruwanwelisaya stupa in Anuradhapura",
+  },
+  {
+    id: "cruise-excursions",
+    hash: "cruise-excursions",
+    title: "Cruise Excursions",
+    intro:
+      "Colombo and Galle port calls distilled into confident shore days — timed returns and composed city highlights.",
+    keywords: ["Colombo cruise excursion", "Galle shore tour"],
+    imageSrc: getDestinationImageSrc("colombo"),
+    imageAlt: "Colombo harbour and skyline",
+  },
+  {
+    id: "day-tours",
+    hash: "day-tours",
+    title: "Day Tours",
+    intro:
+      "Single-day private chauffeur escapes — ideal for layovers, cruise calls, or a focused taste of one region.",
+    keywords: ["Sri Lanka day tour", "private day chauffeur"],
+    imageSrc: getDestinationImageSrc("galle"),
+    imageAlt: "Galle Fort lighthouse",
+  },
+  {
+    id: "private-chauffeur",
+    hash: "private-chauffeur",
+    title: "Private Chauffeur Tours",
+    intro:
+      "Dedicated driver, premium vehicle class, and flexible daily pacing — the Q Pick standard for discerning travellers.",
+    keywords: ["private chauffeur Sri Lanka", "dedicated driver tour"],
+    imageSrc: getDestinationImageSrc("colombo"),
+    imageAlt: "Private chauffeur tour in Sri Lanka",
   },
   {
     id: "airport-transfers",

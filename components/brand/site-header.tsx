@@ -380,21 +380,24 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="hidden shrink-0 items-center gap-4 lg:flex">
+          <div className="hidden min-w-0 items-center gap-2 lg:flex xl:gap-4">
             {utilityNav.map((item) => {
               const active = isNavActive(pathname, item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={utilityLinkClass}
+                  className={`${utilityLinkClass} shrink-0`}
                   aria-current={active ? "page" : undefined}
                 >
                   {navLabel(item.href)}
                 </Link>
               );
             })}
-            <LanguageSwitcher tone={overHero ? "onDark" : "default"} />
+            <LanguageSwitcher
+              tone={overHero ? "onDark" : "default"}
+              className="shrink-0"
+            />
             <Link href="/ride" className={bookNowClass}>
               {t("header.bookNow")}
             </Link>
@@ -404,7 +407,7 @@ export function SiteHeader() {
             <LanguageSwitcher
               tone={overHero ? "onDark" : "default"}
               compact
-              className="pointer-events-auto"
+              className="pointer-events-auto shrink-0"
             />
             <button
               ref={menuButtonRef}

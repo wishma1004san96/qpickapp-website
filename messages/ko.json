@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "주요 콘텐츠로 건너뛰기",
+  "header": {
+    "homeAria": "Q Pick 홈",
+    "primaryNav": "기본",
+    "mobileNav": "모바일 내비게이션",
+    "mobilePrimary": "모바일 기본",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기",
+    "bookNow": "지금 예약하세요"
+  },
+  "nav": {
+    "home": "홈",
+    "ride": "타고",
+    "airport": "공항",
+    "tours": "투어",
+    "safety": "안전",
+    "drive": "드라이브",
+    "partners": "파트너",
+    "support": "지원"
+  },
+  "language": {
+    "label": "언어",
+    "choose": "언어를 선택하세요"
+  },
+  "footer": {
+    "blurb": "Sri Lanka 전역의 프리미엄 공항 교통편, 시내 교통편, 운전사 서비스 및 개인 투어.",
+    "call": "지금 전화하세요",
+    "whatsapp": "WhatsApp",
+    "emailCta": "이메일을 보내주세요",
+    "services": "서비스",
+    "company": "회사",
+    "downloadApp": "앱 다운로드",
+    "contact": {
+      "address": "주소",
+      "email": "이메일",
+      "phones": "전화기",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "공항 이동",
+      "tours": "개인 여행",
+      "chauffeur": "운전기사 서비스",
+      "cityRides": "시티 라이드",
+      "corporate": "기업 여행"
+    },
+    "companyLinks": {
+      "about": "소개",
+      "drive": "운전자가 되어보세요",
+      "partners": "파트너",
+      "support": "지원",
+      "contact": "연락처"
+    },
+    "legal": {
+      "privacy": "개인 정보 보호 정책",
+      "terms": "이용약관",
+      "cookies": "쿠키"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick 소개",
+    "scroll": "스크롤",
+    "scrollAria": "콘텐츠로 스크롤",
+    "posterAlt": "안개가 자욱한 Sri Lankan 숲길을 따라 경치 좋은 드라이브를 즐기세요",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "공항 교통편. 도시 타기. 개인 운전사.",
+        "description": "Sri Lanka 전역의 프리미엄 모빌리티 — 공항 픽업 및 하차, 택시 및 도시 간 이동, 운전사 서비스, 기업 여행 및 개인 여행을 신뢰할 수 있는 단일 플랫폼에서 제공합니다.",
+        "primary": "북 라이드",
+        "secondary": "공항 환승"
+      },
+      {
+        "title": "공항 이동",
+        "subtitle": "확실하게 도착하고 출발하세요.",
+        "description": "만나고 인사하는 픽업 및 정해진 시간에 하차합니다. 운전기사는 귀하가 착륙하기 전에 기다립니다. 대기열이나 불확실성이 없습니다.",
+        "primary": "공항 환승",
+        "secondary": "북 라이드"
+      },
+      {
+        "title": "도시 및 도시 간 라이딩",
+        "subtitle": "당신의 시계에 택시와 운전사가 있습니다.",
+        "description": "콜롬보 거리에서 해안 고속도로까지 — 검증된 운전자, 투명한 요금, 필요할 때 고급 운전기사 옵션을 제공합니다.",
+        "primary": "북 라이드",
+        "secondary": "투어 탐색"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "여행을 계획하세요",
+      "title": "여행을 계획하세요",
+      "subtitle": "어떻게 이사하고 싶은지 알려주세요. 나머지는 조용히 처리해드리겠습니다.",
+      "journeyTypeAria": "여행 유형",
+      "continue": "계속",
+      "scheduleTitle": "여행일정",
+      "travelDate": "여행 날짜",
+      "pickupTime": "픽업 시간",
+      "intents": {
+        "arrive": "도착",
+        "stay": "숙박",
+        "explore": "탐색"
+      },
+      "arrive": {
+        "fromLabel": "공항",
+        "fromDefault": "콜롬보 공항 (CMB)",
+        "toLabel": "목적지",
+        "toDefault": "갈레 페이스 호텔",
+        "recommendation": "도착 시 집합 · 호텔에 계속 정보 제공 · 확인하기 전에 요금 확정"
+      },
+      "stay": {
+        "fromLabel": "픽업",
+        "fromDefault": "귀하의 호텔",
+        "toLabel": "목적지",
+        "toDefault": "갈레 요새",
+        "recommendation": "검증된 드라이버 · 공유할 수 있는 실시간 업데이트 · 투명한 가격"
+      },
+      "explore": {
+        "fromLabel": "픽업",
+        "fromDefault": "콜롬보",
+        "toLabel": "목적지",
+        "toDefault": "엘라와 고원",
+        "recommendation": "당일용 차량 · 도로를 잘 아는 운전자 · 차분한 여행 일정"
+      }
+    },
+    "trust": {
+      "ariaLabel": "손님들이 Q Pick를 신뢰하는 이유",
+      "verifiedDrivers": "검증된 드라이버",
+      "pricing": "투명한 가격",
+      "islandwide": "섬 전체 범위",
+      "support": "연중무휴 지원",
+      "trips": "수천 번의 여행"
+    }
+  },
+  "experience": {
+    "headingLine1": "경험",
+    "headingLine2": "__QP_브랜드__.",
+    "lines": [
+      "공항 교통편.",
+      "당신의 도시를 타고.",
+      "귀하의 Sri Lanka."
+    ],
+    "screenLive": "Q Pick 앱 화면: {stepLabel}",
+    "previewAria": "{stepLabel}을(를) 표시하는 Q Pick 앱 미리보기",
+    "story": {
+      "planLabel": "라이드 예약",
+      "vehiclesLabel": "차량 선택",
+      "liveLabel": "라이브 여행",
+      "plan": {
+        "kicker": "공항 및 놀이기구",
+        "title": "여행을 계획하세요",
+        "destinations": "목적지",
+        "days": "여행일",
+        "daysUnit": "일",
+        "pickup": "픽업",
+        "pickupValue": "반다라나이케 공항",
+        "hotel": "호텔",
+        "hotelValue": "샹그릴라 콜롬보",
+        "route": "경로 미리보기",
+        "stops": "정류장",
+        "cta": "계속"
+      },
+      "vehicles": {
+        "route": "공항 → 시기리야 · 엘라 · 갈레",
+        "title": "차량을 선택하세요",
+        "budgetLabel": "예상예산",
+        "budgetHint": "확인하기 전에",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "프리미엄 함대",
+    "heading": "완벽한 차량을 선택하세요.",
+    "sub": "툭툭부터 프리미엄 밴까지 모든 차량은 검증되고 편안하며 가격이 투명하게 책정됩니다.",
+    "phoneAria": "Q Pick 앱의 차량 목록"
+  },
+  "insideQPickApp": {
+    "eyebrow": "신청",
+    "heading": "Q Pick 앱 내부",
+    "sub": "공항 교통편이나 시내 차량을 예약하고, 저렴한 요금으로 차량을 선택한 다음, 실시간으로 운전기사를 따라가세요. 주머니 속의 프리미엄 이동성입니다.",
+    "panelAria": "Q Pick 앱 화면: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "차량 예약",
+        "body": "공항 픽업, 시내 택시 또는 도시 간 이동 — 출발하기 전에 목적지와 시간을 설정하세요."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "차량 및 요금",
+        "body": "세단부터 프리미엄 밴까지, 확인 전 투명한 가격으로 제공됩니다."
+      },
+      "live": {
+        "n": "03",
+        "label": "라이브 여행",
+        "body": "운전자 할당, 실시간 GPS 및 ETA, 운행 완료, 차분한 평가 흐름."
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "Q PICK 작동 방식",
+    "heading": "등록부터 목적지까지",
+    "sub": "오픈부터 도착까지 하나의 차분한 경로: 등록, 확인, 공항 교통편 또는 시내 차량 예약을 한 후 운전기사를 실시간으로 추적하세요.",
+    "stepLabel": "{n} 단계",
+    "prevAria": "이전 단계",
+    "nextAria": "다음 단계",
+    "dotsAria": "여행 단계",
+    "dotAria": "{n} 단계로 이동",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "환영합니다",
+        "body": "Q Pick 앱을 열고 여행을 시작하세요."
+      },
+      "register": {
+        "n": "02",
+        "title": "등록",
+        "body": "휴대폰 번호를 사용하여 계정을 만드세요."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP 인증",
+        "body": "휴대폰 번호를 안전하게 인증하세요."
+      },
+      "journey": {
+        "n": "04",
+        "title": "이동 방법을 선택하세요",
+        "body": "공항 교통편, 도시 택시, 도시 간 이동 또는 운전사 서비스를 예약하세요. 원하실 때 개인 투어를 이용해보세요."
+      },
+      "track": {
+        "n": "05",
+        "title": "운전자 추적",
+        "body": "실시간 GPS 추적 및 도착 예정 시간을 통해 운전자의 도착을 지켜보세요."
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Q Pick 표준",
+    "heading": "하나의 여행. 신뢰할 수 있는 하나의 표준.",
+    "intro": "시장이 아닙니다. 브로셔와 WhatsApp 스레드가 아닙니다. 첫 번째 착륙부터 마지막 ​​해안 도로까지 Sri Lanka가 어떻게 이동하는지에 대한 개인 컨시어지입니다.",
+    "closingTitle": "여행 내내 변함없는 확신이 있었습니다.",
+    "closingBody": "Uber와 PickMe를 이용하면 도시 곳곳으로 이동할 수 있습니다. 투어 운영자는 하루를 판매합니다. Q Pick는 신뢰할 수 있는 하나의 표준에 따라 공항, 숙박, 섬 등 전체 스토리를 담고 있습니다.",
+    "cta": "여행을 계획하세요",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "도착",
+        "moment": "섬은 문에서 시작된다.",
+        "scene": "비행기가 착륙합니다. 검증된 Q Pick 운전자가 이미 기다리고 있습니다. 연석에서의 출격도 아니고 일련의 메시지도 아닙니다. 귀하의 호텔은 차량이 공항 도로를 떠나기 전에 귀하가 가는 중이라는 것을 알고 있습니다.",
+        "outcome": "한 번의 핸드오프. 도착부터 프런트 데스크까지.",
+        "imageAlt": "해질녘의 콜롬보 해안과 도시의 불빛 — 착륙 후의 여정"
+      },
+      "stay": {
+        "n": "02",
+        "title": "숙박",
+        "moment": "모든 움직임은 조용하고 명확하게 유지됩니다.",
+        "scene": "해안 달리기, 저녁 예약, 아침 회의. 확인하기 전에 요금을 확인하세요. 라이딩하는 동안 가족, 호스트, 빌라 관리자 등 중요한 사람들이 두 번 전화하지 않고도 따라갈 수 있습니다.",
+        "outcome": "투명한 가격. 라이브 상태. 시장 소음이 없습니다.",
+        "imageAlt": "인도양 물이 맑은 남부 Sri Lankan 해안선"
+      },
+      "explore": {
+        "n": "03",
+        "title": "탐색",
+        "moment": "섬은 마찰 없이 열린다.",
+        "scene": "차나라 미스트. 요새 마을. 한 번 이상 정차하는 날. 신뢰할 수 있는 동일한 운전자, 앞서가는 도로에 적합한 차량, 신중하게 일정을 관리하므로 물류가 아닌 장소가 핵심으로 유지됩니다.",
+        "outcome": "이동성과 발견. 하나의 지속적인 표준.",
+        "imageAlt": "Sri Lankan 정글에 우뚝 솟아 있는 시기리야 바위 요새"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lanka의 프리미엄 모빌리티 플랫폼",
+    "heading": "당신의 여행. 귀하의 규칙.",
+    "manifesto": "첫 번째 공항부터 마지막 호텔 문까지 - 지속적인 이동 표준 일반 앱은 결코 수용할 수 없도록 제작되었습니다.",
+    "positioningLead": "이것은 단순한 택시 앱이 아닙니다.",
+    "positioningRest": "Sri Lanka의 프리미엄 모빌리티 플랫폼입니다.",
+    "trustEyebrow": "Quick Pick App (Pvt) Ltd에서 제공",
+    "trustBody": "Q Pick는 Quick Pick App (Pvt) Ltd에서 자랑스럽게 개발하고 운영하며 품질, 안전 및 뛰어난 고객 경험에 대한 강력한 의지로 Sri Lanka 전역에 프리미엄 공항 이동, 운전사 서비스, 개인 여행 및 신뢰할 수 있는 이동 솔루션을 제공합니다.",
+    "continuumEyebrow": "여행은 계속됩니다",
+    "continuumBody": "더 넓은 환대 생태계가 조용히 형성되고 있습니다. 동일한 차분한 표준이 확장됩니다.",
+    "continuumComingSoon": "곧 출시 예정",
+    "continuumItems": [
+      "음식 배달",
+      "택배배송",
+      "환전",
+      "현지 체험",
+      "컨시어지 서비스"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "도착",
+        "title": "섬은 환영으로 시작됩니다.",
+        "scene": "비행기가 착륙합니다. 검증된 Q Pick 호텔 서비스 전문가가 이미 기다리고 있습니다. 이름표가 준비되어 있고 수하물이 있으며 호텔 경로가 확인되어 있습니다. 연석에서의 스크램블이 아닙니다. 시장 입찰이 아닙니다. Sri Lanka 여행이 조심스럽게 시작되었다는 조용한 확신입니다.",
+        "details": [
+          "전문 운전기사가 공항에서 마중을 나갑니다. 결코 임의의 운전자가 아닙니다.",
+          "도착을 떠나기 전에 호텔 이동이 계획되어 있습니다."
+        ],
+        "whisper": "한 번의 핸드오프. 게이트에서 로비까지.",
+        "kicker": "01장",
+        "mediaTitle": "차분한 도착",
+        "imageAlt": "새벽의 프리미엄 공항 터미널 복도 — 차분한 도착의 시작"
+      },
+      "planning": {
+        "n": "02",
+        "label": "작성",
+        "title": "도시, 공항, 섬 등 원하는 대로 이동하세요.",
+        "scene": "일반적인 차량 호출 서비스와 달리 Q Pick는 공항 이동, 도시 및 도시 간 차량 이동, 고급 운전사 서비스, 기업 여행을 포함하며, 탐험하고 싶을 때 개인 투어와 당일 여행을 제공합니다. 픽업, 목적지, 시간, 차량을 선택하세요. 확인하기 전에 명확한 요금을 확인하세요.",
+        "details": [
+          "항공편 시간에 맞춰 공항 픽업 및 하차",
+          "도시 택시, 도시 간 이동 및 운전사 옵션",
+          "확정하기 전 투명한 요금 - 긴급하지 않은 명확성"
+        ],
+        "whisper": "당신의 경로. 당신의 타이밍. 귀하의 요금.",
+        "kicker": "2장",
+        "mediaTitle": "구성된 여행",
+        "imageAlt": "개인 Sri Lanka 여행 일정을 구성하기 위한 탁 트인 산 풍경"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "회사",
+        "title": "운전자가 아닙니다. 환대 전문가.",
+        "scene": "모든 Q Pick 운전사는 신중함, 섬 도로 및 조용한 환영 의식에 대한 교육을 받은 검증된 서비스 전문가입니다. 원하시면 영어, 싱할라어, 타밀어 또는 가능한 경우 기타 언어로 사원, 차밭, 야생 동물 또는 살아있는 유산에 대한 현지 가이드를 요청할 수도 있습니다.",
+        "details": [
+          "검증된 전문 운전기사 — 항상 환대를 최우선으로",
+          "문화와 역사에 대한 다국어 현지 가이드(선택 사항)",
+          "지도상의 근접성이 아닌 신뢰를 위해 선택된 동반자"
+        ],
+        "whisper": "차이점은 누가 문 앞에 서 있는가 하는 것입니다.",
+        "kicker": "3장",
+        "mediaTitle": "조용한 전문기업",
+        "imageAlt": "고급 차량의 문을 여는 검은 양복을 입은 전문 운전사"
+      },
+      "explore": {
+        "n": "04",
+        "label": "발견",
+        "title": "섬이 이야기가 되는 곳.",
+        "scene": "해안 도로. 하이랜드 안개. 유산 도시. 탐색하는 동안 실시간 여행 관리를 통해 모든 환승이 명확하게 유지되며 근무 시간이 바뀌더라도 연중무휴 24시간 지원이 조용히 제공됩니다. 라이딩이 끝나면 일반 앱도 종료됩니다. Q Pick는 여행과 함께합니다.",
+        "details": [
+          "여행 전체에 대한 실시간 여행 관리",
+          "전문적인 지원 — 차분하고, 가용성이 있으며, 방해가 되지 않음"
+        ],
+        "whisper": "물류는 눈에 보이지 않습니다. 장소는 여전히 중요합니다.",
+        "kicker": "4장",
+        "mediaTitle": "끊임없는 섬",
+        "imageAlt": "Sri Lankan 정글 위로 솟아오른 시기리야의 황금 시간대 공중 전망"
+      },
+      "complete": {
+        "n": "05",
+        "label": "반환",
+        "title": "마지막 문까지 똑같은 평온한 확신.",
+        "scene": "마지막 호텔 드롭은 루프를 닫습니다. 앱에서 조정하고 로비 시간에 맞춰 공항에서 만난 것과 동일한 환대를 제공합니다. 하나의 지속적인 표준. 첫 환영부터 마지막 ​​작별까지, 일반적인 차량 호출로는 감당할 수 없는 일입니다.",
+        "details": [
+          "호텔 픽업 및 하차는 신뢰할 수 있는 하나의 표준으로 유지됩니다.",
+          "택시 시장이 아닌 완전한 Sri Lanka 여행 플랫폼"
+        ],
+        "whisper": "여행이 안정됩니다. 표준은 남아 있습니다.",
+        "kicker": "5장",
+        "mediaTitle": "여행이 완료되었습니다",
+        "imageAlt": "해질녘에 럭셔리 리조트 도착 - 개인 여행의 평온한 마무리"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "하나의 플랫폼",
+    "heading": "하나의 플랫폼. 세 가지 경험.",
+    "sub": "공항 교통편이 필요하든, 시내 또는 운전기사가 필요하든, 품위 있게 돈을 벌 수 있는 장소가 필요하든 — Q Pick는 동일하게 신뢰할 수 있는 모빌리티 표준입니다.",
+    "cards": {
+      "ride": {
+        "title": "지금 탑승하세요",
+        "kicker": "택시 및 운전기사",
+        "description": "도시 택시, 도시 간 이동, 고급 교통 수단을 위한 검증된 운전사 — 확인하기 전에 투명한 요금이 제공됩니다.",
+        "points": [
+          "도시 및 도시 간 라이딩",
+          "럭셔리 운전사",
+          "투명한 가격"
+        ],
+        "cta": "북 라이드",
+        "imageAlt": "프리미엄 픽업을 위해 검정색 고급 세단의 뒷좌석에서 걸어오는 손님"
+      },
+      "tours": {
+        "title": "공항 이동",
+        "kicker": "도착 및 출발",
+        "description": "비행 시간에 맞춰 픽업 및 하차 서비스를 제공하며 게이트에서 도어까지 차분한 확실성을 제공합니다.",
+        "points": [
+          "공항 픽업",
+          "공항 하차",
+          "만나서 인사하기"
+        ],
+        "cta": "공항 환승",
+        "imageAlt": "프리미엄 공항 이동을 위한 전문 운전기사 준비"
+      },
+      "drive": {
+        "title": "Q Pick로 운전하세요",
+        "kicker": "드라이버 플랫폼",
+        "description": "성실한 운전자를 위한 전문 플랫폼 - 명확한 수입, 유연한 근무 시간, 품위 있는 업무를 제공합니다.",
+        "points": [
+          "유연한 수입",
+          "전문 플랫폼",
+          "간편한 등록"
+        ],
+        "cta": "운전자가 되어보세요",
+        "imageAlt": "호텔 입구에서 검은색 고급 밴의 뒷문을 여는 검은 양복을 입은 전문 운전사"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "탑승 서비스",
+    "intro": "공항 이동, 도시 택시, 도시 간 이동 및 운전사 서비스 - 탐험하고 싶을 때 이용 가능한 개인 투어입니다. 하나의 Q Pick 표준.",
+    "tablistAria": "여행 의도",
+    "ride": {
+      "label": "타고",
+      "title": "시내 택시 및 도시 간 이동",
+      "body": "콜롬보 거리 또는 장거리 해안 코스에 대해 검증된 운전사를 요청하세요. 확인하기 전에 투명한 요금을 받으세요.",
+      "cta": "차량 예약",
+      "imageAlt": "황혼의 콜롬보 해안 — 확실한 도시 여행"
+    },
+    "airport": {
+      "label": "공항",
+      "title": "공항 픽업 및 하차",
+      "body": "항공편 시간에 맞춰 환송 서비스를 제공합니다. 호텔과 빌라는 문에서 문까지 연결되어 있습니다.",
+      "cta": "공항 교통편 예약",
+      "imageAlt": "착륙 후 Sri Lanka 남쪽 방향 해안 도로"
+    },
+    "tour": {
+      "label": "투어",
+      "title": "개인 여행 및 당일 여행",
+      "body": "탐험이 목표인 경우 섬 도로를 잘 아는 운전사와 함께하는 당일 여행(선택 사항) 및 다지점 여행.",
+      "cta": "투어 탐색",
+      "imageAlt": "당일 여행을 위한 시기리야 및 문화 삼각지 풍경"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Q Pick가 당신을 데려가는 곳",
+    "intro": "공항 이동, 시내 차량 서비스, 운전기사 여행 등 인기 노선은 귀하의 이동 방식을 지원합니다.",
+    "allDestinations": "모든 목적지",
+    "travelTime": "여행 시간",
+    "startingPrice": "에서 시작"
+  },
+  "stepTimeline": {
+    "heading": "확실성이 작동하는 방식",
+    "intro": "당신이 있는 곳과 당신이 있어야 할 곳 사이의 조용한 세 단계.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "요청",
+        "body": "픽업, 목적지, 시간을 설정하세요. 결정하기 전에 요금을 확인하세요."
+      },
+      "match": {
+        "n": "02",
+        "title": "경기",
+        "body": "검증된 Q Pick 드라이버가 할당되고, 등급이 부여되고, 보험에 가입되어 있으며 운행 준비가 되어 있습니다."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "도착",
+        "body": "실시간 도착 시간, 여행 공유, 문이나 게이트에서 차분한 전달이 가능합니다."
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "콜롬보",
+      "region": "서부 지방",
+      "summary": "항구의 불빛, 갈레 페이스의 산들바람, 수도의 맥박이 조용하고 정밀하게 움직였습니다.",
+      "imageAlt": "황혼의 콜롬보 해안가",
+      "travelTime": "CMB에서 30~45분",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "갈레",
+      "region": "남부 지방",
+      "summary": "요새 벽, 바닷바람, 남부 해안 — 공항에서 성벽까지 불확실성 없이 이동 가능합니다.",
+      "imageAlt": "남부 Sri Lankan 해안선과 맑은 바닷물",
+      "travelTime": "CMB에서 2~2시간 30분",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "엘라",
+      "region": "우바 주",
+      "summary": "안개, 차, 고지대 공기 — 산의 빛에 맞춰 당일치기 전세를 제공합니다.",
+      "imageAlt": "무성한 Sri Lankan 고지대 및 열대 언덕 풍경",
+      "travelTime": "콜롬보에서 5~6시간",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "시기리야",
+      "region": "중부지방",
+      "summary": "바위 요새와 문화 삼각 도로 - 경로를 잘 아는 운전자가 안내합니다.",
+      "imageAlt": "Sri Lanka의 시기리야 바위 요새(Sigiriya Rock Fortress)의 공중 전망",
+      "travelTime": "CMB에서 3.5~4.5시간",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "신뢰와 안전",
+    "heading": "안전 표준",
+    "headingLine2": "느낄 수 있습니다.",
+    "intro": "모든 Q Pick 라이드에는 검증된 운전자, 실시간 모니터링, 투명한 가격 및 전담 지원이 제공되므로 Sri Lanka를 안심하고 여행하실 수 있습니다.",
+    "cta": "안전 살펴보기",
+    "trustLine": "수천 명의 여행자가 신뢰하는",
+    "items": {
+      "verified": {
+        "title": "검증된 드라이버",
+        "body": "모든 운전기사는 신원 확인 및 차량 확인을 통과합니다."
+      },
+      "pricing": {
+        "title": "투명한 가격",
+        "body": "매번 탑승을 확인하기 전에 요금을 알아보세요."
+      },
+      "sharing": {
+        "title": "실시간 여행 공유",
+        "body": "친구와 가족이 여러분의 여정을 따라갈 수 있습니다."
+      },
+      "support": {
+        "title": "긴급 지원",
+        "body": "도움이 필요할 때마다 연중무휴 24시간 지원을 제공합니다."
+      },
+      "insured": {
+        "title": "완전 보험 여행",
+        "body": "모든 Q Pick 탑승은 보호됩니다."
+      }
+    },
+    "proofs": [
+      "신원 및 차량 확인을 통해 검증된 운전자",
+      "확인하기 전에 투명한 가격",
+      "가족과 호스트를 위한 실시간 여행 공유",
+      "여행 중 지원 및 게시된 비상 전화",
+      "모든 Q Pick 여행에 대한 보험 보장"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "파트너",
+      "heading": "호텔, 빌라, 기업",
+      "body": "공유 표준에 따른 고객 환승 - 프론트 데스크가 신뢰할 수 있는 완벽한 핸드오프입니다.",
+      "cta": "Q Pick와 파트너십을 맺으세요"
+    },
+    "drivers": {
+      "eyebrow": "드라이버",
+      "heading": "품위있게 운전하세요",
+      "body": "명확한 수입, 공정한 파견, 그리고 귀하가 가장 잘 아는 도로용으로 제작된 도구입니다.",
+      "cta": "운전자가 되어보세요"
+    }
+  },
+  "planTour": {
+    "eyebrow": "개인 여행",
+    "heading": "Sri Lanka 투어 계획하기",
+    "sub": "날짜, 목적지, 차량 등 완전히 맞춤화된 개인 여행을 시작하기 전에 즉시 견적을 받아 구축하세요.",
+    "highlights": [
+      "전체 여행 일정을 위한 개인 운전기사",
+      "해안, 고지대, 문화적 삼각지대가 혼합된 정류장",
+      "투명한 견적 — Q Pick로 세부정보를 확인하세요."
+    ],
+    "trust": [
+      "즉시견적",
+      "결제가 필요하지 않습니다",
+      "무료상담"
+    ],
+    "cardLabel": "귀하의 여행 일정",
+    "daysLabel": "일수 선택",
+    "daysOption": "{count}일",
+    "travelersLabel": "여행자",
+    "travelersOption": "{count}",
+    "arrivalLabel": "도착일",
+    "pickupLabel": "픽업 장소",
+    "pickups": {
+      "cmb": "반다라나이케(CMB)",
+      "colombo": "콜롬보시",
+      "galle": "갈레",
+      "hotel": "귀하의 호텔"
+    },
+    "tourTypeLabel": "투어 종류",
+    "tourTypes": {
+      "private": {
+        "label": "개인 운전사",
+        "meta": "유연한 속도 · 맞춤형 정지"
+      },
+      "honeymoon": {
+        "label": "허니문",
+        "meta": "해안과 조용한 고지대 숙박"
+      },
+      "family": {
+        "label": "가족",
+        "meta": "넓은 차량 · 편안한 하루"
+      },
+      "cultural": {
+        "label": "문화적 삼각관계",
+        "meta": "문화유산 경로 · 안내 속도"
+      }
+    },
+    "destinationsLabel": "목적지 선택",
+    "destinations": {
+      "colombo": "콜롬보",
+      "galle": "갈레",
+      "ella": "엘라",
+      "sigiriya": "시기리야",
+      "kandy": "캔디"
+    },
+    "vehicleLabel": "차량 유형 선택",
+    "vehicles": {
+      "sedan": {
+        "label": "세단",
+        "meta": "1~3명 · 에어컨"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1~5명 · 에어컨"
+      },
+      "van": {
+        "label": "밴",
+        "meta": "1~9명 · 에어컨"
+      }
+    },
+    "distanceLabel": "예상 거리",
+    "distanceValue": "~{km}km",
+    "hoursLabel": "예상 운전",
+    "hoursValue": "~{hours}시간",
+    "breakdownLabel": "가격 내역",
+    "breakdownDaily": "차량 및 운전기사",
+    "breakdownDestinations": "목적지 정류장",
+    "breakdownTravelers": "추가 여행자",
+    "breakdownPickup": "공항/호텔 픽업",
+    "estimateLabel": "즉시 예상 가격",
+    "estimateNote": "추정만 · Q Pick로 계획할 때 확정됩니다.",
+    "cta": "내 투어 계획"
+  },
+  "privateToursPreview": {
+    "eyebrow": "개인 여행",
+    "heading": "Sri Lanka 여행 계획하기",
+    "sub": "완전히 맞춤화된 개인 운전사 경험을 통해 Sri Lanka을(를) 발견해 보세요.",
+    "points": [
+      "유연한 여행 일정",
+      "고급 차량",
+      "즉시 견적"
+    ],
+    "primary": "내 투어 계획",
+    "secondary": "투어 탐색",
+    "cardLabel": "샘플 일정",
+    "cardTitle": "5일 · 해안에서 고지까지",
+    "previewStops": [
+      "CMB 도착 → 밤새 콜롬보 도착",
+      "갈레 요새 및 남쪽 해안",
+      "엘라 티 컨트리 피날레"
+    ],
+    "estimateLabel": "에서",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "투어 맞춤설정"
+  },
+  "driveWithQPick": {
+    "eyebrow": "전문 운전기사용",
+    "heading": "자신감을 갖고 운전하세요.",
+    "headingLine2": "목적을 가지고 수익을 창출하세요.",
+    "sub": "Sri Lanka의 프리미엄 운전기사 플랫폼에 가입하세요. Q Pick 드라이버 앱으로 자신의 일정을 관리하면서 공항 교통편, 시내 및 임원 차량, 기업 여행, 개인 여행을 수락하세요.",
+    "cta": "운전자가 되어보세요",
+    "secondaryCta": "자세히 알아보기",
+    "trust": {
+      "verified": "검증된 드라이버",
+      "payouts": "주간 지급",
+      "support": "연중무휴 지원"
+    },
+    "trustAria": "운전자 신뢰 하이라이트",
+    "floatCards": {
+      "rideTitle": "새로운 탑승 요청",
+      "rideBody": "콜롬보 요새 · 6분",
+      "airportTitle": "공항 환승",
+      "airportBody": "CMB → 힐튼 · LKR 4,800",
+      "earningsTitle": "오늘의 수익",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "드라이버 온라인",
+      "onlineBody": "프리미엄 탑승 준비"
+    },
+    "phone": {
+      "greeting": "안녕, 딜란",
+      "online": "온라인",
+      "todayEarnings": "오늘의 수익",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "실시간 지도",
+      "upcoming": "다가오는 라이드",
+      "route": "CMB → 콜롬보 요새",
+      "eta": "8분 후 픽업",
+      "fare": "LKR 4,800",
+      "accept": "수락",
+      "weekly": "주간 수입"
+    },
+    "benefits": {
+      "rides": {
+        "title": "이그제큐티브 라이드 요청",
+        "body": "Sri Lanka 전역에서 프리미엄 예약을 받으세요."
+      },
+      "airport": {
+        "title": "공항 이동",
+        "body": "안정적인 도착 및 출발."
+      },
+      "schedule": {
+        "title": "유연한 일정",
+        "body": "필요할 때마다 운전하세요."
+      },
+      "earnings": {
+        "title": "주간 지급",
+        "body": "매주 투명한 수입."
+      },
+      "customers": {
+        "title": "확인된 승객",
+        "body": "믿을 수 있는 고객과 함께 여행하세요."
+      },
+      "support": {
+        "title": "연중무휴 드라이버 지원",
+        "body": "필요할 때마다 진정한 지원을 받으세요."
+      }
+    },
+    "dashboard": {
+      "title": "드라이버 대시보드",
+      "online": "온라인",
+      "earnings": "이번주",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "들어오는 요청",
+      "route": "CMB → 콜롬보 요새",
+      "eta": "8분 후 픽업 · LKR 4,800",
+      "accept": "여행 수락"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick 앱",
+    "heading": "Q Pick를 어디든 가져가세요.",
+    "sub": "Q Pick 모바일 앱을 사용하여 언제든지 차량 서비스, 공항 교통편 및 개인 Sri Lanka 투어를 예약하세요.",
+    "tablistAria": "Q Pick 앱을 선택하세요",
+    "tabs": {
+      "passenger": "승객 앱",
+      "driver": "드라이버 앱"
+    },
+    "passenger": {
+      "title": "여행에 필요한 모든 것.",
+      "features": [
+        "즉시 탑승 예약",
+        "공항 이동",
+        "개인 여행",
+        "실시간 운전자 추적",
+        "안전한 결제",
+        "여행 이력"
+      ],
+      "screenHome": "Q Pick 승객 홈 화면",
+      "screenBooking": "Q Pick 차량 예약 화면",
+      "screenTracking": "Q Pick 실시간 추적 화면"
+    },
+    "driver": {
+      "title": "Q Pick로 더 많은 수익을 창출하세요.",
+      "features": [
+        "탑승 요청 수락",
+        "공항 예약",
+        "투어 요청",
+        "주간 수익",
+        "네비게이션",
+        "드라이버 대시보드"
+      ],
+      "primary": "운전자가 되어보세요",
+      "secondary": "자세히 알아보기",
+      "screens": {
+        "dashboardTitle": "드라이버 대시보드",
+        "online": "온라인",
+        "earningsLabel": "이번주",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "새로운 여행 요청",
+        "route": "CMB → 콜롬보 요새",
+        "fare": "LKR 4,800 · 8분 픽업",
+        "accept": "여행 수락",
+        "earningsScreenTitle": "수입",
+        "weekLabel": "이번주",
+        "tripsLabel": "완료된 여행",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "승객 앱",
+      "driverPlay": "드라이버 앱"
+    }
+  },
+  "finalCta": {
+    "badge": "여행을 시작하세요",
+    "heading": "Sri Lanka 여행은 여기에서 시작됩니다.",
+    "body": "공항 교통편을 예약하고, 시내 차량을 예약하고, 운전사를 고용하고, 개인 투어로 Sri Lanka를 탐험해보세요. 이 모든 것이 하나의 프리미엄 플랫폼에서 이루어집니다.",
+    "primary": "북 라이드",
+    "secondary": "공항 환승",
+    "download": "투어 탐색",
+    "trustAria": "여행자들이 Q Pick를 신뢰하는 이유",
+    "trust": {
+      "verified": "검증된 드라이버",
+      "pricing": "투명한 가격",
+      "support": "연중무휴 지원",
+      "coverage": "섬 전체 범위"
+    }
+  },
+  "farePreview": {
+    "from": "에서",
+    "to": "받는 사람",
+    "note": "견적 · 앱에서 확인"
+  },
+  "taxiFare": {
+    "eyebrow": "택시 요금 견적",
+    "heading": "택시 요금 견적",
+    "sub": "위치를 설정하고, 차량을 선택하고, 예약 세부정보를 추가한 다음 요금을 검토하고 예약하세요.",
+    "pickup": "픽업 장소",
+    "pickupPlaceholder": "검색 픽업 — 예: 콜롬보 요새",
+    "destination": "목적지",
+    "destinationPlaceholder": "검색 대상 — 예: 갈레 페이스",
+    "distance": "거리(자동)",
+    "waiting": "대기시간(분)",
+    "waitingHint": "처음 {free}분 무료 · 이후 LKR {rate}/분",
+    "rideType": {
+      "title": "탑승 유형",
+      "now": "지금 탑승하세요",
+      "schedule": "픽업 예약"
+    },
+    "vehicleType": "차량 종류",
+    "vehicleSelection": {
+      "eyebrow": "함대",
+      "heading": "당신의 차량을 선택하세요",
+      "sub": "여행에 딱 맞는 차량을 선택하세요.",
+      "startingFrom": "시작 위치",
+      "from": "에서",
+      "after1Km": "1km 후",
+      "passengers": "승객",
+      "luggage": "수하물",
+      "seats": "{count} 좌석",
+      "bags": "{count} 가방",
+      "rating": "5점 만점에 {rating}점으로 평가됨",
+      "ac": "에어컨",
+      "availability": "가용성",
+      "available": "가능",
+      "unavailable": "이용 불가",
+      "yes": "예",
+      "no": "아니요",
+      "select": "선택",
+      "selectRide": "탑승 선택",
+      "selected": "선택됨",
+      "prev": "이전 차량",
+      "next": "다음 차량",
+      "day": "일일 요금",
+      "night": "야간 요금",
+      "eta": "~{minutes}분 후 픽업",
+      "base": "베이스",
+      "perKm": "km당"
+    },
+    "mobileFareBar": {
+      "continue": "계속"
+    },
+    "steps": {
+      "locations": "위치",
+      "vehicle": "차량",
+      "details": "세부정보",
+      "summary": "요약",
+      "locationsTitle": "픽업 및 목적지 선택",
+      "vehicleTitle": "차량 선택",
+      "detailsTitle": "예약 세부정보",
+      "summaryTitle": "요금 요약",
+      "continueVehicle": "차량으로 계속",
+      "continueDetails": "예약 세부정보로 이동",
+      "continueSummary": "요금 요약으로 이동"
+    },
+    "bookingDetails": {
+      "title": "예약 세부정보",
+      "pickupDate": "픽업 날짜",
+      "pickupTime": "픽업 시간",
+      "flightNumber": "항공편명",
+      "flightNumberOptional": "선택사항",
+      "flightPlaceholder": "예를 들어 UL 226",
+      "passengerCount": "승객 수",
+      "luggageCount": "수하물 개수",
+      "specialNotes": "특별 참고 사항",
+      "notesPlaceholder": "어린이용 카시트, 환송, 게이트 선호…",
+      "passengerName": "승객 이름",
+      "phone": "전화번호",
+      "driverNotes": "운전자를 위한 주의사항",
+      "paymentMethod": "결제수단",
+      "cash": "현금",
+      "card": "카드",
+      "wallet": "지갑",
+      "promoCode": "프로모션 코드",
+      "promoPlaceholder": "프로모션 코드를 입력하세요",
+      "airportPickup": "공항 픽업",
+      "yes": "예",
+      "no": "아니요",
+      "requiredHint": "계속하려면 유효한 픽업 날짜와 시간을 선택하세요.",
+      "requiredDetailsHint": "계속하려면 승객 이름, 전화번호, 결제 수단을 입력하세요.",
+      "scheduleHint": "미래의 픽업 날짜와 시간을 선택하세요."
+    },
+    "summaryLabel": "요금 요약",
+    "summary": {
+      "bookingSummary": "예약 요약",
+      "pickup": "픽업",
+      "destination": "목적지",
+      "distance": "거리",
+      "duration": "시간",
+      "vehicle": "차량",
+      "baseFare": "기본요금",
+      "distanceCharge": "거리요금",
+      "waitingCharge": "대기요금",
+      "bookingFee": "예약 수수료",
+      "airportFee": "공항 수수료",
+      "toll": "통행료",
+      "parking": "주차",
+      "surge": "급증",
+      "discount": "할인",
+      "total": "예상 총액",
+      "estimatedFare": "예상운임",
+      "finalFare": "최종 요금",
+      "grandTotal": "총계",
+      "viewFareBreakdown": "요금 내역 보기",
+      "payment": "결제",
+      "promo": "프로모션 코드",
+      "eta": "도착 예정 시간",
+      "passengers": "승객",
+      "luggage": "수하물"
+    },
+    "confirmErrors": {
+      "pickup": "픽업 장소를 설정해주세요.",
+      "destination": "목적지를 설정해주세요.",
+      "vehicle": "차량을 선택해주세요.",
+      "schedule": "유효한 픽업 날짜와 시간을 선택하세요.",
+      "payment": "결제수단을 선택해주세요.",
+      "passengerName": "승객 이름을 입력해주세요.",
+      "phone": "전화번호를 입력하세요.",
+      "fare": "요금이 아직 계산 중입니다. 잠시만 기다려 주세요."
+    },
+    "estimateNote": "추정만 가능 · Q Pick 앱에서 최종 요금을 확인하세요. 택시 이용만 가능합니다. 공항 이동이나 투어에는 해당되지 않습니다.",
+    "cta": "이 차량을 예약하세요",
+    "bookNow": "지금 예약하세요",
+    "scopeNote": "택시 요금 · 공항 및 투어와 별개",
+    "vehicles": {
+      "bike": "큐바이크",
+      "tuk": "Q 툭",
+      "miniCar": "큐플렉스",
+      "wagon": "Q 미니",
+      "sedan": "Q 세단",
+      "miniVan": "Q 미니밴",
+      "van": "Q 플랫 루프 밴",
+      "longVan": "Q 하이루프밴",
+      "suv": "Q SUV",
+      "miniBus": "Q 미니버스",
+      "longBus": "Q 버스"
+    },
+    "calculatingRoute": "주행 거리 및 이동 시간 계산 중…",
+    "calculatingShort": "계산 중…",
+    "routeReady": "경로 준비됨 · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "노선",
+      "heading": "경로를 선택하세요",
+      "recommended": "추천",
+      "alternative": "대안",
+      "roadHighway": "고속도로",
+      "roadNormal": "보통",
+      "tags": {
+        "fastest": "가장 빠른 경로",
+        "avoidHighway": "고속도로를 피하세요",
+        "highway": "고속도로 노선",
+        "scenic": "경치 좋은 길",
+        "alternative": "대체 경로"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "지도에 픽업 설정",
+      "setDestination": "지도에 목적지 설정",
+      "pickupTitle": "픽업 확인",
+      "destinationTitle": "목적지 확인",
+      "pickupHint": "검색, 위치 사용, 지도 이동",
+      "destinationHint": "지도를 검색하거나 이동하여 목적지를 설정하세요.",
+      "pickupAddress": "픽업 주소",
+      "destinationAddress": "목적지 주소",
+      "latitude": "위도",
+      "longitude": "경도",
+      "confirmPickup": "픽업 확인",
+      "confirmDestination": "목적지 확인",
+      "resolving": "주소 찾는 중…",
+      "close": "닫기",
+      "searchLabel": "검색",
+      "searchPickup": "픽업 위치 검색",
+      "searchDestination": "목적지 검색",
+      "searching": "검색 중…",
+      "noResults": "검색결과가 없습니다",
+      "useCurrentLocation": "현재 위치 사용",
+      "selectOnMap": "지도에서 선택",
+      "locating": "찾는 중…",
+      "locationDenied": "위치 권한이 거부되었습니다. 브라우저 설정에서 활성화하거나 지도에서 선택하세요.",
+      "locationUnavailable": "현재 위치를 확인할 수 없습니다. 대신 검색이나 지도를 사용해 보세요."
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API 키가 누락되었습니다.",
+      "routeFailed": "경로를 계산할 수 없습니다. 다시 시도해 주세요.",
+      "selectFromSuggestions": "제안 목록에서 픽업 및 목적지를 선택하세요."
+    }
+  },
+  "driverTrust": {
+    "verified": "확인된 Q Pick 드라이버",
+    "trips": "{count} 여행"
+  },
+  "storeBadges": {
+    "comingSoon": "곧 출시 예정",
+    "getItOn": "시작해 보세요",
+    "appStore": "앱스토어",
+    "googlePlay": "구글 플레이",
+    "iosAria": "App Store에서 다운로드 - 곧 출시 예정",
+    "androidAria": "Google Play에서 구매하세요 - 곧 제공될 예정입니다",
+    "downloadOnAppStore": "앱 스토어에서 다운로드",
+    "getItOnGooglePlay": "Google Play에서 구매하세요"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "스플래시",
+      "login": "로그인 / 환영합니다",
+      "dashboard": "대시보드",
+      "account": "계정",
+      "pickup": "픽업 확인",
+      "destination": "목적지 선택",
+      "vehicles": "차량을 선택하세요",
+      "booking": "예약 확인",
+      "searching": "주변 드라이버 검색 중",
+      "accepted": "운전기사 승인",
+      "arriving": "운전기사 도착",
+      "pickedup": "승객이 픽업되었습니다.",
+      "riding": "탑승 진행 중",
+      "completed": "여행 완료",
+      "rate": "드라이버 평가",
+      "submitted": "제출된 평가",
+      "home": "대시보드"
+    },
+    "shotAlt": "Q Pick 고객 앱 — {label}",
+    "shotLabels": {
+      "login": "로그인",
+      "home": "홈",
+      "account": "계정"
+    },
+    "splash": {
+      "tagline": "공항 · 차량 · 운전기사"
+    },
+    "login": {
+      "welcome": "환영합니다",
+      "subtitle": "차량 서비스를 예약하려면 로그인하세요.",
+      "emailOrPhone": "이메일 또는 전화",
+      "password": "비밀번호",
+      "continue": "계속"
+    },
+    "dashboard": {
+      "greeting": "안녕하세요",
+      "whereTo": "어디로?",
+      "searchPlaceholder": "갈레 포트, Sri Lanka",
+      "chips": {
+        "airport": "공항",
+        "home": "홈",
+        "saved": "저장됨"
+      }
+    },
+    "pickup": {
+      "kicker": "픽업 확인",
+      "title": "여기가 당신의 위치인가요?",
+      "label": "픽업",
+      "value": "콜롬보 요새",
+      "confirm": "픽업 확인"
+    },
+    "destination": {
+      "kicker": "목적지 선택",
+      "title": "어디로 가시나요?",
+      "pickupLabel": "픽업",
+      "pickupValue": "콜롬보 요새",
+      "destinationLabel": "목적지",
+      "destinationValue": "갈레 요새",
+      "continue": "계속"
+    },
+    "vehicles": {
+      "route": "콜롬보 요새 → 갈레 요새",
+      "title": "차량을 선택하세요",
+      "seats": "{count}석",
+      "ac": "에어컨",
+      "eta": "도착 예정 시간 {time}",
+      "categories": {
+        "tuk": "툭",
+        "mini": "미니",
+        "sedan": "세단",
+        "suv": "SUV",
+        "van": "밴"
+      },
+      "models": {
+        "tuk": "바자즈 RE",
+        "mini": "스즈키 알토",
+        "sedan": "토요타 프레미오",
+        "suv": "토요타 프라도",
+        "van": "토요타 하이에이스"
+      },
+      "etas": {
+        "tuk": "3분",
+        "mini": "4분",
+        "sedan": "4분",
+        "suv": "6분",
+        "van": "8분"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "예약 확인",
+      "title": "탑승 확인",
+      "vehicleMeta": "토요타 프레미오 · 4인승 · A/C",
+      "route": "경로",
+      "routeValue": "콜롬보 요새 → 갈레 요새",
+      "fare": "요금",
+      "fareValue": "LKR 18,500",
+      "eta": "도착 예정 시간",
+      "etaValue": "4분",
+      "payment": "결제",
+      "paymentValue": "비자 ···· 4242",
+      "bookRide": "북 라이드"
+    },
+    "searching": {
+      "title": "주변 드라이버 검색 중...",
+      "matching": "콜롬보 요새 근처에서 세단 매칭",
+      "driverFound": "드라이버 발견",
+      "sedanSelected": "세단 선택",
+      "selectedMeta": "Toyota Premio · ETA 3분"
+    },
+    "accepted": {
+      "badge": "운전기사 승인",
+      "driverName": "카순 페레라",
+      "vehicle": "토요타 프레미오",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "도착 예정 시간 3분",
+      "track": "트랙 드라이버"
+    },
+    "live": {
+      "statusArriving": "운전기사 도착 • 3분",
+      "statusRiding": "갈레로 향합니다",
+      "driverVehicle": "카순 · 토요타 프레미오",
+      "enRoute": "픽업으로 가는 중 · 콜롬보 요새",
+      "route": "콜롬보 요새 → 갈레 요새",
+      "minutesUnit": "분",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9",
+      "call": "운전자에게 전화하기",
+      "chat": "메시지 드라이버"
+    },
+    "pickedUp": {
+      "title": "당신은 탑승 중입니다",
+      "subtitle": "Kasun과 함께 Galle Fort로 향합니다."
+    },
+    "completed": {
+      "title": "여행 완료",
+      "route": "콜롬보 요새 → 갈레 요새",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "운전자를 평가하세요",
+      "driverName": "카순 페레라",
+      "vehicle": "토요타 프레미오",
+      "prompt": "오늘 라이딩은 어땠나요?",
+      "reviewPlaceholder": "간단한 리뷰를 작성해 보세요...",
+      "submit": "평가 제출"
+    },
+    "submitted": {
+      "title": "평가해주셔서 감사합니다",
+      "subtitle": "여러분의 의견은 운전자의 개선에 도움이 됩니다",
+      "backHome": "집으로 돌아가기"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "타고",
+        "description": "Sri Lanka에서 프리미엄 도시 또는 도시 간 차량 서비스를 예약하세요. 투명한 요금, 검증된 운전자, 실시간 추적이 제공됩니다."
+      },
+      "title": "차량 예약",
+      "description": "투명한 가격과 검증된 운전자를 통해 Sri Lanka 어디든 차량을 예약하세요.",
+      "primaryCta": "예상운임",
+      "secondaryCta": "안전 표준",
+      "intro": {
+        "badge": "타고",
+        "title": "차량 예약",
+        "subtitle": "투명한 가격과 검증된 운전자를 통해 Sri Lanka 어디든 차량을 예약하세요.",
+        "nav": {
+          "live": "라이브",
+          "tracking": "스마트 내비게이션",
+          "route": "활성 경로",
+          "corridor": "콜롬보 → 갈레 페이스",
+          "eta": "도착 예정 시간",
+          "etaValue": "12분",
+          "distance": "거리",
+          "distanceValue": "4.8km",
+          "driverNearby": "근처의 드라이버 파트너 · 픽업 예정"
+        }
+      },
+      "booking": {
+        "title": "차량 예약",
+        "trust": {
+          "pricing": "투명한 가격.",
+          "drivers": "검증된 드라이버.",
+          "tracking": "실시간 추적."
+        }
+      },
+      "why": {
+        "eyebrow": "왜 Q Pick인가요?",
+        "heading": "Q Pick를 이용해야 하는 이유",
+        "items": {
+          "pricing": {
+            "title": "투명한 가격",
+            "body": "확인하기 전에 전체 견적을 확인하세요. 예상치 못한 인상은 없습니다."
+          },
+          "drivers": {
+            "title": "검증된 드라이버",
+            "body": "배경 조사를 거친 운전사. 등급이 있고 보험이 있으며 여행 준비가 되어 있습니다."
+          },
+          "tracking": {
+            "title": "실시간 추적",
+            "body": "공유 가능한 도착 시간을 통해 픽업부터 집까지 매 순간을 추적하세요."
+          },
+          "support": {
+            "title": "연중무휴 지원",
+            "body": "낮이든 밤이든 필요할 때 언제든지 도움을 받을 수 있습니다."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "함대",
+        "heading": "차량을 선택하세요",
+        "sub": "자전거부터 버스까지, 여행에 꼭 맞는 것을 선택하세요.",
+        "mini": "미니",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "큐바이크",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "빠른 시내 주행"
+          },
+          "tuk": {
+            "name": "Q 툭",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "저렴한 단기 여행"
+          },
+          "flex": {
+            "name": "큐플렉스",
+            "passengers": "승객 3명",
+            "luggage": "2 수하물",
+            "blurb": "도시 여행을 위한 컴팩트 해치백"
+          },
+          "mini": {
+            "name": "Q 미니",
+            "passengers": "승객 4명",
+            "luggage": "2 수하물",
+            "blurb": "도시 여행을 위한 더 넓은 Wagon R"
+          },
+          "sedan": {
+            "name": "Q 세단",
+            "passengers": "승객 4명",
+            "luggage": "2 수하물",
+            "blurb": "출장을 위한 편안함"
+          },
+          "minivan": {
+            "name": "Q 미니밴",
+            "passengers": "6명의 승객",
+            "luggage": "4 수하물",
+            "blurb": "가족여행을 위한 공간"
+          },
+          "frVan": {
+            "name": "Q 플랫 루프 밴",
+            "passengers": "8명의 승객",
+            "luggage": "6 수하물",
+            "blurb": "편안한 단체 공항 이동"
+          },
+          "highRoofVan": {
+            "name": "Q 하이루프밴",
+            "passengers": "승객 10명",
+            "luggage": "8 수하물",
+            "blurb": "투어 및 환승을 위한 더 많은 공간"
+          },
+          "suv": {
+            "name": "Q SUV",
+            "passengers": "승객 5명",
+            "luggage": "4 수하물",
+            "blurb": "가족에게 이상적"
+          },
+          "miniBus": {
+            "name": "Q 미니버스",
+            "passengers": "승객 12명",
+            "luggage": "8 수하물",
+            "blurb": "소그룹 여행"
+          },
+          "bus": {
+            "name": "Q 버스",
+            "passengers": "승객 20명",
+            "luggage": "12 수하물",
+            "blurb": "대규모 그룹 전송"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "안전",
+        "heading": "자신감을 갖고 여행하세요.",
+        "body": "모든 Q Pick 여행은 검증된 운전자, 실시간 여행 공유, 긴급 지원 및 전담 고객 지원을 통해 보호됩니다.",
+        "cta": "안전에 대해 알아보기",
+        "pillars": {
+          "verified": {
+            "title": "검증된 함대",
+            "body": "모든 운전자가 네트워크에 참여하기 전에 신원과 차량을 확인합니다."
+          },
+          "sharing": {
+            "title": "여행 공유",
+            "body": "가족, 친구 또는 호텔과 실시간 여행 상태를 공유하세요."
+          },
+          "support": {
+            "title": "연중무휴 지원",
+            "body": "낮이든 밤이든 필요할 때 언제든지 도움을 받을 수 있습니다."
+          },
+          "emergency": {
+            "title": "긴급 지원",
+            "body": "이동 중에 문제가 있다고 느낄 때의 에스컬레이션 경로입니다."
+          }
+        }
+      },
+      "faq": {
+        "heading": "자주 묻는 질문",
+        "sub": "예약하기 전에 차량 서비스, 공항 교통편, 투어 등 명확한 답변을 얻으세요.",
+        "items": {
+          "fareCalc": {
+            "q": "요금은 어떻게 계산되나요?",
+            "a": "택시 요금은 기본 요금, 거리, 대기 시간, 시간대 요금을 합산하여 책정됩니다. 확인하기 전에 예약 흐름에 실시간 견적이 표시됩니다."
+          },
+          "airport": {
+            "q": "공항 교통편을 미리 예약할 수 있나요?",
+            "a": "그렇습니다. 필요할 때 항공편 인식 버퍼와 함께 반다라나이케(CMB)에 대한 정기 픽업을 요청하려면 공항 환승을 이용하세요."
+          },
+          "tour": {
+            "q": "Sri Lanka 투어를 맞춤 설정할 수 있나요?",
+            "a": "그렇습니다. 개인 여행은 날짜, 정류장, 차량을 중심으로 구성됩니다. 여행하기 전에 Q Pick로 계획을 구체화하세요."
+          },
+          "vehicle": {
+            "q": "내 차량 카테고리를 선택할 수 있나요?",
+            "a": "그렇습니다. Q 바이크부터 Q 버스까지, 예약 캐러셀 또는 차량 섹션에서 승객과 수하물에 맞는 카테고리를 선택하세요."
+          },
+          "drivers": {
+            "q": "모든 드라이버가 검증되었나요?",
+            "a": "그렇습니다. Q Pick 운전자는 네트워크에 가입하기 전에 신원, 차량 및 배경 조사를 완료합니다."
+          },
+          "share": {
+            "q": "여행을 가족과 공유할 수 있나요?",
+            "a": "그렇습니다. 가족, 친구 또는 호텔이 여행을 따라갈 수 있도록 실시간 여행 상태를 공유하세요."
+          },
+          "cancel": {
+            "q": "예약을 취소할 수 있나요?",
+            "a": "그렇습니다. 앱에서 취소하거나 지원팀을 통해 취소하세요. 시간과 수수료는 예약 유형과 픽업이 얼마나 가까운지에 따라 다릅니다."
+          },
+          "contact": {
+            "q": "지원팀에 어떻게 문의하나요?",
+            "a": "지원 페이지(전화, WhatsApp 또는 이메일)를 통해 언제든지 문의해 주세요. 우리 팀은 연중무휴 24시간 이용 가능합니다."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "아직도 질문이 있으신가요?",
+        "sub": "저희 팀은 연중무휴 24시간 귀하의 차량 서비스 또는 Sri Lanka 여행 계획을 도와드립니다.",
+        "primary": "차량 예약",
+        "secondary": "지원팀에 문의"
+      },
+      "driverTrust": {
+        "name": "누완 P.",
+        "trips": "2.1k",
+        "rating": "4.97",
+        "verifiedLabel": "확인된 Q Pick 드라이버",
+        "tripsLabel": "{count} 여행"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "공항 이동",
+        "description": "항공편 추적, 만남 및 인사, 전문 운전사 및 투명한 고정 가격을 갖춘 프리미엄 반다라나이케(CMB) 공항 교통편."
+      },
+      "hero": {
+        "eyebrow": "공항 이동",
+        "titleLine1": "공항 환승,",
+        "titleLine2": "완벽하게 시간이 맞춰졌습니다.",
+        "description": "전문 운전기사, 실시간 항공편 추적, 만남 및 인사, 투명한 가격으로 Bandaranaike International 공항(CMB)에서 Sri Lanka 어디든 갈 수 있습니다.",
+        "primaryCta": "공항 교통편 예약",
+        "secondaryCta": "차량 탐색",
+        "imageAlt": "Q Pick 운전사가 프리미엄 환승 차량으로 Bandaranaike International 공항에서 여행자를 맞이합니다.",
+        "trust": {
+          "tracking": "항공편 추적",
+          "greet": "만나서 인사하기",
+          "pricing": "고정 가격",
+          "support": "연중무휴 지원"
+        },
+        "cards": {
+          "flight": {
+            "label": "비행",
+            "code": "UL225",
+            "status": "정시에"
+          },
+          "driver": {
+            "label": "드라이버",
+            "status": "6분 후에 도착",
+            "eta": "실시간 예상 도착 시간"
+          },
+          "meetGreet": "만남과 인사가 포함되어 있습니다"
+        }
+      },
+      "rates": {
+        "eyebrow": "공식 요금",
+        "heading": "공항 교통편 요금",
+        "sub": "목적지를 검색하고 Bandaranaike International 공항(CMB)에서 출발하는 공식 에어컨 환승 요금을 확인하세요.",
+        "popular": "인기 여행지",
+        "searchLabel": "목적지 검색",
+        "searchPlaceholder": "대상 또는 코드 검색 — 예: 캔디, 칸, K015",
+        "searching": "검색 중…",
+        "noResults": "검색어와 일치하는 목적지가 없습니다. 다른 이름이나 코드를 사용해 보세요.",
+        "emptyTitle": "요금 찾기",
+        "emptyBody": "목적지를 검색하여 공식 공항 환승 요금을 즉시 확인하세요.",
+        "disclaimer": "표시된 요금은 공식 공항 환승 요금표를 기준으로 합니다. 대기 시간, 추가 정류장, 통행료 또는 특별 요청 시 추가 요금이 부과될 수 있습니다.",
+        "card": {
+          "destination": "목적지",
+          "fare": "공식 공항 환승 요금",
+          "airport": "공항",
+          "status": "상태",
+          "statusValue": "공식 공항 요금",
+          "code": "코드",
+          "bookCta": "공항 교통편 예약"
+        }
+      },
+      "booking": {
+        "eyebrow": "개인 운전사",
+        "heading": "공항 교통편을 예약하세요.",
+        "sub": "Bandaranaike International 공항에서 Sri Lanka 어디든 — 여행 시간에 맞춰 공식 요금이 적용됩니다.",
+        "title": "공항 환승",
+        "from": "에서",
+        "to": "받는 사람",
+        "toPlaceholder": "목적지 검색",
+        "searching": "검색 중…",
+        "noResults": "일치하는 목적지가 없습니다. 다른 이름이나 코드를 사용해 보세요.",
+        "date": "여행 날짜",
+        "time": "픽업 시간",
+        "passengers": "승객",
+        "adult": "성인",
+        "luggage": "수하물",
+        "luggageOptions": {
+          "cabin": "캐빈",
+          "medium": "중간",
+          "large": "대형"
+        },
+        "vehicle": "차량 종류",
+        "vehicleOptions": {
+          "mini": "미니",
+          "sedan": "세단",
+          "van": "밴",
+          "suv": "SUV"
+        },
+        "nationality": "국적",
+        "nationalityPlaceholder": "국적을 선택하세요",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "인도인",
+          "uk": "영국인",
+          "us": "미국식",
+          "de": "독일어",
+          "au": "호주인",
+          "cn": "중국어",
+          "other": "기타"
+        },
+        "special": "특별 요청",
+        "specialPlaceholder": "선택 사항 — 어린이용 카시트, 만남 및 인사 메모, 호텔 이름...",
+        "distance": "예상 거리",
+        "duration": "예상 기간",
+        "officialPrice": "공식 공항 환승 요금",
+        "cta": "차량 예약",
+        "ctaLoading": "예약 시작 중…",
+        "summaryTitle": "여행 요약",
+        "route": "경로",
+        "destinationPending": "목적지를 선택하세요"
+      },
+      "features": {
+        "eyebrow": "왜 Q Pick 공항인가",
+        "heading": "문에서 문까지 확실함.",
+        "items": {
+          "tracking": {
+            "title": "항공편 추적",
+            "body": "도착을 자동으로 모니터링하세요."
+          },
+          "greet": {
+            "title": "만나서 인사하기",
+            "body": "운전기사가 도착장 안에서 기다리고 있습니다."
+          },
+          "pricing": {
+            "title": "투명한 가격",
+            "body": "예약하기 전에 요금을 알아보세요."
+          },
+          "support": {
+            "title": "연중무휴 지원",
+            "body": "항상 이용 가능합니다."
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "투어",
+        "description": "즉각적인 견적, 유연한 여행 일정, 고급 차량 등 섬에 대해 잘 아는 운전사와 함께 개인 Sri Lanka 투어를 계획해 보세요."
+      },
+      "eyebrow": "개인 여행",
+      "title": "섬을 위한 투어",
+      "description": "타이밍, 지형, 손님의 편안함을 아는 운전자와 함께 당일 여행과 여러 정거장 여행(차 나라, 요새 마을, 문화적 삼각지대)을 해보세요.",
+      "primaryCta": "내 여행 계획하기",
+      "secondaryCta": "패키지 보기",
+      "why": {
+        "heading": "개인 여행을 선택하는 이유",
+        "sub": "귀하의 속도, 귀하의 정류장, 신뢰할 수 있는 한 명의 운전사가 고정된 루프에서 낯선 사람을 코치하는 것이 아닙니다.",
+        "items": [
+          {
+            "title": "완전히 사용자 정의 가능",
+            "body": "요일, 목적지, 차량 등은 실제 여행 방식을 중심으로 구성됩니다."
+          },
+          {
+            "title": "내내 같은 운전기사",
+            "body": "선호도를 다시 설명하지 않고 공항에서 고지대로의 연속성."
+          },
+          {
+            "title": "투명한 견적",
+            "body": "문의하기 전에 명확한 범위를 확인하세요. Q Pick로 세부정보를 구체화하세요."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "인기 있는 투어 패키지",
+        "sub": "시작점을 사용자 정의하거나 플래너에서 영감으로 사용할 수 있습니다.",
+        "coastal": {
+          "days": "4~5일",
+          "title": "남부 해안",
+          "body": "CMB 도착, 콜롬보 이지인, 갈레 포트, 미리사 또는 우나와투나 속도.",
+          "price": "LKR 78,000부터"
+        },
+        "triangle": {
+          "days": "5~6일",
+          "title": "문화적 삼각관계",
+          "body": "Sigiriya, Dambulla, Polonnaruwa 도로에 호텔 코디네이션이 내장되어 있습니다.",
+          "price": "LKR 112,000부터"
+        },
+        "highland": {
+          "days": "5~7일",
+          "title": "차 나라",
+          "body": "캔디에서 엘라까지 하이랜드 항공, 기차 시간 선택 가능, 경치 좋은 하강.",
+          "price": "LKR 124,000부터"
+        }
+      },
+      "itineraries": {
+        "heading": "추천 여행 일정",
+        "sub": "간단한 개요 - 플래너에서 확장하거나 압축합니다.",
+        "south": {
+          "title": "남부 해안 재설정",
+          "stops": [
+            "1일차 — CMB → 콜롬보",
+            "2~3일 — 갈레 및 해안 마을",
+            "4일차 - Ella로 돌아가거나 연장"
+          ]
+        },
+        "culture": {
+          "title": "헤리티지 서킷",
+          "stops": [
+            "1일차 — CMB → 시기리야 지역",
+            "2일차 — 문화 삼각지",
+            "3~4일 — 캔디 및 출발 물류"
+          ]
+        },
+        "tea": {
+          "title": "하이랜드 루프",
+          "stops": [
+            "1일차 — 콜롬보 → 캔디",
+            "2~3일 — 누와라 엘리야 / 엘라",
+            "4일차 — 경치 좋은 남쪽으로 돌아오거나 CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "차량 비교",
+        "sub": "파티 규모에 맞게 편안함을 선택하세요. 에어컨과 검증된 운전기사가 모두 제공됩니다.",
+        "colVehicle": "차량",
+        "colGuests": "손님",
+        "colBest": "다음에 가장 적합",
+        "colFrom": "부터/일",
+        "rows": {
+          "sedan": {
+            "name": "세단",
+            "guests": "1–3",
+            "best": "커플 및 가벼운 수하물",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "가족 및 고지대 도로",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "밴",
+            "guests": "1–9",
+            "best": "그룹 및 멀티스톱 키트",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Q Pick와 함께 여행해야 하는 이유",
+        "items": {
+          "chauffeur": {
+            "title": "검증된 운전기사",
+            "body": "모든 여행에서 신원 및 차량을 확인합니다."
+          },
+          "pacing": {
+            "title": "섬 속도",
+            "body": "성급한 코치 일정이 아닌 편안한 시간에 맞춰 노선을 운행합니다."
+          },
+          "estimate": {
+            "title": "명확한 견적",
+            "body": "팀과 대화하기 전에 범위를 알아 두십시오."
+          },
+          "support": {
+            "title": "도달 가능한 지원",
+            "body": "필요할 때 여행 변경 및 이동 중에 도움을 받을 수 있습니다."
+          }
+        }
+      },
+      "faq": {
+        "heading": "자주 묻는 질문",
+        "items": {
+          "customize": {
+            "q": "여행 일정을 완전히 맞춤 설정할 수 있나요?",
+            "a": "그렇습니다. 시작 예상을 위해 플래너를 사용한 다음 Q Pick를 사용하여 경유지, 속도 및 호텔을 구체화합니다."
+          },
+          "payment": {
+            "q": "견적을 받으면 비용을 지불하나요?",
+            "a": "아니요. 플래너는 오리엔테이션용으로만 사용됩니다. 둘러보거나 문의하는 데에는 비용이 필요하지 않습니다."
+          },
+          "hotels": {
+            "q": "호텔도 예약하시나요?",
+            "a": "우리는 귀하가 머무는 동안의 움직임을 조정합니다. 호텔 예약은 파트너와 사례별로 준비될 수 있습니다."
+          },
+          "changes": {
+            "q": "투어 도중에 계획이 변경되면 어떻게 되나요?",
+            "a": "운전사와 지원 라인은 도로, 날씨 또는 선호도가 바뀔 때 일일 속도를 조정합니다."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "여행을 계획할 준비가 되셨나요?",
+        "sub": "날짜와 선호사항을 공유하세요. 명확한 개인 여행 계획으로 견적을 구체화해 드리겠습니다.",
+        "primary": "문의 보내기",
+        "secondary": "플래너로 돌아가기",
+        "destinations": "목적지 찾아보기"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "일일 전세",
+          "body": "유연한 정차와 명확한 올인 요금이 포함된 일출부터 일몰까지의 경로입니다."
+        },
+        "multiDay": {
+          "title": "수일간",
+          "body": "여행 일정 전반에 걸쳐 신뢰할 수 있는 동일한 드라이버와 함께 해안을 따라 고지대로 이동하세요."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "안전",
+        "description": "Q Pick 안전 — Sri Lanka 전역에서 검증된 운전자, 보험 차량, 실시간 GPS 추적 및 연중무휴 지원을 제공합니다."
+      },
+      "hero": {
+        "eyebrow": "신뢰와 안전",
+        "headline": "Sri Lanka 여행",
+        "headlineLine2": "절대적인 자신감으로.",
+        "description": "모든 Q Pick 여행에는 검증된 운전기사, 보험 차량, 실시간 추적 및 전담 지원이 제공되므로 안심하고 섬을 탐험할 수 있습니다.",
+        "primaryCta": "차량 예약",
+        "secondaryCta": "지원팀에 문의",
+        "imageAlt": "Q Pick Sri Lanka의 프리미엄 차량 옆에 있는 개인 운전사"
+      },
+      "standards": {
+        "eyebrow": "우리의 표준",
+        "heading": "모든 여행에 안전이 내장되어 있습니다.",
+        "description": "콜롬보 복도부터 고지대 헤어핀까지 Q Pick는 모든 여행에서 동일한 검증, 모니터링 및 지원 표준을 유지합니다.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "검증된 드라이버",
+            "body": "운전사가 Q Pick 네트워크에 참여하기 전에 신원, 배경 및 라이센스를 확인합니다."
+          },
+          "verifiedVehicles": {
+            "title": "검증된 차량",
+            "body": "모든 카테고리에 걸쳐 정기적인 검사, 보험 검증 및 에어컨이 설치된 차량 표준을 제공합니다."
+          },
+          "gpsTracking": {
+            "title": "GPS 추적",
+            "body": "여행 내내 귀하, 귀하의 호스트 및 운영 데스크를 위한 실시간 여행 가시성."
+          },
+          "support247": {
+            "title": "연중무휴 지원",
+            "body": "즉각적인 사람의 도움이 필요한 순간에 대한 여행 중 지원 및 게시된 비상 전화."
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "여행 보호",
+        "heading": "예약부터 도착까지 보호됩니다",
+        "steps": {
+          "book": {
+            "title": "도서",
+            "body": "투명한 가격과 전용 운전사 배정을 통해 탑승, 환승 또는 투어를 확인하세요."
+          },
+          "verification": {
+            "title": "검증",
+            "body": "운전자 및 차량 세부 정보는 파견 전에 Q Pick 안전 표준에 따라 확인됩니다."
+          },
+          "pickup": {
+            "title": "픽업",
+            "body": "운전기사가 공항, 호텔, 빌라 컬렉션 등 공유된 차량 정보를 가지고 도착합니다."
+          },
+          "tracking": {
+            "title": "실시간 추적",
+            "body": "실시간으로 여행을 추적하고 가족이나 호텔 프런트 데스크와 실시간 상태를 공유하세요."
+          },
+          "arrival": {
+            "title": "안전한 도착",
+            "body": "여행이 완료될 때까지 대기 지원을 통해 목적지까지 도달하세요."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "항상 접근 가능",
+        "heading": "긴급 지원",
+        "description": "이동 중에 문제가 발생하면 우리 팀은 밤낮으로 섬 어디에서나 전화나 메시지 한 통으로 연락할 수 있습니다.",
+        "hotline": {
+          "label": "긴급 핫라인",
+          "hint": "즉각적인 지원이 필요한 긴급 여행 상황에 적합합니다."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "빠른 조정 및 여행 업데이트를 위해 지원 데스크에 메시지를 보내세요."
+        },
+        "email": {
+          "label": "이메일",
+          "hint": "긴급하지 않은 문의, 파트너 요청, 예약 후속 조치용입니다."
+        }
+      },
+      "stats": {
+        "eyebrow": "숫자로",
+        "heading": "표준 여행자 신탁",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "검증된 드라이버"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "보험 여행"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "지원 범위"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "고객 만족"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "당신의 여행이 기다리고 있습니다",
+        "heading": "자신감 있게 여행하세요",
+        "description": "개인 운전사, 공항 교통편 또는 섬 투어를 예약하세요. 첫 번째 마일부터 마지막 마일까지 Q Pick 안전 표준이 뒷받침됩니다.",
+        "primaryCta": "차량 예약",
+        "secondaryCta": "투어 계획",
+        "imageAlt": "Sri Lanka의 열대 우림 위에 우뚝 솟은 시기리야 바위 요새"
+      },
+      "faqHeading": "일반적인 질문",
+      "faqs": [
+        {
+          "q": "Q Pick 드라이버가 검증되었습니까?",
+          "a": "그렇습니다. 운전자는 네트워크에 가입하기 전에 신원, 차량 및 배경 조사를 완료합니다."
+        },
+        {
+          "q": "내 여행을 공유할 수 있나요?",
+          "a": "그렇습니다. 실시간 여행 공유를 통해 가족, 호스트 또는 호텔 프런트 데스크에서 여행을 따라갈 수 있습니다."
+        },
+        {
+          "q": "탑승 중에 도움이 필요하면 어떻게 하나요?",
+          "a": "중요한 순간에는 여행 중 지원과 게시된 비상 전화를 이용할 수 있습니다."
+        },
+        {
+          "q": "여행에 보험이 있나요?",
+          "a": "보장은 Q Pick 표준에 따른 모든 여행에 적용됩니다."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Q Pick로 운전하세요",
+        "description": "Q Pick에 전문 운전기사로 가입하세요. 프리미엄 고객, 정당한 수입, 유연한 일정, Sri Lanka 전역에서 연중무휴 운전자 지원을 받을 수 있습니다."
+      },
+      "hero": {
+        "eyebrow": "운전기사 모집",
+        "headline": "Sri Lanka을(를) 운전하세요",
+        "headlineLine2": "프리미엄 여행.",
+        "description": "투명한 수입, 품위 있는 파견, 익숙한 도로에 대한 지원을 통해 관광객, 호텔, 기업 여행객에게 서비스를 제공하는 엄선된 전문 운전사 네트워크에 참여하세요.",
+        "primaryCta": "지금 신청하세요",
+        "secondaryCta": "요구사항 보기",
+        "imageAlt": "Q Pick Sri Lanka의 프리미엄 차량 옆에 있는 전문 운전기사"
+      },
+      "whyJoin": {
+        "eyebrow": "Q Pick에 가입해야 하는 이유",
+        "heading": "도로에 자부심을 갖고 있는 운전자를 위해 제작되었습니다.",
+        "description": "Q Pick는 일반적인 차량 공유 앱이 아닙니다. 공항 이동, 개인 여행, 기업 여행 등 프리미엄 수요를 갖춘 검증된 운전기사를 연결해 드립니다.",
+        "cards": {
+          "earnings": {
+            "title": "더 높은 수익",
+            "body": "최저가 경쟁이 아닌 프리미엄 공항, 관광, 운전기사 요금을 이용하세요."
+          },
+          "schedule": {
+            "title": "유연한 일정",
+            "body": "온라인에 접속할 때 선택하세요. 귀하의 조건에 따라 공항 운행, 일일 대여 및 며칠 간의 투어의 균형을 맞추십시오."
+          },
+          "clients": {
+            "title": "프리미엄 관광객 및 기업 고객",
+            "body": "전문성을 기대하는 호텔 투숙객, 출장객, 엄선된 여행 고객에게 서비스를 제공하세요."
+          },
+          "support": {
+            "title": "연중무휴 드라이버 지원",
+            "body": "낮이든 밤이든 이동 중에 도움이 필요할 때 운영 데스크와 비상 전화를 이용할 수 있습니다."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "함대 카테고리",
+        "heading": "운행하는 차량을 운전하세요.",
+        "description": "Q Pick는 소형 도시형 자동차부터 하이루프 밴 및 코치에 이르기까지 모든 종류의 개인 운전사 카테고리를 지원합니다."
+      },
+      "journey": {
+        "eyebrow": "승인을 위한 경로",
+        "heading": "신청부터 첫 프리미엄 여행까지",
+        "steps": {
+          "apply": {
+            "title": "적용",
+            "body": "개인, 차량, 서류 세부정보로 온라인 등록을 완료하세요."
+          },
+          "verify": {
+            "title": "문서 확인",
+            "body": "저희 팀은 귀하의 NIC, 면허증, 보험 및 차량 등록을 검토합니다."
+          },
+          "inspection": {
+            "title": "차량검사",
+            "body": "표준 점검을 통해 귀하의 차량이 Q Pick 안전 및 편안함 요구 사항을 충족하는지 확인합니다."
+          },
+          "training": {
+            "title": "훈련",
+            "body": "Q Pick 서비스 표준, 앱 사용 및 손님 환대에 대한 간략한 온보딩입니다."
+          },
+          "approved": {
+            "title": "승인됨",
+            "body": "확인되면 프로필이 게시되지만 완전히 승인될 때까지 온라인에 접속할 수 없습니다."
+          },
+          "start": {
+            "title": "운전 시작",
+            "body": "프리미엄 여행, 공항 교통편, 섬 전역 투어 배정을 수락하세요."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "운전자의 목소리",
+        "heading": "Q Pick를 선택한 운전기사",
+        "items": [
+          {
+            "name": "카순 페레라",
+            "role": "세단 운전사 · 콜롬보",
+            "quote": "공항 교통편과 호텔 픽업은 일관됩니다. 수락하기 전에 요금을 알고, 전화하면 지원이 응답합니다."
+          },
+          {
+            "name": "니말 페르난도",
+            "role": "하이루프밴 · 캔디",
+            "quote": "투어 그룹과 가족 이동은 임의의 도시 탑승보다 더 나은 비용을 지불합니다. Q Pick 고객은 품질을 기대하며 이에 따라 팁을 줍니다."
+          },
+          {
+            "name": "루완 실바",
+            "role": "SUV 운전사 · 갈레",
+            "quote": "온보딩은 철저하면서도 공정했습니다. 일단 승인되면 앱과 운영팀은 시즌 동안 바쁘게 지낼 수 있도록 했습니다."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "자격",
+        "heading": "드라이버 요구 사항",
+        "description": "우리는 손님과 운전사 모두를 보호하기 위해 높은 기준을 유지합니다. 신청하기 전에 이러한 사항을 충족하는지 확인하십시오.",
+        "items": [
+          "최소 3년의 경력과 유효한 Sri Lankan 운전 면허증",
+          "국가 신분증(NIC) 및 명확한 신원조사",
+          "등록되고 보험에 가입된 차량의 기계적 상태가 양호함",
+          "유효한 수익 라이선스 및 종합 보험 문서",
+          "Q Pick 드라이버 앱용 모바일 데이터가 포함된 스마트폰",
+          "프로페셔널한 외모와 정중한 게스트 커뮤니케이션",
+          "싱할라어, 영어, 타밀어 중 하나 이상을 유창하게 구사하세요.",
+          "공항, 도시, 도시간 프리미엄 여행 서비스 제공 의지"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "예시적인 수입",
+        "heading": "수입 예시",
+        "description": "아래 수치는 예시일 뿐이며 보장된 수입은 아닙니다. 실제 수입은 시간, 계절, 차량 카테고리, 여행 유형에 따라 달라집니다.",
+        "disclaimer": "예시일 뿐입니다. 소득을 보장하지 않습니다. Q Pick 커미션, 수요 및 개인 성과에 따라 달라질 수 있습니다.",
+        "examples": [
+          {
+            "label": "공항 이동(CMB → 콜롬보)",
+            "amount": "LKR 8,500 – 12,000",
+            "note": "세단 · 편도 · 비수기"
+          },
+          {
+            "label": "하루 종일 운전사 고용",
+            "amount": "LKR 18,000 – 28,000",
+            "note": "SUV 또는 밴 · 8~10시간 · 연료 불포함"
+          },
+          {
+            "label": "여러 날 투어(1일 기준)",
+            "amount": "LKR 22,000 – 35,000",
+            "note": "하이루프밴 · 문화삼각길"
+          },
+          {
+            "label": "시티 라이드(콜롬보)",
+            "amount": "LKR 2,500 – 5,500",
+            "note": "미니 또는 세단 · 미터 요금"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "가입할 준비가 되셨나요?",
+        "heading": "Q Pick 운전사가 되어 보세요",
+        "description": "지금 바로 신청을 시작하세요. 원하는 속도로 등록을 완료하세요. 저희 팀이 확인 및 승인 과정을 안내해 드립니다.",
+        "primaryCta": "지금 신청하세요",
+        "secondaryCta": "요구사항 보기",
+        "imageAlt": "Q Pick 모바일 운전사 지도 및 운행 대시보드"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "파트너",
+        "description": "신뢰할 수 있는 단일 표준에 따라 호텔, 빌라 및 기업 고객 이동을 위해 Q Pick와 제휴하세요."
+      },
+      "title": "손님을 잘 옮기는 파트너",
+      "description": "호텔, 빌라 및 기업 — 공유 Q Pick 표준에 따라 프런트 데스크에서 신뢰할 수 있는 완벽한 전송 서비스입니다.",
+      "primaryCta": "파트너십에 대해 이야기하세요",
+      "secondaryCta": "공항상품",
+      "body": "고객 도착 링크, 예정된 환승 및 운영 가시성 - 숙박팀이 WhatsApp 차량을 조정하는 데 소요되는 시간을 줄이고 호스팅에 더 많은 시간을 할애하도록 설계되었습니다.",
+      "logoRowEyebrow": "환대를 위해 만들어졌습니다.",
+      "logoRowAriaLabel": "호텔 파트너",
+      "partnerNames": [
+        "갈레 페이스 호텔",
+        "계피",
+        "제트윙",
+        "샹그릴라",
+        "아망갈라"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "소개",
+        "description": "Quick Pick App (Pvt) Ltd는 Sri Lanka 전역에서 차량 서비스, 공항 이동 및 섬 여행 등 신뢰할 수 있는 개인 이동 계층인 Q Pick를 구축합니다."
+      },
+      "title": "Sri Lanka의 이동 방식에 맞춰 제작됨",
+      "description": "Q Pick는 Quick Pick App (Pvt) Ltd에서 개발 및 운영합니다. 이는 럭셔리 컨시어지의 평온함과 현대적인 이동성 네트워크의 신뢰성을 갖춘 섬 전역의 신뢰할 수 있는 개인 이동 계층입니다.",
+      "primaryCta": "차량 예약",
+      "secondaryCta": "우리와 함께 드라이브하세요",
+      "paragraphs": [
+        "우리는 단편화된 WhatsApp 차량과 일반 글로벌 앱이 여행자와 거주자가 실제로 필요로 하는 것, 즉 확실성, 환대, 장소에 대한 존중을 놓치고 있기 때문에 존재합니다.",
+        "Quick Pick App (Pvt) Ltd는 Sri Lanka 전역의 인간 여행을 위한 조용한 기술인 단일 언어로 승객, 운전자 및 운영 표면을 설계합니다."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "지원",
+        "description": "차량 서비스, 환승, 투어 및 파트너 문의는 Q Pick 지원팀에 문의하세요."
+      },
+      "title": "지원",
+      "description": "우리는 여행 관련 질문, 파트너 문의 및 사람이 필요한 순간을 위해 여기에 있습니다.",
+      "emailLabel": "이메일",
+      "phoneLabel": "전화",
+      "locationLabel": "위치",
+      "emergencyLabel": "비상연락선"
+    },
+    "destinations": {
+      "meta": {
+        "title": "목적지",
+        "description": "콜롬보, 갈레, 엘라, 시기리야 등 Sri Lanka 전역의 Q Pick 목적지를 탐색하세요."
+      },
+      "title": "목적지",
+      "description": "항구 도로, 요새 벽, 고지대 안개, 문화적 삼각지대 등 여행 방식에 맞춰 구성된 장소입니다."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "목적지",
+      "primaryCta": "차량 예약",
+      "secondaryCta": "투어 탐색"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "개인 정보 보호",
+          "description": "Q Pick 개인 정보 보호 정책 — 당사가 귀하의 정보를 수집, 사용 및 보호하는 방법."
+        },
+        "title": "개인 정보 보호",
+        "description": "우리는 귀하를 안전하게 이동시키는 데 필요한 것만 수집하며 여행 데이터를 주의 깊게 취급합니다.",
+        "body": "이 페이지는 1단계 셸입니다. 전체 법적 사본에는 계정 데이터, 활동 중인 여행 중 위치, 결제 처리자, 보관 기간, 해당 Sri Lankan 및 국제 개인정보 보호법에 따른 귀하의 권리가 포함됩니다.",
+        "questionsPrefix": "질문:",
+        "supportEmail": "지원@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "용어",
+          "description": "Q Pick 승객, 파트너 및 운전자를 위한 서비스 약관."
+        },
+        "title": "서비스 약관",
+        "description": "탑승, 환승, 투어 전반에 걸쳐 Q Pick 서비스 사용을 규제하는 계약입니다.",
+        "body": "이 페이지는 1단계 셸입니다. 전체 약관은 승객과 운전자의 의무, 취소, 책임 한도, 허용 가능한 사용 및 분쟁 해결을 정의합니다.",
+        "questionsPrefix": "질문:",
+        "supportEmail": "지원@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "페이지를 찾을 수 없습니다",
+      "description": "요청한 경로는 아직 Q Pick 지도의 일부가 아닙니다.",
+      "primaryCta": "집으로 돌아가기",
+      "secondaryCta": "지원",
+      "continue": "또는 {ride}, {airport} 또는 {tours}을(를) 계속 진행하세요.",
+      "links": {
+        "ride": "타고",
+        "airport": "공항",
+        "tours": "투어"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, 확실하게 이동했습니다.",
+        "description": "Sri Lanka 전역의 프리미엄 모빌리티 — 신뢰할 수 있는 단일 플랫폼에서 공항 이동, 시내 택시, 도시 간 이동, 운전사 서비스, 기업 여행 및 개인 여행을 제공합니다."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Sri Lanka의 프리미엄 모빌리티",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Sri Lanka 전역의 프리미엄 이동성 — 신뢰할 수 있는 단일 플랫폼에서 공항 이동, 도시 택시, 도시 간 이동, 운전사 서비스 및 개인 여행을 제공합니다."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "운전사와 함께하는 Sri Lanka 개인 투어 | __QP_브랜드__",
+      "description": "Q Pick와 함께 Sri Lanka를 탐험하세요. 개인 운전기사, 고급 차량, 맞춤형 여행을 통해 문화 유적지, 언덕, 해변, 야생동물을 둘러보세요.",
+      "ogTitle": "Q Pick 개인 투어로 Sri Lanka 탐험하기",
+      "twitterTitle": "개인 Sri Lanka 투어 | __QP_브랜드__",
+      "twitterDescription": "개인 운전사와 고급 차량을 이용해 맞춤형 섬 여행을 즐겨보세요."
+    },
+    "hero": {
+      "eyebrow": "Q Pick 개인 투어",
+      "headline": "Q Pick로 Sri Lanka 탐색",
+      "subtitle": "개인 운전기사, 프리미엄 차량, 맞춤형 경험을 통해 잊지 못할 여행을 즐겨보세요.",
+      "primaryCta": "컬렉션 탐색",
+      "secondaryCta": "내 투어 계획"
+    },
+    "finalCta": {
+      "headline": "귀하의 Sri Lanka 여정은 여기에서 시작됩니다",
+      "body": "날짜와 목적지를 공유해 주세요. 개인 운전기사 일정을 짜고 서면 견적을 확정해 드립니다.",
+      "ctaLabel": "나의 여행을 계획하세요",
+      "secondaryLabel": "여행 전문가와 상담하세요"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "개인 운전사",
+        "description": "사원 예절, 고지대 도로, 조용한 공항 도착을 아는 면허를 소지한 운전자입니다."
+      },
+      "airport": {
+        "title": "공항 픽업",
+        "description": "Bandaranaike International (CMB)에서 항공편 시간에 맞춰 만나서 인사합니다."
+      },
+      "support": {
+        "title": "연중무휴 지원",
+        "description": "출발 전과 이동 중에 실제 Q Pick 데스크 — 밤낮으로 WhatsApp 및 전화."
+      },
+      "vehicles": {
+        "title": "고급 차량",
+        "description": "세단, SUV, 밴 및 코치 - 전용 객실, 에어컨, 수하물 보관 가능."
+      },
+      "pricing": {
+        "title": "투명한 가격",
+        "description": "검토 후 작성된 인용문 — 허위로 만든 웹사이트 가격이나 길가에서 예상치 못한 놀라움은 없습니다."
+      },
+      "personal": {
+        "title": "맞춤형 투어",
+        "description": "목적지, 요일, 속도, 차량 등급 등 모든 패키지를 편집할 수 있습니다."
+      },
+      "rating": {
+        "title": "4.9 고객 평가",
+        "description": "운전사 관리, 속도 및 의사소통에 대해 개인 여행 손님이 지속적으로 평가했습니다."
+      },
+      "licensed": {
+        "title": "허가받은 운영자",
+        "description": "Quick Pick App (Pvt) Ltd — 검증된 운전사와 보험 차량을 보유한 Sri Lankan 운영자로 등록되었습니다."
+      },
+      "secure": {
+        "title": "안전한 예약",
+        "description": "여행 전 서면 견적, 확정된 일정, 투명한 포함 사항을 제공합니다."
+      }
+    },
+    "explorer": {
+      "eyebrow": "엄선된 컬렉션",
+      "title": "여행을 선택하세요",
+      "subtitle": "여행 스타일별로 구성된 프리미엄 프라이빗 투어 — 여기에서 카테고리를 열어 스토리, 추천 여행 일정, 여행 세부 정보를 바로 살펴보세요.",
+      "searchPlaceholder": "목적지, 체험, 투어 이름을 검색하세요…",
+      "clearSearch": "검색 지우기",
+      "categoriesAria": "투어 카테고리",
+      "mapSelection": "지도 선택",
+      "multiDay": "수일간의 여행",
+      "premiumNorthern": "프리미엄 프라이빗 투어",
+      "sortAria": "투어 패키지 정렬",
+      "filterAria": "투어 패키지 필터링",
+      "allCategoriesTitle": "모든 카테고리",
+      "allCategoriesIntro": "게시된 모든 개인 투어를 찾아보세요. 전체 Q Pick 컬렉션을 재설정하고 탐색해 보세요.",
+      "viewAllCategories": "모든 카테고리 보기",
+      "destinationExperiences": "목적지 경험",
+      "destinationExperiencesSub": "카드의 라벨뿐만 아니라 실제 장소, 계절, 사진 촬영 창도 가능합니다.",
+      "vehiclesTitle": "프라이빗하게 편안하게 여행하세요",
+      "vehiclesSub": "세단에서 미니 코치까지 — 에어컨, 수하물 공간, 도로 충전.",
+      "trustTitle": "Q Pick와 함께 여행해야 하는 이유",
+      "reviewsEmptyTitle": "게스트 스토리가 곧 공개됩니다",
+      "reviewsEmptyBody": "고객이 여행을 공유하면 검증된 프라이빗 투어 리뷰가 여기에 표시됩니다.",
+      "faqEyebrow": "자주 묻는 질문",
+      "faqLead": "Q Pick와 함께 여행을 계획하기 전에 알아야 할 모든 것.",
+      "noResults": "검색어와 일치하는 투어가 없습니다. 다른 키워드를 사용하거나 필터를 재설정하세요.",
+      "noToursTitle": "검색과 일치하는 투어가 없습니다.",
+      "noToursBody": "다른 키워드를 사용하거나 필터를 재설정하여 전체 컬렉션을 찾아보세요.",
+      "planCustomTour": "맞춤형 투어 계획",
+      "resetFilters": "필터 재설정",
+      "sortBy": "정렬 기준",
+      "mapJourneysThrough": "{name}을 통한 여행",
+      "itineraryOne": "여정",
+      "itineraryMany": "여행 일정",
+      "matchingQuery": "\"{query}\"과 일치",
+      "northernPeninsula": "북부 반도",
+      "premiumJaffna": "프리미엄 자프나 체험",
+      "premiumJaffnaSub": "{count} {experiences} — 유서 깊은 도시 산책, 섬 페리, 개인 운전기사 지원이 포함된 신성한 보트 여행.",
+      "experienceOne": "경험",
+      "experienceMany": "경험",
+      "reviewsEmptyDisclaimer": "검증된 고객 리뷰는 여행이 게시된 후에 표시됩니다. 우리는 허위 추천서, 평가 또는 수상 내역을 표시하지 않습니다.",
+      "trustBeforeTestimonials": "평가보다 신뢰",
+      "faqTitle": "FAQ",
+      "defaultImageAlt": "경치 좋은 Sri Lanka 고원 여행",
+      "openCategory": "{title} 열기",
+      "countItineraries": "{count} 일정",
+      "countPackages": "{count} 패키지",
+      "countPackage": "{count} 패키지",
+      "cmbService": "CMB 서비스",
+      "packagesFound": "{count} 패키지",
+      "dayTour": "당일 투어",
+      "daysTour": "{count}일",
+      "fromPrice": "요청 시 가격",
+      "viewDetails": "세부정보 보기",
+      "bookTour": "이 투어를 예약하세요",
+      "idealFor": "{value}에 적합",
+      "premiumNorthernHeading": "북부 Sri Lanka",
+      "premiumNorthernSub": "유서 깊은 사원, 외딴 섬, 자프나의 문화적 깊이 - 헌신적인 운전사와 함께하는 세 가지 프리미엄 여행."
+    },
+    "filters": {
+      "all": "모두",
+      "classic": "클래식",
+      "luxury": "럭셔리",
+      "wildlife": "야생동물",
+      "adventure": "모험",
+      "beach": "해변",
+      "honeymoon": "허니문",
+      "wellness": "웰빙",
+      "family": "가족",
+      "day-tours": "당일 투어"
+    },
+    "sort": {
+      "featured": "추천",
+      "newest": "최신",
+      "duration": "기간",
+      "popular": "인기"
+    },
+    "badges": {
+      "best-seller": "베스트셀러",
+      "luxury": "럭셔리",
+      "new": "새로운",
+      "family-friendly": "가족 친화적",
+      "eco": "에코",
+      "adventure": "모험"
+    },
+    "breadcrumbs": {
+      "home": "홈",
+      "tours": "투어"
+    },
+    "jsonLd": {
+      "touristType": "레저 여행자"
+    },
+    "reviewsMeta": {
+      "title": "고객 리뷰",
+      "emptyTitle": "길에서 들려오는 이야기",
+      "emptyBody": "검증된 고객 리뷰는 여행이 게시된 후에 표시됩니다. 우리는 허위 추천서, 평가 또는 수상 내역을 표시하지 않습니다."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4일 엘라 기차 탈출",
+        "idealFor": "시간이 제한된 철도 애호가",
+        "intro": "차 계곡을 통과하는 경치 좋은 철도. 이 4일간의 개인 운전기사 여행은 제한된 시간 동안 철도 애호가인 Kandy, Nuwara Eliya, Ella를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "열차 구간",
+          "나인 아치",
+          "차 중지"
+        ],
+        "itinerary": [
+          {
+            "title": "캔디를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          },
+          {
+            "title": "누와라엘리야를 발견해보세요",
+            "description": "전담 운전사와 함께 누와라엘리야를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "엘라를 만나보세요",
+            "description": "전담 운전사와 함께 Ella를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5일 미리사 고래 해안",
+        "idealFor": "해양 야생 동물 애호가",
+        "intro": "고래 시즌과 요새 유산. 이 5일간의 개인 운전사 여행은 해양 야생동물 애호가인 갈레(Galle), 미리사(Mirissa), 벤토타(Bentota)를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "미리사 해안",
+          "고래 관찰",
+          "갈레 요새"
+        ],
+        "itinerary": [
+          {
+            "title": "갈레를 발견해보세요",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "미리사를 만나보세요",
+            "description": "전담 운전사와 함께 미리사를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "벤토타를 만나보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 Bentota를 탐험해보세요."
+          },
+          {
+            "title": "여유로운 벤토타",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 Bentota를 탐험해보세요."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 데이즈 럭셔리 허니문 코스트",
+        "idealFor": "해안 신혼여행객",
+        "intro": "포트 로맨스와 오션 빌라. 이 6일간의 개인 운전기사 여행은 해안 신혼여행객인 콜롬보, 갈레, 벤토타, 미리사를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "갈레 요새",
+          "벤토타",
+          "미리사의 일몰"
+        ],
+        "itinerary": [
+          {
+            "title": "콜롬보를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 콜롬보를 탐험해보세요."
+          },
+          {
+            "title": "갈레를 발견해보세요",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "벤토타를 만나보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 Bentota를 탐험해보세요."
+          },
+          {
+            "title": "미리사를 만나보세요",
+            "description": "전담 운전사와 함께 미리사를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 미리사",
+            "description": "전담 운전사와 함께 미리사를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6일 순례 트라이앵글",
+        "idealFor": "신앙이 이끄는 단체 여행",
+        "intro": "섬 전역의 신성한 장소. 이 6일간의 개인 운전기사 여행은 Kandy, Anuradhapura, Dambulla, Polonnaruwa를 방문하며 신앙이 이끄는 단체 여행입니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "치아의 사원",
+          "아누라다푸라",
+          "담불라 동굴"
+        ],
+        "itinerary": [
+          {
+            "title": "캔디를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          },
+          {
+            "title": "아누라다푸라를 발견해보세요",
+            "description": "전담 운전사와 함께 아누라다푸라를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "담불라를 발견해보세요",
+            "description": "전담 운전사와 함께 담불라를 탐험해보세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "폴로나루와를 발견해보세요",
+            "description": "전담 운전사와 함께 폴로나루와를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여가 시간에 폴로나루와",
+            "description": "전담 운전사와 함께 폴로나루와를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8일 축제 문화 & 캔디",
+        "idealFor": "축제 시즌 방문객",
+        "intro": "페라헤라의 유산과 타이밍. 이 8일간의 개인 운전기사 여행은 축제 시즌 방문객인 콜롬보, 캔디, 담불라, 시기리야, 니곰보를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "캔디 축제",
+          "사원 방문",
+          "삼각형 아이콘"
+        ],
+        "itinerary": [
+          {
+            "title": "콜롬보를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 콜롬보를 탐험해보세요."
+          },
+          {
+            "title": "캔디를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          },
+          {
+            "title": "담불라를 발견해보세요",
+            "description": "전담 운전사와 함께 담불라를 탐험해보세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "시기리야를 발견해보세요",
+            "description": "전담 운전사와 함께 시기리야를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "니곰보를 발견해보세요",
+            "description": "전담 운전사와 함께 니곰보를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 니곰보",
+            "description": "전담 운전사와 함께 니곰보를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 니곰보",
+            "description": "전담 운전사와 함께 니곰보를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9일 허니문 파라다이스",
+        "idealFor": "신혼부부와 낭만적인 탈출",
+        "intro": "안개와 바다를 통해 친밀한 속도로 이동합니다. 이 9일간의 개인 운전기사 여행은 신혼 부부와 낭만적인 휴가를 위해 네곰보, 캔디, 누와라엘리야, 엘라, 벤토타, 갈레를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "차 나라",
+          "엘라 로맨스",
+          "해안의 일몰"
+        ],
+        "itinerary": [
+          {
+            "title": "니곰보를 발견해보세요",
+            "description": "전담 운전사와 함께 니곰보를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "캔디를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          },
+          {
+            "title": "누와라엘리야를 발견해보세요",
+            "description": "전담 운전사와 함께 누와라엘리야를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "엘라를 만나보세요",
+            "description": "전담 운전사와 함께 Ella를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "벤토타를 만나보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 Bentota를 탐험해보세요."
+          },
+          {
+            "title": "갈레를 발견해보세요",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10일 아유르베다 웰니스 여행",
+        "idealFor": "웰빙에 중점을 둔 여행자",
+        "intro": "개인적인 여행으로 짜여진 회복 장. 이 10일간의 개인 운전사 여행은 웰니스에 중점을 둔 여행자인 Negombo, Kandy, Bentota, Mirissa, Galle를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "웰빙 속도",
+          "해안의 평온함",
+          "템플 밸런스"
+        ],
+        "itinerary": [
+          {
+            "title": "니곰보를 발견해보세요",
+            "description": "전담 운전사와 함께 니곰보를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "캔디를 발견해보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          },
+          {
+            "title": "벤토타를 만나보세요",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 Bentota를 탐험해보세요."
+          },
+          {
+            "title": "미리사를 만나보세요",
+            "description": "전담 운전사와 함께 미리사를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "갈레를 발견해보세요",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "여유로운 갈레",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          },
+          {
+            "title": "출발 및 이후",
+            "description": "콜롬보 또는 Bandaranaike International 공항으로 개인 이동하거나 Q Pick를 통해 맞춤 경로를 계속하세요."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "콜롬보 수도 발견의 날",
+        "idealFor": "체류 손님 및 도시 애호가",
+        "intro": "콜롬보의 스카이라인, 식민지 시대의 거리, 갈레 페이스의 일몰. 이 1일 개인 운전사 여행은 경유 손님과 도시 애호가인 콜롬보를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "로터스 타워 전망대",
+          "갈레 페이스 그린",
+          "콜롬보 식당 정류장"
+        ],
+        "itinerary": [
+          {
+            "title": "콜롬보 발견",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 콜롬보를 탐험해보세요."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "갈레 요새 문화유산의 날",
+        "idealFor": "남부 해안의 역사 애호가",
+        "intro": "네덜란드 성벽과 인도양의 빛. 이 1일 개인 운전사 여행은 남부 해안의 역사 애호가인 갈레를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "갈레 포트 등대",
+          "성벽 산책",
+          "부티크 거리"
+        ],
+        "itinerary": [
+          {
+            "title": "갈레 발견",
+            "description": "전담 운전사와 함께 갈레를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "시기리야 바위 일출의 날",
+        "idealFor": "일찍 일어나는 사람과 사진 촬영 손님",
+        "intro": "첫 번째 빛에 사자 바위입니다. 이 1일 개인 운전사 여행은 일찍 일어나서 사진을 찍는 손님들인 시기리야를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "시기리야 정상회담",
+          "물의 정원",
+          "프레스코 갤러리"
+        ],
+        "itinerary": [
+          {
+            "title": "시기리야 발견",
+            "description": "전담 운전사와 함께 시기리야를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "캔디 신성한 도시의 날",
+        "idealFor": "영적 여행자와 가족",
+        "intro": "불치사(Temple of the Tooth)와 고요한 호수. 이 1일 개인 운전사 여행은 영적 여행자이자 가족인 캔디를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "치아의 사원",
+          "캔디 호수",
+          "페라데니야 옵션"
+        ],
+        "itinerary": [
+          {
+            "title": "캔디 발견",
+            "description": "날씨, 티켓, 속도에 따라 시간이 조정되는 전담 운전사와 함께 캔디를 탐험해보세요."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "엘라 하이랜드 뷰 데이",
+        "idealFor": "열차 정차 및 능선 산책",
+        "intro": "9개의 아치와 안개 낀 계곡. 이 1일 개인 운전기사 여행은 기차 정류장과 능선 산책자 등 Ella를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "나인 아치 브리지",
+          "리틀 아담스 피크",
+          "티밸리 카페"
+        ],
+        "itinerary": [
+          {
+            "title": "엘라 발견",
+            "description": "전담 운전사와 함께 Ella를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "얄라 야생동물 사파리 데이",
+        "idealFor": "일정이 빡빡한 사파리 매니아",
+        "intro": "새벽의 표범국. 이 1일 개인 운전기사 여행은 빡빡한 일정으로 사파리를 좋아하는 얄라(Yala)를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "지프 사파리 창",
+          "건조지대 석호",
+          "조류"
+        ],
+        "itinerary": [
+          {
+            "title": "얄라 발견",
+            "description": "전담 운전사와 함께 Yala를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "아누라다푸라 신성한 길의 날",
+        "idealFor": "불교유산 순례자",
+        "intro": "고대 사리탑과 보리수 전통. 이 1일 개인 운전기사 여행은 불교 유적지 순례자인 아누라다푸라를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "루완웰리사야",
+          "신성한 보리수",
+          "수도원 유적"
+        ],
+        "itinerary": [
+          {
+            "title": "아누라다푸라 발견",
+            "description": "전담 운전사와 함께 아누라다푸라를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "미리사 남부 해안의 날",
+        "idealFor": "고래 시즌 방문객",
+        "intro": "코코넛 코브와 바다 지평선. 이 1일 개인 운전사 여행은 고래 시즌 방문객인 미리사를 방문합니다. 귀하가 사원, 전망대, 야생 동물 창 및 여유로운 해안 오후에 집중하는 동안 귀하의 전담 운전자가 도로를 관리합니다. 모든 Q Pick 투어는 날짜, 선호하는 차량 및 속도를 서면으로 검토한 후 개선됩니다.",
+        "highlights": [
+          "미리사 비치",
+          "코코넛힐",
+          "고래 관찰 시즌"
+        ],
+        "itinerary": [
+          {
+            "title": "미리사 발견",
+            "description": "전담 운전사와 함께 미리사를 탐험하세요. 날씨, 티켓, 속도에 따라 시간이 조정됩니다."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "자프나 문화유산 시티 투어",
+        "idealFor": "북부를 탐험하는 유산 여행자",
+        "intro": "집중적인 4시간 개인 투어를 통해 자프나의 타밀 유산을 발견해보세요. 귀하의 운전사가 Nallur Kovil의 gopuram에서 Jaffna Fort 성벽, 역사적인 공공 도서관, 다채로운 지역 시장 정류장 및 고전적인 Rio Ice Cream 마무리까지 안내합니다.",
+        "highlights": [
+          "날루르 사원",
+          "자프나 요새",
+          "공공 도서관",
+          "현지 시장",
+          "리오 아이스크림"
+        ],
+        "itinerary": [
+          {
+            "title": "자프나 헤리티지 서킷",
+            "description": "날루르 사원(Nallur Temple), 자프나 요새(Jaffna Fort), 공공 도서관, 시장 탐방, 리오 아이스크림 등이 영업 시간과 관심 분야에 맞춰 진행됩니다."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "델프트 아일랜드 어드벤처",
+        "idealFor": "섬 탐험가와 사진작가",
+        "intro": "하루 종일 모험을 즐기려면 페리를 타고 외딴 델프트 섬으로 건너가세요. 산호 해변을 걷고, 유명한 바오밥 나무와 퀸스 타워 유적을 찾아보고, 탁 트인 평원에서 야생마를 관찰하고, 본토 교통편을 담당하는 개인 운전사와 함께 돌아오세요.",
+        "highlights": [
+          "페리 탑승",
+          "야생마",
+          "바오밥나무",
+          "퀸스 타워",
+          "코럴 비치"
+        ],
+        "itinerary": [
+          {
+            "title": "델프트 섬 탐험",
+            "description": "페리 횡단, 야생마 평원, 바오밥나무, 퀸스 타워, 산호 해변 시간 - 개인 차량으로 본토 이동 가능."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Nainativu 신성한 섬 투어",
+        "idealFor": "순례자와 문화 여행자",
+        "intro": "6시간 동안 신성한 섬 여행을 위해 Nainativu로 항해하세요. 나가디파 사원(Nagadeepa Temple)과 나가푸샤니 암만 코빌(Nagapooshani Amman Kovil)을 방문하고, 보트 횡단을 경험하고, 해안에서 개인 운전사의 지원을 받으며 Sri Lanka 북쪽 섬의 혼합된 불교와 힌두교 유산을 흡수해 보세요.",
+        "highlights": [
+          "나가디파 사원",
+          "나가푸샤니 암만 사원",
+          "보트 타기",
+          "문화체험",
+          "시기리야 바위 요새(Sigiriya Rock Fortress)는 더 시원한 빛을 받을 시간에 맞춰졌습니다.",
+          "담불라 석굴사원 벽화",
+          "아누라다푸라 또는 폴로나루와 성지",
+          "개인 문화 삼각 운전사",
+          "캔디의 불치사",
+          "누와라 엘리야 주변의 차 농장",
+          "엘라의 나인 아치 브리지",
+          "선택적 관광열차 구간",
+          "문화 삼각형 아이콘",
+          "캔디와 하이랜드 차 나라",
+          "엘라의 아름다운 랜드마크",
+          "Galle 또는 Mirissa의 남부 해안",
+          "문화삼각지에서의 유산 워밍업",
+          "하이랜드 티 컨트리 & 엘라",
+          "얄라 표범 사파리 창",
+          "남부해안 복구일",
+          "전체 문화 삼각지대 깊이",
+          "언덕 지방과 남부 사파리",
+          "서부 및 동부 해안 옵션",
+          "가족을 위한 속도",
+          "전체 섬 시즌별 노선",
+          "깊은 유산과 야생동물의 시간",
+          "동해안과 서해안 해변",
+          "최고의 개인 운전기사 속도"
+        ],
+        "itinerary": [
+          {
+            "title": "나이나티부 신성한 서킷",
+            "description": "나이나티부(Nainativu), 나가디파 사원(Nagadeepa Temple), 나가푸샤니 암만 사원(Nagapooshani Amman Temple)으로 보트를 타고 이동한 후 섬에서 문화 시간을 보내세요."
+          },
+          {
+            "title": "트라이앵글 도착 복도",
+            "description": "CMB 또는 Negombo 근처에서 운전사를 만나 내륙으로 여행하세요. Sigiriya 또는 Dambulla 근처에 정착하십시오. 저녁 여유롭게."
+          },
+          {
+            "title": "시기리야 & 담불라",
+            "description": "부드러운 빛 속에서 시기리야(Sigiriya)에 올라 담불라 동굴사원(Dambulla Cave Temple)을 탐험해보세요. 요청 시 근처에서 계절별 사파리를 선택적으로 즐기실 수 있습니다."
+          },
+          {
+            "title": "고대 도시 및 그 이후",
+            "description": "콜롬보/네곰보로 돌아가거나 맞춤 경로를 계속하기 전에 아누라다푸라 또는 폴로나루와를 방문하세요."
+          },
+          {
+            "title": "캔디에게",
+            "description": "내륙 경로를 통해 캔디로 운전하세요. 저녁 호수 순환로와 불치사(Temple of the Tooth)는 의식에 맞춰 진행됩니다."
+          },
+          {
+            "title": "캔디 유산",
+            "description": "페라데니야 식물원(Peradeniya Botanical Garden), 공예 거리, 시장이나 문화 공연을 위한 자유 시간."
+          },
+          {
+            "title": "차 나라",
+            "description": "누와라엘리야로 올라가 농장 방문, 그레고리 호수, 시원한 기후에서 즐기는 여가 활동을 즐겨보세요."
+          },
+          {
+            "title": "엘라 관점",
+            "description": "나인 아치 브리지(Nine Arches Bridge), 능선 산책로, 하이랜드 카페를 보려면 엘라(Ella)로 계속 가세요. 선택적 열차 구간."
+          },
+          {
+            "title": "하강 또는 해안 링크",
+            "description": "짐을 육로로 처리한 후 콜롬보, 남부 해안 또는 다음 맞춤 목적지로 출발하세요."
+          },
+          {
+            "title": "도착",
+            "description": "공항에서 만나 콜롬보 또는 니곰보로 이동합니다. 운전사와 브리핑을 합니다."
+          },
+          {
+            "title": "문화삼각지",
+            "description": "요새나 동굴 사원 시간을 위해 시기리야/담불라로 여행하세요."
+          },
+          {
+            "title": "캔디의 유산",
+            "description": "Triangle 하이라이트를 완료한 다음 Kandy로 계속 진행하세요."
+          },
+          {
+            "title": "고원",
+            "description": "누와라엘리야(Nuwara Eliya) 또는 엘라(Ella)를 향해 차밭으로 경치 좋은 드라이브를 해보세요."
+          },
+          {
+            "title": "엘라",
+            "description": "나인 아치 브리지(Nine Arches Bridge), 전망대 및 카페 레저."
+          },
+          {
+            "title": "남부 해안",
+            "description": "갈레 포트(Galle Fort)와 미리사(Mirissa)로 내려가 일몰과 해변 식사를 즐겨보세요."
+          },
+          {
+            "title": "출발",
+            "description": "해변의 아침 여가 시간 및 CMB 또는 콜롬보로의 개인 이동."
+          },
+          {
+            "title": "도착",
+            "description": "CMB 만나고 도시 또는 Negombo가 정착합니다."
+          },
+          {
+            "title": "시기리야 지역",
+            "description": "바위 요새와 트라이앵글 침수."
+          },
+          {
+            "title": "캔디",
+            "description": "불치사(Temple of the Tooth)와 고지대로 접근합니다."
+          },
+          {
+            "title": "차 나라",
+            "description": "누와라엘리야 농장과 시원한 기후."
+          },
+          {
+            "title": "엘라",
+            "description": "나인 아치(Nine Arches)와 능선 산책."
+          },
+          {
+            "title": "얄라 방향",
+            "description": "남동쪽 야생 동물 벨트로 내려가는 경치 좋은 곳입니다."
+          },
+          {
+            "title": "사파리 데이",
+            "description": "얄라 국립공원 지프 사파리(공원 요금 별도)."
+          },
+          {
+            "title": "남부 해변",
+            "description": "미리사 코코넛 나무 언덕과 해안 가동 중단 시간."
+          },
+          {
+            "title": "갈레 요새",
+            "description": "성벽, 등대 및 부티크 탐험."
+          },
+          {
+            "title": "출발",
+            "description": "CMB 또는 콜롬보로 개인 이동."
+          },
+          {
+            "title": "니곰보 도착",
+            "description": "CMB 픽업 및 서해안 정착."
+          },
+          {
+            "title": "아누라다푸라",
+            "description": "신성한 도시 사리탑과 고고학 공원."
+          },
+          {
+            "title": "시기리야",
+            "description": "바위 요새와 삼각 기지."
+          },
+          {
+            "title": "폴로나루와",
+            "description": "중세 수도이자 선택적 코끼리 공원입니다."
+          },
+          {
+            "title": "담불라-캔디",
+            "description": "동굴 사원과 고원 수도."
+          },
+          {
+            "title": "캔디",
+            "description": "불치사(Temple of the Tooth)와 정원."
+          },
+          {
+            "title": "누와라 엘리야",
+            "description": "차밭과 시원한 기후."
+          },
+          {
+            "title": "엘라",
+            "description": "9개의 아치와 전망대."
+          },
+          {
+            "title": "얄라 접근법",
+            "description": "남동부 야생동물 벨트 이동."
+          },
+          {
+            "title": "사파리",
+            "description": "얄라 국립공원 지프 데이."
+          },
+          {
+            "title": "미리사",
+            "description": "남부 해변 회복의 날."
+          },
+          {
+            "title": "갈레",
+            "description": "요새 유산과 해안."
+          },
+          {
+            "title": "동쪽 또는 남서쪽",
+            "description": "트링코말리 시즌 옵션 또는 벤토타 버퍼."
+          },
+          {
+            "title": "콜롬보 출발",
+            "description": "도시 버퍼 및 CMB 환승."
+          },
+          {
+            "title": "도착",
+            "description": "CMB를 네곰보 또는 콜롬보로."
+          },
+          {
+            "title": "서해안 완충대",
+            "description": "석호 또는 도시 레저."
+          },
+          {
+            "title": "아누라다푸라",
+            "description": "신성한 도시 몰입."
+          },
+          {
+            "title": "북서쪽 옵션",
+            "description": "선택적인 야생동물 또는 휴식일."
+          },
+          {
+            "title": "시기리야",
+            "description": "바위 요새 초점."
+          },
+          {
+            "title": "폴로나루와",
+            "description": "중세 유적과 호수."
+          },
+          {
+            "title": "담불라",
+            "description": "동굴 사원과 마을 문화."
+          },
+          {
+            "title": "캔디",
+            "description": "치아의 사원."
+          },
+          {
+            "title": "캔디 레저",
+            "description": "정원과 공예품."
+          },
+          {
+            "title": "누와라 엘리야",
+            "description": "차 나라."
+          },
+          {
+            "title": "부동산",
+            "description": "선택적인 고원 또는 농장일."
+          },
+          {
+            "title": "엘라",
+            "description": "9개의 아치와 능선."
+          },
+          {
+            "title": "엘라 레저",
+            "description": "카페와 짧은 산책."
+          },
+          {
+            "title": "얄라",
+            "description": "야생동물 접근."
+          },
+          {
+            "title": "사파리",
+            "description": "파크 지프 데이."
+          },
+          {
+            "title": "미리사",
+            "description": "남쪽 바다."
+          },
+          {
+            "title": "갈레",
+            "description": "요새 유산과 해안."
+          },
+          {
+            "title": "벤토타",
+            "description": "사우스웨스트 리조트 페이스."
+          },
+          {
+            "title": "동해안",
+            "description": "계절에 따라 트링코말리 또는 아루감 베이."
+          },
+          {
+            "title": "이스트 레저",
+            "description": "해변과 물놀이 시간."
+          },
+          {
+            "title": "귀국 및 출발",
+            "description": "CMB로 섬 간 이동."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Q Pick 투어 패키지를 맞춤 설정할 수 있나요?",
+        "answer": "그렇습니다. 게시된 패키지는 시작점입니다. 플래너에서 목적지, 요일, 차량, 선호 사항을 선택하세요. 요청을 제출하시면 저희 데스크에서 경로를 구체화해 드립니다."
+      },
+      "hub-price": {
+        "question": "가격 책정은 어떻게 이루어지나요?",
+        "answer": "귀하의 여정이 검토될 때까지 요청 시 이용 가능한 가격이 표시됩니다. 투어 요청을 제출하면 Q Pick에서 서면으로 작성된 개인 운전기사 견적을 확인합니다. 입장료, 사파리 지프비, 숙박비, 식사비는 서면으로 명시하지 않는 한 일반적으로 별도입니다."
+      },
+      "hub-airport": {
+        "question": "투어와 함께 공항 픽업을 제공하나요?",
+        "answer": "그렇습니다. Bandaranaike International (CMB) 픽업 및 하차는 투어 또는 전용 공항 교통편 서비스를 통해 예약될 수 있습니다."
+      },
+      "hub-group": {
+        "question": "어떤 차량을 선택해야 할까요?",
+        "answer": "세단은 커플에게 적합합니다. SUV와 밴은 가족에게 적합합니다. 고급 밴과 미니 코치는 더 큰 규모의 그룹에게 서비스를 제공합니다. 플래너에서 용량을 선택하세요. 수하물과 경로를 검토한 후 최종 차량을 확정합니다."
+      },
+      "hub-payment": {
+        "question": "결제 및 확인은 어떻게 이루어지나요?",
+        "answer": "온라인으로 투어 요청을 제출하세요. 우리 팀은 가용성을 검토하고 개요와 견적을 확인한 후 지불 및 운전사 배정에 대한 다음 단계를 공유합니다. 추적을 위한 참조 코드를 받습니다."
+      },
+      "pkg-3d-pace": {
+        "question": "문화삼각지대는 3일이면 충분합니까?",
+        "answer": "3일 동안 시기리야, 담불라, 아누라다푸라 또는 폴로나루와를 차분한 개인 속도로 여행할 수 있습니다. 장기 체류에는 Mihintale, 사파리 추가 기능 또는 Kandy 확장이 허용됩니다."
+      },
+      "pkg-5d-train": {
+        "question": "Ella 열차를 포함할 수 있나요?",
+        "answer": "그렇습니다. 운전사가 짐을 도로로 옮기는 동안 많은 손님들이 경치 좋은 철도 구간을 이용합니다. 견적을 요청할 때 선호하는 사항을 알려주십시오."
+      },
+      "pkg-5d-weather": {
+        "question": "산간 지방의 날씨는 어떻습니까?",
+        "answer": "누와라엘리야(Nuwara Eliya)와 엘라(Ella)는 해안보다 시원하며, 아침에는 안개가 짙고 약간의 비가 내릴 수 있습니다. 팩 레이어; 귀하의 개인 차량은 시점 간 이동을 편안하게 유지합니다."
+      },
+      "pkg-7d-fitness": {
+        "question": "7일간의 투어에는 얼마나 많은 걷기가 포함되나요?",
+        "answer": "시기리야와 사원 방문에는 단계가 포함됩니다. Ella는 선택적으로 짧은 산책을 제공합니다. 운전기사가 하루 중 시간을 정하므로 하이라이트를 잃지 않고 힘든 구간을 단축할 수 있습니다."
+      },
+      "pkg-10d-safari": {
+        "question": "야생동물 모험에 얄라 사파리가 포함되어 있나요?",
+        "answer": "사파리 지프 대여 및 공원 입장은 명확한 시간에 추가 기능으로 제공됩니다. 야생동물 관찰은 결코 보장되지 않습니다. 귀하가 요청한 후 가장 좋은 계절 기간을 계획합니다."
+      },
+      "pkg-14d-pace": {
+        "question": "14일은 운전을 너무 많이 한 걸까요?",
+        "answer": "개인 운전사와 일정 간격의 야간 정차가 있어 일상적인 운전을 관리하기 쉽습니다. 우리는 여행 일정이 서두르지 않고 몰입감을 느낄 수 있도록 해변에서 휴식을 취하는 날을 설계합니다."
+      },
+      "pkg-21d-season": {
+        "question": "그랜드 아일랜드 투어에 가장 좋은 계절은 언제인가요?",
+        "answer": "서부 및 남부 해안은 12월~3월에 유리합니다. 동쪽은 종종 5~9월에 빛납니다. 21일 계획은 건조한 해안을 따라갈 수 있습니다. 여행 월을 기준으로 조언해 드립니다."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "1단계",
+        "title": "어디로 가고 싶나요?",
+        "subtitle": "목적지를 선택하거나 꿈의 경로를 설명하세요. 세부 사항을 함께 개선해 드립니다."
+      },
+      "dates": {
+        "kicker": "2단계",
+        "title": "여행 날짜 선택",
+        "subtitle": "시작 날짜와 여행 기간을 선택하세요.",
+        "startDate": "시작일",
+        "numberOfDays": "일수",
+        "estimatedEnd": "예상 종료일:"
+      },
+      "vehicle": {
+        "kicker": "3단계",
+        "title": "차량을 선택하세요",
+        "subtitle": "세단에서 밴으로 — 개인용, 에어컨 완비, 수하물 보관 가능."
+      },
+      "accommodation": {
+        "kicker": "4단계",
+        "title": "선호하는 숙박시설",
+        "subtitle": "귀하의 편안함 수준을 알려주십시오. 숙박을 조정하거나 직접 예약하십시오."
+      },
+      "preferences": {
+        "kicker": "5단계",
+        "title": "여행 선호도",
+        "subtitle": "속도, 관심사 및 특별 요청은 귀하의 여행 일정을 구성하는 데 도움이 됩니다."
+      },
+      "contact": {
+        "kicker": "6단계",
+        "title": "귀하의 연락처 정보",
+        "subtitle": "우리는 서면 견적과 세련된 여행 일정으로 응답합니다."
+      },
+      "requests": {
+        "kicker": "7단계",
+        "title": "특별 요청",
+        "subtitle": "식이 요법, 접근성, 축하 행사 등 우리가 알아야 할 모든 것."
+      },
+      "review": {
+        "kicker": "검토",
+        "title": "투어 요청을 검토하세요",
+        "subtitle": "제출하기 전에 세부 사항을 확인하세요. 이 단계에서는 결제가 필요하지 않습니다.",
+        "submit": "투어 요청 제출",
+        "submitting": "제출 중…"
+      }
+    },
+    "common": {
+      "back": "뒤로",
+      "continue": "계속",
+      "optional": "선택사항",
+      "required": "필수"
+    }
+  }
+}

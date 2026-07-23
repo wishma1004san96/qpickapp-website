@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "Siirry pääsisältöön",
+  "header": {
+    "homeAria": "Q Pick kotiin",
+    "primaryNav": "Ensisijainen",
+    "mobileNav": "Mobiilinavigointi",
+    "mobilePrimary": "Mobiili ensisijainen",
+    "openMenu": "Avaa valikko",
+    "closeMenu": "Sulje valikko",
+    "bookNow": "Varaa nyt"
+  },
+  "nav": {
+    "home": "Kotiin",
+    "ride": "Ratsastaa",
+    "airport": "Lentokenttä",
+    "tours": "Matkat",
+    "safety": "Turvallisuus",
+    "drive": "Aja",
+    "partners": "Yhteistyökumppanit",
+    "support": "Tuki"
+  },
+  "language": {
+    "label": "Kieli",
+    "choose": "Valitse kieli"
+  },
+  "footer": {
+    "blurb": "Premium-lentokenttäkuljetukset, kaupunkiajelut, autonkuljettajapalvelu ja yksityiset matkat Sri Lanka.",
+    "call": "Soita nyt",
+    "whatsapp": "WhatsApp",
+    "emailCta": "Lähetä meille sähköpostia",
+    "services": "Palvelut",
+    "company": "Yritys",
+    "downloadApp": "Lataa sovellus",
+    "contact": {
+      "address": "Osoite",
+      "email": "Sähköposti",
+      "phones": "Puhelimet",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "Lentokenttäkuljetukset",
+      "tours": "Yksityiset retket",
+      "chauffeur": "Kuljettajapalvelu",
+      "cityRides": "City Rides",
+      "corporate": "Yritysmatkailu"
+    },
+    "companyLinks": {
+      "about": "Tietoja",
+      "drive": "Ryhdy Kuljettajaksi",
+      "partners": "Yhteistyökumppanit",
+      "support": "Tuki",
+      "contact": "Ota yhteyttä"
+    },
+    "legal": {
+      "privacy": "Tietosuojakäytäntö",
+      "terms": "Ehdot",
+      "cookies": "Evästeet"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick esittely",
+    "scroll": "Selaa",
+    "scrollAria": "Vieritä sisältöön",
+    "posterAlt": "Luonnonkaunis ajo sumuisten Sri Lankan metsäteiden läpi",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "Lentokenttäkuljetukset. Kaupunkiajelut. Yksityiset kuljettajat.",
+        "description": "Ensiluokkaista liikkuvuutta kaikkialla Sri Lanka – nouto- ja paluukuljetukset lentokentältä, taksi- ja kaukokuljetukset, autonkuljettajapalvelu, yritysmatkat ja yksityiset matkat yhden luotettavan alustan alla.",
+        "primary": "Kirja Ride",
+        "secondary": "Lentokenttäkuljetus"
+      },
+      {
+        "title": "Lentokenttäkuljetukset",
+        "subtitle": "Saavu ja lähde varmuudella.",
+        "description": "Noudot ja ajoitetut palautukset. Kuljettajasi odottaa ennen kuin laskeudut – ei jonoja, ei epävarmuutta.",
+        "primary": "Lentokenttäkuljetus",
+        "secondary": "Kirja Ride"
+      },
+      {
+        "title": "Kaupunki- ja Intercity-ajelut",
+        "subtitle": "Taksi ja autonkuljettaja, kellossasi.",
+        "description": "Colombon kaduilta rannikon moottoriteille – vahvistetut kuljettajat, läpinäkyvät hinnat ja ylelliset autonkuljettajavaihtoehdot, kun niitä tarvitset.",
+        "primary": "Kirja Ride",
+        "secondary": "Tutustu Toursiin"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "Suunnittele matkasi",
+      "title": "Suunnittele matkasi",
+      "subtitle": "Kerro meille, miten haluat liikkua. Järjestämme loput hiljaisella huolella.",
+      "journeyTypeAria": "Matkan tyyppi",
+      "continue": "Jatka",
+      "scheduleTitle": "Matka-aikataulu",
+      "travelDate": "Matkan päivämäärä",
+      "pickupTime": "Noutoaika",
+      "intents": {
+        "arrive": "Perillä",
+        "stay": "Pysy",
+        "explore": "Tutki"
+      },
+      "arrive": {
+        "fromLabel": "Lentokenttä",
+        "fromDefault": "Colombon lentoasema (CMB)",
+        "toLabel": "Kohde",
+        "toDefault": "Galle Face -hotelli",
+        "recommendation": "Tapaa saapuessa · Hotelli pidetään ajan tasalla · Hinta selvä ennen vahvistamista"
+      },
+      "stay": {
+        "fromLabel": "Nouto",
+        "fromDefault": "Sinun hotellisi",
+        "toLabel": "Kohde",
+        "toDefault": "Gallen linnoitus",
+        "recommendation": "Vahvistettu ohjain · Live-päivitykset, joita voit jakaa · Läpinäkyvä hinnoittelu"
+      },
+      "explore": {
+        "fromLabel": "Nouto",
+        "fromDefault": "Colombo",
+        "toLabel": "Kohde",
+        "toDefault": "Ella ja ylängöt",
+        "recommendation": "Päivävalmis ajoneuvo · Kuljettaja, joka tuntee tiet · Yksi rauhallinen reitti"
+      }
+    },
+    "trust": {
+      "ariaLabel": "Miksi vieraat luottavat Q Pick",
+      "verifiedDrivers": "Vahvistetut ajurit",
+      "pricing": "Läpinäkyvä hinnoittelu",
+      "islandwide": "Koko saaren kattavuus",
+      "support": "24/7 tuki",
+      "trips": "Tuhansia matkoja"
+    }
+  },
+  "experience": {
+    "headingLine1": "Kokemus",
+    "headingLine2": "Q Pick.",
+    "lines": [
+      "Lentokenttäkuljetuksesi.",
+      "Sinun kaupunkimatkasi.",
+      "Sinun Sri Lanka."
+    ],
+    "screenLive": "Q Pick-sovellusnäyttö: {stepLabel}",
+    "previewAria": "Q Pick sovelluksen esikatselu näyttää {stepLabel}",
+    "story": {
+      "planLabel": "Ajon varaus",
+      "vehiclesLabel": "Ajoneuvon valinta",
+      "liveLabel": "Elävä matka",
+      "plan": {
+        "kicker": "Lentokenttä ja kyydit",
+        "title": "Suunnittele matkasi",
+        "destinations": "Kohde",
+        "days": "Matkapäivät",
+        "daysUnit": "päivää",
+        "pickup": "Nouto",
+        "pickupValue": "Bandaranaiken lentokenttä",
+        "hotel": "Hotelli",
+        "hotelValue": "Shangri-La Colombo",
+        "route": "Reitin esikatselu",
+        "stops": "pysähtyy",
+        "cta": "Jatka"
+      },
+      "vehicles": {
+        "route": "Lentokenttä → Sigiriya · Ella · Galle",
+        "title": "Valitse ajoneuvosi",
+        "budgetLabel": "Arvioitu budjetti",
+        "budgetHint": "Ennen kuin vahvistat",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "Premium laivasto",
+    "heading": "Valitse täydellinen kyyti.",
+    "sub": "Tuk-tukeista premium-pakettiautoihin jokainen ajoneuvo on tarkastettu, mukava ja hinnoiteltu läpinäkyvästi.",
+    "phoneAria": "Q Pick ajoneuvoluettelo sovelluksessa"
+  },
+  "insideQPickApp": {
+    "eyebrow": "Sovellus",
+    "heading": "Q Pick-sovelluksen sisällä",
+    "sub": "Varaa lentokenttäkuljetus tai kaupunkimatka, valitse ajoneuvosi selkeällä hinnalla ja seuraa sitten kuljettajaasi livenä – ensiluokkaista liikkuvuutta taskussasi.",
+    "panelAria": "Q Pick-sovellusnäyttö: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "Varaa kyyti",
+        "body": "Nouto lentokentältä, kaupunkitaksi tai kaupunkien välinen kyyti – aseta määränpää ja aika ennen lähtöä."
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "Ajoneuvo ja hinta",
+        "body": "Sedanista premium-pakettiautoon, läpinäkyvä hinta ennen vahvistamista."
+      },
+      "live": {
+        "n": "03",
+        "label": "Live Journey",
+        "body": "Kuljettaja määrätty, reaaliaikainen GPS ja saapumisaika, matka valmis, sitten rauhallinen arviointivirta."
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "MITEN Q PICK TOIMII",
+    "heading": "Rekisteröinnista määränpäähäsi",
+    "sub": "Yksi rauhallinen polku aukiolosta saapumiseen: rekisteröidy, vahvista, varaa lentokenttäkuljetus tai kaupunkimatka ja seuraa sitten kuljettajaasi reaaliajassa.",
+    "stepLabel": "Vaihe {n}",
+    "prevAria": "Edellinen vaihe",
+    "nextAria": "Seuraava askel",
+    "dotsAria": "Matkan vaiheet",
+    "dotAria": "Siirry vaiheeseen {n}",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "Tervetuloa",
+        "body": "Avaa Q Pick-sovellus ja aloita matkasi."
+      },
+      "register": {
+        "n": "02",
+        "title": "Rekisteröidy",
+        "body": "Luo tili matkapuhelinnumerollasi."
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP-vahvistus",
+        "body": "Vahvista matkapuhelinnumerosi turvallisesti."
+      },
+      "journey": {
+        "n": "04",
+        "title": "Valitse Miten liikut",
+        "body": "Varaa lentokenttäkuljetus, kaupunkitaksi, intercity-ajelu tai autonkuljettajapalvelu – yksityisiä retkiä milloin haluat."
+      },
+      "track": {
+        "n": "05",
+        "title": "Seuraa kuljettajaasi",
+        "body": "Katso kuljettajasi saapumista reaaliaikaisen GPS-seurannan ja saapumisajan avulla."
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Q Pick-standardi",
+    "heading": "Yksi matka. Yksi luotettava standardi.",
+    "intro": "Ei markkinapaikka. Ei esite ja WhatsApp lanka. Yksityinen concierge, joka kertoo miten Sri Lanka liikkuu – ensimmäisestä laskeutumisesta viimeiselle rantatielle.",
+    "closingTitle": "Koko matkan ajan – sama rauhallinen varmuus.",
+    "closingBody": "Uber ja PickMe siirtävät sinut kaupungin halki. Matkanjärjestäjät myyvät päivän. Q Pick sisältää koko tarinan: lentokenttä, oleskelu ja saari – yhden luotettavan standardin alaisuudessa.",
+    "cta": "Suunnittele matkasi",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "Perillä",
+        "moment": "Saari alkaa portista.",
+        "scene": "Lentosi laskeutuu. Vahvistettu Q Pick-ajuri odottaa jo – ei kiemurtelu reunakiveyksissä, ei viestiketju. Hotellisi tietää, että olet matkalla, ennen kuin auto lähtee lentokentän tieltä.",
+        "outcome": "Yksi vaihto. Saapumisesta vastaanottoon.",
+        "imageAlt": "Colombon rannikko ja kaupungin valot hämärässä – matka laskeutumisen jälkeen"
+      },
+      "stay": {
+        "n": "02",
+        "title": "Pysy",
+        "moment": "Jokainen liike pysyy hiljaisena ja selkeänä.",
+        "scene": "Rannikkojuoksu, illallisvaraus, aamukokous. Näet hinnan ennen vahvistamista. Ajon aikana tärkeät ihmiset voivat seurata perässä – perhe, isäntä tai huvilan johtaja – soittamatta kahdesti.",
+        "outcome": "Läpinäkyvä hinnoittelu. Live-tila. Ei markkinapaikan melua.",
+        "imageAlt": "Eteläinen Sri Lankan rantaviiva kirkkaalla Intian valtamerellä"
+      },
+      "explore": {
+        "n": "03",
+        "title": "Tutki",
+        "moment": "Saari avautuu ilman kitkaa.",
+        "scene": "Teemaan sumu. Linnoituskaupungit. Päivä, jossa on enemmän kuin yksi pysähdys. Sama luotettava kuljettaja, oikea ajoneuvo edessä oleville teille ja huolella pidetty matkasuunnitelma – joten paikka pysyy asiana, ei logistiikka.",
+        "outcome": "Liikkuvuus ja löytö. Yksi jatkuva standardi.",
+        "imageAlt": "Sigiriyan kalliolinnoitus kohoaa Sri Lankan viidakosta"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lanka:n ensiluokkainen liikkuvuusalusta",
+    "heading": "Sinun matkasi. Sinun säännöt.",
+    "manifesto": "Ensimmäisestä lentokentälle tervetuloa hotellin viimeiseen oveen – jatkuvan liikkuvuuden standardi tavallisia sovelluksia ei koskaan rakennettu kestämään.",
+    "positioningLead": "Tämä ei ole vain toinen taksisovellus.",
+    "positioningRest": "Tämä on Sri Lanka:n ensiluokkainen liikkuvuusalusta.",
+    "trustEyebrow": "Palvelun tarjoaa Quick Pick App (Pvt) Ltd",
+    "trustBody": "Q Pick on ylpeänä kehittänyt ja ylläpitämä Quick Pick App (Pvt) Ltd. Se tarjoaa ensiluokkaisia lentokenttäkuljetuksia, autonkuljettajapalveluita, yksityisiä matkoja ja luotettavia liikkumisratkaisuja kaikkialla Sri Lanka sitoutuen vahvasti laatuun, turvallisuuteen ja poikkeukselliseen asiakaskokemukseen.",
+    "continuumEyebrow": "Matka jatkuu",
+    "continuumBody": "Laajempi vieraanvaraisuusekosysteemi on hiljaa muotoutumassa – sama rauhallinen standardi, laajennettu.",
+    "continuumComingSoon": "Tulossa pian",
+    "continuumItems": [
+      "Ruoan toimitus",
+      "Pakettitoimitus",
+      "Valuutanvaihto",
+      "Paikallisia kokemuksia",
+      "Concierge-palvelut"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "Saapuminen",
+        "title": "Saari alkaa tervetulotoivotuksella.",
+        "scene": "Lentosi laskeutuu. Vahvistettu Q Pick vieraanvaraisuuden ammattilainen odottaa jo – nimitaulu valmiina, matkatavarat kädessä, hotellin reitti vahvistettu. Ei kiemurtelu reunakiveyksissä. Ei markkinatarjous. Yksinkertaisesti hiljainen varmuus siitä, että matkasi Sri Lanka on alkanut huolellisesti.",
+        "details": [
+          "Airport Meet & Greet ammattikuljettajan toimesta – ei koskaan satunnainen kuljettaja",
+          "Hotellikuljetus suunniteltu ennen saapumistasi"
+        ],
+        "whisper": "Yksi vaihto. Portista aulaan.",
+        "kicker": "Luku 01",
+        "mediaTitle": "Rauhallinen tulo",
+        "imageAlt": "Ensiluokkainen lentokentän terminaalikäytävä aamunkoitteessa – rauhallisen saapumisen alku"
+      },
+      "planning": {
+        "n": "02",
+        "label": "Kirjoita",
+        "title": "Liiku haluamallasi tavalla – kaupunki, lentokenttä tai saari.",
+        "scene": "Toisin kuin tavalliset kyytit, Q Pick kattaa lentokenttäkuljetukset, kaupunki- ja kaukokuljetukset, ylelliset kuljettajapalvelut ja yritysmatkat – yksityiset matkat ja päiväretket, kun haluat tutustua. Valitse nouto, kohde, ajoitus ja ajoneuvo. Katso selkeä hinta ennen vahvistamista.",
+        "details": [
+          "Nouto ja palautus lentokentälle lennolle ajoitettuna",
+          "Kaupunkitaksi, intercity-ajelut ja kuljettajamahdollisuudet",
+          "Läpinäkyvä hinta ennen vahvistamista – selkeyttä ilman kiirettä"
+        ],
+        "whisper": "Sinun reittisi. Sinun ajoitus. Sinun hintasi.",
+        "kicker": "Luku 02",
+        "mediaTitle": "Koostettu matka",
+        "imageAlt": "Avoin vuoristomaisema yksityisen Sri Lanka-reitin laatimista varten"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "Yritys",
+        "title": "Ei kuljettajia. Vieraanvaraisuuden ammattilaiset.",
+        "scene": "Jokainen Q Pick-kuljettaja on todennettu vieraanvaraisuuden ammattilainen – koulutettu harkintaan, saariteitä ja hiljaiseen tervetulorituaaliin. Halutessasi voit myös pyytää paikallisen oppaan temppeleistä, teemaasta, villieläimistä tai elävästä perinnöstä – englanniksi, sinhalaksi, tamiliksi tai muilla kielillä, jos saatavilla.",
+        "details": [
+          "Tarkastetut ammattikuljettajat – vieraanvaraisuus ensin, aina",
+          "Valinnaiset monikieliset paikalliset kulttuuri- ja historiaoppaat",
+          "Seuralaiset on valittu luottamuksen vuoksi, ei läheisyyden vuoksi kartalla"
+        ],
+        "whisper": "Erona on se, kuka seisoo ovella.",
+        "kicker": "Luku 03",
+        "mediaTitle": "Hiljainen ammattimainen yritys",
+        "imageAlt": "Ammattiautonkuljettaja tummassa puvussa avaamassa luksusajoneuvon oven"
+      },
+      "explore": {
+        "n": "04",
+        "label": "Löytö",
+        "title": "Missä saaresta tulee tarina.",
+        "scene": "Rannikko tiet. Ylämaan sumu. Perintökaupungit. Kun tutkit, reaaliaikainen matkanhallinta pitää jokaisen siirron selkeänä – ja 24/7-tuki on hiljaa saatavilla, jos päivä vaihtuu. Tavalliset sovellukset loppuvat, kun matka päättyy. Q Pick pysyy matkassa.",
+        "details": [
+          "Reaaliaikainen matkanhallinta koko matkan kaarelle",
+          "Ammattimainen tuki – rauhallinen, tavoitettavissa, häiritsemätön"
+        ],
+        "whisper": "Logistiikka jää näkymättömäksi. Paikka pysyy asiana.",
+        "kicker": "Luku 04",
+        "mediaTitle": "Saari, keskeytyksettä",
+        "imageAlt": "Kultaisen tunnin ilmakuva Sigiriyasta kohoamassa Sri Lankan viidakon yläpuolelle"
+      },
+      "complete": {
+        "n": "05",
+        "label": "Palaa",
+        "title": "Sama rauhallinen varmuus viimeiseen oveseen asti.",
+        "scene": "Viimeinen hotellipudotus sulkee silmukan – koordinoidaan sovelluksesta, ajoitetaan aulaasi ja toimitetaan samalla vieraanvaraisuudella kuin lentokentällä. Yksi jatkuva standardi. Ensimmäisestä tervetulotoivotuksesta viimeisiin näkemiin – jotain tavallista kyytiä ei voi kestää.",
+        "details": [
+          "Hotellin nouto ja palautus pidettiin yhden luotettavan standardin mukaisesti",
+          "Täydellinen Sri Lanka -matkailualusta – ei taksikauppa"
+        ],
+        "whisper": "Matka ratkeaa. Standardi pysyy.",
+        "kicker": "Luku 05",
+        "mediaTitle": "Matka pidetty loppuun",
+        "imageAlt": "Luksuslomakohde saapuminen iltahämärässä – yksityismatkan rauhallinen loppu"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "Yksi alusta",
+    "heading": "Yksi alusta. Kolme kokemusta.",
+    "sub": "Tarvitsetpa sitten lentokenttäkuljetuksen, kaupunki- tai autonkuljettajan kyydin tai paikan arvokkaaseen tienaamiseen – Q Pick on sama luotettava liikkumisstandardi.",
+    "cards": {
+      "ride": {
+        "title": "Aja nyt",
+        "kicker": "Taksi & autonkuljettaja",
+        "description": "Varmennetut kuljettajat kaupunkitakseihin, kaupunkien välisiin kyytiin ja luksuskuljetuksiin – läpinäkyvät hinnat ennen vahvistamista.",
+        "points": [
+          "Kaupunki- ja intercity-ajelut",
+          "Luksuskuljettaja",
+          "Läpinäkyvä hinnoittelu"
+        ],
+        "cta": "Kirja Ride",
+        "imageAlt": "Vieras astumassa mustan executive-sedanin takaosasta laadukkaalla lava-autolla"
+      },
+      "tours": {
+        "title": "Lentokenttäkuljetukset",
+        "kicker": "Saapuminen & lähteminen",
+        "description": "Lentoaikaiset nouto- ja palautuspaikat kohtaamispalvelulla – rauhallinen varmuus portilta ovelle.",
+        "points": [
+          "Nouto lentokentältä",
+          "Lentokenttien pudotukset",
+          "Tapaa & tervehdi"
+        ],
+        "cta": "Lentokenttäkuljetus",
+        "imageAlt": "Ammattimainen kuljettaja valmis ensiluokkaiseen lentokenttäkuljetukseen"
+      },
+      "drive": {
+        "title": "Aja Q Pick",
+        "kicker": "Kuljettajan alusta",
+        "description": "Ammattimainen alusta vakaville kuljettajille – selkeät tulot, joustavat työajat ja arvokas työ.",
+        "points": [
+          "Joustava ansio",
+          "Ammattimainen alusta",
+          "Helppo rekisteröinti"
+        ],
+        "cta": "Ryhdy Kuljettajaksi",
+        "imageAlt": "Ammattimainen kuljettaja tummassa puvussa avaamassa mustan luksuspakettiauton takaoven hotellin sisäänkäynnillä"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "Ajopalvelut",
+    "intro": "Lentokenttäkuljetukset, kaupunkitaksi, intercity-ajelut ja autonkuljettajapalvelu – yksityiset matkat, kun haluat tutustua. Yksi Q Pick-standardi.",
+    "tablistAria": "Matkan tarkoitus",
+    "ride": {
+      "label": "Ratsastaa",
+      "title": "Kaupunkitaksi ja intercity-ajelut",
+      "body": "Pyydä varmennettua kuljettajaa Colombon kaduille tai pitkälle rannikkomatkalle. Läpinäkyvät hinnat ennen vahvistamista.",
+      "cta": "Varaa kyyti",
+      "imageAlt": "Colombon rannikko hämärässä – kaupunkimatkat varmasti"
+    },
+    "airport": {
+      "label": "Lentokenttä",
+      "title": "Lentokenttien nouto ja palautus",
+      "body": "Meet-and-treet-kuljetukset ajoitettuina lennolle. Hotellit ja huvilat pysyvät silmukassa portilta ovelle.",
+      "cta": "Varaa lentokenttäkuljetus",
+      "imageAlt": "Rannikkotie etelään Sri Lanka laskeutumisen jälkeen"
+    },
+    "tour": {
+      "label": "Tour",
+      "title": "Yksityismatkoja ja päiväretkiä",
+      "body": "Valinnaisia päiväretkiä ja usean pysähdyksen retkiä saarien tiet tuntevien autonkuljettajien kanssa – kun tutkimusmatka on tavoitteena.",
+      "cta": "Tutustu Toursiin",
+      "imageAlt": "Sigiriya ja kulttuurikolmiomaisemat päiväretkille"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Minne Q Pick vie sinut",
+    "intro": "Suosittuja reittejä lentokenttäkuljetuksiin, kaupunkiajeluihin ja autonkuljettajamatkoihin – kohteisiin, jotka tukevat liikkumistasi.",
+    "allDestinations": "Kaikki kohteet",
+    "travelTime": "Matka-aika",
+    "startingPrice": "Alkaen"
+  },
+  "stepTimeline": {
+    "heading": "Miten varmuus toimii",
+    "intro": "Kolme hiljaista askelta sen välillä, missä olet ja missä sinun täytyy olla.",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "Pyyntö",
+        "body": "Aseta nouto, määränpää ja ajoitus. Katso hinta ennen kuin sitoudut."
+      },
+      "match": {
+        "n": "02",
+        "title": "Ottelu",
+        "body": "Vahvistettu Q Pick-kuljettaja on määrätty – mitoitettu, vakuutettu ja matkavalmis."
+      },
+      "arrive": {
+        "n": "03",
+        "title": "Perillä",
+        "body": "Live ETA, matkan jakaminen ja rauhallinen vaihto ovella tai portilla."
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "Colombo",
+      "region": "Läntinen maakunta",
+      "summary": "Sataman valot, Galle Face -tuuli ja pääkaupungin syke – liikkuivat hiljaisella tarkkuudella.",
+      "imageAlt": "Colombon rannikon ranta iltahämärässä",
+      "travelTime": "30–45 min kohteesta CMB",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "Galle",
+      "region": "Eteläinen maakunta",
+      "summary": "Linnoituksen muurit, merituuli ja etelärannikko – lentoasemavalleihin ilman epävarmuutta.",
+      "imageAlt": "Eteläinen Sri Lankan rannikko ja kirkas merivesi",
+      "travelTime": "2–2,5 tuntia CMB",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "Ella",
+      "region": "Uvan maakunta",
+      "summary": "Sumua, teetä ja ylämaan ilmaa – vuoren valoon ajoitettuja päivärahoja.",
+      "imageAlt": "Rehevä Sri Lankan ylängöllä ja trooppisella kukkulan rinteellä",
+      "travelTime": "5-6 tuntia Colombosta",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "Sigiriya",
+      "region": "Keskiprovinssi",
+      "summary": "Kalliolinnoitus ja kulttuurikolmiotiet – reitit tuntevien kuljettajien ohjaamana.",
+      "imageAlt": "Ilmakuva Sigiriyan kalliolinnoituksesta maassa Sri Lanka",
+      "travelTime": "3,5–4,5 tuntia CMB",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "Luottamus ja turvallisuus",
+    "heading": "Turvallisuusstandardi",
+    "headingLine2": "voit tuntea.",
+    "intro": "Jokaista Q Pick-ajelua tukevat vahvistetut kuljettajat, reaaliaikainen seuranta, läpinäkyvä hinnoittelu ja omistettu tuki – joten voit matkustaa Sri Lanka täysin luottavaisin mielin.",
+    "cta": "Tutustu turvallisuuteen",
+    "trustLine": "Tuhannet matkailijat luottavat",
+    "items": {
+      "verified": {
+        "title": "Vahvistetut ajurit",
+        "body": "Jokainen kuljettaja läpäisee henkilöllisyyden ja ajoneuvon tarkastuksen."
+      },
+      "pricing": {
+        "title": "Läpinäkyvä hinnoittelu",
+        "body": "Tiedä hintasi ennen jokaisen matkan vahvistamista."
+      },
+      "sharing": {
+        "title": "Live-matkan jakaminen",
+        "body": "Ystävät ja perhe voivat seurata matkaasi."
+      },
+      "support": {
+        "title": "Hätätuki",
+        "body": "24/7 apua aina kun tarvitset apua."
+      },
+      "insured": {
+        "title": "Täysvakuutetut matkat",
+        "body": "Jokainen Q Pick-ajo on suojattu."
+      }
+    },
+    "proofs": [
+      "Tarkistetut kuljettajat henkilöllisyys- ja ajoneuvotarkastuksilla",
+      "Läpinäkyvä hinnoittelu ennen vahvistamista",
+      "Live-matkan jakaminen perheelle ja isännille",
+      "Matkatuki ja julkaistu hätänumero",
+      "Vakuutusturva jokaisella Q Pick-matkalla"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "KUMPPANIT",
+      "heading": "Hotellit, huvilat ja yritykset",
+      "body": "Vieraiden siirrot jaetun standardin alaisina – valkoiset hanskat käteenvaihdot, joihin vastaanottosi voi luottaa.",
+      "cta": "Yhteistyökumppani: Q Pick"
+    },
+    "drivers": {
+      "eyebrow": "KULJETTAJAT",
+      "heading": "Aja arvokkaasti",
+      "body": "Selkeät tulot, reilu lähetys ja työkalut, jotka on rakennettu parhaiten tuntemillesi teille.",
+      "cta": "Ryhdy kuljettajaksi"
+    }
+  },
+  "planTour": {
+    "eyebrow": "Yksityiset matkat",
+    "heading": "Suunnittele kiertueesi Sri Lanka",
+    "sub": "Rakenna täysin räätälöity yksityinen matka – päivät, määränpäät ja ajoneuvo – välittömällä arviolla ennen sitoutumista.",
+    "highlights": [
+      "Yksityinen kuljettaja koko matkasuunnitelmallesi",
+      "Sekoita rannikkoa, ylängöä ja kulttuurikolmiota",
+      "Läpinäkyvä arvio – vahvista tiedot käyttämällä Q Pick"
+    ],
+    "trust": [
+      "Välitön arvio",
+      "Maksua ei vaadita",
+      "Ilmainen konsultointi"
+    ],
+    "cardLabel": "Sinun matkasuunnitelmasi",
+    "daysLabel": "Valitse päivien lukumäärä",
+    "daysOption": "{count} päivää",
+    "travelersLabel": "Matkailijat",
+    "travelersOption": "{count}",
+    "arrivalLabel": "Saapumispäivämäärä",
+    "pickupLabel": "Noutopaikka",
+    "pickups": {
+      "cmb": "Bandaranaike (CMB)",
+      "colombo": "Colombon kaupunki",
+      "galle": "Galle",
+      "hotel": "Sinun hotellisi"
+    },
+    "tourTypeLabel": "Matkan tyyppi",
+    "tourTypes": {
+      "private": {
+        "label": "Yksityinen kuljettaja",
+        "meta": "Joustava tahti · mukautetut pysähdykset"
+      },
+      "honeymoon": {
+        "label": "Häämatka",
+        "meta": "Rannikko & hiljainen ylängöllä pysyy"
+      },
+      "family": {
+        "label": "Perhe",
+        "meta": "Tilavat ajoneuvot · helppoja päiviä"
+      },
+      "cultural": {
+        "label": "Kulttuurikolmio",
+        "meta": "Perintöreitit · ohjattu tahdistus"
+      }
+    },
+    "destinationsLabel": "Valitse määränpäät",
+    "destinations": {
+      "colombo": "Colombo",
+      "galle": "Galle",
+      "ella": "Ella",
+      "sigiriya": "Sigiriya",
+      "kandy": "Kandy"
+    },
+    "vehicleLabel": "Valitse ajoneuvotyyppi",
+    "vehicles": {
+      "sedan": {
+        "label": "Sedan",
+        "meta": "1–3 vierasta · Ilmastointi"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1–5 vierasta · Ilmastointi"
+      },
+      "van": {
+        "label": "Van",
+        "meta": "1–9 vierasta · Ilmastointi"
+      }
+    },
+    "distanceLabel": "Arvioitu etäisyys",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "Arvioitu ajo",
+    "hoursValue": "~{hours} tuntia",
+    "breakdownLabel": "Hinta erittely",
+    "breakdownDaily": "Ajoneuvo & kuljettaja",
+    "breakdownDestinations": "Kohde pysähtyy",
+    "breakdownTravelers": "Ylimääräiset matkailijat",
+    "breakdownPickup": "Nouto lentokentältä/hotellilta",
+    "estimateLabel": "Välitön arvioitu hinta",
+    "estimateNote": "Vain arvio · viimeistelty, kun suunnittelet Q Pick",
+    "cta": "Suunnittele matkani"
+  },
+  "privateToursPreview": {
+    "eyebrow": "Yksityiset retket",
+    "heading": "Suunnittele matkasi Sri Lanka",
+    "sub": "Löydä Sri Lanka täysin räätälöidyn yksityisen kuljettajakokemuksen avulla.",
+    "points": [
+      "Joustavat matkasuunnitelmat",
+      "Luksusajoneuvot",
+      "Välittömät arviot"
+    ],
+    "primary": "Suunnittele matkani",
+    "secondary": "Tutustu Toursiin",
+    "cardLabel": "Esimerkki matkasuunnitelmasta",
+    "cardTitle": "5 päivää · Rannikolta ylängöille",
+    "previewStops": [
+      "Saapu CMB → Colombo yön yli",
+      "Gallen linnoitus ja etelärannikko",
+      "Ella tea country -finaali"
+    ],
+    "estimateLabel": "From",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "Mukauta Toursissa"
+  },
+  "driveWithQPick": {
+    "eyebrow": "Ammattikuljettajille",
+    "heading": "Aja luottavaisin mielin.",
+    "headingLine2": "Ansaitse tarkoituksella.",
+    "sub": "Liity maan Sri Lanka premium-kuljettaja-alustaan. Hyväksy lentokenttäkuljetukset, kaupunki- ja johtomatkat, yritysmatkat ja yksityiset matkat samalla kun hallitset omaa aikatauluasi Q Pick Driver App -sovelluksella.",
+    "cta": "Ryhdy Kuljettajaksi",
+    "secondaryCta": "Lisätietoja",
+    "trust": {
+      "verified": "Vahvistetut ajurit",
+      "payouts": "Viikoittaiset maksut",
+      "support": "24/7 tuki"
+    },
+    "trustAria": "Kuljettajan luottamus kohokohtia",
+    "floatCards": {
+      "rideTitle": "Uusi kyytipyyntö",
+      "rideBody": "Colombon linnoitus · 6 min",
+      "airportTitle": "Lentokenttäkuljetus",
+      "airportBody": "CMB → Hilton · LKR 4 800",
+      "earningsTitle": "Tämän päivän tulos",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "Kuljettaja verkossa",
+      "onlineBody": "Valmiina premium-ajoon"
+    },
+    "phone": {
+      "greeting": "Hei Dilan",
+      "online": "verkossa",
+      "todayEarnings": "Tämän päivän tulos",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "Live kartta",
+      "upcoming": "Tuleva Ride",
+      "route": "CMB → Colombon linnoitus",
+      "eta": "Nouto 8 minuutissa",
+      "fare": "LKR 4,800",
+      "accept": "Hyväksy",
+      "weekly": "Viikkotulot"
+    },
+    "benefits": {
+      "rides": {
+        "title": "Executive Ride -pyynnöt",
+        "body": "Vastaanota premium-varauksia Sri Lanka."
+      },
+      "airport": {
+        "title": "Lentokenttäkuljetukset",
+        "body": "Luotettavat tulot ja lähdöt."
+      },
+      "schedule": {
+        "title": "Joustava aikataulu",
+        "body": "Aja silloin kun sinulle sopii."
+      },
+      "earnings": {
+        "title": "Viikoittaiset maksut",
+        "body": "Läpinäkyvät tulot joka viikko."
+      },
+      "customers": {
+        "title": "Vahvistetut matkustajat",
+        "body": "Matkusta luotettavien asiakkaiden kanssa."
+      },
+      "support": {
+        "title": "24/7 kuljettajatuki",
+        "body": "Todellinen tuki aina kun sitä tarvitset."
+      }
+    },
+    "dashboard": {
+      "title": "Kuljettajan kojelauta",
+      "online": "verkossa",
+      "earnings": "Tällä viikolla",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "Saapuva pyyntö",
+      "route": "CMB → Colombon linnoitus",
+      "eta": "Nouto 8 minuutissa · LKR 4 800",
+      "accept": "Hyväksy matka"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick Sovellukset",
+    "heading": "Ota Q Pick kaikkialle.",
+    "sub": "Varaa kyytiä, lentokenttäkuljetuksia ja yksityisiä Sri Lanka-matkoja milloin tahansa Q Pick-mobiilisovelluksella.",
+    "tablistAria": "Valitse Q Pick-sovellus",
+    "tabs": {
+      "passenger": "Matkustajasovellus",
+      "driver": "Kuljettajasovellus"
+    },
+    "passenger": {
+      "title": "Kaikki mitä tarvitset matkustamiseen.",
+      "features": [
+        "Välitön kyytivaraus",
+        "Lentokenttäkuljetukset",
+        "Yksityiset retket",
+        "Live kuljettajien seuranta",
+        "Turvalliset maksut",
+        "Matkan historia"
+      ],
+      "screenHome": "Q Pick matkustajan aloitusnäyttö",
+      "screenBooking": "Q Pick kyytivarausnäyttö",
+      "screenTracking": "Q Pick live-seurantanäyttö"
+    },
+    "driver": {
+      "title": "Ansaitse enemmän Q Pick:lla.",
+      "features": [
+        "Hyväksy kyytipyynnöt",
+        "Lentokenttävaraukset",
+        "Kiertuepyynnöt",
+        "Viikkotulot",
+        "Navigointi",
+        "Kuljettajan kojelauta"
+      ],
+      "primary": "Ryhdy Kuljettajaksi",
+      "secondary": "Lisätietoja",
+      "screens": {
+        "dashboardTitle": "Kuljettajan kojelauta",
+        "online": "verkossa",
+        "earningsLabel": "Tällä viikolla",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "Uusi matkapyyntö",
+        "route": "CMB → Colombon linnoitus",
+        "fare": "LKR 4 800 · 8 minuutin nouto",
+        "accept": "Hyväksy matka",
+        "earningsScreenTitle": "Tulot",
+        "weekLabel": "Tällä viikolla",
+        "tripsLabel": "Valmiit matkat",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "Matkustaja-sovellus",
+      "driverPlay": "Kuljettajan sovellus"
+    }
+  },
+  "finalCta": {
+    "badge": "Aloita matkasi",
+    "heading": "Matkasi Sri Lanka alkaa tästä.",
+    "body": "Varaa lentokenttäkuljetus, varaa kaupunkiajelu, vuokraa autonkuljettaja tai tutustu Sri Lanka yksityisellä kiertueella – kaikki yhdellä premium-alustalla.",
+    "primary": "Kirja Ride",
+    "secondary": "Lentokenttäkuljetus",
+    "download": "Tutustu Toursiin",
+    "trustAria": "Miksi matkustajat luottavat Q Pick",
+    "trust": {
+      "verified": "Vahvistetut ajurit",
+      "pricing": "Läpinäkyvä hinnoittelu",
+      "support": "24/7 tuki",
+      "coverage": "Koko saaren kattavuus"
+    }
+  },
+  "farePreview": {
+    "from": "From",
+    "to": "Vastaanottaja",
+    "note": "Arvio · vahvista sovelluksessa"
+  },
+  "taxiFare": {
+    "eyebrow": "Taksihinnan arvioija",
+    "heading": "Arvioi taksihintasi",
+    "sub": "Aseta paikat, valitse kyyti, lisää varaustiedot, tarkista hinta ja tee varaus.",
+    "pickup": "Noutopaikka",
+    "pickupPlaceholder": "Hae nouto - esim. Colombon linnoitus",
+    "destination": "Kohde",
+    "destinationPlaceholder": "Hakukohde – esim. Gallen kasvot",
+    "distance": "Etäisyys (automaattinen)",
+    "waiting": "Odotusaika (minuuttia)",
+    "waitingHint": "Ensimmäinen {free} min ilmaiseksi · LKR {rate}/min jälkeen",
+    "rideType": {
+      "title": "Ajotyyppi",
+      "now": "Aja nyt",
+      "schedule": "Aikataulu nouto"
+    },
+    "vehicleType": "Ajoneuvon tyyppi",
+    "vehicleSelection": {
+      "eyebrow": "Laivasto",
+      "heading": "Valitse kyyti",
+      "sub": "Valitse matkallesi täydellinen ajoneuvo.",
+      "startingFrom": "Alkaen",
+      "from": "From",
+      "after1Km": "1 km:n jälkeen",
+      "passengers": "Matkustajat",
+      "luggage": "Matkatavarat",
+      "seats": "{count} Istuimet",
+      "bags": "{count} Laukut",
+      "rating": "Arvioitu {rating}/5",
+      "ac": "Ilmastointi",
+      "availability": "Saatavuus",
+      "available": "Saatavilla",
+      "unavailable": "Ei saatavilla",
+      "yes": "Kyllä",
+      "no": "Ei",
+      "select": "Valitse",
+      "selectRide": "Valitse Aja",
+      "selected": "Valittu",
+      "prev": "Aiemmat ajoneuvot",
+      "next": "Seuraavat ajoneuvot",
+      "day": "Päivähinta",
+      "night": "Yöhinta",
+      "eta": "Nouto ~{minutes} minuutissa",
+      "base": "Pohja",
+      "perKm": "per kilometri"
+    },
+    "mobileFareBar": {
+      "continue": "Jatka"
+    },
+    "steps": {
+      "locations": "Sijainnit",
+      "vehicle": "Ajoneuvo",
+      "details": "Yksityiskohdat",
+      "summary": "Yhteenveto",
+      "locationsTitle": "Valitse Nouto ja määränpää",
+      "vehicleTitle": "Valitse Ajoneuvo",
+      "detailsTitle": "Varaustiedot",
+      "summaryTitle": "Hinta yhteenveto",
+      "continueVehicle": "Jatka ajoneuvoon",
+      "continueDetails": "Jatka varaustietoihin",
+      "continueSummary": "Jatka hintayhteenvetoon"
+    },
+    "bookingDetails": {
+      "title": "Varaustiedot",
+      "pickupDate": "Noutopäivämäärä",
+      "pickupTime": "Noutoaika",
+      "flightNumber": "Lennon numero",
+      "flightNumberOptional": "Valinnainen",
+      "flightPlaceholder": "esim. UL 226",
+      "passengerCount": "Matkustajamäärä",
+      "luggageCount": "Matkatavaroiden määrä",
+      "specialNotes": "Erityishuomautuksia",
+      "notesPlaceholder": "Lastenistuin, tavata ja tervehtiä, porttitoivomus…",
+      "passengerName": "Matkustajan nimi",
+      "phone": "Puhelinnumero",
+      "driverNotes": "Huomautuksia kuljettajalle",
+      "paymentMethod": "Maksutapa",
+      "cash": "käteistä",
+      "card": "kortti",
+      "wallet": "Lompakko",
+      "promoCode": "Tarjouskoodi",
+      "promoPlaceholder": "Anna tarjouskoodi",
+      "airportPickup": "Nouto lentokentältä",
+      "yes": "Kyllä",
+      "no": "Ei",
+      "requiredHint": "Valitse kelvollinen noutopäivä ja -aika jatkaaksesi.",
+      "requiredDetailsHint": "Anna matkustajan nimi, puhelinnumero ja maksutapa jatkaaksesi.",
+      "scheduleHint": "Valitse tuleva noutopäivä ja -aika."
+    },
+    "summaryLabel": "Hinta yhteenveto",
+    "summary": {
+      "bookingSummary": "Varauksen yhteenveto",
+      "pickup": "Nouto",
+      "destination": "Kohde",
+      "distance": "Etäisyys",
+      "duration": "Aika",
+      "vehicle": "Ajoneuvo",
+      "baseFare": "Perushinta",
+      "distanceCharge": "Etäisyysmaksu",
+      "waitingCharge": "Odottaa maksua",
+      "bookingFee": "Varausmaksu",
+      "airportFee": "Lentokenttämaksu",
+      "toll": "Maksullinen",
+      "parking": "Pysäköinti",
+      "surge": "Surge",
+      "discount": "Alennus",
+      "total": "Arvioitu yhteensä",
+      "estimatedFare": "Arvioitu hinta",
+      "finalFare": "Lopullinen hinta",
+      "grandTotal": "Loppusumma",
+      "viewFareBreakdown": "Näytä hintaerittely",
+      "payment": "Maksu",
+      "promo": "Tarjouskoodi",
+      "eta": "ETA",
+      "passengers": "Matkustajat",
+      "luggage": "Matkatavarat"
+    },
+    "confirmErrors": {
+      "pickup": "Aseta noutopaikka.",
+      "destination": "Aseta määränpää.",
+      "vehicle": "Ole hyvä ja valitse ajoneuvo.",
+      "schedule": "Valitse kelvollinen noutopäivä ja -aika.",
+      "payment": "Valitse maksutapa.",
+      "passengerName": "Anna matkustajan nimi.",
+      "phone": "Anna puhelinnumero.",
+      "fare": "Hintaa lasketaan vielä – odota hetki."
+    },
+    "estimateNote": "Vain arvio · vahvista lopullinen hinta Q Pick-sovelluksessa. Vain taksimatkat - ei lentokenttäkuljetuksia tai retkiä.",
+    "cta": "Varaa tämä kyyti",
+    "bookNow": "Varaa nyt",
+    "scopeNote": "Taksimatkan hinnoittelu · erillään lentokentältä ja kiertoajeluista",
+    "vehicles": {
+      "bike": "Q Pyörä",
+      "tuk": "Q Tuk",
+      "miniCar": "Q Flex",
+      "wagon": "Q Mini",
+      "sedan": "Q Sedan",
+      "miniVan": "Q tila-auto",
+      "van": "Q Tasakattoinen pakettiauto",
+      "longVan": "Q korkeakattoinen pakettiauto",
+      "suv": "Q SUV",
+      "miniBus": "Q minibussi",
+      "longBus": "Q Bussi"
+    },
+    "calculatingRoute": "Lasketaan ajomatkaa ja matka-aikaa…",
+    "calculatingShort": "Lasketaan…",
+    "routeReady": "Reitti valmis · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "Reitit",
+      "heading": "Valitse reitti",
+      "recommended": "Suositeltava",
+      "alternative": "Vaihtoehtoinen",
+      "roadHighway": "Valtatie",
+      "roadNormal": "Normaali",
+      "tags": {
+        "fastest": "Nopein reitti",
+        "avoidHighway": "Vältä moottoritietä",
+        "highway": "Valtatien reitti",
+        "scenic": "Luonnonkaunis reitti",
+        "alternative": "Vaihtoehtoinen reitti"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "Aseta nouto kartalle",
+      "setDestination": "Aseta määränpää kartalle",
+      "pickupTitle": "Vahvista nouto",
+      "destinationTitle": "Vahvista määränpää",
+      "pickupHint": "Hae, käytä sijaintiasi tai siirrä karttaa",
+      "destinationHint": "Hae tai siirrä karttaa määrittääksesi määränpää",
+      "pickupAddress": "Noutoosoite",
+      "destinationAddress": "Kohdeosoite",
+      "latitude": "Leveysaste",
+      "longitude": "Pituusaste",
+      "confirmPickup": "Vahvista nouto",
+      "confirmDestination": "Vahvista määränpää",
+      "resolving": "Haetaan osoitetta…",
+      "close": "Sulje",
+      "searchLabel": "Etsi",
+      "searchPickup": "Hae noutopaikkaa",
+      "searchDestination": "Etsi kohde",
+      "searching": "Haetaan…",
+      "noResults": "Tuloksia ei löytynyt",
+      "useCurrentLocation": "Käytä nykyistä sijaintia",
+      "selectOnMap": "Valitse kartalta",
+      "locating": "Haetaan…",
+      "locationDenied": "Sijaintilupa evättiin. Ota se käyttöön selaimen asetuksista tai valitse kartalta.",
+      "locationUnavailable": "Nykyistä sijaintiasi ei voi saada. Kokeile sen sijaan hakua tai karttaa."
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API -avain puuttuu.",
+      "routeFailed": "Reittiä ei voi laskea. Yritä uudelleen.",
+      "selectFromSuggestions": "Valitse nouto ja kohde ehdotusluettelosta."
+    }
+  },
+  "driverTrust": {
+    "verified": "Vahvistettu Q Pick-ohjain",
+    "trips": "{count} matkoja"
+  },
+  "storeBadges": {
+    "comingSoon": "Tulossa pian",
+    "getItOn": "Ota se päälle",
+    "appStore": "App Storesta",
+    "googlePlay": "Google Play",
+    "iosAria": "Lataa App Storesta – tulossa pian",
+    "androidAria": "Hanki se Google Playsta – tulossa pian",
+    "downloadOnAppStore": "Lataa App Storesta",
+    "getItOnGooglePlay": "Hanki se Google Playsta"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "Roiskeet",
+      "login": "Kirjaudu sisään / Tervetuloa",
+      "dashboard": "Kojelauta",
+      "account": "Tili",
+      "pickup": "Vahvista nouto",
+      "destination": "Valitse kohde",
+      "vehicles": "Valitse ajoneuvo",
+      "booking": "Varauksen vahvistus",
+      "searching": "Etsitään lähellä olevia kuljettajia",
+      "accepted": "Kuljettaja hyväksytty",
+      "arriving": "Kuljettaja saapuu",
+      "pickedup": "Matkustaja kyytiin",
+      "riding": "Ajo käynnissä",
+      "completed": "Matka suoritettu",
+      "rate": "Arvostele kuljettaja",
+      "submitted": "Arvio lähetetty",
+      "home": "Kojelauta"
+    },
+    "shotAlt": "Q Pick Asiakassovellus – {label}",
+    "shotLabels": {
+      "login": "Kirjaudu sisään",
+      "home": "Kotiin",
+      "account": "Tili"
+    },
+    "splash": {
+      "tagline": "Lentokenttä · Ajomatka · Kuljettaja"
+    },
+    "login": {
+      "welcome": "Tervetuloa",
+      "subtitle": "Varaa kyyti kirjautumalla sisään",
+      "emailOrPhone": "Sähköposti tai puhelin",
+      "password": "Salasana",
+      "continue": "Jatka"
+    },
+    "dashboard": {
+      "greeting": "Hyvää iltapäivää",
+      "whereTo": "minne?",
+      "searchPlaceholder": "Gallen linnoitus, Sri Lanka",
+      "chips": {
+        "airport": "Lentokenttä",
+        "home": "Kotiin",
+        "saved": "Tallennettu"
+      }
+    },
+    "pickup": {
+      "kicker": "Vahvista nouto",
+      "title": "Onko tämä sijaintisi?",
+      "label": "Nouto",
+      "value": "Colombon linnoitus",
+      "confirm": "Vahvista nouto"
+    },
+    "destination": {
+      "kicker": "Valitse kohde",
+      "title": "Minne olet menossa?",
+      "pickupLabel": "Nouto",
+      "pickupValue": "Colombon linnoitus",
+      "destinationLabel": "Kohde",
+      "destinationValue": "Gallen linnoitus",
+      "continue": "Jatka"
+    },
+    "vehicles": {
+      "route": "Colombon linnoitus → Gallen linnoitus",
+      "title": "Valitse ajoneuvo",
+      "seats": "{count} paikkaa",
+      "ac": "Ilmastointi",
+      "eta": "ETA {time}",
+      "categories": {
+        "tuk": "Tuk",
+        "mini": "Mini",
+        "sedan": "Sedan",
+        "suv": "SUV",
+        "van": "Van"
+      },
+      "models": {
+        "tuk": "Bajaj RE",
+        "mini": "Suzuki Alto",
+        "sedan": "Toyota Premio",
+        "suv": "Toyota Prado",
+        "van": "Toyota Hiace"
+      },
+      "etas": {
+        "tuk": "3 min",
+        "mini": "4 min",
+        "sedan": "4 min",
+        "suv": "6 min",
+        "van": "8 min"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "Varauksen vahvistus",
+      "title": "Vahvista matkasi",
+      "vehicleMeta": "Toyota Premio · 4 paikkaa · Ilmastointi",
+      "route": "Reitti",
+      "routeValue": "Colombon linnoitus → Gallen linnoitus",
+      "fare": "Hinta",
+      "fareValue": "LKR 18,500",
+      "eta": "ETA",
+      "etaValue": "4 min",
+      "payment": "Maksu",
+      "paymentValue": "Visa ···· 4242",
+      "bookRide": "Kirja Ride"
+    },
+    "searching": {
+      "title": "Haetaan lähellä olevia kuljettajia...",
+      "matching": "Matkustaminen sedanin lähellä Colombo Fortia",
+      "driverFound": "Kuljettaja löydetty",
+      "sedanSelected": "Sedan valittu",
+      "selectedMeta": "Toyota Premio · ETA 3 min"
+    },
+    "accepted": {
+      "badge": "Kuljettaja hyväksytty",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "ETA 3 min",
+      "track": "Radan kuljettaja"
+    },
+    "live": {
+      "statusArriving": "Kuljettaja saapuu • 3 min",
+      "statusRiding": "Matkalla Galleen",
+      "driverVehicle": "Kasun · Toyota Premio",
+      "enRoute": "Matkalla noutoon · Colombo Fort",
+      "route": "Colombon linnoitus → Gallen linnoitus",
+      "minutesUnit": "min",
+      "plate": "CAB-4821",
+      "rating": "★ 4.9",
+      "call": "Soita kuljettajalle",
+      "chat": "Viesti kuljettaja"
+    },
+    "pickedUp": {
+      "title": "Olet mukana",
+      "subtitle": "Suuntaa Gallen linnakkeeseen Kasunin kanssa"
+    },
+    "completed": {
+      "title": "Matka suoritettu",
+      "route": "Colombon linnoitus → Gallen linnoitus",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "Arvioi kuljettajasi",
+      "driverName": "Kasun Perera",
+      "vehicle": "Toyota Premio",
+      "prompt": "Miten ajomatkasi sujui tänään?",
+      "reviewPlaceholder": "Kirjoita lyhyt arvostelu...",
+      "submit": "Lähetä luokitus"
+    },
+    "submitted": {
+      "title": "Kiitos arvioista",
+      "subtitle": "Palautteesi auttaa kuljettajia kehittymään",
+      "backHome": "Takaisin kotiin"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "Ratsastaa",
+        "description": "Varaa premium-kaupunki- tai intercity-ajelu maassa Sri Lanka – avoimet hinnat, vahvistetut kuljettajat, suora seuranta."
+      },
+      "title": "Varaa kyyti",
+      "description": "Varaa kyyti minne tahansa Sri Lanka avoimella hinnoittelulla ja vahvistetuilla kuljettajilla.",
+      "primaryCta": "Arvioitu hinta",
+      "secondaryCta": "Turvallisuusstandardit",
+      "intro": {
+        "badge": "Ratsastaa",
+        "title": "Varaa kyyti",
+        "subtitle": "Varaa kyyti minne tahansa Sri Lanka avoimella hinnoittelulla ja vahvistetuilla kuljettajilla.",
+        "nav": {
+          "live": "Livenä",
+          "tracking": "Älykäs navigointi",
+          "route": "Aktiivinen reitti",
+          "corridor": "Colombo → Galle Face",
+          "eta": "ETA",
+          "etaValue": "12 min",
+          "distance": "Piir",
+          "distanceValue": "4,8 km",
+          "driverNearby": "Kuljettaja lähellä · lähestyy noutoa"
+        }
+      },
+      "booking": {
+        "title": "Varaa kyyti",
+        "trust": {
+          "pricing": "Läpinäkyvä hinnoittelu.",
+          "drivers": "Vahvistetut ajurit.",
+          "tracking": "Live-seuranta."
+        }
+      },
+      "why": {
+        "eyebrow": "Miksi Q Pick",
+        "heading": "Miksi ajaa Q Pick",
+        "items": {
+          "pricing": {
+            "title": "Läpinäkyvä hinnoittelu",
+            "body": "Katso koko arvio ennen vahvistamista – ei yllättäviä lisäyksiä."
+          },
+          "drivers": {
+            "title": "Vahvistetut ajurit",
+            "body": "Taustatarkistetut kuljettajat. Arvioitu, vakuutettu, matkavalmis."
+          },
+          "tracking": {
+            "title": "Live-seuranta",
+            "body": "Seuraa jokaista minuuttia noudosta ovelle jaettavien saapumisaikataulujen avulla."
+          },
+          "support": {
+            "title": "24/7 tuki",
+            "body": "Tavoittettavissa oleva apu aina kun sitä tarvitset – päivällä tai yöllä."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Laivasto",
+        "heading": "Valitse kyyti",
+        "sub": "Pyörästä bussiin – valitse matkallesi sopiva.",
+        "mini": "Mini",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Q Pyörä",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Nopeat kaupunkiajelut"
+          },
+          "tuk": {
+            "name": "Q Tuk",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "Edulliset lyhyet matkat"
+          },
+          "flex": {
+            "name": "Q Flex",
+            "passengers": "3 matkustajaa",
+            "luggage": "2 matkatavaraa",
+            "blurb": "Kompakti viistoperä kaupunkimatkoille"
+          },
+          "mini": {
+            "name": "Q Mini",
+            "passengers": "4 matkustajaa",
+            "luggage": "2 matkatavaraa",
+            "blurb": "Roomier Wagon R kaupunkimatkoille"
+          },
+          "sedan": {
+            "name": "Q Sedan",
+            "passengers": "4 matkustajaa",
+            "luggage": "2 matkatavaraa",
+            "blurb": "Mukavuutta liikematkoille"
+          },
+          "minivan": {
+            "name": "Q tila-auto",
+            "passengers": "6 matkustajaa",
+            "luggage": "4 Matkatavarat",
+            "blurb": "Tilaa perhematkoille"
+          },
+          "frVan": {
+            "name": "Q Tasakattoinen pakettiauto",
+            "passengers": "8 matkustajaa",
+            "luggage": "6 Matkatavarat",
+            "blurb": "Mukavat ryhmälentokenttäkuljetukset"
+          },
+          "highRoofVan": {
+            "name": "Q korkeakattoinen pakettiauto",
+            "passengers": "10 matkustajaa",
+            "luggage": "8 Matkatavarat",
+            "blurb": "Enemmän tilaa matkoille ja kuljetuksille"
+          },
+          "suv": {
+            "name": "Q SUV",
+            "passengers": "5 matkustajaa",
+            "luggage": "4 Matkatavarat",
+            "blurb": "Ihanteellinen perheille"
+          },
+          "miniBus": {
+            "name": "Q minibussi",
+            "passengers": "12 matkustajaa",
+            "luggage": "8 Matkatavarat",
+            "blurb": "Pienryhmämatkailu"
+          },
+          "bus": {
+            "name": "Q Bussi",
+            "passengers": "20 matkustajaa",
+            "luggage": "12 Matkatavarat",
+            "blurb": "Isojen ryhmien siirrot"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "Turvallisuus",
+        "heading": "Matkusta luottavaisin mielin.",
+        "body": "Jokainen Q Pick-matka on suojattu vahvistetuilla kuljettajilla, reaaliaikaisella matkanjaolla, hätäavulla ja asiakastuella.",
+        "cta": "Lisätietoja turvallisuudesta",
+        "pillars": {
+          "verified": {
+            "title": "Vahvistettu laivasto",
+            "body": "Henkilöllisyys ja ajoneuvo tarkistetaan ennen kuin jokainen kuljettaja liittyy verkkoon."
+          },
+          "sharing": {
+            "title": "Matkan jakaminen",
+            "body": "Jaa reaaliaikainen matkan tila perheen, ystävien tai hotellisi kanssa."
+          },
+          "support": {
+            "title": "24/7 tuki",
+            "body": "Tavoittettavissa oleva apu aina kun sitä tarvitset – päivällä tai yöllä."
+          },
+          "emergency": {
+            "title": "Hätäapu",
+            "body": "Matkan aikana tapahtuvat eskalaatiopolut, kun jokin tuntuu vialla tiellä."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Usein kysytyt kysymykset",
+        "sub": "Selkeät vastaukset ennen varaamista – kyydit, lentokenttäkuljetukset ja matkat.",
+        "items": {
+          "fareCalc": {
+            "q": "Miten hinta lasketaan?",
+            "a": "Taksihinnat yhdistävät perushinnan, matkan, odotusajan ja kellonajan hinnat. Näet reaaliaikaisen arvion varauskulussa ennen vahvistamista."
+          },
+          "airport": {
+            "q": "Voinko varata lentokenttäkuljetuksen etukäteen?",
+            "a": "Kyllä. Käytä Lentokenttäkuljetuksia pyytääksesi ajoitettua noutoa Bandaranaikelle (CMB), jossa on lentotietoisia puskureita, kun tarvitset niitä."
+          },
+          "tour": {
+            "q": "Voinko muokata Sri Lanka-kiertomatkaani?",
+            "a": "Kyllä. Yksityiset matkat on rakennettu päivien, pysähdysten ja ajoneuvojen ympärille – tarkenna suunnitelmaa Q Pick:lla ennen matkaa."
+          },
+          "vehicle": {
+            "q": "Voinko valita ajoneuvoluokkani?",
+            "a": "Kyllä. Valitse Q Bikesta Q Busiin matkustajille ja matkatavaroille sopiva luokka varauskaruselli- tai Fleet-osiosta."
+          },
+          "drivers": {
+            "q": "Onko kaikki ajurit tarkistettu?",
+            "a": "Kyllä. Q Pick-kuljettajat suorittavat henkilöllisyyden, ajoneuvon ja taustan tarkistukset ennen verkkoon liittymistä."
+          },
+          "share": {
+            "q": "Voinko jakaa matkani perheen kanssa?",
+            "a": "Kyllä. Jaa reaaliaikainen matkan tila, jotta perhe, ystävät tai hotellisi voivat seurata matkaa."
+          },
+          "cancel": {
+            "q": "Voinko peruuttaa varaukseni?",
+            "a": "Kyllä. Peruuta sovelluksesta tai tuesta. Ajoitus ja mahdolliset maksut riippuvat varaustyypistä ja siitä, kuinka lähellä olet noutoa."
+          },
+          "contact": {
+            "q": "Kuinka voin ottaa yhteyttä tukeen?",
+            "a": "Ota meihin yhteyttä milloin tahansa tukisivun kautta – puhelimitse, WhatsApp tai sähköpostitse. Tiimimme on tavoitettavissa 24/7."
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "Onko sinulla vielä kysyttävää?",
+        "sub": "Tiimimme on käytettävissä 24/7 auttamaan sinua matkasi suunnittelussa tai Sri Lanka-matkasi suunnittelussa.",
+        "primary": "Varaa kyyti",
+        "secondary": "Ota yhteyttä tukeen"
+      },
+      "driverTrust": {
+        "name": "Nuwan P.",
+        "trips": "2.1k",
+        "rating": "4.97",
+        "verifiedLabel": "Vahvistettu Q Pick-ohjain",
+        "tripsLabel": "{count} matkoja"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "Lentokenttäkuljetukset",
+        "description": "Premium Bandaranaike (CMB) -lentokenttäkuljetukset, joissa on lennon seuranta, kokous ja tervehdys, ammattikuljettajat ja läpinäkyvä kiinteä hinta."
+      },
+      "hero": {
+        "eyebrow": "Lentokenttäkuljetukset",
+        "titleLine1": "Lentokenttäkuljetukset,",
+        "titleLine2": "Täydellisesti ajoitettu.",
+        "description": "Lentokentältä Bandaranaike International (CMB) minne tahansa Sri Lanka ammattikuljettajilla, reaaliajalla lentoseurannalla, tapaamisilla ja avoimella hinnoittelulla.",
+        "primaryCta": "Varaa lentokenttäkuljetus",
+        "secondaryCta": "Tutustu ajoneuvoihin",
+        "imageAlt": "Q Pick autonkuljettaja toivottaa matkustajat tervetulleeksi Bandaranaike International -lentokentällä premium-kuljetusajoneuvolla",
+        "trust": {
+          "tracking": "Lennon seuranta",
+          "greet": "Meet & Greet",
+          "pricing": "Kiinteä hinnoittelu",
+          "support": "24/7 tuki"
+        },
+        "cards": {
+          "flight": {
+            "label": "Lento",
+            "code": "UL225",
+            "status": "Ajoissa"
+          },
+          "driver": {
+            "label": "Kuljettaja",
+            "status": "Perillä 6 minuutissa",
+            "eta": "Live ETA"
+          },
+          "meetGreet": "Meet & Greet sisältyy"
+        }
+      },
+      "rates": {
+        "eyebrow": "Viralliset hinnat",
+        "heading": "Lentokenttäkuljetushinnat",
+        "sub": "Hae mitä tahansa määränpäätä ja katso viralliset ilmastoidut kuljetushinnat lentokentältä Bandaranaike International (CMB).",
+        "popular": "Suosittuja kohteita",
+        "searchLabel": "Etsi kohde",
+        "searchPlaceholder": "Hae kohde tai koodi - esim. Kandy, Kan, K015",
+        "searching": "Haetaan…",
+        "noResults": "Yksikään kohde ei vastaa hakua. Kokeile toista nimeä tai koodia.",
+        "emptyTitle": "Löydä hintasi",
+        "emptyBody": "Hae mitä tahansa kohdetta nähdäksesi välittömästi viralliset lentokenttäkuljetukset.",
+        "disclaimer": "Näytetyt hinnat perustuvat viralliseen lentokenttäkuljetushintaluetteloon. Odotusajasta, ylimääräisistä pysähdyksistä, tiemaksuista tai erityispyynnöistä saatetaan periä lisämaksu.",
+        "card": {
+          "destination": "Kohde",
+          "fare": "Virallinen lentokenttäkuljetusmaksu",
+          "airport": "Lentokenttä",
+          "status": "Tila",
+          "statusValue": "Virallinen lentokenttähinta",
+          "code": "Koodi",
+          "bookCta": "Varaa lentokenttäkuljetus"
+        }
+      },
+      "booking": {
+        "eyebrow": "Yksityinen kuljettaja",
+        "heading": "Varaa lentokenttäkuljetus.",
+        "sub": "Bandaranaike International lentokentältä minne tahansa maassa Sri Lanka – viralliset hinnat, ajoitettu matkallesi.",
+        "title": "Lentokenttäkuljetus",
+        "from": "From",
+        "to": "Vastaanottaja",
+        "toPlaceholder": "Etsi kohde",
+        "searching": "Haetaan…",
+        "noResults": "Yksikään kohde ei täsmää. Kokeile toista nimeä tai koodia.",
+        "date": "Matkan päivämäärä",
+        "time": "Noutoaika",
+        "passengers": "Matkustajat",
+        "adult": "Aikuinen",
+        "luggage": "Matkatavarat",
+        "luggageOptions": {
+          "cabin": "Mökki",
+          "medium": "Keskikokoinen",
+          "large": "Suuri"
+        },
+        "vehicle": "Ajoneuvon tyyppi",
+        "vehicleOptions": {
+          "mini": "Mini",
+          "sedan": "Sedan",
+          "van": "Van",
+          "suv": "SUV"
+        },
+        "nationality": "Kansallisuus",
+        "nationalityPlaceholder": "Valitse kansallisuus",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "Intiaani",
+          "uk": "brittiläinen",
+          "us": "Amerikkalainen",
+          "de": "saksaksi",
+          "au": "australialainen",
+          "cn": "kiinalainen",
+          "other": "Muut"
+        },
+        "special": "Erityispyyntö",
+        "specialPlaceholder": "Valinnainen – lastenistuin, tapaamis- ja tervehdysmuistiinpanot, hotellin nimi…",
+        "distance": "Arvioitu etäisyys",
+        "duration": "Arvioitu kesto",
+        "officialPrice": "Virallinen lentokenttäkuljetusmaksu",
+        "cta": "Varaa kyyti",
+        "ctaLoading": "Varausta avataan…",
+        "summaryTitle": "Matkan yhteenveto",
+        "route": "Reitti",
+        "destinationPending": "Valitse kohde"
+      },
+      "features": {
+        "eyebrow": "Miksi Q Pick Lentokenttä",
+        "heading": "Varmuus portista ovelle.",
+        "items": {
+          "tracking": {
+            "title": "Lennon seuranta",
+            "body": "Seuraa saapumistasi automaattisesti."
+          },
+          "greet": {
+            "title": "Meet & Greet",
+            "body": "Kuljettajasi odottaa saapuvien sisällä."
+          },
+          "pricing": {
+            "title": "Läpinäkyvä hinnoittelu",
+            "body": "Ota selvää hintasi ennen varauksen tekemistä."
+          },
+          "support": {
+            "title": "24/7 tuki",
+            "body": "Aina saatavilla."
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "Matkat",
+        "description": "Suunnittele yksityinen Sri Lanka kiertue saaren tuntevien kuljettajien kanssa – välittömät arviot, joustavat matkasuunnitelmat, luksusajoneuvot."
+      },
+      "eyebrow": "Yksityiset matkat",
+      "title": "Saarelle muotoiltuja retkiä",
+      "description": "Päiväretkiä ja useiden pysähdysten matkoja – teemaa, linnoituskaupungit, kulttuurikolmio – kuljettajien kanssa, jotka tietävät ajoituksen, maaston ja vieraiden mukavuuden.",
+      "primaryCta": "Suunnittele matkani",
+      "secondaryCta": "Katso paketit",
+      "why": {
+        "heading": "Miksi valita yksityinen kiertue",
+        "sub": "Sinun vauhtisi, pysähdyksesi, yksi luotettava kuljettaja – ei vieraiden valmentaja kiinteällä silmukalla.",
+        "items": [
+          {
+            "title": "Täysin muokattavissa",
+            "body": "Päivät, kohteet ja ajoneuvot perustuvat siihen, miten todella matkustat."
+          },
+          {
+            "title": "Sama kuljettaja kaikkialla",
+            "body": "Jatkuvuus lentokentältä ylängöille ilman mieltymysten uudelleen selittämistä."
+          },
+          {
+            "title": "Läpinäkyvät arviot",
+            "body": "Katso selkeä valikoima ennen kyselyä – tarkenna yksityiskohtia Q Pick:lla."
+          }
+        ]
+      },
+      "packages": {
+        "heading": "Suosittuja matkapaketteja",
+        "sub": "Aloituspisteitä voit muokata – tai käyttää inspiraationa suunnittelijassa.",
+        "coastal": {
+          "days": "4-5 päivää",
+          "title": "Etelärannikko",
+          "body": "CMB saapuminen, Colombo helpotus, Galle Fort, Mirissa tai Unawatuna tahti.",
+          "price": "Alkaen LKR 78 000"
+        },
+        "triangle": {
+          "days": "5-6 päivää",
+          "title": "Kulttuurikolmio",
+          "body": "Sigiriya, Dambulla, Polonnaruwa tiet hotellikoordinaatiolla sisäänrakennettu.",
+          "price": "Alkaen LKR 112 000"
+        },
+        "highland": {
+          "days": "5-7 päivää",
+          "title": "Teemaa",
+          "body": "Kandysta Ellaan ylämaan ilmalla, juna-ajoitus valinnainen, maisemalaskuja.",
+          "price": "Alkaen LKR 124 000"
+        }
+      },
+      "itineraries": {
+        "heading": "Ehdotetut matkareitit",
+        "sub": "Kevyet ääriviivat – laajenna tai tiivistä niitä suunnittelijassa.",
+        "south": {
+          "title": "Etelärannikon nollaus",
+          "stops": [
+            "Päivä 1 — CMB → Colombo",
+            "Päivä 2–3 – Galle ja rannikkokaupungit",
+            "Päivä 4 – Palaa tai jatka Ellaan"
+          ]
+        },
+        "culture": {
+          "title": "Heritage piiri",
+          "stops": [
+            "Päivä 1 — CMB → Sigiriyan alue",
+            "Päivä 2 – Kulttuurikolmiokohteet",
+            "Päivä 3–4 – Kandy ja lähtölogistiikka"
+          ]
+        },
+        "tea": {
+          "title": "Ylämaan silmukka",
+          "stops": [
+            "Päivä 1 – Colombo → Kandy",
+            "Päivä 2–3 – Nuwara Eliya / Ella",
+            "Päivä 4 – luonnonkaunis paluu etelään tai CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "Ajoneuvojen vertailu",
+        "sub": "Valitse mukavuus juhlakokosi mukaan – kaikki ilmastointi ja tarkastetut kuljettajat.",
+        "colVehicle": "Ajoneuvo",
+        "colGuests": "Vieraita",
+        "colBest": "Paras",
+        "colFrom": "Alkaen / päivä",
+        "rows": {
+          "sedan": {
+            "name": "Sedan",
+            "guests": "1–3",
+            "best": "Pariskunnat ja kevyet matkatavarat",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "Perheet ja ylämaan tiet",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "Van",
+            "guests": "1–9",
+            "best": "Ryhmät ja multi-stop-sarjat",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Miksi matkustaa Q Pick:n kanssa",
+        "items": {
+          "chauffeur": {
+            "title": "Tarkastetut kuljettajat",
+            "body": "Henkilöllisyys- ja ajoneuvotarkastus jokaisella matkalla."
+          },
+          "pacing": {
+            "title": "Saaren tahdistus",
+            "body": "Reitit ajoitettu mukavuuteen, ei kiireisiin linja-autojen aikatauluihin."
+          },
+          "estimate": {
+            "title": "Selkeät arviot",
+            "body": "Tutustu valikoimaan ennen kuin puhut tiimin kanssa."
+          },
+          "support": {
+            "title": "Tavoitettavissa oleva tuki",
+            "body": "Muutokset matkalla ja apua tiellä, kun sitä tarvitset."
+          }
+        }
+      },
+      "faq": {
+        "heading": "Usein kysytyt kysymykset",
+        "items": {
+          "customize": {
+            "q": "Voinko muokata matkasuunnitelmaa täysin?",
+            "a": "Kyllä. Käytä suunnittelijaa aloitusarvion tekemiseen ja tarkenna sitten pysähdyksiä, vauhtia ja hotelleja Q Pick:n avulla."
+          },
+          "payment": {
+            "q": "Maksanko, kun saan arvion?",
+            "a": "Ei. Suunnittelija on vain suuntaa-antava – tutkiminen tai tiedustelu ei vaadi maksua."
+          },
+          "hotels": {
+            "q": "Varaatko myös hotelleja?",
+            "a": "Koordinoimme liikkeet oleskelusi ympärillä. Hotellivaraus voidaan sopia tapauskohtaisesti kumppaneiden kanssa."
+          },
+          "changes": {
+            "q": "Entä jos suunnitelmat muuttuvat kesken kiertueen?",
+            "a": "Kuljettajasi ja tukilinjasi säätelevät päivittäistä tahtia, kun tiet, sää tai mieltymykset muuttuvat."
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "Oletko valmis muokkaamaan matkaasi?",
+        "sub": "Jaa päivämäärät ja mieltymykset – tarkennamme arviota selkeäksi yksityiseksi matkasuunnitelmaksi.",
+        "primary": "Lähetä kysely",
+        "secondary": "Takaisin suunnittelijaan",
+        "destinations": "Selaa kohteita"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "Päiväkirjat",
+          "body": "Reittejä auringonnoususta auringonlaskuun joustavalla pysäkillä ja selkeällä all-in-hinnalla."
+        },
+        "multiDay": {
+          "title": "Monipäiväinen",
+          "body": "Matkusta rannikolta ylängöille saman luotettavan kuljettajan kanssa koko matkasi ajan."
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "Turvallisuus",
+        "description": "Q Pick turvallisuus – vahvistetut kuljettajat, vakuutetut ajoneuvot, reaaliaikainen GPS-seuranta ja 24/7-tuki kaikkialla Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Luottamus ja turvallisuus",
+        "headline": "Matkailu Sri Lanka",
+        "headlineLine2": "ehdottomalla luottamuksella.",
+        "description": "Jokaista Q Pick-matkaa tukevat tarkastetut kuljettajat, vakuutetut ajoneuvot, live-seuranta ja omistettu tuki – joten voit tutustua saareen rauhallisin mielin.",
+        "primaryCta": "Varaa kyyti",
+        "secondaryCta": "Ota yhteyttä tukeen",
+        "imageAlt": "Q Pick yksityinen kuljettaja premium-ajoneuvon vieressä Sri Lanka"
+      },
+      "standards": {
+        "eyebrow": "Meidän standardimme",
+        "heading": "Turvallisuus sisäänrakennettu jokaiseen matkaan",
+        "description": "Colombon käytävistä ylämaan hiusneuloihin Q Pick ylläpitää samaa varmennus-, valvonta- ja tukistandardia jokaisella matkalla.",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "Vahvistetut ajurit",
+            "body": "Henkilöllisyys, tausta ja lisenssit tarkistetaan ennen kuin kuljettaja liittyy Q Pick-verkkoon."
+          },
+          "verifiedVehicles": {
+            "title": "Tarkastetut ajoneuvot",
+            "body": "Säännölliset tarkastukset, vakuutusten validointi ja ilmastoidut kalustostandardit kaikissa luokissa."
+          },
+          "gpsTracking": {
+            "title": "GPS-seuranta",
+            "body": "Reaaliaikainen matkanäkyvyys sinulle, isännöillesi ja toimistollemme koko matkan ajan."
+          },
+          "support247": {
+            "title": "24/7 tuki",
+            "body": "Matka-apu ja julkaistu hätänumero hetket, jotka tarvitsevat välitöntä ihmisen apua."
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "Matkan suojaus",
+        "heading": "Suojattu varauksesta saapumiseen",
+        "steps": {
+          "book": {
+            "title": "Kirja",
+            "body": "Vahvista kyytisi, siirtosi tai kiertueesi läpinäkyvällä hinnoittelulla ja erityisellä kuljettajamääräyksellä."
+          },
+          "verification": {
+            "title": "Vahvistus",
+            "body": "Kuljettajan ja ajoneuvon tiedot tarkistetaan Q Pick-turvallisuusstandardin mukaisesti ennen lähettämistä."
+          },
+          "pickup": {
+            "title": "Nouto",
+            "body": "Kuljettajasi saapuu jakamalla ajoneuvon tiedot – lentokentän, hotellin tai huvilan kokoelma."
+          },
+          "tracking": {
+            "title": "Live-seuranta",
+            "body": "Seuraa matkaasi reaaliajassa ja jaa live-tila perheen tai hotellin vastaanoton kanssa."
+          },
+          "arrival": {
+            "title": "Turvallinen saapuminen",
+            "body": "Saavuta määränpääsi valmiustilassa olevan tuen avulla, kunnes matkasi on valmis."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "Aina tavoitettavissa",
+        "heading": "Hätäapu",
+        "description": "Jos jokin tuntuu vialla tiellä, tiimimme on yhden puhelun tai viestin päässä – päivällä tai yöllä, missä tahansa saarella.",
+        "hotline": {
+          "label": "Hätäpuhelin",
+          "hint": "Kiireellisiin matkatilanteisiin, joissa tarvitaan välitöntä apua."
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "Lähetä viestiä tukipalveluumme nopeaa koordinointia ja matkapäivityksiä varten."
+        },
+        "email": {
+          "label": "Sähköposti",
+          "hint": "Ei-kiireellisiin tiedusteluihin, kumppanipyyntöihin ja varauksen seurantaan."
+        }
+      },
+      "stats": {
+        "eyebrow": "Numeroiden mukaan",
+        "heading": "Tavallinen matkustajien luottamus",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Vahvistetut ajurit"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "Vakuutetut matkat"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "Tuen kattavuus"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "Asiakastyytyväisyys"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "Matkasi odottaa",
+        "heading": "Matkusta itsevarmasti",
+        "description": "Varaa yksityinen autonkuljettaja, lentokenttäkuljetus tai saarikierros – Q Pick-turvallisuusstandardin tukemana ensimmäisestä mailista viimeiseen.",
+        "primaryCta": "Varaa kyyti",
+        "secondaryCta": "Suunnittele kiertue",
+        "imageAlt": "Sigiriyan kalliolinnoitus kohoaa trooppisen metsän yläpuolelle Sri Lanka"
+      },
+      "faqHeading": "Yleisiä kysymyksiä",
+      "faqs": [
+        {
+          "q": "Onko Q Pick-ohjaimet vahvistettu?",
+          "a": "Kyllä. Kuljettajat suorittavat henkilöllisyyden, ajoneuvon ja taustan tarkistukset ennen verkkoon liittymistä."
+        },
+        {
+          "q": "Voinko jakaa matkani?",
+          "a": "Kyllä. Suoran matkan jakamisen avulla perhe, isännät tai hotellien vastaanotto voivat seurata matkaasi."
+        },
+        {
+          "q": "Entä jos tarvitsen apua ajon aikana?",
+          "a": "Matkanaikainen tuki ja julkaistu hätäpuhelin ovat saatavilla kriittisiä hetkiä varten."
+        },
+        {
+          "q": "Onko matkoilla vakuutus?",
+          "a": "Takuu koskee jokaista Q Pick-standardin mukaista matkaa."
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Aja Q Pick",
+        "description": "Liity Q Pick ammattikuljettajaksi – premium-asiakkaita, oikeudenmukaiset tulot, joustavat aikataulut ja 24/7 kuljettajatuki kaikkialla Sri Lanka."
+      },
+      "hero": {
+        "eyebrow": "Kuljettajan rekrytointi",
+        "headline": "Aja Sri Lanka",
+        "headlineLine2": "premium-matkat.",
+        "description": "Liity kuratoituun ammattikuljettajien verkostoon, joka palvelee turisteja, hotelleja ja yritysmatkustajia – läpinäkyvillä tuloilla, arvokkaalla lähetyksellä ja tuella, joka on rakennettu tuntemillesi teille.",
+        "primaryCta": "Hae nyt",
+        "secondaryCta": "Katso vaatimukset",
+        "imageAlt": "Q Pick ammattikuljettaja premium-ajoneuvon vieressä Sri Lanka"
+      },
+      "whyJoin": {
+        "eyebrow": "Miksi liittyä Q Pick",
+        "heading": "Rakennettu kuljettajille, jotka ovat ylpeitä tiestä",
+        "description": "Q Pick ei ole yleinen kyytisovellus. Yhdistämme tarkastetut autonkuljettajat korkealuokkaiseen kysyntään – lentokenttäkuljetukset, yksityismatkat ja yritysmatkat.",
+        "cards": {
+          "earnings": {
+            "title": "Korkeammat tulot",
+            "body": "Hyödynnä huippuluokan lentokenttä-, kiertoajelu- ja autonkuljettajahintoja – ei kilpa-ajohinnoittelua."
+          },
+          "schedule": {
+            "title": "Joustava aikataulu",
+            "body": "Valitse, milloin siirryt verkkoon. Tasapainota lentoja, päivävuokrauksia ja usean päivän retkiä omilla ehdoillasi."
+          },
+          "clients": {
+            "title": "Premium-turistit ja yritysasiakkaat",
+            "body": "Palvele hotellin vieraita, liikematkustajia ja kuratoituja kiertueasiakkaita, jotka odottavat ammattitaitoa."
+          },
+          "support": {
+            "title": "24/7 kuljettajatuki",
+            "body": "Toimintapiste ja hätäpuhelin, kun tarvitset apua tien päällä – päivällä tai yöllä."
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "Laivaston luokat",
+        "heading": "Aja käyttämääsi ajoneuvoa",
+        "description": "Q Pick tukee kaikkia yksityisiä kuljettajakategorioita – kompakteista kaupunkiautoista korkeakattoisiin pakettiautoihin ja linja-autoihin."
+      },
+      "journey": {
+        "eyebrow": "Tiesi hyväksymiseen",
+        "heading": "Hakemuksesta ensimmäiseen premium-matkaasi",
+        "steps": {
+          "apply": {
+            "title": "Käytä",
+            "body": "Täytä online-rekisteröinti henkilö-, ajoneuvo- ja asiakirjatietosi mukaan."
+          },
+          "verify": {
+            "title": "Tarkista asiakirjat",
+            "body": "Tiimimme tarkistaa verkkotunnuksesi, lisenssisi, vakuutuksesi ja ajoneuvosi rekisteröinnin."
+          },
+          "inspection": {
+            "title": "Ajoneuvon tarkastus",
+            "body": "Standarditarkastus vahvistaa, että ajoneuvosi täyttää Q Pick turvallisuus- ja mukavuusvaatimukset."
+          },
+          "training": {
+            "title": "Koulutus",
+            "body": "Lyhyt perehdytys Q Pick-palvelustandardeihin, sovellusten käyttöön ja vieraiden vieraanvaraisuuteen."
+          },
+          "approved": {
+            "title": "Hyväksytty",
+            "body": "Kun profiilisi on vahvistettu, se julkaistaan – mutta et voi siirtyä verkkoon ennen kuin se on täysin hyväksytty."
+          },
+          "start": {
+            "title": "Aloita ajaminen",
+            "body": "Hyväksy premium-matkoja, lentokenttäkuljetuksia ja kiertoajeluja ympäri saarta."
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "Kuljettajan äänet",
+        "heading": "Kuljettajat, jotka valitsivat Q Pick",
+        "items": [
+          {
+            "name": "Kasun Perera",
+            "role": "Sedan-kuljettaja · Colombo",
+            "quote": "Lentokenttäkuljetukset ja hotellinouto ovat johdonmukaisia. Tiedän hinnan ennen kuin hyväksyn, ja tuki vastaa, kun soitan."
+          },
+          {
+            "name": "Nimal Fernando",
+            "role": "Korkeakattoinen pakettiauto · Kandy",
+            "quote": "Retkiryhmät ja perhekuljetukset maksavat paremmin kuin satunnaiset kaupunkimatkat. Q Pick-asiakkaat odottavat laatua – ja antavat tippiä sen mukaisesti."
+          },
+          {
+            "name": "Ruwan Silva",
+            "role": "SUV-kuljettaja · Galle",
+            "quote": "Käyttöönotto oli perusteellista, mutta reilua. Hyväksyttyään sovellus ja toimintatiimi tekivät helpoksi pysyä kiireisenä kauden aikana."
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "Pätevyydet",
+        "heading": "Kuljettajan vaatimukset",
+        "description": "Pidämme korkeaa rimaa suojellaksemme vieraita ja kuljettajia. Varmista, että täytät nämä ennen hakemuksen jättämistä.",
+        "items": [
+          "Voimassa Sri Lankan ajokortti vähintään 3 vuoden kokemuksella",
+          "National Identity Card (NIC) ja selkeä taustatarkastus",
+          "Rekisteröity, vakuutettu auto hyvässä kunnossa",
+          "Voimassa oleva tulolisenssi ja kattavat vakuutusasiakirjat",
+          "Älypuhelin mobiilidatalla Q Pick-ohjainsovellukselle",
+          "Ammattitaitoinen ulkonäkö ja kohtelias vieraiden kommunikointi",
+          "Sujuva vähintään yksi sinhala, englanti tai tamili",
+          "Halukkuus palvella lentokenttä-, kaupunki- ja kaupunkien välisiä premium-matkoja"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "Havainnollistavat tulot",
+        "heading": "Esimerkkitulot",
+        "description": "Alla olevat luvut ovat vain havainnollistavia esimerkkejä – ei taattuja tuloja. Todelliset tulot riippuvat tunteista, vuodenajasta, ajoneuvoluokista ja matkatyypistä.",
+        "disclaimer": "Vain havainnollistava. Ei tae tuloista. Riippuu Q Pick provisiosta, kysynnästä ja yksilöllisestä suorituskyvystä.",
+        "examples": [
+          {
+            "label": "Lentokenttäkuljetus (CMB → Colombo)",
+            "amount": "LKR 8 500 – 12 000",
+            "note": "Sedan · yksisuuntainen · ruuhka-ajan ulkopuolella"
+          },
+          {
+            "label": "Kuljettajan vuokraus koko päiväksi",
+            "amount": "LKR 18 000 – 28 000",
+            "note": "SUV tai pakettiauto · 8–10 tuntia · ei sisällä polttoainetta"
+          },
+          {
+            "label": "Usean päivän kiertue (per päivä)",
+            "amount": "LKR 22 000 – 35 000",
+            "note": "Korkeakattoinen pakettiauto · kulttuurikolmioreitti"
+          },
+          {
+            "label": "Kaupunkimatka (Colombo)",
+            "amount": "LKR 2 500 – 5 500",
+            "note": "Mini tai sedan · mittarihinta"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "Oletko valmis liittymään?",
+        "heading": "Ryhdy Q Pick -kuljettajaksi",
+        "description": "Aloita hakemuksesi jo tänään. Suorita rekisteröinti omaan tahtiisi – tiimimme opastaa sinua vahvistuksen ja hyväksynnän läpi.",
+        "primaryCta": "Hae nyt",
+        "secondaryCta": "Katso vaatimukset",
+        "imageAlt": "Q Pick kuljettajakartta ja matkan kojelauta mobiilissa"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "Yhteistyökumppanit",
+        "description": "Yhteistyökumppanina Q Pick hotelli-, huvila- ja yritysvieraiden kuljetuksissa yhden luotettavan standardin mukaisesti."
+      },
+      "title": "Yhteistyökumppanit, jotka liikuttavat vieraita hyvin",
+      "description": "Hotellit, huvilat ja yritykset – valkoiset hansikkaat kuljetukset, joihin vastaanottosi voi luottaa jaetun Q Pick-standardin mukaisesti.",
+      "primaryCta": "Talk to partnerships",
+      "secondaryCta": "Lentokenttätuote",
+      "body": "Vieraiden saapumislinkit, aikataulutetut siirrot ja toiminnan näkyvyys – suunniteltu siten, että hotellivierailutiimit käyttävät vähemmän aikaa WhatsApp-laivaston koordinointiin ja enemmän aikaa isännöintiin.",
+      "logoRowEyebrow": "Rakennettu vieraanvaraisuutta varten",
+      "logoRowAriaLabel": "Hospitality-kumppanit",
+      "partnerNames": [
+        "Galle Face -hotelli",
+        "Kaneli",
+        "Jetwing",
+        "Shangri-La",
+        "Amangalla"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "Tietoja",
+        "description": "Quick Pick App (Pvt) Ltd rakentaa Q Pick - luotettavan yksityisen liikkumiskerroksen Sri Lanka: kyydissä, lentokenttäkuljetukset ja saarimatkat."
+      },
+      "title": "Rakennettu Sri Lanka liikkumista varten",
+      "description": "Q Pick on Quick Pick App (Pvt) Ltd:n kehittämä ja ylläpitämä – luotettu yksityinen liikkumiskerros saarella, ylellisen conciergen rauhassa ja nykyaikaisen liikkumisverkon luotettavuudessa.",
+      "primaryCta": "Varaa kyyti",
+      "secondaryCta": "Aja kanssamme",
+      "paragraphs": [
+        "Olemme olemassa, koska hajanaiset WhatsApp-laivastot ja yleiset maailmanlaajuiset sovellukset kaipaavat sitä, mitä matkustajat ja asukkaat todella tarvitsevat: varmuutta, vieraanvaraisuutta ja paikan kunnioittamista.",
+        "Quick Pick App (Pvt) Ltd suunnittelee matkustaja-, kuljettaja- ja toimintapinnat yhdellä kielellä – hiljaista tekniikkaa ihmisten matkoille Sri Lanka."
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "Tuki",
+        "description": "Contact Q Pick support for rides, transfers, tours, and partner enquiries."
+      },
+      "title": "Tuki",
+      "description": "We're here for trip questions, partner enquiries, and moments that need a human.",
+      "emailLabel": "Sähköposti",
+      "phoneLabel": "Puhelin",
+      "locationLabel": "Sijainti",
+      "emergencyLabel": "Hätälinja"
+    },
+    "destinations": {
+      "meta": {
+        "title": "Kohteet",
+        "description": "Explore Q Pick destinations across Sri Lanka — Colombo, Galle, Ella, Sigiriya, and more."
+      },
+      "title": "Kohteet",
+      "description": "Places framed for how you travel — harbour roads, fort walls, highland mist, and the cultural triangle."
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "Kohde",
+      "primaryCta": "Varaa kyyti",
+      "secondaryCta": "Tutustu retkiin"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "Yksityisyys",
+          "description": "Q Pick privacy policy — how we collect, use, and protect your information."
+        },
+        "title": "Yksityisyys",
+        "description": "We collect only what we need to move you safely — and we treat trip data with care.",
+        "body": "Tämä sivu on vaiheen 1 kuori. Täysi laillinen kopio kattaa tilitiedot, sijainnin aktiivisten matkojen aikana, maksujen käsittelijät, säilytysajat sekä sovellettavan Sri Lankan ja kansainvälisen tietosuojalain mukaiset oikeutesi.",
+        "questionsPrefix": "Kysymyksiä:",
+        "supportEmail": "tuki@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "Ehdot",
+          "description": "Q Pick terms of service for passengers, partners, and drivers."
+        },
+        "title": "Palveluehdot",
+        "description": "The agreement that governs use of Q Pick services across rides, transfers, and tours.",
+        "body": "Tämä sivu on vaiheen 1 kuori. Full terms will define passenger and driver obligations, cancellations, liability limits, acceptable use, and dispute resolution.",
+        "questionsPrefix": "Kysymyksiä:",
+        "supportEmail": "tuki@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Sivua ei löydy",
+      "description": "The route you requested is not part of the Q Pick map — yet.",
+      "primaryCta": "Takaisin kotiin",
+      "secondaryCta": "Tuki",
+      "continue": "Tai jatka kohtaan {ride}, {airport} tai {tours}.",
+      "links": {
+        "ride": "Ratsastaa",
+        "airport": "Lentokenttä",
+        "tours": "Matkat"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka, siirretty varmuudella.",
+        "description": "Ensiluokkaista liikkuvuutta Sri Lanka - lentokenttäkuljetukset, kaupunkitaksit, kaukoliikenteen kyydit, autonkuljettajapalvelu, yritysmatkat ja yksityiset matkat yhden luotettavan alustan alla."
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Ensiluokkainen liikkuvuus maassa Sri Lanka",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Ensiluokkaista liikkuvuutta Sri Lanka - lentokenttäkuljetukset, kaupunkitaksit, kaukoliikenteen kyydit, autonkuljettajapalvelu ja yksityiset matkat yhden luotettavan alustan alla."
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "Yksityiset Sri Lanka retket kuljettajan kanssa | Q Pick",
+      "description": "Tutustu maahan Sri Lanka Q Pick -palvelun avulla – yksityiset autonkuljettajat, premium-ajoneuvot ja räätälöidyt matkat kulttuurikohteiden, kukkuloiden, rantojen ja villieläinten halki.",
+      "ogTitle": "Tutustu maahan Sri Lanka Q Pick -yksityiskierroksilla",
+      "twitterTitle": "Yksityiset Sri Lanka Tours | Q Pick",
+      "twitterDescription": "Räätälöidyt saarimatkat yksityisillä kuljettajilla ja laadukkailla ajoneuvoilla."
+    },
+    "hero": {
+      "eyebrow": "Q Pick Yksityiset matkat",
+      "headline": "Tutustu maahan Sri Lanka Q Pick:n avulla",
+      "subtitle": "Löydä unohtumattomia matkoja yksityiskuljettajien, premium-ajoneuvojen ja räätälöityjen elämysten kanssa.",
+      "primaryCta": "Tutustu kokoelmiin",
+      "secondaryCta": "Suunnittele matkani"
+    },
+    "finalCta": {
+      "headline": "Sri Lanka -matkasi alkaa tästä",
+      "body": "Jaa päivämäärät ja määränpääsi – suunnittelemme yksityisen kuljettajan matkasuunnitelman ja vahvistamme kirjallisen tarjouksen.",
+      "ctaLabel": "Suunnittele matkani",
+      "secondaryLabel": "Puhu matka-asiantuntijan kanssa"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "Yksityiset kuljettajat",
+        "description": "Lisensoituja kuljettajia, jotka tuntevat temppelietiketin, ylämaan tiet ja rauhalliset saapuvat lentokentälle."
+      },
+      "airport": {
+        "title": "Nouto lentokentältä",
+        "description": "Bandaranaike International (CMB) tapaaminen ajoitettuna lentollesi."
+      },
+      "support": {
+        "title": "24/7 tuki",
+        "description": "Todellinen Q Pick-pöytä ennen lähtöä ja tien päällä — WhatsApp ja puhelin, päivällä ja yöllä."
+      },
+      "vehicles": {
+        "title": "Luksusajoneuvot",
+        "description": "Porrasperävaunut, katumaasturit, pakettiautot ja linja-autot – yksityinen hytti, ilmastoitu, matkatavaravalmiina."
+      },
+      "pricing": {
+        "title": "Läpinäkyvä hinnoittelu",
+        "description": "Kirjalliset lainaukset tarkastelun jälkeen – ei keksittyjä verkkosivustojen hintoja tai yllätyksiä."
+      },
+      "personal": {
+        "title": "Henkilökohtaiset matkat",
+        "description": "Jokainen paketti on muokattavissa: määränpäät, päivät, vauhti ja ajoneuvoluokka."
+      },
+      "rating": {
+        "title": "4.9 Vierasarvio",
+        "description": "Yksityisen kiertueen vieraat ovat arvioineet johdonmukaisesti kuljettajan hoidosta, tahdistamisesta ja viestinnästä."
+      },
+      "licensed": {
+        "title": "Lisensoitu operaattori",
+        "description": "Quick Pick App (Pvt) Ltd — rekisteröity Sri Lankan operaattori, jolla on tarkastettuja kuljettajia ja vakuutettuja ajoneuvoja."
+      },
+      "secure": {
+        "title": "Turvallinen varaus",
+        "description": "Kirjalliset tarjoukset, vahvistetut matkasuunnitelmat ja läpinäkyvät sisällytykset ennen matkaa."
+      }
+    },
+    "explorer": {
+      "eyebrow": "Kuroidut kokoelmat",
+      "title": "Valitse matkasi",
+      "subtitle": "Ensiluokkaiset yksityiset matkat matkatyylin mukaan – avaa luokka ja tutustu sen tarinaan, suosituimpiin reitteihin ja matkan yksityiskohtiin täällä.",
+      "searchPlaceholder": "Hae kohteita, kokemuksia tai retkien nimiä…",
+      "clearSearch": "Tyhjennä haku",
+      "categoriesAria": "Tour luokat",
+      "mapSelection": "Kartan valinta",
+      "multiDay": "Monen päivän matkat",
+      "premiumNorthern": "Premium-yksityiset matkat",
+      "sortAria": "Lajittele matkapaketit",
+      "filterAria": "Suodata matkapaketteja",
+      "allCategoriesTitle": "Kaikki luokat",
+      "allCategoriesIntro": "Selaa jokaista julkaistua yksityistä kiertuetta – nollaa ja tutustu koko Q Pick -kokoelmaan.",
+      "viewAllCategories": "Näytä kaikki luokat",
+      "destinationExperiences": "Kohteen kokemuksia",
+      "destinationExperiencesSub": "Todelliset paikat, vuodenajat ja valokuvaikkunat – ei vain tarroja kortissa.",
+      "vehiclesTitle": "Matkusta yksityisesti mukavasti",
+      "vehiclesSub": "Sedanista minilinja-autoon – ilmastointi, tavaratila ja lataus tielle.",
+      "trustTitle": "Miksi matkustaa Q Pick",
+      "reviewsEmptyTitle": "Vieraitarinat tulossa pian",
+      "reviewsEmptyBody": "Vahvistetut yksityisen kiertueen arvostelut näkyvät täällä, kun vieraat jakavat matkansa.",
+      "faqEyebrow": "Usein kysytyt kysymykset",
+      "faqLead": "Kaikki mitä sinun tulee tietää ennen kuin suunnittelet matkaasi Q Pick:n kanssa.",
+      "noResults": "Yksikään matka ei vastaa hakuasi. Kokeile toista avainsanaa tai nollaa suodattimet.",
+      "noToursTitle": "Yksikään matka ei vastaa hakuasi",
+      "noToursBody": "Kokeile toista avainsanaa tai nollaa suodattimet selataksesi koko kokoelmaa.",
+      "planCustomTour": "Suunnittele mukautettu kiertue",
+      "resetFilters": "Nollaa suodattimet",
+      "sortBy": "Lajitteluperuste",
+      "mapJourneysThrough": "Matkat {name}",
+      "itineraryOne": "matkasuunnitelma",
+      "itineraryMany": "reitit",
+      "matchingQuery": "vastaa \"{query}\"",
+      "northernPeninsula": "Pohjoinen niemimaa",
+      "premiumJaffna": "Premium Jaffna -kokemuksia",
+      "premiumJaffnaSub": "{count} {experiences} — kulttuuriperinnön kaupunkikävelyjä, saarilautat ja pyhät venematkat yksityisen kuljettajan tuella.",
+      "experienceOne": "kokemusta",
+      "experienceMany": "kokemuksia",
+      "reviewsEmptyDisclaimer": "Vahvistetut asiakasarvostelut näkyvät julkaistujen matkojen jälkeen. Emme näytä keksittyjä suosituksia, arvioita tai palkintoja.",
+      "trustBeforeTestimonials": "Luota ennen kokemuksia",
+      "faqTitle": "FAQ",
+      "defaultImageAlt": "Luonnonkaunis matka Sri Lanka ylämaahan",
+      "openCategory": "Avaa {title}",
+      "countItineraries": "{count} matkasuunnitelmat",
+      "countPackages": "{count} paketteja",
+      "countPackage": "{count} paketti",
+      "cmbService": "CMB-palvelu",
+      "packagesFound": "{count} paketteja",
+      "dayTour": "Päiväretki",
+      "daysTour": "{count} päivää",
+      "fromPrice": "Hinta pyynnöstä",
+      "viewDetails": "Näytä tiedot",
+      "bookTour": "Varaa tämä kiertue",
+      "idealFor": "Ihanteellinen {value}",
+      "premiumNorthernHeading": "Pohjois Sri Lanka",
+      "premiumNorthernSub": "Perintötemppelit, syrjäiset saaret ja Jaffnan kulttuurinen syvyys – kolme huippuluokan matkaa omistautuneiden kuljettajien kanssa."
+    },
+    "filters": {
+      "all": "Kaikki",
+      "classic": "Klassinen",
+      "luxury": "Luksus",
+      "wildlife": "Villieläimiä",
+      "adventure": "Seikkailu",
+      "beach": "Ranta",
+      "honeymoon": "Häämatka",
+      "wellness": "Hyvinvointi",
+      "family": "Perhe",
+      "day-tours": "Päiväretkiä"
+    },
+    "sort": {
+      "featured": "Esittelyssä",
+      "newest": "Uusin",
+      "duration": "Kesto",
+      "popular": "Suosittu"
+    },
+    "badges": {
+      "best-seller": "Paras myyjä",
+      "luxury": "Luksus",
+      "new": "Uusi",
+      "family-friendly": "Perheystävällinen",
+      "eco": "Eco",
+      "adventure": "Seikkailu"
+    },
+    "breadcrumbs": {
+      "home": "Kotiin",
+      "tours": "Matkat"
+    },
+    "jsonLd": {
+      "touristType": "Vapaa-ajan matkustajat"
+    },
+    "reviewsMeta": {
+      "title": "Asiakkaiden arviot",
+      "emptyTitle": "Tarinoita tieltä",
+      "emptyBody": "Vahvistetut asiakasarvostelut näkyvät julkaistujen matkojen jälkeen. Emme näytä keksittyjä suosituksia, arvioita tai palkintoja."
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 päivää Ella Train Escape",
+        "idealFor": "Junamatkan ystävät rajoitetulla ajalla",
+        "intro": "Luonnonkaunis rautatie teelaaksojen läpi. Tämä 4 päivän yksityinen autonkuljettajamatka vierailee Kandyssa, Nuwara Eliyassa ja Ellassa – junamatkan ystäville rajoitetusti. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Junan segmentti",
+          "Yhdeksän kaaria",
+          "Tee pysähtyy"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Kandyyn",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Nuwara Eliyaan",
+            "description": "Tutustu Nuwara Eliyaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Ellaan",
+            "description": "Tutustu Ellaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5 päivää Mirissa Whale Coast",
+        "idealFor": "Ocean villieläinten harrastajat",
+        "intro": "Valaskausi ja linnoitusperintö. Tämä 5 päivän yksityinen autonkuljettajamatka vierailee Gallessa, Mirissassa, Bentotassa – valtameren villieläinten harrastajat. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Mirissan rannikko",
+          "Valaiden katselu",
+          "Gallen linnoitus"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Galleen",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Mirissaan",
+            "description": "Tutustu Mirissaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Bentotaan",
+            "description": "Tutustu Bentotaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Bentota vapaa-ajalla",
+            "description": "Tutustu Bentotaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6 Days Luxury Honeymoon Coast",
+        "idealFor": "Rannikon häämatkalaiset",
+        "intro": "Fort Romance ja Ocean Villas. Tämä 6 päivän yksityinen autonkuljettajamatka vierailee Colombossa, Gallessa, Bentotassa ja Mirissassa – rannikon häämatkalla. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Gallen linnoitus",
+          "Bentota",
+          "Mirissa auringonlaskuja"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Colomboon",
+            "description": "Tutustu Colomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Galleen",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Bentotaan",
+            "description": "Tutustu Bentotaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Mirissaan",
+            "description": "Tutustu Mirissaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Mirissa vapaa-ajalla",
+            "description": "Tutustu Mirissaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6 päivän pyhiinvaelluskolmio",
+        "idealFor": "Uskon johtama ryhmämatka",
+        "intro": "Pyhät paikat ympäri saarta. Tämä 6 päivän yksityinen autonkuljettajamatka vierailee Kandyssa, Anuradhapurassa, Dambullassa, Polonnaruwassa – uskon johtama ryhmämatka. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Hampaan temppeli",
+          "Anuradhapura",
+          "Dambullan luolat"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Kandyyn",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Anuradhapuraan",
+            "description": "Tutustu Anuradhapuraan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Dambullaan",
+            "description": "Tutustu Dambullaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Polonnaruwaan",
+            "description": "Tutustu Polonnaruwaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Polonnaruwa vapaa-ajalla",
+            "description": "Tutustu Polonnaruwaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8 Days Festival Culture & Kandy",
+        "idealFor": "Festivaalikauden vierailijat",
+        "intro": "Perahera-ajoitus perinnön kanssa. Tämä 8 päivän yksityinen kuljettajamatka vierailee Colombossa, Kandyssa, Dambullassa, Sigiriyassa, Negombossa - festivaalikauden vierailijoissa. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Kandyn festivaalit",
+          "Temppelivierailut",
+          "Kolmion kuvakkeet"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Colomboon",
+            "description": "Tutustu Colomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Kandyyn",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Dambullaan",
+            "description": "Tutustu Dambullaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Sigiriyaan",
+            "description": "Tutustu Sigiriyaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Negomboon",
+            "description": "Tutustu Negomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Negombo rauhassa",
+            "description": "Tutustu Negomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Negombo rauhassa",
+            "description": "Tutustu Negomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9 päivän häämatkaparatiisi",
+        "idealFor": "Avioparit ja romanttiset pakot",
+        "intro": "Intiimi tahdistus sumun ja meren halki. Tämä 9 päivän yksityinen autonkuljettajamatka vierailee Negombossa, Kandyssa, Nuwara Eliyassa, Ellassa, Bentotassa, Gallessa – tuoreen avioparin ja romanttisen pakomatkan parissa. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Teemaa",
+          "Ella romantiikkaa",
+          "Rannikon auringonlaskut"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Negomboon",
+            "description": "Tutustu Negomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Kandyyn",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Nuwara Eliyaan",
+            "description": "Tutustu Nuwara Eliyaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Ellaan",
+            "description": "Tutustu Ellaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Bentotaan",
+            "description": "Tutustu Bentotaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Galleen",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10 päivän Ayurveda Wellness Journey",
+        "idealFor": "Hyvinvointiin keskittyneet matkailijat",
+        "intro": "Toipumisluvut kudottu yksityiseen matkustamiseen. Tämä 10 päivän yksityinen kuljettajamatka vierailee Negombossa, Kandyssa, Bentotassa, Mirissassa, Gallessa – hyvinvointiin keskittyneillä matkustajilla. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Hyvinvointitahdistus",
+          "Rannikko rauhallinen",
+          "Temppelin tasapaino"
+        ],
+        "itinerary": [
+          {
+            "title": "Tutustu Negomboon",
+            "description": "Tutustu Negomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Kandyyn",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Bentotaan",
+            "description": "Tutustu Bentotaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Mirissaan",
+            "description": "Tutustu Mirissaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Tutustu Galleen",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Galle vapaa-ajalla",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          },
+          {
+            "title": "Lähtö & eteenpäin",
+            "description": "Yksityinen kuljetus Colomboon tai Bandaranaike International lentokentälle – tai jatka mukautettua reittiäsi Q Pick:lla."
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "Colombon pääkaupungin löytöpäivä",
+        "idealFor": "Lomavieraat ja kaupungin ystävät",
+        "intro": "Colombon siluetti, siirtomaakujat ja Galle Facen auringonlaskut. Tämä 1 päivän yksityinen kuljettajamatka vierailee Colombossa – lomavieraissa ja kaupungin ystäville. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Lotus Towerin näköalat",
+          "Galle Face Vihreä",
+          "Colombo-ruokailu pysähtyy"
+        ],
+        "itinerary": [
+          {
+            "title": "Colombon löytö",
+            "description": "Tutustu Colomboon omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "Gallen linnakkeen perintöpäivä",
+        "idealFor": "Historian ystävät etelärannikolla",
+        "intro": "Hollantilaiset vallit ja Intian valtameren valo. Tämä 1 päivän yksityinen autonkuljettajamatka vierailee Gallessa – etelärannikon historian ystäville. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Galle Fortin majakka",
+          "Vallikävely",
+          "Boutique-kadut"
+        ],
+        "itinerary": [
+          {
+            "title": "Gallen löytö",
+            "description": "Tutustu Galleen omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "Sigiriya Rock Sunrise Day",
+        "idealFor": "Varhaiset herääjät ja valokuvausvieraat",
+        "intro": "Lion Rock ensimmäisessä valossa. Tämä 1 päivän yksityinen autonkuljettajamatka vierailee Sigiriyassa – varhain nousevilla ja valokuvausvierailla. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Sigiriyan huippukokous",
+          "Vesipuutarhat",
+          "Fresko galleria"
+        ],
+        "itinerary": [
+          {
+            "title": "Sigiriyan löytö",
+            "description": "Tutustu Sigiriyaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "Kandyn pyhän kaupungin päivä",
+        "idealFor": "Hengelliset matkailijat ja perheet",
+        "intro": "Hampaiden temppeli ja järvi rauhallinen. Tämä 1 päivän yksityinen autonkuljettajamatka vierailee Kandyssa – henkisillä matkustajilla ja perheillä. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Hampaan temppeli",
+          "Kandy järvi",
+          "Peradeniya vaihtoehto"
+        ],
+        "itinerary": [
+          {
+            "title": "Kandyn löytö",
+            "description": "Tutustu Kandyyn omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "Ella Highlandin näkymien päivä",
+        "idealFor": "Junapysähdykset ja harjanteelle kävelijät",
+        "intro": "Yhdeksän kaaria ja sumuisia laaksoja. Tämä 1 päivän yksityinen autonkuljettajamatka vierailee Ellassa – junapysähdyksissä ja harjunkävelijissä. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Yhdeksän kaaren silta",
+          "Pikku Adamin huippu",
+          "Tea Valleyn kahvilat"
+        ],
+        "itinerary": [
+          {
+            "title": "Ellan löytö",
+            "description": "Tutustu Ellaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "Yalan villieläinsafaripäivä",
+        "idealFor": "Safari-harrastajat tiukoilla aikatauluilla",
+        "intro": "Leopardimaa aamunkoitteessa. Tämä 1 päivän yksityinen kuljettajamatka vierailee Yalassa – safariharrastajilla tiukoilla aikatauluilla. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Jeep safari ikkuna",
+          "Kuivan alueen laguunit",
+          "Lintuelämä"
+        ],
+        "itinerary": [
+          {
+            "title": "Yalan löytö",
+            "description": "Tutustu Yalaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "Anuradhapuran pyhän polun päivä",
+        "idealFor": "Buddhalaisen perinnön pyhiinvaeltajat",
+        "intro": "Muinaiset stupat ja bodhi-perinteet. Tämä 1 päivän yksityinen autonkuljettajamatka vierailee Anuradhapurassa – buddhalaisen perinnön pyhiinvaeltajilla. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Ruwanwelisaya",
+          "Pyhä Bodhi-puu",
+          "Luostarin rauniot"
+        ],
+        "itinerary": [
+          {
+            "title": "Anuradhapuran löytö",
+            "description": "Tutustu Anuradhapuraan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "Mirissan etelärannikon päivä",
+        "idealFor": "Valaskauden vierailijat",
+        "intro": "Kookospoukamia ja valtameren horisontteja. Tämä 1 päivän yksityinen kuljettajamatka vierailee Mirissassa – valaskauden vierailijoissa. Omistautunut kuljettajasi hoitaa tietä, kun keskityt temppeleihin, näköalapaikkoihin, villieläinikkunoihin ja kiireisiin rannikkoiltapäiviin. Jokainen Q Pick-kiertue on hienostunut päivämäärien, ajoneuvon mieltymystesi ja vauhtisi kirjallisen arvioinnin jälkeen.",
+        "highlights": [
+          "Mirissan ranta",
+          "Coconut Hill",
+          "Valaiden katselukausi"
+        ],
+        "itinerary": [
+          {
+            "title": "Mirissan löytö",
+            "description": "Tutustu Mirissaan omistautuneen kuljettajasi kanssa – ajoitus vaihtelee sään, lippujen ja vauhtisi mukaan."
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "Jaffna Heritage City Tour",
+        "idealFor": "Perintömatkailijat tutkivat pohjoista",
+        "intro": "Tutustu Jaffnan tamiliperintöön keskittyneellä neljän tunnin yksityisellä kiertueella. Kuljettajasi opastaa sinut Nallur Kovilin gopuramista Jaffnan linnakkeen valleille, historialliseen julkiseen kirjastoon, värikkäälle paikalliselle markkinapaikalle ja klassiseen Rio Ice Cream -viimeistelyyn.",
+        "highlights": [
+          "Nallurin temppeli",
+          "Jaffnan linnoitus",
+          "Julkinen kirjasto",
+          "Paikalliset markkinat",
+          "Rion jäätelö"
+        ],
+        "itinerary": [
+          {
+            "title": "Jaffnan perintöpiiri",
+            "description": "Nallur-temppeli, Jaffnan linnake, julkinen kirjasto, markkinoiden selailu ja Rio Ice Cream – aukioloaikojen ja kiinnostuksen kohteidesi mukaan."
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "Delft Islandin seikkailu",
+        "idealFor": "Saaristomatkailijat ja valokuvaajat",
+        "intro": "Ylitä lautalla syrjäiselle Delft Islandille koko päivän seikkailua varten. Kävele korallirannoilla, etsi kuuluisa baobab-puu ja Queen's Towerin rauniot, katsele villihevosia avoimilla tasangoilla ja palaa takaisin yksityisen kuljettajasi kanssa, joka hoitaa kuljetukset mantereelle.",
+        "highlights": [
+          "Lauttamatka",
+          "Villit hevoset",
+          "Baobab puu",
+          "Kuningattaren torni",
+          "Korallin ranta"
+        ],
+        "itinerary": [
+          {
+            "title": "Delft Islandin retkikunta",
+            "description": "Lauttamatka, villihevostasangot, baobab-puu, Queen's Tower ja korallirannan aika – mantereella kuljetetaan yksityisellä ajoneuvolla."
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "Nainativu Sacred Island Tour",
+        "idealFor": "Pyhiinvaeltajat ja kulttuurimatkailijat",
+        "intro": "Purjehdi Nainativuun kuuden tunnin pyhälle saarelle. Vieraile Nagadeepan temppelissä ja Nagapooshani Amman Kovilissa, koe veneen ylitys ja ihaile Sri Lanka:n pohjoisten saarten buddhalaista ja hindulaista perintöä yksityisen kuljettajan tuella rannalla.",
+        "highlights": [
+          "Nagadeepan temppeli",
+          "Nagapooshani Ammanin temppeli",
+          "Venematka",
+          "Kulttuurikokemus",
+          "Sigiriya Rock Fortress ajastettu viileämpään valoon",
+          "Dambulla-luolatemppelin seinämaalaukset",
+          "Anuradhapuran tai Polonnaruwan pyhät paikat",
+          "Yksityinen Kulttuurikolmion kuljettaja",
+          "Hampaan temppeli Kandyssa",
+          "Teeviljelmiä Nuwara Eliyan ympärillä",
+          "Yhdeksän kaaren silta Ellassa",
+          "Valinnainen maisemajunaosuus",
+          "Kulttuurikolmion kuvakkeet",
+          "Kandy ja ylämaan teemaa",
+          "Ellan luonnonkauniita maamerkkejä",
+          "Etelärannikolla Gallessa tai Mirissassa",
+          "Perinnön lämmittely Kulttuurikolmiossa",
+          "Ylämaan teemaa & Ella",
+          "Yala leopardi safari-ikkuna",
+          "Etelärannikon palautuspäivät",
+          "Kulttuurikolmion täysi syvyys",
+          "Hill Country ja eteläinen safari",
+          "Länsi- ja itärannikon vaihtoehtoja",
+          "Perhevalmis tahdistus",
+          "Koko saaren kausiluontoinen reititys",
+          "Syvä perintö ja villieläinten aika",
+          "Itä- ja länsirannikon rannat",
+          "Äärimmäinen yksityinen kuljettajan tahti"
+        ],
+        "itinerary": [
+          {
+            "title": "Nainativu-pyhä piiri",
+            "description": "Venematka Nainativuun, Nagadeepan temppeliin, Nagapooshani Ammanin temppeliin ja kulttuuriaikaan saarella ennen paluuta."
+          },
+          {
+            "title": "Tulokäytävä kolmioon",
+            "description": "Tapaa kuljettajasi lähellä CMB tai Negomboa ja matkusta sisämaahan. Asua lähellä Sigiriyaa tai Dambullaa; ilta vapaa-ajalla."
+          },
+          {
+            "title": "Sigiriya & Dambulla",
+            "description": "Kiipeä Sigiriyaan pehmeämmässä valossa ja tutustu sitten Dambulla-luolatemppeliin. Valinnainen kausiluonteinen safari lähistöllä pyynnöstä."
+          },
+          {
+            "title": "Muinainen kaupunki ja siitä eteenpäin",
+            "description": "Vieraile Anuradhapurassa tai Polonnaruwassa ennen kuin palaat kohti Colomboa/Negomboa tai jatkat mukautettua reittiäsi."
+          },
+          {
+            "title": "Kandyyn",
+            "description": "Aja Kandyyn sisämaan reittejä pitkin. Iltainen järvikierros ja Hampaiden temppeli ajoittuvat rituaaleihin."
+          },
+          {
+            "title": "Kandyn perintöä",
+            "description": "Peradeniyan kasvitieteellinen puutarha, käsityökatuja ja vapaa-aikaa markkinoille tai kulttuuriesitykseen."
+          },
+          {
+            "title": "Teemaa",
+            "description": "Nouse Nuwara Eliyaan istutuksiin, Gregory-järveen ja viileän ilmaston vapaa-aikaan."
+          },
+          {
+            "title": "Ellan näkökulmat",
+            "description": "Jatka Ellaan kohti Nine Arches Bridgeä, harjukävelyjä ja ylämaan kahviloita. Valinnainen junaosuus."
+          },
+          {
+            "title": "Laskeutumis- tai rantalinkki",
+            "description": "Lähde kohti Colomboa, etelärannikkoa tai seuraavaa mukautettua määränpäätäsi, kun matkatavarat käsitellään maanteitse."
+          },
+          {
+            "title": "Saapuminen",
+            "description": "Tapaaminen lentokentälle ja siirto Colomboon tai Negomboon; tiedotustilaisuus kuljettajasi kanssa."
+          },
+          {
+            "title": "Kulttuurikolmio",
+            "description": "Matka Sigiriya / Dambulla linnoituksen tai luolatemppelin aikaa."
+          },
+          {
+            "title": "Kandyn perintöä",
+            "description": "Suorita kolmion kohokohdat ja jatka sitten Kandyyn."
+          },
+          {
+            "title": "Ylämaat",
+            "description": "Luonnonkaunis ajo teemaahan kohti Nuwara Eliyaa tai Ellaa."
+          },
+          {
+            "title": "Ella",
+            "description": "Yhdeksän kaaren silta, näköalapaikkoja ja vapaa-ajan kahvila."
+          },
+          {
+            "title": "Etelärannikko",
+            "description": "Laskeudu Gallen linnakkeeseen ja Mirissaan auringonlaskua ja merenrantaruokailua varten."
+          },
+          {
+            "title": "Lähtö",
+            "description": "Rannikkoaamu vapaa-ajalla ja yksityinen kuljetus CMB tai Colomboon."
+          },
+          {
+            "title": "Saapuminen",
+            "description": "CMB tavata ja asua kaupunkiin tai Negomboon."
+          },
+          {
+            "title": "Sigiriyan alue",
+            "description": "Kalliolinnoitus ja kolmion upotus."
+          },
+          {
+            "title": "Kandy",
+            "description": "Temple of the Tooth ja ylämaan lähestymistapa."
+          },
+          {
+            "title": "Teemaa",
+            "description": "Nuwara Eliya -viljelmät ja viileä ilmasto."
+          },
+          {
+            "title": "Ella",
+            "description": "Yhdeksän kaaria ja harjukävelyä."
+          },
+          {
+            "title": "Yalaa kohti",
+            "description": "Luonnonkaunis laskeutuminen kaakkoon villieläinten vyöhykkeelle."
+          },
+          {
+            "title": "Safari päivä",
+            "description": "Yalan kansallispuiston jeeppisafari (puisto lisämaksusta)."
+          },
+          {
+            "title": "Eteläiset rannat",
+            "description": "Mirissa Coconut Tree Hill ja rannikon seisokit."
+          },
+          {
+            "title": "Gallen linnoitus",
+            "description": "Valleilla, majakkalla ja putiikilla."
+          },
+          {
+            "title": "Lähtö",
+            "description": "Yksityinen siirto CMB tai Colomboon."
+          },
+          {
+            "title": "Saapuminen Negomboon",
+            "description": "CMB nouto ja länsirannikon asettuminen."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Pyhän kaupungin stupat ja arkeologinen puisto."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Kalliolinnoitus ja kolmion tukikohta."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Keskiaikainen pääkaupunki ja valinnainen norsupuisto."
+          },
+          {
+            "title": "Dambulla Kandyyn",
+            "description": "Luolatemppeli ja ylämaan pääkaupunki."
+          },
+          {
+            "title": "Kandy",
+            "description": "Hampaan temppeli ja puutarhat."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Teetilat ja viileä ilmasto."
+          },
+          {
+            "title": "Ella",
+            "description": "Yhdeksän kaaria ja näkökulmia."
+          },
+          {
+            "title": "Yalan lähestymistapa",
+            "description": "Kaakkois villieläinten vyöhykkeen siirto."
+          },
+          {
+            "title": "Safari",
+            "description": "Yalan kansallispuiston jeeppipäivä."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Etelärannan palautuspäivä."
+          },
+          {
+            "title": "Galle",
+            "description": "Linnoituksen perintö ja rannikko."
+          },
+          {
+            "title": "itään tai lounaaseen",
+            "description": "Trincomalee-kausi vaihtoehto tai Bentota-puskuri."
+          },
+          {
+            "title": "Colombo lähtö",
+            "description": "Kaupunkipuskuri ja CMB siirto."
+          },
+          {
+            "title": "Saapuminen",
+            "description": "CMB Negomboon tai Colomboon."
+          },
+          {
+            "title": "Länsirannikon puskuri",
+            "description": "Laguuni tai kaupunki vapaa."
+          },
+          {
+            "title": "Anuradhapura",
+            "description": "Pyhän kaupungin upottaminen."
+          },
+          {
+            "title": "Luoteis vaihtoehto",
+            "description": "Valinnainen villieläin- tai lepopäivä."
+          },
+          {
+            "title": "Sigiriya",
+            "description": "Rock linnoituksen painopiste."
+          },
+          {
+            "title": "Polonnaruwa",
+            "description": "Keskiaikaisia raunioita ja järviä."
+          },
+          {
+            "title": "Dambulla",
+            "description": "Luolatemppeli ja kyläkulttuuri."
+          },
+          {
+            "title": "Kandy",
+            "description": "Hampaan temppeli."
+          },
+          {
+            "title": "Kandyn vapaa-aika",
+            "description": "Puutarhoja ja käsitöitä."
+          },
+          {
+            "title": "Nuwara Eliya",
+            "description": "Teemaa."
+          },
+          {
+            "title": "Kiinteistöt",
+            "description": "Valinnainen tasango tai istutuspäivä."
+          },
+          {
+            "title": "Ella",
+            "description": "Yhdeksän kaaria ja harjuja."
+          },
+          {
+            "title": "Ella vapaa",
+            "description": "Kahviloita ja lyhyitä kävelyretkiä."
+          },
+          {
+            "title": "Yala",
+            "description": "Villieläinten lähestymistapa."
+          },
+          {
+            "title": "Safari",
+            "description": "Park jeeppipäivä."
+          },
+          {
+            "title": "Mirissa",
+            "description": "Eteläinen valtameri."
+          },
+          {
+            "title": "Galle",
+            "description": "Linnoituksen perintö ja rannikko."
+          },
+          {
+            "title": "Bentota",
+            "description": "Lounais keinona vauhtia."
+          },
+          {
+            "title": "Itärannikko",
+            "description": "Trincomalee tai Arugam Bay kauden mukaan."
+          },
+          {
+            "title": "Idän vapaa-aika",
+            "description": "Ranta- ja vesiaika."
+          },
+          {
+            "title": "Paluu & lähtö",
+            "description": "Siirto saaren yli CMB:lle."
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Voinko mukauttaa Q Pick-matkapakettia?",
+        "answer": "Kyllä. Julkaistut paketit ovat lähtökohtia. Valitse kohteet, päivät, ajoneuvo ja mieltymykset suunnittelijasta – toimistomme tarkentaa reitin pyynnön lähettämisen jälkeen."
+      },
+      "hub-price": {
+        "question": "Miten hinnoittelu toimii?",
+        "answer": "Näytämme pyynnöstä saatavilla olevat hinnat, kunnes matkasuunnitelmasi on tarkistettu. Kun olet lähettänyt kiertuepyynnön, Q Pick vahvistaa kirjallisen yksityisen kuljettajan tarjouksen. Pääsymaksut, safari-jeepit, majoitus ja ateriat ovat yleensä erillisiä, ellei toisin mainita kirjallisesti."
+      },
+      "hub-airport": {
+        "question": "Tarjoatko noutoa lentokentältä retkien kanssa?",
+        "answer": "Kyllä. Bandaranaike International (CMB) nouto ja palautus voidaan järjestää kiertueellasi tai oman lentokenttäkuljetuspalvelumme kautta."
+      },
+      "hub-group": {
+        "question": "Mikä ajoneuvo minun pitäisi valita?",
+        "answer": "Sedaanit sopivat pariskunnille; Maastoautot ja pakettiautot sopivat perheille; luksusautot ja minibussit palvelevat suurempia ryhmiä. Valitse kapasiteetti suunnittelijasta — vahvistamme lopullisen ajoneuvon matkatavaroiden ja reitin tarkistamisen jälkeen."
+      },
+      "hub-payment": {
+        "question": "Miten maksut ja vahvistukset toimivat?",
+        "answer": "Lähetä matkapyyntö verkossa. Tiimimme tarkistaa saatavuuden, vahvistaa luonnoksen ja tarjouksen ja jakaa sitten seuraavat vaiheet maksua ja kuljettajatoimeksiantoja varten. Saat viitekoodin seurantaa varten."
+      },
+      "pkg-3d-pace": {
+        "question": "Riittääkö kolme päivää Kulttuurikolmiolle?",
+        "answer": "Kolme päivää voi kattaa Sigiriyan, Dambullan ja joko Anuradhapuran tai Polonnaruwan sovitussa yksityisessä tahdissa. Pidempi oleskelu sallii Mihintalen, safari-lisäosat tai Kandy-laajennuksen."
+      },
+      "pkg-5d-train": {
+        "question": "Voimmeko sisällyttää Ella-junan?",
+        "answer": "Kyllä. Monet vieraat ajavat luonnonkauniilla rataosuudella, kun kuljettaja siirtää matkatavarat maanteitse. Kerro meille toiveesi, kun pyydät tarjousta."
+      },
+      "pkg-5d-weather": {
+        "question": "Millainen sää on vuoristossa?",
+        "answer": "Nuwara Eliya ja Ella ovat viileämpiä kuin rannikko, ja aamut ovat sumuisia ja mahdollisesti kevyttä sadetta. Pack kerrokset; yksityinen ajoneuvosi pitää kuljetukset mukavana näkökulmien välillä."
+      },
+      "pkg-7d-fitness": {
+        "question": "Kuinka paljon kävelyä 7 päivän kiertueella on?",
+        "answer": "Sigiriya- ja temppelivierailuihin sisältyy vaiheita; Ella tarjoaa valinnaisia ​​lyhyitä kävelyretkiä. Kuljettajasi ajoittaa vuorokaudessa niin, että rasittavia osia voidaan lyhentää menettämättä kohokohtia."
+      },
+      "pkg-10d-safari": {
+        "question": "Onko Yala-safari mukana villieläinseikkailussa?",
+        "answer": "Safari-jeeppien vuokraus ja sisäänpääsy puistoon on järjestetty lisäosina selkeällä ajoituksella. Villieläinten havaintoja ei koskaan taata – suunnittelemme parhaan kauden ikkunan pyynnöstäsi."
+      },
+      "pkg-14d-pace": {
+        "question": "Onko neljätoista päivää liikaa ajamista?",
+        "answer": "Yksityisen autonkuljettajan ja yöpymispaikkojen välimatkan ansiosta päivittäinen ajo on hallittavissa. Suunnittelemme leporantapäivät niin, että matkasuunnitelma tuntuu mukaansatempaavalta, ei kiireiseltä."
+      },
+      "pkg-21d-season": {
+        "question": "Milloin on paras kausi suurelle saarimatkalle?",
+        "answer": "Länsi- ja etelärannikot suosivat joulu-maaliskuuta; itä paistaa usein touko-syyskuun tienoilla. 21 päivän suunnitelma voi seurata kuivempaa rantaa – suosittelemme matkakuukautesi perusteella."
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "Vaihe 1",
+        "title": "Minne haluaisit mennä?",
+        "subtitle": "Valitse määränpäät tai kuvaile unelmiesi reittiä – tarkennamme yksityiskohdat yhdessä."
+      },
+      "dates": {
+        "kicker": "Vaihe 2",
+        "title": "Valitse matkustuspäivät",
+        "subtitle": "Valitse aloituspäiväsi ja kuinka monta päivää haluat olla tiellä.",
+        "startDate": "Aloituspäivämäärä",
+        "numberOfDays": "Päivien lukumäärä",
+        "estimatedEnd": "Arvioitu päättymispäivä:"
+      },
+      "vehicle": {
+        "kicker": "Vaihe 3",
+        "title": "Valitse ajoneuvosi",
+        "subtitle": "Sedanista pakettiautoon – yksityinen, ilmastoitu, matkatavaravalmiina."
+      },
+      "accommodation": {
+        "kicker": "Vaihe 4",
+        "title": "Majoitustoiveet",
+        "subtitle": "Kerro meille mukavuustasosi – koordinoimme yöpymiset tai varaat omasi."
+      },
+      "preferences": {
+        "kicker": "Vaihe 5",
+        "title": "Matkustusasetukset",
+        "subtitle": "Vauhti, kiinnostuksen kohteet ja erityistoiveet auttavat meitä suunnittelemaan matkasuunnitelmaasi."
+      },
+      "contact": {
+        "kicker": "Vaihe 6",
+        "title": "Yhteystietosi",
+        "subtitle": "Vastaamme kirjallisella tarjouksella ja tarkennetulla matkasuunnitelmalla."
+      },
+      "requests": {
+        "kicker": "Vaihe 7",
+        "title": "Erityistoiveet",
+        "subtitle": "Ruokavaliotarpeet, saavutettavuus, juhlat – kaikki mitä meidän pitäisi tietää."
+      },
+      "review": {
+        "kicker": "Tarkista",
+        "title": "Tarkista kiertomatkapyyntösi",
+        "subtitle": "Vahvista tiedot ennen lähettämistä – maksua ei vaadita tässä vaiheessa.",
+        "submit": "Lähetä matkapyyntö",
+        "submitting": "Lähetetään…"
+      }
+    },
+    "common": {
+      "back": "Takaisin",
+      "continue": "Jatka",
+      "optional": "Valinnainen",
+      "required": "Pakollinen"
+    }
+  }
+}

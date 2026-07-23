@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Car, Clock, MapPin, Star } from "lucide-react";
+import { useTranslations } from "@/components/i18n/locale-provider";
 import type { TourPackage } from "@/lib/tours/types";
 import { formatTourPriceLkr } from "@/lib/tours/pricing-display";
 import {
@@ -31,6 +34,7 @@ export function PackageCard({
   className = "",
   variant = "default",
 }: PackageCardProps) {
+  const t = useTranslations();
   const hero = getGalleryImage(pkg.heroGalleryId);
   const detailHref = getPackageHref(pkg.slug);
   const bookHref = getBookHref(pkg.slug);
@@ -38,14 +42,17 @@ export function PackageCard({
   const vehicle = getVehicleById(pkg.vehicleId);
   const route = variant === "related" ? routeSummary(pkg) : null;
   const isRelated = variant === "related";
+  const badgeLabel = pkg.badge
+    ? t(`toursHub.badges.${pkg.badge}`)
+    : null;
 
   return (
     <article
-      className={`group tour-detail-card tour-detail-card--lift flex flex-col overflow-hidden ${className}`}
+      className={`group tour-detail-card tour-detail-card--lift flex h-full flex-col overflow-hidden ${className}`}
     >
       <Link
         href={detailHref}
-        className="tour-detail-img-zoom relative block aspect-[16/10] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2"
+        className="tour-detail-img-zoom relative block aspect-[16/10] shrink-0 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2"
       >
         {hero ? (
           <>
@@ -65,8 +72,15 @@ export function PackageCard({
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-map-void/75 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-foam backdrop-blur-md">
             <Clock className="h-3 w-3" aria-hidden />
-            {pkg.durationDays} days
+            {pkg.durationDays === 1
+              ? t("toursHub.explorer.dayTour")
+              : t("toursHub.explorer.daysTour", { count: pkg.durationDays })}
           </span>
+          {badgeLabel ? (
+            <span className="inline-flex items-center rounded-full bg-brand/90 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-paper backdrop-blur-md">
+              {badgeLabel}
+            </span>
+          ) : null}
           {isRelated ? (
             <span className="inline-flex items-center gap-1 rounded-full bg-map-void/75 px-2.5 py-1 text-[0.6875rem] font-semibold tracking-wide text-foam backdrop-blur-md">
               <Star className="h-3 w-3 fill-amber-300 text-amber-300" aria-hidden />
@@ -81,23 +95,40 @@ export function PackageCard({
           </span>
         ) : null}
       </Link>
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">
-          <Link href={detailHref} className="hover:text-brand focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40">
+      <div className="flex min-h-0 flex-1 flex-col p-5 sm:p-6">
+        <h3 className="min-h-[2.75rem] font-display text-lg font-semibold tracking-tight text-ink sm:min-h-[3.25rem] sm:text-xl">
+          <Link
+            href={detailHref}
+            className="line-clamp-2 hover:text-brand focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+          >
             {pkg.title}
           </Link>
         </h3>
-        {isRelated && route ? (
-          <p className="mt-2 flex items-start gap-1.5 text-xs leading-relaxed text-ink/50">
-            <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand/70" aria-hidden />
-            <span>{route}</span>
-          </p>
-        ) : (
-          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink/55">
-            {pkg.highlights[0]}
-          </p>
-        )}
-        <ul className="mt-3 flex flex-wrap gap-1.5">
+        <div className="mt-2 min-h-[4.25rem]">
+          {isRelated && route ? (
+            <div className="flex items-start gap-1.5">
+              <MapPin
+                className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand/70"
+                aria-hidden
+              />
+              <p className="line-clamp-3 text-xs leading-relaxed text-ink/50">
+                {route}
+              </p>
+            </div>
+          ) : (
+            <p className="line-clamp-3 text-sm leading-relaxed text-ink/55">
+              {pkg.seo.intro}
+            </p>
+          )}
+        </div>
+        <p className="mt-2 line-clamp-1 min-h-[1.125rem] text-xs font-medium text-ink/45">
+          {pkg.idealFor
+            ? t("toursHub.explorer.idealFor", {
+                value: pkg.idealFor.toLowerCase(),
+              })
+            : "\u00A0"}
+        </p>
+        <ul className="mt-3 flex max-h-[4.25rem] min-h-[4.25rem] flex-wrap content-start gap-1.5 overflow-hidden">
           {pkg.highlights.slice(0, isRelated ? 2 : 3).map((h) => (
             <li
               key={h}
@@ -107,26 +138,26 @@ export function PackageCard({
             </li>
           ))}
         </ul>
-        <p className="mt-4 font-mono text-sm font-semibold text-brand-deep">
-          {formatTourPriceLkr(pkg.startingPriceLkr)}
-        </p>
-        {pkg.startingPriceLkr == null ? (
-          <p className="mt-1 text-[0.6875rem] leading-relaxed text-ink/40">
-            {pricing.quoteHint}
+        <div className="mt-4 min-h-[3.75rem]">
+          <p className="font-mono text-sm font-semibold text-brand-deep">
+            {formatTourPriceLkr(pkg.startingPriceLkr)}
           </p>
-        ) : null}
+          <p className="mt-1 min-h-[2rem] text-[0.6875rem] leading-relaxed text-ink/40">
+            {pkg.startingPriceLkr == null ? pricing.quoteHint : "\u00A0"}
+          </p>
+        </div>
         <div className="mt-auto flex flex-wrap gap-2.5 pt-5 sm:gap-3">
           <Link
             href={detailHref}
             className="tour-detail-btn tour-detail-btn--ghost min-h-11 flex-1 px-3 text-sm"
           >
-            View Details
+            {t("toursHub.explorer.viewDetails")}
           </Link>
           <Link
             href={bookHref}
             className="tour-detail-btn tour-detail-btn--primary min-h-11 flex-1 px-3 text-sm"
           >
-            Plan this tour
+            {t("toursHub.explorer.bookTour")}
           </Link>
         </div>
       </div>

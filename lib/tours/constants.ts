@@ -6,10 +6,12 @@ import type {
 
 export const TOUR_CATEGORY_IDS: TourCategoryId[] = [
   "popular",
+  "classic-sri-lanka",
   "cultural-heritage",
   "wildlife-safari",
   "beach-holidays",
   "hill-country-tea",
+  "tea-country",
   "adventure",
   "train-journeys",
   "honeymoon",
@@ -18,6 +20,12 @@ export const TOUR_CATEGORY_IDS: TourCategoryId[] = [
   "ayurveda-wellness",
   "food",
   "festival",
+  "photography-tours",
+  "bird-watching",
+  "pilgrimage",
+  "cruise-excursions",
+  "day-tours",
+  "private-chauffeur",
   "airport-transfers",
   "custom-private",
 ];

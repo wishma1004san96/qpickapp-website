@@ -22,7 +22,7 @@ export function CategorySection({
       <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink/55 sm:text-base">
         {category.intro}
       </p>
-      <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-6 grid items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {packages.map((pkg) => (
           <PackageCard key={`${category.id}-${pkg.slug}`} package={pkg} />
         ))}

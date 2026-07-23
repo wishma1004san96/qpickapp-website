@@ -3,11 +3,11 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { inter, notoSinhala, notoTamil } from "@/app/fonts";
 import { SiteFooter } from "@/components/brand/site-footer";
 import { SiteHeader } from "@/components/brand/site-header";
-import { LocaleProvider } from "@/components/i18n/locale-provider";
+import { AppProviders } from "@/components/i18n/app-providers";
 import { SkipLink } from "@/components/ui/skip-link";
 import { getMessages } from "@/lib/i18n/get-messages";
 import { getLocale } from "@/lib/i18n/get-locale";
-import { localeLabels, type Locale } from "@/lib/i18n/config";
+import { isRtlLocale, localeLabels, type Locale } from "@/lib/i18n/config";
 import { createTranslator } from "@/lib/i18n/t";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -19,10 +19,27 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const ogLocales: Record<Locale, string> = {
+const ogLocales: Partial<Record<Locale, string>> = {
   en: "en_LK",
   si: "si_LK",
   ta: "ta_LK",
+  de: "de_DE",
+  fr: "fr_FR",
+  es: "es_ES",
+  it: "it_IT",
+  ru: "ru_RU",
+  zh: "zh_CN",
+  ja: "ja_JP",
+  ko: "ko_KR",
+  nl: "nl_NL",
+  pt: "pt_PT",
+  pl: "pl_PL",
+  sv: "sv_SE",
+  da: "da_DK",
+  no: "nb_NO",
+  fi: "fi_FI",
+  ar: "ar_LK",
+  hi: "hi_IN",
 };
 
 export const viewport: Viewport = {
@@ -48,9 +65,17 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: t("site.meta.description"),
     applicationName: siteConfig.name,
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+    },
     openGraph: {
       type: "website",
-      locale: ogLocales[locale],
+      locale: ogLocales[locale] ?? "en_LK",
       url: siteConfig.url,
       siteName: siteConfig.name,
       title: siteConfig.name,
@@ -138,7 +163,7 @@ export default async function RootLayout({
       {
         "@type": "TouristTrip",
         name: `${siteConfig.name} Tours`,
-        touristType: "Leisure travellers",
+        touristType: t("toursHub.jsonLd.touristType"),
         url: `${siteConfig.url}/tours`,
         description: t("pages.tours.meta.description"),
         provider: {
@@ -152,6 +177,7 @@ export default async function RootLayout({
   return (
     <html
       lang={localeLabels[locale].htmlLang}
+      dir={isRtlLocale(locale) ? "rtl" : "ltr"}
       className={`${inter.variable} ${notoSinhala.variable} ${notoTamil.variable} ${ibmPlexMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -159,7 +185,7 @@ export default async function RootLayout({
         className="min-h-full flex flex-col bg-foam text-ink"
         suppressHydrationWarning
       >
-        <LocaleProvider locale={locale} messages={messages}>
+        <AppProviders locale={locale} messages={messages}>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -170,7 +196,7 @@ export default async function RootLayout({
             {children}
           </main>
           <SiteFooter />
-        </LocaleProvider>
+        </AppProviders>
       </body>
     </html>
   );

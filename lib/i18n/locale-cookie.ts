@@ -1,14 +1,14 @@
 import {
   localeCookieName,
-  normalizeLocale,
-  type Locale,
+  normalizeSelectorLocale,
+  type SelectorLocale,
 } from "@/lib/i18n/config";
 
 const ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 
 /** Client: persist locale to cookie + localStorage. */
-export function persistLocale(locale: Locale) {
-  const value = normalizeLocale(locale);
+export function persistLocale(locale: SelectorLocale) {
+  const value = normalizeSelectorLocale(locale);
   const secure =
     typeof window !== "undefined" && window.location.protocol === "https:"
       ? "; Secure"
@@ -22,19 +22,19 @@ export function persistLocale(locale: Locale) {
 }
 
 /** Client: read locale from cookie, then localStorage, else default. */
-export function readStoredLocale(): Locale | null {
+export function readStoredLocale(): SelectorLocale | null {
   if (typeof document === "undefined") return null;
 
   const match = document.cookie
     .split("; ")
     .find((row) => row.startsWith(`${localeCookieName}=`));
   if (match) {
-    return normalizeLocale(match.split("=")[1]);
+    return normalizeSelectorLocale(match.split("=")[1]);
   }
 
   try {
     const fromStorage = localStorage.getItem(localeCookieName);
-    if (fromStorage) return normalizeLocale(fromStorage);
+    if (fromStorage) return normalizeSelectorLocale(fromStorage);
   } catch {
     // Ignore.
   }

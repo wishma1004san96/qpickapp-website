@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/container";
+import { useTranslations } from "@/components/i18n/locale-provider";
 import { CinematicFinalCta } from "@/components/tours/cinematic-final-cta";
 import { DestinationExperienceCard } from "@/components/tours/destination-experience-card";
 import { FaqAccordion } from "@/components/tours/faq-accordion";
@@ -73,6 +74,7 @@ export function ToursExperience({
   finalCtaImage,
   bookHref,
 }: ToursExperienceProps) {
+  const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
   const [filterSlug, setFilterSlug] = useState<string | null>(null);
 
@@ -154,11 +156,10 @@ export function ToursExperience({
 
         <Container className="pb-16 sm:pb-20">
           <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold text-ink">
-            Destination experiences
+            {t("toursHub.explorer.destinationExperiences")}
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-ink/55">
-            Real places, seasons, and photography windows — not just labels on a
-            card.
+            {t("toursHub.explorer.destinationExperiencesSub")}
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {destinations.map((destination) => (
@@ -177,11 +178,10 @@ export function ToursExperience({
 
         <Container className="pb-16 sm:pb-20">
           <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-semibold text-ink">
-            Travel in private comfort
+            {t("toursHub.explorer.vehiclesTitle")}
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-ink/55">
-            Sedan to mini coach — air conditioning, luggage space, and charging
-            for the road.
+            {t("toursHub.explorer.vehiclesSub")}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {vehicles.map((v) => (
@@ -191,7 +191,10 @@ export function ToursExperience({
         </Container>
 
         <Container className="pb-16 sm:pb-20">
-          <TrustSection signals={trust} title="Why Travel With Q Pick" />
+          <TrustSection
+            signals={trust}
+            title={t("toursHub.explorer.trustTitle")}
+          />
         </Container>
 
         <Container className="pb-16 sm:pb-20">
@@ -226,11 +229,10 @@ export function ToursExperience({
                 {reviewsMeta.emptyTitle}
               </p>
               <p className="relative mt-3 max-w-xl text-sm leading-relaxed text-foam/60">
-                Verified guest reviews will appear after published trips. We do
-                not display invented testimonials, ratings, or awards.
+                {t("toursHub.explorer.reviewsEmptyDisclaimer")}
               </p>
               <p className="relative mt-6 text-xs tracking-wide text-foam/40 uppercase">
-                Trust before testimonials
+                {t("toursHub.explorer.trustBeforeTestimonials")}
               </p>
             </div>
           )}
@@ -238,9 +240,9 @@ export function ToursExperience({
 
         <Container className="pb-16 sm:pb-20">
           <TourSectionHeader
-            eyebrow="Frequently asked questions"
-            title="FAQ"
-            lead="Everything you need to know before planning your journey with Q Pick."
+            eyebrow={t("toursHub.explorer.faqEyebrow")}
+            title={t("toursHub.explorer.faqTitle")}
+            lead={t("toursHub.explorer.faqLead")}
             className="mb-6 sm:mb-8"
           />
           <FaqAccordion faqs={faqs} />
@@ -256,7 +258,7 @@ export function ToursExperience({
             secondaryHref={finalCta.secondaryHref}
             imageSrc={finalCtaImage?.src ?? getDestinationImageSrc("ella")}
             imageAlt={
-              finalCtaImage?.alt ?? "Scenic Sri Lanka highland journey"
+              finalCtaImage?.alt ?? t("toursHub.explorer.defaultImageAlt")
             }
           />
         </Container>

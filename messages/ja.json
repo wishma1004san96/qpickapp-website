@@ -1,0 +1,3046 @@
+{
+  "skipToContent": "メインコンテンツにスキップ",
+  "header": {
+    "homeAria": "Q Pick ホーム",
+    "primaryNav": "プライマリー",
+    "mobileNav": "モバイルナビゲーション",
+    "mobilePrimary": "モバイルプライマリ",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "bookNow": "今すぐ予約する"
+  },
+  "nav": {
+    "home": "ホーム",
+    "ride": "乗る",
+    "airport": "空港",
+    "tours": "ツアー",
+    "safety": "安全性",
+    "drive": "ドライブ",
+    "partners": "パートナー",
+    "support": "サポート"
+  },
+  "language": {
+    "label": "言語",
+    "choose": "言語を選択してください"
+  },
+  "footer": {
+    "blurb": "Sri Lanka 全域でのプレミアムな空港送迎、市内移動、運転手サービス、プライベート ツアー。",
+    "call": "今すぐ電話してください",
+    "whatsapp": "WhatsApp",
+    "emailCta": "メールでお問い合わせください",
+    "services": "サービス",
+    "company": "会社名",
+    "downloadApp": "アプリをダウンロード",
+    "contact": {
+      "address": "住所",
+      "email": "電子メール",
+      "phones": "電話",
+      "whatsapp": "WhatsApp"
+    },
+    "serviceLinks": {
+      "airport": "空港送迎",
+      "tours": "プライベートツアー",
+      "chauffeur": "運転手サービス",
+      "cityRides": "シティライド",
+      "corporate": "法人旅行"
+    },
+    "companyLinks": {
+      "about": "について",
+      "drive": "ドライバーになる",
+      "partners": "パートナー",
+      "support": "サポート",
+      "contact": "お問い合わせ"
+    },
+    "legal": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "cookies": "クッキー"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Q Pick の紹介",
+    "scroll": "スクロール",
+    "scrollAria": "コンテンツまでスクロールする",
+    "posterAlt": "霧のかかったSri Lankanの林道を通る風光明媚なドライブ",
+    "slides": [
+      {
+        "title": "Q Pick",
+        "subtitle": "空港送迎。シティライド。専属運転手。",
+        "description": "Sri Lanka 全域でのプレミアム モビリティ — 空港送迎、タクシーや都市間の移動、運転手サービス、企業旅行、プライベート ツアーを 1 つの信頼できるプラットフォームで提供します。",
+        "primary": "ブックライド",
+        "secondary": "空港送迎"
+      },
+      {
+        "title": "空港送迎",
+        "subtitle": "確実に到着し、確実に出発します。",
+        "description": "お迎えと時間指定の送迎。運転手はお客様が着陸する前に待機します。行列や不安はありません。",
+        "primary": "空港送迎",
+        "secondary": "ブックライド"
+      },
+      {
+        "title": "市内および都市間の乗り物",
+        "subtitle": "タクシーと運転手はあなたの時計に合わせてご利用いただけます。",
+        "description": "コロンボの街路から海岸沿いの高速道路まで - 認定されたドライバー、透明性の高い運賃、そして必要なときに豪華な運転手オプションをご利用いただけます。",
+        "primary": "ブックライド",
+        "secondary": "ツアーを探索する"
+      }
+    ],
+    "planner": {
+      "ariaLabel": "旅の計画を立てる",
+      "title": "旅の計画を立てる",
+      "subtitle": "どのように移動したいかを教えてください。残りは丁寧に手配させていただきます。",
+      "journeyTypeAria": "旅行タイプ",
+      "continue": "続ける",
+      "scheduleTitle": "旅行スケジュール",
+      "travelDate": "旅行日",
+      "pickupTime": "ピックアップ時間",
+      "intents": {
+        "arrive": "到着",
+        "stay": "泊まる",
+        "explore": "探検する"
+      },
+      "arrive": {
+        "fromLabel": "空港",
+        "fromDefault": "コロンボ空港 (CMB)",
+        "toLabel": "目的地",
+        "toDefault": "ゴール フェイス ホテル",
+        "recommendation": "到着時にお会いします · ホテルの最新情報をお知らせします · 確認する前に運賃を明確にします"
+      },
+      "stay": {
+        "fromLabel": "ピックアップ",
+        "fromDefault": "あなたのホテル",
+        "toLabel": "目的地",
+        "toDefault": "ゴール要塞",
+        "recommendation": "検証済みドライバー · 共有できるライブアップデート · 透明性のある価格設定"
+      },
+      "explore": {
+        "fromLabel": "ピックアップ",
+        "fromDefault": "コロンボ",
+        "toLabel": "目的地",
+        "toDefault": "エラと高地",
+        "recommendation": "当日対応の車両 · 道路を熟知したドライバー · 落ち着いた 1 つの旅程"
+      }
+    },
+    "trust": {
+      "ariaLabel": "ゲストがQ Pickを信頼する理由",
+      "verifiedDrivers": "検証済みドライバー",
+      "pricing": "透明性のある価格設定",
+      "islandwide": "島全体をカバー",
+      "support": "年中無休のサポート",
+      "trips": "何千もの旅行"
+    }
+  },
+  "experience": {
+    "headingLine1": "経験",
+    "headingLine2": "__QP_ブランド__。",
+    "lines": [
+      "空港送迎。",
+      "あなたのシティライド。",
+      "あなたのSri Lanka。"
+    ],
+    "screenLive": "Q Pick アプリ画面: {stepLabel}",
+    "previewAria": "Q Pick アプリのプレビューに {stepLabel} が表示されています",
+    "story": {
+      "planLabel": "乗車予約",
+      "vehiclesLabel": "車両の選択",
+      "liveLabel": "ライブの旅",
+      "plan": {
+        "kicker": "空港と乗り物",
+        "title": "旅の計画を立てる",
+        "destinations": "目的地",
+        "days": "旅行日数",
+        "daysUnit": "日",
+        "pickup": "ピックアップ",
+        "pickupValue": "バンダラナイケ空港",
+        "hotel": "ホテル",
+        "hotelValue": "シャングリ・ラ コロンボ",
+        "route": "ルートプレビュー",
+        "stops": "止まる",
+        "cta": "続ける"
+      },
+      "vehicles": {
+        "route": "空港 → シギリヤ・エラ・ゴール",
+        "title": "あなたの車を選んでください",
+        "budgetLabel": "予算の目安",
+        "budgetHint": "確認する前に",
+        "budgetValue": "LKR 186,000"
+      }
+    }
+  },
+  "fleetList": {
+    "eyebrow": "プレミアムフリート",
+    "heading": "完璧な乗り心地をお選びください。",
+    "sub": "トゥクトゥクから高級バンまで、すべての車両は検証済みで快適で、価格は明白です。",
+    "phoneAria": "アプリ上のQ Pick車両リスト"
+  },
+  "insideQPickApp": {
+    "eyebrow": "アプリケーション",
+    "heading": "Q Pick アプリ内",
+    "sub": "空港送迎または市内配車を予約し、明瞭な料金で車両を選択し、運転手と一緒にライブでフォローします。ポケットに入るプレミアムなモビリティです。",
+    "panelAria": "Q Pick アプリ画面: {label}",
+    "panels": {
+      "plan": {
+        "n": "01",
+        "label": "乗車を予約する",
+        "body": "空港送迎、市内タクシー、都市間移動 — 出発前に目的地と時間を設定してください。"
+      },
+      "vehicles": {
+        "n": "02",
+        "label": "車両と運賃",
+        "body": "セダンから高級バンまで、確認する前に透明性のある価格設定が可能です。"
+      },
+      "live": {
+        "n": "03",
+        "label": "ライブジャーニー",
+        "body": "ドライバーが割り当てられ、ライブ GPS と ETA、旅行が完了し、その後は穏やかな評価フローになります。"
+      }
+    }
+  },
+  "howQPickWorks": {
+    "eyebrow": "Qピックの仕組み",
+    "heading": "登録から目的地まで",
+    "sub": "営業開始から到着までの 1 つの穏やかなパス: 登録、確認、空港送迎または市内配車の予約を行った後、リアルタイムで運転手を追跡します。",
+    "stepLabel": "ステップ {n}",
+    "prevAria": "前のステップ",
+    "nextAria": "次のステップ",
+    "dotsAria": "旅のステップ",
+    "dotAria": "ステップ {n} に進みます。",
+    "steps": {
+      "welcome": {
+        "n": "01",
+        "title": "ようこそ",
+        "body": "Q Pick アプリを開いて旅を始めましょう。"
+      },
+      "register": {
+        "n": "02",
+        "title": "登録する",
+        "body": "携帯電話番号を使用してアカウントを作成します。"
+      },
+      "otp": {
+        "n": "03",
+        "title": "OTP 検証",
+        "body": "携帯電話番号を安全に確認します。"
+      },
+      "journey": {
+        "n": "04",
+        "title": "移動方法を選択してください",
+        "body": "空港送迎、市内タクシー、都市間送迎、運転手サービスなど、ご希望のときにプライベート ツアーをご予約ください。"
+      },
+      "track": {
+        "n": "05",
+        "title": "ドライバーを追跡する",
+        "body": "ライブ GPS 追跡と ETA でドライバーの到着を監視します。"
+      }
+    }
+  },
+  "journeyStory": {
+    "eyebrow": "Q Pick 標準",
+    "heading": "ひとつの旅。信頼できる 1 つの標準。",
+    "intro": "市場ではありません。パンフレットや WhatsApp スレッドではありません。最初の着陸から最後の海岸道路まで、Sri Lanka の移動方法を担当するプライベート コンシェルジュ。",
+    "closingTitle": "旅全体を通して、同じ穏やかな確信が感じられます。",
+    "closingBody": "Uber と PickMe は、都市全体を移動させます。旅行会社は日販を行っています。 Q Pick は、空港、滞在、島のすべてのストーリーを、信頼できる 1 つの基準の下で保持します。",
+    "cta": "旅の計画を立てる",
+    "chapters": {
+      "arrive": {
+        "n": "01",
+        "title": "到着",
+        "moment": "島は門から始まります。",
+        "scene": "あなたの飛行機は着陸します。検証済みの Q Pick ドライバーがすでに待機しています。縁石での衝突やメッセージの連鎖ではありません。ホテルは、車が空港の道路を離れる前に、あなたが出発途中であることを認識します。",
+        "outcome": "ハンドオフは 1 つです。到着からフロントまで。",
+        "imageAlt": "コロンボの海岸と夕暮れの街の明かり — 着陸後の旅"
+      },
+      "stay": {
+        "n": "02",
+        "title": "泊まる",
+        "moment": "あらゆる動作は静かで明瞭です。",
+        "scene": "コーストラン、ディナーの予約、朝のミーティング。確認する前に運賃が表示されます。乗車中、家族、ホスト、ヴィラの管理人など、大切な人が二度電話することなくフォローできます。",
+        "outcome": "透明性のある価格設定。ライブステータス。市場のノイズはありません。",
+        "imageAlt": "インド洋の澄んだ水が広がるSri Lankan南部の海岸線"
+      },
+      "explore": {
+        "n": "03",
+        "title": "探検する",
+        "moment": "島は摩擦なしで開きます。",
+        "scene": "お茶の国の霧。砦の町。複数の停留所がある日。同じ信頼できるドライバー、前方の道路に適した車両、慎重に保持される旅程。そのため、物流ではなく場所が重要なポイントになります。",
+        "outcome": "機動性と発見。 1 つの継続的な標準。",
+        "imageAlt": "Sri Lankan のジャングルにそびえるシギリヤ ロック要塞"
+      }
+    }
+  },
+  "yourJourneyRules": {
+    "eyebrow": "Sri Lanka のプレミアム モビリティ プラットフォーム",
+    "heading": "あなたの旅。あなたのルール。",
+    "manifesto": "最初の空港へのお出迎えからホテルの最後のドアまで、継続的なモビリティ標準を維持するために通常のアプリは構築されていません。",
+    "positioningLead": "これは単なるタクシーアプリではありません。",
+    "positioningRest": "これは、Sri Lanka のプレミアム モビリティ プラットフォームです。",
+    "trustEyebrow": "Quick Pick App (Pvt) Ltd による提供",
+    "trustBody": "Q Pick は、Quick Pick App (Pvt) Ltd によって誇りを持って開発および運営されており、品質、安全性、優れた顧客エクスペリエンスへの強い取り組みのもと、プレミアム空港送迎、運転手サービス、プライベート ツアー、信頼できるモビリティ ソリューションを Sri Lanka 全体に提供しています。",
+    "continuumEyebrow": "旅は続く",
+    "continuumBody": "より広範なホスピタリティ エコシステムが静かに形を作りつつあります。これまでと同じ穏やかな基準を拡張したものです。",
+    "continuumComingSoon": "近日公開予定",
+    "continuumItems": [
+      "食品配達",
+      "宅配便",
+      "外貨両替",
+      "地元の体験",
+      "コンシェルジュサービス"
+    ],
+    "chapters": {
+      "airport": {
+        "n": "01",
+        "label": "到着",
+        "title": "島は歓迎から始まります。",
+        "scene": "あなたの飛行機は着陸します。認証済みの Q Pick ホスピタリティ専門家がすでに待機しています。ネームボードの準備が整い、手荷物は手元にあり、ホテルへのルートも確認されています。縁石でのスクランブルではありません。マーケットプレイスの入札ではありません。あなたの Sri Lanka の旅が慎重に始まったという静かな確信だけです。",
+        "details": [
+          "プロの運転手による空港出迎え - 行き当たりばったりのドライバーではありません",
+          "到着前にホテルへの送迎を計画"
+        ],
+        "whisper": "ハンドオフは 1 つです。ゲートからロビーまで。",
+        "kicker": "第01章",
+        "mediaTitle": "穏やかな到着",
+        "imageAlt": "夜明けのプレミアム空港ターミナル廊下 穏やかな到着の始まり"
+      },
+      "planning": {
+        "n": "02",
+        "label": "作曲する",
+        "title": "都市、空港、島など、自分らしく移動しましょう。",
+        "scene": "通常の配車サービスとは異なり、Q Pick は、空港送迎、市内および都市間の配車、高級運転手サービス、企業旅行をカバーしており、プライベート ツアーや探索したい場合は日帰り旅行も可能です。ピックアップ、目的地、時間、車両を選択します。確認する前に明確な運賃を確認してください。",
+        "details": [
+          "フライトに合わせた空港送迎サービス",
+          "市内タクシー、都市間移動、運転手オプション",
+          "確認する前に運賃を明確にする - 緊急性のない明確さ"
+        ],
+        "whisper": "あなたのルート。あなたのタイミング。あなたの運賃。",
+        "kicker": "第02章",
+        "mediaTitle": "構成された旅",
+        "imageAlt": "プライベート Sri Lanka の旅程を作成するためのオープンな山の風景"
+      },
+      "chauffeur": {
+        "n": "03",
+        "label": "会社名",
+        "title": "ドライバーではありません。おもてなしのプロフェッショナル。",
+        "scene": "Q Pick 運転手は全員、認定されたホスピタリティのプロフェッショナルであり、裁量、島の道路、そして静かな歓迎の儀式について訓練を受けています。ご希望に応じて、寺院、紅茶カントリー、野生生物、生きた遺産に関する現地ガイドを英語、シンハラ語、タミル語、または可能な場合はその他の言語でリクエストすることもできます。",
+        "details": [
+          "認定されたプロの運転手 — 常におもてなしを第一に",
+          "文化と歴史についての多言語ローカルガイド (オプション)",
+          "マップ上での近さではなく、信頼のために選ばれた仲間たち"
+        ],
+        "whisper": "違いは誰がドアの前に立つかです。",
+        "kicker": "第03章",
+        "mediaTitle": "静かな専門会社",
+        "imageAlt": "高級車のドアを開けるダークスーツを着たプロの運転手"
+      },
+      "explore": {
+        "n": "04",
+        "label": "発見",
+        "title": "島が物語となる場所。",
+        "scene": "海岸道路。高原の霧。遺産都市。探索中は、ライブ旅行管理によりすべての移動が明確に保たれ、日が変わっても 24 時間 365 日のサポートを静かに利用できます。通常のアプリは乗車が終了すると終了します。 Q Pick は旅に残ります。",
+        "details": [
+          "旅行全体にわたるライブ旅行管理",
+          "プロフェッショナルなサポート — 穏やかで、すぐに利用でき、邪魔にならない"
+        ],
+        "whisper": "物流は依然として目に見えない。場所は依然としてポイントです。",
+        "kicker": "第04章",
+        "mediaTitle": "途切れることのない島",
+        "imageAlt": "Sri Lankan のジャングルの上にそびえるシギリヤのゴールデンアワーの航空写真"
+      },
+      "complete": {
+        "n": "05",
+        "label": "戻る",
+        "title": "同じ静かな確信を、最後の扉へ。",
+        "scene": "最後のホテルへのドロップでループが終了します。アプリから調整され、ロビーに到着するまでの時間が調整され、空港でお出迎えしたのと同じおもてなしが提供されます。 1 つの継続的な標準。最初の歓迎から最後の別れまで、通常の配車サービスでは実現できません。",
+        "details": [
+          "ホテルの送迎は信頼できる 1 つの基準に準拠しています",
+          "タクシー市場ではなく、完全な Sri Lanka 旅行プラットフォーム"
+        ],
+        "whisper": "旅は落ち着きます。基準はそのままです。",
+        "kicker": "第05章",
+        "mediaTitle": "旅は完了しました",
+        "imageAlt": "夕暮れの高級リゾート到着 ― プライベートな旅の穏やかな終わり"
+      }
+    }
+  },
+  "threeExperiences": {
+    "eyebrow": "1つのプラットフォーム",
+    "heading": "1 つのプラットフォーム。 3つの体験。",
+    "sub": "空港送迎が必要な場合でも、市内や運転手による送迎が必要な場合でも、尊厳を持って稼げる場所が必要な場合でも、Q Pick は同じ信頼できるモビリティ標準です。",
+    "cards": {
+      "ride": {
+        "title": "今すぐ乗車",
+        "kicker": "タクシーと運転手",
+        "description": "市内タクシー、都市間移動、高級交通機関の認定運転手 - 確認する前に料金が明瞭です。",
+        "points": [
+          "市内および都市間の乗り物",
+          "豪華な運転手",
+          "透明性のある価格設定"
+        ],
+        "cta": "ブックライド",
+        "imageAlt": "プレミアムピックアップトラックで黒のエグゼクティブセダンの後部から降りるゲスト"
+      },
+      "tours": {
+        "title": "空港送迎",
+        "kicker": "到着と出発",
+        "description": "フライト時間に合わせた送迎サービスと出迎えサービス - ゲートからドアまで確実に安心。",
+        "points": [
+          "空港送迎",
+          "空港への降車",
+          "ミート＆グリート"
+        ],
+        "cta": "空港送迎",
+        "imageAlt": "プロの運転手によるプレミアムな空港送迎をご用意"
+      },
+      "drive": {
+        "title": "Q Pick でドライブ",
+        "kicker": "ドライバープラットフォーム",
+        "description": "明確な収入、フレキシブルな労働時間、そして尊厳のある仕事を提供する、本格的なドライバーのためのプロフェッショナル プラットフォームです。",
+        "points": [
+          "柔軟な収益",
+          "プロフェッショナルプラットフォーム",
+          "簡単登録"
+        ],
+        "cta": "ドライバーになる",
+        "imageAlt": "ホテルの入り口で黒の高級バンの後部ドアを開ける、ダークスーツを着たプロの運転手"
+      }
+    }
+  },
+  "tripIntent": {
+    "heading": "配車サービス",
+    "intro": "空港送迎、市内タクシー、都市間の移動、運転手サービスなど、観光したいときはプライベート ツアーをご利用いただけます。 1 つの Q Pick 標準。",
+    "tablistAria": "旅行の目的",
+    "ride": {
+      "label": "乗る",
+      "title": "市内タクシーと都市間の乗り物",
+      "body": "コロンボの街路や海岸沿いの長距離走行には、認定された運転手をリクエストしてください。確認する前に運賃を明確にします。",
+      "cta": "乗車を予約する",
+      "imageAlt": "夕暮れのコロンボ海岸 — 確実な市内旅行"
+    },
+    "airport": {
+      "label": "空港",
+      "title": "空港送迎",
+      "body": "フライトに合わせたお出迎え送迎。ホテルやヴィラは、ゲートからドアまで常に情報を把握できます。",
+      "cta": "空港送迎を予約する",
+      "imageAlt": "着陸後、Sri Lanka 南部に向かう海岸沿いの道路"
+    },
+    "tour": {
+      "label": "ツアー",
+      "title": "プライベートツアーと日帰り旅行",
+      "body": "探検が目的の場合は、島の道路に精通した運転手による日帰り旅行や複数の目的地を巡る旅もオプションでご利用いただけます。",
+      "cta": "ツアーを探索する",
+      "imageAlt": "シギリヤと文化的な三角地帯の日帰り旅行"
+    }
+  },
+  "destinationStrip": {
+    "heading": "Q Pick があなたを導く場所",
+    "intro": "空港送迎、市内移動、運転手付きの旅など、お客様の移動をサポートする人気のルート。",
+    "allDestinations": "すべての目的地",
+    "travelTime": "移動時間",
+    "startingPrice": "から始まる"
+  },
+  "stepTimeline": {
+    "heading": "確実性の仕組み",
+    "intro": "あなたがいる場所と、あなたがいるべき場所の間には、静かな 3 つのステップがあります。",
+    "steps": {
+      "request": {
+        "n": "01",
+        "title": "リクエスト",
+        "body": "乗車場所、目的地、時刻を設定します。コミットする前に運賃を確認してください。"
+      },
+      "match": {
+        "n": "02",
+        "title": "一致",
+        "body": "検証済みの Q Pick ドライバーが割り当てられ、評価され、保険が適用され、いつでも乗車できます。"
+      },
+      "arrive": {
+        "n": "03",
+        "title": "到着",
+        "body": "リアルタイムの到着予定時刻、旅行の共有、玄関またはゲートでの穏やかな引き継ぎ。"
+      }
+    }
+  },
+  "destinations": {
+    "colombo": {
+      "name": "コロンボ",
+      "region": "西部州",
+      "summary": "港の灯り、ゴールフェイスのそよ風、首都の鼓動が静かな正確さで動きました。",
+      "imageAlt": "夕暮れのコロンボの海岸沿いのウォーターフロント",
+      "travelTime": "CMB から 30 ～ 45 分",
+      "startingPrice": "LKR 4,500"
+    },
+    "galle": {
+      "name": "ゴール",
+      "region": "南部州",
+      "summary": "城壁、海風、そして南海岸 - 空港から城壁まで、不安のない景色を楽しめます。",
+      "imageAlt": "Sri Lankan南部の海岸線と透明な海水",
+      "travelTime": "CMB から 2 ～ 2.5 時間",
+      "startingPrice": "LKR 18,500"
+    },
+    "ella": {
+      "name": "エラ",
+      "region": "ウバ州",
+      "summary": "霧、お茶、高原の空気 - 山の明かりに合わせて日帰りチャーター。",
+      "imageAlt": "緑豊かなSri Lankanの高原と熱帯の丘の中腹の風景",
+      "travelTime": "コロンボから5～6時間",
+      "startingPrice": "LKR 32,000"
+    },
+    "sigiriya": {
+      "name": "シギリヤ",
+      "region": "中部州",
+      "summary": "岩の要塞と文化的な三角道路 - ルートを熟知したドライバーが案内します。",
+      "imageAlt": "Sri Lanka のシギリヤ ロック要塞の空撮",
+      "travelTime": "CMB から 3.5 ～ 4.5 時間",
+      "startingPrice": "LKR 28,000"
+    }
+  },
+  "safety": {
+    "eyebrow": "信頼と安全",
+    "heading": "安全基準",
+    "headingLine2": "感じることができます。",
+    "intro": "すべての Q Pick の乗車は、検証済みのドライバー、リアルタイムのモニタリング、透明性のある価格設定、専用のサポートによってサポートされているため、完全な自信を持って Sri Lanka を旅行できます。",
+    "cta": "安全性を探る",
+    "trustLine": "何千人もの旅行者から信頼されています",
+    "items": {
+      "verified": {
+        "title": "検証済みドライバー",
+        "body": "すべての運転手は身分証明書と車両認証に合格します。"
+      },
+      "pricing": {
+        "title": "透明性のある価格設定",
+        "body": "毎回の乗車を確認する前に、運賃を確認してください。"
+      },
+      "sharing": {
+        "title": "ライブ旅行共有",
+        "body": "友人や家族があなたの旅をフォローすることができます。"
+      },
+      "support": {
+        "title": "緊急サポート",
+        "body": "サポートが必要なときはいつでも、年中無休でサポートします。"
+      },
+      "insured": {
+        "title": "完全保険付き旅行",
+        "body": "すべての Q Pick の乗車は保護されます。"
+      }
+    },
+    "proofs": [
+      "身元確認と車両検査による認証済みドライバー",
+      "確認する前の透明性のある価格設定",
+      "家族やホスト向けのライブ旅行共有",
+      "旅行中のサポートと公開された緊急電話",
+      "Q Pick の旅行ごとに保険が適用されます"
+    ]
+  },
+  "partnerDriver": {
+    "partners": {
+      "eyebrow": "パートナー",
+      "heading": "ホテル、別荘、企業",
+      "body": "共通の基準に基づいたゲストの送迎 - フロントデスクが信頼できる優れた引き継ぎ。",
+      "cta": "Q Pick と提携する"
+    },
+    "drivers": {
+      "eyebrow": "ドライバー",
+      "heading": "尊厳を持って運転する",
+      "body": "明確な収益、公正な派遣、そしてあなたが最もよく知っている道路向けに構築されたツール。",
+      "cta": "ドライバーになる"
+    }
+  },
+  "planTour": {
+    "eyebrow": "プライベートツアー",
+    "heading": "Sri Lanka ツアーを計画する",
+    "sub": "出発前に即座に見積もりを出し、日数、目的地、車両などを完全にカスタマイズしたプライベートな旅を構築します。",
+    "highlights": [
+      "全旅程に専属運転手付き",
+      "海岸、高地、文化の三角地帯をミックス",
+      "明確な見積もり - Q Pick で詳細を確認します"
+    ],
+    "trust": [
+      "即時見積り",
+      "支払いは不要です",
+      "無料相談"
+    ],
+    "cardLabel": "あなたの旅程",
+    "daysLabel": "日数を選択してください",
+    "daysOption": "{count} 日",
+    "travelersLabel": "旅行者",
+    "travelersOption": "{count}",
+    "arrivalLabel": "到着日",
+    "pickupLabel": "乗車場所",
+    "pickups": {
+      "cmb": "バンダラナイケ (CMB)",
+      "colombo": "コロンボ市",
+      "galle": "ゴール",
+      "hotel": "あなたのホテル"
+    },
+    "tourTypeLabel": "ツアータイプ",
+    "tourTypes": {
+      "private": {
+        "label": "専属運転手",
+        "meta": "柔軟なペース・カスタムストップ"
+      },
+      "honeymoon": {
+        "label": "ハネムーン",
+        "meta": "海岸と静かな高原での滞在"
+      },
+      "family": {
+        "label": "家族",
+        "meta": "広々とした車両・快適な一日"
+      },
+      "cultural": {
+        "label": "文化トライアングル",
+        "meta": "遺産ルート · ガイド付きペーシング"
+      }
+    },
+    "destinationsLabel": "目的地を選択する",
+    "destinations": {
+      "colombo": "コロンボ",
+      "galle": "ゴール",
+      "ella": "エラ",
+      "sigiriya": "シギリヤ",
+      "kandy": "キャンディ"
+    },
+    "vehicleLabel": "車種を選択してください",
+    "vehicles": {
+      "sedan": {
+        "label": "セダン",
+        "meta": "1～3名様 · エアコン"
+      },
+      "suv": {
+        "label": "SUV",
+        "meta": "1 ～ 5 名様 · エアコン"
+      },
+      "van": {
+        "label": "バン",
+        "meta": "1 ～ 9 名様 · エアコン"
+      }
+    },
+    "distanceLabel": "推定距離",
+    "distanceValue": "~{km} km",
+    "hoursLabel": "走行の目安",
+    "hoursValue": "~{hours} 時間",
+    "breakdownLabel": "価格の内訳",
+    "breakdownDaily": "車両と運転手",
+    "breakdownDestinations": "目的地の停留所",
+    "breakdownTravelers": "追加の旅行者",
+    "breakdownPickup": "空港/ホテル送迎",
+    "estimateLabel": "即時の推定価格",
+    "estimateNote": "見積もりのみ · Q Pick で計画するときに確定します",
+    "cta": "ツアーを計画する"
+  },
+  "privateToursPreview": {
+    "eyebrow": "プライベートツアー",
+    "heading": "Sri Lanka の旅を計画する",
+    "sub": "完全にカスタマイズされたプライベート運転手体験でSri Lankaを発見してください。",
+    "points": [
+      "柔軟な旅程",
+      "高級車",
+      "即時見積もり"
+    ],
+    "primary": "ツアーを計画する",
+    "secondary": "ツアーを探索する",
+    "cardLabel": "旅程例",
+    "cardTitle": "5日間・海岸から高地まで",
+    "previewStops": [
+      "CMB → コロンボに夜到着",
+      "ゴール要塞と南海岸",
+      "エラ・ティー・カントリー・フィナーレ"
+    ],
+    "estimateLabel": "から",
+    "estimateValue": "LKR 96,000",
+    "cardCta": "ツアーでカスタマイズする"
+  },
+  "driveWithQPick": {
+    "eyebrow": "プロの運転手向け",
+    "heading": "自信を持って運転してください。",
+    "headingLine2": "目的を持って稼ぎましょう。",
+    "sub": "Sri Lanka のプレミアム運転手プラットフォームに参加してください。 Q Pick ドライバー アプリを使用して自分のスケジュールを管理しながら、空港送迎、市内および役員の乗車、企業旅行、プライベート ツアーを受け入れます。",
+    "cta": "ドライバーになる",
+    "secondaryCta": "さらに詳しく",
+    "trust": {
+      "verified": "検証済みドライバー",
+      "payouts": "毎週の支払い",
+      "support": "年中無休のサポート"
+    },
+    "trustAria": "ドライバーの信頼に関するハイライト",
+    "floatCards": {
+      "rideTitle": "新規乗車リクエスト",
+      "rideBody": "コロンボ要塞 · 6分",
+      "airportTitle": "空港送迎",
+      "airportBody": "CMB → ヒルトン · LKR 4,800",
+      "earningsTitle": "今日の収益",
+      "earningsBody": "LKR 12,450",
+      "onlineTitle": "ドライバーオンライン",
+      "onlineBody": "プレミアムな乗り物の準備ができました"
+    },
+    "phone": {
+      "greeting": "こんにちは、ディラン",
+      "online": "オンライン",
+      "todayEarnings": "今日の収益",
+      "earningsValue": "LKR 12,450",
+      "liveMap": "ライブマップ",
+      "upcoming": "今後の乗車",
+      "route": "CMB → コロンボ要塞",
+      "eta": "8分以内にお迎えに上がります",
+      "fare": "LKR 4,800",
+      "accept": "受け入れる",
+      "weekly": "週間収益"
+    },
+    "benefits": {
+      "rides": {
+        "title": "エグゼクティブライドのリクエスト",
+        "body": "Sri Lanka 全体でプレミアム予約を受け取ります。"
+      },
+      "airport": {
+        "title": "空港送迎",
+        "body": "確実な到着と出発。"
+      },
+      "schedule": {
+        "title": "柔軟なスケジュール",
+        "body": "好きなときにいつでもドライブしてください。"
+      },
+      "earnings": {
+        "title": "毎週の支払い",
+        "body": "毎週の透明な収益。"
+      },
+      "customers": {
+        "title": "認証された乗客",
+        "body": "信頼できる顧客と一緒に旅行しましょう。"
+      },
+      "support": {
+        "title": "24時間年中無休のドライバーサポート",
+        "body": "必要なときにいつでも真のサポートを。"
+      }
+    },
+    "dashboard": {
+      "title": "ドライバーダッシュボード",
+      "online": "オンライン",
+      "earnings": "今週",
+      "earningsValue": "LKR 86,400",
+      "nextTrip": "受信リクエスト",
+      "route": "CMB → コロンボ要塞",
+      "eta": "8 分以内にお受け取り · LKR 4,800",
+      "accept": "旅行を受け入れる"
+    }
+  },
+  "downloadApps": {
+    "eyebrow": "Q Pick アプリ",
+    "heading": "Q Pick をどこにでも持ち運べます。",
+    "sub": "Q Pick モバイル アプリでいつでも配車、空港送迎、プライベート Sri Lanka ツアーを予約できます。",
+    "tablistAria": "Q Pick アプリを選択してください",
+    "tabs": {
+      "passenger": "乗客用アプリ",
+      "driver": "ドライバーアプリ"
+    },
+    "passenger": {
+      "title": "旅行に必要なものがすべて揃っています。",
+      "features": [
+        "即時乗車予約",
+        "空港送迎",
+        "プライベートツアー",
+        "ライブドライバー追跡",
+        "安全な支払い",
+        "旅行履歴"
+      ],
+      "screenHome": "Q Pick 乗客のホーム画面",
+      "screenBooking": "Q Pick 配車予約画面",
+      "screenTracking": "Q Pick ライブ追跡画面"
+    },
+    "driver": {
+      "title": "Q Pick でさらに収益を上げましょう。",
+      "features": [
+        "配車リクエストを受け入れる",
+        "空港の予約",
+        "ツアーのお申し込み",
+        "週ごとの収益",
+        "ナビゲーション",
+        "ドライバーダッシュボード"
+      ],
+      "primary": "ドライバーになる",
+      "secondary": "さらに詳しく",
+      "screens": {
+        "dashboardTitle": "ドライバーダッシュボード",
+        "online": "オンライン",
+        "earningsLabel": "今週",
+        "earningsValue": "LKR 86,400",
+        "requestTitle": "新規旅行リクエスト",
+        "route": "CMB → コロンボ要塞",
+        "fare": "LKR 4,800 · ピックアップ時間 8 分",
+        "accept": "旅行を受け入れる",
+        "earningsScreenTitle": "収益",
+        "weekLabel": "今週",
+        "tripsLabel": "完了した旅行",
+        "tripsValue": "42"
+      }
+    },
+    "store": {
+      "passengerPlay": "乗客用アプリ",
+      "driverPlay": "ドライバーアプリ"
+    }
+  },
+  "finalCta": {
+    "badge": "旅を始めましょう",
+    "heading": "Sri Lanka の旅はここから始まります。",
+    "body": "空港送迎を予約したり、市内の乗り物を予約したり、運転手を雇ったり、プライベート ツアーで Sri Lanka を探索したりすることが、すべて 1 つのプレミアム プラットフォームで行えます。",
+    "primary": "ブックライド",
+    "secondary": "空港送迎",
+    "download": "ツアーを探索する",
+    "trustAria": "旅行者がQ Pickを信頼する理由",
+    "trust": {
+      "verified": "検証済みドライバー",
+      "pricing": "透明性のある価格設定",
+      "support": "年中無休のサポート",
+      "coverage": "島全体をカバー"
+    }
+  },
+  "farePreview": {
+    "from": "から",
+    "to": "へ",
+    "note": "アプリでお見積り・確認"
+  },
+  "taxiFare": {
+    "eyebrow": "タクシー料金見積りツール",
+    "heading": "タクシー料金を見積もる",
+    "sub": "場所を設定し、乗り物を選択し、予約の詳細を追加して、運賃を確認して予約します。",
+    "pickup": "乗車場所",
+    "pickupPlaceholder": "検索ピックアップ — 例:コロンボ要塞",
+    "destination": "目的地",
+    "destinationPlaceholder": "検索先 — 例:ゴールフェイス",
+    "distance": "距離（自動）",
+    "waiting": "待ち時間（分）",
+    "waitingHint": "最初の{free}分は無料、その後はLKR {rate}/分",
+    "rideType": {
+      "title": "乗車タイプ",
+      "now": "今すぐ乗車",
+      "schedule": "集荷のスケジュールを設定する"
+    },
+    "vehicleType": "車種",
+    "vehicleSelection": {
+      "eyebrow": "艦隊",
+      "heading": "乗り物を選択してください",
+      "sub": "あなたの旅行に最適な車両をお選びください。",
+      "startingFrom": "から開始",
+      "from": "から",
+      "after1Km": "1km以降",
+      "passengers": "乗客",
+      "luggage": "荷物",
+      "seats": "{count} 席",
+      "bags": "{count} バッグ",
+      "rating": "5 点中 {rating} と評価されました",
+      "ac": "エアコン",
+      "availability": "可用性",
+      "available": "利用可能",
+      "unavailable": "利用不可",
+      "yes": "はい",
+      "no": "いいえ",
+      "select": "選択",
+      "selectRide": "乗車を選択してください",
+      "selected": "選択済み",
+      "prev": "以前の車両",
+      "next": "次の車両",
+      "day": "日料金",
+      "night": "夜間料金",
+      "eta": "~{minutes} 分以内にお迎えに上がります",
+      "base": "ベース",
+      "perKm": "1kmあたり"
+    },
+    "mobileFareBar": {
+      "continue": "続ける"
+    },
+    "steps": {
+      "locations": "所在地",
+      "vehicle": "車両",
+      "details": "詳細",
+      "summary": "概要",
+      "locationsTitle": "受け取り場所と目的地を選択してください",
+      "vehicleTitle": "車両を選択してください",
+      "detailsTitle": "予約の詳細",
+      "summaryTitle": "運賃概要",
+      "continueVehicle": "車両に進みます",
+      "continueDetails": "予約の詳細に進む",
+      "continueSummary": "運賃概要に進む"
+    },
+    "bookingDetails": {
+      "title": "予約の詳細",
+      "pickupDate": "受け取り日",
+      "pickupTime": "ピックアップ時間",
+      "flightNumber": "便名",
+      "flightNumberOptional": "オプション",
+      "flightPlaceholder": "例: UL226",
+      "passengerCount": "乗客数",
+      "luggageCount": "荷物数",
+      "specialNotes": "特記事項",
+      "notesPlaceholder": "チャイルドシート、お出迎え、ゲート優先…",
+      "passengerName": "乗客名",
+      "phone": "電話番号",
+      "driverNotes": "ドライバーへの注意事項",
+      "paymentMethod": "お支払い方法",
+      "cash": "現金",
+      "card": "カード",
+      "wallet": "財布",
+      "promoCode": "プロモーションコード",
+      "promoPlaceholder": "プロモーションコードを入力してください",
+      "airportPickup": "空港送迎",
+      "yes": "はい",
+      "no": "いいえ",
+      "requiredHint": "続行するには、有効な集荷日時を選択してください。",
+      "requiredDetailsHint": "乗客の名前、電話番号、支払い方法を入力して続行します。",
+      "scheduleHint": "今後の受け取り日時を選択してください。"
+    },
+    "summaryLabel": "運賃概要",
+    "summary": {
+      "bookingSummary": "予約概要",
+      "pickup": "ピックアップ",
+      "destination": "目的地",
+      "distance": "距離",
+      "duration": "時間",
+      "vehicle": "車両",
+      "baseFare": "基本運賃",
+      "distanceCharge": "距離料金",
+      "waitingCharge": "待機料金",
+      "bookingFee": "予約料金",
+      "airportFee": "空港使用料",
+      "toll": "料金所",
+      "parking": "駐車場",
+      "surge": "サージ",
+      "discount": "割引",
+      "total": "推定合計額",
+      "estimatedFare": "推定運賃",
+      "finalFare": "最終運賃",
+      "grandTotal": "総計",
+      "viewFareBreakdown": "運賃の内訳を見る",
+      "payment": "お支払い",
+      "promo": "プロモーションコード",
+      "eta": "到着予定時刻",
+      "passengers": "乗客",
+      "luggage": "荷物"
+    },
+    "confirmErrors": {
+      "pickup": "受け取り場所を設定してください。",
+      "destination": "目的地を設定してください。",
+      "vehicle": "車両を選択してください。",
+      "schedule": "有効な集荷日時を選択してください。",
+      "payment": "お支払い方法を選択してください。",
+      "passengerName": "乗客名を入力してください。",
+      "phone": "電話番号を入力してください。",
+      "fare": "運賃はまだ計算中です。しばらくお待ちください。"
+    },
+    "estimateNote": "見積もりのみ · Q Pick アプリで最終運賃を確認します。タクシーのみご利用いただけます。空港送迎やツアーにはご利用いただけません。",
+    "cta": "この乗車を予約する",
+    "bookNow": "今すぐ予約する",
+    "scopeNote": "タクシー乗車料金 – 空港やツアーとは別",
+    "vehicles": {
+      "bike": "Qバイク",
+      "tuk": "Qトゥク",
+      "miniCar": "Qフレックス",
+      "wagon": "Qミニ",
+      "sedan": "Qセダン",
+      "miniVan": "Q ミニバン",
+      "van": "Q 平屋根バン",
+      "longVan": "Qハイルーフバン",
+      "suv": "Q SUV",
+      "miniBus": "Qミニバス",
+      "longBus": "Qバス"
+    },
+    "calculatingRoute": "走行距離と移動時間を計算しています...",
+    "calculatingShort": "計算中…",
+    "routeReady": "ルートの準備が完了しました · {distance} · {duration}",
+    "routes": {
+      "eyebrow": "ルート",
+      "heading": "ルートを選択してください",
+      "recommended": "おすすめ",
+      "alternative": "代替案",
+      "roadHighway": "高速道路",
+      "roadNormal": "ノーマル",
+      "tags": {
+        "fastest": "最速ルート",
+        "avoidHighway": "高速道路を避ける",
+        "highway": "高速道路ルート",
+        "scenic": "景観ルート",
+        "alternative": "代替ルート"
+      }
+    },
+    "locationPicker": {
+      "setPickup": "地図上でピックアップを設定する",
+      "setDestination": "地図上で目的地を設定",
+      "pickupTitle": "受け取りを確認する",
+      "destinationTitle": "目的地を確認",
+      "pickupHint": "検索、現在地の使用、または地図の移動",
+      "destinationHint": "地図を検索または移動して目的地を設定します",
+      "pickupAddress": "受取住所",
+      "destinationAddress": "宛先アドレス",
+      "latitude": "緯度",
+      "longitude": "経度",
+      "confirmPickup": "受け取りを確認する",
+      "confirmDestination": "目的地を確認",
+      "resolving": "住所を検索中…",
+      "close": "閉じる",
+      "searchLabel": "検索",
+      "searchPickup": "受け取り場所を検索する",
+      "searchDestination": "検索先",
+      "searching": "検索中…",
+      "noResults": "結果が見つかりませんでした",
+      "useCurrentLocation": "現在地を使用する",
+      "selectOnMap": "地図上で選択",
+      "locating": "探しています…",
+      "locationDenied": "位置情報の許可が拒否されました。ブラウザの設定で有効にするか、地図上で選択してください。",
+      "locationUnavailable": "現在地を取得できません。代わりに検索または地図を試してください。"
+    },
+    "errors": {
+      "missingKey": "OpenRouteService API キーがありません。",
+      "routeFailed": "ルートを計算できません。もう一度試してください。",
+      "selectFromSuggestions": "候補リストからピックアップと目的地を選択してください。"
+    }
+  },
+  "driverTrust": {
+    "verified": "検証済みの Q Pick ドライバー",
+    "trips": "{count} 件の旅行"
+  },
+  "storeBadges": {
+    "comingSoon": "近日公開予定",
+    "getItOn": "それを着てください",
+    "appStore": "アプリストア",
+    "googlePlay": "Googleプレイ",
+    "iosAria": "App Store でダウンロード — 近日公開予定",
+    "androidAria": "Google Play で入手 — 近日公開予定",
+    "downloadOnAppStore": "App Storeでダウンロード",
+    "getItOnGooglePlay": "Google Play で入手"
+  },
+  "phoneJourney": {
+    "steps": {
+      "splash": "スプラッシュ",
+      "login": "ログイン/ようこそ",
+      "dashboard": "ダッシュボード",
+      "account": "アカウント",
+      "pickup": "受け取りを確認する",
+      "destination": "目的地を選択",
+      "vehicles": "車両を選択してください",
+      "booking": "予約確認",
+      "searching": "近くのドライバーを検索する",
+      "accepted": "ドライバーを受け入れました",
+      "arriving": "ドライバー到着",
+      "pickedup": "乗客が迎えに来た",
+      "riding": "乗車中",
+      "completed": "旅行が完了しました",
+      "rate": "レートドライバー",
+      "submitted": "送信された評価",
+      "home": "ダッシュボード"
+    },
+    "shotAlt": "Q Pick 顧客アプリ — {label}",
+    "shotLabels": {
+      "login": "ログイン",
+      "home": "ホーム",
+      "account": "アカウント"
+    },
+    "splash": {
+      "tagline": "空港・送迎・運転手"
+    },
+    "login": {
+      "welcome": "ようこそ",
+      "subtitle": "サインインして乗車を予約する",
+      "emailOrPhone": "メールまたは電話",
+      "password": "パスワード",
+      "continue": "続ける"
+    },
+    "dashboard": {
+      "greeting": "こんにちは",
+      "whereTo": "どこへ？",
+      "searchPlaceholder": "ゴール要塞、Sri Lanka",
+      "chips": {
+        "airport": "空港",
+        "home": "ホーム",
+        "saved": "保存されました"
+      }
+    },
+    "pickup": {
+      "kicker": "受け取りを確認する",
+      "title": "ここはあなたの場所ですか？",
+      "label": "ピックアップ",
+      "value": "コロンボ要塞",
+      "confirm": "受け取りを確認する"
+    },
+    "destination": {
+      "kicker": "目的地を選択",
+      "title": "どこへ行くの？",
+      "pickupLabel": "ピックアップ",
+      "pickupValue": "コロンボ要塞",
+      "destinationLabel": "目的地",
+      "destinationValue": "ゴール要塞",
+      "continue": "続ける"
+    },
+    "vehicles": {
+      "route": "コロンボ城塞 → ゴール城塞",
+      "title": "車両を選択してください",
+      "seats": "{count} 席",
+      "ac": "エアコン",
+      "eta": "ETA {time}",
+      "categories": {
+        "tuk": "トゥク",
+        "mini": "ミニ",
+        "sedan": "セダン",
+        "suv": "SUV",
+        "van": "バン"
+      },
+      "models": {
+        "tuk": "バジャージRE",
+        "mini": "スズキ アルト",
+        "sedan": "トヨタ プレミオ",
+        "suv": "トヨタ プラド",
+        "van": "トヨタ ハイエース"
+      },
+      "etas": {
+        "tuk": "3分",
+        "mini": "4分",
+        "sedan": "4分",
+        "suv": "6分",
+        "van": "8分"
+      },
+      "prices": {
+        "tuk": "LKR 2,400",
+        "mini": "LKR 6,800",
+        "sedan": "LKR 18,500",
+        "suv": "LKR 24,000",
+        "van": "LKR 32,000"
+      }
+    },
+    "booking": {
+      "kicker": "予約確認",
+      "title": "乗車を確認する",
+      "vehicleMeta": "トヨタ プレミオ・4人乗り・エアコン",
+      "route": "ルート",
+      "routeValue": "コロンボ城塞 → ゴール城塞",
+      "fare": "運賃",
+      "fareValue": "LKR 18,500",
+      "eta": "到着予定時刻",
+      "etaValue": "4分",
+      "payment": "お支払い",
+      "paymentValue": "ビザ……4242",
+      "bookRide": "ブックライド"
+    },
+    "searching": {
+      "title": "近くのドライバーを検索しています...",
+      "matching": "コロンボ要塞付近のセダンのマッチング",
+      "driverFound": "ドライバーが見つかりました",
+      "sedanSelected": "セダンを選択しました",
+      "selectedMeta": "トヨタ プレミオ・ETA 3分"
+    },
+    "accepted": {
+      "badge": "ドライバーを受け入れました",
+      "driverName": "カスン・ペレラ",
+      "vehicle": "トヨタ プレミオ",
+      "rating": "⭐ 4.9",
+      "plate": "CAB-4821",
+      "eta": "到着予定時刻 3 分",
+      "track": "トラックドライバー"
+    },
+    "live": {
+      "statusArriving": "ドライバー到着 • 3 分",
+      "statusRiding": "ゴールへ向かう",
+      "driverVehicle": "カスン・トヨタ プレミオ",
+      "enRoute": "お迎えに向かう途中 · コロンボ要塞",
+      "route": "コロンボ城塞 → ゴール城塞",
+      "minutesUnit": "分",
+      "plate": "CAB-4821",
+      "rating": "★4.9",
+      "call": "ドライバーに電話する",
+      "chat": "メッセージドライバー"
+    },
+    "pickedUp": {
+      "title": "あなたは乗っています",
+      "subtitle": "カスンと一緒にゴール砦へ向かう"
+    },
+    "completed": {
+      "title": "旅行が完了しました",
+      "route": "コロンボ城塞 → ゴール城塞",
+      "fare": "LKR 18,500"
+    },
+    "rate": {
+      "title": "ドライバーを評価する",
+      "driverName": "カスン・ペレラ",
+      "vehicle": "トヨタ プレミオ",
+      "prompt": "今日の乗り心地はどうでしたか？",
+      "reviewPlaceholder": "短いレビューを書いてください...",
+      "submit": "評価を送信する"
+    },
+    "submitted": {
+      "title": "評価していただきありがとうございます",
+      "subtitle": "あなたのフィードバックはドライバーの改善に役立ちます",
+      "backHome": "家に戻る"
+    }
+  },
+  "pages": {
+    "ride": {
+      "meta": {
+        "title": "乗る",
+        "description": "Sri Lanka でプレミアムな都市または都市間乗車を予約しましょう — 透明性の高い運賃、確認済みのドライバー、ライブ追跡。"
+      },
+      "title": "乗車を予約する",
+      "description": "Sri Lanka 内のどこでも、透明な料金設定と確認済みのドライバーで配車を予約できます。",
+      "primaryCta": "運賃の見積り",
+      "secondaryCta": "安全基準",
+      "intro": {
+        "badge": "乗る",
+        "title": "乗車を予約する",
+        "subtitle": "Sri Lanka 内のどこでも、透明な料金設定と確認済みのドライバーで配車を予約できます。",
+        "nav": {
+          "live": "ライブ",
+          "tracking": "スマートナビゲーション",
+          "route": "アクティブなルート",
+          "corridor": "コロンボ → ゴールフェイス",
+          "eta": "到着予定時刻",
+          "etaValue": "12分",
+          "distance": "距離",
+          "distanceValue": "4.8km",
+          "driverNearby": "ドライバーが近くにいる、ピックアップに近づいている"
+        }
+      },
+      "booking": {
+        "title": "乗車を予約する",
+        "trust": {
+          "pricing": "透明性のある価格設定。",
+          "drivers": "確認されたドライバー。",
+          "tracking": "ライブ追跡。"
+        }
+      },
+      "why": {
+        "eyebrow": "Q Pick を選ぶ理由",
+        "heading": "Q Pick で乗車する理由",
+        "items": {
+          "pricing": {
+            "title": "透明性のある価格設定",
+            "body": "確認する前に完全な見積もりを確認してください。予期せぬ値上げはありません。"
+          },
+          "drivers": {
+            "title": "検証済みドライバー",
+            "body": "身元調査済みの運転手。格付けされ、保険が適用され、旅行の準備ができています。"
+          },
+          "tracking": {
+            "title": "ライブトラッキング",
+            "body": "共有可能なETAを使用して、ピックアップから玄関までのあらゆる時間を追跡します。"
+          },
+          "support": {
+            "title": "年中無休のサポート",
+            "body": "昼夜を問わず、必要なときにいつでも助けが得られます。"
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "艦隊",
+        "heading": "乗り物を選択してください",
+        "sub": "自転車からバスまで、あなたの旅に合ったものをお選びください。",
+        "mini": "ミニ",
+        "suv": "SUV",
+        "vehicles": {
+          "bike": {
+            "name": "Qバイク",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "高速シティライド"
+          },
+          "tuk": {
+            "name": "Qトゥク",
+            "passengers": "",
+            "luggage": "",
+            "blurb": "手頃な価格の短期旅行"
+          },
+          "flex": {
+            "name": "Qフレックス",
+            "passengers": "乗客3名",
+            "luggage": "2 荷物",
+            "blurb": "市内旅行用のコンパクトなハッチバック"
+          },
+          "mini": {
+            "name": "Qミニ",
+            "passengers": "乗客4名",
+            "luggage": "2 荷物",
+            "blurb": "都市部の移動に適した広々としたワゴンR"
+          },
+          "sedan": {
+            "name": "Qセダン",
+            "passengers": "乗客4名",
+            "luggage": "2 荷物",
+            "blurb": "ビジネス旅行にも快適"
+          },
+          "minivan": {
+            "name": "Q ミニバン",
+            "passengers": "乗客6名",
+            "luggage": "4 荷物",
+            "blurb": "家族旅行に最適なスペース"
+          },
+          "frVan": {
+            "name": "Q 平屋根バン",
+            "passengers": "乗客8名",
+            "luggage": "6 荷物",
+            "blurb": "快適なグループ空港送迎"
+          },
+          "highRoofVan": {
+            "name": "Qハイルーフバン",
+            "passengers": "乗客10名",
+            "luggage": "8 荷物",
+            "blurb": "ツアーや送迎のためのより広いスペース"
+          },
+          "suv": {
+            "name": "Q SUV",
+            "passengers": "5名様",
+            "luggage": "4 荷物",
+            "blurb": "家族連れに最適"
+          },
+          "miniBus": {
+            "name": "Qミニバス",
+            "passengers": "乗客12名",
+            "luggage": "8 荷物",
+            "blurb": "少人数のグループ旅行"
+          },
+          "bus": {
+            "name": "Qバス",
+            "passengers": "乗客20名",
+            "luggage": "12 荷物",
+            "blurb": "大規模なグループでの移動"
+          }
+        }
+      },
+      "safety": {
+        "eyebrow": "安全性",
+        "heading": "自信を持って旅行しましょう。",
+        "body": "すべての Q Pick の旅は、認証済みドライバー、リアルタイムの旅行共有、緊急支援、専用のカスタマー サポートによって保護されています。",
+        "cta": "安全について学ぶ",
+        "pillars": {
+          "verified": {
+            "title": "検証済みのフリート",
+            "body": "すべてのドライバーがネットワークに参加する前に、身元と車両がチェックされます。"
+          },
+          "sharing": {
+            "title": "旅行の共有",
+            "body": "ライブ旅行ステータスを家族、友人、ホテルと共有します。"
+          },
+          "support": {
+            "title": "年中無休のサポート",
+            "body": "昼夜を問わず、必要なときにいつでも助けが得られます。"
+          },
+          "emergency": {
+            "title": "緊急援助",
+            "body": "路上で何か異常を感じた場合の旅行中のエスカレーション パス。"
+          }
+        }
+      },
+      "faq": {
+        "heading": "よくある質問",
+        "sub": "乗り物、空港送迎、ツアーなど、予約する前に明確な答えを出しましょう。",
+        "items": {
+          "fareCalc": {
+            "q": "運賃はどのように計算されますか?",
+            "a": "タクシー料金は、基本料金、距離、待ち時間、時間帯料金を組み合わせたものです。確認する前に、予約フローで実際の見積もりが表示されます。"
+          },
+          "airport": {
+            "q": "空港送迎を事前予約できますか?",
+            "a": "はい。空港送迎を使用して、必要なときにフライト対応のバッファーを使用して、バンダラナイケ (CMB) への時間指定のお迎えをリクエストします。"
+          },
+          "tour": {
+            "q": "Sri Lanka ツアーをカスタマイズできますか?",
+            "a": "はい。プライベート ツアーは、日程、目的地、車両に基づいて作成されます。旅行前に Q Pick を使用してプランを調整してください。"
+          },
+          "vehicle": {
+            "q": "車両カテゴリーを選択できますか?",
+            "a": "はい。 Q Bike から Q Bus まで、予約カルーセルまたはフリート セクションで乗客と荷物に合ったカテゴリを選択してください。"
+          },
+          "drivers": {
+            "q": "すべてのドライバーは検証されていますか?",
+            "a": "はい。 Q Pick ドライバーは、ネットワークに参加する前に身元、車両、身元調査を完了します。"
+          },
+          "share": {
+            "q": "旅行を家族と共有できますか?",
+            "a": "はい。ライブ旅行ステータスを共有して、家族、友人、ホテルで旅行を追跡できるようにします。"
+          },
+          "cancel": {
+            "q": "予約をキャンセルできますか?",
+            "a": "はい。アプリまたはサポートからキャンセルしてください。時間と料金は予約の種類と、お迎えまでの距離によって異なります。"
+          },
+          "contact": {
+            "q": "サポートに連絡するにはどうすればよいですか?",
+            "a": "サポート ページから、電話、WhatsApp、または電子メールでいつでもご連絡ください。私たちのチームは年中無休で対応します。"
+          }
+        }
+      },
+      "finalCta": {
+        "heading": "まだ質問がありますか?",
+        "sub": "私たちのチームは年中無休でご乗車やSri Lankaの旅の計画をお手伝いいたします。",
+        "primary": "乗車を予約する",
+        "secondary": "サポートに連絡する"
+      },
+      "driverTrust": {
+        "name": "ヌワン P.",
+        "trips": "2.1k",
+        "rating": "4.97",
+        "verifiedLabel": "検証済みの Q Pick ドライバー",
+        "tripsLabel": "{count} 件の旅行"
+      }
+    },
+    "airport": {
+      "meta": {
+        "title": "空港送迎",
+        "description": "バンダラナイケ (CMB) のプレミアム空港送迎サービスには、フライト追跡、お出迎えサービス、プロの運転手、透明性の高い固定料金が含まれます。"
+      },
+      "hero": {
+        "eyebrow": "空港送迎",
+        "titleLine1": "空港送迎、",
+        "titleLine2": "完璧なタイミングで。",
+        "description": "__QP_ Airport__ 空港 (CMB) から Sri Lanka 内のどこへでも、プロの運転手、リアルタイムのフライト追跡、お出迎え、透明性の高い料金設定でご利用いただけます。",
+        "primaryCta": "空港送迎を予約する",
+        "secondaryCta": "乗り物を探索する",
+        "imageAlt": "Q Pick 運転手は、__QP_空港__ 空港で高級送迎車で旅行者をお出迎えします",
+        "trust": {
+          "tracking": "フライト追跡",
+          "greet": "ミート＆グリート",
+          "pricing": "固定価格",
+          "support": "年中無休のサポート"
+        },
+        "cards": {
+          "flight": {
+            "label": "フライト",
+            "code": "UL225",
+            "status": "オンタイム"
+          },
+          "driver": {
+            "label": "ドライバー",
+            "status": "6分で到着",
+            "eta": "ライブ到着予定時刻"
+          },
+          "meetGreet": "ミート＆グリーティングが含まれています"
+        }
+      },
+      "rates": {
+        "eyebrow": "公定料金",
+        "heading": "空港送迎料金",
+        "sub": "目的地を検索すると、__QP_空港__空港 (CMB) からのエアコン付きの正式な送迎料金が表示されます。",
+        "popular": "人気の目的地",
+        "searchLabel": "検索先",
+        "searchPlaceholder": "宛先またはコードを検索 — 例:キャンディ、カン、K015",
+        "searching": "検索中…",
+        "noResults": "その検索に一致する目的地はありません。別の名前またはコードを試してください。",
+        "emptyTitle": "運賃を調べる",
+        "emptyBody": "目的地を検索すると、公式の空港送迎料金がすぐに表示されます。",
+        "disclaimer": "表示されている運賃は、公式の空港送迎料金表に基づいています。待ち時間、追加の停車時間、通行料金、特別なリクエストには追加料金が適用される場合があります。",
+        "card": {
+          "destination": "目的地",
+          "fare": "公式空港送迎運賃",
+          "airport": "空港",
+          "status": "ステータス",
+          "statusValue": "公式空港料金",
+          "code": "コード",
+          "bookCta": "空港送迎を予約する"
+        }
+      },
+      "booking": {
+        "eyebrow": "専属運転手",
+        "heading": "空港送迎を予約してください。",
+        "sub": "__QP_ Airport__ 空港から Sri Lanka 内の任意の場所まで — 旅程に合わせた正規運賃。",
+        "title": "空港送迎",
+        "from": "から",
+        "to": "へ",
+        "toPlaceholder": "検索先",
+        "searching": "検索中…",
+        "noResults": "一致する宛先がありません。別の名前またはコードを試してください。",
+        "date": "旅行日",
+        "time": "ピックアップ時間",
+        "passengers": "乗客",
+        "adult": "大人",
+        "luggage": "荷物",
+        "luggageOptions": {
+          "cabin": "キャビン",
+          "medium": "中",
+          "large": "大"
+        },
+        "vehicle": "車両の種類",
+        "vehicleOptions": {
+          "mini": "ミニ",
+          "sedan": "セダン",
+          "van": "バン",
+          "suv": "SUV"
+        },
+        "nationality": "国籍",
+        "nationalityPlaceholder": "国籍を選択してください",
+        "nationalities": {
+          "lk": "Sri Lankan",
+          "in": "インド人",
+          "uk": "イギリス人",
+          "us": "アメリカ人",
+          "de": "ドイツ語",
+          "au": "オーストラリア人",
+          "cn": "中国語",
+          "other": "その他"
+        },
+        "special": "特別なリクエスト",
+        "specialPlaceholder": "オプション - チャイルドシート、面会メモ、ホテル名…",
+        "distance": "推定距離",
+        "duration": "推定所要時間",
+        "officialPrice": "公式空港送迎運賃",
+        "cta": "乗車を予約する",
+        "ctaLoading": "予約開始中…",
+        "summaryTitle": "旅行の概要",
+        "route": "ルート",
+        "destinationPending": "目的地を選択してください"
+      },
+      "features": {
+        "eyebrow": "Q Pick 空港を選ぶ理由",
+        "heading": "ゲートからドアまで確実に。",
+        "items": {
+          "tracking": {
+            "title": "フライト追跡",
+            "body": "到着を自動的に監視します。"
+          },
+          "greet": {
+            "title": "ミート＆グリート",
+            "body": "ドライバーは到着ロビー内で待機しています。"
+          },
+          "pricing": {
+            "title": "透明性のある価格設定",
+            "body": "予約する前に運賃を確認してください。"
+          },
+          "support": {
+            "title": "年中無休のサポート",
+            "body": "いつでもご利用いただけます。"
+          }
+        }
+      }
+    },
+    "tours": {
+      "meta": {
+        "title": "ツアー",
+        "description": "島を熟知した運転手によるプライベート Sri Lanka ツアーを計画しましょう。即時見積もり、柔軟な旅程、高級車をご用意しています。"
+      },
+      "eyebrow": "プライベートツアー",
+      "title": "島に合わせたツアー",
+      "description": "タイミング、地形、ゲストの快適さを熟知したドライバーが、お茶の国、要塞都市、文化的三角地帯を巡る日帰り旅行や複数の目的地を巡る旅をご提供します。",
+      "primaryCta": "ツアーを計画する",
+      "secondaryCta": "パッケージを見る",
+      "why": {
+        "heading": "プライベートツアーを選ぶ理由",
+        "sub": "あなたのペース、あなたの停車、1 人の信頼できる運転手 — 固定ループを走る見知らぬ人のコーチではありません。",
+        "items": [
+          {
+            "title": "完全にカスタマイズ可能",
+            "body": "日数、目的地、車両 - 実際の旅行方法に基づいて構築されます。"
+          },
+          {
+            "title": "ずっと同じ運転手",
+            "body": "好みを再度説明することなく、空港から高地までの連続性。"
+          },
+          {
+            "title": "透明性のある見積もり",
+            "body": "問い合わせる前に明確な範囲を確認してください。Q Pick で詳細を調整してください。"
+          }
+        ]
+      },
+      "packages": {
+        "heading": "人気のツアーパッケージ",
+        "sub": "カスタマイズできる出発点、またはプランナーのインスピレーションとして使用できます。",
+        "coastal": {
+          "days": "4～5日",
+          "title": "南海岸",
+          "body": "CMB 到着、コロンボのイーズイン、ゴール要塞、ミリッサまたはウナワトゥナのペース。",
+          "price": "LKR から 78,000"
+        },
+        "triangle": {
+          "days": "5～6日",
+          "title": "文化トライアングル",
+          "body": "シギリヤ、ダンブッラ、ポロンナルワの道路にはホテルの連携機能が組み込まれています。",
+          "price": "LKR から 112,000"
+        },
+        "highland": {
+          "days": "5～7日",
+          "title": "お茶の国",
+          "body": "キャンディからエラまで、高原の空気を利用し、列車の時刻表はオプションで、景色を眺めながら下山します。",
+          "price": "LKR から 124,000"
+        }
+      },
+      "itineraries": {
+        "heading": "推奨される旅程",
+        "sub": "軽量のアウトライン — プランナーで展開または圧縮します。",
+        "south": {
+          "title": "南海岸リセット",
+          "stops": [
+            "1 日目 — CMB → コロンボ",
+            "2 ～ 3 日目 — ゴールと海岸沿いの町",
+            "4 日目 — エラに戻るか延長する"
+          ]
+        },
+        "culture": {
+          "title": "ヘリテージサーキット",
+          "stops": [
+            "1日目 — CMB → シギリヤエリア",
+            "2 日目 — 文化トライアングルサイト",
+            "3 ～ 4 日目 — キャンディと出発の物流"
+          ]
+        },
+        "tea": {
+          "title": "ハイランドループ",
+          "stops": [
+            "1日目 — コロンボ → キャンディ",
+            "2 ～ 3 日目 — ヌワラ エリヤ / エラ",
+            "4 日目 — 風光明媚な南へ戻るか CMB"
+          ]
+        }
+      },
+      "vehicles": {
+        "heading": "車両比較",
+        "sub": "パーティーの規模に応じて快適さをお選びいただけます。すべてエアコンと認定された運転手付きです。",
+        "colVehicle": "車両",
+        "colGuests": "ゲスト",
+        "colBest": "こんな方に最適",
+        "colFrom": "/日から",
+        "rows": {
+          "sedan": {
+            "name": "セダン",
+            "guests": "1–3",
+            "best": "カップル＆軽い荷物",
+            "from": "LKR 18,500"
+          },
+          "suv": {
+            "name": "SUV",
+            "guests": "1–5",
+            "best": "家族連れと高原の道",
+            "from": "LKR 24,500"
+          },
+          "van": {
+            "name": "バン",
+            "guests": "1–9",
+            "best": "グループとマルチストップキット",
+            "from": "LKR 32,000"
+          }
+        }
+      },
+      "trust": {
+        "heading": "Q Pick で旅行する理由",
+        "items": {
+          "chauffeur": {
+            "title": "フォローする",
+            "body": "毎回の旅行で身分証明書と車両のチェックが行われます。"
+          },
+          "pacing": {
+            "title": "島のペーシング",
+            "body": "バスの急なスケジュールではなく、快適な時間を設定したルートです。"
+          },
+          "estimate": {
+            "title": "明確な見積もり",
+            "body": "チームと話す前に、範囲を知ってください。"
+          },
+          "support": {
+            "title": "連絡可能なサポート",
+            "body": "必要に応じて、旅行の変更や路上でのサポートを提供します。"
+          }
+        }
+      },
+      "faq": {
+        "heading": "よくある質問",
+        "items": {
+          "customize": {
+            "q": "旅程を完全にカスタマイズできますか?",
+            "a": "はい。プランナーを使用して見積もりを開始し、Q Pick を使用して停車地、ペース、ホテルを調整します。"
+          },
+          "payment": {
+            "q": "見積もりをもらったときに支払いますか？",
+            "a": "いいえ。プランナーはオリエンテーションのみを目的としており、探索や問い合わせに料金を支払う必要はありません。"
+          },
+          "hotels": {
+            "q": "ホテルも予約しますか？",
+            "a": "滞在中の移動をコーディネートします。ホテルの予約はパートナーとケースバイケースで手配できます。"
+          },
+          "changes": {
+            "q": "ツアーの途中で計画が変更になった場合はどうなりますか?",
+            "a": "道路、天候、好みの変化に応じて、運転手とサポートラインが毎日のペースを調整します。"
+          }
+        }
+      },
+      "inquiry": {
+        "heading": "旅を形作る準備はできていますか?",
+        "sub": "日付と希望を共有します。見積もりを明確なプライベート ツアー プランに修正します。",
+        "primary": "お問い合わせを送信する",
+        "secondary": "プランナーに戻る",
+        "destinations": "目的地を参照する"
+      },
+      "cards": {
+        "dayCharters": {
+          "title": "日帰りチャーター",
+          "body": "日の出から日没までのルートで、柔軟な停車地と明瞭なオールイン運賃を提供します。"
+        },
+        "multiDay": {
+          "title": "複数日",
+          "body": "旅程全体で同じ信頼できるドライバーが、海岸沿いから高地まで行きます。"
+        }
+      }
+    },
+    "safety": {
+      "meta": {
+        "title": "安全性",
+        "description": "Q Pick の安全性 — Sri Lanka 全体で検証済みのドライバー、保険付き車両、ライブ GPS 追跡、24 時間年中無休のサポート。"
+      },
+      "hero": {
+        "eyebrow": "信頼と安全",
+        "headline": "旅行 Sri Lanka",
+        "headlineLine2": "絶対の自信を持って。",
+        "description": "すべての Q Pick の旅は、認定された運転手、保険付き車両、ライブ追跡、献身的なサポートによってサポートされているため、安心して島を探索できます。",
+        "primaryCta": "配車を予約する",
+        "secondaryCta": "サポートに連絡する",
+        "imageAlt": "Sri Lanka の高級車の横にいるQ Pick の専用運転手"
+      },
+      "standards": {
+        "eyebrow": "当社の基準",
+        "heading": "あらゆる旅に安全性を組み込む",
+        "description": "コロンボの回廊から高原のヘアピンまで、Q Pick はすべての旅行で同じ検証、監視、サポート基準を維持します。",
+        "cards": {
+          "verifiedDrivers": {
+            "title": "検証済みドライバー",
+            "body": "運転手が Q Pick ネットワークに参加する前に、身元、経歴、ライセンスがチェックされます。"
+          },
+          "verifiedVehicles": {
+            "title": "認証済み車両",
+            "body": "定期的な検査、保険の検証、あらゆるカテゴリーにわたる空調設備の基準。"
+          },
+          "gpsTracking": {
+            "title": "GPS追跡",
+            "body": "旅行全体を通じて、お客様、ホスト、オペレーション デスクに旅行のリアルタイムの可視性を提供します。"
+          },
+          "support247": {
+            "title": "年中無休のサポート",
+            "body": "旅行中のサポートと、すぐに人間の助けが必要な場合に備えて公開された緊急ライン。"
+          }
+        }
+      },
+      "timeline": {
+        "eyebrow": "旅の保護",
+        "heading": "予約から到着まで保護されます",
+        "steps": {
+          "book": {
+            "title": "本",
+            "body": "透明性の高い料金設定と専用運転手の割り当てで、乗車、送迎、ツアーを確定します。"
+          },
+          "verification": {
+            "title": "検証",
+            "body": "ドライバーと車両の詳細は、発送前に Q Pick 安全基準に照らして検証されます。"
+          },
+          "pickup": {
+            "title": "ピックアップ",
+            "body": "運転手は、空港、ホテル、またはヴィラのコレクションなど、車両の詳細を共有して到着します。"
+          },
+          "tracking": {
+            "title": "ライブトラッキング",
+            "body": "リアルタイムで旅を追跡し、ライブステータスを家族やホテルのフロントデスクと共有します。"
+          },
+          "arrival": {
+            "title": "無事到着",
+            "body": "旅が完了するまでサポートが待機し、目的地に到着します。"
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "常に連絡可能",
+        "heading": "緊急支援",
+        "description": "路上で何か異常を感じた場合は、昼夜を問わず、島のどこにいても、電話かメッセージ 1 つでチームが駆けつけます。",
+        "hotline": {
+          "label": "緊急ホットライン",
+          "hint": "緊急の支援が必要な旅行中の緊急事態に。"
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "hint": "迅速な調整と旅行の最新情報については、サポート デスクにメッセージを送信してください。"
+        },
+        "email": {
+          "label": "電子メール",
+          "hint": "緊急でないお問い合わせ、パートナーへのリクエスト、予約のフォローアップ。"
+        }
+      },
+      "stats": {
+        "eyebrow": "数字で見ると",
+        "heading": "標準的なトラベラーズトラスト",
+        "items": {
+          "verifiedDrivers": {
+            "value": 2400,
+            "suffix": "+",
+            "label": "検証済みドライバー"
+          },
+          "insuredJourneys": {
+            "value": 98,
+            "suffix": "%",
+            "label": "保険付き旅行"
+          },
+          "support247": {
+            "value": 24,
+            "suffix": "/7",
+            "label": "サポート範囲"
+          },
+          "satisfaction": {
+            "value": 97,
+            "suffix": "%",
+            "label": "顧客満足度"
+          }
+        }
+      },
+      "finalCta": {
+        "eyebrow": "あなたの旅が待っています",
+        "heading": "自信を持って旅行しましょう",
+        "description": "最初の 1 マイルから最後まで Q Pick の安全基準に裏付けられた専用運転手、空港送迎、または島ツアーを予約してください。",
+        "primaryCta": "配車を予約する",
+        "secondaryCta": "ツアーを計画する",
+        "imageAlt": "Sri Lanka の熱帯林の上にそびえるシギリヤ ロック要塞"
+      },
+      "faqHeading": "よくある質問",
+      "faqs": [
+        {
+          "q": "Q Pick ドライバーは検証されていますか?",
+          "a": "はい。ドライバーはネットワークに参加する前に身元、車両、身元調査を完了します。"
+        },
+        {
+          "q": "私の旅行をシェアしてもいいですか？",
+          "a": "はい。旅行のライブ共有により、家族、ホスト、ホテルのフロントデスクがあなたの旅行を追跡することができます。"
+        },
+        {
+          "q": "乗車中に助けが必要な場合はどうすればよいですか?",
+          "a": "重要な瞬間には、旅行中のサポートと公開された緊急電話を利用できます。"
+        },
+        {
+          "q": "旅行に保険はありますか?",
+          "a": "補償範囲は、Q Pick 標準に基づくすべての旅行に適用されます。"
+        }
+      ]
+    },
+    "drive": {
+      "meta": {
+        "title": "Q Pick でドライブする",
+        "description": "プロの運転手として Q Pick に参加しましょう。プレミアム クライアント、公正な収入、柔軟なスケジュール、Sri Lanka 全域での 24 時間 365 日のドライバー サポートが受けられます。"
+      },
+      "hero": {
+        "eyebrow": "運転手募集",
+        "headline": "Sri Lanka をドライブする",
+        "headlineLine2": "プレミアムな旅。",
+        "description": "観光客、ホテル、法人旅行者にサービスを提供するプロの運転手の精選されたネットワークに参加して、透明性の高い収益、威厳のある配車、あなたの知っている道路向けに構築されたサポートを提供します。",
+        "primaryCta": "今すぐお申し込みください",
+        "secondaryCta": "要件を参照",
+        "imageAlt": "Sri Lanka の高級車の横にいるQ Pick プロの運転手"
+      },
+      "whyJoin": {
+        "eyebrow": "Q Pick に参加する理由",
+        "heading": "道路に誇りを持つドライバーのために作られています",
+        "description": "Q Pick は一般的な配車アプリではありません。当社は、空港送迎、プライベート ツアー、企業旅行などのプレミアムな需要に認定された運転手を結び付けます。",
+        "cards": {
+          "earnings": {
+            "title": "収益の向上",
+            "body": "最底辺の競争価格ではなく、プレミアムな空港料金、ツアー料金、運転手料金をご利用ください。"
+          },
+          "schedule": {
+            "title": "柔軟なスケジュール",
+            "body": "オンラインに接続するときに選択してください。空港送迎、日帰りレンタル、複数日のツアーをご希望の条件に合わせてバランスよくご利用いただけます。"
+          },
+          "clients": {
+            "title": "プレミアムツーリストおよび法人顧客",
+            "body": "ホテルの宿泊客、ビジネス旅行者、プロフェッショナリズムを期待する厳選されたツアーの顧客にサービスを提供します。"
+          },
+          "support": {
+            "title": "24時間年中無休のドライバーサポート",
+            "body": "昼夜を問わず、外出中に助けが必要なときのオペレーションデスクと緊急電話。"
+          }
+        }
+      },
+      "fleet": {
+        "eyebrow": "フリートのカテゴリー",
+        "heading": "自分が操作する車両を運転する",
+        "description": "Q Pick は、コンパクトシティカーからハイルーフのバンや長距離バスに至るまで、あらゆる種類のプライベート運転手カテゴリーをサポートしています。"
+      },
+      "journey": {
+        "eyebrow": "承認までの道のり",
+        "heading": "お申込みから初めてのプレミアム旅行まで",
+        "steps": {
+          "apply": {
+            "title": "申し込む",
+            "body": "個人情報、車両情報、書類の詳細を入力してオンライン登録を完了します。"
+          },
+          "verify": {
+            "title": "文書の検証",
+            "body": "私たちのチームがあなたの NIC、ライセンス、保険、車両登録を確認します。"
+          },
+          "inspection": {
+            "title": "車検",
+            "body": "規格検査により、お使いの車両が Q Pick の安全性と快適性の要件を満たしていることが確認されます。"
+          },
+          "training": {
+            "title": "トレーニング",
+            "body": "Q Pick サービス標準、アプリの使用法、ゲストのおもてなしに関する簡単なオンボーディング。"
+          },
+          "approved": {
+            "title": "承認済み",
+            "body": "認証が完了すると、プロフィールが公開されますが、完全に承認されるまでオンラインになることはできません。"
+          },
+          "start": {
+            "title": "運転を開始する",
+            "body": "プレミアム旅行、空港送迎、島全域のツアーの手配を承ります。"
+          }
+        }
+      },
+      "testimonials": {
+        "eyebrow": "ドライバーの声",
+        "heading": "Q Pick を選択した運転手",
+        "items": [
+          {
+            "name": "カスン・ペレラ",
+            "role": "セダン運転手 · コロンボ",
+            "quote": "空港送迎とホテル送迎は一貫しています。受付前に運賃が分かりますし、電話するとサポートが答えてくれます。"
+          },
+          {
+            "name": "ニマル・フェルナンド",
+            "role": "ハイルーフバン・キャンディ",
+            "quote": "ツアーグループや家族での送迎は、ランダムな市内乗車よりもお得な料金がかかります。 Q Pick クライアントは品質を期待しており、それに応じてチップを渡します。"
+          },
+          {
+            "name": "ルワン・シルバ",
+            "role": "SUV運転手・ゴール",
+            "quote": "オンボーディングは徹底していましたが、公平でした。承認されると、アプリと運営チームはシーズン中も忙しくしやすくなりました。"
+          }
+        ]
+      },
+      "requirements": {
+        "eyebrow": "資格",
+        "heading": "ドライバーの要件",
+        "description": "私たちはゲストと運転手の両方を守るために高いハードルを維持しています。これらを満たしていることを確認の上、お申込みください。",
+        "items": [
+          "少なくとも 3 年の経験を持つ有効な Sri Lankan 運転免許証",
+          "国民 ID カード (NIC) と明確な身元調査",
+          "機械的に良好な状態にある登録済みの保険付き車両",
+          "有効な収入許可証と包括的な保険書類",
+          "Q Pick Driver アプリ用のモバイル データを備えたスマートフォン",
+          "プロフェッショナルな外観と丁寧なゲストコミュニケーション",
+          "シンハラ語、英語、タミル語のうち少なくとも 1 つに流暢であること",
+          "空港、市内、都市間のプレミアム旅行に積極的に対応する"
+        ]
+      },
+      "earnings": {
+        "eyebrow": "収益の例",
+        "heading": "収益例",
+        "description": "以下の数字は単なる例示であり、収入を保証するものではありません。実際の収益は時間、季節、車両カテゴリー、旅行タイプによって異なります。",
+        "disclaimer": "あくまで例示です。収入を保証するものではありません。 Q Pick のコミッション、需要、および個人のパフォーマンスの影響を受けます。",
+        "examples": [
+          {
+            "label": "空港送迎 (CMB → コロンボ)",
+            "amount": "LKR 8,500 – 12,000",
+            "note": "セダン・ワンウェイ・オフピーク"
+          },
+          {
+            "label": "運転手1日レンタル",
+            "amount": "LKR 18,000 – 28,000",
+            "note": "SUV またはバン · 8 ～ 10 時間 · 燃料は含まれません"
+          },
+          {
+            "label": "複数日ツアー（1日あたり）",
+            "amount": "LKR 22,000 – 35,000",
+            "note": "ハイルーフバン・文化トライアングルルート"
+          },
+          {
+            "label": "シティライド（コロンボ）",
+            "amount": "LKR 2,500 – 5,500",
+            "note": "ミニまたはセダン・メーター制運賃"
+          }
+        ]
+      },
+      "finalCta": {
+        "eyebrow": "参加する準備はできていますか?",
+        "heading": "Q Pick 運転手になる",
+        "description": "今すぐアプリケーションを開始してください。自分のペースで登録を完了してください。私たちのチームが確認と承認をガイドします。",
+        "primaryCta": "今すぐお申し込みください",
+        "secondaryCta": "要件を表示する",
+        "imageAlt": "Q Pick 運転手の地図とモバイルの旅行ダッシュボード"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "パートナー",
+        "description": "Q Pick と提携して、ホテル、ヴィラ、企業ゲストの送迎を 1 つの信頼できる基準に基づいて提供します。"
+      },
+      "title": "ゲストを上手に動かすパートナー",
+      "description": "ホテル、ヴィラ、企業 — 共通の Q Pick 標準に基づいて、フロント デスクが信頼できる優秀な転送を行います。",
+      "primaryCta": "パートナーシップと話す",
+      "secondaryCta": "空港商品",
+      "body": "ゲストの到着リンク、予定された送迎、運用の可視化 - ホスピタリティ チームが WhatsApp 車両の調整に費やす時間を減らし、ホスティングに多くの時間を費やすように設計されています。",
+      "logoRowEyebrow": "おもてなしのために作られた",
+      "logoRowAriaLabel": "ホスピタリティパートナー",
+      "partnerNames": [
+        "ゴール フェイス ホテル",
+        "シナモン",
+        "ジェットウィング",
+        "シャングリラ",
+        "アマンガラ"
+      ]
+    },
+    "about": {
+      "meta": {
+        "title": "について",
+        "description": "Quick Pick App (Pvt) Ltd は、Q Pick を構築しています。これは、乗車、空港送迎、島内旅行など、Sri Lanka 内の移動の信頼できるプライベート レイヤーです。"
+      },
+      "title": "Sri Lanka の移動に合わせて構築",
+      "description": "Q Pick は、Quick Pick App (Pvt) Ltd によって開発および運営されています。これは、高級コンシェルジュのような落ち着きと最新のモビリティ ネットワークの信頼性を備えた、島内移動の信頼できるプライベート レイヤーです。",
+      "primaryCta": "配車を予約する",
+      "secondaryCta": "私たちと一緒にドライブしましょう",
+      "paragraphs": [
+        "私たちが存在しているのは、断片化された WhatsApp フリートと汎用のグローバル アプリの両方が、旅行者や居住者が実際に必要としているもの、つまり確実性、おもてなし、場所への敬意を欠いているからです。",
+        "Quick Pick App (Pvt) Ltd は、乗客、運転手、操作面を 1 つの言語で設計しています。これは、Sri Lanka を横断する人間の旅のための静かなテクノロジーです。"
+      ]
+    },
+    "support": {
+      "meta": {
+        "title": "サポート",
+        "description": "乗車、送迎、ツアー、パートナーに関するお問い合わせについては、Q Pick サポートにお問い合わせください。"
+      },
+      "title": "サポート",
+      "description": "旅行に関する質問、パートナーに関する問い合わせ、人手が必要なときはこちらをご利用ください。",
+      "emailLabel": "電子メール",
+      "phoneLabel": "電話",
+      "locationLabel": "場所",
+      "emergencyLabel": "緊急回線"
+    },
+    "destinations": {
+      "meta": {
+        "title": "目的地",
+        "description": "Sri Lanka の Q Pick の目的地 (コロンボ、ゴール、エラ、シギリヤなど) を探索しましょう。"
+      },
+      "title": "目的地",
+      "description": "港の通り、城壁、高原の霧、文化的な三角地帯など、旅のスタイルに合わせて設定された場所。"
+    },
+    "destinationsSlug": {
+      "metaFallbackTitle": "目的地",
+      "primaryCta": "配車を予約する",
+      "secondaryCta": "ツアーを探索する"
+    },
+    "legal": {
+      "privacy": {
+        "meta": {
+          "title": "プライバシー",
+          "description": "Q Pick プライバシー ポリシー — 当社がお客様の情報を収集、使用、保護する方法。"
+        },
+        "title": "プライバシー",
+        "description": "当社はお客様を安全に移動するために必要なもののみを収集し、旅行データは慎重に扱います。",
+        "body": "このページはフェーズ 1 シェルです。完全な法的コピーには、アカウント データ、アクティブな旅行中の場所、支払い処理業者、保存期間、適用される Sri Lankan および国際プライバシー法に基づくお客様の権利が含まれます。",
+        "questionsPrefix": "質問:",
+        "supportEmail": "サポート@qpick.lk"
+      },
+      "terms": {
+        "meta": {
+          "title": "規約",
+          "description": "Q Pick 乗客、パートナー、ドライバー向けの利用規約。"
+        },
+        "title": "利用規約",
+        "description": "乗車、送迎、ツアーにわたる Q Pick サービスの使用を管理する契約。",
+        "body": "このページはフェーズ 1 シェルです。完全な規約では、乗客と運転手の義務、キャンセル、責任制限、許容される使用、および紛争解決が定義されます。",
+        "questionsPrefix": "質問:",
+        "supportEmail": "サポート@qpick.lk"
+      }
+    },
+    "notFound": {
+      "code": "404",
+      "title": "ページが見つかりません",
+      "description": "リクエストしたルートは、まだ Q Pick マップの一部ではありません。",
+      "primaryCta": "家に帰ります",
+      "secondaryCta": "サポート",
+      "continue": "または、{ride}、{airport}、または {tours} に進みます。",
+      "links": {
+        "ride": "乗る",
+        "airport": "空港",
+        "tours": "ツアー"
+      }
+    },
+    "home": {
+      "meta": {
+        "title": "Q Pick · Sri Lanka、確実に移行しました。",
+        "description": "Sri Lanka 全域でのプレミアム モビリティ — 空港送迎、市内タクシー、都市間移動、運転手サービス、企業旅行、プライベート ツアーを 1 つの信頼できるプラットフォームで提供します。"
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "titleDefault": "Q Pick · Sri Lanka のプレミアム モビリティ",
+      "titleTemplate": "%s · Q Pick",
+      "description": "Sri Lanka 全域でのプレミアム モビリティ — 空港送迎、市内タクシー、都市間の移動、運転手サービス、プライベート ツアーを 1 つの信頼できるプラットフォームで提供します。"
+    }
+  },
+  "toursHub": {
+    "seo": {
+      "title": "運転手付きプライベート Sri Lanka ツアー | __QP_ブランド__",
+      "description": "Q Pick で Sri Lanka を探索しましょう。専用運転手、高級車、文化遺産、丘陵地、ビーチ、野生生物を巡るオーダーメイドの旅です。",
+      "ogTitle": "Q Pick プライベート ツアーで Sri Lanka を探索",
+      "twitterTitle": "プライベート Sri Lanka ツアー | __QP_ブランド__",
+      "twitterDescription": "専用運転手と高級車でカスタマイズされた島の旅。"
+    },
+    "hero": {
+      "eyebrow": "Q Pick プライベート ツアー",
+      "headline": "Q Pick で Sri Lanka を探索する",
+      "subtitle": "専用運転手、高級車、オーダーメイドの体験で、忘れられない旅をお楽しみください。",
+      "primaryCta": "コレクションを探索する",
+      "secondaryCta": "ツアーを計画する"
+    },
+    "finalCta": {
+      "headline": "Sri Lanka の旅はここから始まります",
+      "body": "日付と目的地を共有してください。プライベート運転手による旅程を作成し、書面による見積書を確認します。",
+      "ctaLabel": "私の旅を計画する",
+      "secondaryLabel": "旅行の専門家に相談する"
+    },
+    "trust": {
+      "chauffeurs": {
+        "title": "専属運転手",
+        "description": "寺院のマナー、高原の道、穏やかな空港到着を理解した免許を持つドライバー。"
+      },
+      "airport": {
+        "title": "空港送迎",
+        "description": "__QP_ Airport__ (CMB) のお出迎えはフライトに合わせて行われます。"
+      },
+      "support": {
+        "title": "年中無休のサポート",
+        "description": "出発前や移動中の実際の Q Pick デスク — WhatsApp と電話、昼も夜も。"
+      },
+      "vehicles": {
+        "title": "高級車",
+        "description": "セダン、SUV、バン、長距離バス - プライベートキャビン、エアコン完備、荷物の準備ができています。"
+      },
+      "pricing": {
+        "title": "透明性のある価格設定",
+        "description": "レビュー後に書面で見積書を作成します。ウェブサイトの価格をでっち上げたり、店頭でサプライズしたりすることはありません。"
+      },
+      "personal": {
+        "title": "パーソナライズされたツアー",
+        "description": "すべてのパッケージは、目的地、日数、ペース、車両クラスなど編集可能です。"
+      },
+      "rating": {
+        "title": "4.9 ゲスト評価",
+        "description": "プライベート ツアーのゲストからは、運転手のケア、ペース調整、コミュニケーションに関して一貫して評価されています。"
+      },
+      "licensed": {
+        "title": "ライセンスを受けたオペレーター",
+        "description": "Quick Pick App (Pvt) Ltd — 登録済みの Sri Lankan オペレーターで、厳選された運転手と保険付き車両を備えています。"
+      },
+      "secure": {
+        "title": "安全な予約",
+        "description": "旅行前に書面による見積書、確認済みの旅程、透明な内容物。"
+      }
+    },
+    "explorer": {
+      "eyebrow": "厳選されたコレクション",
+      "title": "旅を選択してください",
+      "subtitle": "旅行スタイル別に企画されたプレミアム プライベート ツアー — ここでカテゴリを開いて、そのストーリー、注目の旅程、旅の詳細を探索してください。",
+      "searchPlaceholder": "目的地、体験、ツアー名を検索…",
+      "clearSearch": "検索をクリア",
+      "categoriesAria": "ツアーカテゴリー",
+      "mapSelection": "マップの選択",
+      "multiDay": "数日にわたる旅行",
+      "premiumNorthern": "プレミアムプライベートツアー",
+      "sortAria": "ツアーパッケージを並べ替える",
+      "filterAria": "ツアーパッケージをフィルタリングする",
+      "allCategoriesTitle": "すべてのカテゴリ",
+      "allCategoriesIntro": "公開されているすべてのプライベート ツアーを参照します。リセットして、Q Pick コレクション全体を探索します。",
+      "viewAllCategories": "すべてのカテゴリを表示",
+      "destinationExperiences": "目的地での体験",
+      "destinationExperiencesSub": "カード上の単なるラベルではなく、実際の場所、季節、撮影ウィンドウ。",
+      "vehiclesTitle": "プライベートで快適な旅行",
+      "vehiclesSub": "セダンからミニバスまで - エアコン、荷物スペース、道路用充電器。",
+      "trustTitle": "Q Pick で旅行する理由",
+      "reviewsEmptyTitle": "ゲストストーリーは近日公開予定",
+      "reviewsEmptyBody": "ゲストが旅を共有すると、検証済みのプライベート ツアーのレビューがここに表示されます。",
+      "faqEyebrow": "よくある質問",
+      "faqLead": "Q Pick での旅を計画する前に知っておくべきことすべて。",
+      "noResults": "検索に一致するツアーはありません。別のキーワードを試すか、フィルタをリセットしてください。",
+      "noToursTitle": "検索に一致するツアーはありません",
+      "noToursBody": "別のキーワードを試すか、フィルターをリセットしてコレクション全体を参照してください。",
+      "planCustomTour": "カスタムツアーを計画する",
+      "resetFilters": "フィルターをリセットする",
+      "sortBy": "並べ替え順",
+      "mapJourneysThrough": "{name} を巡る旅",
+      "itineraryOne": "旅程",
+      "itineraryMany": "旅程",
+      "matchingQuery": "「{query}」に一致",
+      "northernPeninsula": "北半島",
+      "premiumJaffna": "プレミアムなジャフナ体験",
+      "premiumJaffnaSub": "{count} {experiences} — 専用運転手のサポート付き、歴史遺産の街歩き、島のフェリー、神聖なボートの旅。",
+      "experienceOne": "経験",
+      "experienceMany": "経験",
+      "reviewsEmptyDisclaimer": "検証済みのゲストのレビューは、旅行が公開された後に表示されます。でっち上げられた推薦状、評価、賞などは表示されません。",
+      "trustBeforeTestimonials": "証言の前に信頼する",
+      "faqTitle": "よくある質問",
+      "defaultImageAlt": "風光明媚なSri Lanka高原の旅",
+      "openCategory": "{title} を開く",
+      "countItineraries": "{count} 旅程",
+      "countPackages": "{count} パッケージ",
+      "countPackage": "{count} パッケージ",
+      "cmbService": "CMB サービス",
+      "packagesFound": "{count} パッケージ",
+      "dayTour": "日帰りツアー",
+      "daysTour": "{count} 日",
+      "fromPrice": "価格はリクエストに応じて",
+      "viewDetails": "詳細を見る",
+      "bookTour": "このツアーを予約する",
+      "idealFor": "{value} に最適",
+      "premiumNorthernHeading": "北部Sri Lanka",
+      "premiumNorthernSub": "歴史遺産の寺院、離島、そしてジャフナの文化の深み — 専属運転手による 3 つのプレミアムな旅。"
+    },
+    "filters": {
+      "all": "すべて",
+      "classic": "クラシック",
+      "luxury": "贅沢",
+      "wildlife": "野生動物",
+      "adventure": "冒険",
+      "beach": "ビーチ",
+      "honeymoon": "ハネムーン",
+      "wellness": "ウェルネス",
+      "family": "家族",
+      "day-tours": "日帰りツアー"
+    },
+    "sort": {
+      "featured": "注目の",
+      "newest": "最新の",
+      "duration": "期間",
+      "popular": "人気のある"
+    },
+    "badges": {
+      "best-seller": "ベストセラー",
+      "luxury": "贅沢",
+      "new": "新しい",
+      "family-friendly": "ファミリー向け",
+      "eco": "エコ",
+      "adventure": "冒険"
+    },
+    "breadcrumbs": {
+      "home": "ホーム",
+      "tours": "ツアー"
+    },
+    "jsonLd": {
+      "touristType": "レジャー旅行者"
+    },
+    "reviewsMeta": {
+      "title": "ゲストレビュー",
+      "emptyTitle": "道路からの物語",
+      "emptyBody": "検証済みのゲストのレビューは、旅行が公開された後に表示されます。でっち上げられた推薦状、評価、賞などは表示されません。"
+    }
+  },
+  "toursCatalog": {
+    "packages": {
+      "4-days-ella-train-escape": {
+        "title": "4 日間のエラ列車脱出",
+        "idealFor": "時間が限られている鉄道愛好家",
+        "intro": "ティーバレーを通る風光明媚な鉄道。この 4 日間のプライベート運転手の旅は、限られた時間の中で鉄道を愛する人たちを対象に、キャンディ、ヌワラ エリヤ、エッラを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "列車区間",
+          "ナイン・アーチズ",
+          "ティーストップ"
+        ],
+        "itinerary": [
+          {
+            "title": "キャンディを発見する",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ヌワラ エリヤを発見する",
+            "description": "専属運転手と一緒にヌワラ エリヤを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "エラを発見する",
+            "description": "専属運転手と一緒にエラを探索しましょう。天候、チケット、ペースに応じてタイミングが柔軟に変化します。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "5-days-mirissa-whale-coast": {
+        "title": "5日間のミリッサホエールコースト",
+        "idealFor": "海洋野生動物愛好家",
+        "intro": "クジラの季節と砦の遺産。この 5 日間のプライベート運転手の旅は、海の野生動物愛好家が集まるゴール、ミリッサ、ベントータを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ミリッサ海岸",
+          "ホエールウォッチング",
+          "ゴール要塞"
+        ],
+        "itinerary": [
+          {
+            "title": "ゴールを発見する",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "ミリッサを発見する",
+            "description": "専属運転手と一緒にミリッサを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "ベントータを発見する",
+            "description": "専属運転手と一緒にベントータを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ベントータの暇つぶし",
+            "description": "専属運転手と一緒にベントータを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "6-days-luxury-honeymoon-coast": {
+        "title": "6日間の贅沢なハネムーンコースト",
+        "idealFor": "沿岸部の新婚旅行者",
+        "intro": "フォートロマンスとオーシャンヴィラ。この 6 日間のプライベート運転手付きの旅は、沿岸部の新婚旅行者向けにコロンボ、ゴール、ベントータ、ミリッサを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ゴール要塞",
+          "ベントータ",
+          "ミリッサの夕日"
+        ],
+        "itinerary": [
+          {
+            "title": "コロンボを発見する",
+            "description": "専属運転手と一緒にコロンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ゴールを発見する",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "ベントータを発見する",
+            "description": "専属運転手と一緒にベントータを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ミリッサを発見する",
+            "description": "専属運転手と一緒にミリッサを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすミリッサ",
+            "description": "専属運転手と一緒にミリッサを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "6-days-pilgrimage-triangle": {
+        "title": "6日間のトライアングル巡礼",
+        "idealFor": "信仰主導の団体旅行",
+        "intro": "島中にある神聖な場所。この 6 日間の専用運転手付きの旅は、キャンディ、アヌラーダプラ、ダンブッラ、ポロンナルワを訪れます。信仰主導のグループ旅行です。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "歯の神殿",
+          "アヌラーダプラ",
+          "ダンブッラの洞窟"
+        ],
+        "itinerary": [
+          {
+            "title": "キャンディを発見する",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "アヌラーダプラを発見する",
+            "description": "専属運転手と一緒にアヌラーダプラを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ダンブッラを発見する",
+            "description": "専属運転手と一緒にダンブッラを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ポロンナルワを発見する",
+            "description": "専属運転手と一緒にポロンナルワを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "のんびりポロンナルワ",
+            "description": "専属運転手と一緒にポロンナルワを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "8-days-festival-culture-kandy": {
+        "title": "8日間のフェスティバル カルチャー＆キャンディ",
+        "idealFor": "お祭りシーズンの来場者",
+        "intro": "伝統を持つペラヘラのタイミング。この 8 日間のプライベート運転手の旅は、コロンボ、キャンディ、ダンブッラ、シギリヤ、ネゴンボ、つまりフェスティバル シーズンの訪問者を訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "キャンディのお祭り",
+          "寺院訪問",
+          "三角形のアイコン"
+        ],
+        "itinerary": [
+          {
+            "title": "コロンボを発見する",
+            "description": "専属運転手と一緒にコロンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "キャンディを発見する",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ダンブッラを発見する",
+            "description": "専属運転手と一緒にダンブッラを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "シギリヤを発見する",
+            "description": "専属運転手と一緒にシギリヤを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ニゴンボを発見する",
+            "description": "専属運転手と一緒にネゴンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ニゴンボでのんびり",
+            "description": "専属運転手と一緒にネゴンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ニゴンボでのんびり",
+            "description": "専属運転手と一緒にネゴンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "9-days-honeymoon-paradise": {
+        "title": "9日間のハネムーンパラダイス",
+        "idealFor": "新婚夫婦とロマンチックな逃避行",
+        "intro": "霧と海の中をゆっくりと歩く。この 9 日間のプライベート運転手付きの旅は、ニゴンボ、キャンディ、ヌワラ エリヤ、エラ、ベントータ、ゴールを訪れ、新婚旅行やロマンチックな逃避行に最適です。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "お茶の国",
+          "エラ・ロマンス",
+          "海岸の夕日"
+        ],
+        "itinerary": [
+          {
+            "title": "ニゴンボを発見する",
+            "description": "専属運転手と一緒にネゴンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "キャンディを発見する",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ヌワラ エリヤを発見する",
+            "description": "専属運転手と一緒にヌワラ エリヤを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "エラを発見する",
+            "description": "専属運転手と一緒にエラを探索しましょう。天候、チケット、ペースに応じてタイミングが柔軟に変化します。"
+          },
+          {
+            "title": "ベントータを発見する",
+            "description": "専属運転手と一緒にベントータを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ゴールを発見する",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "10-days-ayurveda-wellness-journey": {
+        "title": "10日間のアーユルヴェーダ ウェルネス ジャーニー",
+        "idealFor": "ウェルネスを重視する旅行者",
+        "intro": "回復の章はプライベート旅行に織り込まれています。この 10 日間のプライベート運転手の旅は、健康を重視する旅行者であるニゴンボ、キャンディ、ベントータ、ミリッサ、ゴールを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ウェルネスペーシング",
+          "穏やかな海岸",
+          "テンプルバランス"
+        ],
+        "itinerary": [
+          {
+            "title": "ニゴンボを発見する",
+            "description": "専属運転手と一緒にネゴンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "キャンディを発見する",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          },
+          {
+            "title": "ベントータを発見する",
+            "description": "専属運転手と一緒にベントータを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          },
+          {
+            "title": "ミリッサを発見する",
+            "description": "専属運転手と一緒にミリッサを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "ゴールを発見する",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "のんびり過ごすゴール",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          },
+          {
+            "title": "出発とその後",
+            "description": "コロンボまたは __QP_空港__ 空港への専用送迎 — または Q Pick でカスタム ルートを続行します。"
+          }
+        ]
+      },
+      "colombo-capital-discovery-day": {
+        "title": "コロンボ首都発見日",
+        "idealFor": "乗り継ぎのゲストと都市愛好家",
+        "intro": "コロンボのスカイライン、植民地時代の小道、ゴールフェイスの夕日。この 1 日のプライベート運転手付きの旅は、乗り継ぎのゲストや都市愛好家向けにコロンボを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ロータスタワーの展望台",
+          "ゴールフェイスグリーン",
+          "コロンボのダイニングストップ"
+        ],
+        "itinerary": [
+          {
+            "title": "コロンボ発見",
+            "description": "専属運転手と一緒にコロンボを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変更できます。"
+          }
+        ]
+      },
+      "galle-fort-heritage-day": {
+        "title": "ゴール要塞遺産の日",
+        "idealFor": "南海岸の歴史愛好家",
+        "intro": "オランダの城壁とインド洋の光。この 1 日のプライベート運転手の旅は、南海岸の歴史愛好家であるゴールを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ゴール要塞灯台",
+          "城壁の散歩",
+          "ブティック街"
+        ],
+        "itinerary": [
+          {
+            "title": "ゴールの発見",
+            "description": "専属運転手と一緒にゴールを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          }
+        ]
+      },
+      "sigiriya-rock-sunrise-day": {
+        "title": "シーギリヤ ロック日の出の日",
+        "idealFor": "早起きと写真撮影のゲスト",
+        "intro": "初光時のライオンロック。この 1 日のプライベート運転手の旅は、早起きや写真撮影のゲスト向けにシギリヤを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "シギリヤ頂上",
+          "ウォーターガーデン",
+          "フレスコ画ギャラリー"
+        ],
+        "itinerary": [
+          {
+            "title": "シーギリヤ発見",
+            "description": "専属運転手と一緒にシギリヤを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          }
+        ]
+      },
+      "kandy-sacred-city-day": {
+        "title": "キャンディ神聖都市の日",
+        "idealFor": "スピリチュアルな旅行者と家族",
+        "intro": "仏歯寺と静かな湖。この 1 日のプライベート運転手の旅は、スピリチュアルな旅行者や家族連れのキャンディを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "歯の神殿",
+          "キャンディ湖",
+          "ペラデニヤのオプション"
+        ],
+        "itinerary": [
+          {
+            "title": "キャンディ発見",
+            "description": "専属運転手と一緒にキャンディを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          }
+        ]
+      },
+      "ella-highland-views-day": {
+        "title": "エラ・ハイランド・ビューズ・デー",
+        "idealFor": "途中下車とリッジウォーカー",
+        "intro": "9 つのアーチと霧の谷。この 1 日のプライベート運転手の旅はエラを訪れ、途中で列車に立ち寄り、尾根を歩きます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ナイン アーチズ ブリッジ",
+          "リトル アダムズ ピーク",
+          "ティーバレーのカフェ"
+        ],
+        "itinerary": [
+          {
+            "title": "エラ発見",
+            "description": "専属運転手と一緒にエラを探索しましょう。天候、チケット、ペースに応じてタイミングが柔軟に変化します。"
+          }
+        ]
+      },
+      "yala-wildlife-safari-day": {
+        "title": "ヤーラ野生動物サファリデー",
+        "idealFor": "スケジュールが厳しいサファリ愛好家",
+        "intro": "夜明けのヒョウの国。この 1 日のプライベート運転手付きの旅は、スケジュールがタイトなサファリ愛好家向けのヤーラを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ジープサファリウィンドウ",
+          "乾燥地帯のラグーン",
+          "鳥類"
+        ],
+        "itinerary": [
+          {
+            "title": "ヤーラ発見",
+            "description": "専属運転手と一緒にヤーラを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          }
+        ]
+      },
+      "anuradhapura-sacred-trail-day": {
+        "title": "アヌラーダプラ セイクリッド トレイル デー",
+        "idealFor": "仏教遺産の巡礼者",
+        "intro": "古代の仏塔と菩提樹の伝統。この 1 日のプライベート運転手の旅は、仏教遺産の巡礼者であるアヌラーダプラを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ルワンウェリサヤ",
+          "聖なる菩提樹",
+          "修道院の遺跡"
+        ],
+        "itinerary": [
+          {
+            "title": "アヌラーダプラ発見",
+            "description": "専属運転手と一緒にアヌラーダプラを探索しましょう。天候、チケット、ペースに応じてタイミングが変わります。"
+          }
+        ]
+      },
+      "mirissa-southern-coast-day": {
+        "title": "ミリッサ南海岸の日",
+        "idealFor": "クジラの季節に訪れる人々",
+        "intro": "ココナッツの入り江と海の地平線。この 1 日のプライベート運転手の旅は、クジラの季節に訪れるミリッサを訪れます。専属ドライバーが道路を運転し、あなたは寺院、展望台、野生動物の窓、そしてゆったりとした海岸沿いの午後に集中します。すべての Q Pick ツアーは、日付、車両の好み、ペースを書面で確認した後、調整されます。",
+        "highlights": [
+          "ミリッサ ビーチ",
+          "ココナッツ ヒル",
+          "ホエールウォッチングの季節"
+        ],
+        "itinerary": [
+          {
+            "title": "ミリッサの発見",
+            "description": "専属運転手と一緒にミリッサを探索しましょう。天候、チケット、ペースに応じてタイミングは柔軟に変化します。"
+          }
+        ]
+      },
+      "jaffna-heritage-city-tour": {
+        "title": "ジャフナ ヘリテージ シティ ツアー",
+        "idealFor": "北を探索する遺産旅行者",
+        "intro": "集中的な 4 時間のプライベート ツアーで、ジャフナのタミル遺産を発見してください。運転手は、ナルール コビルのゴープラムから、ジャフナ要塞の城壁、歴史ある公共図書館、カラフルな地元の市場の停留所、そしてクラシックなリオ アイス クリームの仕上げまでご案内します。",
+        "highlights": [
+          "ナルール寺院",
+          "ジャフナ フォート",
+          "公共図書館",
+          "ローカルマーケット",
+          "リオアイスクリーム"
+        ],
+        "itinerary": [
+          {
+            "title": "ジャフナ ヘリテージ サーキット",
+            "description": "ナルール寺院、ジャフナ要塞、公共図書館、市場の閲覧、リオ アイスクリーム - 開館時間とあなたの興味に合わせてペースを調整します。"
+          }
+        ]
+      },
+      "delft-island-adventure": {
+        "title": "デルフト島の冒険",
+        "idealFor": "島の探検家と写真家",
+        "intro": "フェリーでデルフト島へ向かい、1 日かけて冒険しましょう。サンゴのビーチを歩き、有名なバオバブの木やクイーンズ タワーの遺跡を探し、開けた平原で野生の馬を観察し、本土への送迎を担当する専用運転手で戻ります。",
+        "highlights": [
+          "フェリー乗船",
+          "野生の馬",
+          "バオバブの木",
+          "クイーンズタワー",
+          "コーラルビーチ"
+        ],
+        "itinerary": [
+          {
+            "title": "デルフト島遠征",
+            "description": "フェリーでの横断、野生の馬の平原、バオバブの木、クイーンズ タワー、そしてサンゴ礁のビーチで過ごす時間を、専用車で本土まで移動します。"
+          }
+        ]
+      },
+      "nainativu-sacred-island-tour": {
+        "title": "ナイナチブの神聖な島ツアー",
+        "idealFor": "巡礼者と文化旅行者",
+        "intro": "ナイナティブへ出航し、6時間の神聖な島を旅します。ナガディーパ寺院とナガプーシャニ アンマン寺院を訪れ、ボートでの横断を体験し、陸上での専用運転手のサポートを受けながら、Sri Lanka の北の島々の仏教とヒンズー教の融合した伝統を吸収してください。",
+        "highlights": [
+          "ナガディーパ寺院",
+          "ナガプーシャニ アンマン寺院",
+          "ボートライド",
+          "文化体験",
+          "シギリヤ ロック要塞は涼しい光のタイミングで訪れます",
+          "ダンブッラ石窟寺院の壁画",
+          "アヌラーダプラまたはポロンナルワの聖地",
+          "民間文化トライアングル運転手",
+          "キャンディの仏歯寺",
+          "ヌワラエリヤ周辺の茶畑",
+          "エッラのナイン・アーチズ・ブリッジ",
+          "オプションの観光列車区間",
+          "文化的な三角形のアイコン",
+          "キャンディとハイランドティーカントリー",
+          "エラの風光明媚なランドマーク",
+          "ゴールまたはミリッサの南海岸",
+          "文化三角地帯での遺産ウォームアップ",
+          "ハイランドティーカントリーとエラ",
+          "ヤーラヒョウサファリウィンドウ",
+          "南海岸の復興の日々",
+          "完全な文化トライアングルの深さ",
+          "丘陵地帯と南部のサファリ",
+          "西海岸と東海岸のオプション",
+          "家族向けのペース配分",
+          "全島季節限定ルート",
+          "深い遺産と野生動物の時間",
+          "東海岸と西海岸のビーチ",
+          "究極のプライベート運転手によるペース"
+        ],
+        "itinerary": [
+          {
+            "title": "ナイナティヴ神聖回路",
+            "description": "ナイナティブ、ナガディーパ寺院、ナガプーシャニ アンマン寺院までボートに乗り、島で文化的な時間を過ごしてから戻ります。"
+          },
+          {
+            "title": "トライアングルへの到着通路",
+            "description": "CMB またはネゴンボの近くで運転手と合流し、内陸へ向かいます。シギリヤまたはダンブッラの近くに定住してください。夕方、のんびりと。"
+          },
+          {
+            "title": "シギリヤとダンブッラ",
+            "description": "柔らかな光の中でシギリヤに登り、その後ダンブッラ石窟寺院を探索します。リクエストに応じて、近くで季節限定のサファリを楽しめます。"
+          },
+          {
+            "title": "古代都市とその先へ",
+            "description": "コロンボ/ネゴンボに戻る前に、またはカスタム ルートを続行する前に、アヌラーダプラまたはポロンナルワを訪れてください。"
+          },
+          {
+            "title": "キャンディへ",
+            "description": "内陸ルートを経由してキャンディまでドライブします。夜の湖周回ツアーと仏歯寺は儀式の時間に合わせて行われます。"
+          },
+          {
+            "title": "キャンディの遺産",
+            "description": "ペラデニヤ植物園、クラフト ストリート、自由時間にはマーケットや文化パフォーマンスを楽しみましょう。"
+          },
+          {
+            "title": "お茶の国",
+            "description": "ヌワラ エリヤに登って、プランテーション訪問、グレゴリー湖、冷涼な気候のレジャーを楽しみましょう。"
+          },
+          {
+            "title": "エラの視点",
+            "description": "エラまで進み、ナイン アーチズ ブリッジ、尾根の散歩、高原のカフェを訪れます。オプションの列車セグメント。"
+          },
+          {
+            "title": "下りまたは海岸リンク",
+            "description": "荷物を陸送して、コロンボ、南海岸、または次の目的地に向けて出発します。"
+          },
+          {
+            "title": "到着",
+            "description": "空港で出迎え、コロンボまたはネゴンボへ送迎。運転手との説明。"
+          },
+          {
+            "title": "文化三角地帯",
+            "description": "シギリヤ / ダンブッラへ向かい、要塞または石窟寺院の時間を過ごします。"
+          },
+          {
+            "title": "キャンディへの遺産",
+            "description": "トライアングルのハイライトを完了したら、キャンディへ進みます。"
+          },
+          {
+            "title": "ハイランド",
+            "description": "ヌワラ エリヤまたはエッラに向かう紅茶地帯への風光明媚なドライブ。"
+          },
+          {
+            "title": "エラ",
+            "description": "九連アーチ橋、展望台、カフェでのレジャー。"
+          },
+          {
+            "title": "南海岸",
+            "description": "ゴール要塞とミリッサに下り、夕日と海辺での食事を楽しみましょう。"
+          },
+          {
+            "title": "出発",
+            "description": "海岸沿いでの朝のゆっくりとした時間と、CMB またはコロンボへのプライベート送迎。"
+          },
+          {
+            "title": "到着",
+            "description": "CMB が集まり、市またはネゴンボに定住します。"
+          },
+          {
+            "title": "シギリヤ地方",
+            "description": "岩の要塞とトライアングルの浸漬。"
+          },
+          {
+            "title": "キャンディ",
+            "description": "仏歯寺と高原アプローチ。"
+          },
+          {
+            "title": "お茶の国",
+            "description": "ヌワラ エリヤのプランテーションと涼しい気候。"
+          },
+          {
+            "title": "エラ",
+            "description": "ナインアーチと尾根歩き。"
+          },
+          {
+            "title": "ヤーラに向けて",
+            "description": "南東の野生動物地帯への風光明媚な下り。"
+          },
+          {
+            "title": "サファリデー",
+            "description": "ヤーラ国立公園のジープサファリ（公園料金は別途）。"
+          },
+          {
+            "title": "南部のビーチ",
+            "description": "ミリッサ ココナッツ ツリー ヒルと海岸沿いのダウンタイム。"
+          },
+          {
+            "title": "ゴール要塞",
+            "description": "城壁、灯台、ブティックの探索。"
+          },
+          {
+            "title": "出発",
+            "description": "CMB またはコロンボへの専用送迎。"
+          },
+          {
+            "title": "ニゴンボ到着",
+            "description": "CMB のピックアップと西海岸の定住。"
+          },
+          {
+            "title": "アヌラーダプラ",
+            "description": "神聖な都市の仏塔と考古学公園。"
+          },
+          {
+            "title": "シギリヤ",
+            "description": "岩の要塞と三角基地。"
+          },
+          {
+            "title": "ポロンナルワ",
+            "description": "中世の首都とオプションのゾウ公園。"
+          },
+          {
+            "title": "ダンブッラ ～ キャンディ 航空券",
+            "description": "洞窟寺院と高原の首都。"
+          },
+          {
+            "title": "キャンディ",
+            "description": "仏歯寺と庭園。"
+          },
+          {
+            "title": "ヌワラ エリヤ",
+            "description": "茶園と涼しい気候。"
+          },
+          {
+            "title": "エラ",
+            "description": "9 つのアーチと展望台。"
+          },
+          {
+            "title": "ヤラアプローチ",
+            "description": "南東野生動物ベルトの移動。"
+          },
+          {
+            "title": "サファリ",
+            "description": "ヤーラ国立公園ジープの日。"
+          },
+          {
+            "title": "ミリッサ",
+            "description": "サザンビーチの回復日。"
+          },
+          {
+            "title": "ゴール",
+            "description": "砦遺産と海岸。"
+          },
+          {
+            "title": "東か南西か",
+            "description": "トリンコマリーのシーズンオプションまたはベントータのバッファー。"
+          },
+          {
+            "title": "コロンボ出発",
+            "description": "都市バッファーと CMB 転送。"
+          },
+          {
+            "title": "到着",
+            "description": "CMB ネゴンボまたはコロンボ行き。"
+          },
+          {
+            "title": "西海岸のバッファー",
+            "description": "ラグーンまたはシティレジャー。"
+          },
+          {
+            "title": "アヌラーダプラ",
+            "description": "神聖な都市への没入。"
+          },
+          {
+            "title": "北西のオプション",
+            "description": "オプションの野生動物または休息日。"
+          },
+          {
+            "title": "シギリヤ",
+            "description": "岩の要塞の焦点。"
+          },
+          {
+            "title": "ポロンナルワ",
+            "description": "中世の遺跡と湖。"
+          },
+          {
+            "title": "ダンブッラ",
+            "description": "洞窟寺院と村の文化。"
+          },
+          {
+            "title": "キャンディ",
+            "description": "歯の神殿。"
+          },
+          {
+            "title": "キャンディレジャー",
+            "description": "庭園と工芸品。"
+          },
+          {
+            "title": "ヌワラ エリヤ",
+            "description": "お茶の国。"
+          },
+          {
+            "title": "不動産",
+            "description": "オプションの高原またはプランテーションの日。"
+          },
+          {
+            "title": "エラ",
+            "description": "9つのアーチと尾根。"
+          },
+          {
+            "title": "エラレジャー",
+            "description": "カフェやちょっとした散歩。"
+          },
+          {
+            "title": "ヤーラ",
+            "description": "野生動物へのアプローチ。"
+          },
+          {
+            "title": "サファリ",
+            "description": "パークジープの日。"
+          },
+          {
+            "title": "ミリッサ",
+            "description": "南の海。"
+          },
+          {
+            "title": "ゴール",
+            "description": "砦遺産と海岸。"
+          },
+          {
+            "title": "ベントータ",
+            "description": "南西部のリゾートペース。"
+          },
+          {
+            "title": "東海岸",
+            "description": "季節ごとにトリンコマリーまたはアルガム ベイ。"
+          },
+          {
+            "title": "イーストレジャー",
+            "description": "ビーチと水の時間。"
+          },
+          {
+            "title": "帰国と出発",
+            "description": "CMB への島間転送。"
+          }
+        ]
+      }
+    },
+    "categories": {},
+    "destinations": {},
+    "faqs": {
+      "hub-customize": {
+        "question": "Q Pick ツアー パッケージをカスタマイズできますか?",
+        "answer": "はい。公開されたパッケージは出発点です。プランナーで目的地、日程、車両、好みを選択します。リクエストを送信すると、デスクがルートを調整します。"
+      },
+      "hub-price": {
+        "question": "価格設定はどのように行われますか?",
+        "answer": "旅程が確認されるまで、リクエストに応じて利用可能な価格が表示されます。ツアー リクエストを送信すると、Q Pick が書面による専用運転手の見積もりを確認します。書面で明記されていない限り、入場料、サファリジープ、宿泊費、食事は通常別途かかります。"
+      },
+      "hub-airport": {
+        "question": "ツアーに空港送迎はありますか?",
+        "answer": "はい。 __QP_ Airport__ (CMB) の送迎はツアーで手配するか、専用の空港送迎サービスを利用して手配できます。"
+      },
+      "hub-group": {
+        "question": "どの車両を選択すればよいですか?",
+        "answer": "セダンはカップルに適しています。 SUV やバンは家族連れに最適です。高級バンやミニバスは大人数のグループにも対応します。プランナーで定員を選択します。荷物とルートを検討した後、最終的な車両を決定します。"
+      },
+      "hub-payment": {
+        "question": "支払いと確認はどのように行われますか?",
+        "answer": "ツアーのリクエストをオンラインで送信します。私たちのチームは空き状況を確認し、概要と見積もりを確認し、支払いと運転手の割り当てに関する次のステップを共有します。追跡用の参照コードを受け取ります。"
+      },
+      "pkg-3d-pace": {
+        "question": "文化三角関係は 3 日で十分ですか?",
+        "answer": "3 日間で、シギリヤ、ダンブッラ、そしてアヌラーダプラまたはポロンナルワをゆっくりとプライベートなペースで巡ることができます。長期滞在の場合は、ミヒンタレ、サファリのアドオン、またはキャンディの延長が可能です。"
+      },
+      "pkg-5d-train": {
+        "question": "エラ列車を含めることはできますか?",
+        "answer": "はい。多くのゲストは、運転手が荷物を道路で運ぶ間、景色の良い鉄道区間を利用します。お見積り依頼時にご希望をお知らせください。"
+      },
+      "pkg-5d-weather": {
+        "question": "丘陵地帯の天気はどんな感じですか？",
+        "answer": "ヌワラ エリヤとエラは海岸よりも涼しく、朝は霧がかかり、小雨が降る可能性があります。レイヤーをパックします。専用車両をご利用いただくことで、ビューポイント間の移動が快適になります。"
+      },
+      "pkg-7d-fitness": {
+        "question": "7 日間のツアーではどのくらいの距離を歩きますか?",
+        "answer": "シーギリヤと寺院の訪問にはステップが必要です。エラではオプションで短い散歩を提供しています。運転手がその日の時間を計ってくれるので、ハイライトを失うことなく、激しい部分を短縮することができます。"
+      },
+      "pkg-10d-safari": {
+        "question": "ヤーラサファリは野生動物の冒険に含まれていますか?",
+        "answer": "サファリ ジープのレンタルと公園への入場は、明確なタイミングで追加料金として手配されます。野生動物の目撃が保証されることはありません。お客様のご要望に応じて、最適な季節を計画します。"
+      },
+      "pkg-14d-pace": {
+        "question": "14日間は運転しすぎですか?",
+        "answer": "専用運転手と間隔をあけて夜間停車するため、毎日の運転は管理しやすくなります。私たちは、旅程が急かされず、夢中になれるように、休憩ビーチの日を設計しています。"
+      },
+      "pkg-21d-season": {
+        "question": "グランドアイランドツアーのベストシーズンはいつですか?",
+        "answer": "西海岸と南海岸は 12 月から 3 月が人気です。 5 月から 9 月にかけて東の空が輝くことがよくあります。 21 日間のプランは、より乾燥した海岸をたどることもできます。旅行月に基づいてアドバイスします。"
+      }
+    },
+    "vehicles": {}
+  },
+  "tourBooking": {
+    "steps": {
+      "destinations": {
+        "kicker": "ステップ1",
+        "title": "どこに行きたいですか？",
+        "subtitle": "目的地を選択するか、夢のルートを説明してください。詳細を一緒に調整します。"
+      },
+      "dates": {
+        "kicker": "ステップ2",
+        "title": "旅行日を選択してください",
+        "subtitle": "開始日と走行日数を選択します。",
+        "startDate": "開始日",
+        "numberOfDays": "日数",
+        "estimatedEnd": "終了予定日:"
+      },
+      "vehicle": {
+        "kicker": "ステップ3",
+        "title": "あなたの車を選んでください",
+        "subtitle": "セダンからバンまで - プライベート、エアコン、荷物の準備ができています。"
+      },
+      "accommodation": {
+        "kicker": "ステップ4",
+        "title": "宿泊施設の希望",
+        "subtitle": "あなたの快適さのレベルをお知らせください。私たちが滞在をコーディネートするか、お客様ご自身でご予約ください。"
+      },
+      "preferences": {
+        "kicker": "ステップ5",
+        "title": "旅行の好み",
+        "subtitle": "ペース、興味、特別なリクエストは、お客様の旅程の作成に役立ちます。"
+      },
+      "contact": {
+        "kicker": "ステップ6",
+        "title": "あなたの連絡先の詳細",
+        "subtitle": "書面による見積もりと洗練された旅程を返信します。"
+      },
+      "requests": {
+        "kicker": "ステップ7",
+        "title": "特別なリクエスト",
+        "subtitle": "食事のニーズ、アクセシビリティ、お祝いなど、私たちが知っておくべきことはすべてあります。"
+      },
+      "review": {
+        "kicker": "レビュー",
+        "title": "ツアーのリクエストを確認してください",
+        "subtitle": "送信する前に詳細を確認してください。この段階では支払いは必要ありません。",
+        "submit": "ツアーリクエストを送信する",
+        "submitting": "送信中…"
+      }
+    },
+    "common": {
+      "back": "戻る",
+      "continue": "続ける",
+      "optional": "オプション",
+      "required": "必須"
+    }
+  }
+}
