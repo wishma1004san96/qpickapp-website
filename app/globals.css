@@ -162,6 +162,15 @@
       animation-duration: 5s !important;
       animation-iteration-count: infinite !important;
     }
+
+    /* Keep Trusted Partners marquee alive — iOS often enables Reduce Motion */
+    .tps-marquee-track {
+      display: flex !important;
+      -webkit-animation-duration: 28s !important;
+      animation-duration: 28s !important;
+      -webkit-animation-iteration-count: infinite !important;
+      animation-iteration-count: infinite !important;
+    }
   }
 
   body {
@@ -2176,4 +2185,16 @@
   }
 }
 
-
+/* Trusted Partners marquee — override global reduce-motion kill (iOS often enables Reduce Motion) */
+@media (prefers-reduced-motion: reduce) {
+  .tps-marquee-track {
+    -webkit-animation-name: tps-marquee-scroll !important;
+    animation-name: tps-marquee-scroll !important;
+    -webkit-animation-duration: 28s !important;
+    animation-duration: 28s !important;
+    -webkit-animation-timing-function: linear !important;
+    animation-timing-function: linear !important;
+    -webkit-animation-iteration-count: infinite !important;
+    animation-iteration-count: infinite !important;
+  }
+}

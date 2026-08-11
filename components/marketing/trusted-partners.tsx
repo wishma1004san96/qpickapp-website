@@ -78,7 +78,6 @@ function logoClassName(logo: PartnerLogo) {
 export function TrustedPartnersSection() {
   const t = useTranslations();
   const reduceMotion = useReducedMotion() ?? false;
-  const marqueeItems = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
 
   return (
     <section
@@ -120,49 +119,43 @@ export function TrustedPartnersSection() {
           <div className="tps-marquee-fade tps-marquee-fade--right" aria-hidden />
 
           <div className="tps-marquee-viewport">
-            <ul className="tps-marquee-track">
-              {marqueeItems.map((logo, index) => (
-                <li
-                  key={`${logo.id}-${index}`}
-                  className="tps-logo-item"
-                  aria-hidden={index >= PARTNER_LOGOS.length ? true : undefined}
-                >
-                  <div className="tps-logo-wrap">
-                    <Image
-                      src={logo.src}
-                      alt={
-                        index >= PARTNER_LOGOS.length
-                          ? ""
-                          : t(`trustedPartners.logos.${logo.id}`)
-                      }
-                      width={logo.width}
-                      height={logo.height}
-                      className={logoClassName(logo)}
-                      sizes="(max-width: 640px) 120px, 180px"
-                      draggable={false}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="tps-marquee-track">
+              <ul className="tps-marquee-set">
+                {PARTNER_LOGOS.map((logo) => (
+                  <li key={logo.id} className="tps-logo-item">
+                    <div className="tps-logo-wrap">
+                      <Image
+                        src={logo.src}
+                        alt={t(`trustedPartners.logos.${logo.id}`)}
+                        width={logo.width}
+                        height={logo.height}
+                        className={logoClassName(logo)}
+                        sizes="(max-width: 640px) 120px, 180px"
+                        draggable={false}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="tps-static-grid">
-              {PARTNER_LOGOS.map((logo) => (
-                <li key={logo.id} className="tps-logo-item">
-                  <div className="tps-logo-wrap">
-                    <Image
-                      src={logo.src}
-                      alt={t(`trustedPartners.logos.${logo.id}`)}
-                      width={logo.width}
-                      height={logo.height}
-                      className={logoClassName(logo)}
-                      sizes="(max-width: 640px) 120px, 180px"
-                      draggable={false}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
+              <ul className="tps-marquee-set" aria-hidden="true">
+                {PARTNER_LOGOS.map((logo) => (
+                  <li key={`${logo.id}-dup`} className="tps-logo-item">
+                    <div className="tps-logo-wrap">
+                      <Image
+                        src={logo.src}
+                        alt=""
+                        width={logo.width}
+                        height={logo.height}
+                        className={logoClassName(logo)}
+                        sizes="(max-width: 640px) 120px, 180px"
+                        draggable={false}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         </Container>

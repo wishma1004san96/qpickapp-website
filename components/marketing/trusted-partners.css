@@ -149,19 +149,21 @@
   width: max-content;
   margin: 0;
   padding: 0;
-  list-style: none;
-  gap: clamp(2.25rem, 5vw, 4rem);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-animation-name: tps-marquee-scroll;
-  animation-name: tps-marquee-scroll;
-  -webkit-animation-duration: 32s;
-  animation-duration: 32s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  -webkit-animation: tps-marquee-scroll 32s linear infinite !important;
+  animation: tps-marquee-scroll 32s linear infinite !important;
   will-change: transform;
+}
+
+.tps-marquee-set {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(2.25rem, 5vw, 4rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -210,10 +212,6 @@
   transform: scale(1.05);
 }
 
-.tps-static-grid {
-  display: none;
-}
-
 @-webkit-keyframes tps-marquee-scroll {
   from {
     -webkit-transform: translate3d(0, 0, 0);
@@ -238,35 +236,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .tps-marquee-viewport {
-    -webkit-mask-image: none;
-    mask-image: none;
-    overflow: visible;
-  }
-
-  .tps-marquee-fade {
-    display: none;
-  }
-
-  .tps-marquee-track {
-    display: none;
-    -webkit-animation: none;
-    animation: none;
-  }
-
-  .tps-static-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.25rem);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-}
-
 @media (pointer: coarse) {
   .tps-marquee-viewport {
     -webkit-mask-image: none;
@@ -279,10 +248,13 @@
 }
 
 @media (max-width: 639.98px) {
-  .tps-marquee-track {
+  .tps-marquee-set {
     gap: clamp(1.75rem, 6vw, 2.5rem);
-    -webkit-animation-duration: 28s;
-    animation-duration: 28s;
+  }
+
+  .tps-marquee-track {
+    -webkit-animation: tps-marquee-scroll 28s linear infinite !important;
+    animation: tps-marquee-scroll 28s linear infinite !important;
   }
 
   .tps-logo {
