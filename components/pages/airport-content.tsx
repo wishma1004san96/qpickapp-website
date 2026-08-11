@@ -5,6 +5,7 @@ import {
   AirportHero,
 } from "@/components/marketing/airport-hero";
 import { AirportRates } from "@/components/marketing/airport-rates";
+import { BankingPartnerSection } from "@/components/marketing/banking-partner-section";
 
 /**
  * Airport page — premium transfer landing + official rates lookup.
@@ -16,6 +17,7 @@ export function AirportContent() {
       <AirportHero />
       <AirportRates />
       <AirportFeatures />
+      <BankingPartnerSection />
     </div>
   );
 }

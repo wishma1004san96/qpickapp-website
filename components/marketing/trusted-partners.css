@@ -1,0 +1,222 @@
+/* Trusted Partners — premium logo marquee */
+
+.tps-section {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tps-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% -10%,
+      rgb(0 98 250 / 0.07),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 42% 38% at 88% 108%,
+      rgb(10 22 40 / 0.04),
+      transparent 68%
+    ),
+    linear-gradient(180deg, #fcfdff 0%, #f7f9fc 48%, #f3f6fa 100%);
+}
+
+.tps-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  padding-block: clamp(3.25rem, 7vw, 5rem);
+}
+
+.tps-header {
+  position: relative;
+  z-index: 1;
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.tps-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(10 22 40 / 0.58);
+}
+
+.tps-eyebrow-mark {
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--brand, #0062fa);
+  border-radius: 1px;
+}
+
+.tps-heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0.8rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ink, #0a1628);
+}
+
+.tps-heading-line {
+  display: block;
+  text-wrap: balance;
+}
+
+.tps-description {
+  margin: 0.9rem auto 0;
+  max-width: 40ch;
+  font-size: clamp(0.9375rem, 1.3vw, 1.05rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+  color: rgb(10 22 40 / 0.62);
+}
+
+.tps-marquee {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(2rem, 4.5vw, 2.85rem);
+}
+
+.tps-marquee-viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.tps-marquee-fade {
+  display: none;
+}
+
+.tps-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: clamp(2.25rem, 5vw, 4rem);
+  animation: tps-marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.tps-marquee:hover .tps-marquee-track {
+  animation-play-state: paused;
+}
+
+.tps-logo-item {
+  flex: 0 0 auto;
+}
+
+.tps-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.15rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.tps-logo {
+  display: block;
+  width: auto;
+  height: clamp(3.4375rem, 4.5vw, 4.375rem);
+  max-width: min(13rem, 38vw);
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.84;
+  filter: saturate(0.94);
+  transition:
+    opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tps-logo--rounded {
+  border-radius: 0.65rem;
+}
+
+.tps-logo-wrap:hover .tps-logo,
+.tps-logo-wrap:focus-within .tps-logo {
+  opacity: 1;
+  filter: saturate(1) brightness(1.03);
+  transform: scale(1.05);
+}
+
+.tps-static-grid {
+  display: none;
+}
+
+.tps-marquee--static .tps-marquee-viewport {
+  mask-image: none;
+  overflow: visible;
+}
+
+.tps-marquee--static .tps-marquee-track {
+  display: none;
+}
+
+.tps-marquee--static .tps-static-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@keyframes tps-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tps-marquee-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .tps-marquee-track {
+    gap: clamp(1.75rem, 6vw, 2.5rem);
+    animation-duration: 34s;
+  }
+
+  .tps-logo {
+    height: clamp(2.375rem, 9vw, 3rem);
+  }
+}

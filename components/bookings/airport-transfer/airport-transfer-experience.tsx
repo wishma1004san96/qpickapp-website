@@ -8,6 +8,7 @@ import { searchAirportRates } from "@/lib/airport-rates";
 import { resolveDestinationScene } from "@/lib/airport-destination-scenes";
 import { POPULAR_AIRPORT_LABELS } from "@/lib/airport-rates";
 import { consumeAirportTransferPrefill } from "@/lib/airport-transfer-prefill";
+import { BankingPartnerSection } from "@/components/marketing/banking-partner-section";
 import { BookingSidePanel } from "./booking-side-panel";
 import { buildSpecialRequestPayload, todayISO } from "./helpers";
 import { saveRecentDestination } from "./recent-searches";
@@ -420,6 +421,8 @@ export function AirportTransferExperience() {
           ) : null}
         </div>
       </div>
+
+      <BankingPartnerSection />
 
       {/* Mobile / tablet sticky bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/8 bg-white/90 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_40px_rgb(10_22_32_/_0.1)] backdrop-blur-xl lg:hidden">

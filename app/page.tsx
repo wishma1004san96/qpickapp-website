@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { BankingPartnerSection } from "@/components/marketing/banking-partner-section";
 import { FleetListStage } from "@/components/marketing/fleet-list-stage";
+import { TrustedPartnersSection } from "@/components/marketing/trusted-partners";
 import { HomeHero } from "@/components/marketing/home-hero";
+import { PremiumTrustRegistration } from "@/components/marketing/premium-trust-registration";
 import { Section } from "@/components/ui/section";
 import { getLocale } from "@/lib/i18n/get-locale";
 import { getMessages } from "@/lib/i18n/get-messages";
@@ -93,6 +96,9 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <PremiumTrustRegistration />
+      <BankingPartnerSection />
+      <TrustedPartnersSection />
       <FleetListStage />
       <ExperienceQPick />
       <HowQPickWorks />

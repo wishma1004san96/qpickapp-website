@@ -173,6 +173,45 @@
     "sub": "टुक-टुक से लेकर प्रीमियम वैन तक, हर वाहन सत्यापित, आरामदायक और पारदर्शी कीमत वाला है।",
     "phoneAria": "ऐप पर Q Pick वाहन सूची"
   },
+  "premiumTrustRegistration": {
+    "eyebrow": "Verified Credentials",
+    "heading": "Officially Registered. Built on Trust.",
+    "sub": "Your journey deserves a service you can trust.",
+    "qpickLogoAlt": "Q Pick logo",
+    "sltdaLogoAlt": "Sri Lanka Tourism Development Authority logo",
+    "cards": {
+      "company": {
+        "label": "REGISTERED COMPANY",
+        "title": "QUICK PICK APP (PVT) LTD",
+        "body": "Private Company with Limited Liability",
+        "details": {
+          "companyNo": "Company No. PV 00359118"
+        }
+      },
+      "sltda": {
+        "label": "SLTDA REGISTERED TRAVEL AGENT",
+        "title": "Sri Lanka Tourism Development Authority",
+        "body": "Registered Travel Agent",
+        "details": {
+          "registrationNo": "SLTDA Registration No. SLTDA/SO/ATA/02518"
+        }
+      }
+    }
+  },
+  "bankingPartner": {
+    "eyebrow": "OUR BANKING PARTNER",
+    "headingLine1": "Trusted Banking.",
+    "headingLine2": "Seamless Journeys.",
+    "description": "Q Pick works with Pan Asia Bank to provide a convenient and trusted payment experience for journeys across Sri Lanka.",
+    "bankName": "Pan Asia Bank",
+    "bankTagline": "Trusted banking for your journey.",
+    "paymentCardTitle": "Q PICK PAYMENT",
+    "paymentLabel": "Scan to Pay",
+    "paymentInstruction": "Use your banking app to complete your payment.",
+    "partnershipLabel": "Q Pick × Pan Asia Bank",
+    "logoAlt": "Pan Asia Bank logo",
+    "qrAlt": "Pan Asia Bank payment QR code"
+  },
   "insideQPickApp": {
     "eyebrow": "आवेदन",
     "heading": "Q Pick ऐप के अंदर",
@@ -3041,6 +3080,24 @@
       "continue": "जारी रखें",
       "optional": "वैकल्पिक",
       "required": "आवश्यक"
+    }
+  },
+  "trustedPartners": {
+    "eyebrow": "OUR TRUSTED PARTNERS",
+    "headingLine1": "Trusted by Partners.",
+    "headingLine2": "Chosen by Travelers.",
+    "description": "Working with trusted partners to deliver a smoother, more reliable journey across Sri Lanka.",
+    "marqueeAriaLabel": "Trusted partner logos",
+    "logos": {
+      "hnbLife": "HNB Life logo",
+      "qpick": "Q Pick logo",
+      "stripe": "Stripe logo",
+      "nvGlobal": "N&V Global Private Limited logo",
+      "linkedCircles": "Partner logo",
+      "panAsiaBank": "Pan Asia Bank logo",
+      "sltda": "Sri Lanka Tourism Development Authority logo",
+      "google": "Google logo",
+      "aws": "Amazon Web Services logo"
     }
   }
 }

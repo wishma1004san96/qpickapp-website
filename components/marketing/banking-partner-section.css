@@ -1,0 +1,458 @@
+/* Banking Partner — reference cinematic background × Pan Asia */
+
+.bps-section {
+  --bps-red: #e31e24;
+  --bps-red-deep: #b01018;
+  --bps-navy: #050a18;
+  --bps-blue: #0062fa;
+  --bps-cyan: #66ccff;
+
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  color: #f7fafc;
+  background: var(--bps-navy);
+  padding-block: clamp(3.25rem, 6.5vw, 4.5rem);
+}
+
+.bps-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bps-bg-base {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      #03060f 0%,
+      #050a18 38%,
+      #081222 68%,
+      #0a1628 100%
+    ),
+    linear-gradient(
+      105deg,
+      rgb(3 6 15 / 0.92) 0%,
+      rgb(8 18 34 / 0.55) 42%,
+      rgb(14 32 58 / 0.35) 72%,
+      rgb(18 40 72 / 0.28) 100%
+    );
+}
+
+.bps-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 45%,
+    transparent 35%,
+    rgb(2 4 10 / 0.55) 100%
+  );
+}
+
+.bps-bg-glow-cyan {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 52% 48% at 92% 8%,
+    rgb(102 204 255 / 0.22),
+    rgb(80 160 220 / 0.08) 42%,
+    transparent 68%
+  );
+}
+
+.bps-bg-glow-red-brand {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 40% 50% at 18% 68%,
+    rgb(255 51 102 / 0.32),
+    rgb(227 30 36 / 0.12) 48%,
+    transparent 72%
+  );
+}
+
+.bps-bg-glow-red-panel {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 46% 62% at 82% 42%,
+    rgb(255 51 102 / 0.42),
+    rgb(227 30 36 / 0.16) 45%,
+    transparent 68%
+  );
+}
+
+.bps-bg-horizon {
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgb(40 90 140 / 0.06) 55%,
+    rgb(60 120 180 / 0.14) 100%
+  );
+}
+
+.bps-bg-trails {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+}
+
+/* —— Composition —— */
+.bps-composition {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(1.75rem, 3.5vw, 2.25rem);
+  align-items: center;
+}
+
+
+@media (min-width: 900px) {
+  .bps-composition {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+    max-width: 58rem;
+    margin-inline: auto;
+    align-items: center;
+  }
+}
+
+/* —— Left: brand story —— */
+.bps-story {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.bps-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(247 250 252 / 0.7);
+}
+
+.bps-eyebrow-mark {
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--bps-red);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgb(215 25 32 / 0.55);
+}
+
+.bps-heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(2.1rem, 4.5vw, 3rem);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+  color: #f7fafc;
+}
+
+.bps-heading-line {
+  display: block;
+  text-wrap: balance;
+}
+
+.bps-heading-line--accent {
+  color: var(--bps-red);
+  text-shadow: 0 0 36px rgb(215 25 32 / 0.35);
+}
+
+.bps-heading-divider {
+  width: min(100%, 26rem);
+  height: 2px;
+  margin-top: 0.95rem;
+  border-radius: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--bps-red) 0%,
+    var(--bps-red) 16%,
+    rgb(255 255 255 / 0.95) 30%,
+    rgb(125 211 252 / 0.85) 34%,
+    rgb(255 255 255 / 0.9) 38%,
+    rgb(215 25 32 / 0.45) 48%,
+    rgb(120 40 80 / 0.2) 68%,
+    transparent 100%
+  );
+  box-shadow: 0 0 14px rgb(255 255 255 / 0.12);
+}
+
+.bps-description {
+  margin: 0.85rem 0 0;
+  max-width: 38ch;
+  font-size: clamp(0.9375rem, 1.3vw, 1.05rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+  color: rgb(247 250 252 / 0.75);
+}
+
+.bps-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.bps-lockup-logo {
+  display: block;
+  width: clamp(7.5rem, 22vw, 10.625rem);
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 20px 56px rgb(0 0 0 / 0.45),
+    0 0 40px rgb(255 51 102 / 0.45),
+    0 8px 32px rgb(227 30 36 / 0.35),
+    0 0 0 1px rgb(255 255 255 / 0.1);
+}
+
+.bps-lockup-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bps-bank-name {
+  position: relative;
+  margin: 0;
+  padding-bottom: 0.55rem;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: #f7fafc;
+}
+
+.bps-bank-name-rule {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.75rem;
+  height: 2px;
+  background: var(--bps-red);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgb(215 25 32 / 0.55);
+}
+
+.bps-bank-tagline {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(247 250 252 / 0.55);
+}
+
+/* —— Right: red payment panel —— */
+.bps-payment-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .bps-payment-wrap {
+    justify-content: flex-end;
+  }
+}
+
+.bps-payment-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 24rem;
+  padding: clamp(1.35rem, 2.8vw, 1.65rem) clamp(1.35rem, 2.6vw, 1.75rem)
+    clamp(1.4rem, 2.8vw, 1.65rem);
+  border-radius: 1.35rem;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: linear-gradient(
+    168deg,
+    #e01a22 0%,
+    var(--bps-red) 42%,
+    var(--bps-red-deep) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.12) inset,
+    0 0 56px rgb(255 51 102 / 0.5),
+    0 0 110px rgb(227 30 36 / 0.28),
+    0 24px 56px rgb(0 0 0 / 0.35);
+  text-align: center;
+  transition:
+    box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 768px) and (pointer: fine) {
+  .bps-payment-panel:hover {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.15) inset,
+      0 0 56px rgb(215 25 32 / 0.42),
+      0 0 110px rgb(215 25 32 / 0.2),
+      0 28px 64px rgb(0 0 0 / 0.4);
+  }
+}
+
+.bps-payment-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.92);
+}
+
+.bps-qr-wrap {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: clamp(1.1rem, 2.5vw, 1.4rem);
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.bps-qr {
+  display: block;
+  width: 100%;
+  max-width: min(100%, 17.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.bps-payment-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.1rem 0 0;
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.85vw, 1.2rem);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: #fff;
+}
+
+.bps-payment-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.bps-payment-instruction {
+  margin: 0.4rem 0 0;
+  max-width: 28ch;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+  color: rgb(255 255 255 / 0.78);
+}
+
+.bps-partnership-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  width: 100%;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.bps-partnership-logo {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.35rem;
+  object-fit: contain;
+}
+
+.bps-partnership-logo--qpick {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+
+.bps-partnership-logo--pab {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.bps-partnership-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: rgb(255 255 255 / 0.25);
+}
+
+.bps-partnership-label {
+  margin: 0.55rem 0 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.65);
+}
+
+/* —— Mobile —— */
+@media (max-width: 899.98px) {
+  .bps-story {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bps-eyebrow {
+    justify-content: center;
+  }
+
+  .bps-heading-divider {
+    margin-inline: auto;
+  }
+
+  .bps-lockup {
+    align-items: center;
+  }
+
+  .bps-lockup-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bps-bank-name-rule {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bps-description {
+    max-width: 36ch;
+  }
+
+  .bps-payment-panel {
+    max-width: 21.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bps-payment-panel {
+    transition: none;
+  }
+}

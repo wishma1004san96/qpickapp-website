@@ -7,6 +7,7 @@ import {
   RideSafetySection,
   RideWhySection,
 } from "@/components/marketing/ride-page-sections";
+import { BankingPartnerSection } from "@/components/marketing/banking-partner-section";
 import { TaxiFareEstimator } from "@/components/marketing/taxi-fare-estimator";
 import { Container } from "@/components/ui/container";
 
@@ -31,6 +32,7 @@ export function RideContent() {
       <RideSafetySection />
       <RideFaqSection />
       <RideFinalCta />
+      <BankingPartnerSection />
     </div>
   );
 }

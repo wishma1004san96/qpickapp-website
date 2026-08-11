@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import { useMessages, useTranslations } from "@/components/i18n/locale-provider";
+import { BankingPartnerSection } from "@/components/marketing/banking-partner-section";
 import { JsonLd } from "@/components/tours/json-ld";
 import { ToursExperience } from "@/components/tours/tours-experience";
 import { hubString } from "@/lib/i18n/catalog-string";
@@ -154,6 +155,7 @@ export function ToursHub() {
         finalCtaImage={finalCtaImage}
         bookHref={getBookHref()}
       />
+      <BankingPartnerSection />
     </>
   );
 }
