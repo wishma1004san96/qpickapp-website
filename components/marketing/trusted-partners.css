@@ -95,12 +95,24 @@
 .tps-marquee {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin-top: clamp(2rem, 4.5vw, 2.85rem);
 }
 
 .tps-marquee-viewport {
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
@@ -112,6 +124,23 @@
 
 .tps-marquee-fade {
   display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 10%;
+  max-width: 2.75rem;
+  pointer-events: none;
+}
+
+.tps-marquee-fade--left {
+  left: 0;
+  background: linear-gradient(90deg, rgb(247 249 252) 0%, transparent 100%);
+}
+
+.tps-marquee-fade--right {
+  right: 0;
+  background: linear-gradient(270deg, rgb(243 246 250) 0%, transparent 100%);
 }
 
 .tps-marquee-track {
@@ -122,12 +151,23 @@
   padding: 0;
   list-style: none;
   gap: clamp(2.25rem, 5vw, 4rem);
-  animation: tps-marquee-scroll 42s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-name: tps-marquee-scroll;
+  animation-name: tps-marquee-scroll;
+  -webkit-animation-duration: 32s;
+  animation-duration: 32s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   will-change: transform;
 }
 
-.tps-marquee:hover .tps-marquee-track {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .tps-marquee:hover .tps-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .tps-logo-item {
@@ -174,46 +214,75 @@
   display: none;
 }
 
-.tps-marquee--static .tps-marquee-viewport {
-  mask-image: none;
-  overflow: visible;
-}
-
-.tps-marquee--static .tps-marquee-track {
-  display: none;
-}
-
-.tps-marquee--static .tps-static-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.25rem);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@keyframes tps-marquee-scroll {
+@-webkit-keyframes tps-marquee-scroll {
   from {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 
   to {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes tps-marquee-scroll {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .tps-marquee-viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: visible;
+  }
+
+  .tps-marquee-fade {
+    display: none;
+  }
+
   .tps-marquee-track {
+    display: none;
+    -webkit-animation: none;
     animation: none;
+  }
+
+  .tps-static-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.25rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .tps-marquee-viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .tps-marquee-fade {
+    display: block;
   }
 }
 
 @media (max-width: 639.98px) {
   .tps-marquee-track {
     gap: clamp(1.75rem, 6vw, 2.5rem);
-    animation-duration: 34s;
+    -webkit-animation-duration: 28s;
+    animation-duration: 28s;
   }
 
   .tps-logo {

@@ -112,7 +112,7 @@ export function TrustedPartnersSection() {
         </motion.div>
 
         <div
-          className={`tps-marquee ${reduceMotion ? "tps-marquee--static" : ""}`}
+          className="tps-marquee"
           role="region"
           aria-label={t("trustedPartners.marqueeAriaLabel")}
         >
@@ -146,25 +146,23 @@ export function TrustedPartnersSection() {
               ))}
             </ul>
 
-            {reduceMotion ? (
-              <ul className="tps-static-grid">
-                {PARTNER_LOGOS.map((logo) => (
-                  <li key={logo.id} className="tps-logo-item">
-                    <div className="tps-logo-wrap">
-                      <Image
-                        src={logo.src}
-                        alt={t(`trustedPartners.logos.${logo.id}`)}
-                        width={logo.width}
-                        height={logo.height}
-                        className={logoClassName(logo)}
-                        sizes="(max-width: 640px) 120px, 180px"
-                        draggable={false}
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+            <ul className="tps-static-grid">
+              {PARTNER_LOGOS.map((logo) => (
+                <li key={logo.id} className="tps-logo-item">
+                  <div className="tps-logo-wrap">
+                    <Image
+                      src={logo.src}
+                      alt={t(`trustedPartners.logos.${logo.id}`)}
+                      width={logo.width}
+                      height={logo.height}
+                      className={logoClassName(logo)}
+                      sizes="(max-width: 640px) 120px, 180px"
+                      draggable={false}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         </Container>
