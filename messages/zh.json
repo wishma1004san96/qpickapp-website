@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "隐私政策",
       "terms": "条款及条件",
-      "cookies": "饼干"
+      "cookies": "饼干",
+      "privacyPolicy": "隐私政策",
+      "support": "支持"
     }
   },
   "hero": {

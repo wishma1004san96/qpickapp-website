@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "Polityka prywatności",
       "terms": "Regulamin",
-      "cookies": "Pliki cookie"
+      "cookies": "Pliki cookie",
+      "privacyPolicy": "Polityka prywatności",
+      "support": "Wsparcie"
     }
   },
   "hero": {

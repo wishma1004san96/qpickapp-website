@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "Informativa sulla privacy",
       "terms": "Termini e condizioni",
-      "cookies": "Biscotti"
+      "cookies": "Biscotti",
+      "privacyPolicy": "Informativa sulla privacy",
+      "support": "Supporto"
     }
   },
   "hero": {

@@ -63,8 +63,10 @@ export const footerCompany = [
 
 export const footerLegal = [
   { href: "/legal/privacy", key: "privacy" },
+  { href: "/privacy-policy", key: "privacyPolicy" },
   { href: "/legal/terms", key: "terms" },
   { href: "/legal/privacy", key: "cookies" },
+  { href: "/support", key: "support" },
 ] as const;
 
 export const socialLinks = [

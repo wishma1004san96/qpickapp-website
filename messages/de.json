@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "Datenschutzrichtlinie",
       "terms": "Allgemeine Geschäftsbedingungen",
-      "cookies": "Kekse"
+      "cookies": "Kekse",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "support": "Support"
     }
   },
   "hero": {

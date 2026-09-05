@@ -53,8 +53,10 @@
     },
     "legal": {
       "privacy": "Privacy Policy",
+      "privacyPolicy": "Privacy Policy",
       "terms": "Terms & Conditions",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "support": "Support"
     }
   },
   "hero": {

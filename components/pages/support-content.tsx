@@ -1,29 +1,9 @@
-"use client";
-
-import {
-  SupportContactCards,
-  SupportFaq,
-  SupportHero,
-  SupportOffice,
-  SupportQuickActions,
-  SupportServices,
-  SupportTrust,
-} from "@/components/marketing/support-experience";
+import { SupportPageContent } from "@/components/pages/support-page-content";
 
 /**
- * Support page — premium customer support landing.
+ * Support page — help center for Quick Pick customers and drivers.
  * Navbar and footer unchanged (root layout).
  */
 export function SupportContent() {
-  return (
-    <div className="support-page bg-foam">
-      <SupportHero />
-      <SupportContactCards />
-      <SupportQuickActions />
-      <SupportServices />
-      <SupportFaq />
-      <SupportOffice />
-      <SupportTrust />
-    </div>
-  );
+  return <SupportPageContent />;
 }

@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "Tietosuojakäytäntö",
       "terms": "Ehdot",
-      "cookies": "Evästeet"
+      "cookies": "Evästeet",
+      "privacyPolicy": "Tietosuojakäytäntö",
+      "support": "Tuki"
     }
   },
   "hero": {

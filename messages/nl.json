@@ -54,7 +54,9 @@
     "legal": {
       "privacy": "Privacybeleid",
       "terms": "Algemene voorwaarden",
-      "cookies": "Koekjes"
+      "cookies": "Koekjes",
+      "privacyPolicy": "Privacybeleid",
+      "support": "Ondersteuning"
     }
   },
   "hero": {
