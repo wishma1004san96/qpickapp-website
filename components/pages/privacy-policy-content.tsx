@@ -185,7 +185,93 @@ export function PrivacyPolicyContent() {
               You can manage notification permissions through your device settings.
             </LegalParagraph>
           </LegalSection>
+          <LegalSubheading>Face Data and Biometric Information:</LegalSubheading>
 
+<LegalSubheading>What Face Data We Collect:</LegalSubheading>
+
+<LegalParagraph>
+  When you use features that require facial verification, the application may collect
+  facial images captured through your device camera.
+</LegalParagraph>
+
+<LegalSubheading>How We Use Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  We use facial information solely to provide the facial verification functionality
+  requested by the user and to support account security and identity verification.
+</LegalParagraph>
+
+<LegalParagraph>
+  We do not use face data for advertising, marketing, profiling, tracking, or any
+  unrelated purpose.
+</LegalParagraph>
+
+<LegalSubheading>How Face Data Is Processed:</LegalSubheading>
+
+<LegalParagraph>
+  The facial image captured through the application is securely transmitted to our own
+  application server for processing and verification.
+</LegalParagraph>
+
+<LegalSubheading>Storage of Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  Facial images are stored on our own server only when necessary to provide the facial
+  verification functionality. We do not store facial information longer than necessary
+  for the purposes described in this Privacy Policy.
+</LegalParagraph>
+
+<LegalSubheading>Sharing of Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  We do not sell, rent, or share facial data with third parties. Facial data is
+  transmitted only between the application and our own application server for the
+  purpose of providing the facial verification functionality.
+</LegalParagraph>
+
+<LegalParagraph>
+  We do not disclose facial data to third parties for advertising, marketing, profiling,
+  or any unrelated purpose.
+</LegalParagraph>
+
+<LegalSubheading>Retention of Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  Facial data is retained for up to 30 days from the date it is collected, after which
+  it is securely deleted from our systems, unless a longer retention period is required
+  by law or necessary for legitimate security or fraud-prevention purposes.
+</LegalParagraph>
+
+<LegalSubheading>Deletion of Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  When a user deletes their account, facial data associated with that account will be
+  deleted from our systems, subject to any legally required retention.
+</LegalParagraph>
+
+<LegalParagraph>
+  Users may initiate account deletion through the account deletion functionality
+  available within the application.
+</LegalParagraph>
+
+<LegalSubheading>Security of Face Data:</LegalSubheading>
+
+<LegalParagraph>
+  We use appropriate technical and organizational security measures to protect facial
+  information against unauthorized access, disclosure, alteration, or destruction.
+</LegalParagraph>
+
+<LegalParagraph>
+  Facial information is treated as sensitive personal information and is accessed only
+  when necessary to provide the facial verification functionality.
+</LegalParagraph>
+
+<LegalSubheading>No Secondary Use:</LegalSubheading>
+
+<LegalParagraph>
+  We do not use facial information for advertising, marketing, user profiling, tracking,
+  or any purpose unrelated to the facial verification functionality.
+</LegalParagraph>
           <LegalSection id="how-we-use" title="2. How We Use Your Information">
             <LegalParagraph>We may use the information we collect to:</LegalParagraph>
             <LegalList
